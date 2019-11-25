@@ -42,8 +42,9 @@ class PulseCounter:
         #print(bin(outpi))
         return outpi
     # Allows setting of the reset lines to the pulse counter and timer of all channels (cannot individually reset channels)
-    def set_ctl_lines(self,r0,r1):
+    def set_ctl_lines(self,r0,r1,EN):
         val = r1 << 1 | r0
+        val = val | EN << 1
         for i in range(4):
             self.GPIO_UTILITY[i].write(ch1_data,val)
 #Timer @ 57.143MHz

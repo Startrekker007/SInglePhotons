@@ -12,8 +12,8 @@ if(choice=="0"):
     time_thresh = time_int/(1/timer_clock_speed)#Calculate number of clock cycles to make the time
     PC.set_threshold(time_thresh)#Set timer threshold (to stop counting at)
     for i in range(10):
-        PC.set_ctl_lines(0,0)#Hold Reset counter and timer
-        PC.set_ctl_lines(1,1)#Disable reset and enable counter and timer
+        PC.set_ctl_lines(0,0,0)#Hold Reset counter and timer
+        PC.set_ctl_lines(1,1,0)#Disable reset and enable counter and timer
         #print("Getting data...\n")
         if(PC.read_utility() == 0xF):
             while(PC.read_utility() == 0xF):
@@ -24,6 +24,7 @@ if(choice=="0"):
                 #If the data indicator is low, wait till it transitions
                 pass
         #print("Reading counts")
+        PC.set_ctl_lines(1,1,1)#Stop counter
         count = PC.read_incidents()#Read the number of photon detections
         #print("Counts detected:" + str(count))
         for j in range(4):
