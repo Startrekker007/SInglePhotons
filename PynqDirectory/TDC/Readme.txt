@@ -1,0 +1,1 @@
+Counter_Overlay_wrapper.bit is the final hardware design for this part.
