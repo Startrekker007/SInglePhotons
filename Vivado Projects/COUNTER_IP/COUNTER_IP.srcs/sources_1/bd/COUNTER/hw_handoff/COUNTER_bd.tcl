@@ -211,54 +211,24 @@ proc create_root_design { parentCell } {
    CONFIG.C_ALL_INPUTS_2 {1} \
    CONFIG.C_ALL_OUTPUTS {1} \
    CONFIG.C_GPIO2_WIDTH {1} \
-   CONFIG.C_GPIO_WIDTH {3} \
+   CONFIG.C_GPIO_WIDTH {1} \
    CONFIG.C_IS_DUAL {1} \
  ] $axi_gpio_util
-
-  # Create instance: xlslice_0, and set properties
-  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {0} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {3} \
- ] $xlslice_0
-
-  # Create instance: xlslice_1, and set properties
-  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {1} \
-   CONFIG.DIN_TO {1} \
-   CONFIG.DIN_WIDTH {3} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_1
-
-  # Create instance: xlslice_2, and set properties
-  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {2} \
-   CONFIG.DIN_TO {2} \
-   CONFIG.DIN_WIDTH {3} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_2
 
   # Create interface connections
   connect_bd_intf_net -intf_net S_AXI_0_1 [get_bd_intf_ports S_AXI_0_tlm] [get_bd_intf_pins axi_gpio_data/S_AXI]
   connect_bd_intf_net -intf_net s_axi_1_1 [get_bd_intf_ports s_axi_1_tlm] [get_bd_intf_pins axi_gpio_util/S_AXI]
 
   # Create port connections
-  connect_bd_net -net DIG_TIMER_0_CARRY [get_bd_pins DIG_TIMER_0/CARRY] [get_bd_pins PULSE_COUNTER_0/DCLK]
-  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins axi_gpio_util/gpio2_io_i]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins PULSE_COUNTER_0/EN] [get_bd_pins axi_gpio_util/gpio2_io_i]
+  connect_bd_net -net Net [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins PULSE_COUNTER_0/RST] [get_bd_pins axi_gpio_util/gpio_io_o]
   connect_bd_net -net PCLK_1 [get_bd_ports PCLK] [get_bd_pins PULSE_COUNTER_0/MCLK]
   connect_bd_net -net PULSE_COUNTER_0_CNT_OUT [get_bd_pins PULSE_COUNTER_0/CNT_OUT] [get_bd_pins axi_gpio_data/gpio_io_i]
   connect_bd_net -net P_SIG_EX_1 [get_bd_ports P_SIG_EX] [get_bd_pins PULSE_COUNTER_0/P_SIG]
   connect_bd_net -net TCLK_1 [get_bd_ports TCLK] [get_bd_pins DIG_TIMER_0/MCLK]
   connect_bd_net -net axi_gpio_data_gpio2_io_o [get_bd_pins DIG_TIMER_0/LIM] [get_bd_pins axi_gpio_data/gpio2_io_o]
-  connect_bd_net -net axi_gpio_util_gpio_io_o [get_bd_pins axi_gpio_util/gpio_io_o] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din]
   connect_bd_net -net s_axi_clk_1 [get_bd_ports s_axi_clk] [get_bd_pins axi_gpio_data/s_axi_aclk] [get_bd_pins axi_gpio_util/s_axi_aclk]
   connect_bd_net -net s_axi_rst_1 [get_bd_ports s_axi_rst] [get_bd_pins axi_gpio_data/s_axi_aresetn] [get_bd_pins axi_gpio_util/s_axi_aresetn]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins xlslice_0/Dout]
-  connect_bd_net -net xlslice_1_Dout [get_bd_pins PULSE_COUNTER_0/RST] [get_bd_pins xlslice_1/Dout]
-  connect_bd_net -net xlslice_2_Dout [get_bd_pins PULSE_COUNTER_0/EN] [get_bd_pins xlslice_2/Dout]
 
   # Create address segments
 

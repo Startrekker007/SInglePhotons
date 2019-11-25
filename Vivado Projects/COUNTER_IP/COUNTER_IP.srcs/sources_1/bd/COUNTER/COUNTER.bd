@@ -9,13 +9,10 @@
       "validated": "true"
     },
     "design_tree": {
-      "DIG_TIMER_0": "",
-      "xlslice_0": "",
-      "xlslice_1": "",
       "axi_gpio_data": "",
       "axi_gpio_util": "",
-      "PULSE_COUNTER_0": "",
-      "xlslice_2": ""
+      "DIG_TIMER_0": "",
+      "PULSE_COUNTER_0": ""
     },
     "interface_ports": {
       "S_AXI_0_tlm": {
@@ -289,6 +286,45 @@
       }
     },
     "components": {
+      "axi_gpio_data": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "COUNTER_axi_gpio_0_0",
+        "parameters": {
+          "C_ALL_INPUTS": {
+            "value": "1"
+          },
+          "C_ALL_OUTPUTS_2": {
+            "value": "1"
+          },
+          "C_IS_DUAL": {
+            "value": "1"
+          }
+        }
+      },
+      "axi_gpio_util": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "COUNTER_axi_gpio_0_1",
+        "parameters": {
+          "C_ALL_INPUTS": {
+            "value": "0"
+          },
+          "C_ALL_INPUTS_2": {
+            "value": "1"
+          },
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_GPIO2_WIDTH": {
+            "value": "1"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "1"
+          },
+          "C_IS_DUAL": {
+            "value": "1"
+          }
+        }
+      },
       "DIG_TIMER_0": {
         "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
         "xci_name": "COUNTER_DIG_TIMER_0_0",
@@ -323,81 +359,9 @@
           }
         }
       },
-      "xlslice_0": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "COUNTER_xlslice_0_0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "0"
-          },
-          "DIN_TO": {
-            "value": "0"
-          },
-          "DIN_WIDTH": {
-            "value": "3"
-          }
-        }
-      },
-      "xlslice_1": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "COUNTER_xlslice_1_0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "1"
-          },
-          "DIN_TO": {
-            "value": "1"
-          },
-          "DIN_WIDTH": {
-            "value": "3"
-          },
-          "DOUT_WIDTH": {
-            "value": "1"
-          }
-        }
-      },
-      "axi_gpio_data": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "xci_name": "COUNTER_axi_gpio_0_0",
-        "parameters": {
-          "C_ALL_INPUTS": {
-            "value": "1"
-          },
-          "C_ALL_OUTPUTS_2": {
-            "value": "1"
-          },
-          "C_IS_DUAL": {
-            "value": "1"
-          }
-        }
-      },
-      "axi_gpio_util": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "xci_name": "COUNTER_axi_gpio_0_1",
-        "parameters": {
-          "C_ALL_INPUTS": {
-            "value": "0"
-          },
-          "C_ALL_INPUTS_2": {
-            "value": "1"
-          },
-          "C_ALL_OUTPUTS": {
-            "value": "1"
-          },
-          "C_GPIO2_WIDTH": {
-            "value": "1"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "3"
-          },
-          "C_IS_DUAL": {
-            "value": "1"
-          }
-        }
-      },
       "PULSE_COUNTER_0": {
         "vlnv": "xilinx.com:module_ref:PULSE_COUNTER:1.0",
-        "xci_name": "COUNTER_PULSE_COUNTER_0_0",
+        "xci_name": "COUNTER_PULSE_COUNTER_0_1",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "PULSE_COUNTER",
@@ -416,32 +380,11 @@
             "left": "31",
             "right": "0"
           },
-          "DCLK": {
-            "direction": "I"
-          },
           "MCLK": {
             "direction": "I"
           },
           "EN": {
             "direction": "I"
-          }
-        }
-      },
-      "xlslice_2": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "COUNTER_xlslice_1_1",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "2"
-          },
-          "DIN_TO": {
-            "value": "2"
-          },
-          "DIN_WIDTH": {
-            "value": "3"
-          },
-          "DOUT_WIDTH": {
-            "value": "1"
           }
         }
       }
@@ -467,34 +410,10 @@
           "DIG_TIMER_0/MCLK"
         ]
       },
-      "PCLK_1": {
-        "ports": [
-          "PCLK",
-          "PULSE_COUNTER_0/MCLK"
-        ]
-      },
-      "PULSE_COUNTER_0_CNT_OUT": {
-        "ports": [
-          "PULSE_COUNTER_0/CNT_OUT",
-          "axi_gpio_data/gpio_io_i"
-        ]
-      },
       "axi_gpio_data_gpio2_io_o": {
         "ports": [
           "axi_gpio_data/gpio2_io_o",
           "DIG_TIMER_0/LIM"
-        ]
-      },
-      "DIG_TIMER_0_CARRY": {
-        "ports": [
-          "DIG_TIMER_0/CARRY",
-          "PULSE_COUNTER_0/DCLK"
-        ]
-      },
-      "P_SIG_EX_1": {
-        "ports": [
-          "P_SIG_EX",
-          "PULSE_COUNTER_0/P_SIG"
         ]
       },
       "s_axi_clk_1": {
@@ -511,36 +430,36 @@
           "axi_gpio_util/s_axi_aresetn"
         ]
       },
-      "axi_gpio_util_gpio_io_o": {
-        "ports": [
-          "axi_gpio_util/gpio_io_o",
-          "xlslice_0/Din",
-          "xlslice_1/Din",
-          "xlslice_2/Din"
-        ]
-      },
-      "xlslice_0_Dout": {
-        "ports": [
-          "xlslice_0/Dout",
-          "DIG_TIMER_0/RST"
-        ]
-      },
-      "xlslice_1_Dout": {
-        "ports": [
-          "xlslice_1/Dout",
-          "PULSE_COUNTER_0/RST"
-        ]
-      },
       "DIG_TIMER_0_DATA_IND": {
         "ports": [
           "DIG_TIMER_0/DATA_IND",
-          "axi_gpio_util/gpio2_io_i"
+          "axi_gpio_util/gpio2_io_i",
+          "PULSE_COUNTER_0/EN"
         ]
       },
-      "xlslice_2_Dout": {
+      "P_SIG_EX_1": {
         "ports": [
-          "xlslice_2/Dout",
-          "PULSE_COUNTER_0/EN"
+          "P_SIG_EX",
+          "PULSE_COUNTER_0/P_SIG"
+        ]
+      },
+      "PCLK_1": {
+        "ports": [
+          "PCLK",
+          "PULSE_COUNTER_0/MCLK"
+        ]
+      },
+      "PULSE_COUNTER_0_CNT_OUT": {
+        "ports": [
+          "PULSE_COUNTER_0/CNT_OUT",
+          "axi_gpio_data/gpio_io_i"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "axi_gpio_util/gpio_io_o",
+          "PULSE_COUNTER_0/RST",
+          "DIG_TIMER_0/RST"
         ]
       }
     },

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Nov 25 14:26:55 2019
+--Date        : Mon Nov 25 17:13:11 2019
 --Host        : CISS31247 running 64-bit major release  (build 9200)
 --Command     : generate_target COUNTER_wrapper.bd
 --Design      : COUNTER_wrapper
@@ -63,23 +63,6 @@ architecture STRUCTURE of COUNTER_wrapper is
     P_SIG_EX : in STD_LOGIC;
     s_axi_rst : in STD_LOGIC;
     s_axi_clk : in STD_LOGIC;
-    s_axi_1_tlm_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_1_tlm_arready : out STD_LOGIC;
-    s_axi_1_tlm_arvalid : in STD_LOGIC;
-    s_axi_1_tlm_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_1_tlm_awready : out STD_LOGIC;
-    s_axi_1_tlm_awvalid : in STD_LOGIC;
-    s_axi_1_tlm_bready : in STD_LOGIC;
-    s_axi_1_tlm_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_1_tlm_bvalid : out STD_LOGIC;
-    s_axi_1_tlm_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_1_tlm_rready : in STD_LOGIC;
-    s_axi_1_tlm_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_1_tlm_rvalid : out STD_LOGIC;
-    s_axi_1_tlm_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_1_tlm_wready : out STD_LOGIC;
-    s_axi_1_tlm_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_1_tlm_wvalid : in STD_LOGIC;
     S_AXI_0_tlm_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     S_AXI_0_tlm_arready : out STD_LOGIC;
     S_AXI_0_tlm_arvalid : in STD_LOGIC;
@@ -96,7 +79,24 @@ architecture STRUCTURE of COUNTER_wrapper is
     S_AXI_0_tlm_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     S_AXI_0_tlm_wready : out STD_LOGIC;
     S_AXI_0_tlm_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_0_tlm_wvalid : in STD_LOGIC
+    S_AXI_0_tlm_wvalid : in STD_LOGIC;
+    s_axi_1_tlm_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_1_tlm_arready : out STD_LOGIC;
+    s_axi_1_tlm_arvalid : in STD_LOGIC;
+    s_axi_1_tlm_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_1_tlm_awready : out STD_LOGIC;
+    s_axi_1_tlm_awvalid : in STD_LOGIC;
+    s_axi_1_tlm_bready : in STD_LOGIC;
+    s_axi_1_tlm_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_1_tlm_bvalid : out STD_LOGIC;
+    s_axi_1_tlm_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_1_tlm_rready : in STD_LOGIC;
+    s_axi_1_tlm_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_1_tlm_rvalid : out STD_LOGIC;
+    s_axi_1_tlm_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_1_tlm_wready : out STD_LOGIC;
+    s_axi_1_tlm_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_1_tlm_wvalid : in STD_LOGIC
   );
   end component COUNTER;
 begin

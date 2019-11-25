@@ -96,12 +96,12 @@
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_xlslice_1_0/sim/COUNTER_xlslice_1_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/Counter_Overlay/ipshared/4bff/sim/COUNTER_DIG_TIMER_0_0.vhd" \
-  "../../../bd/Counter_Overlay/ipshared/4bff/sim/COUNTER_PULSE_COUNTER_0_0.vhd" \
-  "../../../bd/Counter_Overlay/ipshared/4bff/src/DIG_TIMER.vhd" \
-  "../../../bd/Counter_Overlay/ipshared/4bff/src/PULSE_COUNTER.vhd" \
-  "../../../bd/Counter_Overlay/ipshared/4bff/sim/COUNTER.vhd" \
-  "../../../bd/Counter_Overlay/ipshared/4bff/src/COUNTER_wrapper.vhd" \
+  "../../../bd/Counter_Overlay/ipshared/be9e/sim/COUNTER_DIG_TIMER_0_0.vhd" \
+  "../../../bd/Counter_Overlay/ipshared/be9e/sim/COUNTER_PULSE_COUNTER_0_0.vhd" \
+  "../../../bd/Counter_Overlay/ipshared/be9e/src/DIG_TIMER.vhd" \
+  "../../../bd/Counter_Overlay/ipshared/be9e/src/PULSE_COUNTER.vhd" \
+  "../../../bd/Counter_Overlay/ipshared/be9e/sim/COUNTER.vhd" \
+  "../../../bd/Counter_Overlay/ipshared/be9e/src/COUNTER_wrapper.vhd" \
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/sim/Counter_Overlay_COUNTER_wrapper_0_0.vhd" \
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/sim/Counter_Overlay_CH_0_0.vhd" \
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/sim/Counter_Overlay_CH_1_0.vhd" \

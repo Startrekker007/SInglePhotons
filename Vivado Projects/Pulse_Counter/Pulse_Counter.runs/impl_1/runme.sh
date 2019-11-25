@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='H:/VivadoProj/Pulse_Counter/Pulse_Counter.runs/impl_1'
+HD_PWD='C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

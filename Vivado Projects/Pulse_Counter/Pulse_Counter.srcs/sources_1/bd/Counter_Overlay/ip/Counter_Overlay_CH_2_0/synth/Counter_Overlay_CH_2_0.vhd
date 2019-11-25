@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: govt.nz:user:COUNTER_wrapper:1.0
--- IP Revision: 6
+-- IP Revision: 8
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

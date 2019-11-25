@@ -35,7 +35,6 @@ entity PULSE_COUNTER is
     Port ( P_SIG : in STD_LOGIC;
            CNT_OUT : out STD_LOGIC_VECTOR (31 downto 0);
            RST : in STD_LOGIC;
-           DCLK : in STD_LOGIC;
            MCLK : in std_logic;
            EN : in STD_LOGIC);
 end PULSE_COUNTER;
@@ -43,15 +42,13 @@ end PULSE_COUNTER;
 architecture Behavioral of PULSE_COUNTER is
 signal cntr : unsigned(31 downto 0) := "00000000000000000000000000000000";
 signal prev_val : std_logic :='0';
-signal INT_MCLK : std_logic;
 begin
-INT_MCLK <= MCLK and not EN;
-CNT_PROC : process(INT_MCLK,P_SIG)
+CNT_PROC : process(MCLK)
 begin
-    if(rising_edge(INT_MCLK)) then
+    if(rising_edge(MCLK)) then
         if(RST='0') then
             cntr<="00000000000000000000000000000000";
-        else
+        elsif (EN = '0') then
             if(prev_val = '0' and P_SIG = '1') then
                 cntr<=cntr+1;
             end if;
@@ -59,11 +56,6 @@ begin
         end if;
     end if;
 end process;
-DATA_PROC : process(DCLK)
-begin
-    if(rising_edge(DCLK)) then
-        CNT_OUT <= std_logic_vector(cntr);
-    end if;
-end process;
+CNT_OUT <= std_logic_vector(cntr);
 
 end Behavioral;

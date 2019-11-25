@@ -70,19 +70,19 @@ set rc [catch {
   set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir H:/VivadoProj/Pulse_Counter/Pulse_Counter.cache/wt [current_project]
-  set_property parent.project_path H:/VivadoProj/Pulse_Counter/Pulse_Counter.xpr [current_project]
+  set_property webtalk.parent_dir {C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.cache/wt} [current_project]
+  set_property parent.project_path {C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.xpr} [current_project]
   set_property ip_repo_paths H:/IP_BLOCKS/COUNTER [current_project]
   update_ip_catalog
   set_property ip_output_repo H:/VivadoProj/Pulse_Counter/Pulse_Counter.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet H:/VivadoProj/Pulse_Counter/Pulse_Counter.runs/synth_1/Counter_Overlay_wrapper.dcp
+  add_files -quiet {{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.runs/synth_1/Counter_Overlay_wrapper.dcp}}
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files H:/VivadoProj/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/Counter_Overlay.bd
+  add_files {{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/Counter_Overlay.bd}}
   set_param project.isImplRun false
-  read_xdc H:/VivadoProj/Pulse_Counter/Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc
+  read_xdc {{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc}}
   set_param project.isImplRun true
   link_design -top Counter_Overlay_wrapper -part xc7z020clg400-1
   set_param project.isImplRun false

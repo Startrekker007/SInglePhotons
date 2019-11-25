@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov 25 14:31:31 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov 25 17:14:00 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="Counter_Overlay" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -172,7 +172,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="6" FULLNAME="/CH_0" HWVERSION="1.0" INSTANCE="CH_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/CH_0" HWVERSION="1.0" INSTANCE="CH_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -490,7 +490,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="6" FULLNAME="/CH_1" HWVERSION="1.0" INSTANCE="CH_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/CH_1" HWVERSION="1.0" INSTANCE="CH_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -808,7 +808,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="6" FULLNAME="/CH_2" HWVERSION="1.0" INSTANCE="CH_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/CH_2" HWVERSION="1.0" INSTANCE="CH_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -1126,7 +1126,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="6" FULLNAME="/CH_3" HWVERSION="1.0" INSTANCE="CH_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/CH_3" HWVERSION="1.0" INSTANCE="CH_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -3970,6 +3970,180 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_AWID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWID"/>
@@ -4158,180 +4332,6 @@
         <PORT DIR="I" NAME="S00_AXI_rready" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awaddr">

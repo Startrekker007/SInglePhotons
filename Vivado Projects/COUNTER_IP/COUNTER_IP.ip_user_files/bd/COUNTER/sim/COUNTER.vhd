@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Nov 25 14:26:55 2019
+--Date        : Mon Nov 25 17:13:11 2019
 --Host        : CISS31247 running 64-bit major release  (build 9200)
 --Command     : generate_target COUNTER.bd
 --Design      : COUNTER
@@ -54,34 +54,12 @@ entity COUNTER is
     s_axi_rst : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of COUNTER : entity is "COUNTER,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=COUNTER,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of COUNTER : entity is "COUNTER,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=COUNTER,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of COUNTER : entity is "COUNTER.hwdef";
 end COUNTER;
 
 architecture STRUCTURE of COUNTER is
-  component COUNTER_DIG_TIMER_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CARRY : out STD_LOGIC;
-    RST : in STD_LOGIC;
-    DATA_IND : out STD_LOGIC
-  );
-  end component COUNTER_DIG_TIMER_0_0;
-  component COUNTER_xlslice_0_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component COUNTER_xlslice_0_0;
-  component COUNTER_xlslice_1_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component COUNTER_xlslice_1_0;
   component COUNTER_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -128,28 +106,31 @@ architecture STRUCTURE of COUNTER is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    gpio_io_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     gpio2_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component COUNTER_axi_gpio_0_1;
-  component COUNTER_PULSE_COUNTER_0_0 is
+  component COUNTER_DIG_TIMER_0_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CARRY : out STD_LOGIC;
+    RST : in STD_LOGIC;
+    DATA_IND : out STD_LOGIC
+  );
+  end component COUNTER_DIG_TIMER_0_0;
+  component COUNTER_PULSE_COUNTER_0_1 is
   port (
     P_SIG : in STD_LOGIC;
     CNT_OUT : out STD_LOGIC_VECTOR ( 31 downto 0 );
     RST : in STD_LOGIC;
-    DCLK : in STD_LOGIC;
     MCLK : in STD_LOGIC;
     EN : in STD_LOGIC
   );
-  end component COUNTER_PULSE_COUNTER_0_0;
-  component COUNTER_xlslice_1_1 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component COUNTER_xlslice_1_1;
-  signal DIG_TIMER_0_CARRY : STD_LOGIC;
+  end component COUNTER_PULSE_COUNTER_0_1;
   signal DIG_TIMER_0_DATA_IND : STD_LOGIC;
+  signal Net : STD_LOGIC_VECTOR ( 0 to 0 );
   signal PCLK_1 : STD_LOGIC;
   signal PULSE_COUNTER_0_CNT_OUT : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal P_SIG_EX_1 : STD_LOGIC;
@@ -172,7 +153,6 @@ architecture STRUCTURE of COUNTER is
   signal S_AXI_0_1_WVALID : STD_LOGIC;
   signal TCLK_1 : STD_LOGIC;
   signal axi_gpio_data_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_gpio_util_gpio_io_o : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal s_axi_1_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal s_axi_1_1_ARREADY : STD_LOGIC;
   signal s_axi_1_1_ARVALID : STD_LOGIC;
@@ -192,9 +172,7 @@ architecture STRUCTURE of COUNTER is
   signal s_axi_1_1_WVALID : STD_LOGIC;
   signal s_axi_clk_1 : STD_LOGIC;
   signal s_axi_rst_1 : STD_LOGIC;
-  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlslice_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlslice_2_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_DIG_TIMER_0_CARRY_UNCONNECTED : STD_LOGIC;
   signal NLW_DIG_TIMER_0_CUR_VAL_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of S_AXI_0_tlm_arready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_0_tlm ARREADY";
@@ -276,21 +254,20 @@ begin
   s_axi_rst_1 <= s_axi_rst;
 DIG_TIMER_0: component COUNTER_DIG_TIMER_0_0
      port map (
-      CARRY => DIG_TIMER_0_CARRY,
+      CARRY => NLW_DIG_TIMER_0_CARRY_UNCONNECTED,
       CUR_VAL(31 downto 0) => NLW_DIG_TIMER_0_CUR_VAL_UNCONNECTED(31 downto 0),
       DATA_IND => DIG_TIMER_0_DATA_IND,
       LIM(31 downto 0) => axi_gpio_data_gpio2_io_o(31 downto 0),
       MCLK => TCLK_1,
-      RST => xlslice_0_Dout(0)
+      RST => Net(0)
     );
-PULSE_COUNTER_0: component COUNTER_PULSE_COUNTER_0_0
+PULSE_COUNTER_0: component COUNTER_PULSE_COUNTER_0_1
      port map (
       CNT_OUT(31 downto 0) => PULSE_COUNTER_0_CNT_OUT(31 downto 0),
-      DCLK => DIG_TIMER_0_CARRY,
-      EN => xlslice_2_Dout(0),
+      EN => DIG_TIMER_0_DATA_IND,
       MCLK => PCLK_1,
       P_SIG => P_SIG_EX_1,
-      RST => xlslice_1_Dout(0)
+      RST => Net(0)
     );
 axi_gpio_data: component COUNTER_axi_gpio_0_0
      port map (
@@ -319,7 +296,7 @@ axi_gpio_data: component COUNTER_axi_gpio_0_0
 axi_gpio_util: component COUNTER_axi_gpio_0_1
      port map (
       gpio2_io_i(0) => DIG_TIMER_0_DATA_IND,
-      gpio_io_o(2 downto 0) => axi_gpio_util_gpio_io_o(2 downto 0),
+      gpio_io_o(0) => Net(0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => s_axi_1_1_ARADDR(8 downto 0),
       s_axi_aresetn => s_axi_rst_1,
@@ -339,20 +316,5 @@ axi_gpio_util: component COUNTER_axi_gpio_0_1
       s_axi_wready => s_axi_1_1_WREADY,
       s_axi_wstrb(3 downto 0) => s_axi_1_1_WSTRB(3 downto 0),
       s_axi_wvalid => s_axi_1_1_WVALID
-    );
-xlslice_0: component COUNTER_xlslice_0_0
-     port map (
-      Din(2 downto 0) => axi_gpio_util_gpio_io_o(2 downto 0),
-      Dout(0) => xlslice_0_Dout(0)
-    );
-xlslice_1: component COUNTER_xlslice_1_0
-     port map (
-      Din(2 downto 0) => axi_gpio_util_gpio_io_o(2 downto 0),
-      Dout(0) => xlslice_1_Dout(0)
-    );
-xlslice_2: component COUNTER_xlslice_1_1
-     port map (
-      Din(2 downto 0) => axi_gpio_util_gpio_io_o(2 downto 0),
-      Dout(0) => xlslice_2_Dout(0)
     );
 end STRUCTURE;

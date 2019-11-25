@@ -53,6 +53,7 @@ begin
         if(RST = '0') then
             count <= zero_val;
             th_lim <= unsigned(LIM);
+            IDAT_IND <= '0';
         else
             if(count <= zero_val) then
                 th_lim <= unsigned(LIM);
@@ -64,10 +65,9 @@ begin
                 CARRY <= '1';
             end if;
             if(count >= th_lim) then
-                count <= zero_val;
-                IDAT_IND <= not IDAT_IND;
                 th_lim <= unsigned(LIM);
                 CARRY <= '1';
+                IDAT_IND <= '1';
             end if;
         end if;
     end if;
