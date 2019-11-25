@@ -40,14 +40,12 @@ component PULSE_COUNTER is port(
     P_SIG : in STD_LOGIC;
            CNT_OUT : out STD_LOGIC_VECTOR (31 downto 0);
            RST : in STD_LOGIC;
-           DCLK : in STD_LOGIC;
            MCLK : in std_logic;
            EN : in STD_LOGIC
 );
 end component;
 signal P_SIG : std_logic := '0';
 signal RST : std_logic := '0';
-signal DCLK : std_logic := '0';
 signal MCLK : std_logic := '0';
 signal EN : STD_LOGIC := '0';
 signal CNT_OUT : std_logic_vector(31 downto 0);
@@ -57,16 +55,16 @@ DUT : PULSE_COUNTER port map(
     P_SIG => P_SIG,
     RST => RST,
     CNT_OUT => CNT_OUT,
-    DCLK => DCLK,
     MCLK => MCLK,
     EN => EN
 );
 MCLK <= not MCLK after 1ns;
-DCLK <= not DCLK after 1ns;
-P_SIG <= not P_SIG after 50ns;
+P_SIG <= not P_SIG after 10ns;
 process
 begin
     RST <= '1';
+    wait for 300ns;
+    EN <= '1';
     wait;
 end process;
 end Behavioral;

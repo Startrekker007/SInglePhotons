@@ -7,23 +7,14 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER || ORIG
 # IP: bd/COUNTER/ip/COUNTER_DIG_TIMER_0_0/COUNTER_DIG_TIMER_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_DIG_TIMER_0_0 || ORIG_REF_NAME==COUNTER_DIG_TIMER_0_0} -quiet] -quiet
 
-# IP: bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_0/COUNTER_PULSE_COUNTER_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_PULSE_COUNTER_0_0 || ORIG_REF_NAME==COUNTER_PULSE_COUNTER_0_0} -quiet] -quiet
-
 # IP: bd/COUNTER/ip/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/COUNTER/ip/COUNTER_xlconstant_0_0/COUNTER_xlconstant_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlconstant_0_0 || ORIG_REF_NAME==COUNTER_xlconstant_0_0} -quiet] -quiet
 
 # IP: bd/COUNTER/ip/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/COUNTER/ip/COUNTER_xlslice_0_0/COUNTER_xlslice_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_0_0 || ORIG_REF_NAME==COUNTER_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/COUNTER/ip/COUNTER_xlslice_1_0/COUNTER_xlslice_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_1_0 || ORIG_REF_NAME==COUNTER_xlslice_1_0} -quiet] -quiet
+# IP: bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_1/COUNTER_PULSE_COUNTER_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_PULSE_COUNTER_0_1 || ORIG_REF_NAME==COUNTER_PULSE_COUNTER_0_1} -quiet] -quiet
 
 # XDC: bd/COUNTER/ip/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
