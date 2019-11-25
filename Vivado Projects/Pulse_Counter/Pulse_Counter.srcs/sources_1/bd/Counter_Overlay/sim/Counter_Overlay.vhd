@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Nov 25 17:13:50 2019
+--Date        : Mon Nov 25 17:42:58 2019
 --Host        : CISS31247 running 64-bit major release  (build 9200)
 --Command     : generate_target Counter_Overlay.bd
 --Design      : Counter_Overlay
@@ -3186,7 +3186,7 @@ CH_3: component Counter_Overlay_CH_2_0
     );
 c_clk: component Counter_Overlay_clk_wiz_1_0
      port map (
-      clk_in1 => clk_wiz_0_clk_out1,
+      clk_in1 => sys_clock_1,
       clk_out1 => clk_wiz_1_clk_out1,
       resetn => processing_system7_0_FCLK_RESET0_N
     );

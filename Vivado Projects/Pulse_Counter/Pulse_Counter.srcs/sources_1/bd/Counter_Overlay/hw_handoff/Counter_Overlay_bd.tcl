@@ -185,12 +185,25 @@ proc create_root_design { parentCell } {
   set c_clk [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 c_clk ]
   set_property -dict [ list \
    CONFIG.CLKIN1_JITTER_PS {80.0} \
-   CONFIG.CLKOUT1_JITTER {95.937} \
-   CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {400.000} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+   CONFIG.CLKOUT1_DRIVES {BUFG} \
+   CONFIG.CLKOUT1_JITTER {182.771} \
+   CONFIG.CLKOUT1_PHASE_ERROR {246.360} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {464.000} \
+   CONFIG.CLKOUT2_DRIVES {BUFG} \
+   CONFIG.CLKOUT3_DRIVES {BUFG} \
+   CONFIG.CLKOUT4_DRIVES {BUFG} \
+   CONFIG.CLKOUT5_DRIVES {BUFG} \
+   CONFIG.CLKOUT6_DRIVES {BUFG} \
+   CONFIG.CLKOUT7_DRIVES {BUFG} \
+   CONFIG.JITTER_SEL {Min_O_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {HIGH} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {37} \
    CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.500} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2} \
+   CONFIG.MMCM_COMPENSATION {ZHOLD} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {5} \
+   CONFIG.PRIMITIVE {PLL} \
    CONFIG.PRIM_IN_FREQ {125.000} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
@@ -1045,12 +1058,12 @@ proc create_root_design { parentCell } {
   connect_bd_net -net channel_sl_1_Dout [get_bd_pins CH_1/P_SIG_EX] [get_bd_pins channel_sl_1/Dout]
   connect_bd_net -net channel_sl_2_Dout [get_bd_pins CH_2/P_SIG_EX] [get_bd_pins channel_sl_2/Dout]
   connect_bd_net -net channel_sl_3_Dout [get_bd_pins CH_3/P_SIG_EX] [get_bd_pins channel_sl_3/Dout]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins CH_0/TCLK] [get_bd_pins CH_1/TCLK] [get_bd_pins CH_2/TCLK] [get_bd_pins CH_3/TCLK] [get_bd_pins c_clk/clk_in1] [get_bd_pins t_clk/clk_out1]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins CH_0/TCLK] [get_bd_pins CH_1/TCLK] [get_bd_pins CH_2/TCLK] [get_bd_pins CH_3/TCLK] [get_bd_pins t_clk/clk_out1]
   connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins CH_0/PCLK] [get_bd_pins CH_1/PCLK] [get_bd_pins CH_2/PCLK] [get_bd_pins CH_3/PCLK] [get_bd_pins c_clk/clk_out1]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins CH_0/s_axi_clk] [get_bd_pins CH_1/s_axi_clk] [get_bd_pins CH_2/s_axi_clk] [get_bd_pins CH_3/s_axi_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins c_clk/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in] [get_bd_pins t_clk/resetn]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins CH_0/s_axi_rst] [get_bd_pins CH_1/s_axi_rst] [get_bd_pins CH_2/s_axi_rst] [get_bd_pins CH_3/s_axi_rst] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/M06_ARESETN] [get_bd_pins ps7_0_axi_periph/M07_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins t_clk/clk_in1]
+  connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins c_clk/clk_in1] [get_bd_pins t_clk/clk_in1]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs CH_0/S_AXI_0_tlm/reg0] SEG_CH_0_reg0

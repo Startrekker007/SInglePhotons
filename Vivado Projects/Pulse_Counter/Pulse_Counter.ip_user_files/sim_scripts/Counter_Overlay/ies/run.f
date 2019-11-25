@@ -113,14 +113,14 @@
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_channel_sl_1_0/sim/Counter_Overlay_channel_sl_1_0.v" \
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_channel_sl_2_0/sim/Counter_Overlay_channel_sl_2_0.v" \
 -endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/Counter_Overlay/sim/Counter_Overlay.vhd" \
+-endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/Counter_Overlay/ip/Counter_Overlay_auto_pc_0/sim/Counter_Overlay_auto_pc_0.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/Counter_Overlay/sim/Counter_Overlay.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v
