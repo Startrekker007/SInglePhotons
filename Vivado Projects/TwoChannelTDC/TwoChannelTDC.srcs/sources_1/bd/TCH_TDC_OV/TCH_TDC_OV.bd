@@ -1,0 +1,258 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x614D0D6B03D7838B",
+      "device": "xc7z020clg400-1",
+      "name": "TCH_TDC_OV",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "DIG_TIMER_0": "",
+      "xlconstant_0": "",
+      "util_vector_logic_0": "",
+      "CH1_EDGE": "",
+      "CH0_EDGE": "",
+      "util_vector_logic_1": ""
+    },
+    "ports": {
+      "HS_CLK_IN": {
+        "direction": "I"
+      },
+      "CH0": {
+        "direction": "I"
+      },
+      "CH1": {
+        "direction": "I"
+      },
+      "M_RST": {
+        "direction": "I"
+      },
+      "D_RDY": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "T_DATA": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "DIG_TIMER_0": {
+        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
+        "xci_name": "TCH_TDC_OV_DIG_TIMER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DIG_TIMER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "LIM": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CUR_VAL": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "CARRY": {
+            "direction": "O"
+          },
+          "DATA_IND": {
+            "direction": "O"
+          },
+          "EN": {
+            "direction": "I"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "TCH_TDC_OV_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0xFFFFFFFF"
+          },
+          "CONST_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TCH_TDC_OV_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "xor"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "CH1_EDGE": {
+        "vlnv": "xilinx.com:module_ref:Edge_Detect:1.0",
+        "xci_name": "TCH_TDC_OV_CH0_EDGE_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Edge_Detect",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RST",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "O_RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "SIG": {
+            "direction": "I"
+          },
+          "DET": {
+            "direction": "O"
+          }
+        }
+      },
+      "CH0_EDGE": {
+        "vlnv": "xilinx.com:module_ref:Edge_Detect:1.0",
+        "xci_name": "TCH_TDC_OV_Edge_Detect_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Edge_Detect",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RST",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "O_RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "SIG": {
+            "direction": "I"
+          },
+          "DET": {
+            "direction": "O"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TCH_TDC_OV_util_vector_logic_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "HS_CLK_IN",
+          "DIG_TIMER_0/MCLK",
+          "CH1_EDGE/HS_CLK",
+          "CH0_EDGE/HS_CLK"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "CH0_EDGE/SIG"
+        ]
+      },
+      "CH1_1": {
+        "ports": [
+          "CH1",
+          "CH1_EDGE/SIG"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "M_RST",
+          "DIG_TIMER_0/RST",
+          "CH1_EDGE/O_RST",
+          "CH0_EDGE/O_RST",
+          "CH0_EDGE/RST"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "DIG_TIMER_0/LIM"
+        ]
+      },
+      "DIG_TIMER_0_CUR_VAL": {
+        "ports": [
+          "DIG_TIMER_0/CUR_VAL",
+          "T_DATA"
+        ]
+      },
+      "CH0_EDGE_DET": {
+        "ports": [
+          "CH0_EDGE/DET",
+          "util_vector_logic_0/Op1",
+          "CH1_EDGE/RST"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "D_RDY",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "CH1_EDGE_DET": {
+        "ports": [
+          "CH1_EDGE/DET",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "DIG_TIMER_0/EN"
+        ]
+      }
+    }
+  }
+}

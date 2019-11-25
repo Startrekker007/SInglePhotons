@@ -1,0 +1,1 @@
+vopt -64 +acc -l elaborate.log -L xil_defaultlib -L xlconstant_v1_1_6 -L util_vector_logic_v2_0_1 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.TCH_TDC_OV xil_defaultlib.glbl -o TCH_TDC_OV_opt

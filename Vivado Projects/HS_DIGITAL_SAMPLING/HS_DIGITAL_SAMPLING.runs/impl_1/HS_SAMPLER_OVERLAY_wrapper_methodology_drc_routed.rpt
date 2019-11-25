@@ -1,0 +1,69 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Nov 22 16:47:06 2019
+| Host         : CISS31247 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file HS_SAMPLER_OVERLAY_wrapper_methodology_drc_routed.rpt -pb HS_SAMPLER_OVERLAY_wrapper_methodology_drc_routed.pb -rpx HS_SAMPLER_OVERLAY_wrapper_methodology_drc_routed.rpx
+| Design       : HS_SAMPLER_OVERLAY_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 6
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 1          |
+| TIMING-7  | Critical Warning | No common node between related clocks              | 1          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
+| REQP-1959 | Advisory         | connects_SERDES_RST_driver_not_FF                  | 2          |
++-----------+------------------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock HS_SAMPLER_OVERLAY_i/clk_wiz_1/inst/clk_in1 is defined downstream of clock clk_out1_HS_SAMPLER_OVERLAY_clk_wiz_0_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_HS_SAMPLER_OVERLAY_clk_wiz_1_0_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_HS_SAMPLER_OVERLAY_clk_wiz_1_0_1]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_HS_SAMPLER_OVERLAY_clk_wiz_1_0_1 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_HS_SAMPLER_OVERLAY_clk_wiz_1_0_1]
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock HS_SAMPLER_OVERLAY_i/clk_wiz_1/inst/clk_in1 is created on an inappropriate internal pin HS_SAMPLER_OVERLAY_i/clk_wiz_1/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+REQP-1959#1 Advisory
+connects_SERDES_RST_driver_not_FF  
+HS_SAMPLER_OVERLAY_i/selectio_wiz_0/inst/pins[0].iserdese2_master: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#2 Advisory
+connects_SERDES_RST_driver_not_FF  
+HS_SAMPLER_OVERLAY_i/selectio_wiz_0/inst/pins[0].iserdese2_slave: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+

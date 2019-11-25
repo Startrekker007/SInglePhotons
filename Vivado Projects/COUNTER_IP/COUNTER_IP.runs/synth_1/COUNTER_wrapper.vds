@@ -1,0 +1,1301 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Nov 22 11:10:59 2019
+# Process ID: 3128
+# Current directory: H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1
+# Command line: vivado.exe -log COUNTER_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source COUNTER_wrapper.tcl
+# Log file: H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/COUNTER_wrapper.vds
+# Journal file: H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source COUNTER_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'h:/IP_BLOCKS/COUNTER/COUNTER_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RST' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'h:/IP_BLOCKS/COUNTER/COUNTER_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RST' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'h:/IP_BLOCKS/COUNTER/COUNTER_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+add_files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 298.227 ; gain = 0.000
+Command: synth_design -top COUNTER_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4100 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 745.699 ; gain = 178.387
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'COUNTER_wrapper' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/hdl/COUNTER_wrapper.vhd:58]
+INFO: [Synth 8-3491] module 'COUNTER' declared at 'H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:14' bound to instance 'COUNTER_i' of component 'COUNTER' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/hdl/COUNTER_wrapper.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'COUNTER' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:62]
+INFO: [Synth 8-3491] module 'COUNTER_DIG_TIMER_0_0' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_DIG_TIMER_0_0/synth/COUNTER_DIG_TIMER_0_0.vhd:56' bound to instance 'DIG_TIMER_0' of component 'COUNTER_DIG_TIMER_0_0' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:276]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_DIG_TIMER_0_0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_DIG_TIMER_0_0/synth/COUNTER_DIG_TIMER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'DIG_TIMER' declared at 'H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/imports/new/DIG_TIMER.vhd:34' bound to instance 'U0' of component 'DIG_TIMER' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_DIG_TIMER_0_0/synth/COUNTER_DIG_TIMER_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'DIG_TIMER' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/imports/new/DIG_TIMER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'DIG_TIMER' (1#1) [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/imports/new/DIG_TIMER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_DIG_TIMER_0_0' (2#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_DIG_TIMER_0_0/synth/COUNTER_DIG_TIMER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'COUNTER_PULSE_COUNTER_0_0' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_0/synth/COUNTER_PULSE_COUNTER_0_0.vhd:56' bound to instance 'PULSE_COUNTER_0' of component 'COUNTER_PULSE_COUNTER_0_0' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_PULSE_COUNTER_0_0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_0/synth/COUNTER_PULSE_COUNTER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'PULSE_COUNTER' declared at 'H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/imports/new/PULSE_COUNTER.vhd:34' bound to instance 'U0' of component 'PULSE_COUNTER' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_0/synth/COUNTER_PULSE_COUNTER_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'PULSE_COUNTER' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/imports/new/PULSE_COUNTER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'PULSE_COUNTER' (3#1) [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/imports/new/PULSE_COUNTER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_PULSE_COUNTER_0_0' (4#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_0/synth/COUNTER_PULSE_COUNTER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'COUNTER_axi_gpio_0_0' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_data' of component 'COUNTER_axi_gpio_0_0' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:294]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_axi_gpio_0_0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:85]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 1 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'axi_gpio' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'axi_gpio' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 1 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 32'b00000000000000000000000111111111 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000100 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000100 
+	Parameter C_IPIF_ABUS_WIDTH bound to: 9 - type: integer 
+	Parameter C_IPIF_DBUS_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+	Parameter C_BUS_AWIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000100 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b00 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (5#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b01 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (5#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b10 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (5#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b11 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (5#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (6#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (7#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (8#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'GPIO_Core' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+	Parameter C_DW bound to: 32 - type: integer 
+	Parameter C_AW bound to: 9 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_MAX_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-226] default block is never used [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+INFO: [Common 17-14] Message 'Synth 8-113' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (9#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[3].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[4].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[5].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[6].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[7].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[8].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[9].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[10].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[11].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[12].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[13].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[14].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[15].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[16].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[17].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[18].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[19].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[20].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[21].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[22].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[23].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[24].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[25].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[26].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[27].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[28].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[29].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[30].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[31].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[1].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[2].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[3].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[4].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[5].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[6].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[7].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[8].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[9].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[10].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[11].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[12].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[13].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[14].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[15].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[16].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[17].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[18].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[19].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[20].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[21].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[22].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[23].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[24].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[25].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[26].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[27].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[28].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[29].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[30].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[31].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.gpio2_Data_In_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:920]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (10#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (11#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_axi_gpio_0_0' (12#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-3491] module 'COUNTER_axi_gpio_0_1' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:59' bound to instance 'axi_gpio_util' of component 'COUNTER_axi_gpio_0_1' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:318]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_axi_gpio_0_1' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:85]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 2 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'axi_gpio' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'axi_gpio__parameterized1' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 2 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+	Parameter C_DW bound to: 32 - type: integer 
+	Parameter C_AW bound to: 9 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 2 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_MAX_GPIO_WIDTH bound to: 2 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-226] default block is never used [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 2 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (12#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized1' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 1 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized1' (12#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:690]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:690]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:719]
+WARNING: [Synth 8-6014] Unused sequential element Dual.gpio_Data_In_reg was removed.  [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:882]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (12#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (12#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_axi_gpio_0_1' (13#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:85]
+INFO: [Synth 8-3491] module 'COUNTER_xlconstant_0_0' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlconstant_0_0/synth/COUNTER_xlconstant_0_0.v:57' bound to instance 'xlconstant_0' of component 'COUNTER_xlconstant_0_0' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:342]
+INFO: [Synth 8-6157] synthesizing module 'COUNTER_xlconstant_0_0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlconstant_0_0/synth/COUNTER_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 0 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (14#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'COUNTER_xlconstant_0_0' (15#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlconstant_0_0/synth/COUNTER_xlconstant_0_0.v:57]
+INFO: [Synth 8-3491] module 'COUNTER_xlslice_0_0' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlslice_0_0/synth/COUNTER_xlslice_0_0.v:57' bound to instance 'xlslice_0' of component 'COUNTER_xlslice_0_0' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:346]
+INFO: [Synth 8-6157] synthesizing module 'COUNTER_xlslice_0_0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlslice_0_0/synth/COUNTER_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 2 - type: integer 
+	Parameter DIN_FROM bound to: 0 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (16#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'COUNTER_xlslice_0_0' (17#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlslice_0_0/synth/COUNTER_xlslice_0_0.v:57]
+INFO: [Synth 8-3491] module 'COUNTER_xlslice_1_0' declared at 'h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlslice_1_0/synth/COUNTER_xlslice_1_0.v:57' bound to instance 'xlslice_1' of component 'COUNTER_xlslice_1_0' [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:351]
+INFO: [Synth 8-6157] synthesizing module 'COUNTER_xlslice_1_0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlslice_1_0/synth/COUNTER_xlslice_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 2 - type: integer 
+	Parameter DIN_FROM bound to: 1 - type: integer 
+	Parameter DIN_TO bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (17#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'COUNTER_xlslice_1_0' (18#1) [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_xlslice_1_0/synth/COUNTER_xlslice_1_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER' (19#1) [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/synth/COUNTER.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_wrapper' (20#1) [H:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/hdl/COUNTER_wrapper.vhd:58]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[1]
+WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_aclk
+WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_resetn
+WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_in
+WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port scndry_resetn
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port prmry_aclk
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port prmry_resetn
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port prmry_in
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port scndry_resetn
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[3]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[4]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[7]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[8]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[0]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[3]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[0]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[1]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[2]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[3]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[4]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[7]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[8]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Bus_RNW
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_aclk
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_resetn
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_in
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port scndry_resetn
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[3]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[4]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[7]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[8]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[0]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 813.414 ; gain = 246.102
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 813.414 ; gain = 246.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 813.414 ; gain = 246.102
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 402 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ip/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/COUNTER_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/COUNTER_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 934.824 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 402 instances were transformed.
+  FDR => FDRE: 402 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 934.824 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for COUNTER_i/axi_gpio_data/U0. (constraint file  H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/dont_touch.xdc, line 29).
+Applied set_property DONT_TOUCH = true for COUNTER_i/axi_gpio_util/U0. (constraint file  H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/dont_touch.xdc, line 37).
+Applied set_property DONT_TOUCH = true for COUNTER_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/DIG_TIMER_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/PULSE_COUNTER_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/axi_gpio_data. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/axi_gpio_util. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for COUNTER_i/xlslice_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:32 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 12    
+	                9 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 106   
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   5 Input     32 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 10    
+	   7 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 29    
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module DIG_TIMER 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module PULSE_COUNTER 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module pselect_f 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module address_decoder 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 6     
+Module slave_attachment 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   7 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 3     
+Module GPIO_Core 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                1 Bit    Registers := 66    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   5 Input     32 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_gpio 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module GPIO_Core__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+Module axi_gpio__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
+INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [h:/VivadoProj/COUNTER_IP/COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
+WARNING: [Synth 8-3331] design COUNTER_xlslice_1_0 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design COUNTER_xlslice_0_0 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[31]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[30]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[29]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[28]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[27]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[26]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[25]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[24]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[23]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[22]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[21]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[20]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[19]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[18]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[17]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[16]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[15]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[14]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[13]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[12]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[11]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[10]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[9]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[8]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[7]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[6]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[5]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[4]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[3]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[2]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wstrb[3]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wstrb[2]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wstrb[1]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wstrb[0]
+WARNING: [Synth 8-3331] design axi_gpio has unconnected port s_axi_wstrb[3]
+WARNING: [Synth 8-3331] design axi_gpio has unconnected port s_axi_wstrb[2]
+WARNING: [Synth 8-3331] design axi_gpio has unconnected port s_axi_wstrb[1]
+WARNING: [Synth 8-3331] design axi_gpio has unconnected port s_axi_wstrb[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_data/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_data/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_data/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_data/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[4].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[5].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[6].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[15].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[16].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[17].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[18].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[19].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[21].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[22].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[23].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[24].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[25].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[26].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[27].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[28].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[30].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[31].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[4].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[5].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[6].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[15].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[16].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[17].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[18].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[19].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[21].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[22].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[23].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[24].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[25].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[26].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[27].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[28].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[30].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[31].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[0].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[1].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[2].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[3].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[4].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[5].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[6].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[7].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[8].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[9].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[10].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[11].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[12].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[13].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[14].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[15].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[16].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[17].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[18].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[19].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[20].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[21].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[22].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[23].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[24].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[25].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[26].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[27].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[28].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[29].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[30].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[31].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[29]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[28]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[27]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[26]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[25]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[24]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[24]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[23]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[22]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[22]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[21]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[20]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[20]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[19]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[18]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[18]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[17]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[16]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[16]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[15]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[15]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[14]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[13]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[12]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[12]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[11]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[10]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[9]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[8]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[7]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[6]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[5]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[4]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[3]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[2]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[1]' (FDR) to 'COUNTER_i/axi_gpio_util/U0/ip2bus_data_i_D1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_util/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_util/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]'
+INFO: [Synth 8-3886] merging instance 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]' (FDRE) to 'COUNTER_i/axi_gpio_util/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_util/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (COUNTER_i/axi_gpio_util/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:39 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:49 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:49 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:50 . Memory (MB): peak = 934.824 ; gain = 367.512
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:52 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:52 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |    25|
+|3     |LUT1   |     7|
+|4     |LUT2   |    25|
+|5     |LUT3   |    17|
+|6     |LUT4   |    76|
+|7     |LUT5   |    90|
+|8     |LUT6   |    29|
+|9     |FDR    |   132|
+|10    |FDRE   |   426|
+|11    |FDSE   |    69|
+|12    |IBUF   |    61|
+|13    |OBUF   |    82|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------------------------------------------------------------------+--------------------------+------+
+|      |Instance                                                                      |Module                    |Cells |
++------+------------------------------------------------------------------------------+--------------------------+------+
+|1     |top                                                                           |                          |  1042|
+|2     |  COUNTER_i                                                                   |COUNTER                   |   897|
+|3     |    DIG_TIMER_0                                                               |COUNTER_DIG_TIMER_0_0     |   158|
+|4     |      U0                                                                      |DIG_TIMER                 |   158|
+|5     |    PULSE_COUNTER_0                                                           |COUNTER_PULSE_COUNTER_0_0 |    78|
+|6     |      U0                                                                      |PULSE_COUNTER             |    76|
+|7     |    axi_gpio_data                                                             |COUNTER_axi_gpio_0_0      |   554|
+|8     |      U0                                                                      |axi_gpio                  |   554|
+|9     |        AXI_LITE_IPIF_I                                                       |axi_lite_ipif_0           |   131|
+|10    |          I_SLAVE_ATTACHMENT                                                  |slave_attachment_1        |   131|
+|11    |            I_DECODER                                                         |address_decoder_2         |    55|
+|12    |              \MEM_DECODE_GEN[0].PER_CE_GEN[0].MULTIPLE_CES_THIS_CS_GEN.CE_I  |pselect_f                 |     1|
+|13    |              \MEM_DECODE_GEN[0].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I  |pselect_f__parameterized1 |     1|
+|14    |        gpio_core_1                                                           |GPIO_Core                 |   389|
+|15    |          \Dual.INPUT_DOUBLE_REGS4                                            |cdc_sync                  |   128|
+|16    |    axi_gpio_util                                                             |COUNTER_axi_gpio_0_1      |   107|
+|17    |      U0                                                                      |axi_gpio__parameterized1  |   107|
+|18    |        AXI_LITE_IPIF_I                                                       |axi_lite_ipif             |    75|
+|19    |          I_SLAVE_ATTACHMENT                                                  |slave_attachment          |    75|
+|20    |            I_DECODER                                                         |address_decoder           |    28|
+|21    |        gpio_core_1                                                           |GPIO_Core__parameterized0 |    27|
+|22    |          \Dual.INPUT_DOUBLE_REGS5                                            |cdc_sync__parameterized1  |     4|
+|23    |    xlconstant_0                                                              |COUNTER_xlconstant_0_0    |     0|
+|24    |    xlslice_0                                                                 |COUNTER_xlslice_0_0       |     0|
+|25    |    xlslice_1                                                                 |COUNTER_xlslice_1_0       |     0|
++------+------------------------------------------------------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 940.055 ; gain = 372.742
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:49 . Memory (MB): peak = 940.055 ; gain = 251.332
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 940.055 ; gain = 372.742
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 157 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 962.332 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 132 instances were transformed.
+  FDR => FDRE: 132 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+363 Infos, 159 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:01:09 . Memory (MB): peak = 962.332 ; gain = 664.105
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 962.332 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'H:/VivadoProj/COUNTER_IP/COUNTER_IP.runs/synth_1/COUNTER_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file COUNTER_wrapper_utilization_synth.rpt -pb COUNTER_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 22 11:12:31 2019...

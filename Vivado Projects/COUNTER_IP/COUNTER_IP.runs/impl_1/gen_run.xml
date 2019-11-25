@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1574374249">
+  <File Type="PA-TCL" Name="COUNTER_wrapper.tcl"/>
+  <File Type="BITSTR-BMM" Name="COUNTER_wrapper_bd.bmm"/>
+  <File Type="REPORTS-TCL" Name="COUNTER_wrapper_reports.tcl"/>
+  <File Type="OPT-DCP" Name="COUNTER_wrapper_opt.dcp"/>
+  <File Type="OPT-DRC" Name="COUNTER_wrapper_drc_opted.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="COUNTER_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-HWDEF" Name="COUNTER_wrapper.hwdef"/>
+  <File Type="PWROPT-DCP" Name="COUNTER_wrapper_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="COUNTER_wrapper_placed.dcp"/>
+  <File Type="BG-BGN" Name="COUNTER_wrapper.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="COUNTER_wrapper_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="COUNTER_wrapper.bin"/>
+  <File Type="PHYSOPT-DCP" Name="COUNTER_wrapper_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="COUNTER_wrapper.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="COUNTER_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="COUNTER_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="COUNTER_wrapper_routed_bb.dcp"/>
+  <File Type="BITSTR-LTX" Name="COUNTER_wrapper.ltx"/>
+  <File Type="BITSTR-MMI" Name="COUNTER_wrapper.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="COUNTER_wrapper.sysdef"/>
+  <File Type="ROUTE-TIMING-PB" Name="COUNTER_wrapper_timing_summary_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="COUNTER_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="COUNTER_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="COUNTER_wrapper.bit"/>
+  <File Type="BITSTR-RBT" Name="COUNTER_wrapper.rbt"/>
+  <File Type="BITSTR-NKY" Name="COUNTER_wrapper.nky"/>
+  <File Type="BG-DRC" Name="COUNTER_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="COUNTER_wrapper.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/DIG_TIMER.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Pulse_Counter/Pulse_Counter.srcs/sources_1/new/DIG_TIMER.vhd"/>
+        <Attr Name="ImportTime" Val="1574110516"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/PULSE_COUNTER.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Pulse_Counter/Pulse_Counter.srcs/sources_1/new/PULSE_COUNTER.vhd"/>
+        <Attr Name="ImportTime" Val="1574125868"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/COUNTER/COUNTER.bd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/COUNTER/COUNTER.bd"/>
+        <Attr Name="ImportTime" Val="1574371303"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/COUNTER/hdl/COUNTER_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="COUNTER_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
