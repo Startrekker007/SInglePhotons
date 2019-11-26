@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
+set_param synth.incrementalSynthesisCache C:/Xilinx/Vivado/2019.1/bin/.Xil/Vivado-83780-CISS31247/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
@@ -32,7 +33,7 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
-set_property ip_repo_paths h:/IP_BLOCKS/COUNTER [current_project]
+set_property ip_repo_paths c:/Gitrep/SInglePhotons/HW_IP/DSP48COUNTER [current_project]
 update_ip_catalog
 set_property ip_output_repo h:/VivadoProj/Pulse_Counter/Pulse_Counter.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

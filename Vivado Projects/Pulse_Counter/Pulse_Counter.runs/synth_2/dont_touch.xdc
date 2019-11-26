@@ -30,17 +30,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_xlconstant_0_0/COUNTER_xlconstant_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlconstant_0_0 || ORIG_REF_NAME==COUNTER_xlconstant_0_0} -quiet] -quiet
-
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_xlslice_0_0/COUNTER_xlslice_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_0_0 || ORIG_REF_NAME==COUNTER_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_xlslice_1_0/COUNTER_xlslice_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_1_0 || ORIG_REF_NAME==COUNTER_xlslice_1_0} -quiet] -quiet
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
 
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/Counter_Overlay_CH_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CH_0_0 || ORIG_REF_NAME==Counter_Overlay_CH_0_0} -quiet] -quiet
@@ -48,17 +42,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_xlconstant_0_0/COUNTER_xlconstant_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlconstant_0_0 || ORIG_REF_NAME==COUNTER_xlconstant_0_0} -quiet] -quiet
-
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_xlslice_0_0/COUNTER_xlslice_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_0_0 || ORIG_REF_NAME==COUNTER_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_xlslice_1_0/COUNTER_xlslice_1_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_1_0 || ORIG_REF_NAME==COUNTER_xlslice_1_0} -quiet] -quiet
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
 
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/Counter_Overlay_CH_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CH_1_0 || ORIG_REF_NAME==Counter_Overlay_CH_1_0} -quiet] -quiet
@@ -66,17 +54,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_xlconstant_0_0/COUNTER_xlconstant_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlconstant_0_0 || ORIG_REF_NAME==COUNTER_xlconstant_0_0} -quiet] -quiet
-
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_xlslice_0_0/COUNTER_xlslice_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_0_0 || ORIG_REF_NAME==COUNTER_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_xlslice_1_0/COUNTER_xlslice_1_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_1_0 || ORIG_REF_NAME==COUNTER_xlslice_1_0} -quiet] -quiet
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
 
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/Counter_Overlay_CH_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CH_2_0 || ORIG_REF_NAME==Counter_Overlay_CH_2_0} -quiet] -quiet
@@ -84,17 +66,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_xlconstant_0_0/COUNTER_xlconstant_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlconstant_0_0 || ORIG_REF_NAME==COUNTER_xlconstant_0_0} -quiet] -quiet
-
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_xlslice_0_0/COUNTER_xlslice_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_0_0 || ORIG_REF_NAME==COUNTER_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_xlslice_1_0/COUNTER_xlslice_1_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_xlslice_1_0 || ORIG_REF_NAME==COUNTER_xlslice_1_0} -quiet] -quiet
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
 
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_xlslice_0_0/Counter_Overlay_xlslice_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_xlslice_0_0 || ORIG_REF_NAME==Counter_Overlay_xlslice_0_0} -quiet] -quiet

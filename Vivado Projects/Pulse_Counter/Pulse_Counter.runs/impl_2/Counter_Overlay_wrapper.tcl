@@ -68,13 +68,14 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
+  set_param synth.incrementalSynthesisCache C:/Xilinx/Vivado/2019.1/bin/.Xil/Vivado-83780-CISS31247/incrSyn
   create_project -in_memory -part xc7z020clg400-1
   set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir {C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.cache/wt} [current_project]
   set_property parent.project_path {C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.xpr} [current_project]
-  set_property ip_repo_paths H:/IP_BLOCKS/COUNTER [current_project]
+  set_property ip_repo_paths c:/Gitrep/SInglePhotons/HW_IP/DSP48COUNTER [current_project]
   update_ip_catalog
   set_property ip_output_repo H:/VivadoProj/Pulse_Counter/Pulse_Counter.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

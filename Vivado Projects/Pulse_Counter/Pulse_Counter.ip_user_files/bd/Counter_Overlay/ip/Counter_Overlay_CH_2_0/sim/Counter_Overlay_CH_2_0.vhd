@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: govt.nz:user:COUNTER_wrapper:1.0
--- IP Revision: 10
+-- IP Revision: 2
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -149,7 +149,7 @@ ARCHITECTURE Counter_Overlay_CH_2_0_arch OF Counter_Overlay_CH_2_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_rst: SIGNAL IS "XIL_INTERFACENAME s_axi_rst, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rst: SIGNAL IS "xilinx.com:signal:reset:1.0 s_axi_rst RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_clk: SIGNAL IS "XIL_INTERFACENAME s_axi_clk, ASSOCIATED_RESET s_axi_rst, ASSOCIATED_BUSIF S_AXI_0_tlm:s_axi_1_tlm, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN Counter_Overlay_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_clk: SIGNAL IS "XIL_INTERFACENAME s_axi_clk, ASSOCIATED_RESET s_axi_rst, ASSOCIATED_BUSIF s_axi_1_tlm:S_AXI_0_tlm, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN Counter_Overlay_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 s_axi_clk CLK";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_1_tlm_wvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_1_tlm WVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_1_tlm_wstrb: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_1_tlm WSTRB";
