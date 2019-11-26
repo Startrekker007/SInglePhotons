@@ -1,0 +1,126 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x5DE28EA1694B1E0",
+      "device": "xc7z020clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "selectio_wiz_0": ""
+    },
+    "ports": {
+      "DATA": {
+        "direction": "I"
+      },
+      "ECLK": {
+        "direction": "I"
+      },
+      "DCLK": {
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "20000000",
+            "value_src": "ip_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "RST": {
+        "direction": "I"
+      },
+      "DOUT": {
+        "direction": "O",
+        "left": "9",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "BS": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "selectio_wiz_0": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "design_1_selectio_wiz_0_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "10"
+          },
+          "SYSTEM_DATA_WIDTH": {
+            "value": "1"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      }
+    },
+    "nets": {
+      "DATA_1": {
+        "ports": [
+          "DATA",
+          "selectio_wiz_0/data_in_from_pins"
+        ]
+      },
+      "ECLK_1": {
+        "ports": [
+          "ECLK",
+          "selectio_wiz_0/clk_in"
+        ]
+      },
+      "DCLK_1": {
+        "ports": [
+          "DCLK",
+          "selectio_wiz_0/clk_div_in"
+        ]
+      },
+      "RST_1": {
+        "ports": [
+          "RST",
+          "selectio_wiz_0/io_reset"
+        ]
+      },
+      "selectio_wiz_0_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_0/data_in_to_device",
+          "DOUT"
+        ]
+      },
+      "BS_1": {
+        "ports": [
+          "BS",
+          "selectio_wiz_0/bitslip"
+        ]
+      }
+    }
+  }
+}
