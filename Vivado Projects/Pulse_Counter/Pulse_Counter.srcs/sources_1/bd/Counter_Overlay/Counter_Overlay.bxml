@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="Counter_Overlay" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574728099"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574728099"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574728099"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574728099"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574748042"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574748042"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574748042"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574748042"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Counter_Overlay_processing_system7_0_0\Counter_Overlay_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -55,38 +55,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Counter_Overlay_COUNTER_wrapper_0_0\Counter_Overlay_COUNTER_wrapper_0_0.xci" Type="IP">
-        <Instance HierarchyPath="CH_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Counter_Overlay_CH_0_0\Counter_Overlay_CH_0_0.xci" Type="IP">
-        <Instance HierarchyPath="CH_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Counter_Overlay_CH_1_0\Counter_Overlay_CH_1_0.xci" Type="IP">
-        <Instance HierarchyPath="CH_2"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\Counter_Overlay_CH_2_0\Counter_Overlay_CH_2_0.xci" Type="IP">
-        <Instance HierarchyPath="CH_3"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\Counter_Overlay_xlslice_0_0\Counter_Overlay_xlslice_0_0.xci" Type="IP">
         <Instance HierarchyPath="channel_sl_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -119,14 +87,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\Counter_Overlay_auto_pc_0\Counter_Overlay_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="synth\Counter_Overlay.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -135,6 +95,46 @@
       <File Name="sim\Counter_Overlay.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Counter_Overlay_COUNTER_wrapper_0_1\Counter_Overlay_COUNTER_wrapper_0_1.xci" Type="IP">
+        <Instance HierarchyPath="CTR_CH0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Counter_Overlay_CTR_CH0_0\Counter_Overlay_CTR_CH0_0.xci" Type="IP">
+        <Instance HierarchyPath="CTR_CH1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Counter_Overlay_CTR_CH1_0\Counter_Overlay_CTR_CH1_0.xci" Type="IP">
+        <Instance HierarchyPath="CTR_CH2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Counter_Overlay_CTR_CH2_0\Counter_Overlay_CTR_CH2_0.xci" Type="IP">
+        <Instance HierarchyPath="CTR_CH3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Counter_Overlay_auto_pc_0\Counter_Overlay_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="Counter_Overlay_ooc.xdc" Type="XDC">

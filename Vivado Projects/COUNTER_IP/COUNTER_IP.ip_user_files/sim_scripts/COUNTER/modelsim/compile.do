@@ -16,6 +16,7 @@ vlib modelsim_lib/msim/c_addsub_v12_0_13
 vlib modelsim_lib/msim/c_gate_bit_v12_0_6
 vlib modelsim_lib/msim/xbip_counter_v3_0_6
 vlib modelsim_lib/msim/c_counter_binary_v12_0_13
+vlib modelsim_lib/msim/util_vector_logic_v2_0_1
 
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 vmap axi_lite_ipif_v3_0_4 modelsim_lib/msim/axi_lite_ipif_v3_0_4
@@ -32,6 +33,7 @@ vmap c_addsub_v12_0_13 modelsim_lib/msim/c_addsub_v12_0_13
 vmap c_gate_bit_v12_0_6 modelsim_lib/msim/c_gate_bit_v12_0_6
 vmap xbip_counter_v3_0_6 modelsim_lib/msim/xbip_counter_v3_0_6
 vmap c_counter_binary_v12_0_13 modelsim_lib/msim/c_counter_binary_v12_0_13
+vmap util_vector_logic_v2_0_1 modelsim_lib/msim/util_vector_logic_v2_0_1
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/COUNTER/ip/COUNTER_DIG_TIMER_0_0/sim/COUNTER_DIG_TIMER_0_0.vhd" \
@@ -51,7 +53,6 @@ vcom -work axi_gpio_v2_0_21 -64 -93 \
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/COUNTER/ip/COUNTER_axi_gpio_0_0/sim/COUNTER_axi_gpio_0_0.vhd" \
 "../../../bd/COUNTER/ip/COUNTER_axi_gpio_0_1/sim/COUNTER_axi_gpio_0_1.vhd" \
-"../../../bd/COUNTER/sim/COUNTER.vhd" \
 
 vcom -work xbip_utils_v3_0_10 -64 -93 \
 "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
@@ -86,4 +87,16 @@ vcom -work c_counter_binary_v12_0_13 -64 -93 \
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/COUNTER/ip/COUNTER_c_counter_binary_0_0/sim/COUNTER_c_counter_binary_0_0.vhd" \
 "../../../bd/COUNTER/ip/COUNTER_CTR_CTL_0_0/sim/COUNTER_CTR_CTL_0_0.vhd" \
+
+vlog -work util_vector_logic_v2_0_1 -64 -incr \
+"../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
+
+vlog -work xil_defaultlib -64 -incr \
+"../../../bd/COUNTER/ip/COUNTER_util_vector_logic_0_0/sim/COUNTER_util_vector_logic_0_0.v" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/COUNTER/sim/COUNTER.vhd" \
+
+vlog -work xil_defaultlib \
+"glbl.v"
 

@@ -11,8 +11,9 @@
     "design_tree": {
       "axi_gpio_data": "",
       "axi_gpio_util": "",
-      "DIG_TIMER_0": "",
       "c_counter_binary_0": "",
+      "DIG_TIMER_0": "",
+      "util_vector_logic_0": "",
       "CTR_CTL_0": ""
     },
     "interface_ports": {
@@ -326,6 +327,24 @@
           }
         }
       },
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "COUNTER_c_counter_binary_0_0",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Implementation": {
+            "value": "DSP48"
+          },
+          "Output_Width": {
+            "value": "32"
+          },
+          "SCLR": {
+            "value": "true"
+          }
+        }
+      },
       "DIG_TIMER_0": {
         "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
         "xci_name": "COUNTER_DIG_TIMER_0_0",
@@ -360,21 +379,15 @@
           }
         }
       },
-      "c_counter_binary_0": {
-        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
-        "xci_name": "COUNTER_c_counter_binary_0_0",
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "COUNTER_util_vector_logic_0_0",
         "parameters": {
-          "CE": {
-            "value": "true"
+          "C_OPERATION": {
+            "value": "not"
           },
-          "Implementation": {
-            "value": "DSP48"
-          },
-          "Output_Width": {
-            "value": "32"
-          },
-          "SCLR": {
-            "value": "true"
+          "C_SIZE": {
+            "value": "1"
           }
         }
       },
@@ -409,16 +422,16 @@
       }
     },
     "interface_nets": {
-      "S_AXI_0_1": {
-        "interface_ports": [
-          "S_AXI_0_tlm",
-          "axi_gpio_data/S_AXI"
-        ]
-      },
       "s_axi_1_1": {
         "interface_ports": [
           "s_axi_1_tlm",
           "axi_gpio_util/S_AXI"
+        ]
+      },
+      "S_AXI_0_1": {
+        "interface_ports": [
+          "S_AXI_0_tlm",
+          "axi_gpio_data/S_AXI"
         ]
       }
     },
@@ -454,7 +467,7 @@
         "ports": [
           "DIG_TIMER_0/DATA_IND",
           "axi_gpio_util/gpio2_io_i",
-          "c_counter_binary_0/CE"
+          "util_vector_logic_0/Op1"
         ]
       },
       "P_SIG_EX_1": {
@@ -486,6 +499,12 @@
         "ports": [
           "c_counter_binary_0/Q",
           "axi_gpio_data/gpio_io_i"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "c_counter_binary_0/CE"
         ]
       }
     },

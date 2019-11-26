@@ -1,7 +1,7 @@
-set_property SRC_FILE_INFO {cfile:{c:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_processing_system7_0_0/Counter_Overlay_processing_system7_0_0.xdc} rfile:../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_processing_system7_0_0/Counter_Overlay_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:Counter_Overlay_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{c:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_0_0/Counter_Overlay_clk_wiz_0_0.xdc} rfile:../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_0_0/Counter_Overlay_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:Counter_Overlay_i/t_clk/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{c:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_1_0/Counter_Overlay_clk_wiz_1_0.xdc} rfile:../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_1_0/Counter_Overlay_clk_wiz_1_0.xdc id:3 order:EARLY scoped_inst:Counter_Overlay_i/c_clk/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc} rfile:../../../Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc id:4} [current_design]
+set_property SRC_FILE_INFO {cfile:{c:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_processing_system7_0_0/Counter_Overlay_processing_system7_0_0.xdc} rfile:../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_processing_system7_0_0/Counter_Overlay_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:Counter_Overlay_i/processing_system7_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{c:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_0_0/Counter_Overlay_clk_wiz_0_0.xdc} rfile:../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_0_0/Counter_Overlay_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:Counter_Overlay_i/t_clk/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{c:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_1_0/Counter_Overlay_clk_wiz_1_0.xdc} rfile:../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_clk_wiz_1_0/Counter_Overlay_clk_wiz_1_0.xdc id:3 order:EARLY scoped_inst:Counter_Overlay_i/c_clk/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{C:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc} rfile:../../../Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc id:4} [current_design]
 current_instance Counter_Overlay_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3
@@ -274,6 +274,8 @@ current_instance Counter_Overlay_i/c_clk/inst
 set_property src_info {type:SCOPED_XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.08
 current_instance
+set_property src_info {type:XDC file:4 line:1 export:INPUT save:INPUT read:READ} [current_design]
+create_clock -period 2.500 -waveform {0.000 1.250} [get_nets Counter_Overlay_i/clk_wiz_1_clk_out1]
 set_property src_info {type:XDC file:4 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W14 [get_ports {INPUT_PULSES[0]}]
 set_property src_info {type:XDC file:4 line:3 export:INPUT save:INPUT read:READ} [current_design]

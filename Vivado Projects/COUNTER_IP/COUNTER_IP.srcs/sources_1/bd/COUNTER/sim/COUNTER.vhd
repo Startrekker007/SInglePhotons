@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Nov 26 12:58:46 2019
---Host        : CISS31247 running 64-bit major release  (build 9200)
+--Date        : Tue Nov 26 18:48:16 2019
+--Host        : JupiterSoftware running 64-bit major release  (build 9200)
 --Command     : generate_target COUNTER.bd
 --Design      : COUNTER
 --Purpose     : IP block netlist
@@ -54,7 +54,7 @@ entity COUNTER is
     s_axi_rst : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of COUNTER : entity is "COUNTER,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=COUNTER,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of COUNTER : entity is "COUNTER,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=COUNTER,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of COUNTER : entity is "COUNTER.hwdef";
 end COUNTER;
@@ -110,6 +110,14 @@ architecture STRUCTURE of COUNTER is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component COUNTER_axi_gpio_0_1;
+  component COUNTER_c_counter_binary_0_0 is
+  port (
+    CLK : in STD_LOGIC;
+    CE : in STD_LOGIC;
+    SCLR : in STD_LOGIC;
+    Q : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component COUNTER_c_counter_binary_0_0;
   component COUNTER_DIG_TIMER_0_0 is
   port (
     MCLK : in STD_LOGIC;
@@ -120,14 +128,12 @@ architecture STRUCTURE of COUNTER is
     DATA_IND : out STD_LOGIC
   );
   end component COUNTER_DIG_TIMER_0_0;
-  component COUNTER_c_counter_binary_0_0 is
+  component COUNTER_util_vector_logic_0_0 is
   port (
-    CLK : in STD_LOGIC;
-    CE : in STD_LOGIC;
-    SCLR : in STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  end component COUNTER_c_counter_binary_0_0;
+  end component COUNTER_util_vector_logic_0_0;
   component COUNTER_CTR_CTL_0_0 is
   port (
     RST : in STD_LOGIC;
@@ -181,6 +187,7 @@ architecture STRUCTURE of COUNTER is
   signal s_axi_1_1_WVALID : STD_LOGIC;
   signal s_axi_clk_1 : STD_LOGIC;
   signal s_axi_rst_1 : STD_LOGIC;
+  signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_DIG_TIMER_0_CARRY_UNCONNECTED : STD_LOGIC;
   signal NLW_DIG_TIMER_0_CUR_VAL_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute X_INTERFACE_INFO : string;
@@ -327,9 +334,14 @@ axi_gpio_util: component COUNTER_axi_gpio_0_1
     );
 c_counter_binary_0: component COUNTER_c_counter_binary_0_0
      port map (
-      CE => DIG_TIMER_0_DATA_IND,
+      CE => util_vector_logic_0_Res(0),
       CLK => CTR_CTL_0_O_CLK,
       Q(31 downto 0) => c_counter_binary_0_Q(31 downto 0),
       SCLR => CTR_CTL_0_SCLR_O
+    );
+util_vector_logic_0: component COUNTER_util_vector_logic_0_0
+     port map (
+      Op1(0) => DIG_TIMER_0_DATA_IND,
+      Res(0) => util_vector_logic_0_Res(0)
     );
 end STRUCTURE;

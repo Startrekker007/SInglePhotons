@@ -16,7 +16,6 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/COUNTER/ip/COUNTER_axi_gpio_0_0/sim/COUNTER_axi_gpio_0_0.vhd" \
   "../../../bd/COUNTER/ip/COUNTER_axi_gpio_0_1/sim/COUNTER_axi_gpio_0_1.vhd" \
-  "../../../bd/COUNTER/sim/COUNTER.vhd" \
 -endlib
 -makelib ies_lib/xbip_utils_v3_0_10 \
   "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
@@ -51,5 +50,17 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/COUNTER/ip/COUNTER_c_counter_binary_0_0/sim/COUNTER_c_counter_binary_0_0.vhd" \
   "../../../bd/COUNTER/ip/COUNTER_CTR_CTL_0_0/sim/COUNTER_CTR_CTL_0_0.vhd" \
+-endlib
+-makelib ies_lib/util_vector_logic_v2_0_1 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/COUNTER/ip/COUNTER_util_vector_logic_0_0/sim/COUNTER_util_vector_logic_0_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/COUNTER/sim/COUNTER.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  glbl.v
 -endlib
 

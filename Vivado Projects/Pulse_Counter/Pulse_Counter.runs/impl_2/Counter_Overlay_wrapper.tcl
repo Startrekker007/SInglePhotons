@@ -60,32 +60,29 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
-  set_param synth.incrementalSynthesisCache C:/Xilinx/Vivado/2019.1/bin/.Xil/Vivado-83780-CISS31247/incrSyn
+  set_param chipscope.maxJobs 2
   create_project -in_memory -part xc7z020clg400-1
   set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.cache/wt} [current_project]
-  set_property parent.project_path {C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.xpr} [current_project]
-  set_property ip_repo_paths c:/Gitrep/SInglePhotons/HW_IP/DSP48COUNTER [current_project]
+  set_property webtalk.parent_dir {C:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.cache/wt} [current_project]
+  set_property parent.project_path {C:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.xpr} [current_project]
+  set_property ip_repo_paths C:/SInglePhotons/HW_IP/COUNTER_AXI [current_project]
   update_ip_catalog
   set_property ip_output_repo H:/VivadoProj/Pulse_Counter/Pulse_Counter.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet {{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.runs/synth_2/Counter_Overlay_wrapper.dcp}}
+  add_files -quiet {{C:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.runs/synth_2/Counter_Overlay_wrapper.dcp}}
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files {{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/Counter_Overlay.bd}}
+  add_files {{C:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/Counter_Overlay.bd}}
   set_param project.isImplRun false
-  read_xdc {{C:/Gitrep/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc}}
+  read_xdc {{C:/SInglePhotons/Vivado Projects/Pulse_Counter/Pulse_Counter.srcs/constrs_1/new/PYNQ_Z1_X.xdc}}
   set_param project.isImplRun true
   link_design -top Counter_Overlay_wrapper -part xc7z020clg400-1
   set_param project.isImplRun false

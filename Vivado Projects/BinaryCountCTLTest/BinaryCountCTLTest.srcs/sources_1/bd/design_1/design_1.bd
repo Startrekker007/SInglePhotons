@@ -1,0 +1,150 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x83688210177B5C74",
+      "device": "xc7z020clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "c_counter_binary_0": "",
+      "CTR_CTL_0": "",
+      "util_vector_logic_0": ""
+    },
+    "ports": {
+      "RST": {
+        "direction": "I"
+      },
+      "MCLK": {
+        "direction": "I"
+      },
+      "SIG": {
+        "direction": "I"
+      },
+      "EN": {
+        "direction": "I"
+      },
+      "COUNT": {
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 32}",
+            "value_src": "ip_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "design_1_c_counter_binary_0_0",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Output_Width": {
+            "value": "32"
+          },
+          "SCLR": {
+            "value": "true"
+          }
+        }
+      },
+      "CTR_CTL_0": {
+        "vlnv": "xilinx.com:module_ref:CTR_CTL:1.0",
+        "xci_name": "design_1_CTR_CTL_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CTR_CTL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "O_CLK": {
+            "type": "clk",
+            "direction": "O"
+          },
+          "P_SIG_IN": {
+            "direction": "I"
+          },
+          "SCLR_O": {
+            "direction": "O"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "design_1_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CTR_CTL_0_O_CLK": {
+        "ports": [
+          "CTR_CTL_0/O_CLK",
+          "c_counter_binary_0/CLK"
+        ]
+      },
+      "CTR_CTL_0_SCLR_O": {
+        "ports": [
+          "CTR_CTL_0/SCLR_O",
+          "c_counter_binary_0/SCLR"
+        ]
+      },
+      "RST_1": {
+        "ports": [
+          "RST",
+          "CTR_CTL_0/RST"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "CTR_CTL_0/CLK"
+        ]
+      },
+      "SIG_1": {
+        "ports": [
+          "SIG",
+          "CTR_CTL_0/P_SIG_IN"
+        ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "COUNT"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "c_counter_binary_0/CE"
+        ]
+      },
+      "EN_1": {
+        "ports": [
+          "EN",
+          "util_vector_logic_0/Op1"
+        ]
+      }
+    }
+  }
+}

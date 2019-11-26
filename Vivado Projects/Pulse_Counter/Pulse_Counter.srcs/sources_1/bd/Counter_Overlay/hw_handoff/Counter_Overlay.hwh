@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Nov 26 13:28:19 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Nov 26 19:00:42 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="Counter_Overlay" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -173,7 +173,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="2" FULLNAME="/CH_0" HWVERSION="1.0" INSTANCE="CH_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/CTR_CH0" HWVERSION="1.0" INSTANCE="CTR_CH0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="xilinx.com:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -182,7 +182,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="s_axi_1_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_COUNTER_wrapper_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_COUNTER_wrapper_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x43C10000"/>
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x43C1FFFF"/>
@@ -198,87 +198,87 @@
             <CONNECTION INSTANCE="channel_sl_0" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wvalid"/>
           </CONNECTIONS>
@@ -288,87 +288,87 @@
             <CONNECTION INSTANCE="t_clk" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wvalid"/>
           </CONNECTIONS>
@@ -491,7 +491,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/CH_1" HWVERSION="1.0" INSTANCE="CH_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/CTR_CH1" HWVERSION="1.0" INSTANCE="CTR_CH1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="xilinx.com:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -500,7 +500,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="s_axi_1_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_CH_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_CTR_CH0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x43C30000"/>
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x43C3FFFF"/>
@@ -516,87 +516,87 @@
             <CONNECTION INSTANCE="channel_sl_1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_arready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_arvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_bready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_bvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wvalid"/>
           </CONNECTIONS>
@@ -606,87 +606,87 @@
             <CONNECTION INSTANCE="t_clk" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_arready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_arvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_awready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_awvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_bready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_bvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wvalid"/>
           </CONNECTIONS>
@@ -809,7 +809,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/CH_2" HWVERSION="1.0" INSTANCE="CH_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/CTR_CH2" HWVERSION="1.0" INSTANCE="CTR_CH2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="xilinx.com:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -818,7 +818,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="s_axi_1_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_CH_1_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_CTR_CH1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x43C50000"/>
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x43C5FFFF"/>
@@ -834,87 +834,87 @@
             <CONNECTION INSTANCE="channel_sl_2" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_arready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_arvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_awready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_awvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_bready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_bvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_wvalid"/>
           </CONNECTIONS>
@@ -924,87 +924,87 @@
             <CONNECTION INSTANCE="t_clk" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_arready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_arvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_awready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_awvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_bready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_bvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wvalid"/>
           </CONNECTIONS>
@@ -1127,7 +1127,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/CH_3" HWVERSION="1.0" INSTANCE="CH_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="govt.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/CTR_CH3" HWVERSION="1.0" INSTANCE="CTR_CH3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="xilinx.com:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_0_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
@@ -1136,7 +1136,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="s_axi_1_tlm" NAME="reg0" RANGE="512" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_CH_2_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="Counter_Overlay_CTR_CH2_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x43C70000"/>
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x43C7FFFF"/>
@@ -1152,87 +1152,87 @@
             <CONNECTION INSTANCE="channel_sl_3" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_arready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_arvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="S_AXI_0_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_awready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_awvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_bready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_bvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="S_AXI_0_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rready">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_0_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rvalid">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_0_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wready">
+        <PORT DIR="O" NAME="S_AXI_0_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_0_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wvalid">
+        <PORT DIR="I" NAME="S_AXI_0_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wvalid"/>
           </CONNECTIONS>
@@ -1242,87 +1242,87 @@
             <CONNECTION INSTANCE="t_clk" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_araddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_arready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_arready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_arvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_arvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_awaddr">
+        <PORT DIR="I" LEFT="8" NAME="s_axi_1_tlm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_awready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_awready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_awvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_awvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_bready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_bready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_bvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_bvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_1_tlm_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rready">
+        <PORT DIR="I" NAME="s_axi_1_tlm_rready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_1_tlm_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rvalid">
+        <PORT DIR="O" NAME="s_axi_1_tlm_rvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_1_tlm_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wready">
+        <PORT DIR="O" NAME="s_axi_1_tlm_wready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_1_tlm_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wvalid">
+        <PORT DIR="I" NAME="s_axi_1_tlm_wvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_AXI_wvalid"/>
           </CONNECTIONS>
@@ -2027,10 +2027,10 @@
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="c_clk_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="PCLK"/>
-            <CONNECTION INSTANCE="CH_2" PORT="PCLK"/>
-            <CONNECTION INSTANCE="CH_3" PORT="PCLK"/>
-            <CONNECTION INSTANCE="CH_0" PORT="PCLK"/>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="PCLK"/>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="PCLK"/>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="PCLK"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="PCLK"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2054,7 +2054,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="channel_sl_0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="P_SIG_EX"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="P_SIG_EX"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2078,7 +2078,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="channel_sl_1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="P_SIG_EX"/>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="P_SIG_EX"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2102,7 +2102,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="channel_sl_2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="P_SIG_EX"/>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="P_SIG_EX"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2126,7 +2126,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="channel_sl_3_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="P_SIG_EX"/>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="P_SIG_EX"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3286,10 +3286,10 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_ACLK"/>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_clk"/>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_clk"/>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_clk"/>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_clk"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_clk"/>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_clk"/>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_clk"/>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -3532,20 +3532,20 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="CH_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C10000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C1FFFF" INSTANCE="CH_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C20000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C2FFFF" INSTANCE="CH_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C30000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C3FFFF" INSTANCE="CH_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C40000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C4FFFF" INSTANCE="CH_2" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C50000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C5FFFF" INSTANCE="CH_2" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C60000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C6FFFF" INSTANCE="CH_3" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C70000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C7FFFF" INSTANCE="CH_3" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="CTR_CH0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C10000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C1FFFF" INSTANCE="CTR_CH0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C20000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C2FFFF" INSTANCE="CTR_CH1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C30000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C3FFFF" INSTANCE="CTR_CH1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C40000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C4FFFF" INSTANCE="CTR_CH2" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C50000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C5FFFF" INSTANCE="CTR_CH2" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C60000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C6FFFF" INSTANCE="CTR_CH3" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_0_tlm"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x43C70000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C7FFFF" INSTANCE="CTR_CH3" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_1_tlm"/>
       </MEMORYMAP>
       <PERIPHERALS>
-        <PERIPHERAL INSTANCE="CH_0"/>
-        <PERIPHERAL INSTANCE="CH_1"/>
-        <PERIPHERAL INSTANCE="CH_2"/>
-        <PERIPHERAL INSTANCE="CH_3"/>
+        <PERIPHERAL INSTANCE="CTR_CH0"/>
+        <PERIPHERAL INSTANCE="CTR_CH1"/>
+        <PERIPHERAL INSTANCE="CTR_CH2"/>
+        <PERIPHERAL INSTANCE="CTR_CH3"/>
       </PERIPHERALS>
     </MODULE>
     <MODULE COREREVISION="20" FULLNAME="/ps7_0_axi_periph" HWVERSION="2.1" INSTANCE="ps7_0_axi_periph" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
@@ -3971,6 +3971,528 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH3_s_axi_1_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_1_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH1_S_AXI_0_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="S_AXI_0_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH1_s_axi_1_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_1_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M04_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M04_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M04_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M04_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M04_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M04_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH2_S_AXI_0_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="S_AXI_0_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH3_S_AXI_0_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="S_AXI_0_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M05_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M05_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M05_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M05_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH2_s_axi_1_tlm_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_1_tlm_rready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_AWID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWID"/>
@@ -4161,700 +4683,178 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awaddr"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_awaddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awvalid">
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_awready">
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_awready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wdata"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wstrb"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wvalid">
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_wready">
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_wready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bresp"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bvalid">
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_bready">
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_bready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_araddr"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_araddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arvalid">
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_arvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_arready">
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_arready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rdata"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rresp"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rvalid">
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="CH_0_S_AXI_0_tlm_rready">
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH0_S_AXI_0_tlm_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="S_AXI_0_tlm_rready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="S_AXI_0_tlm_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awaddr"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_awaddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awvalid">
+        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_awready">
+        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_awready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wdata"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wstrb"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wvalid">
+        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_wready">
+        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_wready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bresp"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bvalid">
+        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_bready">
+        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_bready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_araddr"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_araddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arvalid">
+        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_arvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_arready">
+        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_arready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rdata"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rresp"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rvalid">
+        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rvalid"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="CH_0_s_axi_1_tlm_rready">
+        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="CTR_CH0_s_axi_1_tlm_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_1_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_awready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_wvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_wready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_bvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_bready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_arready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_rvalid" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_rready" SIGIS="undef" SIGNAME="CH_3_s_axi_1_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_1_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="CH_1_S_AXI_0_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="S_AXI_0_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="CH_1_s_axi_1_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_1_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_awready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M04_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M04_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_wvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_wready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M04_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_bvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_bready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M04_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_arready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M04_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M04_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_rvalid" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_rready" SIGIS="undef" SIGNAME="CH_2_S_AXI_0_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="S_AXI_0_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M05_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M05_AXI_bvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M05_AXI_bready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M05_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="CH_2_s_axi_1_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_1_tlm_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="CH_3_S_AXI_0_tlm_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_3" PORT="S_AXI_0_tlm_rready"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_1_tlm_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5136,10 +5136,10 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M07_ARESETN"/>
-            <CONNECTION INSTANCE="CH_1" PORT="s_axi_rst"/>
-            <CONNECTION INSTANCE="CH_2" PORT="s_axi_rst"/>
-            <CONNECTION INSTANCE="CH_3" PORT="s_axi_rst"/>
-            <CONNECTION INSTANCE="CH_0" PORT="s_axi_rst"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="s_axi_rst"/>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="s_axi_rst"/>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="s_axi_rst"/>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="s_axi_rst"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5727,10 +5727,10 @@
         </PORT>
         <PORT CLKFREQUENCY="125000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="t_clk_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CH_1" PORT="TCLK"/>
-            <CONNECTION INSTANCE="CH_2" PORT="TCLK"/>
-            <CONNECTION INSTANCE="CH_3" PORT="TCLK"/>
-            <CONNECTION INSTANCE="CH_0" PORT="TCLK"/>
+            <CONNECTION INSTANCE="CTR_CH0" PORT="TCLK"/>
+            <CONNECTION INSTANCE="CTR_CH1" PORT="TCLK"/>
+            <CONNECTION INSTANCE="CTR_CH2" PORT="TCLK"/>
+            <CONNECTION INSTANCE="CTR_CH3" PORT="TCLK"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

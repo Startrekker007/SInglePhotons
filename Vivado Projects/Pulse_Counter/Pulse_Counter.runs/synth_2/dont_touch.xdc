@@ -24,54 +24,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_xbar_0/Counter_Overlay_xbar_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_xbar_0 || ORIG_REF_NAME==Counter_Overlay_xbar_0} -quiet] -quiet
 
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/Counter_Overlay_COUNTER_wrapper_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_COUNTER_wrapper_0_0 || ORIG_REF_NAME==Counter_Overlay_COUNTER_wrapper_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/Counter_Overlay_CH_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CH_0_0 || ORIG_REF_NAME==Counter_Overlay_CH_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/Counter_Overlay_CH_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CH_1_0 || ORIG_REF_NAME==Counter_Overlay_CH_1_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/Counter_Overlay_CH_2_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CH_2_0 || ORIG_REF_NAME==Counter_Overlay_CH_2_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
-
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_xlslice_0_0/Counter_Overlay_xlslice_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_xlslice_0_0 || ORIG_REF_NAME==Counter_Overlay_xlslice_0_0} -quiet] -quiet
 
@@ -83,6 +35,66 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay
 
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_channel_sl_2_0/Counter_Overlay_channel_sl_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_channel_sl_2_0 || ORIG_REF_NAME==Counter_Overlay_channel_sl_2_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/Counter_Overlay_COUNTER_wrapper_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_COUNTER_wrapper_0_1 || ORIG_REF_NAME==Counter_Overlay_COUNTER_wrapper_0_1} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_util_vector_logic_0_0/COUNTER_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_util_vector_logic_0_0 || ORIG_REF_NAME==COUNTER_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/Counter_Overlay_CTR_CH0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CTR_CH0_0 || ORIG_REF_NAME==Counter_Overlay_CTR_CH0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_util_vector_logic_0_0/COUNTER_util_vector_logic_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_util_vector_logic_0_0 || ORIG_REF_NAME==COUNTER_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/Counter_Overlay_CTR_CH1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CTR_CH1_0 || ORIG_REF_NAME==Counter_Overlay_CTR_CH1_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_util_vector_logic_0_0/COUNTER_util_vector_logic_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_util_vector_logic_0_0 || ORIG_REF_NAME==COUNTER_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/Counter_Overlay_CTR_CH2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_CTR_CH2_0 || ORIG_REF_NAME==Counter_Overlay_CTR_CH2_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_c_counter_binary_0_0/COUNTER_c_counter_binary_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_c_counter_binary_0_0 || ORIG_REF_NAME==COUNTER_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_util_vector_logic_0_0/COUNTER_util_vector_logic_0_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==COUNTER_util_vector_logic_0_0 || ORIG_REF_NAME==COUNTER_util_vector_logic_0_0} -quiet] -quiet
 
 # IP: bd/Counter_Overlay/ip/Counter_Overlay_auto_pc_0/Counter_Overlay_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Counter_Overlay_auto_pc_0 || ORIG_REF_NAME==Counter_Overlay_auto_pc_0} -quiet] -quiet
@@ -114,76 +126,76 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/Counter_Overlay/ip/Counter_Overlay_xbar_0/Counter_Overlay_xbar_0_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_0 || ORIG_REF_NAME==COUNTER_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_ooc.xdc
 
-# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CH_2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
+# XDC: bd/Counter_Overlay/ip/Counter_Overlay_CTR_CH2_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==COUNTER_axi_gpio_0_1 || ORIG_REF_NAME==COUNTER_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/Counter_Overlay/ip/Counter_Overlay_auto_pc_0/Counter_Overlay_auto_pc_0_ooc.xdc

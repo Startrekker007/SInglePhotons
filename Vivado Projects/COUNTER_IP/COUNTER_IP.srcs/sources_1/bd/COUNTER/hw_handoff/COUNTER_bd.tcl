@@ -224,6 +224,14 @@ proc create_root_design { parentCell } {
    CONFIG.SCLR {true} \
  ] $c_counter_binary_0
 
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_0
+
   # Create interface connections
   connect_bd_intf_net -intf_net S_AXI_0_1 [get_bd_intf_ports S_AXI_0_tlm] [get_bd_intf_pins axi_gpio_data/S_AXI]
   connect_bd_intf_net -intf_net s_axi_1_1 [get_bd_intf_ports s_axi_1_tlm] [get_bd_intf_pins axi_gpio_util/S_AXI]
@@ -231,7 +239,7 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net CTR_CTL_0_O_CLK [get_bd_pins CTR_CTL_0/O_CLK] [get_bd_pins c_counter_binary_0/CLK]
   connect_bd_net -net CTR_CTL_0_SCLR_O [get_bd_pins CTR_CTL_0/SCLR_O] [get_bd_pins c_counter_binary_0/SCLR]
-  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins axi_gpio_util/gpio2_io_i] [get_bd_pins c_counter_binary_0/CE]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins axi_gpio_util/gpio2_io_i] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net Net [get_bd_pins CTR_CTL_0/RST] [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins axi_gpio_util/gpio_io_o]
   connect_bd_net -net P_SIG_EX_1 [get_bd_ports P_SIG_EX] [get_bd_pins CTR_CTL_0/P_SIG_IN]
   connect_bd_net -net TCLK_1 [get_bd_ports TCLK] [get_bd_pins CTR_CTL_0/CLK] [get_bd_pins DIG_TIMER_0/MCLK]
@@ -239,6 +247,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net c_counter_binary_0_Q [get_bd_pins axi_gpio_data/gpio_io_i] [get_bd_pins c_counter_binary_0/Q]
   connect_bd_net -net s_axi_clk_1 [get_bd_ports s_axi_clk] [get_bd_pins axi_gpio_data/s_axi_aclk] [get_bd_pins axi_gpio_util/s_axi_aclk]
   connect_bd_net -net s_axi_rst_1 [get_bd_ports s_axi_rst] [get_bd_pins axi_gpio_data/s_axi_aresetn] [get_bd_pins axi_gpio_util/s_axi_aresetn]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins c_counter_binary_0/CE] [get_bd_pins util_vector_logic_0/Res]
 
   # Create address segments
 
