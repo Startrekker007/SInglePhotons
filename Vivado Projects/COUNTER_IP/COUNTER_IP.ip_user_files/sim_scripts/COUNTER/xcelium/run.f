@@ -17,6 +17,39 @@
   "../../../bd/COUNTER/ip/COUNTER_axi_gpio_0_0/sim/COUNTER_axi_gpio_0_0.vhd" \
   "../../../bd/COUNTER/ip/COUNTER_axi_gpio_0_1/sim/COUNTER_axi_gpio_0_1.vhd" \
   "../../../bd/COUNTER/sim/COUNTER.vhd" \
-  "../../../bd/COUNTER/ip/COUNTER_PULSE_COUNTER_0_1/sim/COUNTER_PULSE_COUNTER_0_1.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_utils_v3_0_10 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_reg_fd_v12_0_6 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/edec/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_wrapper_v3_0_4 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/cdbf/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_pipe_v3_0_6 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/7468/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_addsub_v3_0_6 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/910d/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_addsub_v3_0_6 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/cfdd/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_addsub_v12_0_13 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/cbe4/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_gate_bit_v12_0_6 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/7161/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_counter_v3_0_6 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/9ac8/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_counter_binary_v12_0_13 \
+  "../../../../COUNTER_IP.srcs/sources_1/bd/COUNTER/ipshared/23f1/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/COUNTER/ip/COUNTER_c_counter_binary_0_0/sim/COUNTER_c_counter_binary_0_0.vhd" \
+  "../../../bd/COUNTER/ip/COUNTER_CTR_CTL_0_0/sim/COUNTER_CTR_CTL_0_0.vhd" \
 -endlib
 

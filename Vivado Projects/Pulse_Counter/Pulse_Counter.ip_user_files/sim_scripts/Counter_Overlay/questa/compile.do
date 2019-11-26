@@ -139,12 +139,12 @@ vlog -work xil_defaultlib -64 "+incdir+../../../../Pulse_Counter.srcs/sources_1/
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/src/COUNTER_xlslice_1_0/sim/COUNTER_xlslice_1_0.v" \
 
 vcom -work xil_defaultlib -64 -93 \
-"../../../bd/Counter_Overlay/ipshared/be9e/sim/COUNTER_DIG_TIMER_0_0.vhd" \
-"../../../bd/Counter_Overlay/ipshared/be9e/sim/COUNTER_PULSE_COUNTER_0_0.vhd" \
-"../../../bd/Counter_Overlay/ipshared/be9e/src/DIG_TIMER.vhd" \
-"../../../bd/Counter_Overlay/ipshared/be9e/src/PULSE_COUNTER.vhd" \
-"../../../bd/Counter_Overlay/ipshared/be9e/sim/COUNTER.vhd" \
-"../../../bd/Counter_Overlay/ipshared/be9e/src/COUNTER_wrapper.vhd" \
+"../../../bd/Counter_Overlay/ipshared/1a0f/sim/COUNTER_DIG_TIMER_0_0.vhd" \
+"../../../bd/Counter_Overlay/ipshared/1a0f/sim/COUNTER_PULSE_COUNTER_0_0.vhd" \
+"../../../bd/Counter_Overlay/ipshared/1a0f/src/DIG_TIMER.vhd" \
+"../../../bd/Counter_Overlay/ipshared/1a0f/src/PULSE_COUNTER.vhd" \
+"../../../bd/Counter_Overlay/ipshared/1a0f/sim/COUNTER.vhd" \
+"../../../bd/Counter_Overlay/ipshared/1a0f/src/COUNTER_wrapper.vhd" \
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_COUNTER_wrapper_0_0/sim/Counter_Overlay_COUNTER_wrapper_0_0.vhd" \
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_CH_0_0/sim/Counter_Overlay_CH_0_0.vhd" \
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_CH_1_0/sim/Counter_Overlay_CH_1_0.vhd" \
@@ -156,14 +156,14 @@ vlog -work xil_defaultlib -64 "+incdir+../../../../Pulse_Counter.srcs/sources_1/
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_channel_sl_1_0/sim/Counter_Overlay_channel_sl_1_0.v" \
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_channel_sl_2_0/sim/Counter_Overlay_channel_sl_2_0.v" \
 
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/Counter_Overlay/sim/Counter_Overlay.vhd" \
-
 vlog -work axi_protocol_converter_v2_1_19 -64 "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/ec67/hdl" "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/8c62/hdl" "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/c923" "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/ec67/hdl" "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/8c62/hdl" "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ipshared/c923" "+incdir+../../../../Pulse_Counter.srcs/sources_1/bd/Counter_Overlay/ip/Counter_Overlay_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/Counter_Overlay/ip/Counter_Overlay_auto_pc_0/sim/Counter_Overlay_auto_pc_0.v" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/Counter_Overlay/sim/Counter_Overlay.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

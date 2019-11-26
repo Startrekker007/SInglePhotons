@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DIG_TIMER, PULSE_COUNTER
+# CTR_CTL, DIG_TIMER
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -174,6 +174,17 @@ proc create_root_design { parentCell } {
   set s_axi_clk [ create_bd_port -dir I s_axi_clk ]
   set s_axi_rst [ create_bd_port -dir I s_axi_rst ]
 
+  # Create instance: CTR_CTL_0, and set properties
+  set block_name CTR_CTL
+  set block_cell_name CTR_CTL_0
+  if { [catch {set CTR_CTL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CTR_CTL_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: DIG_TIMER_0, and set properties
   set block_name DIG_TIMER
   set block_cell_name DIG_TIMER_0
@@ -181,17 +192,6 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $DIG_TIMER_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: PULSE_COUNTER_0, and set properties
-  set block_name PULSE_COUNTER
-  set block_cell_name PULSE_COUNTER_0
-  if { [catch {set PULSE_COUNTER_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $PULSE_COUNTER_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -215,18 +215,28 @@ proc create_root_design { parentCell } {
    CONFIG.C_IS_DUAL {1} \
  ] $axi_gpio_util
 
+  # Create instance: c_counter_binary_0, and set properties
+  set c_counter_binary_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0 ]
+  set_property -dict [ list \
+   CONFIG.CE {true} \
+   CONFIG.Implementation {DSP48} \
+   CONFIG.Output_Width {32} \
+   CONFIG.SCLR {true} \
+ ] $c_counter_binary_0
+
   # Create interface connections
   connect_bd_intf_net -intf_net S_AXI_0_1 [get_bd_intf_ports S_AXI_0_tlm] [get_bd_intf_pins axi_gpio_data/S_AXI]
   connect_bd_intf_net -intf_net s_axi_1_1 [get_bd_intf_ports s_axi_1_tlm] [get_bd_intf_pins axi_gpio_util/S_AXI]
 
   # Create port connections
-  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins PULSE_COUNTER_0/EN] [get_bd_pins axi_gpio_util/gpio2_io_i]
-  connect_bd_net -net Net [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins PULSE_COUNTER_0/RST] [get_bd_pins axi_gpio_util/gpio_io_o]
-  connect_bd_net -net PCLK_1 [get_bd_ports PCLK] [get_bd_pins PULSE_COUNTER_0/MCLK]
-  connect_bd_net -net PULSE_COUNTER_0_CNT_OUT [get_bd_pins PULSE_COUNTER_0/CNT_OUT] [get_bd_pins axi_gpio_data/gpio_io_i]
-  connect_bd_net -net P_SIG_EX_1 [get_bd_ports P_SIG_EX] [get_bd_pins PULSE_COUNTER_0/P_SIG]
-  connect_bd_net -net TCLK_1 [get_bd_ports TCLK] [get_bd_pins DIG_TIMER_0/MCLK]
+  connect_bd_net -net CTR_CTL_0_O_CLK [get_bd_pins CTR_CTL_0/O_CLK] [get_bd_pins c_counter_binary_0/CLK]
+  connect_bd_net -net CTR_CTL_0_SCLR_O [get_bd_pins CTR_CTL_0/SCLR_O] [get_bd_pins c_counter_binary_0/SCLR]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins axi_gpio_util/gpio2_io_i] [get_bd_pins c_counter_binary_0/CE]
+  connect_bd_net -net Net [get_bd_pins CTR_CTL_0/RST] [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins axi_gpio_util/gpio_io_o]
+  connect_bd_net -net P_SIG_EX_1 [get_bd_ports P_SIG_EX] [get_bd_pins CTR_CTL_0/P_SIG_IN]
+  connect_bd_net -net TCLK_1 [get_bd_ports TCLK] [get_bd_pins CTR_CTL_0/CLK] [get_bd_pins DIG_TIMER_0/MCLK]
   connect_bd_net -net axi_gpio_data_gpio2_io_o [get_bd_pins DIG_TIMER_0/LIM] [get_bd_pins axi_gpio_data/gpio2_io_o]
+  connect_bd_net -net c_counter_binary_0_Q [get_bd_pins axi_gpio_data/gpio_io_i] [get_bd_pins c_counter_binary_0/Q]
   connect_bd_net -net s_axi_clk_1 [get_bd_ports s_axi_clk] [get_bd_pins axi_gpio_data/s_axi_aclk] [get_bd_pins axi_gpio_util/s_axi_aclk]
   connect_bd_net -net s_axi_rst_1 [get_bd_ports s_axi_rst] [get_bd_pins axi_gpio_data/s_axi_aresetn] [get_bd_pins axi_gpio_util/s_axi_aresetn]
 

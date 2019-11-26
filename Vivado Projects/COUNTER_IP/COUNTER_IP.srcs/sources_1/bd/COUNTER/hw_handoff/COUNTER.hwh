@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov 25 17:13:12 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Nov 26 12:58:47 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="COUNTER" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -7,16 +7,13 @@
     <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
       <CONNECTIONS>
         <CONNECTION INSTANCE="DIG_TIMER_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="CTR_CTL_0" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="PCLK" SIGIS="undef" SIGNAME="External_Ports_PCLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="PULSE_COUNTER_0" PORT="MCLK"/>
-      </CONNECTIONS>
-    </PORT>
+    <PORT DIR="I" NAME="PCLK" SIGIS="undef"/>
     <PORT DIR="I" NAME="P_SIG_EX" SIGIS="undef" SIGNAME="External_Ports_P_SIG_EX">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="PULSE_COUNTER_0" PORT="P_SIG"/>
+        <CONNECTION INSTANCE="CTR_CTL_0" PORT="P_SIG_IN"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="s_axi_rst" SIGIS="undef" SIGNAME="External_Ports_s_axi_rst">
@@ -315,6 +312,41 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/CTR_CTL_0" HWVERSION="1.0" INSTANCE="CTR_CTL_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CTR_CTL" VLNV="xilinx.com:module_ref:CTR_CTL:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="COUNTER_CTR_CTL_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_TCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="O_CLK" SIGIS="clk" SIGNAME="CTR_CTL_0_O_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="c_counter_binary_0" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="P_SIG_IN" SIGIS="undef" SIGNAME="External_Ports_P_SIG_EX">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="P_SIG_EX"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="SCLR_O" SIGIS="undef" SIGNAME="CTR_CTL_0_SCLR_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="c_counter_binary_0" PORT="SCLR"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/DIG_TIMER_0" HWVERSION="1.0" INSTANCE="DIG_TIMER_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DIG_TIMER" VLNV="xilinx.com:module_ref:DIG_TIMER:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -342,42 +374,7 @@
         <PORT DIR="O" NAME="DATA_IND" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio2_io_i"/>
-            <CONNECTION INSTANCE="PULSE_COUNTER_0" PORT="EN"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/PULSE_COUNTER_0" HWVERSION="1.0" INSTANCE="PULSE_COUNTER_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PULSE_COUNTER" VLNV="xilinx.com:module_ref:PULSE_COUNTER:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="COUNTER_PULSE_COUNTER_0_1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="P_SIG" SIGIS="undef" SIGNAME="External_Ports_P_SIG_EX">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="P_SIG_EX"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="CNT_OUT" RIGHT="0" SIGIS="undef" SIGNAME="PULSE_COUNTER_0_CNT_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_data" PORT="gpio_io_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util_gpio_io_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio_io_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_PCLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PCLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="DATA_IND"/>
+            <CONNECTION INSTANCE="c_counter_binary_0" PORT="CE"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -505,9 +502,9 @@
             <CONNECTION INSTANCE="COUNTER_imp" PORT="S_AXI_0_tlm_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="PULSE_COUNTER_0_CNT_OUT">
+        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="c_counter_binary_0_Q">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PULSE_COUNTER_0" PORT="CNT_OUT"/>
+            <CONNECTION INSTANCE="c_counter_binary_0" PORT="Q"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data_gpio2_io_o">
@@ -705,8 +702,8 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PULSE_COUNTER_0" PORT="RST"/>
             <CONNECTION INSTANCE="DIG_TIMER_0" PORT="RST"/>
+            <CONNECTION INSTANCE="CTR_CTL_0" PORT="RST"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
@@ -779,6 +776,82 @@
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="13" FULLNAME="/c_counter_binary_0" HWVERSION="12.0" INSTANCE="c_counter_binary_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="c_counter_binary" VLNV="xilinx.com:ip:c_counter_binary:12.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=c_counter_binary;v=v12_0;d=pg121-c-counter-binary.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_IMPLEMENTATION" VALUE="1"/>
+        <PARAMETER NAME="C_VERBOSITY" VALUE="0"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_HAS_CE" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_SCLR" VALUE="1"/>
+        <PARAMETER NAME="C_RESTRICT_COUNT" VALUE="0"/>
+        <PARAMETER NAME="C_COUNT_TO" VALUE="1"/>
+        <PARAMETER NAME="C_COUNT_BY" VALUE="1"/>
+        <PARAMETER NAME="C_COUNT_MODE" VALUE="0"/>
+        <PARAMETER NAME="C_THRESH0_VALUE" VALUE="1"/>
+        <PARAMETER NAME="C_CE_OVERRIDES_SYNC" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_THRESH0" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_LOAD" VALUE="0"/>
+        <PARAMETER NAME="C_LOAD_LOW" VALUE="0"/>
+        <PARAMETER NAME="C_LATENCY" VALUE="1"/>
+        <PARAMETER NAME="C_FB_LATENCY" VALUE="0"/>
+        <PARAMETER NAME="C_AINIT_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_SINIT_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_SCLR_OVERRIDES_SSET" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_SSET" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SINIT" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="COUNTER_c_counter_binary_0_0"/>
+        <PARAMETER NAME="Implementation" VALUE="DSP48"/>
+        <PARAMETER NAME="Output_Width" VALUE="32"/>
+        <PARAMETER NAME="Increment_Value" VALUE="1"/>
+        <PARAMETER NAME="Restrict_Count" VALUE="false"/>
+        <PARAMETER NAME="Final_Count_Value" VALUE="1"/>
+        <PARAMETER NAME="Count_Mode" VALUE="UP"/>
+        <PARAMETER NAME="Sync_Threshold_Output" VALUE="false"/>
+        <PARAMETER NAME="Threshold_Value" VALUE="1"/>
+        <PARAMETER NAME="CE" VALUE="true"/>
+        <PARAMETER NAME="SCLR" VALUE="true"/>
+        <PARAMETER NAME="SSET" VALUE="false"/>
+        <PARAMETER NAME="SINIT" VALUE="false"/>
+        <PARAMETER NAME="SINIT_Value" VALUE="0"/>
+        <PARAMETER NAME="SyncCtrlPriority" VALUE="Reset_Overrides_Set"/>
+        <PARAMETER NAME="Sync_CE_Priority" VALUE="Sync_Overrides_CE"/>
+        <PARAMETER NAME="AINIT_Value" VALUE="0"/>
+        <PARAMETER NAME="Load" VALUE="false"/>
+        <PARAMETER NAME="Latency_Configuration" VALUE="Manual"/>
+        <PARAMETER NAME="Latency" VALUE="1"/>
+        <PARAMETER NAME="Fb_Latency_Configuration" VALUE="Manual"/>
+        <PARAMETER NAME="Fb_Latency" VALUE="0"/>
+        <PARAMETER NAME="Load_Sense" VALUE="Active_High"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="CTR_CTL_0_O_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CTL_0" PORT="O_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CE" SIGIS="ce" SIGNAME="DIG_TIMER_0_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="SCLR" SIGIS="rst" SIGNAME="CTR_CTL_0_SCLR_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CTL_0" PORT="SCLR_O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Q" RIGHT="0" SIGIS="data" SIGNAME="c_counter_binary_0_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_data" PORT="gpio_io_i"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
   </MODULES>
 

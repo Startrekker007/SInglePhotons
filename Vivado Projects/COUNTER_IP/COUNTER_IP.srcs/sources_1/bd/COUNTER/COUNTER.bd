@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF3E8B8B7E4DA5363",
+      "boundary_crc": "0xF3E8B8B7D66DD5DB",
       "device": "xc7z020clg400-1",
       "name": "COUNTER",
       "synth_flow_mode": "None",
@@ -12,7 +12,8 @@
       "axi_gpio_data": "",
       "axi_gpio_util": "",
       "DIG_TIMER_0": "",
-      "PULSE_COUNTER_0": ""
+      "c_counter_binary_0": "",
+      "CTR_CTL_0": ""
     },
     "interface_ports": {
       "S_AXI_0_tlm": {
@@ -359,12 +360,30 @@
           }
         }
       },
-      "PULSE_COUNTER_0": {
-        "vlnv": "xilinx.com:module_ref:PULSE_COUNTER:1.0",
-        "xci_name": "COUNTER_PULSE_COUNTER_0_1",
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "COUNTER_c_counter_binary_0_0",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Implementation": {
+            "value": "DSP48"
+          },
+          "Output_Width": {
+            "value": "32"
+          },
+          "SCLR": {
+            "value": "true"
+          }
+        }
+      },
+      "CTR_CTL_0": {
+        "vlnv": "xilinx.com:module_ref:CTR_CTL:1.0",
+        "xci_name": "COUNTER_CTR_CTL_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "PULSE_COUNTER",
+          "ref_name": "CTR_CTL",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -372,19 +391,19 @@
             "type": "rst",
             "direction": "I"
           },
-          "P_SIG": {
+          "CLK": {
+            "type": "clk",
             "direction": "I"
           },
-          "CNT_OUT": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+          "O_CLK": {
+            "type": "clk",
+            "direction": "O"
           },
-          "MCLK": {
+          "P_SIG_IN": {
             "direction": "I"
           },
-          "EN": {
-            "direction": "I"
+          "SCLR_O": {
+            "direction": "O"
           }
         }
       }
@@ -407,7 +426,8 @@
       "TCLK_1": {
         "ports": [
           "TCLK",
-          "DIG_TIMER_0/MCLK"
+          "DIG_TIMER_0/MCLK",
+          "CTR_CTL_0/CLK"
         ]
       },
       "axi_gpio_data_gpio2_io_o": {
@@ -434,32 +454,38 @@
         "ports": [
           "DIG_TIMER_0/DATA_IND",
           "axi_gpio_util/gpio2_io_i",
-          "PULSE_COUNTER_0/EN"
+          "c_counter_binary_0/CE"
         ]
       },
       "P_SIG_EX_1": {
         "ports": [
           "P_SIG_EX",
-          "PULSE_COUNTER_0/P_SIG"
-        ]
-      },
-      "PCLK_1": {
-        "ports": [
-          "PCLK",
-          "PULSE_COUNTER_0/MCLK"
-        ]
-      },
-      "PULSE_COUNTER_0_CNT_OUT": {
-        "ports": [
-          "PULSE_COUNTER_0/CNT_OUT",
-          "axi_gpio_data/gpio_io_i"
+          "CTR_CTL_0/P_SIG_IN"
         ]
       },
       "Net": {
         "ports": [
           "axi_gpio_util/gpio_io_o",
-          "PULSE_COUNTER_0/RST",
-          "DIG_TIMER_0/RST"
+          "DIG_TIMER_0/RST",
+          "CTR_CTL_0/RST"
+        ]
+      },
+      "CTR_CTL_0_O_CLK": {
+        "ports": [
+          "CTR_CTL_0/O_CLK",
+          "c_counter_binary_0/CLK"
+        ]
+      },
+      "CTR_CTL_0_SCLR_O": {
+        "ports": [
+          "CTR_CTL_0/SCLR_O",
+          "c_counter_binary_0/SCLR"
+        ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "axi_gpio_data/gpio_io_i"
         ]
       }
     },
