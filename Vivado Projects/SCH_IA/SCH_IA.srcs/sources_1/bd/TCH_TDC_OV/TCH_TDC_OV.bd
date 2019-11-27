@@ -1,0 +1,171 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x47275B8B6D75708F",
+      "device": "xc7z020clg400-1",
+      "name": "TCH_TDC_OV",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "c_counter_binary_0": "",
+      "util_vector_logic_1": "",
+      "S_EDGE_DET_0": ""
+    },
+    "ports": {
+      "HS_CLK_IN": {
+        "direction": "I"
+      },
+      "CH0": {
+        "direction": "I"
+      },
+      "M_RST": {
+        "direction": "I"
+      },
+      "D_RDY": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "T_DATA": {
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 32}",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "WAITING": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "ARMED": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "TCH_TDC_OV_c_counter_binary_0_0",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Output_Width": {
+            "value": "32"
+          },
+          "SCLR": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TCH_TDC_OV_util_vector_logic_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "S_EDGE_DET_0": {
+        "vlnv": "xilinx.com:module_ref:S_EDGE_DET:1.0",
+        "xci_name": "TCH_TDC_OV_S_EDGE_DET_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "S_EDGE_DET",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RST",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "SIG": {
+            "direction": "I"
+          },
+          "ARMED": {
+            "direction": "O"
+          },
+          "WAITING": {
+            "direction": "O"
+          },
+          "DONE": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "HS_CLK_IN",
+          "c_counter_binary_0/CLK",
+          "S_EDGE_DET_0/HS_CLK"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "M_RST",
+          "util_vector_logic_1/Op1",
+          "S_EDGE_DET_0/RST"
+        ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "T_DATA"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "c_counter_binary_0/SCLR"
+        ]
+      },
+      "util_vector_logic_3_Res": {
+        "ports": [
+          "S_EDGE_DET_0/WAITING",
+          "c_counter_binary_0/CE",
+          "WAITING"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "S_EDGE_DET_0/SIG"
+        ]
+      },
+      "S_EDGE_DET_0_ARMED": {
+        "ports": [
+          "S_EDGE_DET_0/ARMED",
+          "ARMED"
+        ]
+      },
+      "S_EDGE_DET_0_DONE": {
+        "ports": [
+          "S_EDGE_DET_0/DONE",
+          "D_RDY"
+        ]
+      }
+    }
+  }
+}

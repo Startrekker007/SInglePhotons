@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# Edge_Detect, Edge_Detect, DIG_TIMER
+# Edge_Detect, Edge_Detect
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -194,23 +194,20 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: DIG_TIMER_0, and set properties
-  set block_name DIG_TIMER
-  set block_cell_name DIG_TIMER_0
-  if { [catch {set DIG_TIMER_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $DIG_TIMER_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
+  # Create instance: c_counter_binary_0, and set properties
+  set c_counter_binary_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0 ]
+  set_property -dict [ list \
+   CONFIG.CE {true} \
+   CONFIG.Output_Width {32} \
+   CONFIG.SCLR {true} \
+ ] $c_counter_binary_0
+
   # Create instance: util_vector_logic_0, and set properties
   set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
   set_property -dict [ list \
-   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_OPERATION {and} \
    CONFIG.C_SIZE {1} \
-   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+   CONFIG.LOGO_FILE {data/sym_andgate.png} \
  ] $util_vector_logic_0
 
   # Create instance: util_vector_logic_1, and set properties
@@ -221,24 +218,25 @@ proc create_root_design { parentCell } {
    CONFIG.LOGO_FILE {data/sym_notgate.png} \
  ] $util_vector_logic_1
 
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
   set_property -dict [ list \
-   CONFIG.CONST_VAL {0xFFFFFFFF} \
-   CONFIG.CONST_WIDTH {32} \
- ] $xlconstant_0
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
 
   # Create port connections
   connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins CH0_EDGE/SIG]
-  connect_bd_net -net CH0_EDGE_DET [get_bd_pins CH0_EDGE/DET] [get_bd_pins CH1_EDGE/RST] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net CH0_EDGE_DET [get_bd_pins CH0_EDGE/DET] [get_bd_pins CH1_EDGE/RST] [get_bd_pins util_vector_logic_0/Op1] [get_bd_pins util_vector_logic_3/Op1]
   connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins CH1_EDGE/SIG]
-  connect_bd_net -net CH1_EDGE_DET [get_bd_pins CH1_EDGE/DET] [get_bd_pins util_vector_logic_0/Op2]
-  connect_bd_net -net DIG_TIMER_0_CUR_VAL [get_bd_ports T_DATA] [get_bd_pins DIG_TIMER_0/CUR_VAL]
-  connect_bd_net -net Net [get_bd_ports M_RST] [get_bd_pins CH0_EDGE/O_RST] [get_bd_pins CH0_EDGE/RST] [get_bd_pins CH1_EDGE/O_RST] [get_bd_pins DIG_TIMER_0/RST]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports HS_CLK_IN] [get_bd_pins CH0_EDGE/HS_CLK] [get_bd_pins CH1_EDGE/HS_CLK] [get_bd_pins DIG_TIMER_0/MCLK]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_ports D_RDY] [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
-  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins DIG_TIMER_0/EN] [get_bd_pins util_vector_logic_1/Res]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins DIG_TIMER_0/LIM] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net CH1_EDGE_DET [get_bd_pins CH1_EDGE/DET] [get_bd_pins util_vector_logic_0/Op2] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net Net [get_bd_ports M_RST] [get_bd_pins CH0_EDGE/O_RST] [get_bd_pins CH0_EDGE/RST] [get_bd_pins CH1_EDGE/O_RST] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net c_counter_binary_0_Q [get_bd_ports T_DATA] [get_bd_pins c_counter_binary_0/Q]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports HS_CLK_IN] [get_bd_pins CH0_EDGE/HS_CLK] [get_bd_pins CH1_EDGE/HS_CLK] [get_bd_pins c_counter_binary_0/CLK]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_ports D_RDY] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins c_counter_binary_0/SCLR] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins c_counter_binary_0/CE] [get_bd_pins util_vector_logic_3/Res]
 
   # Create address segments
 

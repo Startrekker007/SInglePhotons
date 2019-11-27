@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/VivadoProj/TDC_OVERLAY/TDC_OVERLAY.runs/impl_1'
+HD_PWD='D:/SInglePhotons/Vivado Projects/TDC_OVERLAY/TDC_OVERLAY.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -9,9 +9,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY || 
 # IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_processing_system7_0_0 || ORIG_REF_NAME==TDC_OVERLAY_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_intc_0_0/TDC_OVERLAY_axi_intc_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_intc_0_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_intc_0_0} -quiet] -quiet
-
 # IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/TDC_OVERLAY_rst_ps7_0_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_rst_ps7_0_100M_0 || ORIG_REF_NAME==TDC_OVERLAY_rst_ps7_0_100M_0} -quiet] -quiet
 
@@ -24,34 +21,32 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_ps7
 # IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/TDC_OVERLAY_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_gpio_0_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0 || ORIG_REF_NAME==TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0} -quiet] -quiet
-
-# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_xlconstant_0_0/TCH_TDC_OV_xlconstant_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_xlconstant_0_0 || ORIG_REF_NAME==TCH_TDC_OV_xlconstant_0_0} -quiet] -quiet
-
-# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_0_0/TCH_TDC_OV_util_vector_logic_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_util_vector_logic_0_0 || ORIG_REF_NAME==TCH_TDC_OV_util_vector_logic_0_0} -quiet] -quiet
-
-# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/TCH_TDC_OV_util_vector_logic_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_util_vector_logic_1_0 || ORIG_REF_NAME==TCH_TDC_OV_util_vector_logic_1_0} -quiet] -quiet
-
 # IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_clk_wiz_0_0 || ORIG_REF_NAME==TDC_OVERLAY_clk_wiz_0_0} -quiet] -quiet
+
+# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0 || ORIG_REF_NAME==TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0} -quiet] -quiet
+
+# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_util_vector_logic_0_0/TCH_TDC_OV_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_util_vector_logic_0_0 || ORIG_REF_NAME==TCH_TDC_OV_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_c_counter_binary_0_0/TCH_TDC_OV_c_counter_binary_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_c_counter_binary_0_0 || ORIG_REF_NAME==TCH_TDC_OV_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_util_vector_logic_1_0/TCH_TDC_OV_util_vector_logic_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_util_vector_logic_1_0 || ORIG_REF_NAME==TCH_TDC_OV_util_vector_logic_1_0} -quiet] -quiet
+
+# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_util_vector_logic_3_0/TCH_TDC_OV_util_vector_logic_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TCH_TDC_OV_util_vector_logic_3_0 || ORIG_REF_NAME==TCH_TDC_OV_util_vector_logic_3_0} -quiet] -quiet
+
+# IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_gpio_1_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_gpio_1_0} -quiet] -quiet
 
 # IP: bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/TDC_OVERLAY_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_auto_pc_0 || ORIG_REF_NAME==TDC_OVERLAY_auto_pc_0} -quiet] -quiet
 
 # XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_processing_system7_0_0 || ORIG_REF_NAME==TDC_OVERLAY_processing_system7_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_intc_0_0/TDC_OVERLAY_axi_intc_0_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_intc_0_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_intc_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_intc_0_0/TDC_OVERLAY_axi_intc_0_0_clocks.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_intc_0_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_intc_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_intc_0_0/TDC_OVERLAY_axi_intc_0_0_ooc.xdc
 
 # XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/TDC_OVERLAY_rst_ps7_0_100M_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_rst_ps7_0_100M_0 || ORIG_REF_NAME==TDC_OVERLAY_rst_ps7_0_100M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
@@ -67,8 +62,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/TDC_OVERLAY_axi_gpio_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_gpio_0_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_ooc.xdc
-
 # XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_clk_wiz_0_0 || ORIG_REF_NAME==TDC_OVERLAY_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
@@ -76,6 +69,16 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_clk_wiz_0_0 || ORIG_REF_NAME==TDC_OVERLAY_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0_ooc.xdc
+
+# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_ooc.xdc
+
+# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_gpio_1_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_gpio_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0_ooc.xdc
+
+# XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TDC_OVERLAY_axi_gpio_1_0 || ORIG_REF_NAME==TDC_OVERLAY_axi_gpio_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/TDC_OVERLAY_auto_pc_0_ooc.xdc
 

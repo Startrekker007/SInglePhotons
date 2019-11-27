@@ -30,15 +30,13 @@ class PulseCounter:
             self.GPIO_DATA[i].write(ch2_data,newval)
     # Reads the counts of each channel and returns a 4 size vector containing counts for each channel
     def read_incidents(self):
-        outpd = []
-        for i in range(4):
-            outpd.append(self.GPIO_DATA[i].read(ch1_data))
-        return outpd
+        return [self.GPIO_DATA[i].read(ch1_data) for i in range(4)]
     # Reads the status of the counting, if its finished or not, as there are 4 channels, the result is a 4 bit integer
     def read_utility(self):
         outpi = 0x0
         for i in range(4):
             outpi=outpi | (self.GPIO_UTILITY[i].read(ch2_data) & 0B1) << i
+        #return self.GPIO_UTILITY[0].read(ch2_data)
         #print(bin(outpi))
         return outpi
     # Allows setting of the reset lines to the pulse counter and timer of all channels (cannot individually reset channels)
@@ -47,33 +45,40 @@ class PulseCounter:
         val = val | EN << 1
         for i in range(4):
             self.GPIO_UTILITY[i].write(ch1_data,val)
-#Timer @ 57.143MHz
-#SelectIO @ 400MHz
-class InterdetectionTimer:
-    def __init__(self):
-        self.PC_OV = Overlay("TDC/HS_SAMPLER_OVERLAY_wrapper.bit",0)
+#Timer @ 450MHz
+it_a_gpio_addr = 0x41200000
+it_a_gpioi_addr = 0x41210000
+it_a_int_addr = 0x41800000
+class Coincidence_Timer:
+    def __init__(self,mode):
+        if mode==0:
+            self.PC_OV = Overlay("TDC/TDC_OVERLAY_wrapper.bit",0)
+            print("Loaded two channel coincidence rising edge TDC")
+        elif mode==1:
+            self.PC_OV = Overlay("TDC/SC_TDC_OVERLAY.bit", 0)
+            print("Loaded single channel inter rising edge TDC")
+        else:
+            print("What?")
+            self.PC_OV = Overlay("TDC/TDC_OVERLAY_wrapper.bit", 0)
+            print("Loaded two channel coincidence rising edge TDC")
         self.PC_OV.download()
-        self.TCON = MMIO(axi_gpio_base_addr,axi_gpio_range)
-        self.TDAT = MMIO(axi_gpio_base_addr+axi_gpio_range,axi_gpio_range)
-        # self.TCON.write(ch1_dir,0x0)
-        # self.TCON.write(ch1_data,0x0)
-        # self.TCON.write(ch2_dir,0xFFFFFFFF)
-        # self.TDAT.write(ch1_dir,0xFFFFFFFF)
-        # self.TDAT.write(ch2_dir,0xFFFFFFFF)
-        #DEBUG LINES VVV
-        self.TCON.write(ch1_dir,0xFFFFFFFF)
-        self.TCON.write(ch2_dir, 0xFFFFFFFF)
-        self.TDAT.write(ch1_dir,0xFFFFFFFF)
-        self.TDAT.write(ch2_dir, 0xFFFFFFFF)
-    def d_read(self):
-        return self.TDAT.read(ch1_data) | self.TDAT.read(ch2_data) << 32 | self.TCON.read(ch2_data) << 32
-    def d_poll(self):
-        return self.TCON.read(ch1_data)
-    def arm(self):# ARm the edge detector to detect the next edge and start the timer
-        self.TCON.write(ch1_data,0x3)
-    def poll(self):# Poll whether data is ready for collection
-        return self.TCON.read(ch2_data)
-    def read_time(self):# Read the time between rising edges after data collection allowed
-        return self.TDAT.read(ch1_data)
-    def read_offsets(self):# Read the fine time offsets
-        return self.TDAT.read(ch2_data)
+        self.GPIO = MMIO(it_a_gpio_addr,axi_gpio_range)
+        self.GPIO_INT = MMIO(it_a_gpioi_addr,axi_gpio_range)
+        self.GPIO.write(ch1_dir,0xFFFFFFFF)
+        self.GPIO.write(ch2_dir,0x0)
+        self.GPIO_INT.write(ch1_dir,0xFFFFFFFF)
+        self.GPIO.write(ch2_data,0x0)#Hold system in reset for now
+
+    def arm_and_wait(self):
+        self.GPIO.write(ch2_data,0x1)
+        op = 0
+        while(self.GPIO_INT.read(ch1_data)==0x0):
+            pass
+        if(self.GPIO_INT.read(ch1_data)==0x1):
+            op = self.GPIO.read(ch1_data)
+            self.GPIO.write(ch2_data,0x0)
+        return op
+    def tval_to_time(self,tval):
+        return tval*(1/450000000)
+
+

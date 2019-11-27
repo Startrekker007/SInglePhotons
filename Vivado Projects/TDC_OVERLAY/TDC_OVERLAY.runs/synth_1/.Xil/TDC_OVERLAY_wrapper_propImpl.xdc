@@ -1,6 +1,6 @@
-set_property SRC_FILE_INFO {cfile:c:/VivadoProj/TDC_OVERLAY/TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xdc rfile:../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:TDC_OVERLAY_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:c:/VivadoProj/TDC_OVERLAY/TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.xdc rfile:../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:TDC_OVERLAY_i/clk_wiz_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/VivadoProj/TDC_OVERLAY/TDC_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc rfile:../../../TDC_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc id:3} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TDC_OVERLAY/TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xdc} rfile:../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:TDC_OVERLAY_i/processing_system7_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TDC_OVERLAY/TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.xdc} rfile:../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:TDC_OVERLAY_i/clk_wiz_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/TDC_OVERLAY/TDC_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../TDC_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc id:3} [current_design]
 current_instance TDC_OVERLAY_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3
@@ -273,3 +273,7 @@ set_property src_info {type:XDC file:3 line:3 export:INPUT save:INPUT read:READ}
 set_property PACKAGE_PIN W14 [get_ports CH0]
 set_property src_info {type:XDC file:3 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y14 [get_ports CH1]
+set_property src_info {type:XDC file:3 line:10 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L15 [get_ports {WAITING[0]}]
+set_property src_info {type:XDC file:3 line:11 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L14 [get_ports {ARMED[0]}]
