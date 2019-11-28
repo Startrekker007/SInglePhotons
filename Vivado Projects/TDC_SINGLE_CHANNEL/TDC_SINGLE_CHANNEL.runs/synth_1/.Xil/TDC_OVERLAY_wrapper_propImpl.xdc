@@ -270,7 +270,7 @@ set_property src_info {type:SCOPED_XDC file:2 line:57 export:INPUT save:INPUT re
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.08
 current_instance
 set_property src_info {type:XDC file:3 line:2 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN D19 [get_ports CH0]
+set_property PACKAGE_PIN W14 [get_ports CH0]
 set_property src_info {type:XDC file:3 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN L15 [get_ports {WAITING[0]}]
 set_property src_info {type:XDC file:3 line:6 export:INPUT save:INPUT read:READ} [current_design]

@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# S_EDGE_DET
+# D_REG, S_EDGE_DET, T_META_HARDEN, T_META_HARDEN
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -173,6 +173,17 @@ proc create_root_design { parentCell } {
   set T_DATA [ create_bd_port -dir O -from 31 -to 0 T_DATA ]
   set WAITING [ create_bd_port -dir O -from 0 -to 0 WAITING ]
 
+  # Create instance: D_REG_0, and set properties
+  set block_name D_REG
+  set block_cell_name D_REG_0
+  if { [catch {set D_REG_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_REG_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: S_EDGE_DET_0, and set properties
   set block_name S_EDGE_DET
   set block_cell_name S_EDGE_DET_0
@@ -180,6 +191,28 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $S_EDGE_DET_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: T_META_HARDEN_0, and set properties
+  set block_name T_META_HARDEN
+  set block_cell_name T_META_HARDEN_0
+  if { [catch {set T_META_HARDEN_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $T_META_HARDEN_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: T_META_HARDEN_1, and set properties
+  set block_name T_META_HARDEN
+  set block_cell_name T_META_HARDEN_1
+  if { [catch {set T_META_HARDEN_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $T_META_HARDEN_1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -201,12 +234,15 @@ proc create_root_design { parentCell } {
  ] $util_vector_logic_1
 
   # Create port connections
-  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins S_EDGE_DET_0/SIG]
-  connect_bd_net -net Net [get_bd_ports M_RST] [get_bd_pins S_EDGE_DET_0/RST] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins T_META_HARDEN_1/INP]
+  connect_bd_net -net D_REG_0_DAT_OUT [get_bd_ports T_DATA] [get_bd_pins D_REG_0/DAT_OUT]
+  connect_bd_net -net META_HARDEN_0_S_OUT [get_bd_pins S_EDGE_DET_0/RST] [get_bd_pins T_META_HARDEN_0/S_OUT] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net M_RST_1 [get_bd_ports M_RST] [get_bd_pins T_META_HARDEN_0/INP]
   connect_bd_net -net S_EDGE_DET_0_ARMED [get_bd_ports ARMED] [get_bd_pins S_EDGE_DET_0/ARMED]
-  connect_bd_net -net S_EDGE_DET_0_DONE [get_bd_ports D_RDY] [get_bd_pins S_EDGE_DET_0/DONE]
-  connect_bd_net -net c_counter_binary_0_Q [get_bd_ports T_DATA] [get_bd_pins c_counter_binary_0/Q]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports HS_CLK_IN] [get_bd_pins S_EDGE_DET_0/HS_CLK] [get_bd_pins c_counter_binary_0/CLK]
+  connect_bd_net -net S_EDGE_DET_0_DONE [get_bd_ports D_RDY] [get_bd_pins D_REG_0/WR_EN] [get_bd_pins S_EDGE_DET_0/DONE]
+  connect_bd_net -net T_META_HARDEN_1_S_OUT [get_bd_pins S_EDGE_DET_0/SIG] [get_bd_pins T_META_HARDEN_1/S_OUT]
+  connect_bd_net -net c_counter_binary_0_Q [get_bd_pins D_REG_0/DAT_IN] [get_bd_pins c_counter_binary_0/Q]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports HS_CLK_IN] [get_bd_pins D_REG_0/CLK] [get_bd_pins S_EDGE_DET_0/HS_CLK] [get_bd_pins T_META_HARDEN_0/CLK] [get_bd_pins T_META_HARDEN_1/CLK] [get_bd_pins c_counter_binary_0/CLK]
   connect_bd_net -net util_vector_logic_1_Res [get_bd_pins c_counter_binary_0/SCLR] [get_bd_pins util_vector_logic_1/Res]
   connect_bd_net -net util_vector_logic_3_Res [get_bd_ports WAITING] [get_bd_pins S_EDGE_DET_0/WAITING] [get_bd_pins c_counter_binary_0/CE]
 

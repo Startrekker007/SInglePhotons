@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Nov 27 16:41:11 2019
+--Date        : Thu Nov 28 13:38:17 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TCH_TDC_OV_wrapper.bd
 --Design      : TCH_TDC_OV_wrapper

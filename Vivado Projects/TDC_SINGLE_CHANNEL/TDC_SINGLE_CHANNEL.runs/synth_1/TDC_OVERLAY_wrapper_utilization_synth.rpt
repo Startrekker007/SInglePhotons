@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Wed Nov 27 16:46:34 2019
+| Date         : Thu Nov 28 14:30:02 2019
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file TDC_OVERLAY_wrapper_utilization_synth.rpt -pb TDC_OVERLAY_wrapper_utilization_synth.pb
 | Design       : TDC_OVERLAY_wrapper
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  846 |     0 |     53200 |  1.59 |
-|   LUT as Logic             |  780 |     0 |     53200 |  1.47 |
+| Slice LUTs*                |  851 |     0 |     53200 |  1.60 |
+|   LUT as Logic             |  785 |     0 |     53200 |  1.48 |
 |   LUT as Memory            |   66 |     0 |     17400 |  0.38 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   66 |     0 |           |       |
-| Slice Registers            | 1161 |     0 |    106400 |  1.09 |
-|   Register as Flip Flop    | 1161 |     0 |    106400 |  1.09 |
+| Slice Registers            | 1203 |     0 |    106400 |  1.13 |
+|   Register as Flip Flop    | 1203 |     0 |    106400 |  1.13 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 55    |          Yes |         Set |            - |
-| 1106  |          Yes |       Reset |            - |
+| 1148  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,14 +148,14 @@ Table of Contents
 +------------+------+----------------------+
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
-| FDRE       | 1106 |         Flop & Latch |
+| FDRE       | 1148 |         Flop & Latch |
 | LUT3       |  330 |                  LUT |
 | LUT6       |  199 |                  LUT |
 | LUT1       |  149 |                  LUT |
-| LUT5       |  136 |                  LUT |
+| LUT5       |  138 |                  LUT |
 | BIBUF      |  130 |                   IO |
-| LUT4       |  116 |                  LUT |
-| LUT2       |   63 |                  LUT |
+| LUT4       |  118 |                  LUT |
+| LUT2       |   64 |                  LUT |
 | FDSE       |   55 |         Flop & Latch |
 | SRLC32E    |   47 |   Distributed Memory |
 | CARRY4     |   26 |           CarryLogic |
@@ -171,11 +171,9 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+---------------------------+------+
-|          Ref Name         | Used |
-+---------------------------+------+
-| TCH_TDC_OV_S_EDGE_DET_0_0 |    1 |
-+---------------------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists

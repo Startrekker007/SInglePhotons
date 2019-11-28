@@ -53,7 +53,7 @@ begin
     if(rising_edge(HS_CLK)) then
         if(RST = '0') then
             detected <= '0';
-            last_sig <= '0';
+            last_sig <= '1';
             ARMED <= '0';
             dn <= '0';
             wt <= '0';

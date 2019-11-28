@@ -66,6 +66,12 @@ vlog -work util_vector_logic_v2_0_1 -64 \
 vlog -work xil_defaultlib -64 \
 "../../../bd/TCH_TDC_OV/ip/TCH_TDC_OV_util_vector_logic_1_0/sim/TCH_TDC_OV_util_vector_logic_1_0.v" \
 
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/TCH_TDC_OV/ip/TCH_TDC_OV_S_EDGE_DET_0_0/sim/TCH_TDC_OV_S_EDGE_DET_0_0.vhd" \
+"../../../bd/TCH_TDC_OV/ip/TCH_TDC_OV_D_REG_0_0/sim/TCH_TDC_OV_D_REG_0_0.vhd" \
+"../../../bd/TCH_TDC_OV/ip/TCH_TDC_OV_T_META_HARDEN_0_0/sim/TCH_TDC_OV_T_META_HARDEN_0_0.vhd" \
+"../../../bd/TCH_TDC_OV/ip/TCH_TDC_OV_T_META_HARDEN_0_1/sim/TCH_TDC_OV_T_META_HARDEN_0_1.vhd" \
+"../../../bd/TCH_TDC_OV/sim/TCH_TDC_OV.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

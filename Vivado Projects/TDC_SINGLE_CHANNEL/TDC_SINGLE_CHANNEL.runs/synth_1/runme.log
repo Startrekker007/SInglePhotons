@@ -12,27 +12,57 @@ source TDC_OVERLAY_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCH_IA_IP'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCH_IA_IP'.
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 302.543 ; gain = 0.000
 Command: synth_design -top TDC_OVERLAY_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7332 
+INFO: Helper process launched with PID 4136 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 748.480 ; gain = 179.336
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 752.539 ; gain = 179.449
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_wrapper' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd:44]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY' declared at 'D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1455' bound to instance 'TDC_OVERLAY_i' of component 'TDC_OVERLAY' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd:75]
-INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1489]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:56' bound to instance 'TCH_TDC_OV_wrapper_0' of component 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1791]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY' declared at 'D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1363' bound to instance 'TDC_OVERLAY_i' of component 'TDC_OVERLAY' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1397]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:56' bound to instance 'TCH_TDC_OV_wrapper_0' of component 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1709]
 INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:68]
-INFO: [Synth 8-3491] module 'TCH_TDC_OV_wrapper' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV_wrapper.vhd:14' bound to instance 'U0' of component 'TCH_TDC_OV_wrapper' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_wrapper' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV_wrapper.vhd:26]
-INFO: [Synth 8-3491] module 'TCH_TDC_OV' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV.vhd:14' bound to instance 'TCH_TDC_OV_i' of component 'TCH_TDC_OV' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV_wrapper.vhd:39]
-INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV.vhd:30]
-INFO: [Synth 8-637] synthesizing blackbox instance 'S_EDGE_DET_0' of component 'TCH_TDC_OV_S_EDGE_DET_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV.vhd:71]
-INFO: [Synth 8-3491] module 'TCH_TDC_OV_c_counter_binary_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_c_counter_binary_0_0/synth/TCH_TDC_OV_c_counter_binary_0_0.vhd:59' bound to instance 'c_counter_binary_0' of component 'TCH_TDC_OV_c_counter_binary_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV.vhd:80]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_wrapper' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_wrapper.vhd:14' bound to instance 'U0' of component 'TCH_TDC_OV_wrapper' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_wrapper' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_wrapper.vhd:26]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:14' bound to instance 'TCH_TDC_OV_i' of component 'TCH_TDC_OV' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_wrapper.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:30]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_D_REG_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_D_REG_0_0.vhd:56' bound to instance 'D_REG_0' of component 'TCH_TDC_OV_D_REG_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_D_REG_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_D_REG_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'D_REG' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/D_REG.vhd:34' bound to instance 'U0' of component 'D_REG' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_D_REG_0_0.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'D_REG' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/D_REG.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'D_REG' (1#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/D_REG.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_D_REG_0_0' (2#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_D_REG_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_S_EDGE_DET_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_S_EDGE_DET_0_0.vhd:56' bound to instance 'S_EDGE_DET_0' of component 'TCH_TDC_OV_S_EDGE_DET_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_S_EDGE_DET_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_S_EDGE_DET_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'S_EDGE_DET' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/S_EDGE_DET.vhd:34' bound to instance 'U0' of component 'S_EDGE_DET' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_S_EDGE_DET_0_0.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'S_EDGE_DET' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/S_EDGE_DET.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'S_EDGE_DET' (3#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/S_EDGE_DET.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_S_EDGE_DET_0_0' (4#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_S_EDGE_DET_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_T_META_HARDEN_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_0.vhd:56' bound to instance 'T_META_HARDEN_0' of component 'TCH_TDC_OV_T_META_HARDEN_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_T_META_HARDEN_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'T_META_HARDEN' declared at 'D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:34' bound to instance 'U0' of component 'T_META_HARDEN' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_0.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'T_META_HARDEN' [D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:40]
+INFO: [Synth 8-3491] module 'META_HARDEN' declared at 'D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/META_HARDEN.vhd:34' bound to instance 'META_0' of component 'META_HARDEN' [D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'META_HARDEN' [D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/META_HARDEN.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'META_HARDEN' (5#1) [D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/META_HARDEN.vhd:40]
+INFO: [Synth 8-3491] module 'META_HARDEN' declared at 'D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/META_HARDEN.vhd:34' bound to instance 'META_1' of component 'META_HARDEN' [D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'T_META_HARDEN' (6#1) [D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_T_META_HARDEN_0_0' (7#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_T_META_HARDEN_0_1' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_1.vhd:56' bound to instance 'T_META_HARDEN_1' of component 'TCH_TDC_OV_T_META_HARDEN_0_1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:118]
+INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_T_META_HARDEN_0_1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_1.vhd:64]
+INFO: [Synth 8-3491] module 'T_META_HARDEN' declared at 'D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:34' bound to instance 'U0' of component 'T_META_HARDEN' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_1.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_T_META_HARDEN_0_1' (8#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_T_META_HARDEN_0_1.vhd:64]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_c_counter_binary_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_c_counter_binary_0_0/synth/TCH_TDC_OV_c_counter_binary_0_0.vhd:59' bound to instance 'c_counter_binary_0' of component 'TCH_TDC_OV_c_counter_binary_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:124]
 INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_c_counter_binary_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_c_counter_binary_0_0/synth/TCH_TDC_OV_c_counter_binary_0_0.vhd:68]
 	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
 	Parameter C_VERBOSITY bound to: 0 - type: integer 
@@ -57,18 +87,22 @@ INFO: [Synth 8-638] synthesizing module 'TCH_TDC_OV_c_counter_binary_0_0' [d:/SI
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_13' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/ipshared/23f1/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2147' bound to instance 'U0' of component 'c_counter_binary_v12_0_13' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_c_counter_binary_0_0/synth/TCH_TDC_OV_c_counter_binary_0_0.vhd:128]
-INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_c_counter_binary_0_0' (8#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_c_counter_binary_0_0/synth/TCH_TDC_OV_c_counter_binary_0_0.vhd:68]
-INFO: [Synth 8-3491] module 'TCH_TDC_OV_util_vector_logic_1_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/synth/TCH_TDC_OV_util_vector_logic_1_0.v:57' bound to instance 'util_vector_logic_1' of component 'TCH_TDC_OV_util_vector_logic_1_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_c_counter_binary_0_0' (16#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_c_counter_binary_0_0/synth/TCH_TDC_OV_c_counter_binary_0_0.vhd:68]
+INFO: [Synth 8-3491] module 'TCH_TDC_OV_util_vector_logic_1_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/synth/TCH_TDC_OV_util_vector_logic_1_0.v:57' bound to instance 'util_vector_logic_1' of component 'TCH_TDC_OV_util_vector_logic_1_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:131]
 INFO: [Synth 8-6157] synthesizing module 'TCH_TDC_OV_util_vector_logic_1_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/synth/TCH_TDC_OV_util_vector_logic_1_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
 	Parameter C_OPERATION bound to: not - type: string 
 	Parameter C_SIZE bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (9#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'TCH_TDC_OV_util_vector_logic_1_0' (10#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/synth/TCH_TDC_OV_util_vector_logic_1_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV' (11#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_wrapper' (12#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ca44/src/TCH_TDC_OV_wrapper.vhd:26]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' (13#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:68]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_axi_gpio_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/synth/TDC_OVERLAY_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_0' of component 'TDC_OVERLAY_axi_gpio_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1801]
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (17#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'TCH_TDC_OV_util_vector_logic_1_0' (18#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/synth/TCH_TDC_OV_util_vector_logic_1_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV' (19#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'TCH_TDC_OV_wrapper' (20#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/TCH_TDC_OV_wrapper.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0' (21#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/synth/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd:68]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_T_META_HARDEN_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_T_META_HARDEN_0_0/synth/TDC_OVERLAY_T_META_HARDEN_0_0.vhd:56' bound to instance 'T_META_HARDEN_0' of component 'TDC_OVERLAY_T_META_HARDEN_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1719]
+INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_T_META_HARDEN_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_T_META_HARDEN_0_0/synth/TDC_OVERLAY_T_META_HARDEN_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'T_META_HARDEN' declared at 'D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd:34' bound to instance 'U0' of component 'T_META_HARDEN' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_T_META_HARDEN_0_0/synth/TDC_OVERLAY_T_META_HARDEN_0_0.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_T_META_HARDEN_0_0' (22#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_T_META_HARDEN_0_0/synth/TDC_OVERLAY_T_META_HARDEN_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_axi_gpio_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/synth/TDC_OVERLAY_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_0' of component 'TDC_OVERLAY_axi_gpio_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1725]
 INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_axi_gpio_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/synth/TDC_OVERLAY_axi_gpio_0_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -131,29 +165,29 @@ INFO: [Synth 8-638] synthesizing module 'pselect_f' [d:/SInglePhotons/Vivado Pro
 	Parameter C_AW bound to: 2 - type: integer 
 	Parameter C_BAR bound to: 2'b00 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f' (14#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (23#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 2 - type: integer 
 	Parameter C_AW bound to: 2 - type: integer 
 	Parameter C_BAR bound to: 2'b01 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (14#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (23#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 2 - type: integer 
 	Parameter C_AW bound to: 2 - type: integer 
 	Parameter C_BAR bound to: 2'b10 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (14#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (23#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 2 - type: integer 
 	Parameter C_AW bound to: 2 - type: integer 
 	Parameter C_BAR bound to: 2'b11 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (14#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'address_decoder' (15#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (23#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (24#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
-INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (16#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (17#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (25#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (26#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
 INFO: [Synth 8-638] synthesizing module 'GPIO_Core' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 	Parameter C_DW bound to: 32 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
@@ -472,7 +506,7 @@ INFO: [Common 17-14] Message 'Synth 8-113' appears 100 times and further instanc
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (18#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (27#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
@@ -486,7 +520,7 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (18#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (27#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
@@ -521,10 +555,10 @@ WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[31].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
 WARNING: [Synth 8-6014] Unused sequential element Dual.gpio2_Data_In_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:920]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (19#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (20#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_axi_gpio_0_0' (21#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/synth/TDC_OVERLAY_axi_gpio_0_0.vhd:85]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_clk_wiz_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.v:70' bound to instance 'clk_wiz_0' of component 'TDC_OVERLAY_clk_wiz_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1825]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (28#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (29#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_axi_gpio_0_0' (30#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/synth/TDC_OVERLAY_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_clk_wiz_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.v:70' bound to instance 'clk_wiz_0' of component 'TDC_OVERLAY_clk_wiz_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1749]
 INFO: [Synth 8-6157] synthesizing module 'TDC_OVERLAY_clk_wiz_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.v:70]
 INFO: [Synth 8-6157] synthesizing module 'TDC_OVERLAY_clk_wiz_0_0_clk_wiz' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0_clk_wiz.v:68]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
@@ -533,15 +567,15 @@ INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUF' (22#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (31#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 40.500000 - type: float 
+	Parameter CLKFBOUT_MULT_F bound to: 46.000000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: float 
 	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
-	Parameter CLKOUT0_DIVIDE_F bound to: 2.250000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 2.500000 - type: float 
 	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
@@ -583,12 +617,12 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/s
 	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
 	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (23#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (32#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (24#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_clk_wiz_0_0_clk_wiz' (25#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0_clk_wiz.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_clk_wiz_0_0' (26#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.v:70]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_axi_gpio_1_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/synth/TDC_OVERLAY_axi_gpio_1_0.vhd:59' bound to instance 'data_rdy_int' of component 'TDC_OVERLAY_axi_gpio_1_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1831]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (33#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_clk_wiz_0_0_clk_wiz' (34#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0_clk_wiz.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_clk_wiz_0_0' (35#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.v:70]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_axi_gpio_1_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/synth/TDC_OVERLAY_axi_gpio_1_0.vhd:59' bound to instance 'data_rdy_int' of component 'TDC_OVERLAY_axi_gpio_1_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1755]
 INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_axi_gpio_1_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/synth/TDC_OVERLAY_axi_gpio_1_0.vhd:84]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -641,10 +675,10 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized0' [d:/SInglePh
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:443]
 WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:351]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (26#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (26#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_axi_gpio_1_0' (27#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/synth/TDC_OVERLAY_axi_gpio_1_0.vhd:84]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_processing_system7_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/synth/TDC_OVERLAY_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'TDC_OVERLAY_processing_system7_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1854]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (35#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (35#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_axi_gpio_1_0' (36#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/synth/TDC_OVERLAY_axi_gpio_1_0.vhd:84]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_processing_system7_0_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/synth/TDC_OVERLAY_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'TDC_OVERLAY_processing_system7_0_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1778]
 INFO: [Synth 8-6157] synthesizing module 'TDC_OVERLAY_processing_system7_0_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/synth/TDC_OVERLAY_processing_system7_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
@@ -706,19 +740,19 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
-INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (28#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (37#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'PS7' (29#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (30#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (38#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (39#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/synth/TDC_OVERLAY_processing_system7_0_0.v:323]
-INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_processing_system7_0_0' (31#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/synth/TDC_OVERLAY_processing_system7_0_0.v:60]
-INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_ps7_0_axi_periph_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:747]
+INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_processing_system7_0_0' (40#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/synth/TDC_OVERLAY_processing_system7_0_0.v:60]
+INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_ps7_0_axi_periph_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:749]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_UT1MNM' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_UT1MNM' (32#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_UT1MNM' (41#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:61]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1UTX5D8' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:168]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1UTX5D8' (33#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:168]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1UTX5D8' (42#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:168]
 INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_12S2BV3' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:269]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_12S2BV3' (34#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:269]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_12S2BV3' (43#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:269]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_10CRH0I' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:393]
 INFO: [Synth 8-3491] module 'TDC_OVERLAY_auto_pc_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/synth/TDC_OVERLAY_auto_pc_0.v:58' bound to instance 'auto_pc' of component 'TDC_OVERLAY_auto_pc_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:576]
 INFO: [Synth 8-6157] synthesizing module 'TDC_OVERLAY_auto_pc_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/synth/TDC_OVERLAY_auto_pc_0.v:58]
@@ -766,20 +800,20 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' (35#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' (44#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' (36#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd_translator' (37#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' (45#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd_translator' (46#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE_WAIT bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' (38#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_aw_channel' (39#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' (47#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_aw_channel' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter LP_RESP_OKAY bound to: 2'b00 
@@ -800,7 +834,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo' (40#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo' (49#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 2 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
@@ -809,8 +843,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' (40#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' (41#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' (49#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' (50#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -822,8 +856,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
 WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
 WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm' (42#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' (43#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm' (51#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' (52#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
@@ -841,7 +875,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1' (43#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1' (52#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 13 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
@@ -850,8 +884,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' (43#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' (44#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' (52#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' (53#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -967,22 +1001,22 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_regist
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice' (45#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice' (54#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' (45#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' (54#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' (45#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' (54#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' (45#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' (54#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -1075,7 +1109,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (46#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (55#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -1168,8 +1202,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (47#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (56#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
@@ -1286,22 +1320,22 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_regist
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -1394,7 +1428,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -1487,14 +1521,14 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' (48#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s' (49#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (50#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
-INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_auto_pc_0' (51#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/synth/TDC_OVERLAY_auto_pc_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_10CRH0I' (52#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:393]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_xbar_1' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_xbar_1/synth/TDC_OVERLAY_xbar_1.v:59' bound to instance 'xbar' of component 'TDC_OVERLAY_xbar_1' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1338]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s' (58#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (59#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_auto_pc_0' (60#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/synth/TDC_OVERLAY_auto_pc_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_10CRH0I' (61#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:393]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_xbar_1' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_xbar_1/synth/TDC_OVERLAY_xbar_1.v:59' bound to instance 'xbar' of component 'TDC_OVERLAY_xbar_1' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1246]
 INFO: [Synth 8-6157] synthesizing module 'TDC_OVERLAY_xbar_1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_xbar_1/synth/TDC_OVERLAY_xbar_1.v:59]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -1621,8 +1655,8 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_s
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_carry_and' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
 	Parameter C_FAMILY bound to: rtl - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (53#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (54#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (62#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (63#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_VALUE bound to: 30'b010000010010000100000000000000 
@@ -1630,8 +1664,8 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_s
 	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (54#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_decoder' (55#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (63#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_decoder' (64#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -1647,7 +1681,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' [d:
 	Parameter P_AXI4 bound to: 0 - type: integer 
 	Parameter P_AXI3 bound to: 1 - type: integer 
 	Parameter P_AXILITE bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' (56#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' (65#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_NUM_S bound to: 1 - type: integer 
@@ -1656,51 +1690,51 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd
 	Parameter C_GRANT_ENC bound to: 1 - type: integer 
 	Parameter C_ARB_PRIORITY bound to: 0 - type: integer 
 	Parameter P_PRIO_MASK bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd' (57#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd' (66#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_splitter' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 	Parameter C_NUM_M bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter' (58#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter' (67#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_splitter__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 	Parameter C_NUM_M bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter__parameterized0' (58#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter__parameterized0' (67#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (59#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (68#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 1 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 1 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (59#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (68#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (59#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (68#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized7' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized7' (59#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized7' (68#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (59#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (68#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_aw_trans_seq_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2056]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_ar_trans_seq_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2067]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_w_beat_cnt_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2078]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_r_beat_cnt_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2091]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' (60#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' (61#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_xbar_1' (62#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_xbar_1/synth/TDC_OVERLAY_xbar_1.v:59]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_ps7_0_axi_periph_0' (63#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:747]
-INFO: [Synth 8-3491] module 'TDC_OVERLAY_rst_ps7_0_100M_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/synth/TDC_OVERLAY_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'TDC_OVERLAY_rst_ps7_0_100M_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:2024]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' (69#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' (70#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
+INFO: [Synth 8-6155] done synthesizing module 'TDC_OVERLAY_xbar_1' (71#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_xbar_1/synth/TDC_OVERLAY_xbar_1.v:59]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_ps7_0_axi_periph_0' (72#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:749]
+INFO: [Synth 8-3491] module 'TDC_OVERLAY_rst_ps7_0_100M_0' declared at 'd:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/synth/TDC_OVERLAY_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'TDC_OVERLAY_rst_ps7_0_100M_0' [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1950]
 INFO: [Synth 8-638] synthesizing module 'TDC_OVERLAY_rst_ps7_0_100M_0' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/synth/TDC_OVERLAY_rst_ps7_0_100M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -1750,7 +1784,7 @@ INFO: [Synth 8-638] synthesizing module 'lpf' [d:/SInglePhotons/Vivado Projects/
 INFO: [Synth 8-3491] module 'SRL16' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684' bound to instance 'POR_SRL_I' of component 'SRL16' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
 INFO: [Synth 8-6157] synthesizing module 'SRL16' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684]
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'SRL16' (64#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (73#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684]
 INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized1' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
@@ -1764,17 +1798,17 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized1' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized1' (64#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'lpf' (65#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized1' (73#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (74#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
 INFO: [Synth 8-638] synthesizing module 'sequence_psr' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
 INFO: [Synth 8-638] synthesizing module 'upcnt_n' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
 	Parameter C_SIZE bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (66#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
-INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (67#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
-INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (68#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_rst_ps7_0_100M_0' (69#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/synth/TDC_OVERLAY_rst_ps7_0_100M_0.vhd:74]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY' (70#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1489]
-INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_wrapper' (71#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (75#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (76#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (77#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_rst_ps7_0_100M_0' (78#1) [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/synth/TDC_OVERLAY_rst_ps7_0_100M_0.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY' (79#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/synth/TDC_OVERLAY.vhd:1397]
+INFO: [Synth 8-256] done synthesizing module 'TDC_OVERLAY_wrapper' (80#1) [D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd:44]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_aclk
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_resetn
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_vect_in[1]
@@ -1877,7 +1911,7 @@ WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector__parameteriz
 WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector__parameterized0 has unconnected port s_axi_awlen[7]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 934.727 ; gain = 365.582
+Finished RTL Elaboration : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 938.855 ; gain = 365.766
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1890,10 +1924,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 947.320 ; gain = 378.176
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 952.188 ; gain = 379.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 947.320 ; gain = 378.176
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 952.188 ; gain = 379.098
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 281 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1934,31 +1968,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TDC_OVERLAY_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1050.340 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1055.191 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 217 instances were transformed.
   FDR => FDRE: 216 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1050.340 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1055.191 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1050.340 ; gain = 481.195
+Finished Constraint Validation : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1055.191 ; gain = 482.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1050.340 ; gain = 481.195
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1055.191 ; gain = 482.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/processing_system7_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 43).
-Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/rst_ps7_0_100M/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 46).
-Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/axi_gpio_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 52).
-Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/clk_wiz_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 60).
-Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/data_rdy_int/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 68).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/processing_system7_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 46).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/rst_ps7_0_100M/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 49).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/axi_gpio_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 55).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/clk_wiz_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 63).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/data_rdy_int/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/dont_touch.xdc}, line 71).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/processing_system7_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/rst_ps7_0_100M. (constraint file  auto generated constraint, line ).
@@ -1967,13 +2001,15 @@ Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/ps7_0_axi_periph. (cons
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/data_rdy_int. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/TCH_TDC_OV_wrapper_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/TCH_TDC_OV_wrapper_0/U0/TCH_TDC_OV_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/TCH_TDC_OV_wrapper_0/U0/TCH_TDC_OV_i/util_vector_logic_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/T_META_HARDEN_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for TDC_OVERLAY_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 1050.340 ; gain = 481.195
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 1055.191 ; gain = 482.102
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'wt_reg' into 'detected_reg' [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/611d/src/S_EDGE_DET.vhd:50]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
@@ -1999,7 +2035,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1050.340 ; gain = 481.195
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 1055.191 ; gain = 482.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2191,7 +2227,7 @@ WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GE
 WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (TDC_OVERLAY_i/ps7_0_axi_periph/xbar/\inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1050.340 ; gain = 481.195
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1055.191 ; gain = 482.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2203,13 +2239,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:12 ; elapsed = 00:01:16 . Memory (MB): peak = 1112.336 ; gain = 543.191
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:12 ; elapsed = 00:01:16 . Memory (MB): peak = 1118.082 ; gain = 544.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:16 . Memory (MB): peak = 1132.402 ; gain = 563.258
+Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1137.895 ; gain = 564.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2221,7 +2257,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 1154.055 ; gain = 584.910
+Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 1159.285 ; gain = 586.195
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2246,7 +2282,7 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2259,7 +2295,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2271,76 +2307,74 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------------------+----------+
-|      |BlackBox name             |Instances |
-+------+--------------------------+----------+
-|1     |TCH_TDC_OV_S_EDGE_DET_0_0 |         1|
-+------+--------------------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------------------------------+------+
-|      |Cell                             |Count |
-+------+---------------------------------+------+
-|1     |TCH_TDC_OV_S_EDGE_DET_0_0_bbox_0 |     1|
-|2     |BIBUF                            |   130|
-|3     |BUFG                             |     3|
-|4     |CARRY4                           |    18|
-|5     |LUT1                             |   149|
-|6     |LUT2                             |    63|
-|7     |LUT3                             |   330|
-|8     |LUT4                             |   116|
-|9     |LUT5                             |   136|
-|10    |LUT6                             |   199|
-|11    |MMCME2_ADV                       |     1|
-|12    |MUXCY                            |    31|
-|13    |PS7                              |     1|
-|14    |SRL16                            |     1|
-|15    |SRL16E                           |    18|
-|16    |SRLC32E                          |    47|
-|17    |XORCY                            |    32|
-|18    |FDR                              |   140|
-|19    |FDRE                             |   966|
-|20    |FDSE                             |    55|
-|21    |IBUF                             |     2|
-|22    |OBUF                             |     2|
-+------+---------------------------------+------+
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BIBUF      |   130|
+|2     |BUFG       |     3|
+|3     |CARRY4     |    18|
+|4     |LUT1       |   149|
+|5     |LUT2       |    64|
+|6     |LUT3       |   330|
+|7     |LUT4       |   118|
+|8     |LUT5       |   138|
+|9     |LUT6       |   199|
+|10    |MMCME2_ADV |     1|
+|11    |MUXCY      |    31|
+|12    |PS7        |     1|
+|13    |SRL16      |     1|
+|14    |SRL16E     |    18|
+|15    |SRLC32E    |    47|
+|16    |XORCY      |    32|
+|17    |FDR        |   140|
+|18    |FDRE       |  1008|
+|19    |FDSE       |    55|
+|20    |IBUF       |     2|
+|21    |OBUF       |     2|
++------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 233 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:01:17 . Memory (MB): peak = 1157.848 ; gain = 485.684
-Synthesis Optimization Complete : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1157.848 ; gain = 588.703
+Synthesis finished with 0 errors, 0 critical warnings and 200 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:01:18 . Memory (MB): peak = 1163.105 ; gain = 487.012
+Synthesis Optimization Complete : Time (s): cpu = 00:01:18 ; elapsed = 00:01:22 . Memory (MB): peak = 1163.105 ; gain = 590.016
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 223 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1175.918 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1182.102 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 149 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 8 instances
@@ -2348,12 +2382,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-492 Infos, 148 Warnings, 0 Critical Warnings and 0 Errors encountered.
+525 Infos, 150 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1175.918 ; gain = 875.590
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1175.918 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:31 . Memory (MB): peak = 1182.102 ; gain = 879.559
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1182.102 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.runs/synth_1/TDC_OVERLAY_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TDC_OVERLAY_wrapper_utilization_synth.rpt -pb TDC_OVERLAY_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 27 16:46:34 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 28 14:30:02 2019...

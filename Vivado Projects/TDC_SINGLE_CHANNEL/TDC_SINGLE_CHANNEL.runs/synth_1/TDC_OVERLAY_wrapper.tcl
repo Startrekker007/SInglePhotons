@@ -17,10 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/j.borbely/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-7212-CISS32101/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -37,7 +33,11 @@ set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCH_IA_IP [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {{D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd}}
+read_vhdl -library xil_defaultlib {
+  {D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/META_HARDEN.vhd}
+  {D:/SInglePhotons/Vivado Projects/SCH_IA/SCH_IA.srcs/sources_1/new/T_META_HARDEN.vhd}
+  {D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/hdl/TDC_OVERLAY_wrapper.vhd}
+}
 add_files {{D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/TDC_OVERLAY.bd}}
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/TDC_OVERLAY_processing_system7_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_rst_ps7_0_100M_0/TDC_OVERLAY_rst_ps7_0_100M_0_board.xdc}}]
@@ -51,8 +51,8 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/TDC_OVERLAY_axi_gpio_1_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/TDC_OVERLAY_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_auto_pc_0/TDC_OVERLAY_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/TDC_SINGLE_CHANNEL/TDC_SINGLE_CHANNEL.srcs/sources_1/bd/TDC_OVERLAY/TDC_OVERLAY_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being

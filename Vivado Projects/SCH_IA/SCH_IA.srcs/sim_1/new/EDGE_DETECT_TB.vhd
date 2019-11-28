@@ -60,10 +60,8 @@ begin
     wait for 10ns;
     RST <= '1';
     wait for 37ns;
-    SIG <= '1';
-    wait for 57ns;
-    sig <= '0';
+    
     wait;
 end process;
-
+SIG <= not SIG after 10ns;
 end Behavioral;

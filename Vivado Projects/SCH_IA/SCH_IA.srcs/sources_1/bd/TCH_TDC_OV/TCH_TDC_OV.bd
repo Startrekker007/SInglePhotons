@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x47275B8B6D75708F",
+      "boundary_crc": "0x47275B8B4BD57203",
       "device": "xc7z020clg400-1",
       "name": "TCH_TDC_OV",
       "synth_flow_mode": "None",
@@ -11,6 +11,9 @@
     "design_tree": {
       "c_counter_binary_0": "",
       "util_vector_logic_1": "",
+      "D_REG_0": "",
+      "T_META_HARDEN_0": "",
+      "T_META_HARDEN_1": "",
       "S_EDGE_DET_0": ""
     },
     "ports": {
@@ -76,6 +79,88 @@
           }
         }
       },
+      "D_REG_0": {
+        "vlnv": "xilinx.com:module_ref:D_REG:1.0",
+        "xci_name": "TCH_TDC_OV_D_REG_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "D_REG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DAT_IN": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 32}",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "WR_EN": {
+            "direction": "I"
+          },
+          "DAT_OUT": {
+            "direction": "O",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 32}",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "T_META_HARDEN_0": {
+        "vlnv": "xilinx.com:module_ref:T_META_HARDEN:1.0",
+        "xci_name": "TCH_TDC_OV_T_META_HARDEN_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "T_META_HARDEN",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "INP": {
+            "direction": "I"
+          },
+          "S_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "T_META_HARDEN_1": {
+        "vlnv": "xilinx.com:module_ref:T_META_HARDEN:1.0",
+        "xci_name": "TCH_TDC_OV_T_META_HARDEN_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "T_META_HARDEN",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "INP": {
+            "direction": "I"
+          },
+          "S_OUT": {
+            "direction": "O"
+          }
+        }
+      },
       "S_EDGE_DET_0": {
         "vlnv": "xilinx.com:module_ref:S_EDGE_DET:1.0",
         "xci_name": "TCH_TDC_OV_S_EDGE_DET_0_0",
@@ -119,20 +204,10 @@
         "ports": [
           "HS_CLK_IN",
           "c_counter_binary_0/CLK",
+          "D_REG_0/CLK",
+          "T_META_HARDEN_0/CLK",
+          "T_META_HARDEN_1/CLK",
           "S_EDGE_DET_0/HS_CLK"
-        ]
-      },
-      "Net": {
-        "ports": [
-          "M_RST",
-          "util_vector_logic_1/Op1",
-          "S_EDGE_DET_0/RST"
-        ]
-      },
-      "c_counter_binary_0_Q": {
-        "ports": [
-          "c_counter_binary_0/Q",
-          "T_DATA"
         ]
       },
       "util_vector_logic_1_Res": {
@@ -148,12 +223,6 @@
           "WAITING"
         ]
       },
-      "CH0_1": {
-        "ports": [
-          "CH0",
-          "S_EDGE_DET_0/SIG"
-        ]
-      },
       "S_EDGE_DET_0_ARMED": {
         "ports": [
           "S_EDGE_DET_0/ARMED",
@@ -163,7 +232,45 @@
       "S_EDGE_DET_0_DONE": {
         "ports": [
           "S_EDGE_DET_0/DONE",
-          "D_RDY"
+          "D_RDY",
+          "D_REG_0/WR_EN"
+        ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "D_REG_0/DAT_IN"
+        ]
+      },
+      "D_REG_0_DAT_OUT": {
+        "ports": [
+          "D_REG_0/DAT_OUT",
+          "T_DATA"
+        ]
+      },
+      "META_HARDEN_0_S_OUT": {
+        "ports": [
+          "T_META_HARDEN_0/S_OUT",
+          "util_vector_logic_1/Op1",
+          "S_EDGE_DET_0/RST"
+        ]
+      },
+      "M_RST_1": {
+        "ports": [
+          "M_RST",
+          "T_META_HARDEN_0/INP"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "T_META_HARDEN_1/INP"
+        ]
+      },
+      "T_META_HARDEN_1_S_OUT": {
+        "ports": [
+          "T_META_HARDEN_1/S_OUT",
+          "S_EDGE_DET_0/SIG"
         ]
       }
     }
