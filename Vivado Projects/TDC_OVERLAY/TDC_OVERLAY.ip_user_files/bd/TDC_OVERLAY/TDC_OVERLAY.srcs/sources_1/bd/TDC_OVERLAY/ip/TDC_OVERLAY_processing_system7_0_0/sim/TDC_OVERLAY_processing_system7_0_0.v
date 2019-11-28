@@ -576,7 +576,7 @@ input PS_PORB;
     .FCLK_RESET1_N(),
     .FCLK_RESET2_N(),
     .FCLK_RESET3_N(),
-    .IRQ_F2P(16'B0),
+    .IRQ_F2P(IRQ_F2P),
     .PS_SRSTB(PS_SRSTB),
     .PS_CLK(PS_CLK),
     .PS_PORB(PS_PORB)

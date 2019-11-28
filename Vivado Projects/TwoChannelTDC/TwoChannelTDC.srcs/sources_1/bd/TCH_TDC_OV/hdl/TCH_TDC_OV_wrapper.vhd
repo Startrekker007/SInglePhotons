@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Nov 25 10:46:52 2019
---Host        : CISS31247 running 64-bit major release  (build 9200)
+--Date        : Wed Nov 27 12:21:39 2019
+--Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TCH_TDC_OV_wrapper.bd
 --Design      : TCH_TDC_OV_wrapper
 --Purpose     : IP block netlist

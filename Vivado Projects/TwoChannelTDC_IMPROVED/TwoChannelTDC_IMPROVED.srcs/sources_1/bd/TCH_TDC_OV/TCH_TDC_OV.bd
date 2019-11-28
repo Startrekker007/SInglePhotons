@@ -1,0 +1,249 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB0B083646BC28F8C",
+      "device": "xc7z020clg400-1",
+      "name": "TCH_TDC_OV",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "util_vector_logic_0": "",
+      "c_counter_binary_0": "",
+      "util_vector_logic_1": "",
+      "util_vector_logic_3": "",
+      "CH1_EDGE": "",
+      "CH0_EDGE": ""
+    },
+    "ports": {
+      "HS_CLK_IN": {
+        "direction": "I"
+      },
+      "CH0": {
+        "direction": "I"
+      },
+      "CH1": {
+        "direction": "I"
+      },
+      "M_RST": {
+        "direction": "I"
+      },
+      "D_RDY": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "T_DATA": {
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 32}",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "WAITING": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TCH_TDC_OV_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "and"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "TCH_TDC_OV_c_counter_binary_0_0",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Output_Width": {
+            "value": "32"
+          },
+          "SCLR": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TCH_TDC_OV_util_vector_logic_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TCH_TDC_OV_util_vector_logic_3_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "xor"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "CH1_EDGE": {
+        "vlnv": "xilinx.com:module_ref:Edge_Detect:1.0",
+        "xci_name": "TCH_TDC_OV_CH0_EDGE_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Edge_Detect",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RST",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "O_RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "SIG": {
+            "direction": "I"
+          },
+          "DET": {
+            "direction": "O"
+          }
+        }
+      },
+      "CH0_EDGE": {
+        "vlnv": "xilinx.com:module_ref:Edge_Detect:1.0",
+        "xci_name": "TCH_TDC_OV_Edge_Detect_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Edge_Detect",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RST",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "O_RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "SIG": {
+            "direction": "I"
+          },
+          "DET": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "HS_CLK_IN",
+          "c_counter_binary_0/CLK",
+          "CH1_EDGE/HS_CLK",
+          "CH0_EDGE/HS_CLK"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "CH0_EDGE/SIG"
+        ]
+      },
+      "CH1_1": {
+        "ports": [
+          "CH1",
+          "CH1_EDGE/SIG"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "M_RST",
+          "util_vector_logic_1/Op1",
+          "CH1_EDGE/RST",
+          "CH1_EDGE/O_RST",
+          "CH0_EDGE/RST",
+          "CH0_EDGE/O_RST"
+        ]
+      },
+      "CH0_EDGE_DET": {
+        "ports": [
+          "CH0_EDGE/DET",
+          "util_vector_logic_0/Op1",
+          "util_vector_logic_3/Op1"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "D_RDY"
+        ]
+      },
+      "CH1_EDGE_DET": {
+        "ports": [
+          "CH1_EDGE/DET",
+          "util_vector_logic_0/Op2",
+          "util_vector_logic_3/Op2"
+        ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "T_DATA"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "c_counter_binary_0/SCLR"
+        ]
+      },
+      "util_vector_logic_3_Res": {
+        "ports": [
+          "util_vector_logic_3/Res",
+          "c_counter_binary_0/CE",
+          "WAITING"
+        ]
+      }
+    }
+  }
+}

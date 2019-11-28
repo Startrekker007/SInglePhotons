@@ -28,15 +28,6 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_processing_system7_0_0/sim/TDC_OVERLAY_processing_system7_0_0.v" \
 -endlib
--makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
--endlib
--makelib xcelium_lib/axi_intc_v4_1_13 \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c0fe/hdl/axi_intc_v4_1_vh_rfs.vhd" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_intc_0_0/sim/TDC_OVERLAY_axi_intc_0_0.vhd" \
--endlib
 -makelib xcelium_lib/lib_cdc_v1_0_2 \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
 -endlib
@@ -70,6 +61,9 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_xbar_1/sim/TDC_OVERLAY_xbar_1.v" \
 -endlib
+-makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+-endlib
 -makelib xcelium_lib/interrupt_control_v3_1_4 \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
 -endlib
@@ -79,33 +73,61 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_0_0/sim/TDC_OVERLAY_axi_gpio_0_0.vhd" \
 -endlib
--makelib xcelium_lib/xlconstant_v1_1_6 \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_xlconstant_0_0/sim/TCH_TDC_OV_xlconstant_0_0.v" \
--endlib
--makelib xcelium_lib/util_vector_logic_v2_0_1 \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_0_0/sim/TCH_TDC_OV_util_vector_logic_0_0.v" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/src/TCH_TDC_OV_util_vector_logic_1_0/sim/TCH_TDC_OV_util_vector_logic_1_0.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/sim/TCH_TDC_OV_CH0_EDGE_0.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/sim/TCH_TDC_OV_Edge_Detect_0_0.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/sim/TCH_TDC_OV_DIG_TIMER_0_0.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/src/Edge_Detect.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/src/DIG_TIMER.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/sim/TCH_TDC_OV.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/src/TCH_TDC_OV_wrapper.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/8a5c/src/TDC_CONTROLLER.vhd" \
-  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0/sim/TDC_OVERLAY_TCH_TDC_OV_wrapper_0_0.vhd" \
--endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0_clk_wiz.v" \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_clk_wiz_0_0/TDC_OVERLAY_clk_wiz_0_0.v" \
+-endlib
+-makelib xcelium_lib/util_vector_logic_v2_0_1 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_util_vector_logic_0_0/sim/TCH_TDC_OV_util_vector_logic_0_0.v" \
+-endlib
+-makelib xcelium_lib/xbip_utils_v3_0_10 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_reg_fd_v12_0_6 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/edec/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_wrapper_v3_0_4 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/cdbf/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_pipe_v3_0_6 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/7468/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_addsub_v3_0_6 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/910d/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_addsub_v3_0_6 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/cfdd/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_addsub_v12_0_13 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/cbe4/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_gate_bit_v12_0_6 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/7161/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_counter_v3_0_6 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/9ac8/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_counter_binary_v12_0_13 \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/ipshared/23f1/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_c_counter_binary_0_0/sim/TCH_TDC_OV_c_counter_binary_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_util_vector_logic_1_0/sim/TCH_TDC_OV_util_vector_logic_1_0.v" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/src/TCH_TDC_OV_util_vector_logic_3_0/sim/TCH_TDC_OV_util_vector_logic_3_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/98f9/sim/TCH_TDC_OV_CH0_EDGE_0.vhd" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/98f9/sim/TCH_TDC_OV_Edge_Detect_0_0.vhd" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/98f9/src/Edge_Detect.vhd" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/98f9/sim/TCH_TDC_OV.vhd" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/98f9/src/TCH_TDC_OV_wrapper.vhd" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0/sim/TDC_OVERLAY_TCH_TDC_OV_wrapper_1_0.vhd" \
+  "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ip/TDC_OVERLAY_axi_gpio_1_0/sim/TDC_OVERLAY_axi_gpio_1_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
   "../../../../TDC_OVERLAY.srcs/sources_1/bd/TDC_OVERLAY/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

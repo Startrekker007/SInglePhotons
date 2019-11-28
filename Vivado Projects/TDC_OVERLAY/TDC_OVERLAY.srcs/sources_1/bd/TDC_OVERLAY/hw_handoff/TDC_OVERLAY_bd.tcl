@@ -162,16 +162,18 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
+  set ARMED [ create_bd_port -dir O -from 0 -to 0 ARMED ]
   set CH0 [ create_bd_port -dir I CH0 ]
   set CH1 [ create_bd_port -dir I CH1 ]
+  set WAITING [ create_bd_port -dir O -from 0 -to 0 WAITING ]
   set sys_clock [ create_bd_port -dir I -type clk sys_clock ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {125000000} \
    CONFIG.PHASE {0.000} \
  ] $sys_clock
 
-  # Create instance: TCH_TDC_OV_wrapper_0, and set properties
-  set TCH_TDC_OV_wrapper_0 [ create_bd_cell -type ip -vlnv govt.nz:user:TCH_TDC_OV_wrapper:1.0 TCH_TDC_OV_wrapper_0 ]
+  # Create instance: TCH_TDC_OV_wrapper_1, and set properties
+  set TCH_TDC_OV_wrapper_1 [ create_bd_cell -type ip -vlnv cri.nz:user:TCH_TDC_OV_wrapper:1.0 TCH_TDC_OV_wrapper_1 ]
 
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
@@ -182,12 +184,6 @@ proc create_root_design { parentCell } {
    CONFIG.C_GPIO2_WIDTH {1} \
    CONFIG.C_IS_DUAL {1} \
  ] $axi_gpio_0
-
-  # Create instance: axi_intc_0, and set properties
-  set axi_intc_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 axi_intc_0 ]
-  set_property -dict [ list \
-   CONFIG.C_IRQ_IS_LEVEL {0} \
- ] $axi_intc_0
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -204,6 +200,15 @@ proc create_root_design { parentCell } {
    CONFIG.USE_BOARD_FLOW {true} \
    CONFIG.USE_LOCKED {false} \
  ] $clk_wiz_0
+
+  # Create instance: data_rdy_int, and set properties
+  set data_rdy_int [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 data_rdy_int ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {1} \
+   CONFIG.C_GPIO_WIDTH {1} \
+   CONFIG.C_INTERRUPT_PRESENT {0} \
+   CONFIG.C_IS_DUAL {0} \
+ ] $data_rdy_int
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -421,7 +426,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_INCLUDE_TRACE_BUFFER {0} \
    CONFIG.PCW_IOPLL_CTRL_FBDIV {20} \
    CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
-   CONFIG.PCW_IRQ_F2P_INTR {0} \
+   CONFIG.PCW_IRQ_F2P_INTR {1} \
    CONFIG.PCW_IRQ_F2P_MODE {DIRECT} \
    CONFIG.PCW_MIO_0_DIRECTION {inout} \
    CONFIG.PCW_MIO_0_IOTYPE {LVCMOS 3.3V} \
@@ -734,7 +739,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_PCAP_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {5} \
    CONFIG.PCW_PCAP_PERIPHERAL_FREQMHZ {200} \
-   CONFIG.PCW_PERIPHERAL_BOARD_PRESET {None} \
+   CONFIG.PCW_PERIPHERAL_BOARD_PRESET {part0} \
    CONFIG.PCW_PLL_BYPASSMODE_ENABLE {0} \
    CONFIG.PCW_PRESET_BANK0_VOLTAGE {LVCMOS 3.3V} \
    CONFIG.PCW_PRESET_BANK1_VOLTAGE {LVCMOS 1.8V} \
@@ -981,7 +986,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {2} \
+   CONFIG.NUM_MI {3} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -991,24 +996,25 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi_intc_0/s_axi] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins data_rdy_int/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
 
   # Create port connections
-  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TCH_TDC_OV_wrapper_0/CH0]
-  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins TCH_TDC_OV_wrapper_0/CH1]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_D_RDY [get_bd_pins TCH_TDC_OV_wrapper_0/D_RDY] [get_bd_pins axi_intc_0/intr]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_T_DATA [get_bd_pins TCH_TDC_OV_wrapper_0/T_DATA] [get_bd_pins axi_gpio_0/gpio_io_i]
-  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_pins TCH_TDC_OV_wrapper_0/M_RST] [get_bd_pins axi_gpio_0/gpio2_io_o]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins TCH_TDC_OV_wrapper_0/HS_CLK_IN] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_intc_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TCH_TDC_OV_wrapper_1/CH0]
+  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins TCH_TDC_OV_wrapper_1/CH1]
+  connect_bd_net -net TCH_TDC_OV_wrapper_1_D_RDY [get_bd_pins TCH_TDC_OV_wrapper_1/D_RDY] [get_bd_pins data_rdy_int/gpio_io_i]
+  connect_bd_net -net TCH_TDC_OV_wrapper_1_T_DATA [get_bd_pins TCH_TDC_OV_wrapper_1/T_DATA] [get_bd_pins axi_gpio_0/gpio_io_i]
+  connect_bd_net -net TCH_TDC_OV_wrapper_1_WAITING [get_bd_ports WAITING] [get_bd_pins TCH_TDC_OV_wrapper_1/WAITING]
+  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_ports ARMED] [get_bd_pins TCH_TDC_OV_wrapper_1/M_RST] [get_bd_pins axi_gpio_0/gpio2_io_o]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins TCH_TDC_OV_wrapper_1/HS_CLK_IN] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins data_rdy_int/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_intc_0/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins data_rdy_int/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_0/clk_in1]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x41800000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_intc_0/S_AXI/Reg] SEG_axi_intc_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs data_rdy_int/S_AXI/Reg] SEG_data_rdy_int_Reg
 
 
   # Restore current instance
