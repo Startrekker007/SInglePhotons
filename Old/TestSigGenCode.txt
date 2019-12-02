@@ -1,0 +1,37 @@
+class SIGNAL_GEN:
+    def __init__(self):#Temporarily handling a single channel pulse generator
+        self.PC_OV = Overlay("TDC/PG_OV_wrapper.bit",0)
+        self.PC_OV.download()
+        self.util = MMIO(0x41210000,0x10000)#Reset and enable lines GPIO
+        self.dat = MMIO(0x41200000,0x10000)#Duty cycle and cycle timer limit
+        self.util.write(ch1_dir,0x0)
+        self.util.write(ch2_dir, 0x0)
+        self.dat.write(ch1_dir,0x0)
+        self.dat.write(ch1_data,0xFF)
+        self.dat.write(ch2_data,0x7F)
+        self.util.write(ch1_data,0x0)#Enable clock and hold output channel in reset
+        self.dctr = 127
+        self.tlim = 255
+    def enable_channel(self):
+        self.util.write(ch1_data,0x1)
+    def disable_channel(self):
+        self.util.write(ch1_data,0x0)
+    def change_freq(self,freqi):
+        if(freqi > freq or freq < 0.1):
+            print("Invalid frequency, must be between 450Mhz and 0.1Hz")
+            return
+        ratio = self.tlim/self.dctr
+        newtlim = (1/freqi)/(1/freq)
+        newdc = newtlim/ratio
+        self.tlim = int(newtlim)
+        self.dctr = int(newdc)
+        self.disable_channel()
+        self.dat.write(ch1_data,self.tlim)
+        self.dat.write(ch2_data,self.dctr)
+        self.enable_channel()
+        dc = 0
+        if(self.tlim == 0):
+            dc = 0.5
+        else:
+            dc = self.dctr/self.tlim
+        return [1/(self.tlim*(1/freq)), dc]
