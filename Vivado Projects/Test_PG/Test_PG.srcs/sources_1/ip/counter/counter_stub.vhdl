@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Mon Dec  2 16:38:30 2019
+-- Date        : Tue Dec  3 09:51:06 2019
 -- Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode synth_stub {d:/SInglePhotons/Vivado
 --               Projects/Test_PG/Test_PG.srcs/sources_1/ip/counter/counter_stub.vhdl}

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="counter_synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1575257869">
+<GenRun Id="counter_synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1575319820">
   <File Type="PA-TCL" Name="counter.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="counter_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="counter_reports.tcl"/>
   <File Type="RDS-RDS" Name="counter.vds"/>
   <File Type="RDS-UTIL" Name="counter_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="counter_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="counter.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="counter_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="counter_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/counter">
     <File Path="$PSRCDIR/sources_1/ip/counter/counter.xci">
       <FileInfo>
@@ -42,9 +39,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
