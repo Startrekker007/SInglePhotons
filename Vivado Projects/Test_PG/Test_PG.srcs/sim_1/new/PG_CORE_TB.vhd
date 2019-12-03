@@ -58,16 +58,16 @@ component PG_CORE is port(
 end component;
 signal MCLK : std_logic := '0';
 signal RSTn : std_logic := '0';
-signal TLIM0 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
-signal TLIM1 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
+signal TLIM0 : STD_LOGIC_VECTOR (31 downto 0) := x"00000100";
+signal TLIM1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000200";
 signal TLIM2 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
 signal TLIM3 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
-signal DC0 : STD_LOGIC_VECTOR (31 downto 0) := x"0000007F";
-signal DC1 : STD_LOGIC_VECTOR (31 downto 0) := x"0000007F";
+signal DC0 : STD_LOGIC_VECTOR (31 downto 0) := x"00000080";
+signal DC1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000100";
 signal DC2 : STD_LOGIC_VECTOR (31 downto 0) := x"0000007F";
 signal DC3 : STD_LOGIC_VECTOR (31 downto 0) := x"0000007F";
 signal DEL0 : STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
-signal DEL1 : STD_LOGIC_VECTOR (31 downto 0) := x"0000000F";
+signal DEL1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000000";
 signal DEL2 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
 signal DEL3 : STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
 signal CHOUTP : STD_LOGIC_VECTOR (3 downto 0);
@@ -103,9 +103,9 @@ process
 begin
     wait for 10ns;
     RSTn <= '1';
-    wait for 2us;
-    DC0 <= x"00000000";
-    DC3 <= x"000000FF";
+    --wait for 2us;
+    --DC0 <= x"00000000";
+    --DC3 <= x"000000FF";
     wait;
 end process;
 end Behavioral;
