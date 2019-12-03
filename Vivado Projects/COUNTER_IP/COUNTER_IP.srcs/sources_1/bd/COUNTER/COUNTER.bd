@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF3E8B8B7D66DD5DB",
+      "boundary_crc": "0x850EC005D3D03A74",
       "device": "xc7z020clg400-1",
       "name": "COUNTER",
       "synth_flow_mode": "None",
@@ -17,7 +17,7 @@
       "CTR_CTL_0": ""
     },
     "interface_ports": {
-      "S_AXI_0_tlm": {
+      "data": {
         "mode": "Slave",
         "vlnv": "xilinx.com:interface:aximm_tlm:1.0",
         "parameters": {
@@ -143,7 +143,7 @@
           }
         }
       },
-      "s_axi_1_tlm": {
+      "util": {
         "mode": "Slave",
         "vlnv": "xilinx.com:interface:aximm_tlm:1.0",
         "parameters": {
@@ -274,16 +274,13 @@
       "TCLK": {
         "direction": "I"
       },
-      "PCLK": {
-        "direction": "I"
-      },
       "P_SIG_EX": {
         "direction": "I"
       },
-      "s_axi_rst": {
+      "aresetn": {
         "direction": "I"
       },
-      "s_axi_clk": {
+      "aclk": {
         "direction": "I"
       }
     },
@@ -422,16 +419,16 @@
       }
     },
     "interface_nets": {
-      "s_axi_1_1": {
-        "interface_ports": [
-          "s_axi_1_tlm",
-          "axi_gpio_util/S_AXI"
-        ]
-      },
       "S_AXI_0_1": {
         "interface_ports": [
-          "S_AXI_0_tlm",
+          "data",
           "axi_gpio_data/S_AXI"
+        ]
+      },
+      "s_axi_1_1": {
+        "interface_ports": [
+          "util",
+          "axi_gpio_util/S_AXI"
         ]
       }
     },
@@ -451,14 +448,14 @@
       },
       "s_axi_clk_1": {
         "ports": [
-          "s_axi_clk",
+          "aclk",
           "axi_gpio_data/s_axi_aclk",
           "axi_gpio_util/s_axi_aclk"
         ]
       },
       "s_axi_rst_1": {
         "ports": [
-          "s_axi_rst",
+          "aresetn",
           "axi_gpio_data/s_axi_aresetn",
           "axi_gpio_util/s_axi_aresetn"
         ]
@@ -511,11 +508,11 @@
     "addressing": {
       "/": {
         "address_spaces": {
-          "S_AXI_0_tlm": {
+          "data": {
             "range": "64K",
             "width": "32"
           },
-          "s_axi_1_tlm": {
+          "util": {
             "range": "64K",
             "width": "32"
           }
