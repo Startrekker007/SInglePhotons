@@ -1,0 +1,2391 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  4 11:13:13 2019" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="CO_AXI_PERIPH" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="TCLK"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="TCLK"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="TCLK"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="TCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="aclk"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="aclk"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="aclk"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="aclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aresetn" SIGIS="undef" SIGNAME="External_Ports_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="aresetn"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="aresetn"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="aresetn"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH2" SIGIS="undef" SIGNAME="External_Ports_CH2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH3" SIGIS="undef" SIGNAME="External_Ports_CH3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data0_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data0_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="data0_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="data0_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data0_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data0_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data0_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data0_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data0_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data0_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data0_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="data0_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data0_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data0_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data0_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util2_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util2_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util2_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="util2_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="util2_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util2_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util2_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util2_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util2_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util2_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util2_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util2_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="util2_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util2_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util2_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util2_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util1_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util1_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="util1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="util1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util1_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util1_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util1_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util1_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util1_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util1_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="util1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util1_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util1_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data3_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data3_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="data3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="data3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data3_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data3_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data3_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data3_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data3_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data3_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="data3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data3_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data3_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="data_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util0_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util0_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="util0_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="util0_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util0_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util0_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util0_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util0_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util0_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util0_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util0_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="util0_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util0_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util0_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util0_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data1_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data1_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="data1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="data1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data1_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data1_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data1_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data1_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data1_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data1_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="data1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data1_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data1_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data2_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data2_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data2_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="data2_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="data2_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data2_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data2_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data2_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data2_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data2_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data2_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data2_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="data2_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data2_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data2_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data2_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="util3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="util3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="util3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_rready"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="External_Interface_data0" DATAWIDTH="32" NAME="data0" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="data0_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="data0_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="data0_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="data0_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="data0_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="data0_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="data0_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="data0_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="data0_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="data0_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="data0_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="data0_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="data0_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="data0_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="data0_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="data0_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="data0_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_data1" DATAWIDTH="32" NAME="data1" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="data1_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="data1_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="data1_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="data1_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="data1_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="data1_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="data1_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="data1_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="data1_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="data1_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="data1_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="data1_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="data1_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="data1_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="data1_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="data1_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="data1_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_data2" DATAWIDTH="32" NAME="data2" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="data2_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="data2_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="data2_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="data2_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="data2_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="data2_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="data2_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="data2_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="data2_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="data2_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="data2_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="data2_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="data2_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="data2_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="data2_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="data2_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="data2_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_data3" DATAWIDTH="32" NAME="data3" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="data3_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="data3_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="data3_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="data3_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="data3_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="data3_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="data3_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="data3_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="data3_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="data3_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="data3_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="data3_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="data3_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="data3_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="data3_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="data3_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="data3_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_util0" DATAWIDTH="32" NAME="util0" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="util0_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="util0_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="util0_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="util0_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="util0_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="util0_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="util0_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="util0_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="util0_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="util0_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="util0_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="util0_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="util0_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="util0_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="util0_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="util0_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="util0_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_util1" DATAWIDTH="32" NAME="util1" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="util1_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="util1_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="util1_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="util1_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="util1_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="util1_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="util1_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="util1_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="util1_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="util1_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="util1_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="util1_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="util1_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="util1_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="util1_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="util1_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="util1_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_util2" DATAWIDTH="32" NAME="util2" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="util2_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="util2_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="util2_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="util2_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="util2_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="util2_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="util2_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="util2_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="util2_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="util2_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="util2_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="util2_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="util2_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="util2_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="util2_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="util2_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="util2_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_util3" DATAWIDTH="32" NAME="util3" TYPE="SLAVE">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="256"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="util3_awaddr"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="util3_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="util3_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="util3_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="util3_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="util3_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="util3_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="util3_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="util3_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="util3_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="util3_araddr"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="util3_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="util3_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="util3_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="util3_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="util3_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="util3_rready"/>
+      </PORTMAPS>
+      <MEMORYMAP/>
+      <PERIPHERALS/>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_0" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="P_SIG_EX" SIGIS="undef" SIGNAME="External_Ports_CH0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="data_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="data_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="data_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data0_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="util_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="util_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="util_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_util_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util0_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_data0" DATAWIDTH="32" NAME="data" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="data_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="data_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="data_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="data_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="data_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="data_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="data_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="data_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="data_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="data_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="data_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="data_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="data_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="data_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="data_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="data_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="data_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_util0" DATAWIDTH="32" NAME="util" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="util_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="util_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="util_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="util_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="util_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="util_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="util_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="util_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="util_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="util_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="util_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="util_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="util_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="util_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="util_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="util_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="util_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_1" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_0_3"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="P_SIG_EX" SIGIS="undef" SIGNAME="External_Ports_CH1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="data_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="data_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="data_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data1_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="util_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="util_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="util_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util1_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_data1" DATAWIDTH="32" NAME="data" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="data_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="data_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="data_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="data_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="data_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="data_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="data_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="data_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="data_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="data_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="data_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="data_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="data_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="data_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="data_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="data_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="data_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_util1" DATAWIDTH="32" NAME="util" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="util_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="util_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="util_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="util_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="util_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="util_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="util_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="util_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="util_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="util_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="util_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="util_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="util_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="util_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="util_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="util_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="util_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_2" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_1_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="P_SIG_EX" SIGIS="undef" SIGNAME="External_Ports_CH2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="data_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="data_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="data_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data2_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="util_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="util_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="util_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util2_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_data2" DATAWIDTH="32" NAME="data" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="data_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="data_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="data_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="data_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="data_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="data_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="data_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="data_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="data_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="data_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="data_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="data_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="data_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="data_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="data_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="data_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="data_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_util2" DATAWIDTH="32" NAME="util" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="util_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="util_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="util_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="util_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="util_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="util_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="util_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="util_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="util_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="util_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="util_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="util_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="util_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="util_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="util_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="util_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="util_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_3" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_1_3"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="P_SIG_EX" SIGIS="undef" SIGNAME="External_Ports_CH3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="data_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="data_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="data_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="data_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="data_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="data3_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="util_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="util_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="util_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="util_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="util_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="util_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="util_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CO_AXI_PERIPH_imp" PORT="util3_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_data3" DATAWIDTH="32" NAME="data" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="data_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="data_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="data_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="data_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="data_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="data_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="data_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="data_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="data_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="data_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="data_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="data_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="data_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="data_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="data_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="data_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="data_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_util3" DATAWIDTH="32" NAME="util" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="util_awaddr"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="util_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="util_awready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="util_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="util_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="util_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="util_wready"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="util_bresp"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="util_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="util_bready"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="util_araddr"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="util_arvalid"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="util_arready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="util_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="util_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="util_rvalid"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="util_rready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

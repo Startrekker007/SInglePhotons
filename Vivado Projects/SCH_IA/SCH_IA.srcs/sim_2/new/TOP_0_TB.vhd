@@ -36,7 +36,7 @@ entity TOP_TB is
 end TOP_TB;
 
 architecture Behavioral of TOP_TB is
-component TCH_TDC_OV_WRAPPER is port(
+component SCH_IA_WRAPPER is port(
     ARMED : out STD_LOGIC;
     CH0 : in STD_LOGIC;
     D_RDY : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -54,7 +54,7 @@ signal T_DATA : std_logic_vector(31 downto 0);
 signal ARMED : std_logic;
 signal WAITING : std_logic_vector(0 downto 0);
 begin
-DUT : TCH_TDC_OV_WRAPPER port map(
+DUT : SCH_IA_WRAPPER port map(
     HS_CLK_IN => HS_CLK_IN,
     CH0 => CH0,
     M_RST => M_RST,
