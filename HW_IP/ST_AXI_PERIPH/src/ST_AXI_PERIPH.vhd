@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec  3 15:18:21 2019
+--Date        : Wed Dec  4 12:14:41 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target ST_AXI_PERIPH.bd
 --Design      : ST_AXI_PERIPH
@@ -61,24 +61,6 @@ entity ST_AXI_PERIPH is
 end ST_AXI_PERIPH;
 
 architecture STRUCTURE of ST_AXI_PERIPH is
-  component ST_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0 is
-  port (
-    ARMED : out STD_LOGIC;
-    CH0 : in STD_LOGIC;
-    D_RDY : out STD_LOGIC_VECTOR ( 0 to 0 );
-    HS_CLK_IN : in STD_LOGIC;
-    M_RST : in STD_LOGIC;
-    T_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    WAITING : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component ST_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0;
-  component ST_AXI_PERIPH_T_META_HARDEN_0_0 is
-  port (
-    CLK : in STD_LOGIC;
-    INP : in STD_LOGIC;
-    S_OUT : out STD_LOGIC
-  );
-  end component ST_AXI_PERIPH_T_META_HARDEN_0_0;
   component ST_AXI_PERIPH_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -128,16 +110,34 @@ architecture STRUCTURE of ST_AXI_PERIPH is
     gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component ST_AXI_PERIPH_axi_gpio_0_1;
+  component ST_AXI_PERIPH_T_META_HARDEN_0_0 is
+  port (
+    CLK : in STD_LOGIC;
+    INP : in STD_LOGIC;
+    S_OUT : out STD_LOGIC
+  );
+  end component ST_AXI_PERIPH_T_META_HARDEN_0_0;
+  component ST_AXI_PERIPH_SCH_IA_wrapper_0_0 is
+  port (
+    ARMED : out STD_LOGIC;
+    CH0 : in STD_LOGIC;
+    D_RDY : out STD_LOGIC_VECTOR ( 0 to 0 );
+    HS_CLK_IN : in STD_LOGIC;
+    M_RST : in STD_LOGIC;
+    T_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    WAITING : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component ST_AXI_PERIPH_SCH_IA_wrapper_0_0;
   signal CH0_1 : STD_LOGIC;
   signal MCLK_1 : STD_LOGIC;
-  signal TCH_TDC_OV_wrapper_0_ARMED : STD_LOGIC;
-  signal TCH_TDC_OV_wrapper_0_D_RDY : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal TCH_TDC_OV_wrapper_0_T_DATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal TCH_TDC_OV_wrapper_0_WAITING : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SCH_IA_wrapper_0_ARMED : STD_LOGIC;
+  signal SCH_IA_wrapper_0_D_RDY : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SCH_IA_wrapper_0_T_DATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal SCH_IA_wrapper_0_WAITING : STD_LOGIC_VECTOR ( 0 to 0 );
   signal T_META_HARDEN_0_S_OUT : STD_LOGIC;
   signal aclk_1 : STD_LOGIC;
   signal aresetn_1 : STD_LOGIC;
-  signal axi_gpio_0_gpio2_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_data_gpio2_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal data_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal data_1_ARREADY : STD_LOGIC;
   signal data_1_ARVALID : STD_LOGIC;
@@ -211,10 +211,10 @@ architecture STRUCTURE of ST_AXI_PERIPH is
   attribute X_INTERFACE_INFO of rdy_wdata : signal is "xilinx.com:interface:aximm:1.0 rdy WDATA";
   attribute X_INTERFACE_INFO of rdy_wstrb : signal is "xilinx.com:interface:aximm:1.0 rdy WSTRB";
 begin
-  ARMED <= TCH_TDC_OV_wrapper_0_ARMED;
+  ARMED <= SCH_IA_wrapper_0_ARMED;
   CH0_1 <= CH0;
   MCLK_1 <= MCLK;
-  WAITING(0) <= TCH_TDC_OV_wrapper_0_WAITING(0);
+  WAITING(0) <= SCH_IA_wrapper_0_WAITING(0);
   aclk_1 <= aclk;
   aresetn_1 <= aresetn;
   data_1_ARADDR(8 downto 0) <= data_araddr(8 downto 0);
@@ -251,26 +251,26 @@ begin
   rdy_rresp(1 downto 0) <= rdy_1_RRESP(1 downto 0);
   rdy_rvalid <= rdy_1_RVALID;
   rdy_wready <= rdy_1_WREADY;
-TCH_TDC_OV_wrapper_0: component ST_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0
+SCH_IA_wrapper_0: component ST_AXI_PERIPH_SCH_IA_wrapper_0_0
      port map (
-      ARMED => TCH_TDC_OV_wrapper_0_ARMED,
+      ARMED => SCH_IA_wrapper_0_ARMED,
       CH0 => CH0_1,
-      D_RDY(0) => TCH_TDC_OV_wrapper_0_D_RDY(0),
+      D_RDY(0) => SCH_IA_wrapper_0_D_RDY(0),
       HS_CLK_IN => MCLK_1,
-      M_RST => axi_gpio_0_gpio2_io_o(0),
-      T_DATA(31 downto 0) => TCH_TDC_OV_wrapper_0_T_DATA(31 downto 0),
-      WAITING(0) => TCH_TDC_OV_wrapper_0_WAITING(0)
+      M_RST => axi_data_gpio2_io_o(0),
+      T_DATA(31 downto 0) => SCH_IA_wrapper_0_T_DATA(31 downto 0),
+      WAITING(0) => SCH_IA_wrapper_0_WAITING(0)
     );
 T_META_HARDEN_0: component ST_AXI_PERIPH_T_META_HARDEN_0_0
      port map (
       CLK => aclk_1,
-      INP => TCH_TDC_OV_wrapper_0_D_RDY(0),
+      INP => SCH_IA_wrapper_0_D_RDY(0),
       S_OUT => T_META_HARDEN_0_S_OUT
     );
 axi_data: component ST_AXI_PERIPH_axi_gpio_0_0
      port map (
-      gpio2_io_o(0) => axi_gpio_0_gpio2_io_o(0),
-      gpio_io_i(31 downto 0) => TCH_TDC_OV_wrapper_0_T_DATA(31 downto 0),
+      gpio2_io_o(0) => axi_data_gpio2_io_o(0),
+      gpio_io_i(31 downto 0) => SCH_IA_wrapper_0_T_DATA(31 downto 0),
       s_axi_aclk => aclk_1,
       s_axi_araddr(8 downto 0) => data_1_ARADDR(8 downto 0),
       s_axi_aresetn => aresetn_1,

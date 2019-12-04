@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec  3 14:43:20 2019
+--Date        : Wed Dec  4 11:36:45 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target PG_AXI_PERIPH.bd
 --Design      : PG_AXI_PERIPH
@@ -140,34 +140,12 @@ entity PG_AXI_PERIPH is
     util_wvalid : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of PG_AXI_PERIPH : entity is "PG_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=PG_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=8,numReposBlks=8,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of PG_AXI_PERIPH : entity is "PG_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=PG_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of PG_AXI_PERIPH : entity is "PG_AXI_PERIPH.hwdef";
 end PG_AXI_PERIPH;
 
 architecture STRUCTURE of PG_AXI_PERIPH is
-  component PG_AXI_PERIPH_PG_CORE_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    RSTn : in STD_LOGIC;
-    TLIM0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    TLIM1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    TLIM2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    TLIM3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DC0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DC1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DC2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DC3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DEL0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DEL1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DEL2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DEL3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CHOUTP : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    EN : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    STABLE : out STD_LOGIC;
-    CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component PG_AXI_PERIPH_PG_CORE_0_0;
   component PG_AXI_PERIPH_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -343,11 +321,33 @@ architecture STRUCTURE of PG_AXI_PERIPH is
     gpio2_io_o : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component PG_AXI_PERIPH_axi_gpio_0_2;
+  component PG_AXI_PERIPH_PG_CORE_1_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    TLIM0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CHOUTP : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    EN : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    STABLE : out STD_LOGIC;
+    CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component PG_AXI_PERIPH_PG_CORE_1_0;
   signal MCLK_1 : STD_LOGIC;
   signal Net : STD_LOGIC;
-  signal PG_CORE_0_CHOUTP : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal PG_CORE_0_CSTATE : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal PG_CORE_0_STABLE : STD_LOGIC;
+  signal PG_CORE_1_CHOUTP : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal PG_CORE_1_CSTATE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal PG_CORE_1_STABLE : STD_LOGIC;
   signal aclk_1 : STD_LOGIC;
   signal axi_ch_0_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_ch_0_gpio_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -611,11 +611,11 @@ architecture STRUCTURE of PG_AXI_PERIPH is
   attribute X_INTERFACE_INFO of util_wdata : signal is "xilinx.com:interface:aximm:1.0 util WDATA";
   attribute X_INTERFACE_INFO of util_wstrb : signal is "xilinx.com:interface:aximm:1.0 util WSTRB";
 begin
-  CSTATE(3 downto 0) <= PG_CORE_0_CSTATE(3 downto 0);
+  CSTATE(3 downto 0) <= PG_CORE_1_CSTATE(3 downto 0);
   MCLK_1 <= MCLK;
   Net <= aresetn;
-  OUTP(3 downto 0) <= PG_CORE_0_CHOUTP(3 downto 0);
-  STABLE <= PG_CORE_0_STABLE;
+  OUTP(3 downto 0) <= PG_CORE_1_CHOUTP(3 downto 0);
+  STABLE <= PG_CORE_1_STABLE;
   aclk_1 <= aclk;
   ch0_1_ARADDR(8 downto 0) <= ch0_araddr(8 downto 0);
   ch0_1_ARVALID <= ch0_arvalid;
@@ -736,10 +736,10 @@ begin
   util_rresp(1 downto 0) <= util_1_RRESP(1 downto 0);
   util_rvalid <= util_1_RVALID;
   util_wready <= util_1_WREADY;
-PG_CORE_0: component PG_AXI_PERIPH_PG_CORE_0_0
+PG_CORE_1: component PG_AXI_PERIPH_PG_CORE_1_0
      port map (
-      CHOUTP(3 downto 0) => PG_CORE_0_CHOUTP(3 downto 0),
-      CSTATE(3 downto 0) => PG_CORE_0_CSTATE(3 downto 0),
+      CHOUTP(3 downto 0) => PG_CORE_1_CHOUTP(3 downto 0),
+      CSTATE(3 downto 0) => PG_CORE_1_CSTATE(3 downto 0),
       DC0(31 downto 0) => axi_ch_0_gpio2_io_o(31 downto 0),
       DC1(31 downto 0) => axi_ch_1_gpio2_io_o(31 downto 0),
       DC2(31 downto 0) => axi_ch_2_gpio2_io_o(31 downto 0),
@@ -751,7 +751,7 @@ PG_CORE_0: component PG_AXI_PERIPH_PG_CORE_0_0
       EN(3 downto 0) => axi_utility_gpio2_io_o(3 downto 0),
       MCLK => MCLK_1,
       RSTn => axi_utility_gpio_io_o(0),
-      STABLE => PG_CORE_0_STABLE,
+      STABLE => PG_CORE_1_STABLE,
       TLIM0(31 downto 0) => axi_ch_0_gpio_io_o(31 downto 0),
       TLIM1(31 downto 0) => axi_ch_1_gpio_io_o(31 downto 0),
       TLIM2(31 downto 0) => axi_ch_2_gpio_io_o(31 downto 0),

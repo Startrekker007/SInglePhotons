@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>cri.nz</spirit:vendor>
-  <spirit:library>SP</spirit:library>
-  <spirit:name>CT_AXI_PERIPH</spirit:name>
+  <spirit:library>user</spirit:library>
+  <spirit:name>CT_AXI_PERIPH_wrapper</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -377,7 +377,7 @@
         <spirit:language>VHDL</spirit:language>
         <spirit:modelName>CT_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagesynthesis_cri_nz_user_TCH_TDC_OV_wrapper_1_0__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
@@ -388,7 +388,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>315aa757</spirit:value>
+            <spirit:value>78e0498e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -399,7 +399,7 @@
         <spirit:language>VHDL</spirit:language>
         <spirit:modelName>CT_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_cri_nz_user_TCH_TDC_OV_wrapper_1_0__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
@@ -410,7 +410,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>facb8f37</spirit:value>
+            <spirit:value>335a66af</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -420,7 +420,7 @@
         <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
         <spirit:modelName>CT_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_implementation_cri_nz_user_TCH_TDC_OV_wrapper_1_0__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_implementation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_implementation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
@@ -432,6 +432,21 @@
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
             <spirit:value>5906027b</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>CT_CTRL_TB</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>bfd1e055</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1115,25 +1130,66 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0/CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0.xci</spirit:name>
+        <spirit:name>src/CT_AXI_PERIPH_CT_CTRL_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/CT_AXI_PERIPH_MH_CT_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/CT_AXI_PERIPH_MH_CT_0_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/CT_AXI_PERIPH_MH_CT_1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/t_counter_0/t_counter_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_TCH_TDC_OV_wrapper_0</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH_axi_gpio_0_0/CT_AXI_PERIPH_axi_gpio_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_data</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH_axi_gpio_0_1/CT_AXI_PERIPH_axi_gpio_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_rdy</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/CT_CTRL.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/MH_CT.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
@@ -1147,15 +1203,15 @@
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH_wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4346f27c</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_cb43a840</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_cri_nz_user_TCH_TDC_OV_wrapper_1_0__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TCH_TDC_OV_wrapper" xilinx:version="1.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -1174,25 +1230,66 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0/CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0.xci</spirit:name>
+        <spirit:name>sim/CT_AXI_PERIPH_CT_CTRL_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/CT_AXI_PERIPH_MH_CT_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/CT_AXI_PERIPH_MH_CT_0_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/CT_AXI_PERIPH_MH_CT_1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/t_counter_0/t_counter_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_TCH_TDC_OV_wrapper_0</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH_axi_gpio_0_0/CT_AXI_PERIPH_axi_gpio_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_data</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH_axi_gpio_0_1/CT_AXI_PERIPH_axi_gpio_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_rdy</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/CT_CTRL.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>sim/CT_AXI_PERIPH.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/MH_CT.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
@@ -1208,10 +1305,10 @@
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagebehavioralsimulation_cri_nz_user_TCH_TDC_OV_wrapper_1_0__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TCH_TDC_OV_wrapper" xilinx:version="1.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -1234,19 +1331,27 @@
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_data</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/CT_AXI_PERIPH_axi_gpio_0_1/CT_AXI_PERIPH_axi_gpio_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_rdy</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_implementation_cri_nz_user_TCH_TDC_OV_wrapper_1_0__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_implementation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TCH_TDC_OV_wrapper" xilinx:version="1.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -1263,16 +1368,26 @@
       </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/CT_CTRL_TB.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/CT_AXI_PERIPH_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/CT_AXI_PERIPH_wrapper_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>CT_AXI_PERIPH</spirit:description>
+  <spirit:description>CT_AXI_PERIPH_wrapper_v1_0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -1285,35 +1400,29 @@
         <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
       </xilinx:supportedFamilies>
       <xilinx:taxonomies>
-        <xilinx:taxonomy>/Single_Photons</xilinx:taxonomy>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>CT_AXI_PERIPH</xilinx:displayName>
+      <xilinx:displayName>CT_AXI_PERIPH_wrapper_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:upgrades>
-        <xilinx:canUpgradeFrom>cri.nz:user:CT_AXI_PERIPH_wrapper:1.0</xilinx:canUpgradeFrom>
-      </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2019-12-03T02:08:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>4</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-12-04T03:29:23Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a27dc0f_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d66db4c_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3576cd47_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@15dc548_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@16dbcebe_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@79da3473_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7780dfea_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@26c9b944_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@72cb9837_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c3d65db_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@26e1c543_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6afd5888_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d261162_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1396090f_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1067b3c1_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f02c919_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68061ca3_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5391186_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36821e9b_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21878d97_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@256cdbba_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/CT_AXI_PERIPH</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f85a7b9e"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="61d5cb58"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="22396bdb"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1bf28570"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a059e608"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="93641556"/>
     </xilinx:packagingInfo>

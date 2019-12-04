@@ -11,7 +11,10 @@
     "design_tree": {
       "axi_data": "",
       "axi_rdy": "",
-      "TCH_TDC_OV_wrapper_0": ""
+      "CT_CTRL_0": "",
+      "MH_CT_0": "",
+      "MH_CT_1": "",
+      "MH_CT_2": ""
     },
     "interface_ports": {
       "data": {
@@ -325,49 +328,128 @@
           }
         }
       },
-      "TCH_TDC_OV_wrapper_0": {
-        "vlnv": "cri.nz:user:TCH_TDC_OV_wrapper:1.0",
-        "xci_name": "CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0"
+      "CT_CTRL_0": {
+        "vlnv": "xilinx.com:module_ref:CT_CTRL:1.0",
+        "xci_name": "CT_AXI_PERIPH_CT_CTRL_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CT_CTRL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "CH0": {
+            "direction": "I"
+          },
+          "CH1": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "D_RDY": {
+            "direction": "O"
+          },
+          "T_DATA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WAITING": {
+            "direction": "O"
+          }
+        }
+      },
+      "MH_CT_0": {
+        "vlnv": "xilinx.com:module_ref:MH_CT:1.0",
+        "xci_name": "CT_AXI_PERIPH_MH_CT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MH_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O"
+          }
+        }
+      },
+      "MH_CT_1": {
+        "vlnv": "xilinx.com:module_ref:MH_CT:1.0",
+        "xci_name": "CT_AXI_PERIPH_MH_CT_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MH_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O"
+          }
+        }
+      },
+      "MH_CT_2": {
+        "vlnv": "xilinx.com:module_ref:MH_CT:1.0",
+        "xci_name": "CT_AXI_PERIPH_MH_CT_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MH_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
-      "data_1": {
-        "interface_ports": [
-          "data",
-          "axi_data/S_AXI"
-        ]
-      },
       "rdy_1": {
         "interface_ports": [
           "rdy",
           "axi_rdy/S_AXI"
         ]
+      },
+      "data_1": {
+        "interface_ports": [
+          "data",
+          "axi_data/S_AXI"
+        ]
       }
     },
     "nets": {
-      "TCH_TDC_OV_wrapper_0_T_DATA": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/T_DATA",
-          "axi_data/gpio_io_i"
-        ]
-      },
       "axi_data_gpio2_io_o": {
         "ports": [
           "axi_data/gpio2_io_o",
           "ARMED",
-          "TCH_TDC_OV_wrapper_0/M_RST"
-        ]
-      },
-      "TCH_TDC_OV_wrapper_0_WAITING": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/WAITING",
-          "WAITING"
-        ]
-      },
-      "TCH_TDC_OV_wrapper_0_D_RDY": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/D_RDY",
-          "axi_rdy/gpio_io_i"
+          "CT_CTRL_0/RSTn"
         ]
       },
       "aclk_1": {
@@ -384,22 +466,61 @@
           "axi_data/s_axi_aresetn"
         ]
       },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "CT_CTRL_0/MCLK",
+          "MH_CT_0/MCLK",
+          "MH_CT_1/MCLK",
+          "MH_CT_2/MCLK"
+        ]
+      },
+      "CT_CTRL_0_WAITING": {
+        "ports": [
+          "CT_CTRL_0/WAITING",
+          "WAITING"
+        ]
+      },
+      "CT_CTRL_0_T_DATA": {
+        "ports": [
+          "CT_CTRL_0/T_DATA",
+          "axi_data/gpio_io_i"
+        ]
+      },
       "CH0_1": {
         "ports": [
           "CH0",
-          "TCH_TDC_OV_wrapper_0/CH0"
+          "MH_CT_0/INP"
         ]
       },
       "CH1_1": {
         "ports": [
           "CH1",
-          "TCH_TDC_OV_wrapper_0/CH1"
+          "MH_CT_1/INP"
         ]
       },
-      "MCLK_1": {
+      "MH_CT_1_OUTP": {
         "ports": [
-          "MCLK",
-          "TCH_TDC_OV_wrapper_0/HS_CLK_IN"
+          "MH_CT_1/OUTP",
+          "CT_CTRL_0/CH1"
+        ]
+      },
+      "MH_CT_0_OUTP": {
+        "ports": [
+          "MH_CT_0/OUTP",
+          "CT_CTRL_0/CH0"
+        ]
+      },
+      "CT_CTRL_0_D_RDY": {
+        "ports": [
+          "CT_CTRL_0/D_RDY",
+          "MH_CT_2/INP"
+        ]
+      },
+      "MH_CT_2_OUTP": {
+        "ports": [
+          "MH_CT_2/OUTP",
+          "axi_rdy/gpio_io_i"
         ]
       }
     },

@@ -214,9 +214,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins COUNTER_wrapper_1/P_SIG_EX]
   connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins COUNTER_wrapper_2/P_SIG_EX]
   connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins COUNTER_wrapper_3/P_SIG_EX]
-  connect_bd_net -net Net [get_bd_ports aresetn] [get_bd_pins COUNTER_wrapper_0/aresetn] [get_bd_pins COUNTER_wrapper_1/aresetn] [get_bd_pins COUNTER_wrapper_2/aresetn] [get_bd_pins COUNTER_wrapper_3/aresetn]
   connect_bd_net -net TCLK_1 [get_bd_ports TCLK] [get_bd_pins COUNTER_wrapper_0/TCLK] [get_bd_pins COUNTER_wrapper_1/TCLK] [get_bd_pins COUNTER_wrapper_2/TCLK] [get_bd_pins COUNTER_wrapper_3/TCLK]
   connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins COUNTER_wrapper_0/aclk] [get_bd_pins COUNTER_wrapper_1/aclk] [get_bd_pins COUNTER_wrapper_2/aclk] [get_bd_pins COUNTER_wrapper_3/aclk]
+  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins COUNTER_wrapper_0/aresetn] [get_bd_pins COUNTER_wrapper_1/aresetn] [get_bd_pins COUNTER_wrapper_2/aresetn] [get_bd_pins COUNTER_wrapper_3/aresetn]
 
   # Create address segments
 

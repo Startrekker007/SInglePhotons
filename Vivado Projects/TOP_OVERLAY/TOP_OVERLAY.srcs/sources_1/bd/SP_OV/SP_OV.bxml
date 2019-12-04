@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="SP_OV" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1575344805"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1575344805"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1575344805"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1575344805"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1575430189"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1575430189"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1575430189"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1575430189"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\SP_OV_processing_system7_0_0\SP_OV_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -39,48 +39,24 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\SP_OV_CO_AXI_PERIPH_0_0\SP_OV_CO_AXI_PERIPH_0_0.xci" Type="IP">
-        <Instance HierarchyPath="CO_AXI_PERIPH_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\SP_OV_clk_wiz_0_0\SP_OV_clk_wiz_0_0.xci" Type="IP">
-        <Instance HierarchyPath="TIMER_CLOCK"/>
+        <Instance HierarchyPath="TIMER_CLK"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\SP_OV_ST_AXI_PERIPH_0_0\SP_OV_ST_AXI_PERIPH_0_0.xci" Type="IP">
-        <Instance HierarchyPath="ST_AXI_PERIPH_0"/>
+      <File Name="ip\SP_OV_PG_AXI_PERIPH_wrapper_0_0\SP_OV_PG_AXI_PERIPH_wrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="PG_AXI_PERIPH_wrapper_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\SP_OV_clk_wiz_0_1\SP_OV_clk_wiz_0_1.xci" Type="IP">
-        <Instance HierarchyPath="REFERENCE_CLOCK"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\SP_OV_CT_AXI_PERIPH_0_0\SP_OV_CT_AXI_PERIPH_0_0.xci" Type="IP">
-        <Instance HierarchyPath="CT_AXI_PERIPH_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\SP_OV_PG_AXI_PERIPH_0_0\SP_OV_PG_AXI_PERIPH_0_0.xci" Type="IP">
-        <Instance HierarchyPath="PG_AXI_PERIPH_0"/>
+      <File Name="ip\SP_OV_TIMER_CLK_0\SP_OV_TIMER_CLK_0.xci" Type="IP">
+        <Instance HierarchyPath="REF_CLK"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -95,8 +71,32 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\SP_OV_util_vector_logic_1_0\SP_OV_util_vector_logic_1_0.xci" Type="IP">
+      <File Name="ip\SP_OV_util_vector_logic_0_1\SP_OV_util_vector_logic_0_1.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\SP_OV_ST_AXI_PERIPH_wrapper_0_0\SP_OV_ST_AXI_PERIPH_wrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="ST_AXI_PERIPH_wrapper_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\SP_OV_P_COUNTER_wrapper_0_0\SP_OV_P_COUNTER_wrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="P_COUNTER_wrapper_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\SP_OV_CT_AXI_PERIPH_wrapper_0_0\SP_OV_CT_AXI_PERIPH_wrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="CT_AXI_PERIPH_wrapper_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

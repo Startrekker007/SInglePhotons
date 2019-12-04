@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec  3 15:49:34 2019
+--Date        : Wed Dec  4 11:13:11 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target CO_AXI_PERIPH_wrapper.bd
 --Design      : CO_AXI_PERIPH_wrapper
@@ -162,6 +162,13 @@ end CO_AXI_PERIPH_wrapper;
 architecture STRUCTURE of CO_AXI_PERIPH_wrapper is
   component CO_AXI_PERIPH is
   port (
+    TCLK : in STD_LOGIC;
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    CH0 : in STD_LOGIC;
+    CH1 : in STD_LOGIC;
+    CH2 : in STD_LOGIC;
+    CH3 : in STD_LOGIC;
     data0_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     data0_awvalid : in STD_LOGIC;
     data0_awready : out STD_LOGIC;
@@ -179,40 +186,40 @@ architecture STRUCTURE of CO_AXI_PERIPH_wrapper is
     data0_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     data0_rvalid : out STD_LOGIC;
     data0_rready : in STD_LOGIC;
-    data1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data1_awvalid : in STD_LOGIC;
-    data1_awready : out STD_LOGIC;
-    data1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    data1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    data1_wvalid : in STD_LOGIC;
-    data1_wready : out STD_LOGIC;
-    data1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data1_bvalid : out STD_LOGIC;
-    data1_bready : in STD_LOGIC;
-    data1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data1_arvalid : in STD_LOGIC;
-    data1_arready : out STD_LOGIC;
-    data1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    data1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data1_rvalid : out STD_LOGIC;
-    data1_rready : in STD_LOGIC;
-    data2_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data2_awvalid : in STD_LOGIC;
-    data2_awready : out STD_LOGIC;
-    data2_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    data2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    data2_wvalid : in STD_LOGIC;
-    data2_wready : out STD_LOGIC;
-    data2_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data2_bvalid : out STD_LOGIC;
-    data2_bready : in STD_LOGIC;
-    data2_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data2_arvalid : in STD_LOGIC;
-    data2_arready : out STD_LOGIC;
-    data2_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    data2_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data2_rvalid : out STD_LOGIC;
-    data2_rready : in STD_LOGIC;
+    util2_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util2_awvalid : in STD_LOGIC;
+    util2_awready : out STD_LOGIC;
+    util2_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    util2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    util2_wvalid : in STD_LOGIC;
+    util2_wready : out STD_LOGIC;
+    util2_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util2_bvalid : out STD_LOGIC;
+    util2_bready : in STD_LOGIC;
+    util2_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util2_arvalid : in STD_LOGIC;
+    util2_arready : out STD_LOGIC;
+    util2_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    util2_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util2_rvalid : out STD_LOGIC;
+    util2_rready : in STD_LOGIC;
+    util1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util1_awvalid : in STD_LOGIC;
+    util1_awready : out STD_LOGIC;
+    util1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    util1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    util1_wvalid : in STD_LOGIC;
+    util1_wready : out STD_LOGIC;
+    util1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util1_bvalid : out STD_LOGIC;
+    util1_bready : in STD_LOGIC;
+    util1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util1_arvalid : in STD_LOGIC;
+    util1_arready : out STD_LOGIC;
+    util1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    util1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util1_rvalid : out STD_LOGIC;
+    util1_rready : in STD_LOGIC;
     data3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     data3_awvalid : in STD_LOGIC;
     data3_awready : out STD_LOGIC;
@@ -247,40 +254,40 @@ architecture STRUCTURE of CO_AXI_PERIPH_wrapper is
     util0_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     util0_rvalid : out STD_LOGIC;
     util0_rready : in STD_LOGIC;
-    util1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util1_awvalid : in STD_LOGIC;
-    util1_awready : out STD_LOGIC;
-    util1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    util1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    util1_wvalid : in STD_LOGIC;
-    util1_wready : out STD_LOGIC;
-    util1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util1_bvalid : out STD_LOGIC;
-    util1_bready : in STD_LOGIC;
-    util1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util1_arvalid : in STD_LOGIC;
-    util1_arready : out STD_LOGIC;
-    util1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    util1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util1_rvalid : out STD_LOGIC;
-    util1_rready : in STD_LOGIC;
-    util2_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util2_awvalid : in STD_LOGIC;
-    util2_awready : out STD_LOGIC;
-    util2_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    util2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    util2_wvalid : in STD_LOGIC;
-    util2_wready : out STD_LOGIC;
-    util2_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util2_bvalid : out STD_LOGIC;
-    util2_bready : in STD_LOGIC;
-    util2_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util2_arvalid : in STD_LOGIC;
-    util2_arready : out STD_LOGIC;
-    util2_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    util2_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util2_rvalid : out STD_LOGIC;
-    util2_rready : in STD_LOGIC;
+    data1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data1_awvalid : in STD_LOGIC;
+    data1_awready : out STD_LOGIC;
+    data1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    data1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    data1_wvalid : in STD_LOGIC;
+    data1_wready : out STD_LOGIC;
+    data1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data1_bvalid : out STD_LOGIC;
+    data1_bready : in STD_LOGIC;
+    data1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data1_arvalid : in STD_LOGIC;
+    data1_arready : out STD_LOGIC;
+    data1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    data1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data1_rvalid : out STD_LOGIC;
+    data1_rready : in STD_LOGIC;
+    data2_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data2_awvalid : in STD_LOGIC;
+    data2_awready : out STD_LOGIC;
+    data2_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    data2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    data2_wvalid : in STD_LOGIC;
+    data2_wready : out STD_LOGIC;
+    data2_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data2_bvalid : out STD_LOGIC;
+    data2_bready : in STD_LOGIC;
+    data2_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data2_arvalid : in STD_LOGIC;
+    data2_arready : out STD_LOGIC;
+    data2_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    data2_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data2_rvalid : out STD_LOGIC;
+    data2_rready : in STD_LOGIC;
     util3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     util3_awvalid : in STD_LOGIC;
     util3_awready : out STD_LOGIC;
@@ -297,14 +304,7 @@ architecture STRUCTURE of CO_AXI_PERIPH_wrapper is
     util3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     util3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     util3_rvalid : out STD_LOGIC;
-    util3_rready : in STD_LOGIC;
-    TCLK : in STD_LOGIC;
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
-    CH0 : in STD_LOGIC;
-    CH1 : in STD_LOGIC;
-    CH2 : in STD_LOGIC;
-    CH3 : in STD_LOGIC
+    util3_rready : in STD_LOGIC
   );
   end component CO_AXI_PERIPH;
 begin

@@ -9,10 +9,10 @@
       "validated": "true"
     },
     "design_tree": {
-      "TCH_TDC_OV_wrapper_0": "",
-      "T_META_HARDEN_0": "",
       "axi_data": "",
-      "axi_rdy": ""
+      "axi_rdy": "",
+      "T_META_HARDEN_0": "",
+      "SCH_IA_wrapper_0": ""
     },
     "interface_ports": {
       "data": {
@@ -291,31 +291,6 @@
       }
     },
     "components": {
-      "TCH_TDC_OV_wrapper_0": {
-        "vlnv": "cri.nz:user:TCH_TDC_OV_wrapper:1.0",
-        "xci_name": "ST_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0"
-      },
-      "T_META_HARDEN_0": {
-        "vlnv": "xilinx.com:module_ref:T_META_HARDEN:1.0",
-        "xci_name": "ST_AXI_PERIPH_T_META_HARDEN_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "T_META_HARDEN",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "INP": {
-            "direction": "I"
-          },
-          "S_OUT": {
-            "direction": "O"
-          }
-        }
-      },
       "axi_data": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "ST_AXI_PERIPH_axi_gpio_0_0",
@@ -345,63 +320,52 @@
             "value": "1"
           }
         }
+      },
+      "T_META_HARDEN_0": {
+        "vlnv": "xilinx.com:module_ref:T_META_HARDEN:1.0",
+        "xci_name": "ST_AXI_PERIPH_T_META_HARDEN_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "T_META_HARDEN",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "INP": {
+            "direction": "I"
+          },
+          "S_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "SCH_IA_wrapper_0": {
+        "vlnv": "cri.nz:user:SCH_IA_wrapper:1.0",
+        "xci_name": "ST_AXI_PERIPH_SCH_IA_wrapper_0_0"
       }
     },
     "interface_nets": {
-      "rdy_1": {
-        "interface_ports": [
-          "rdy",
-          "axi_rdy/S_AXI"
-        ]
-      },
       "data_1": {
         "interface_ports": [
           "data",
           "axi_data/S_AXI"
         ]
+      },
+      "rdy_1": {
+        "interface_ports": [
+          "rdy",
+          "axi_rdy/S_AXI"
+        ]
       }
     },
     "nets": {
-      "TCH_TDC_OV_wrapper_0_D_RDY": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/D_RDY",
-          "T_META_HARDEN_0/INP"
-        ]
-      },
-      "TCH_TDC_OV_wrapper_0_T_DATA": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/T_DATA",
-          "axi_data/gpio_io_i"
-        ]
-      },
-      "axi_gpio_0_gpio2_io_o": {
-        "ports": [
-          "axi_data/gpio2_io_o",
-          "TCH_TDC_OV_wrapper_0/M_RST"
-        ]
-      },
       "T_META_HARDEN_0_S_OUT": {
         "ports": [
           "T_META_HARDEN_0/S_OUT",
           "axi_rdy/gpio_io_i"
-        ]
-      },
-      "TCH_TDC_OV_wrapper_0_ARMED": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/ARMED",
-          "ARMED"
-        ]
-      },
-      "TCH_TDC_OV_wrapper_0_WAITING": {
-        "ports": [
-          "TCH_TDC_OV_wrapper_0/WAITING",
-          "WAITING"
-        ]
-      },
-      "CH0_1": {
-        "ports": [
-          "CH0",
-          "TCH_TDC_OV_wrapper_0/CH0"
         ]
       },
       "aclk_1": {
@@ -419,10 +383,46 @@
           "axi_data/s_axi_aresetn"
         ]
       },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "SCH_IA_wrapper_0/CH0"
+        ]
+      },
       "MCLK_1": {
         "ports": [
           "MCLK",
-          "TCH_TDC_OV_wrapper_0/HS_CLK_IN"
+          "SCH_IA_wrapper_0/HS_CLK_IN"
+        ]
+      },
+      "axi_data_gpio2_io_o": {
+        "ports": [
+          "axi_data/gpio2_io_o",
+          "SCH_IA_wrapper_0/M_RST"
+        ]
+      },
+      "SCH_IA_wrapper_0_T_DATA": {
+        "ports": [
+          "SCH_IA_wrapper_0/T_DATA",
+          "axi_data/gpio_io_i"
+        ]
+      },
+      "SCH_IA_wrapper_0_D_RDY": {
+        "ports": [
+          "SCH_IA_wrapper_0/D_RDY",
+          "T_META_HARDEN_0/INP"
+        ]
+      },
+      "SCH_IA_wrapper_0_ARMED": {
+        "ports": [
+          "SCH_IA_wrapper_0/ARMED",
+          "ARMED"
+        ]
+      },
+      "SCH_IA_wrapper_0_WAITING": {
+        "ports": [
+          "SCH_IA_wrapper_0/WAITING",
+          "WAITING"
         ]
       }
     },

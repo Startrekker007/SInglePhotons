@@ -1,9 +1,53 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec  3 15:49:38 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  4 11:13:13 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="CO_AXI_PERIPH" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
+    <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="TCLK"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="TCLK"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="TCLK"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="TCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="aclk"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="aclk"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="aclk"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="aclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aresetn" SIGIS="undef" SIGNAME="External_Ports_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="aresetn"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="aresetn"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="aresetn"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH2" SIGIS="undef" SIGNAME="External_Ports_CH2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH3" SIGIS="undef" SIGNAME="External_Ports_CH3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="P_SIG_EX"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" LEFT="8" NAME="data0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_0_data_awaddr">
       <CONNECTIONS>
         <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_awaddr"/>
@@ -89,174 +133,174 @@
         <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="data_rready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awaddr">
+    <PORT DIR="I" LEFT="8" NAME="util2_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awaddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awaddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awaddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data1_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awvalid">
+    <PORT DIR="I" NAME="util2_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data1_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awready">
+    <PORT DIR="O" NAME="util2_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="data1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wdata">
+    <PORT DIR="I" LEFT="31" NAME="util2_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="data1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wstrb">
+    <PORT DIR="I" LEFT="3" NAME="util2_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wstrb">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wstrb"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wstrb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data1_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wvalid">
+    <PORT DIR="I" NAME="util2_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data1_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wready">
+    <PORT DIR="O" NAME="util2_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bresp">
+    <PORT DIR="O" LEFT="1" NAME="util2_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data1_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bvalid">
+    <PORT DIR="O" NAME="util2_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data1_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bready">
+    <PORT DIR="I" NAME="util2_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_araddr">
+    <PORT DIR="I" LEFT="8" NAME="util2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_araddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data1_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arvalid">
+    <PORT DIR="I" NAME="util2_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_arvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_arvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data1_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arready">
+    <PORT DIR="O" NAME="util2_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_arready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="data1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rdata">
+    <PORT DIR="O" LEFT="31" NAME="util2_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rresp">
+    <PORT DIR="O" LEFT="1" NAME="util2_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data1_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rvalid">
+    <PORT DIR="O" NAME="util2_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data1_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rready">
+    <PORT DIR="I" NAME="util2_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data2_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awaddr">
+    <PORT DIR="I" LEFT="8" NAME="util1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awaddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awaddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awaddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data2_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awvalid">
+    <PORT DIR="I" NAME="util1_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data2_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awready">
+    <PORT DIR="O" NAME="util1_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="data2_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wdata">
+    <PORT DIR="I" LEFT="31" NAME="util1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="data2_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wstrb">
+    <PORT DIR="I" LEFT="3" NAME="util1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wstrb">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wstrb"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wstrb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data2_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wvalid">
+    <PORT DIR="I" NAME="util1_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data2_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wready">
+    <PORT DIR="O" NAME="util1_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data2_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bresp">
+    <PORT DIR="O" LEFT="1" NAME="util1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data2_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bvalid">
+    <PORT DIR="O" NAME="util1_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data2_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bready">
+    <PORT DIR="I" NAME="util1_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_araddr">
+    <PORT DIR="I" LEFT="8" NAME="util1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_araddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data2_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arvalid">
+    <PORT DIR="I" NAME="util1_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_arvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_arvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data2_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arready">
+    <PORT DIR="O" NAME="util1_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_arready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="data2_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rdata">
+    <PORT DIR="O" LEFT="31" NAME="util1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data2_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rresp">
+    <PORT DIR="O" LEFT="1" NAME="util1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data2_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rvalid">
+    <PORT DIR="O" NAME="util1_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data2_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rready">
+    <PORT DIR="I" NAME="util1_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rready"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="data3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_data_awaddr">
@@ -429,174 +473,174 @@
         <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="util_rready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awaddr">
+    <PORT DIR="I" LEFT="8" NAME="data1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awaddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awaddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awaddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util1_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awvalid">
+    <PORT DIR="I" NAME="data1_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util1_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_awready">
+    <PORT DIR="O" NAME="data1_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_awready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_awready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_awready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="util1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wdata">
+    <PORT DIR="I" LEFT="31" NAME="data1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="util1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wstrb">
+    <PORT DIR="I" LEFT="3" NAME="data1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wstrb">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wstrb"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wstrb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util1_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wvalid">
+    <PORT DIR="I" NAME="data1_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util1_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_wready">
+    <PORT DIR="O" NAME="data1_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_wready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_wready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_wready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bresp">
+    <PORT DIR="O" LEFT="1" NAME="data1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util1_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bvalid">
+    <PORT DIR="O" NAME="data1_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util1_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_bready">
+    <PORT DIR="I" NAME="data1_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_bready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_bready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_bready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_araddr">
+    <PORT DIR="I" LEFT="8" NAME="data1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_araddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util1_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arvalid">
+    <PORT DIR="I" NAME="data1_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_arvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_arvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util1_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_arready">
+    <PORT DIR="O" NAME="data1_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_arready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="util1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rdata">
+    <PORT DIR="O" LEFT="31" NAME="data1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rresp">
+    <PORT DIR="O" LEFT="1" NAME="data1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util1_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rvalid">
+    <PORT DIR="O" NAME="data1_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util1_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_util_rready">
+    <PORT DIR="I" NAME="data1_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_1_data_rready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="util_rready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="data_rready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util2_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awaddr">
+    <PORT DIR="I" LEFT="8" NAME="data2_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awaddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awaddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awaddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util2_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awvalid">
+    <PORT DIR="I" NAME="data2_awvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util2_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_awready">
+    <PORT DIR="O" NAME="data2_awready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_awready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_awready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_awready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="util2_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wdata">
+    <PORT DIR="I" LEFT="31" NAME="data2_wdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="util2_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wstrb">
+    <PORT DIR="I" LEFT="3" NAME="data2_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wstrb">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wstrb"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wstrb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util2_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wvalid">
+    <PORT DIR="I" NAME="data2_wvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util2_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_wready">
+    <PORT DIR="O" NAME="data2_wready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_wready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_wready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_wready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util2_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bresp">
+    <PORT DIR="O" LEFT="1" NAME="data2_bresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util2_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bvalid">
+    <PORT DIR="O" NAME="data2_bvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util2_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_bready">
+    <PORT DIR="I" NAME="data2_bready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_bready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_bready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_bready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_araddr">
+    <PORT DIR="I" LEFT="8" NAME="data2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_araddr"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util2_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arvalid">
+    <PORT DIR="I" NAME="data2_arvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_arvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_arvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util2_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_arready">
+    <PORT DIR="O" NAME="data2_arready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_arready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="util2_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rdata">
+    <PORT DIR="O" LEFT="31" NAME="data2_rdata" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rdata"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util2_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rresp">
+    <PORT DIR="O" LEFT="1" NAME="data2_rresp" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rresp"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util2_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rvalid">
+    <PORT DIR="O" NAME="data2_rvalid" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rvalid"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util2_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_util_rready">
+    <PORT DIR="I" NAME="data2_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_2_data_rready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="util_rready"/>
+        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="data_rready"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="util3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_awaddr">
@@ -682,50 +726,6 @@
     <PORT DIR="I" NAME="util3_rready" SIGIS="undef" SIGNAME="COUNTER_wrapper_3_util_rready">
       <CONNECTIONS>
         <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="util_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="TCLK"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="TCLK"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="TCLK"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="TCLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="aclk"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="aclk"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="aclk"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="aclk"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="aresetn" SIGIS="undef" SIGNAME="External_Ports_aresetn">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="aresetn"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="aresetn"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="aresetn"/>
-        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="aresetn"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_0" PORT="P_SIG_EX"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_1" PORT="P_SIG_EX"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CH2" SIGIS="undef" SIGNAME="External_Ports_CH2">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_2" PORT="P_SIG_EX"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CH3" SIGIS="undef" SIGNAME="External_Ports_CH3">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="COUNTER_wrapper_3" PORT="P_SIG_EX"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1166,10 +1166,10 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="1" FULLNAME="/COUNTER_wrapper_0" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_0" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_0_2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1471,10 +1471,10 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/COUNTER_wrapper_1" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_1" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_0_1"/>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_0_3"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1776,10 +1776,10 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/COUNTER_wrapper_2" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_2" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_1_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_1_2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2081,10 +2081,10 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/COUNTER_wrapper_3" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/COUNTER_wrapper_3" HWVERSION="1.0" INSTANCE="COUNTER_wrapper_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="COUNTER_wrapper" VLNV="cri.nz:user:COUNTER_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_1_1"/>
+        <PARAMETER NAME="Component_Name" VALUE="CO_AXI_PERIPH_COUNTER_wrapper_1_3"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>

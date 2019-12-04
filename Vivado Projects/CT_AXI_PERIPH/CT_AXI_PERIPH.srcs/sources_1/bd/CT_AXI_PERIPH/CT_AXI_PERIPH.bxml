@@ -2,19 +2,11 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="CT_AXI_PERIPH" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1575338800"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1575338800"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1575338800"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1575338800"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1575430102"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1575430102"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1575430102"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1575430102"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip\CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0\CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0.xci" Type="IP">
-        <Instance HierarchyPath="TCH_TDC_OV_wrapper_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\CT_AXI_PERIPH_axi_gpio_0_0\CT_AXI_PERIPH_axi_gpio_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_data"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -31,6 +23,14 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\CT_AXI_PERIPH_CT_CTRL_0_0\CT_AXI_PERIPH_CT_CTRL_0_0.xci" Type="IP">
+        <Instance HierarchyPath="CT_CTRL_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="synth\CT_AXI_PERIPH.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -39,6 +39,30 @@
       <File Name="sim\CT_AXI_PERIPH.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\CT_AXI_PERIPH_MH_CT_0_0\CT_AXI_PERIPH_MH_CT_0_0.xci" Type="IP">
+        <Instance HierarchyPath="MH_CT_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\CT_AXI_PERIPH_MH_CT_0_1\CT_AXI_PERIPH_MH_CT_0_1.xci" Type="IP">
+        <Instance HierarchyPath="MH_CT_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\CT_AXI_PERIPH_MH_CT_1_0\CT_AXI_PERIPH_MH_CT_1_0.xci" Type="IP">
+        <Instance HierarchyPath="MH_CT_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="CT_AXI_PERIPH_ooc.xdc" Type="XDC">

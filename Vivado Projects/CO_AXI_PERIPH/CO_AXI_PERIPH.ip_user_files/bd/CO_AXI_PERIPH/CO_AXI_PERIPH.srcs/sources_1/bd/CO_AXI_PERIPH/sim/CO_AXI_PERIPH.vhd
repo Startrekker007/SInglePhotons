@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec  3 15:49:34 2019
+--Date        : Wed Dec  4 11:13:11 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target CO_AXI_PERIPH.bd
 --Design      : CO_AXI_PERIPH
@@ -164,7 +164,7 @@ entity CO_AXI_PERIPH is
 end CO_AXI_PERIPH;
 
 architecture STRUCTURE of CO_AXI_PERIPH is
-  component CO_AXI_PERIPH_COUNTER_wrapper_0_0 is
+  component CO_AXI_PERIPH_COUNTER_wrapper_0_2 is
   port (
     P_SIG_EX : in STD_LOGIC;
     TCLK : in STD_LOGIC;
@@ -205,8 +205,8 @@ architecture STRUCTURE of CO_AXI_PERIPH is
     util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     util_wvalid : in STD_LOGIC
   );
-  end component CO_AXI_PERIPH_COUNTER_wrapper_0_0;
-  component CO_AXI_PERIPH_COUNTER_wrapper_0_1 is
+  end component CO_AXI_PERIPH_COUNTER_wrapper_0_2;
+  component CO_AXI_PERIPH_COUNTER_wrapper_0_3 is
   port (
     P_SIG_EX : in STD_LOGIC;
     TCLK : in STD_LOGIC;
@@ -247,8 +247,8 @@ architecture STRUCTURE of CO_AXI_PERIPH is
     util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     util_wvalid : in STD_LOGIC
   );
-  end component CO_AXI_PERIPH_COUNTER_wrapper_0_1;
-  component CO_AXI_PERIPH_COUNTER_wrapper_1_0 is
+  end component CO_AXI_PERIPH_COUNTER_wrapper_0_3;
+  component CO_AXI_PERIPH_COUNTER_wrapper_1_2 is
   port (
     P_SIG_EX : in STD_LOGIC;
     TCLK : in STD_LOGIC;
@@ -289,8 +289,8 @@ architecture STRUCTURE of CO_AXI_PERIPH is
     util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     util_wvalid : in STD_LOGIC
   );
-  end component CO_AXI_PERIPH_COUNTER_wrapper_1_0;
-  component CO_AXI_PERIPH_COUNTER_wrapper_1_1 is
+  end component CO_AXI_PERIPH_COUNTER_wrapper_1_2;
+  component CO_AXI_PERIPH_COUNTER_wrapper_1_3 is
   port (
     P_SIG_EX : in STD_LOGIC;
     TCLK : in STD_LOGIC;
@@ -331,14 +331,14 @@ architecture STRUCTURE of CO_AXI_PERIPH is
     util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     util_wvalid : in STD_LOGIC
   );
-  end component CO_AXI_PERIPH_COUNTER_wrapper_1_1;
+  end component CO_AXI_PERIPH_COUNTER_wrapper_1_3;
   signal CH0_1 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
   signal CH2_1 : STD_LOGIC;
   signal CH3_1 : STD_LOGIC;
-  signal Net : STD_LOGIC;
   signal TCLK_1 : STD_LOGIC;
   signal aclk_1 : STD_LOGIC;
+  signal aresetn_1 : STD_LOGIC;
   signal data0_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal data0_1_ARREADY : STD_LOGIC;
   signal data0_1_ARVALID : STD_LOGIC;
@@ -626,9 +626,9 @@ begin
   CH1_1 <= CH1;
   CH2_1 <= CH2;
   CH3_1 <= CH3;
-  Net <= aresetn;
   TCLK_1 <= TCLK;
   aclk_1 <= aclk;
+  aresetn_1 <= aresetn;
   data0_1_ARADDR(8 downto 0) <= data0_araddr(8 downto 0);
   data0_1_ARVALID <= data0_arvalid;
   data0_1_AWADDR(8 downto 0) <= data0_awaddr(8 downto 0);
@@ -765,12 +765,12 @@ begin
   util3_rresp(1 downto 0) <= util3_1_RRESP(1 downto 0);
   util3_rvalid <= util3_1_RVALID;
   util3_wready <= util3_1_WREADY;
-COUNTER_wrapper_0: component CO_AXI_PERIPH_COUNTER_wrapper_0_0
+COUNTER_wrapper_0: component CO_AXI_PERIPH_COUNTER_wrapper_0_2
      port map (
       P_SIG_EX => CH0_1,
       TCLK => TCLK_1,
       aclk => aclk_1,
-      aresetn => Net,
+      aresetn => aresetn_1,
       data_araddr(8 downto 0) => data0_1_ARADDR(8 downto 0),
       data_arready => data0_1_ARREADY,
       data_arvalid => data0_1_ARVALID,
@@ -806,12 +806,12 @@ COUNTER_wrapper_0: component CO_AXI_PERIPH_COUNTER_wrapper_0_0
       util_wstrb(3 downto 0) => util0_1_WSTRB(3 downto 0),
       util_wvalid => util0_1_WVALID
     );
-COUNTER_wrapper_1: component CO_AXI_PERIPH_COUNTER_wrapper_0_1
+COUNTER_wrapper_1: component CO_AXI_PERIPH_COUNTER_wrapper_0_3
      port map (
       P_SIG_EX => CH1_1,
       TCLK => TCLK_1,
       aclk => aclk_1,
-      aresetn => Net,
+      aresetn => aresetn_1,
       data_araddr(8 downto 0) => data1_1_ARADDR(8 downto 0),
       data_arready => data1_1_ARREADY,
       data_arvalid => data1_1_ARVALID,
@@ -847,12 +847,12 @@ COUNTER_wrapper_1: component CO_AXI_PERIPH_COUNTER_wrapper_0_1
       util_wstrb(3 downto 0) => util1_1_WSTRB(3 downto 0),
       util_wvalid => util1_1_WVALID
     );
-COUNTER_wrapper_2: component CO_AXI_PERIPH_COUNTER_wrapper_1_0
+COUNTER_wrapper_2: component CO_AXI_PERIPH_COUNTER_wrapper_1_2
      port map (
       P_SIG_EX => CH2_1,
       TCLK => TCLK_1,
       aclk => aclk_1,
-      aresetn => Net,
+      aresetn => aresetn_1,
       data_araddr(8 downto 0) => data2_1_ARADDR(8 downto 0),
       data_arready => data2_1_ARREADY,
       data_arvalid => data2_1_ARVALID,
@@ -888,12 +888,12 @@ COUNTER_wrapper_2: component CO_AXI_PERIPH_COUNTER_wrapper_1_0
       util_wstrb(3 downto 0) => util2_1_WSTRB(3 downto 0),
       util_wvalid => util2_1_WVALID
     );
-COUNTER_wrapper_3: component CO_AXI_PERIPH_COUNTER_wrapper_1_1
+COUNTER_wrapper_3: component CO_AXI_PERIPH_COUNTER_wrapper_1_3
      port map (
       P_SIG_EX => CH3_1,
       TCLK => TCLK_1,
       aclk => aclk_1,
-      aresetn => Net,
+      aresetn => aresetn_1,
       data_araddr(8 downto 0) => data3_1_ARADDR(8 downto 0),
       data_arready => data3_1_ARREADY,
       data_arvalid => data3_1_ARVALID,

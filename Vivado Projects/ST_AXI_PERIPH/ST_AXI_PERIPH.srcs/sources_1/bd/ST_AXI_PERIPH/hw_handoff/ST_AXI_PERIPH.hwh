@@ -1,107 +1,40 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec  3 15:18:22 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  4 12:14:42 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="ST_AXI_PERIPH" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="O" NAME="ARMED" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_ARMED">
+    <PORT DIR="O" NAME="ARMED" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_ARMED">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="ARMED"/>
+        <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="ARMED"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="WAITING" RIGHT="0" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_WAITING">
+    <PORT DIR="O" LEFT="0" NAME="WAITING" RIGHT="0" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_WAITING">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="WAITING"/>
+        <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="WAITING"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="CH0"/>
+        <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="CH0"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_araddr">
+    <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_araddr"/>
+        <CONNECTION INSTANCE="axi_rdy" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="T_META_HARDEN_0" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="data_arready" SIGIS="undef" SIGNAME="axi_data_s_axi_arready">
+    <PORT DIR="I" NAME="aresetn" SIGIS="undef" SIGNAME="External_Ports_aresetn">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_arready"/>
+        <CONNECTION INSTANCE="axi_rdy" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_aresetn"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="data_arvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_arvalid">
+    <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data_awready" SIGIS="undef" SIGNAME="axi_data_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data_awvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data_bready" SIGIS="undef" SIGNAME="axi_data_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data_bvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="data_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data_rready" SIGIS="undef" SIGNAME="axi_data_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data_rvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="data_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data_wready" SIGIS="undef" SIGNAME="axi_data_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="data_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wvalid"/>
+        <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="HS_CLK_IN"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="rdy_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_rdy_s_axi_araddr">
@@ -189,22 +122,89 @@
         <CONNECTION INSTANCE="axi_rdy" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
+    <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_rdy" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="T_META_HARDEN_0" PORT="CLK"/>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="aresetn" SIGIS="undef" SIGNAME="External_Ports_aresetn">
+    <PORT DIR="O" NAME="data_arready" SIGIS="undef" SIGNAME="axi_data_s_axi_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_rdy" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="axi_data" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+    <PORT DIR="I" NAME="data_arvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="HS_CLK_IN"/>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="data_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data_awready" SIGIS="undef" SIGNAME="axi_data_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data_awvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data_bready" SIGIS="undef" SIGNAME="axi_data_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data_bvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="data_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data_rready" SIGIS="undef" SIGNAME="axi_data_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="data_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data_rvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="data_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="data_wready" SIGIS="undef" SIGNAME="axi_data_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="data_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="axi_data_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_data" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -321,14 +321,14 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="2" FULLNAME="/TCH_TDC_OV_wrapper_0" HWVERSION="1.0" INSTANCE="TCH_TDC_OV_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TCH_TDC_OV_wrapper" VLNV="cri.nz:user:TCH_TDC_OV_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/SCH_IA_wrapper_0" HWVERSION="1.0" INSTANCE="SCH_IA_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCH_IA_wrapper" VLNV="cri.nz:user:SCH_IA_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="ST_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_AXI_PERIPH_SCH_IA_wrapper_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" NAME="ARMED" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_ARMED">
+        <PORT DIR="O" NAME="ARMED" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_ARMED">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="ARMED"/>
           </CONNECTIONS>
@@ -338,7 +338,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CH0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="D_RDY" RIGHT="0" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_D_RDY">
+        <PORT DIR="O" LEFT="0" NAME="D_RDY" RIGHT="0" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_D_RDY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="T_META_HARDEN_0" PORT="INP"/>
           </CONNECTIONS>
@@ -353,12 +353,12 @@
             <CONNECTION INSTANCE="axi_data" PORT="gpio2_io_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="T_DATA" RIGHT="0" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_T_DATA">
+        <PORT DIR="O" LEFT="31" NAME="T_DATA" RIGHT="0" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_T_DATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_data" PORT="gpio_io_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="WAITING" RIGHT="0" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_WAITING">
+        <PORT DIR="O" LEFT="0" NAME="WAITING" RIGHT="0" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_WAITING">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="WAITING"/>
           </CONNECTIONS>
@@ -378,9 +378,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="INP" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_D_RDY">
+        <PORT DIR="I" NAME="INP" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_D_RDY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="D_RDY"/>
+            <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="D_RDY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="S_OUT" SIGIS="undef" SIGNAME="T_META_HARDEN_0_S_OUT">
@@ -513,14 +513,14 @@
             <CONNECTION INSTANCE="ST_AXI_PERIPH_imp" PORT="data_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="TCH_TDC_OV_wrapper_0_T_DATA">
+        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="SCH_IA_wrapper_0_T_DATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="T_DATA"/>
+            <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="T_DATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_data_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TCH_TDC_OV_wrapper_0" PORT="M_RST"/>
+            <CONNECTION INSTANCE="SCH_IA_wrapper_0" PORT="M_RST"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

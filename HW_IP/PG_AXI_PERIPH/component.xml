@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>cri.nz</spirit:vendor>
-  <spirit:library>SP</spirit:library>
-  <spirit:name>PG_AXI_PERIPH</spirit:name>
+  <spirit:library>user</spirit:library>
+  <spirit:name>PG_AXI_PERIPH_wrapper</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -1157,7 +1157,7 @@
         <spirit:language>VHDL</spirit:language>
         <spirit:modelName>PG_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagesynthesis_cri_nz_user_PG_CORE_1_0__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
@@ -1168,7 +1168,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9548377e</spirit:value>
+            <spirit:value>68685451</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1179,7 +1179,7 @@
         <spirit:language>VHDL</spirit:language>
         <spirit:modelName>PG_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_cri_nz_user_PG_CORE_1_0__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
@@ -1190,7 +1190,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0cb0a2a4</spirit:value>
+            <spirit:value>32bfd66b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1200,7 +1200,7 @@
         <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
         <spirit:modelName>PG_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_implementation_cri_nz_user_PG_CORE_1_0__ref_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_implementation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_implementation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
@@ -3262,55 +3262,96 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/PG_AXI_PERIPH_PG_CORE_0_0/PG_AXI_PERIPH_PG_CORE_0_0.xci</spirit:name>
+        <spirit:name>src/PG_AXI_PERIPH_PG_CORE_1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/counter/counter.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_PG_CORE_0</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_0/PG_AXI_PERIPH_axi_gpio_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_2</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_3</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_delay_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_delay_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_utility</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/PG_CORE.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
@@ -3324,15 +3365,15 @@
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_0b226472</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_2c587139</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_cri_nz_user_PG_CORE_1_0__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="PG_CORE" xilinx:version="1.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3351,55 +3392,96 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/PG_AXI_PERIPH_PG_CORE_0_0/PG_AXI_PERIPH_PG_CORE_0_0.xci</spirit:name>
+        <spirit:name>sim/PG_AXI_PERIPH_PG_CORE_1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/counter/counter.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_PG_CORE_0</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_0/PG_AXI_PERIPH_axi_gpio_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_2</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_3</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_delay_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_delay_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_utility</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>sim/PG_AXI_PERIPH.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/PG_CORE.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
@@ -3415,10 +3497,10 @@
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagebehavioralsimulation_cri_nz_user_PG_CORE_1_0__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="PG_CORE" xilinx:version="1.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3441,49 +3523,77 @@
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_2</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_ch_3</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_delay_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_delay_1</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_axi_utility</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_implementation_cri_nz_user_PG_CORE_1_0__ref_view_fileset</spirit:name>
+      <spirit:name>xilinx_implementation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="PG_CORE" xilinx:version="1.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3502,14 +3612,14 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/PG_AXI_PERIPH_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/PG_AXI_PERIPH_wrapper_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>PG_AXI_PERIPH</spirit:description>
+  <spirit:description>PG_AXI_PERIPH_wrapper_v1_0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -3522,39 +3632,25 @@
         <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
       </xilinx:supportedFamilies>
       <xilinx:taxonomies>
-        <xilinx:taxonomy>/Single_Photons</xilinx:taxonomy>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>PG_AXI_PERIPH</xilinx:displayName>
+      <xilinx:displayName>PG_AXI_PERIPH_wrapper_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:upgrades>
-        <xilinx:canUpgradeFrom>cri.nz:user:PG_AXI_PERIPH_wrapper:1.0</xilinx:canUpgradeFrom>
-      </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2019-12-03T01:46:49Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-12-03T22:37:33Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c4f095c_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aa55c37_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d1bd39_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d6d4b2_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3071503b_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed28006_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ad8c429_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@53554897_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@68fe9ae4_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@eb22e9f_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ee6f4ec_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3028b992_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@17f4cc0c_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@36a437bd_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@579abf24_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afa9296_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c89a5cc_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5940a41a_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b5850c9_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@581a6010_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e402992_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/PG_AXI_PERIPH</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7bd96324"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="02f7b6d0"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="80f80456"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="919fd938"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="d8d3615b"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="2cde6231"/>
     </xilinx:packagingInfo>

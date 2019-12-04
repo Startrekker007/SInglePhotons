@@ -1048,38 +1048,32 @@
     "components": {
       "COUNTER_wrapper_0": {
         "vlnv": "cri.nz:user:COUNTER_wrapper:1.0",
-        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_0_0"
+        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_0_2"
       },
       "COUNTER_wrapper_1": {
         "vlnv": "cri.nz:user:COUNTER_wrapper:1.0",
-        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_0_1"
+        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_0_3"
       },
       "COUNTER_wrapper_2": {
         "vlnv": "cri.nz:user:COUNTER_wrapper:1.0",
-        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_1_0"
+        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_1_2"
       },
       "COUNTER_wrapper_3": {
         "vlnv": "cri.nz:user:COUNTER_wrapper:1.0",
-        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_1_1"
+        "xci_name": "CO_AXI_PERIPH_COUNTER_wrapper_1_3"
       }
     },
     "interface_nets": {
+      "data2_1": {
+        "interface_ports": [
+          "data2",
+          "COUNTER_wrapper_2/data"
+        ]
+      },
       "data0_1": {
         "interface_ports": [
           "data0",
           "COUNTER_wrapper_0/data"
-        ]
-      },
-      "util2_1": {
-        "interface_ports": [
-          "util2",
-          "COUNTER_wrapper_2/util"
-        ]
-      },
-      "util1_1": {
-        "interface_ports": [
-          "util1",
-          "COUNTER_wrapper_1/util"
         ]
       },
       "data3_1": {
@@ -1088,22 +1082,22 @@
           "COUNTER_wrapper_3/data"
         ]
       },
-      "util0_1": {
-        "interface_ports": [
-          "util0",
-          "COUNTER_wrapper_0/util"
-        ]
-      },
       "data1_1": {
         "interface_ports": [
           "data1",
           "COUNTER_wrapper_1/data"
         ]
       },
-      "data2_1": {
+      "util2_1": {
         "interface_ports": [
-          "data2",
-          "COUNTER_wrapper_2/data"
+          "util2",
+          "COUNTER_wrapper_2/util"
+        ]
+      },
+      "util0_1": {
+        "interface_ports": [
+          "util0",
+          "COUNTER_wrapper_0/util"
         ]
       },
       "util3_1": {
@@ -1111,19 +1105,22 @@
           "util3",
           "COUNTER_wrapper_3/util"
         ]
+      },
+      "util1_1": {
+        "interface_ports": [
+          "util1",
+          "COUNTER_wrapper_1/util"
+        ]
       }
     },
     "nets": {
-      "CH3_1": {
+      "TCLK_1": {
         "ports": [
-          "CH3",
-          "COUNTER_wrapper_3/P_SIG_EX"
-        ]
-      },
-      "CH2_1": {
-        "ports": [
-          "CH2",
-          "COUNTER_wrapper_2/P_SIG_EX"
+          "TCLK",
+          "COUNTER_wrapper_0/TCLK",
+          "COUNTER_wrapper_1/TCLK",
+          "COUNTER_wrapper_2/TCLK",
+          "COUNTER_wrapper_3/TCLK"
         ]
       },
       "CH0_1": {
@@ -1132,37 +1129,40 @@
           "COUNTER_wrapper_0/P_SIG_EX"
         ]
       },
-      "CH1_1": {
-        "ports": [
-          "CH1",
-          "COUNTER_wrapper_1/P_SIG_EX"
-        ]
-      },
-      "TCLK_1": {
-        "ports": [
-          "TCLK",
-          "COUNTER_wrapper_1/TCLK",
-          "COUNTER_wrapper_2/TCLK",
-          "COUNTER_wrapper_0/TCLK",
-          "COUNTER_wrapper_3/TCLK"
-        ]
-      },
       "aclk_1": {
         "ports": [
           "aclk",
+          "COUNTER_wrapper_0/aclk",
           "COUNTER_wrapper_1/aclk",
           "COUNTER_wrapper_2/aclk",
-          "COUNTER_wrapper_3/aclk",
-          "COUNTER_wrapper_0/aclk"
+          "COUNTER_wrapper_3/aclk"
         ]
       },
-      "Net": {
+      "aresetn_1": {
         "ports": [
           "aresetn",
           "COUNTER_wrapper_0/aresetn",
           "COUNTER_wrapper_1/aresetn",
           "COUNTER_wrapper_2/aresetn",
           "COUNTER_wrapper_3/aresetn"
+        ]
+      },
+      "CH1_1": {
+        "ports": [
+          "CH1",
+          "COUNTER_wrapper_1/P_SIG_EX"
+        ]
+      },
+      "CH2_1": {
+        "ports": [
+          "CH2",
+          "COUNTER_wrapper_2/P_SIG_EX"
+        ]
+      },
+      "CH3_1": {
+        "ports": [
+          "CH3",
+          "COUNTER_wrapper_3/P_SIG_EX"
         ]
       }
     },

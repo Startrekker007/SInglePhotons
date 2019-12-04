@@ -1,0 +1,1326 @@
+
+*** Running vivado
+    with args -log CO_AXI_PERIPH_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CO_AXI_PERIPH_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source CO_AXI_PERIPH_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/CO_AXI_PERIPH'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/COUNTER_AXI'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top CO_AXI_PERIPH_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9000 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 742.457 ; gain = 180.008
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'CO_AXI_PERIPH_wrapper' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/hdl/CO_AXI_PERIPH_wrapper.vhd:162]
+INFO: [Synth 8-3491] module 'CO_AXI_PERIPH' declared at 'D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:14' bound to instance 'CO_AXI_PERIPH_i' of component 'CO_AXI_PERIPH' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/hdl/CO_AXI_PERIPH_wrapper.vhd:311]
+INFO: [Synth 8-638] synthesizing module 'CO_AXI_PERIPH' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:166]
+INFO: [Synth 8-3491] module 'CO_AXI_PERIPH_COUNTER_wrapper_0_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_0.vhd:56' bound to instance 'COUNTER_wrapper_0' of component 'CO_AXI_PERIPH_COUNTER_wrapper_0_0' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:768]
+INFO: [Synth 8-638] synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_0.vhd:99]
+INFO: [Synth 8-3491] module 'COUNTER_wrapper' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:14' bound to instance 'U0' of component 'COUNTER_wrapper' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_0.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_wrapper' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:57]
+INFO: [Synth 8-3491] module 'COUNTER' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:14' bound to instance 'COUNTER_i' of component 'COUNTER' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'COUNTER' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:61]
+INFO: [Synth 8-3491] module 'COUNTER_CTR_CTL_0_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_CTR_CTL_0_0.vhd:56' bound to instance 'CTR_CTL_0' of component 'COUNTER_CTR_CTL_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:269]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_CTR_CTL_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_CTR_CTL_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'CTR_CTL' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/CTR_CTL.vhd:34' bound to instance 'U0' of component 'CTR_CTL' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_CTR_CTL_0_0.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'CTR_CTL' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/CTR_CTL.vhd:42]
+INFO: [Synth 8-4471] merging register 'sclr_b_reg' into 'CLK_EN_reg' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/CTR_CTL.vhd:47]
+WARNING: [Synth 8-6014] Unused sequential element sclr_b_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/CTR_CTL.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'CTR_CTL' (1#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/CTR_CTL.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_CTR_CTL_0_0' (2#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_CTR_CTL_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'COUNTER_DIG_TIMER_0_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_DIG_TIMER_0_0.vhd:56' bound to instance 'DIG_TIMER_0' of component 'COUNTER_DIG_TIMER_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:277]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_DIG_TIMER_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_DIG_TIMER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'DIG_TIMER' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/DIG_TIMER.vhd:34' bound to instance 'U0' of component 'DIG_TIMER' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_DIG_TIMER_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'DIG_TIMER' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/DIG_TIMER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'DIG_TIMER' (3#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/DIG_TIMER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_DIG_TIMER_0_0' (4#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_DIG_TIMER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'COUNTER_axi_gpio_0_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_data' of component 'COUNTER_axi_gpio_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:286]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_axi_gpio_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:85]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 1 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'axi_gpio' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'axi_gpio' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 1 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 32'b00000000000000000000000111111111 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000100 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000100 
+	Parameter C_IPIF_ABUS_WIDTH bound to: 9 - type: integer 
+	Parameter C_IPIF_DBUS_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+	Parameter C_BUS_AWIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000100 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b00 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (5#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b01 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (5#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b10 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (5#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+	Parameter C_AB bound to: 2 - type: integer 
+	Parameter C_AW bound to: 2 - type: integer 
+	Parameter C_BAR bound to: 2'b11 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (5#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (6#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (7#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (8#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'GPIO_Core' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+	Parameter C_DW bound to: 32 - type: integer 
+	Parameter C_AW bound to: 9 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_MAX_GPIO_WIDTH bound to: 32 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:804]
+INFO: [Common 17-14] Message 'Synth 8-113' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (9#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[3].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[4].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[5].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[6].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[7].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[8].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[9].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[10].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[11].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[12].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[13].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[14].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[15].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[16].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[17].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[18].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[19].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[20].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[21].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[22].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[23].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[24].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[25].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[26].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[27].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[28].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[29].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[30].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G0.READ_REG_GEN[31].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[1].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[2].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[3].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[4].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[5].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[6].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[7].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[8].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[9].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[10].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[11].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[12].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[13].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[14].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[15].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[16].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[17].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[18].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[19].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[20].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[21].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[22].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[23].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[24].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[25].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[26].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[27].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[28].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[29].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[30].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT1_ND_G2.READ_REG2_GEN[31].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:787]
+WARNING: [Synth 8-6014] Unused sequential element Dual.gpio2_Data_In_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:920]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (10#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (11#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_axi_gpio_0_0' (12#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/synth/COUNTER_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-3491] module 'COUNTER_axi_gpio_0_1' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:59' bound to instance 'axi_gpio_util' of component 'COUNTER_axi_gpio_0_1' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:310]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_axi_gpio_0_1' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:85]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 1 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'axi_gpio' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1265' bound to instance 'U0' of component 'axi_gpio' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'axi_gpio__parameterized1' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 1 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+	Parameter C_DW bound to: 32 - type: integer 
+	Parameter C_AW bound to: 9 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 1 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_MAX_GPIO_WIDTH bound to: 1 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
+	Parameter C_IS_DUAL bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 0 - type: integer 
+	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 1 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (12#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:690]
+WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:719]
+WARNING: [Synth 8-6014] Unused sequential element Dual.gpio_Data_In_reg was removed.  [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:882]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (12#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (12#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_axi_gpio_0_1' (13#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/synth/COUNTER_axi_gpio_0_1.vhd:85]
+INFO: [Synth 8-3491] module 'COUNTER_c_counter_binary_0_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_c_counter_binary_0_0/synth/COUNTER_c_counter_binary_0_0.vhd:59' bound to instance 'c_counter_binary_0' of component 'COUNTER_c_counter_binary_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:334]
+INFO: [Synth 8-638] synthesizing module 'COUNTER_c_counter_binary_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_c_counter_binary_0_0/synth/COUNTER_c_counter_binary_0_0.vhd:68]
+	Parameter C_IMPLEMENTATION bound to: 1 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_WIDTH bound to: 32 - type: integer 
+	Parameter C_HAS_CE bound to: 1 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_RESTRICT_COUNT bound to: 0 - type: integer 
+	Parameter C_COUNT_TO bound to: 1 - type: string 
+	Parameter C_COUNT_BY bound to: 1 - type: string 
+	Parameter C_COUNT_MODE bound to: 0 - type: integer 
+	Parameter C_THRESH0_VALUE bound to: 1 - type: string 
+	Parameter C_CE_OVERRIDES_SYNC bound to: 0 - type: integer 
+	Parameter C_HAS_THRESH0 bound to: 0 - type: integer 
+	Parameter C_HAS_LOAD bound to: 0 - type: integer 
+	Parameter C_LOAD_LOW bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_FB_LATENCY bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_13' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/23f1/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2147' bound to instance 'U0' of component 'c_counter_binary_v12_0_13' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_c_counter_binary_0_0/synth/COUNTER_c_counter_binary_0_0.vhd:128]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_c_counter_binary_0_0' (20#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_c_counter_binary_0_0/synth/COUNTER_c_counter_binary_0_0.vhd:68]
+INFO: [Synth 8-3491] module 'COUNTER_util_vector_logic_0_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_util_vector_logic_0_0/synth/COUNTER_util_vector_logic_0_0.v:57' bound to instance 'util_vector_logic_0' of component 'COUNTER_util_vector_logic_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:341]
+INFO: [Synth 8-6157] synthesizing module 'COUNTER_util_vector_logic_0_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_util_vector_logic_0_0/synth/COUNTER_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+	Parameter C_OPERATION bound to: not - type: string 
+	Parameter C_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (21#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'COUNTER_util_vector_logic_0_0' (22#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_util_vector_logic_0_0/synth/COUNTER_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER' (23#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'COUNTER_wrapper' (24#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_0_0' (25#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_0.vhd:99]
+INFO: [Synth 8-3491] module 'CO_AXI_PERIPH_COUNTER_wrapper_0_1' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_1.vhd:56' bound to instance 'COUNTER_wrapper_1' of component 'CO_AXI_PERIPH_COUNTER_wrapper_0_1' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:809]
+INFO: [Synth 8-638] synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_0_1' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_1.vhd:99]
+INFO: [Synth 8-3491] module 'COUNTER_wrapper' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:14' bound to instance 'U0' of component 'COUNTER_wrapper' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_1.vhd:195]
+INFO: [Synth 8-256] done synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_0_1' (26#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_0_1.vhd:99]
+INFO: [Synth 8-3491] module 'CO_AXI_PERIPH_COUNTER_wrapper_1_0' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_0.vhd:56' bound to instance 'COUNTER_wrapper_2' of component 'CO_AXI_PERIPH_COUNTER_wrapper_1_0' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:850]
+INFO: [Synth 8-638] synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_1_0' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_0.vhd:99]
+INFO: [Synth 8-3491] module 'COUNTER_wrapper' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:14' bound to instance 'U0' of component 'COUNTER_wrapper' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_0.vhd:195]
+INFO: [Synth 8-256] done synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_1_0' (27#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_0.vhd:99]
+INFO: [Synth 8-3491] module 'CO_AXI_PERIPH_COUNTER_wrapper_1_1' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_1.vhd:56' bound to instance 'COUNTER_wrapper_3' of component 'CO_AXI_PERIPH_COUNTER_wrapper_1_1' [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:891]
+INFO: [Synth 8-638] synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_1_1' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_1.vhd:99]
+INFO: [Synth 8-3491] module 'COUNTER_wrapper' declared at 'd:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ipshared/300a/src/COUNTER_wrapper.vhd:14' bound to instance 'U0' of component 'COUNTER_wrapper' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_1.vhd:195]
+INFO: [Synth 8-256] done synthesizing module 'CO_AXI_PERIPH_COUNTER_wrapper_1_1' (28#1) [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/synth/CO_AXI_PERIPH_COUNTER_wrapper_1_1.vhd:99]
+INFO: [Synth 8-256] done synthesizing module 'CO_AXI_PERIPH' (29#1) [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/synth/CO_AXI_PERIPH.vhd:166]
+INFO: [Synth 8-256] done synthesizing module 'CO_AXI_PERIPH_wrapper' (30#1) [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/hdl/CO_AXI_PERIPH_wrapper.vhd:162]
+WARNING: [Synth 8-3331] design util_vector_logic_v2_0_1_util_vector_logic has unconnected port Op2[0]
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEA1
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEA2
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEB1
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEB2
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEAD
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CED
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEC
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CECARRYIN
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CECTRL
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEALUMODE
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEINMODE
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEM
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEP
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRA
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRB
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRC
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRD
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRALLCARRYIN
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRCTRL
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRALUMODE
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRINMODE
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRM
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRP
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv__parameterized1 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv__parameterized1 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv__parameterized1 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv__parameterized1 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv__parameterized1 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_6_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design dsp48_counter has unconnected port N_TC
+WARNING: [Synth 8-3331] design dsp48_counter has unconnected port UP
+WARNING: [Synth 8-3331] design xbip_counter_v3_0_6_viv has unconnected port LOAD
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port prmry_aclk
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port prmry_resetn
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port prmry_in
+WARNING: [Synth 8-3331] design cdc_sync__parameterized0 has unconnected port scndry_resetn
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[3]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[4]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[7]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port ABus_Reg[8]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[0]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core__parameterized0 has unconnected port BE_Reg[3]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[0]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[1]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[2]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[3]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[4]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[7]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[8]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Bus_RNW
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_aclk
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_resetn
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_in
+WARNING: [Synth 8-3331] design cdc_sync has unconnected port scndry_resetn
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[3]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[4]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[7]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port ABus_Reg[8]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[0]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[1]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[2]
+WARNING: [Synth 8-3331] design GPIO_Core has unconnected port BE_Reg[3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 832.066 ; gain = 269.617
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 836.023 ; gain = 273.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 836.023 ; gain = 273.574
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 1588 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_0/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_0/COUNTER_axi_gpio_0_0.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1_board.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_1_1/src/COUNTER_axi_gpio_0_1/COUNTER_axi_gpio_0_1.xdc] for cell 'CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CO_AXI_PERIPH_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/CO_AXI_PERIPH_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 900.473 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1584 instances were transformed.
+  FDR => FDRE: 1584 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 900.473 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 900.473 ; gain = 338.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 900.473 ; gain = 338.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 68).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 68).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 68).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 68).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 76).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 76).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 76).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/dont_touch.xdc}, line 76).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_data. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_data. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_data. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_data. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/axi_gpio_util. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/axi_gpio_util. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/axi_gpio_util. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/axi_gpio_util. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_0/U0/COUNTER_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_1/U0/COUNTER_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_2/U0/COUNTER_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for CO_AXI_PERIPH_i/COUNTER_wrapper_3/U0/COUNTER_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 900.473 ; gain = 338.023
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 900.473 ; gain = 338.023
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
+INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [d:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.srcs/sources_1/bd/CO_AXI_PERIPH/ip/CO_AXI_PERIPH_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_viv has unconnected port UP
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_viv has unconnected port LOAD
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[31]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[30]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[29]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[28]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[27]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[26]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[25]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[24]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[23]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[22]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[21]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[20]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[19]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[18]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[17]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[16]
+WARNING: [Synth 8-3331] design axi_gpio__parameterized1 has unconnected port s_axi_wdata[15]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[4].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[5].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[6].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[15].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[16].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[17].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[18].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[19].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[21].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[22].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[23].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[24].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[25].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[26].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[27].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[28].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[30].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[31].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[4].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[5].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[6].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[15].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[16].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[17].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[18].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[19].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[21].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[22].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[23].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[24].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[25].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[26].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[27].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[28].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[30].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[31].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[0].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[1].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[2].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[3].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[4].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[5].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[6].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[7].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[8].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[9].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[10].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[11].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[12].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[13].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[14].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[15].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[16].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[17].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[18].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[19].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[20].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[21].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[22].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[23].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[24].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[25].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[26].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[27].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[28].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[29].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[30].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[31].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Dual.INPUT_DOUBLE_REGS5/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[30]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[29]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[28]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[27]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[26]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[25]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[24]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[24]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[23]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[22]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[22]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[21]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[20]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[20]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[19]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[18]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[18]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[17]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[16]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[16]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[15]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[15]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[14]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[13]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[12]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[12]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[11]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[10]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[9]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[8]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[7]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[6]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[5]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[4]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[3]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[2]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[1]' (FDR) to 'axi_gpio__parameterized1:/ip2bus_data_i_D1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio__parameterized1:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio__parameterized1:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[1]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]' (FDRE) to 'axi_gpio__parameterized1:/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio__parameterized1:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio__parameterized1:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 900.473 ; gain = 338.023
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 969.281 ; gain = 406.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 970.098 ; gain = 407.648
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 990.281 ; gain = 427.832
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     2|
+|2     |CARRY4  |    48|
+|3     |DSP48E1 |     4|
+|4     |LUT1    |    28|
+|5     |LUT2    |    76|
+|6     |LUT3    |    60|
+|7     |LUT4    |   188|
+|8     |LUT5    |   348|
+|9     |LUT6    |   100|
+|10    |FDR     |   528|
+|11    |FDRE    |  1424|
+|12    |FDSE    |   276|
+|13    |IBUF    |   227|
+|14    |OBUF    |   328|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 43 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:39 . Memory (MB): peak = 995.094 ; gain = 368.195
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 995.094 ; gain = 432.645
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 580 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1013.137 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 528 instances were transformed.
+  FDR => FDRE: 528 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+378 Infos, 170 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:53 . Memory (MB): peak = 1013.137 ; gain = 712.957
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1013.137 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/CO_AXI_PERIPH/CO_AXI_PERIPH.runs/synth_1/CO_AXI_PERIPH_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file CO_AXI_PERIPH_wrapper_utilization_synth.rpt -pb CO_AXI_PERIPH_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  4 08:51:18 2019...

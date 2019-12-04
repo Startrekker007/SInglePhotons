@@ -2,19 +2,11 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="PG_AXI_PERIPH" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1575337402"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1575337402"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1575337402"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1575337402"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1575412606"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1575412606"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1575412606"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1575412606"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip\PG_AXI_PERIPH_PG_CORE_0_0\PG_AXI_PERIPH_PG_CORE_0_0.xci" Type="IP">
-        <Instance HierarchyPath="PG_CORE_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\PG_AXI_PERIPH_axi_gpio_0_0\PG_AXI_PERIPH_axi_gpio_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_ch_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -79,6 +71,14 @@
       <File Name="sim\PG_AXI_PERIPH.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\PG_AXI_PERIPH_PG_CORE_1_0\PG_AXI_PERIPH_PG_CORE_1_0.xci" Type="IP">
+        <Instance HierarchyPath="PG_CORE_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="PG_AXI_PERIPH_ooc.xdc" Type="XDC">

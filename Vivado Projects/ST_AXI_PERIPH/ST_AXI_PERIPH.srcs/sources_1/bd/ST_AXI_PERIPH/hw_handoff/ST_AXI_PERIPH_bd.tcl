@@ -175,8 +175,8 @@ proc create_root_design { parentCell } {
   set aclk [ create_bd_port -dir I aclk ]
   set aresetn [ create_bd_port -dir I aresetn ]
 
-  # Create instance: TCH_TDC_OV_wrapper_0, and set properties
-  set TCH_TDC_OV_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:TCH_TDC_OV_wrapper:1.0 TCH_TDC_OV_wrapper_0 ]
+  # Create instance: SCH_IA_wrapper_0, and set properties
+  set SCH_IA_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SCH_IA_wrapper:1.0 SCH_IA_wrapper_0 ]
 
   # Create instance: T_META_HARDEN_0, and set properties
   set block_name T_META_HARDEN
@@ -212,16 +212,16 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net rdy_1 [get_bd_intf_ports rdy] [get_bd_intf_pins axi_rdy/S_AXI]
 
   # Create port connections
-  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TCH_TDC_OV_wrapper_0/CH0]
-  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins TCH_TDC_OV_wrapper_0/HS_CLK_IN]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_ARMED [get_bd_ports ARMED] [get_bd_pins TCH_TDC_OV_wrapper_0/ARMED]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_D_RDY [get_bd_pins TCH_TDC_OV_wrapper_0/D_RDY] [get_bd_pins T_META_HARDEN_0/INP]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_T_DATA [get_bd_pins TCH_TDC_OV_wrapper_0/T_DATA] [get_bd_pins axi_data/gpio_io_i]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_WAITING [get_bd_ports WAITING] [get_bd_pins TCH_TDC_OV_wrapper_0/WAITING]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins SCH_IA_wrapper_0/CH0]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins SCH_IA_wrapper_0/HS_CLK_IN]
+  connect_bd_net -net SCH_IA_wrapper_0_ARMED [get_bd_ports ARMED] [get_bd_pins SCH_IA_wrapper_0/ARMED]
+  connect_bd_net -net SCH_IA_wrapper_0_D_RDY [get_bd_pins SCH_IA_wrapper_0/D_RDY] [get_bd_pins T_META_HARDEN_0/INP]
+  connect_bd_net -net SCH_IA_wrapper_0_T_DATA [get_bd_pins SCH_IA_wrapper_0/T_DATA] [get_bd_pins axi_data/gpio_io_i]
+  connect_bd_net -net SCH_IA_wrapper_0_WAITING [get_bd_ports WAITING] [get_bd_pins SCH_IA_wrapper_0/WAITING]
   connect_bd_net -net T_META_HARDEN_0_S_OUT [get_bd_pins T_META_HARDEN_0/S_OUT] [get_bd_pins axi_rdy/gpio_io_i]
   connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins T_META_HARDEN_0/CLK] [get_bd_pins axi_data/s_axi_aclk] [get_bd_pins axi_rdy/s_axi_aclk]
   connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins axi_data/s_axi_aresetn] [get_bd_pins axi_rdy/s_axi_aresetn]
-  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_pins TCH_TDC_OV_wrapper_0/M_RST] [get_bd_pins axi_data/gpio2_io_o]
+  connect_bd_net -net axi_data_gpio2_io_o [get_bd_pins SCH_IA_wrapper_0/M_RST] [get_bd_pins axi_data/gpio2_io_o]
 
   # Create address segments
 

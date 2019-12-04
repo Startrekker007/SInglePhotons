@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec  3 15:06:39 2019
+--Date        : Wed Dec  4 16:28:21 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target CT_AXI_PERIPH_wrapper.bd
 --Design      : CT_AXI_PERIPH_wrapper
@@ -62,23 +62,11 @@ architecture STRUCTURE of CT_AXI_PERIPH_wrapper is
   port (
     ARMED : out STD_LOGIC_VECTOR ( 0 to 0 );
     WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
-    data_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data_arready : out STD_LOGIC;
-    data_arvalid : in STD_LOGIC;
-    data_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data_awready : out STD_LOGIC;
-    data_awvalid : in STD_LOGIC;
-    data_bready : in STD_LOGIC;
-    data_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data_bvalid : out STD_LOGIC;
-    data_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    data_rready : in STD_LOGIC;
-    data_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data_rvalid : out STD_LOGIC;
-    data_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    data_wready : out STD_LOGIC;
-    data_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    data_wvalid : in STD_LOGIC;
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    CH0 : in STD_LOGIC;
+    CH1 : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
     rdy_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     rdy_arready : out STD_LOGIC;
     rdy_arvalid : in STD_LOGIC;
@@ -96,11 +84,23 @@ architecture STRUCTURE of CT_AXI_PERIPH_wrapper is
     rdy_wready : out STD_LOGIC;
     rdy_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     rdy_wvalid : in STD_LOGIC;
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
-    CH0 : in STD_LOGIC;
-    CH1 : in STD_LOGIC;
-    MCLK : in STD_LOGIC
+    data_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data_arready : out STD_LOGIC;
+    data_arvalid : in STD_LOGIC;
+    data_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data_awready : out STD_LOGIC;
+    data_awvalid : in STD_LOGIC;
+    data_bready : in STD_LOGIC;
+    data_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data_bvalid : out STD_LOGIC;
+    data_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    data_rready : in STD_LOGIC;
+    data_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data_rvalid : out STD_LOGIC;
+    data_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    data_wready : out STD_LOGIC;
+    data_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    data_wvalid : in STD_LOGIC
   );
   end component CT_AXI_PERIPH;
 begin

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec  3 15:06:39 2019
+--Date        : Wed Dec  4 16:28:21 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target CT_AXI_PERIPH.bd
 --Design      : CT_AXI_PERIPH
@@ -56,7 +56,7 @@ entity CT_AXI_PERIPH is
     rdy_wvalid : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of CT_AXI_PERIPH : entity is "CT_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=CT_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=3,numReposBlks=3,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of CT_AXI_PERIPH : entity is "CT_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=CT_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of CT_AXI_PERIPH : entity is "CT_AXI_PERIPH.hwdef";
 end CT_AXI_PERIPH;
@@ -111,23 +111,47 @@ architecture STRUCTURE of CT_AXI_PERIPH is
     gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component CT_AXI_PERIPH_axi_gpio_0_1;
-  component CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0 is
+  component CT_AXI_PERIPH_CT_CTRL_0_0 is
   port (
     CH0 : in STD_LOGIC;
     CH1 : in STD_LOGIC;
-    D_RDY : out STD_LOGIC_VECTOR ( 0 to 0 );
-    HS_CLK_IN : in STD_LOGIC;
-    M_RST : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    D_RDY : out STD_LOGIC;
     T_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    WAITING : out STD_LOGIC_VECTOR ( 0 to 0 )
+    WAITING : out STD_LOGIC
   );
-  end component CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0;
+  end component CT_AXI_PERIPH_CT_CTRL_0_0;
+  component CT_AXI_PERIPH_MH_CT_0_0 is
+  port (
+    INP : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC
+  );
+  end component CT_AXI_PERIPH_MH_CT_0_0;
+  component CT_AXI_PERIPH_MH_CT_0_1 is
+  port (
+    INP : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC
+  );
+  end component CT_AXI_PERIPH_MH_CT_0_1;
+  component CT_AXI_PERIPH_MH_CT_1_0 is
+  port (
+    INP : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC
+  );
+  end component CT_AXI_PERIPH_MH_CT_1_0;
   signal CH0_1 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
+  signal CT_CTRL_0_D_RDY : STD_LOGIC;
+  signal CT_CTRL_0_T_DATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal CT_CTRL_0_WAITING : STD_LOGIC;
   signal MCLK_1 : STD_LOGIC;
-  signal TCH_TDC_OV_wrapper_0_D_RDY : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal TCH_TDC_OV_wrapper_0_T_DATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal TCH_TDC_OV_wrapper_0_WAITING : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal MH_CT_0_OUTP : STD_LOGIC;
+  signal MH_CT_1_OUTP : STD_LOGIC;
+  signal MH_CT_2_OUTP : STD_LOGIC;
   signal aclk_1 : STD_LOGIC;
   signal aresetn_1 : STD_LOGIC;
   signal axi_data_gpio2_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -208,7 +232,7 @@ begin
   CH0_1 <= CH0;
   CH1_1 <= CH1;
   MCLK_1 <= MCLK;
-  WAITING(0) <= TCH_TDC_OV_wrapper_0_WAITING(0);
+  WAITING(0) <= CT_CTRL_0_WAITING;
   aclk_1 <= aclk;
   aresetn_1 <= aresetn;
   data_1_ARADDR(8 downto 0) <= data_araddr(8 downto 0);
@@ -245,20 +269,38 @@ begin
   rdy_rresp(1 downto 0) <= rdy_1_RRESP(1 downto 0);
   rdy_rvalid <= rdy_1_RVALID;
   rdy_wready <= rdy_1_WREADY;
-TCH_TDC_OV_wrapper_0: component CT_AXI_PERIPH_TCH_TDC_OV_wrapper_0_0
+CT_CTRL_0: component CT_AXI_PERIPH_CT_CTRL_0_0
      port map (
-      CH0 => CH0_1,
-      CH1 => CH1_1,
-      D_RDY(0) => TCH_TDC_OV_wrapper_0_D_RDY(0),
-      HS_CLK_IN => MCLK_1,
-      M_RST => axi_data_gpio2_io_o(0),
-      T_DATA(31 downto 0) => TCH_TDC_OV_wrapper_0_T_DATA(31 downto 0),
-      WAITING(0) => TCH_TDC_OV_wrapper_0_WAITING(0)
+      CH0 => MH_CT_0_OUTP,
+      CH1 => MH_CT_1_OUTP,
+      D_RDY => CT_CTRL_0_D_RDY,
+      MCLK => MCLK_1,
+      RSTn => axi_data_gpio2_io_o(0),
+      T_DATA(31 downto 0) => CT_CTRL_0_T_DATA(31 downto 0),
+      WAITING => CT_CTRL_0_WAITING
+    );
+MH_CT_0: component CT_AXI_PERIPH_MH_CT_0_0
+     port map (
+      INP => CH0_1,
+      MCLK => MCLK_1,
+      OUTP => MH_CT_0_OUTP
+    );
+MH_CT_1: component CT_AXI_PERIPH_MH_CT_0_1
+     port map (
+      INP => CH1_1,
+      MCLK => MCLK_1,
+      OUTP => MH_CT_1_OUTP
+    );
+MH_CT_2: component CT_AXI_PERIPH_MH_CT_1_0
+     port map (
+      INP => CT_CTRL_0_D_RDY,
+      MCLK => MCLK_1,
+      OUTP => MH_CT_2_OUTP
     );
 axi_data: component CT_AXI_PERIPH_axi_gpio_0_0
      port map (
       gpio2_io_o(0) => axi_data_gpio2_io_o(0),
-      gpio_io_i(31 downto 0) => TCH_TDC_OV_wrapper_0_T_DATA(31 downto 0),
+      gpio_io_i(31 downto 0) => CT_CTRL_0_T_DATA(31 downto 0),
       s_axi_aclk => aclk_1,
       s_axi_araddr(8 downto 0) => data_1_ARADDR(8 downto 0),
       s_axi_aresetn => aresetn_1,
@@ -281,7 +323,7 @@ axi_data: component CT_AXI_PERIPH_axi_gpio_0_0
     );
 axi_rdy: component CT_AXI_PERIPH_axi_gpio_0_1
      port map (
-      gpio_io_i(0) => TCH_TDC_OV_wrapper_0_D_RDY(0),
+      gpio_io_i(0) => MH_CT_2_OUTP,
       s_axi_aclk => aclk_1,
       s_axi_araddr(8 downto 0) => rdy_1_ARADDR(8 downto 0),
       s_axi_aresetn => aresetn_1,

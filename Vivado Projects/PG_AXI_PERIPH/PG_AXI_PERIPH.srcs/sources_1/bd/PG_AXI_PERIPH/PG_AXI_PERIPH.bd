@@ -9,14 +9,14 @@
       "validated": "true"
     },
     "design_tree": {
-      "PG_CORE_0": "",
       "axi_ch_0": "",
       "axi_ch_1": "",
       "axi_ch_2": "",
       "axi_ch_3": "",
       "axi_delay_0": "",
       "axi_delay_1": "",
-      "axi_utility": ""
+      "axi_utility": "",
+      "PG_CORE_1": ""
     },
     "interface_ports": {
       "ch0": {
@@ -927,10 +927,6 @@
       }
     },
     "components": {
-      "PG_CORE_0": {
-        "vlnv": "cri.nz:user:PG_CORE:1.0",
-        "xci_name": "PG_AXI_PERIPH_PG_CORE_0_0"
-      },
       "axi_ch_0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "PG_AXI_PERIPH_axi_gpio_0_0",
@@ -1041,9 +1037,123 @@
             "value": "1"
           }
         }
+      },
+      "PG_CORE_1": {
+        "vlnv": "xilinx.com:module_ref:PG_CORE:1.0",
+        "xci_name": "PG_AXI_PERIPH_PG_CORE_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PG_CORE",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "TLIM0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "TLIM1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "TLIM2": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "TLIM3": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DC0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DC1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DC2": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DC3": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL2": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL3": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CHOUTP": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "EN": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "STABLE": {
+            "direction": "O"
+          },
+          "CSTATE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
+      "util_1": {
+        "interface_ports": [
+          "util",
+          "axi_utility/S_AXI"
+        ]
+      },
+      "ch2_1": {
+        "interface_ports": [
+          "ch2",
+          "axi_ch_2/S_AXI"
+        ]
+      },
       "ch3_1": {
         "interface_ports": [
           "ch3",
@@ -1056,16 +1166,10 @@
           "axi_delay_0/S_AXI"
         ]
       },
-      "util_1": {
+      "ch0_1": {
         "interface_ports": [
-          "util",
-          "axi_utility/S_AXI"
-        ]
-      },
-      "ch2_1": {
-        "interface_ports": [
-          "ch2",
-          "axi_ch_2/S_AXI"
+          "ch0",
+          "axi_ch_0/S_AXI"
         ]
       },
       "del1_1": {
@@ -1079,97 +1183,91 @@
           "ch1",
           "axi_ch_1/S_AXI"
         ]
-      },
-      "ch0_1": {
-        "interface_ports": [
-          "ch0",
-          "axi_ch_0/S_AXI"
-        ]
       }
     },
     "nets": {
       "axi_ch_0_gpio_io_o": {
         "ports": [
           "axi_ch_0/gpio_io_o",
-          "PG_CORE_0/TLIM0"
+          "PG_CORE_1/TLIM0"
         ]
       },
       "axi_ch_0_gpio2_io_o": {
         "ports": [
           "axi_ch_0/gpio2_io_o",
-          "PG_CORE_0/DC0"
+          "PG_CORE_1/DC0"
         ]
       },
       "axi_ch_1_gpio_io_o": {
         "ports": [
           "axi_ch_1/gpio_io_o",
-          "PG_CORE_0/TLIM1"
+          "PG_CORE_1/TLIM1"
         ]
       },
       "axi_ch_1_gpio2_io_o": {
         "ports": [
           "axi_ch_1/gpio2_io_o",
-          "PG_CORE_0/DC1"
+          "PG_CORE_1/DC1"
         ]
       },
       "axi_ch_2_gpio_io_o": {
         "ports": [
           "axi_ch_2/gpio_io_o",
-          "PG_CORE_0/TLIM2"
+          "PG_CORE_1/TLIM2"
         ]
       },
       "axi_ch_2_gpio2_io_o": {
         "ports": [
           "axi_ch_2/gpio2_io_o",
-          "PG_CORE_0/DC2"
+          "PG_CORE_1/DC2"
         ]
       },
       "axi_ch_3_gpio_io_o": {
         "ports": [
           "axi_ch_3/gpio_io_o",
-          "PG_CORE_0/TLIM3"
+          "PG_CORE_1/TLIM3"
         ]
       },
       "axi_ch_3_gpio2_io_o": {
         "ports": [
           "axi_ch_3/gpio2_io_o",
-          "PG_CORE_0/DC3"
+          "PG_CORE_1/DC3"
         ]
       },
       "axi_delay_0_gpio_io_o": {
         "ports": [
           "axi_delay_0/gpio_io_o",
-          "PG_CORE_0/DEL0"
+          "PG_CORE_1/DEL0"
         ]
       },
       "axi_delay_0_gpio2_io_o": {
         "ports": [
           "axi_delay_0/gpio2_io_o",
-          "PG_CORE_0/DEL1"
+          "PG_CORE_1/DEL1"
         ]
       },
       "axi_delay_1_gpio_io_o": {
         "ports": [
           "axi_delay_1/gpio_io_o",
-          "PG_CORE_0/DEL2"
+          "PG_CORE_1/DEL2"
         ]
       },
       "axi_delay_1_gpio2_io_o": {
         "ports": [
           "axi_delay_1/gpio2_io_o",
-          "PG_CORE_0/DEL3"
+          "PG_CORE_1/DEL3"
         ]
       },
       "axi_utility_gpio_io_o": {
         "ports": [
           "axi_utility/gpio_io_o",
-          "PG_CORE_0/RSTn"
+          "PG_CORE_1/RSTn"
         ]
       },
       "axi_utility_gpio2_io_o": {
         "ports": [
           "axi_utility/gpio2_io_o",
-          "PG_CORE_0/EN"
+          "PG_CORE_1/EN"
         ]
       },
       "aclk_1": {
@@ -1196,28 +1294,28 @@
           "axi_ch_0/s_axi_aresetn"
         ]
       },
-      "PG_CORE_0_CHOUTP": {
-        "ports": [
-          "PG_CORE_0/CHOUTP",
-          "OUTP"
-        ]
-      },
-      "PG_CORE_0_STABLE": {
-        "ports": [
-          "PG_CORE_0/STABLE",
-          "STABLE"
-        ]
-      },
-      "PG_CORE_0_CSTATE": {
-        "ports": [
-          "PG_CORE_0/CSTATE",
-          "CSTATE"
-        ]
-      },
       "MCLK_1": {
         "ports": [
           "MCLK",
-          "PG_CORE_0/MCLK"
+          "PG_CORE_1/MCLK"
+        ]
+      },
+      "PG_CORE_1_CHOUTP": {
+        "ports": [
+          "PG_CORE_1/CHOUTP",
+          "OUTP"
+        ]
+      },
+      "PG_CORE_1_STABLE": {
+        "ports": [
+          "PG_CORE_1/STABLE",
+          "STABLE"
+        ]
+      },
+      "PG_CORE_1_CSTATE": {
+        "ports": [
+          "PG_CORE_1/CSTATE",
+          "CSTATE"
         ]
       }
     },

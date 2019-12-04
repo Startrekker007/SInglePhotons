@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source CT_AXI_PERIPH_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# CT_CTRL, MH_CT, MH_CT, MH_CT
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -169,9 +176,50 @@ proc create_root_design { parentCell } {
   set aclk [ create_bd_port -dir I aclk ]
   set aresetn [ create_bd_port -dir I aresetn ]
 
-  # Create instance: TCH_TDC_OV_wrapper_0, and set properties
-  set TCH_TDC_OV_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:TCH_TDC_OV_wrapper:1.0 TCH_TDC_OV_wrapper_0 ]
-
+  # Create instance: CT_CTRL_0, and set properties
+  set block_name CT_CTRL
+  set block_cell_name CT_CTRL_0
+  if { [catch {set CT_CTRL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CT_CTRL_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: MH_CT_0, and set properties
+  set block_name MH_CT
+  set block_cell_name MH_CT_0
+  if { [catch {set MH_CT_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $MH_CT_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: MH_CT_1, and set properties
+  set block_name MH_CT
+  set block_cell_name MH_CT_1
+  if { [catch {set MH_CT_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $MH_CT_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: MH_CT_2, and set properties
+  set block_name MH_CT
+  set block_cell_name MH_CT_2
+  if { [catch {set MH_CT_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $MH_CT_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_data, and set properties
   set axi_data [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_data ]
   set_property -dict [ list \
@@ -193,15 +241,18 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net rdy_1 [get_bd_intf_ports rdy] [get_bd_intf_pins axi_rdy/S_AXI]
 
   # Create port connections
-  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TCH_TDC_OV_wrapper_0/CH0]
-  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins TCH_TDC_OV_wrapper_0/CH1]
-  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins TCH_TDC_OV_wrapper_0/HS_CLK_IN]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_D_RDY [get_bd_pins TCH_TDC_OV_wrapper_0/D_RDY] [get_bd_pins axi_rdy/gpio_io_i]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_T_DATA [get_bd_pins TCH_TDC_OV_wrapper_0/T_DATA] [get_bd_pins axi_data/gpio_io_i]
-  connect_bd_net -net TCH_TDC_OV_wrapper_0_WAITING [get_bd_ports WAITING] [get_bd_pins TCH_TDC_OV_wrapper_0/WAITING]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins MH_CT_0/INP]
+  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins MH_CT_1/INP]
+  connect_bd_net -net CT_CTRL_0_D_RDY [get_bd_pins CT_CTRL_0/D_RDY] [get_bd_pins MH_CT_2/INP]
+  connect_bd_net -net CT_CTRL_0_T_DATA [get_bd_pins CT_CTRL_0/T_DATA] [get_bd_pins axi_data/gpio_io_i]
+  connect_bd_net -net CT_CTRL_0_WAITING [get_bd_ports WAITING] [get_bd_pins CT_CTRL_0/WAITING]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins CT_CTRL_0/MCLK] [get_bd_pins MH_CT_0/MCLK] [get_bd_pins MH_CT_1/MCLK] [get_bd_pins MH_CT_2/MCLK]
+  connect_bd_net -net MH_CT_0_OUTP [get_bd_pins CT_CTRL_0/CH0] [get_bd_pins MH_CT_0/OUTP]
+  connect_bd_net -net MH_CT_1_OUTP [get_bd_pins CT_CTRL_0/CH1] [get_bd_pins MH_CT_1/OUTP]
+  connect_bd_net -net MH_CT_2_OUTP [get_bd_pins MH_CT_2/OUTP] [get_bd_pins axi_rdy/gpio_io_i]
   connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins axi_data/s_axi_aclk] [get_bd_pins axi_rdy/s_axi_aclk]
   connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins axi_data/s_axi_aresetn] [get_bd_pins axi_rdy/s_axi_aresetn]
-  connect_bd_net -net axi_data_gpio2_io_o [get_bd_ports ARMED] [get_bd_pins TCH_TDC_OV_wrapper_0/M_RST] [get_bd_pins axi_data/gpio2_io_o]
+  connect_bd_net -net axi_data_gpio2_io_o [get_bd_ports ARMED] [get_bd_pins CT_CTRL_0/RSTn] [get_bd_pins axi_data/gpio2_io_o]
 
   # Create address segments
 
