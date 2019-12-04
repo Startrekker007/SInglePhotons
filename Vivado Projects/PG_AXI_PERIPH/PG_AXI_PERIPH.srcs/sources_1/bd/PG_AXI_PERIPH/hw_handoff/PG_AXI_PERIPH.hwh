@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  4 11:36:45 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec  5 10:27:05 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="PG_AXI_PERIPH" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -43,177 +43,8 @@
     </PORT>
     <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
       <CONNECTIONS>
+        <CONNECTION INSTANCE="PG_META_H_0" PORT="MCLK"/>
         <CONNECTION INSTANCE="PG_CORE_1" PORT="MCLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="ch3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch3_arready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch3_arvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="ch3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch3_awready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch3_awvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch3_bready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="ch3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch3_bvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="ch3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch3_rready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="ch3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch3_rvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="ch3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch3_wready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="ch3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch3_wvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="del0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="del0_arready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="del0_arvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="del0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="del0_awready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="del0_awvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="del0_bready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="del0_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="del0_bvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="del0_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="del0_rready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="del0_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="del0_rvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="del0_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="del0_wready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="del0_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="del0_wvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_utility_s_axi_araddr">
@@ -386,6 +217,261 @@
         <CONNECTION INSTANCE="axi_ch_2" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" LEFT="8" NAME="ch3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch3_arready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch3_arvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="ch3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch3_awready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch3_awvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch3_bready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="ch3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch3_bvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="ch3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch3_rready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="ch3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch3_rvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="ch3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch3_wready" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="ch3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch3_wvalid" SIGIS="undef" SIGNAME="axi_ch_3_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_3" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="del0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="del0_arready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="del0_arvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="del0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="del0_awready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="del0_awvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="del0_bready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="del0_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="del0_bvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="del0_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="del0_rready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="del0_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="del0_rvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="del0_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="del0_wready" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="del0_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="del0_wvalid" SIGIS="undef" SIGNAME="axi_delay_0_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_delay_0" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="ch0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch0_arready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch0_arvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="ch0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch0_awready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch0_awvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch0_bready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="ch0_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch0_bvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="ch0_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch0_rready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="ch0_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch0_rvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="ch0_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ch0_wready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="ch0_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ch0_wvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" LEFT="8" NAME="del1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_s_axi_araddr">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_delay_1" PORT="s_axi_araddr"/>
@@ -554,91 +640,6 @@
     <PORT DIR="I" NAME="ch1_wvalid" SIGIS="undef" SIGNAME="axi_ch_1_s_axi_wvalid">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_ch_1" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="ch0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch0_arready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch0_arvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="ch0_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch0_awready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch0_awvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch0_bready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="ch0_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch0_bvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="ch0_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch0_rready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="ch0_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch0_rvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="ch0_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="ch0_wready" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="ch0_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="ch0_wvalid" SIGIS="undef" SIGNAME="axi_ch_0_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_ch_0" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1037,69 +1038,69 @@
             <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RSTn" SIGIS="rst" SIGNAME="axi_utility_gpio_io_o">
+        <PORT DIR="I" NAME="RSTn" SIGIS="rst" SIGNAME="PG_META_H_0_RSTn_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_utility" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="RSTn_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="TLIM0" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_gpio_io_o">
+        <PORT DIR="I" LEFT="31" NAME="TLIM0" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM0_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_0" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM0_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="TLIM1" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_1_gpio_io_o">
+        <PORT DIR="I" LEFT="31" NAME="TLIM1" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM1_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_1" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM1_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="TLIM2" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_2_gpio_io_o">
+        <PORT DIR="I" LEFT="31" NAME="TLIM2" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM2_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_2" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM2_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="TLIM3" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_gpio_io_o">
+        <PORT DIR="I" LEFT="31" NAME="TLIM3" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM3_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_3" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM3_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DC0" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DC0" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC0_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_0" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC0_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DC1" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_1_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DC1" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC1_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_1" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC1_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DC2" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_2_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DC2" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC2_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_2" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC2_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DC3" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DC3" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC3_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ch_3" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC3_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DEL0" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_gpio_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DEL0" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL0_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_delay_0" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL0_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DEL1" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DEL1" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL1_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_delay_0" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL1_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DEL2" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_gpio_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DEL2" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL2_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_delay_1" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL2_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="DEL3" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_gpio2_io_o">
+        <PORT DIR="I" LEFT="31" NAME="DEL3" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL3_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_delay_1" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL3_O"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="CHOUTP" RIGHT="0" SIGIS="undef" SIGNAME="PG_CORE_1_CHOUTP">
@@ -1107,9 +1108,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="EN" RIGHT="0" SIGIS="undef" SIGNAME="axi_utility_gpio2_io_o">
+        <PORT DIR="I" LEFT="3" NAME="EN" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_EN_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_utility" PORT="gpio2_io_o"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="EN_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="STABLE" SIGIS="undef" SIGNAME="PG_CORE_1_STABLE">
@@ -1120,6 +1121,161 @@
         <PORT DIR="O" LEFT="3" NAME="CSTATE" RIGHT="0" SIGIS="undef" SIGNAME="PG_CORE_1_CSTATE">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="CSTATE"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/PG_META_H_0" HWVERSION="1.0" INSTANCE="PG_META_H_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PG_META_H" VLNV="xilinx.com:module_ref:PG_META_H:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="PG_AXI_PERIPH_PG_META_H_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="TLIM0_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_0" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="TLIM1_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_1_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_1" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="TLIM2_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_2_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_2" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="TLIM3_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_3" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DC0_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_0" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DC1_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_1" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DC2_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_2_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_2" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DC3_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ch_3" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DEL0_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_delay_0" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DEL1_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_delay_0" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DEL2_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_delay_1" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="DEL3_I" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_delay_1" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="TLIM0_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="TLIM1_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM1_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="TLIM2_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM2_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="TLIM3_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_TLIM3_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DC0_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DC1_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC1_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DC2_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC2_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DC3_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DC3_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DEL0_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DEL1_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL1_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DEL2_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL2_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DEL3_O" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_DEL3_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RSTn_i" SIGIS="undef" SIGNAME="axi_utility_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_utility" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RSTn_o" SIGIS="undef" SIGNAME="PG_META_H_0_RSTn_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="RSTn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="EN_i" RIGHT="0" SIGIS="undef" SIGNAME="axi_utility_gpio2_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_utility" PORT="gpio2_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="EN_o" RIGHT="0" SIGIS="undef" SIGNAME="PG_META_H_0_EN_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PG_CORE_1" PORT="EN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1249,12 +1405,12 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM0"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM0_I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_0_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC0"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC0_I"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1447,12 +1603,12 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_1_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM1"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM1_I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_1_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC1"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC1_I"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1645,12 +1801,12 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_2_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM2"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM2_I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_2_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC2"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC2_I"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1843,12 +1999,12 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="TLIM3"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="TLIM3_I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_ch_3_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DC3"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DC3_I"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2041,12 +2197,12 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL0"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL0_I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_0_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL1"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL1_I"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2239,12 +2395,12 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL2"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL2_I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_delay_1_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="DEL3"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="DEL3_I"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2437,12 +2593,12 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_utility_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="RSTn"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="RSTn_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="gpio2_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_utility_gpio2_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="PG_CORE_1" PORT="EN"/>
+            <CONNECTION INSTANCE="PG_META_H_0" PORT="EN_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

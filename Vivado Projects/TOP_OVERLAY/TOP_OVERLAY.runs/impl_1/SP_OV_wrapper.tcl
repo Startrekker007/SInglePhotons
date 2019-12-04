@@ -73,11 +73,11 @@ set rc [catch {
   set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.cache/wt} [current_project]
   set_property parent.project_path {D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.xpr} [current_project]
   set_property ip_repo_paths {
-  d:/SInglePhotons/HW_IP/PG_AXI_PERIPH
-  d:/SInglePhotons/HW_IP/CT_AXI_PERIPH
-  d:/SInglePhotons/HW_IP/ST_AXI_PERIPH
-  d:/SInglePhotons/HW_IP/SCH_IA_IP
-  d:/SInglePhotons/HW_IP/TDC
+  D:/SInglePhotons/HW_IP/PG_AXI_PERIPH
+  D:/SInglePhotons/HW_IP/CT_AXI_PERIPH
+  D:/SInglePhotons/HW_IP/ST_AXI_PERIPH
+  D:/SInglePhotons/HW_IP/SCH_IA_IP
+  D:/SInglePhotons/HW_IP/TDC
   D:/SInglePhotons/HW_IP/COUNTER_AXI
 } [current_project]
   update_ip_catalog

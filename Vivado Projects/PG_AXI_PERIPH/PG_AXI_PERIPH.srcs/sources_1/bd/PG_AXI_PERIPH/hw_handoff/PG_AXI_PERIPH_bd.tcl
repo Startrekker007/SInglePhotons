@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# PG_CORE
+# PG_CORE, PG_META_H
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -196,6 +196,17 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: PG_META_H_0, and set properties
+  set block_name PG_META_H
+  set block_cell_name PG_META_H_0
+  if { [catch {set PG_META_H_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $PG_META_H_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_ch_0, and set properties
   set axi_ch_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_ch_0 ]
   set_property -dict [ list \
@@ -264,26 +275,40 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net util_1 [get_bd_intf_ports util] [get_bd_intf_pins axi_utility/S_AXI]
 
   # Create port connections
-  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins PG_CORE_1/MCLK]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins PG_CORE_1/MCLK] [get_bd_pins PG_META_H_0/MCLK]
   connect_bd_net -net Net [get_bd_ports aresetn] [get_bd_pins axi_ch_0/s_axi_aresetn] [get_bd_pins axi_ch_1/s_axi_aresetn] [get_bd_pins axi_ch_2/s_axi_aresetn] [get_bd_pins axi_ch_3/s_axi_aresetn] [get_bd_pins axi_delay_0/s_axi_aresetn] [get_bd_pins axi_delay_1/s_axi_aresetn] [get_bd_pins axi_utility/s_axi_aresetn]
   connect_bd_net -net PG_CORE_1_CHOUTP [get_bd_ports OUTP] [get_bd_pins PG_CORE_1/CHOUTP]
   connect_bd_net -net PG_CORE_1_CSTATE [get_bd_ports CSTATE] [get_bd_pins PG_CORE_1/CSTATE]
   connect_bd_net -net PG_CORE_1_STABLE [get_bd_ports STABLE] [get_bd_pins PG_CORE_1/STABLE]
+  connect_bd_net -net PG_META_H_0_DC0_O [get_bd_pins PG_CORE_1/DC0] [get_bd_pins PG_META_H_0/DC0_O]
+  connect_bd_net -net PG_META_H_0_DC1_O [get_bd_pins PG_CORE_1/DC1] [get_bd_pins PG_META_H_0/DC1_O]
+  connect_bd_net -net PG_META_H_0_DC2_O [get_bd_pins PG_CORE_1/DC2] [get_bd_pins PG_META_H_0/DC2_O]
+  connect_bd_net -net PG_META_H_0_DC3_O [get_bd_pins PG_CORE_1/DC3] [get_bd_pins PG_META_H_0/DC3_O]
+  connect_bd_net -net PG_META_H_0_DEL0_O [get_bd_pins PG_CORE_1/DEL0] [get_bd_pins PG_META_H_0/DEL0_O]
+  connect_bd_net -net PG_META_H_0_DEL1_O [get_bd_pins PG_CORE_1/DEL1] [get_bd_pins PG_META_H_0/DEL1_O]
+  connect_bd_net -net PG_META_H_0_DEL2_O [get_bd_pins PG_CORE_1/DEL2] [get_bd_pins PG_META_H_0/DEL2_O]
+  connect_bd_net -net PG_META_H_0_DEL3_O [get_bd_pins PG_CORE_1/DEL3] [get_bd_pins PG_META_H_0/DEL3_O]
+  connect_bd_net -net PG_META_H_0_EN_o [get_bd_pins PG_CORE_1/EN] [get_bd_pins PG_META_H_0/EN_o]
+  connect_bd_net -net PG_META_H_0_RSTn_o [get_bd_pins PG_CORE_1/RSTn] [get_bd_pins PG_META_H_0/RSTn_o]
+  connect_bd_net -net PG_META_H_0_TLIM0_O [get_bd_pins PG_CORE_1/TLIM0] [get_bd_pins PG_META_H_0/TLIM0_O]
+  connect_bd_net -net PG_META_H_0_TLIM1_O [get_bd_pins PG_CORE_1/TLIM1] [get_bd_pins PG_META_H_0/TLIM1_O]
+  connect_bd_net -net PG_META_H_0_TLIM2_O [get_bd_pins PG_CORE_1/TLIM2] [get_bd_pins PG_META_H_0/TLIM2_O]
+  connect_bd_net -net PG_META_H_0_TLIM3_O [get_bd_pins PG_CORE_1/TLIM3] [get_bd_pins PG_META_H_0/TLIM3_O]
   connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins axi_ch_0/s_axi_aclk] [get_bd_pins axi_ch_1/s_axi_aclk] [get_bd_pins axi_ch_2/s_axi_aclk] [get_bd_pins axi_ch_3/s_axi_aclk] [get_bd_pins axi_delay_0/s_axi_aclk] [get_bd_pins axi_delay_1/s_axi_aclk] [get_bd_pins axi_utility/s_axi_aclk]
-  connect_bd_net -net axi_ch_0_gpio2_io_o [get_bd_pins PG_CORE_1/DC0] [get_bd_pins axi_ch_0/gpio2_io_o]
-  connect_bd_net -net axi_ch_0_gpio_io_o [get_bd_pins PG_CORE_1/TLIM0] [get_bd_pins axi_ch_0/gpio_io_o]
-  connect_bd_net -net axi_ch_1_gpio2_io_o [get_bd_pins PG_CORE_1/DC1] [get_bd_pins axi_ch_1/gpio2_io_o]
-  connect_bd_net -net axi_ch_1_gpio_io_o [get_bd_pins PG_CORE_1/TLIM1] [get_bd_pins axi_ch_1/gpio_io_o]
-  connect_bd_net -net axi_ch_2_gpio2_io_o [get_bd_pins PG_CORE_1/DC2] [get_bd_pins axi_ch_2/gpio2_io_o]
-  connect_bd_net -net axi_ch_2_gpio_io_o [get_bd_pins PG_CORE_1/TLIM2] [get_bd_pins axi_ch_2/gpio_io_o]
-  connect_bd_net -net axi_ch_3_gpio2_io_o [get_bd_pins PG_CORE_1/DC3] [get_bd_pins axi_ch_3/gpio2_io_o]
-  connect_bd_net -net axi_ch_3_gpio_io_o [get_bd_pins PG_CORE_1/TLIM3] [get_bd_pins axi_ch_3/gpio_io_o]
-  connect_bd_net -net axi_delay_0_gpio2_io_o [get_bd_pins PG_CORE_1/DEL1] [get_bd_pins axi_delay_0/gpio2_io_o]
-  connect_bd_net -net axi_delay_0_gpio_io_o [get_bd_pins PG_CORE_1/DEL0] [get_bd_pins axi_delay_0/gpio_io_o]
-  connect_bd_net -net axi_delay_1_gpio2_io_o [get_bd_pins PG_CORE_1/DEL3] [get_bd_pins axi_delay_1/gpio2_io_o]
-  connect_bd_net -net axi_delay_1_gpio_io_o [get_bd_pins PG_CORE_1/DEL2] [get_bd_pins axi_delay_1/gpio_io_o]
-  connect_bd_net -net axi_utility_gpio2_io_o [get_bd_pins PG_CORE_1/EN] [get_bd_pins axi_utility/gpio2_io_o]
-  connect_bd_net -net axi_utility_gpio_io_o [get_bd_pins PG_CORE_1/RSTn] [get_bd_pins axi_utility/gpio_io_o]
+  connect_bd_net -net axi_ch_0_gpio2_io_o [get_bd_pins PG_META_H_0/DC0_I] [get_bd_pins axi_ch_0/gpio2_io_o]
+  connect_bd_net -net axi_ch_0_gpio_io_o [get_bd_pins PG_META_H_0/TLIM0_I] [get_bd_pins axi_ch_0/gpio_io_o]
+  connect_bd_net -net axi_ch_1_gpio2_io_o [get_bd_pins PG_META_H_0/DC1_I] [get_bd_pins axi_ch_1/gpio2_io_o]
+  connect_bd_net -net axi_ch_1_gpio_io_o [get_bd_pins PG_META_H_0/TLIM1_I] [get_bd_pins axi_ch_1/gpio_io_o]
+  connect_bd_net -net axi_ch_2_gpio2_io_o [get_bd_pins PG_META_H_0/DC2_I] [get_bd_pins axi_ch_2/gpio2_io_o]
+  connect_bd_net -net axi_ch_2_gpio_io_o [get_bd_pins PG_META_H_0/TLIM2_I] [get_bd_pins axi_ch_2/gpio_io_o]
+  connect_bd_net -net axi_ch_3_gpio2_io_o [get_bd_pins PG_META_H_0/DC3_I] [get_bd_pins axi_ch_3/gpio2_io_o]
+  connect_bd_net -net axi_ch_3_gpio_io_o [get_bd_pins PG_META_H_0/TLIM3_I] [get_bd_pins axi_ch_3/gpio_io_o]
+  connect_bd_net -net axi_delay_0_gpio2_io_o [get_bd_pins PG_META_H_0/DEL1_I] [get_bd_pins axi_delay_0/gpio2_io_o]
+  connect_bd_net -net axi_delay_0_gpio_io_o [get_bd_pins PG_META_H_0/DEL0_I] [get_bd_pins axi_delay_0/gpio_io_o]
+  connect_bd_net -net axi_delay_1_gpio2_io_o [get_bd_pins PG_META_H_0/DEL3_I] [get_bd_pins axi_delay_1/gpio2_io_o]
+  connect_bd_net -net axi_delay_1_gpio_io_o [get_bd_pins PG_META_H_0/DEL2_I] [get_bd_pins axi_delay_1/gpio_io_o]
+  connect_bd_net -net axi_utility_gpio2_io_o [get_bd_pins PG_META_H_0/EN_i] [get_bd_pins axi_utility/gpio2_io_o]
+  connect_bd_net -net axi_utility_gpio_io_o [get_bd_pins PG_META_H_0/RSTn_i] [get_bd_pins axi_utility/gpio_io_o]
 
   # Create address segments
 

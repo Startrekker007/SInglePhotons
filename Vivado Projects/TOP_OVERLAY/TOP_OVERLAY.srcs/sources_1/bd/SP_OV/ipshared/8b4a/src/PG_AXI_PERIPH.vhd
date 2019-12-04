@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec  4 11:36:45 2019
+--Date        : Thu Dec  5 10:27:05 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target PG_AXI_PERIPH.bd
 --Design      : PG_AXI_PERIPH
@@ -140,7 +140,7 @@ entity PG_AXI_PERIPH is
     util_wvalid : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of PG_AXI_PERIPH : entity is "PG_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=PG_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of PG_AXI_PERIPH : entity is "PG_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=PG_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=9,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of PG_AXI_PERIPH : entity is "PG_AXI_PERIPH.hwdef";
 end PG_AXI_PERIPH;
@@ -321,6 +321,39 @@ architecture STRUCTURE of PG_AXI_PERIPH is
     gpio2_io_o : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component PG_AXI_PERIPH_axi_gpio_0_2;
+  component PG_AXI_PERIPH_PG_META_H_0_0 is
+  port (
+    TLIM0_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM1_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM2_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM3_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC0_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC1_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC2_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC3_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL0_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL1_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL2_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL3_I : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM0_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM1_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM2_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TLIM3_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC0_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC1_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC2_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DC3_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL0_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL1_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL2_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEL3_O : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    RSTn_i : in STD_LOGIC;
+    RSTn_o : out STD_LOGIC;
+    EN_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    EN_o : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    MCLK : in STD_LOGIC
+  );
+  end component PG_AXI_PERIPH_PG_META_H_0_0;
   component PG_AXI_PERIPH_PG_CORE_1_0 is
   port (
     MCLK : in STD_LOGIC;
@@ -348,6 +381,20 @@ architecture STRUCTURE of PG_AXI_PERIPH is
   signal PG_CORE_1_CHOUTP : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal PG_CORE_1_CSTATE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal PG_CORE_1_STABLE : STD_LOGIC;
+  signal PG_META_H_0_DC0_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DC1_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DC2_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DC3_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DEL0_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DEL1_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DEL2_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_DEL3_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_EN_o : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal PG_META_H_0_RSTn_o : STD_LOGIC;
+  signal PG_META_H_0_TLIM0_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_TLIM1_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_TLIM2_O : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal PG_META_H_0_TLIM3_O : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal aclk_1 : STD_LOGIC;
   signal axi_ch_0_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_ch_0_gpio_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -740,22 +787,54 @@ PG_CORE_1: component PG_AXI_PERIPH_PG_CORE_1_0
      port map (
       CHOUTP(3 downto 0) => PG_CORE_1_CHOUTP(3 downto 0),
       CSTATE(3 downto 0) => PG_CORE_1_CSTATE(3 downto 0),
-      DC0(31 downto 0) => axi_ch_0_gpio2_io_o(31 downto 0),
-      DC1(31 downto 0) => axi_ch_1_gpio2_io_o(31 downto 0),
-      DC2(31 downto 0) => axi_ch_2_gpio2_io_o(31 downto 0),
-      DC3(31 downto 0) => axi_ch_3_gpio2_io_o(31 downto 0),
-      DEL0(31 downto 0) => axi_delay_0_gpio_io_o(31 downto 0),
-      DEL1(31 downto 0) => axi_delay_0_gpio2_io_o(31 downto 0),
-      DEL2(31 downto 0) => axi_delay_1_gpio_io_o(31 downto 0),
-      DEL3(31 downto 0) => axi_delay_1_gpio2_io_o(31 downto 0),
-      EN(3 downto 0) => axi_utility_gpio2_io_o(3 downto 0),
+      DC0(31 downto 0) => PG_META_H_0_DC0_O(31 downto 0),
+      DC1(31 downto 0) => PG_META_H_0_DC1_O(31 downto 0),
+      DC2(31 downto 0) => PG_META_H_0_DC2_O(31 downto 0),
+      DC3(31 downto 0) => PG_META_H_0_DC3_O(31 downto 0),
+      DEL0(31 downto 0) => PG_META_H_0_DEL0_O(31 downto 0),
+      DEL1(31 downto 0) => PG_META_H_0_DEL1_O(31 downto 0),
+      DEL2(31 downto 0) => PG_META_H_0_DEL2_O(31 downto 0),
+      DEL3(31 downto 0) => PG_META_H_0_DEL3_O(31 downto 0),
+      EN(3 downto 0) => PG_META_H_0_EN_o(3 downto 0),
       MCLK => MCLK_1,
-      RSTn => axi_utility_gpio_io_o(0),
+      RSTn => PG_META_H_0_RSTn_o,
       STABLE => PG_CORE_1_STABLE,
-      TLIM0(31 downto 0) => axi_ch_0_gpio_io_o(31 downto 0),
-      TLIM1(31 downto 0) => axi_ch_1_gpio_io_o(31 downto 0),
-      TLIM2(31 downto 0) => axi_ch_2_gpio_io_o(31 downto 0),
-      TLIM3(31 downto 0) => axi_ch_3_gpio_io_o(31 downto 0)
+      TLIM0(31 downto 0) => PG_META_H_0_TLIM0_O(31 downto 0),
+      TLIM1(31 downto 0) => PG_META_H_0_TLIM1_O(31 downto 0),
+      TLIM2(31 downto 0) => PG_META_H_0_TLIM2_O(31 downto 0),
+      TLIM3(31 downto 0) => PG_META_H_0_TLIM3_O(31 downto 0)
+    );
+PG_META_H_0: component PG_AXI_PERIPH_PG_META_H_0_0
+     port map (
+      DC0_I(31 downto 0) => axi_ch_0_gpio2_io_o(31 downto 0),
+      DC0_O(31 downto 0) => PG_META_H_0_DC0_O(31 downto 0),
+      DC1_I(31 downto 0) => axi_ch_1_gpio2_io_o(31 downto 0),
+      DC1_O(31 downto 0) => PG_META_H_0_DC1_O(31 downto 0),
+      DC2_I(31 downto 0) => axi_ch_2_gpio2_io_o(31 downto 0),
+      DC2_O(31 downto 0) => PG_META_H_0_DC2_O(31 downto 0),
+      DC3_I(31 downto 0) => axi_ch_3_gpio2_io_o(31 downto 0),
+      DC3_O(31 downto 0) => PG_META_H_0_DC3_O(31 downto 0),
+      DEL0_I(31 downto 0) => axi_delay_0_gpio_io_o(31 downto 0),
+      DEL0_O(31 downto 0) => PG_META_H_0_DEL0_O(31 downto 0),
+      DEL1_I(31 downto 0) => axi_delay_0_gpio2_io_o(31 downto 0),
+      DEL1_O(31 downto 0) => PG_META_H_0_DEL1_O(31 downto 0),
+      DEL2_I(31 downto 0) => axi_delay_1_gpio_io_o(31 downto 0),
+      DEL2_O(31 downto 0) => PG_META_H_0_DEL2_O(31 downto 0),
+      DEL3_I(31 downto 0) => axi_delay_1_gpio2_io_o(31 downto 0),
+      DEL3_O(31 downto 0) => PG_META_H_0_DEL3_O(31 downto 0),
+      EN_i(3 downto 0) => axi_utility_gpio2_io_o(3 downto 0),
+      EN_o(3 downto 0) => PG_META_H_0_EN_o(3 downto 0),
+      MCLK => MCLK_1,
+      RSTn_i => axi_utility_gpio_io_o(0),
+      RSTn_o => PG_META_H_0_RSTn_o,
+      TLIM0_I(31 downto 0) => axi_ch_0_gpio_io_o(31 downto 0),
+      TLIM0_O(31 downto 0) => PG_META_H_0_TLIM0_O(31 downto 0),
+      TLIM1_I(31 downto 0) => axi_ch_1_gpio_io_o(31 downto 0),
+      TLIM1_O(31 downto 0) => PG_META_H_0_TLIM1_O(31 downto 0),
+      TLIM2_I(31 downto 0) => axi_ch_2_gpio_io_o(31 downto 0),
+      TLIM2_O(31 downto 0) => PG_META_H_0_TLIM2_O(31 downto 0),
+      TLIM3_I(31 downto 0) => axi_ch_3_gpio_io_o(31 downto 0),
+      TLIM3_O(31 downto 0) => PG_META_H_0_TLIM3_O(31 downto 0)
     );
 axi_ch_0: component PG_AXI_PERIPH_axi_gpio_0_0
      port map (

@@ -103,7 +103,6 @@ uC_0 <= unsigned(C_0);
 uC_1 <= unsigned(C_1);
 uC_2 <= unsigned(C_2);
 uC_3 <= unsigned(C_3);
-RSTdel <= not RSTn;
 CR_0 : counter port map(
     CLK => MCLK,
     CE => '1',
@@ -155,10 +154,18 @@ begin
             uDEL2 <= unsigned(DEL2);
             uDEL3 <= unsigned(DEL3);
             stable <= '0';
+            RSTdel <= '1';
         else
             --Pipelined reset
+            
             RSTd <= RSTs;
             RSTs <= "0000";
+            if(RSTo = "0000") then
+                stable <= '1';
+                RSTdel <= '1';
+            else
+                RSTdel <= '0';
+            end if;
             ---------------------
             --Inter-channel delay enables
             if(uDELAY_C >= uDEL0) then
@@ -173,9 +180,7 @@ begin
             if(uDELAY_C >= uDEL3) then
                 RSTo(3) <= '0';
             end if;
-            if(RSTo = "0000") then
-                stable <= '1';
-            end if;
+
             --Handle selection of counter input
             --CH0
             if(uC_0 >= 0 and uC_0 < uDC0) then

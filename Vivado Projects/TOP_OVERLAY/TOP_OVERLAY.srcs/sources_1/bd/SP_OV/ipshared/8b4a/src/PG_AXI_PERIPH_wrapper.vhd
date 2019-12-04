@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec  4 11:36:45 2019
+--Date        : Thu Dec  5 10:27:05 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target PG_AXI_PERIPH_wrapper.bd
 --Design      : PG_AXI_PERIPH_wrapper
@@ -150,40 +150,6 @@ architecture STRUCTURE of PG_AXI_PERIPH_wrapper is
     STABLE : out STD_LOGIC;
     CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 );
     MCLK : in STD_LOGIC;
-    ch3_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ch3_arready : out STD_LOGIC;
-    ch3_arvalid : in STD_LOGIC;
-    ch3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ch3_awready : out STD_LOGIC;
-    ch3_awvalid : in STD_LOGIC;
-    ch3_bready : in STD_LOGIC;
-    ch3_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ch3_bvalid : out STD_LOGIC;
-    ch3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    ch3_rready : in STD_LOGIC;
-    ch3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ch3_rvalid : out STD_LOGIC;
-    ch3_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    ch3_wready : out STD_LOGIC;
-    ch3_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ch3_wvalid : in STD_LOGIC;
-    del0_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    del0_arready : out STD_LOGIC;
-    del0_arvalid : in STD_LOGIC;
-    del0_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    del0_awready : out STD_LOGIC;
-    del0_awvalid : in STD_LOGIC;
-    del0_bready : in STD_LOGIC;
-    del0_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    del0_bvalid : out STD_LOGIC;
-    del0_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    del0_rready : in STD_LOGIC;
-    del0_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    del0_rvalid : out STD_LOGIC;
-    del0_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    del0_wready : out STD_LOGIC;
-    del0_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    del0_wvalid : in STD_LOGIC;
     util_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     util_arready : out STD_LOGIC;
     util_arvalid : in STD_LOGIC;
@@ -218,6 +184,57 @@ architecture STRUCTURE of PG_AXI_PERIPH_wrapper is
     ch2_wready : out STD_LOGIC;
     ch2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     ch2_wvalid : in STD_LOGIC;
+    ch3_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ch3_arready : out STD_LOGIC;
+    ch3_arvalid : in STD_LOGIC;
+    ch3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ch3_awready : out STD_LOGIC;
+    ch3_awvalid : in STD_LOGIC;
+    ch3_bready : in STD_LOGIC;
+    ch3_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ch3_bvalid : out STD_LOGIC;
+    ch3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    ch3_rready : in STD_LOGIC;
+    ch3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ch3_rvalid : out STD_LOGIC;
+    ch3_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ch3_wready : out STD_LOGIC;
+    ch3_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    ch3_wvalid : in STD_LOGIC;
+    del0_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    del0_arready : out STD_LOGIC;
+    del0_arvalid : in STD_LOGIC;
+    del0_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    del0_awready : out STD_LOGIC;
+    del0_awvalid : in STD_LOGIC;
+    del0_bready : in STD_LOGIC;
+    del0_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    del0_bvalid : out STD_LOGIC;
+    del0_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    del0_rready : in STD_LOGIC;
+    del0_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    del0_rvalid : out STD_LOGIC;
+    del0_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    del0_wready : out STD_LOGIC;
+    del0_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    del0_wvalid : in STD_LOGIC;
+    ch0_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ch0_arready : out STD_LOGIC;
+    ch0_arvalid : in STD_LOGIC;
+    ch0_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ch0_awready : out STD_LOGIC;
+    ch0_awvalid : in STD_LOGIC;
+    ch0_bready : in STD_LOGIC;
+    ch0_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ch0_bvalid : out STD_LOGIC;
+    ch0_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    ch0_rready : in STD_LOGIC;
+    ch0_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ch0_rvalid : out STD_LOGIC;
+    ch0_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ch0_wready : out STD_LOGIC;
+    ch0_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    ch0_wvalid : in STD_LOGIC;
     del1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     del1_arready : out STD_LOGIC;
     del1_arvalid : in STD_LOGIC;
@@ -251,24 +268,7 @@ architecture STRUCTURE of PG_AXI_PERIPH_wrapper is
     ch1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     ch1_wready : out STD_LOGIC;
     ch1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ch1_wvalid : in STD_LOGIC;
-    ch0_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ch0_arready : out STD_LOGIC;
-    ch0_arvalid : in STD_LOGIC;
-    ch0_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ch0_awready : out STD_LOGIC;
-    ch0_awvalid : in STD_LOGIC;
-    ch0_bready : in STD_LOGIC;
-    ch0_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ch0_bvalid : out STD_LOGIC;
-    ch0_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    ch0_rready : in STD_LOGIC;
-    ch0_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ch0_rvalid : out STD_LOGIC;
-    ch0_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    ch0_wready : out STD_LOGIC;
-    ch0_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ch0_wvalid : in STD_LOGIC
+    ch1_wvalid : in STD_LOGIC
   );
   end component PG_AXI_PERIPH;
 begin
