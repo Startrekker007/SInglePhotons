@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Dec  5 09:29:26 2019
+--Date        : Thu Dec  5 10:38:21 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SP_OV_wrapper.bd
 --Design      : SP_OV_wrapper
@@ -53,6 +53,19 @@ end SP_OV_wrapper;
 architecture STRUCTURE of SP_OV_wrapper is
   component SP_OV is
   port (
+    sys_clock : in STD_LOGIC;
+    CH0 : in STD_LOGIC;
+    CH1 : in STD_LOGIC;
+    CH2 : in STD_LOGIC;
+    CH3 : in STD_LOGIC;
+    SIG_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ST_ARMED : out STD_LOGIC;
+    ST_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
+    CT_ARMED : out STD_LOGIC_VECTOR ( 0 to 0 );
+    CT_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
+    PG_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 );
+    CLK_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -73,20 +86,7 @@ architecture STRUCTURE of SP_OV_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    sys_clock : in STD_LOGIC;
-    CH0 : in STD_LOGIC;
-    CH1 : in STD_LOGIC;
-    CH2 : in STD_LOGIC;
-    CH3 : in STD_LOGIC;
-    SIG_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    ST_ARMED : out STD_LOGIC;
-    ST_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
-    CT_ARMED : out STD_LOGIC_VECTOR ( 0 to 0 );
-    CT_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
-    PG_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 );
-    CLK_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 )
+    FIXED_IO_ps_porb : inout STD_LOGIC
   );
   end component SP_OV;
 begin

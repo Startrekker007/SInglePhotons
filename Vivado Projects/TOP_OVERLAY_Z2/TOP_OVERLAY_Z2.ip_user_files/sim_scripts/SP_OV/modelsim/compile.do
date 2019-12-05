@@ -176,10 +176,12 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_1/sim/PG_AXI_PERIPH_axi_gpio_0_1.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_delay_0_0/sim/PG_AXI_PERIPH_axi_delay_0_0.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_2/sim/PG_AXI_PERIPH_axi_gpio_0_2.vhd" \
-"../../../bd/SP_OV/ipshared/059d/sim/PG_AXI_PERIPH_PG_CORE_1_0.vhd" \
-"../../../bd/SP_OV/ipshared/059d/sim/PG_AXI_PERIPH.vhd" \
-"../../../bd/SP_OV/ipshared/059d/src/PG_CORE.vhd" \
-"../../../bd/SP_OV/ipshared/059d/src/PG_AXI_PERIPH_wrapper.vhd" \
+"../../../bd/SP_OV/ipshared/8b4a/sim/PG_AXI_PERIPH_PG_CORE_1_0.vhd" \
+"../../../bd/SP_OV/ipshared/8b4a/sim/PG_AXI_PERIPH_PG_META_H_0_0.vhd" \
+"../../../bd/SP_OV/ipshared/8b4a/src/PG_CORE.vhd" \
+"../../../bd/SP_OV/ipshared/8b4a/src/PG_META_H.vhd" \
+"../../../bd/SP_OV/ipshared/8b4a/sim/PG_AXI_PERIPH.vhd" \
+"../../../bd/SP_OV/ipshared/8b4a/src/PG_AXI_PERIPH_wrapper.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/sim/SP_OV_PG_AXI_PERIPH_wrapper_0_0.vhd" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY_Z2.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY_Z2.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY_Z2.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY_Z2.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
