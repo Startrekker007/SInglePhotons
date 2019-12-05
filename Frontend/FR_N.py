@@ -6,7 +6,7 @@ import socket
 import json
 HOST = "169.254.0.2"
 PORT = 6050
-
+alive = 0
 class MainWindow:
     def __init__(self):
         #Windows
@@ -15,6 +15,7 @@ class MainWindow:
         self.resw = None
         self.ctstw = None
         self.pgw = None
+        self.websocket = None
         self.pcr = [0,0,0,0]
         self.stct = [0,0]
         self.master = Tk()
@@ -52,7 +53,13 @@ class MainWindow:
     def connect(self,host,port,t):
         #HOST = host
         #PORT = port
+        global alive
         try:
+            if(self.websocket!= None):
+                alive = 0
+                sleep(0.1)
+                self.websocket.close()
+                sleep(0.1)
             self.websocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             print("Setup socket")
             self.websocket.connect((HOST,PORT))
@@ -66,6 +73,8 @@ class MainWindow:
                 self.btnPC['state']='normal'
                 self.btnSTCT['state']='normal'
                 self.btnPG['state']='normal'
+
+                alive = 1
                 _thread.start_new_thread(self.dataLoop,( ))
             else:
                 print("Failed to configure hardware")
@@ -180,8 +189,18 @@ class MainWindow:
         self.ctren = Label(stctgrp, text=("CT Time (ns):" + str(self.stct[1]*1000000000)))
         self.ctren.grid(row=6, column=1)
     def dataLoop(self):
+        i = 0
+        sleep(0.1)
         while(1):
-            dat = self.rx()
+            dat = ""
+            if(alive!=0):
+                dat = self.rx()
+            else:
+                print("Nyet")
+                if(i>=10):
+                    print("Ultra nyet")
+                    break
+                i+=1
             if(dat[:2]=="PC"):
                 vals = json.loads(dat[2:])
                 self.pcr=vals
