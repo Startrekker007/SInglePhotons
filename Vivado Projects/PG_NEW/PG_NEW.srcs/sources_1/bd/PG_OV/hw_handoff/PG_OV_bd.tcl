@@ -164,38 +164,96 @@ proc create_root_design { parentCell } {
   # Create ports
   set CH0 [ create_bd_port -dir O CH0 ]
   set CH1 [ create_bd_port -dir O CH1 ]
-  set CH2 [ create_bd_port -dir O CH2 ]
-  set CH3 [ create_bd_port -dir O CH3 ]
-  set locked [ create_bd_port -dir O locked ]
+  set locked [ create_bd_port -dir O -from 0 -to 0 locked ]
   set sys_clock [ create_bd_port -dir I -type clk sys_clock ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {125000000} \
    CONFIG.PHASE {0.000} \
  ] $sys_clock
 
+  # Create instance: axi_gpio_0, and set properties
+  set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {0} \
+   CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_GPIO_WIDTH {1} \
+   CONFIG.C_IS_DUAL {0} \
+ ] $axi_gpio_0
+
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {124.615} \
+   CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {100.000} \
    CONFIG.CLKOUT2_JITTER {124.615} \
    CONFIG.CLKOUT2_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT2_USED {false} \
    CONFIG.CLKOUT3_JITTER {124.615} \
    CONFIG.CLKOUT3_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT3_USED {true} \
+   CONFIG.CLKOUT3_USED {false} \
    CONFIG.CLKOUT4_JITTER {124.615} \
    CONFIG.CLKOUT4_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT4_USED {true} \
+   CONFIG.CLKOUT4_USED {false} \
    CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {10} \
-   CONFIG.MMCM_CLKOUT2_DIVIDE {10} \
-   CONFIG.MMCM_CLKOUT3_DIVIDE {10} \
-   CONFIG.NUM_OUT_CLKS {4} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {10.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.NUM_OUT_CLKS {1} \
    CONFIG.PHASE_DUTY_CONFIG {true} \
    CONFIG.USE_BOARD_FLOW {true} \
    CONFIG.USE_DYN_PHASE_SHIFT {false} \
    CONFIG.USE_DYN_RECONFIG {true} \
    CONFIG.USE_POWER_DOWN {false} \
+   CONFIG.USE_RESET {true} \
  ] $clk_wiz_0
+
+  # Create instance: clk_wiz_1, and set properties
+  set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {124.615} \
+   CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {100.000} \
+   CONFIG.CLKOUT2_JITTER {124.615} \
+   CONFIG.CLKOUT2_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT2_USED {false} \
+   CONFIG.CLKOUT3_JITTER {124.615} \
+   CONFIG.CLKOUT3_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT3_USED {false} \
+   CONFIG.CLKOUT4_JITTER {124.615} \
+   CONFIG.CLKOUT4_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT4_USED {false} \
+   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {10.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.NUM_OUT_CLKS {1} \
+   CONFIG.PHASE_DUTY_CONFIG {true} \
+   CONFIG.USE_BOARD_FLOW {true} \
+   CONFIG.USE_DYN_PHASE_SHIFT {false} \
+   CONFIG.USE_DYN_RECONFIG {true} \
+   CONFIG.USE_POWER_DOWN {false} \
+ ] $clk_wiz_1
+
+  # Create instance: clk_wiz_2, and set properties
+  set clk_wiz_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_2 ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {119.348} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125.000} \
+   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {8.000} \
+   CONFIG.USE_BOARD_FLOW {true} \
+   CONFIG.USE_LOCKED {false} \
+   CONFIG.USE_RESET {false} \
+ ] $clk_wiz_2
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -973,31 +1031,52 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {1} \
+   CONFIG.NUM_MI {3} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
+
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {and} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_andgate.png} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_1
 
   # Create interface connections
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins clk_wiz_0/s_axi_lite] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins clk_wiz_1/s_axi_lite] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
 
   # Create port connections
+  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins util_vector_logic_0/Op2]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports CH0] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_ports CH1] [get_bd_pins clk_wiz_0/clk_out2]
-  connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_ports CH2] [get_bd_pins clk_wiz_0/clk_out3]
-  connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_ports CH3] [get_bd_pins clk_wiz_0/clk_out4]
-  connect_bd_net -net clk_wiz_0_locked [get_bd_ports locked] [get_bd_pins clk_wiz_0/locked]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_wiz_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_ports CH1] [get_bd_pins clk_wiz_1/clk_out1]
+  connect_bd_net -net clk_wiz_1_locked [get_bd_pins clk_wiz_1/locked] [get_bd_pins util_vector_logic_1/Op2]
+  connect_bd_net -net clk_wiz_2_clk_out1 [get_bd_pins clk_wiz_2/clk_out1] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/s_axi_aclk] [get_bd_pins clk_wiz_1/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins clk_wiz_0/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_0/clk_in1]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins clk_wiz_0/s_axi_aresetn] [get_bd_pins clk_wiz_1/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net sys_clock_1 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins clk_wiz_1/clk_in1] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net sys_clock_2 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_2/clk_in1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_ports locked] [get_bd_pins util_vector_logic_1/Res]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs clk_wiz_0/s_axi_lite/Reg] SEG_clk_wiz_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs clk_wiz_1/s_axi_lite/Reg] SEG_clk_wiz_1_Reg
 
 
   # Restore current instance

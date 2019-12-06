@@ -141,9 +141,6 @@ entity PG_OV_clk_wiz_0_0_clk_wiz_drp is
   -- Clock in ports
   -- Clock out ports
   clk_out1          : out    std_logic;
-  clk_out2          : out    std_logic;
-  clk_out3          : out    std_logic;
-  clk_out4          : out    std_logic;
   -- Status and control signals
   locked            : out    std_logic;
   clk_in1           : in     std_logic
@@ -161,9 +158,6 @@ port
  (-- Clock in ports
   -- Clock out ports
   clk_out1          : out    std_logic;
-  clk_out2          : out    std_logic;
-  clk_out3          : out    std_logic;
-  clk_out4          : out    std_logic;
   -- Dynamic reconfiguration ports
   daddr             : in     std_logic_vector(6 downto 0);
   dclk              : in     std_logic;
@@ -279,13 +273,13 @@ signal ram_clk_config : mem_type := (
    X"0000000A", 
    X"00000000",
    X"0000C350",
-   X"0000000A",
+   X"00000001",
    X"00000000",
    X"0000C350",
-   X"0000000A",
+   X"00000001",
    X"00000000",
    X"0000C350",
-   X"0000000A",
+   X"00000001",
    X"00000000",
    X"0000C350",
    X"00000001",
@@ -398,13 +392,13 @@ begin
 	    ram_clk_config(2)  <=    X"0000000A";
 	    ram_clk_config(3)  <=    X"00000000";
 	    ram_clk_config(4)  <=    X"0000C350";
-	    ram_clk_config(5)  <=    X"0000000A";
+	    ram_clk_config(5)  <=    X"00000001";
 	    ram_clk_config(6)  <=    X"00000000";
 	    ram_clk_config(7)  <=    X"0000C350";
-	    ram_clk_config(8)  <=    X"0000000A";
+	    ram_clk_config(8)  <=    X"00000001";
 	    ram_clk_config(9)  <=    X"00000000";
 	    ram_clk_config(10) <=    X"0000C350";
-	    ram_clk_config(11) <=    X"0000000A";
+	    ram_clk_config(11) <=    X"00000001";
 	    ram_clk_config(12) <=    X"00000000";
 	    ram_clk_config(13) <=    X"0000C350";
 	    ram_clk_config(14) <=    X"00000001";
@@ -575,9 +569,6 @@ config_reg <= load_enable_reg(0 to 30) & load_enable_reg_d;
    port map ( 
   -- Clock out ports  
    clk_out1 => clk_out1,
-   clk_out2 => clk_out2,
-   clk_out3 => clk_out3,
-   clk_out4 => clk_out4,
   -- Dynamic reconfiguration ports             
    daddr => daddr,
    dclk => dclk,
@@ -605,15 +596,15 @@ mmcm_drp_inst: PG_OV_clk_wiz_0_0_mmcm_drp generic map (
   S1_CLKOUT0_FRAC           =>  0, 
   S1_CLKOUT0_FRAC_EN        =>  0,  
   
-  S1_CLKOUT1_DIVIDE         =>  10,
+  S1_CLKOUT1_DIVIDE         =>  1,
   S1_CLKOUT1_PHASE          =>  0,
   S1_CLKOUT1_DUTY           =>  50000,
   
-  S1_CLKOUT2_DIVIDE         =>  10,         
+  S1_CLKOUT2_DIVIDE         =>  1,         
   S1_CLKOUT2_PHASE          =>  0,          
   S1_CLKOUT2_DUTY           =>  50000,
   
-  S1_CLKOUT3_DIVIDE         =>  10,         
+  S1_CLKOUT3_DIVIDE         =>  1,         
   S1_CLKOUT3_PHASE          =>  0,          
   S1_CLKOUT3_DUTY           =>  50000,
   

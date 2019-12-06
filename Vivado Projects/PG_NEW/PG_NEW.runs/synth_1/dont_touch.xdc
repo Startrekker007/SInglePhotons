@@ -18,6 +18,24 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_ps7_0_axi
 # IP: bd/PG_OV/ip/PG_OV_rst_ps7_0_100M_0/PG_OV_rst_ps7_0_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_rst_ps7_0_100M_0 || ORIG_REF_NAME==PG_OV_rst_ps7_0_100M_0} -quiet] -quiet
 
+# IP: bd/PG_OV/ip/PG_OV_xbar_0/PG_OV_xbar_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_xbar_0 || ORIG_REF_NAME==PG_OV_xbar_0} -quiet] -quiet
+
+# IP: bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_clk_wiz_0_1 || ORIG_REF_NAME==PG_OV_clk_wiz_0_1} -quiet] -quiet
+
+# IP: bd/PG_OV/ip/PG_OV_util_vector_logic_0_0/PG_OV_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_util_vector_logic_0_0 || ORIG_REF_NAME==PG_OV_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_axi_gpio_0_0 || ORIG_REF_NAME==PG_OV_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/PG_OV/ip/PG_OV_util_vector_logic_1_0/PG_OV_util_vector_logic_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_util_vector_logic_1_0 || ORIG_REF_NAME==PG_OV_util_vector_logic_1_0} -quiet] -quiet
+
+# IP: bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_clk_wiz_2_0 || ORIG_REF_NAME==PG_OV_clk_wiz_2_0} -quiet] -quiet
+
 # IP: bd/PG_OV/ip/PG_OV_auto_pc_0/PG_OV_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_OV_auto_pc_0 || ORIG_REF_NAME==PG_OV_auto_pc_0} -quiet] -quiet
 
@@ -37,6 +55,32 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/PG_OV/ip/PG_OV_rst_ps7_0_100M_0/PG_OV_rst_ps7_0_100M_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_rst_ps7_0_100M_0 || ORIG_REF_NAME==PG_OV_rst_ps7_0_100M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_xbar_0/PG_OV_xbar_0_ooc.xdc
+
+# XDC: bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_clk_wiz_0_1 || ORIG_REF_NAME==PG_OV_clk_wiz_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_clk_wiz_0_1 || ORIG_REF_NAME==PG_OV_clk_wiz_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1_ooc.xdc
+
+# XDC: bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_axi_gpio_0_0 || ORIG_REF_NAME==PG_OV_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0_ooc.xdc
+
+# XDC: bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_axi_gpio_0_0 || ORIG_REF_NAME==PG_OV_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_clk_wiz_2_0 || ORIG_REF_NAME==PG_OV_clk_wiz_2_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_OV_clk_wiz_2_0 || ORIG_REF_NAME==PG_OV_clk_wiz_2_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0_ooc.xdc
 
 # XDC: bd/PG_OV/ip/PG_OV_auto_pc_0/PG_OV_auto_pc_0_ooc.xdc
 

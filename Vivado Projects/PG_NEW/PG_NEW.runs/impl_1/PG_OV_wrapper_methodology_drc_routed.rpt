@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Dec  2 15:16:13 2019
+| Date         : Fri Dec  6 14:40:16 2019
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_methodology -file PG_OV_wrapper_methodology_drc_routed.rpt -pb PG_OV_wrapper_methodology_drc_routed.pb -rpx PG_OV_wrapper_methodology_drc_routed.rpx
 | Design       : PG_OV_wrapper
@@ -23,12 +23,44 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 6
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 4          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
++-----------+------------------+----------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock PG_OV_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-4#2 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock PG_OV_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock clk_out1_PG_OV_clk_wiz_2_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-4#3 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock PG_OV_i/clk_wiz_1/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-4#4 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock PG_OV_i/clk_wiz_1/inst/clk_in1 is defined downstream of clock clk_out1_PG_OV_clk_wiz_2_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock PG_OV_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin PG_OV_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-27#2 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock PG_OV_i/clk_wiz_1/inst/clk_in1 is created on an inappropriate internal pin PG_OV_i/clk_wiz_1/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
 

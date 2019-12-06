@@ -18,10 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/j.borbely/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-7508-CISS32101/incrSyn
 set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -44,6 +41,16 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_processing_system7_0_0/PG_OV_processing_system7_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_rst_ps7_0_100M_0/PG_OV_rst_ps7_0_100M_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_rst_ps7_0_100M_0/PG_OV_rst_ps7_0_100M_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_xbar_0/PG_OV_xbar_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_clk_wiz_0_1/PG_OV_clk_wiz_0_1_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_axi_gpio_0_0/PG_OV_axi_gpio_0_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_clk_wiz_2_0/PG_OV_clk_wiz_2_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/ip/PG_OV_auto_pc_0/PG_OV_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/PG_NEW/PG_NEW.srcs/sources_1/bd/PG_OV/PG_OV_ooc.xdc}}]
 

@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Dec  5 10:28:59 2019
-# Process ID: 12016
+# Start of session at: Fri Dec  6 08:52:56 2019
+# Process ID: 8456
 # Current directory: D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1
 # Command line: vivado.exe -log SP_OV_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SP_OV_wrapper.tcl
 # Log file: D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/SP_OV_wrapper.vds
@@ -18,15 +18,16 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCH_IA
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/TDC'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/COUNTER_AXI'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 312.582 ; gain = 10.199
 Command: synth_design -top SP_OV_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8184 
+INFO: Helper process launched with PID 14120 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 768.605 ; gain = 179.496
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 769.137 ; gain = 179.852
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'SP_OV_wrapper' [D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/hdl/SP_OV_wrapper.vhd:53]
 INFO: [Synth 8-3491] module 'SP_OV' declared at 'D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:5821' bound to instance 'SP_OV_i' of component 'SP_OV' [D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/hdl/SP_OV_wrapper.vhd:93]
@@ -1381,13 +1382,13 @@ INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IBUF' (76#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
-	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 40.500000 - type: float 
+	Parameter BANDWIDTH bound to: HIGH - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 9.000000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: float 
 	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
-	Parameter CLKOUT0_DIVIDE_F bound to: 2.250000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 2.500000 - type: float 
 	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
@@ -1417,7 +1418,7 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/s
 	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter COMPENSATION bound to: ZHOLD - type: string 
-	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
 	Parameter IS_PSEN_INVERTED bound to: 1'b0 
 	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
@@ -3372,7 +3373,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_crossbar_sasd__parameterized
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_crossbar_sasd__parameterized2 has unconnected port M_AXI_BID[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1004.727 ; gain = 415.617
+Finished RTL Elaboration : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 1004.488 ; gain = 415.203
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3385,10 +3386,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 1015.879 ; gain = 426.770
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1017.875 ; gain = 428.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 1015.879 ; gain = 426.770
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1017.875 ; gain = 428.590
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4786 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
@@ -3504,22 +3505,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/SP_OV_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1046.766 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1091.387 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4339 instances were transformed.
   FDR => FDRE: 4338 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.203 . Memory (MB): peak = 1046.766 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.201 . Memory (MB): peak = 1091.387 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1046.766 ; gain = 457.656
+Finished Constraint Validation : Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 1091.387 ; gain = 502.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1046.766 ; gain = 457.656
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 1091.387 ; gain = 502.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -3601,7 +3602,7 @@ Applied set_property DONT_TOUCH = true for SP_OV_i/axi_interconnect_0/tier2_xbar
 Applied set_property DONT_TOUCH = true for SP_OV_i/axi_interconnect_0/tier2_xbar_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/axi_interconnect_0/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 1046.766 ; gain = 457.656
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 1091.387 ; gain = 502.102
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-4471] merging register 'wt_reg' into 'detected_reg' [d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/ipshared/71ee/src/S_EDGE_DET.vhd:50]
@@ -3629,7 +3630,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1046.766 ; gain = 457.656
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 1091.387 ; gain = 502.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3901,7 +3902,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio__parameterized9:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio__parameterized9:/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 1046.766 ; gain = 457.656
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1091.387 ; gain = 502.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3914,13 +3915,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'sys_clock'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1243.090 ; gain = 653.980
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:38 ; elapsed = 00:01:44 . Memory (MB): peak = 1241.051 ; gain = 651.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:32 ; elapsed = 00:01:35 . Memory (MB): peak = 1279.953 ; gain = 690.844
+Finished Timing Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 1277.531 ; gain = 688.246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3932,7 +3933,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1293.203 ; gain = 704.094
+Finished Technology Mapping : Time (s): cpu = 00:01:47 ; elapsed = 00:01:54 . Memory (MB): peak = 1291.402 ; gain = 702.117
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3957,7 +3958,7 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:41 ; elapsed = 00:01:44 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished IO Insertion : Time (s): cpu = 00:01:50 ; elapsed = 00:01:56 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3970,7 +3971,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:41 ; elapsed = 00:01:44 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:50 ; elapsed = 00:01:57 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3982,25 +3983,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:42 ; elapsed = 00:01:46 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:42 ; elapsed = 00:01:46 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:43 ; elapsed = 00:01:46 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:43 ; elapsed = 00:01:46 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -4041,18 +4042,18 @@ Report Cell Usage:
 |23    |OBUF       |    14|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:43 ; elapsed = 00:01:46 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 1296.160 ; gain = 706.875
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 348 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:01:35 . Memory (MB): peak = 1297.961 ; gain = 677.965
-Synthesis Optimization Complete : Time (s): cpu = 00:01:43 ; elapsed = 00:01:46 . Memory (MB): peak = 1297.961 ; gain = 708.852
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:52 ; elapsed = 00:01:45 . Memory (MB): peak = 1296.160 ; gain = 633.363
+Synthesis Optimization Complete : Time (s): cpu = 00:01:52 ; elapsed = 00:01:59 . Memory (MB): peak = 1296.160 ; gain = 706.875
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1407 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 CRITICAL WARNING: [Shape Builder 18-119] Failed to create I/OLOGIC Route Through shape for instance SP_OV_i/TIMER_CLK/inst/clkin1_ibufg. Found overlapping instances within the shape: SP_OV_i/REF_CLK/inst/clkin1_ibufg and SP_OV_i/TIMER_CLK/inst/clkin1_ibufg.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1319.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1316.211 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 857 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 56 instances
@@ -4062,10 +4063,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 941 Infos, 233 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 1319.012 ; gain = 1006.793
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1319.012 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:03 ; elapsed = 00:02:10 . Memory (MB): peak = 1316.211 ; gain = 1003.629
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1316.211 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/SP_OV_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file SP_OV_wrapper_utilization_synth.rpt -pb SP_OV_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  5 10:31:07 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  6 08:55:18 2019...

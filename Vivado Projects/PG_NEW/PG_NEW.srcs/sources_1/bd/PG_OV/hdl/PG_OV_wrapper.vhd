@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Dec  2 15:07:09 2019
+--Date        : Fri Dec  6 14:30:41 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target PG_OV_wrapper.bd
 --Design      : PG_OV_wrapper
@@ -15,8 +15,6 @@ entity PG_OV_wrapper is
   port (
     CH0 : out STD_LOGIC;
     CH1 : out STD_LOGIC;
-    CH2 : out STD_LOGIC;
-    CH3 : out STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -38,7 +36,7 @@ entity PG_OV_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    locked : out STD_LOGIC;
+    locked : out STD_LOGIC_VECTOR ( 0 to 0 );
     sys_clock : in STD_LOGIC
   );
 end PG_OV_wrapper;
@@ -46,7 +44,14 @@ end PG_OV_wrapper;
 architecture STRUCTURE of PG_OV_wrapper is
   component PG_OV is
   port (
-    sys_clock : in STD_LOGIC;
+    CH0 : out STD_LOGIC;
+    locked : out STD_LOGIC_VECTOR ( 0 to 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -62,17 +67,8 @@ architecture STRUCTURE of PG_OV_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    CH0 : out STD_LOGIC;
     CH1 : out STD_LOGIC;
-    CH2 : out STD_LOGIC;
-    CH3 : out STD_LOGIC;
-    locked : out STD_LOGIC
+    sys_clock : in STD_LOGIC
   );
   end component PG_OV;
 begin
@@ -80,8 +76,6 @@ PG_OV_i: component PG_OV
      port map (
       CH0 => CH0,
       CH1 => CH1,
-      CH2 => CH2,
-      CH3 => CH3,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,
@@ -103,7 +97,7 @@ PG_OV_i: component PG_OV
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      locked => locked,
+      locked(0) => locked(0),
       sys_clock => sys_clock
     );
 end STRUCTURE;

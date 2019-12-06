@@ -203,6 +203,7 @@
   "../../../bd/SP_OV/ipshared/3717/src/MH_CT.vhd" \
   "../../../bd/SP_OV/ipshared/3717/src/CT_AXI_PERIPH_wrapper.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/sim/SP_OV_CT_AXI_PERIPH_wrapper_0_0.vhd" \
+  "../../../bd/SP_OV/sim/SP_OV.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/sim/SP_OV_tier2_xbar_0_0.v" \
@@ -214,9 +215,6 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_auto_pc_0/sim/SP_OV_auto_pc_0.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/SP_OV/sim/SP_OV.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

@@ -152,9 +152,6 @@ entity PG_OV_clk_wiz_0_0_axi_clk_config is
   s_axi_rready    : in  std_logic;                                      
   -- Clock out ports
   clk_out1          : out    std_logic;
-  clk_out2          : out    std_logic;
-  clk_out3          : out    std_logic;
-  clk_out4          : out    std_logic;
   -- Status and control signals
   locked            : out    std_logic;
   -- Clock in ports
@@ -209,9 +206,6 @@ component PG_OV_clk_wiz_0_0_clk_wiz_drp
 
   -- Clock out ports
   clk_out1          : out    std_logic;
-  clk_out2          : out    std_logic;
-  clk_out3          : out    std_logic;
-  clk_out4          : out    std_logic;
   -- Status and control signals
   locked            : out    std_logic;
   -- Clock in ports
@@ -469,9 +463,6 @@ CLK_CORE_DRP_I : PG_OV_clk_wiz_0_0_clk_wiz_drp
    IP2Bus_RdAck                 => ip2bus_rdack_core,
   -- Clock out ports  
    clk_out1 => clk_out1,
-   clk_out2 => clk_out2,
-   clk_out3 => clk_out3,
-   clk_out4 => clk_out4,
   -- Status and control signals                
    locked => locked,
    -- Clock in ports

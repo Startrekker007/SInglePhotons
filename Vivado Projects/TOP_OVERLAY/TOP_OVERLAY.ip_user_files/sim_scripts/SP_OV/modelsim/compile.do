@@ -264,6 +264,7 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/SP_OV/ipshared/3717/src/MH_CT.vhd" \
 "../../../bd/SP_OV/ipshared/3717/src/CT_AXI_PERIPH_wrapper.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/sim/SP_OV_CT_AXI_PERIPH_wrapper_0_0.vhd" \
+"../../../bd/SP_OV/sim/SP_OV.vhd" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/sim/SP_OV_tier2_xbar_0_0.v" \
@@ -275,9 +276,6 @@ vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../TOP_OVE
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/SP_OV/ip/SP_OV_auto_pc_0/sim/SP_OV_auto_pc_0.v" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/SP_OV/sim/SP_OV.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

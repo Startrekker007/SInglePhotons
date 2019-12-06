@@ -58,12 +58,12 @@ component PG_CORE is port(
 end component;
 signal MCLK : std_logic := '0';
 signal RSTn : std_logic := '0';
-signal TLIM0 : STD_LOGIC_VECTOR (31 downto 0) := x"00000100";
-signal TLIM1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000200";
+signal TLIM0 : STD_LOGIC_VECTOR (31 downto 0) := x"00000004";
+signal TLIM1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000008";
 signal TLIM2 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
 signal TLIM3 : STD_LOGIC_VECTOR (31 downto 0) := x"000000FF";
-signal DC0 : STD_LOGIC_VECTOR (31 downto 0) := x"00000080";
-signal DC1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000100";
+signal DC0 : STD_LOGIC_VECTOR (31 downto 0) := x"00000003";
+signal DC1 : STD_LOGIC_VECTOR (31 downto 0) := x"00000005";
 signal DC2 : STD_LOGIC_VECTOR (31 downto 0) := x"0000007F";
 signal DC3 : STD_LOGIC_VECTOR (31 downto 0) := x"0000007F";
 signal DEL0 : STD_LOGIC_VECTOR (31 downto 0) := (others => '0');

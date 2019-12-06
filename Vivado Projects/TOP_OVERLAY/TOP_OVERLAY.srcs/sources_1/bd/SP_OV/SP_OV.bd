@@ -3526,6 +3526,48 @@
           }
         },
         "interface_nets": {
+          "xbar_to_i00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "i00_couplers/S_AXI"
+            ]
+          },
+          "i00_couplers_to_tier2_xbar_0": {
+            "interface_ports": [
+              "i00_couplers/M_AXI",
+              "tier2_xbar_0/S00_AXI"
+            ]
+          },
+          "xbar_to_i01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "i01_couplers/S_AXI"
+            ]
+          },
+          "i01_couplers_to_tier2_xbar_1": {
+            "interface_ports": [
+              "i01_couplers/M_AXI",
+              "tier2_xbar_1/S00_AXI"
+            ]
+          },
+          "xbar_to_i02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "i02_couplers/S_AXI"
+            ]
+          },
+          "i02_couplers_to_tier2_xbar_2": {
+            "interface_ports": [
+              "i02_couplers/M_AXI",
+              "tier2_xbar_2/S00_AXI"
+            ]
+          },
+          "axi_interconnect_0_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
+            ]
+          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -3759,48 +3801,6 @@
               "tier2_xbar_2/M02_AXI",
               "m18_couplers/S_AXI"
             ]
-          },
-          "xbar_to_i00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "i00_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_i01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "i01_couplers/S_AXI"
-            ]
-          },
-          "i00_couplers_to_tier2_xbar_0": {
-            "interface_ports": [
-              "i00_couplers/M_AXI",
-              "tier2_xbar_0/S00_AXI"
-            ]
-          },
-          "i01_couplers_to_tier2_xbar_1": {
-            "interface_ports": [
-              "i01_couplers/M_AXI",
-              "tier2_xbar_1/S00_AXI"
-            ]
-          },
-          "xbar_to_i02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "i02_couplers/S_AXI"
-            ]
-          },
-          "i02_couplers_to_tier2_xbar_2": {
-            "interface_ports": [
-              "i02_couplers/M_AXI",
-              "tier2_xbar_2/S00_AXI"
-            ]
-          },
-          "axi_interconnect_0_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
           }
         },
         "nets": {
@@ -3952,25 +3952,64 @@
         "xci_name": "SP_OV_TIMER_CLK_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "168.588"
+            "value": "88.421"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "234.038"
+            "value": "89.430"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
             "value": "450.000"
           },
+          "CLKOUT2_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "237.312"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "249.865"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "100.000"
+          },
+          "CLKOUT2_USED": {
+            "value": "false"
+          },
+          "CLKOUT3_JITTER": {
+            "value": "237.312"
+          },
+          "CLKOUT3_PHASE_ERROR": {
+            "value": "249.865"
+          },
+          "CLKOUT3_USED": {
+            "value": "false"
+          },
           "CLK_IN1_BOARD_INTERFACE": {
             "value": "sys_clock"
           },
+          "JITTER_SEL": {
+            "value": "Min_O_Jitter"
+          },
+          "MMCM_BANDWIDTH": {
+            "value": "HIGH"
+          },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "40.500"
+            "value": "9.000"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "2.250"
+            "value": "2.500"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "1"
+          },
+          "MMCM_CLKOUT2_DIVIDE": {
+            "value": "1"
           },
           "MMCM_DIVCLK_DIVIDE": {
-            "value": "5"
+            "value": "1"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "1"
           },
           "RESET_PORT": {
             "value": "resetn"
