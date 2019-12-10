@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDCEF2B38DC5EEB26",
+      "boundary_crc": "0xC30571A5685F8D09",
       "device": "xc7z020clg400-1",
       "name": "P_COUNTER",
       "synth_flow_mode": "None",
@@ -13,10 +13,6 @@
       "CTR_CTL_1": "",
       "CTR_CTL_2": "",
       "CTR_CTL_3": "",
-      "DIG_TIMER_0": "",
-      "DIG_TIMER_1": "",
-      "DIG_TIMER_2": "",
-      "DIG_TIMER_3": "",
       "axi_gpio_data": "",
       "axi_gpio_data1": "",
       "axi_gpio_data2": "",
@@ -32,7 +28,21 @@
       "util_vector_logic_0": "",
       "util_vector_logic_1": "",
       "util_vector_logic_2": "",
-      "util_vector_logic_3": ""
+      "util_vector_logic_3": "",
+      "DIG_TIMER_0": "",
+      "DIG_TIMER_1": "",
+      "DIG_TIMER_2": "",
+      "DIG_TIMER_3": "",
+      "ex_trig_or_0": "",
+      "ex_trig_or_1": "",
+      "ex_trig_or_2": "",
+      "ex_trig_or_3": "",
+      "ex_stop_or_0": "",
+      "EX_TRIG_CTL_0": "",
+      "ex_stop_or_1": "",
+      "ex_stop_or_2": "",
+      "ex_stop_or_3": "",
+      "FAR_BETTER_AND_0": ""
     },
     "interface_ports": {
       "data": {
@@ -1065,6 +1075,24 @@
       },
       "aresetn": {
         "direction": "I"
+      },
+      "MCLK": {
+        "direction": "I"
+      },
+      "TRIG": {
+        "direction": "I"
+      },
+      "TRIG_RST": {
+        "direction": "I"
+      },
+      "ex_stop": {
+        "direction": "I"
+      },
+      "ex_stop_en": {
+        "direction": "I"
+      },
+      "EX_STOP_RDY": {
+        "direction": "O"
       }
     },
     "components": {
@@ -1072,7 +1100,7 @@
         "vlnv": "xilinx.com:module_ref:CTR_CTL:1.0",
         "xci_name": "P_COUNTER_CTR_CTL_0_0",
         "reference_info": {
-          "ref_type": "unknown",
+          "ref_type": "hdl",
           "ref_name": "CTR_CTL",
           "boundary_crc": "0x0"
         },
@@ -1101,7 +1129,7 @@
         "vlnv": "xilinx.com:module_ref:CTR_CTL:1.0",
         "xci_name": "P_COUNTER_CTR_CTL_1_0",
         "reference_info": {
-          "ref_type": "unknown",
+          "ref_type": "hdl",
           "ref_name": "CTR_CTL",
           "boundary_crc": "0x0"
         },
@@ -1130,7 +1158,7 @@
         "vlnv": "xilinx.com:module_ref:CTR_CTL:1.0",
         "xci_name": "P_COUNTER_CTR_CTL_2_0",
         "reference_info": {
-          "ref_type": "unknown",
+          "ref_type": "hdl",
           "ref_name": "CTR_CTL",
           "boundary_crc": "0x0"
         },
@@ -1159,7 +1187,7 @@
         "vlnv": "xilinx.com:module_ref:CTR_CTL:1.0",
         "xci_name": "P_COUNTER_CTR_CTL_3_0",
         "reference_info": {
-          "ref_type": "unknown",
+          "ref_type": "hdl",
           "ref_name": "CTR_CTL",
           "boundary_crc": "0x0"
         },
@@ -1180,142 +1208,6 @@
             "direction": "I"
           },
           "SCLR_O": {
-            "direction": "O"
-          }
-        }
-      },
-      "DIG_TIMER_0": {
-        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
-        "xci_name": "P_COUNTER_DIG_TIMER_0_0",
-        "reference_info": {
-          "ref_type": "unknown",
-          "ref_name": "DIG_TIMER",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "RST": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "MCLK": {
-            "direction": "I"
-          },
-          "LIM": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "CUR_VAL": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "CARRY": {
-            "direction": "O"
-          },
-          "DATA_IND": {
-            "direction": "O"
-          }
-        }
-      },
-      "DIG_TIMER_1": {
-        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
-        "xci_name": "P_COUNTER_DIG_TIMER_1_0",
-        "reference_info": {
-          "ref_type": "unknown",
-          "ref_name": "DIG_TIMER",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "RST": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "MCLK": {
-            "direction": "I"
-          },
-          "LIM": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "CUR_VAL": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "CARRY": {
-            "direction": "O"
-          },
-          "DATA_IND": {
-            "direction": "O"
-          }
-        }
-      },
-      "DIG_TIMER_2": {
-        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
-        "xci_name": "P_COUNTER_DIG_TIMER_2_0",
-        "reference_info": {
-          "ref_type": "unknown",
-          "ref_name": "DIG_TIMER",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "RST": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "MCLK": {
-            "direction": "I"
-          },
-          "LIM": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "CUR_VAL": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "CARRY": {
-            "direction": "O"
-          },
-          "DATA_IND": {
-            "direction": "O"
-          }
-        }
-      },
-      "DIG_TIMER_3": {
-        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
-        "xci_name": "P_COUNTER_DIG_TIMER_3_0",
-        "reference_info": {
-          "ref_type": "unknown",
-          "ref_name": "DIG_TIMER",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "RST": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "MCLK": {
-            "direction": "I"
-          },
-          "LIM": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "CUR_VAL": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "CARRY": {
-            "direction": "O"
-          },
-          "DATA_IND": {
             "direction": "O"
           }
         }
@@ -1595,13 +1487,313 @@
             "value": "1"
           }
         }
+      },
+      "DIG_TIMER_0": {
+        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
+        "xci_name": "P_COUNTER_DIG_TIMER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DIG_TIMER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "LIM": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CUR_VAL": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "CARRY": {
+            "direction": "O"
+          },
+          "DATA_IND": {
+            "direction": "O"
+          }
+        }
+      },
+      "DIG_TIMER_1": {
+        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
+        "xci_name": "P_COUNTER_DIG_TIMER_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DIG_TIMER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "LIM": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CUR_VAL": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "CARRY": {
+            "direction": "O"
+          },
+          "DATA_IND": {
+            "direction": "O"
+          }
+        }
+      },
+      "DIG_TIMER_2": {
+        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
+        "xci_name": "P_COUNTER_DIG_TIMER_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DIG_TIMER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "LIM": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CUR_VAL": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "CARRY": {
+            "direction": "O"
+          },
+          "DATA_IND": {
+            "direction": "O"
+          }
+        }
+      },
+      "DIG_TIMER_3": {
+        "vlnv": "xilinx.com:module_ref:DIG_TIMER:1.0",
+        "xci_name": "P_COUNTER_DIG_TIMER_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DIG_TIMER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "LIM": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "CUR_VAL": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "CARRY": {
+            "direction": "O"
+          },
+          "DATA_IND": {
+            "direction": "O"
+          }
+        }
+      },
+      "ex_trig_or_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_util_vector_logic_4_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ex_trig_or_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_util_vector_logic_4_1",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ex_trig_or_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_ex_trig_or_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ex_trig_or_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_ex_trig_or_2_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ex_stop_or_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_util_vector_logic_4_2",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "EX_TRIG_CTL_0": {
+        "vlnv": "xilinx.com:module_ref:EX_TRIG_CTL:1.0",
+        "xci_name": "P_COUNTER_EX_TRIG_CTL_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "EX_TRIG_CTL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RST": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "TRIG": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "CTL": {
+            "direction": "O"
+          },
+          "STOP": {
+            "direction": "I"
+          },
+          "EX_STOP_EN": {
+            "direction": "I"
+          },
+          "EX_STOP": {
+            "direction": "I"
+          },
+          "WINDOW": {
+            "direction": "O"
+          }
+        }
+      },
+      "ex_stop_or_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_ex_stop_or_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ex_stop_or_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_ex_stop_or_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ex_stop_or_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "P_COUNTER_ex_stop_or_2_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "FAR_BETTER_AND_0": {
+        "vlnv": "xilinx.com:module_ref:FAR_BETTER_AND:1.0",
+        "xci_name": "P_COUNTER_FAR_BETTER_AND_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "FAR_BETTER_AND",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IN0": {
+            "direction": "I"
+          },
+          "IN1": {
+            "direction": "I"
+          },
+          "IN2": {
+            "direction": "I"
+          },
+          "IN3": {
+            "direction": "I"
+          },
+          "OUT0": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
-      "S_AXI_0_2": {
+      "S_AXI_0_4": {
         "interface_ports": [
-          "data1",
-          "axi_gpio_data1/S_AXI"
+          "data3",
+          "axi_gpio_data3/S_AXI"
+        ]
+      },
+      "s_axi_1_1": {
+        "interface_ports": [
+          "util",
+          "axi_gpio_util/S_AXI"
         ]
       },
       "S_AXI_0_1": {
@@ -1616,22 +1808,10 @@
           "axi_gpio_data2/S_AXI"
         ]
       },
-      "S_AXI_0_4": {
+      "s_axi_1_4": {
         "interface_ports": [
-          "data3",
-          "axi_gpio_data3/S_AXI"
-        ]
-      },
-      "s_axi_1_1": {
-        "interface_ports": [
-          "util",
-          "axi_gpio_util/S_AXI"
-        ]
-      },
-      "s_axi_1_3": {
-        "interface_ports": [
-          "util2",
-          "axi_gpio_util2/S_AXI"
+          "util3",
+          "axi_gpio_util3/S_AXI"
         ]
       },
       "s_axi_1_2": {
@@ -1640,10 +1820,16 @@
           "axi_gpio_util1/S_AXI"
         ]
       },
-      "s_axi_1_4": {
+      "s_axi_1_3": {
         "interface_ports": [
-          "util3",
-          "axi_gpio_util3/S_AXI"
+          "util2",
+          "axi_gpio_util2/S_AXI"
+        ]
+      },
+      "S_AXI_0_2": {
+        "interface_ports": [
+          "data1",
+          "axi_gpio_data1/S_AXI"
         ]
       }
     },
@@ -1700,56 +1886,60 @@
         "ports": [
           "DIG_TIMER_0/DATA_IND",
           "axi_gpio_util/gpio2_io_i",
-          "util_vector_logic_0/Op1"
+          "ex_stop_or_0/Op2",
+          "FAR_BETTER_AND_0/IN0"
         ]
       },
       "DIG_TIMER_0_DATA_IND1": {
         "ports": [
           "DIG_TIMER_1/DATA_IND",
           "axi_gpio_util1/gpio2_io_i",
-          "util_vector_logic_1/Op1"
+          "ex_stop_or_1/Op1",
+          "FAR_BETTER_AND_0/IN1"
         ]
       },
       "DIG_TIMER_0_DATA_IND2": {
         "ports": [
           "DIG_TIMER_2/DATA_IND",
           "axi_gpio_util2/gpio2_io_i",
-          "util_vector_logic_2/Op1"
+          "ex_stop_or_2/Op2",
+          "FAR_BETTER_AND_0/IN3"
         ]
       },
       "DIG_TIMER_0_DATA_IND3": {
         "ports": [
           "DIG_TIMER_3/DATA_IND",
           "axi_gpio_util3/gpio2_io_i",
-          "util_vector_logic_3/Op1"
+          "ex_stop_or_3/Op1",
+          "FAR_BETTER_AND_0/IN2"
         ]
       },
       "Net": {
         "ports": [
-          "axi_gpio_util/gpio_io_o",
-          "DIG_TIMER_0/RST",
-          "CTR_CTL_0/RST"
+          "ex_trig_or_0/Res",
+          "CTR_CTL_0/RST",
+          "DIG_TIMER_0/RST"
         ]
       },
       "Net1": {
         "ports": [
-          "axi_gpio_util1/gpio_io_o",
-          "DIG_TIMER_1/RST",
-          "CTR_CTL_1/RST"
+          "ex_trig_or_1/Res",
+          "CTR_CTL_1/RST",
+          "DIG_TIMER_1/RST"
         ]
       },
       "Net2": {
         "ports": [
-          "axi_gpio_util2/gpio_io_o",
-          "DIG_TIMER_2/RST",
-          "CTR_CTL_2/RST"
+          "ex_trig_or_3/Res",
+          "CTR_CTL_2/RST",
+          "DIG_TIMER_2/RST"
         ]
       },
       "Net3": {
         "ports": [
-          "axi_gpio_util3/gpio_io_o",
-          "DIG_TIMER_3/RST",
-          "CTR_CTL_3/RST"
+          "ex_trig_or_2/Res",
+          "CTR_CTL_3/RST",
+          "DIG_TIMER_3/RST"
         ]
       },
       "P_SIG_EX_1": {
@@ -1779,38 +1969,14 @@
       "TCLK_1": {
         "ports": [
           "TCLK",
-          "DIG_TIMER_0/MCLK",
           "CTR_CTL_0/CLK",
-          "DIG_TIMER_1/MCLK",
           "CTR_CTL_1/CLK",
-          "DIG_TIMER_3/MCLK",
           "CTR_CTL_3/CLK",
+          "CTR_CTL_2/CLK",
+          "DIG_TIMER_1/MCLK",
+          "DIG_TIMER_0/MCLK",
           "DIG_TIMER_2/MCLK",
-          "CTR_CTL_2/CLK"
-        ]
-      },
-      "axi_gpio_data_gpio2_io_o": {
-        "ports": [
-          "axi_gpio_data/gpio2_io_o",
-          "DIG_TIMER_0/LIM"
-        ]
-      },
-      "axi_gpio_data_gpio2_io_o1": {
-        "ports": [
-          "axi_gpio_data1/gpio2_io_o",
-          "DIG_TIMER_1/LIM"
-        ]
-      },
-      "axi_gpio_data_gpio2_io_o2": {
-        "ports": [
-          "axi_gpio_data2/gpio2_io_o",
-          "DIG_TIMER_2/LIM"
-        ]
-      },
-      "axi_gpio_data_gpio2_io_o3": {
-        "ports": [
-          "axi_gpio_data3/gpio2_io_o",
-          "DIG_TIMER_3/LIM"
+          "DIG_TIMER_3/MCLK"
         ]
       },
       "c_counter_binary_0_Q": {
@@ -1885,6 +2051,133 @@
         "ports": [
           "util_vector_logic_3/Res",
           "c_counter_binary_3/CE"
+        ]
+      },
+      "axi_gpio_data_gpio2_io_o": {
+        "ports": [
+          "axi_gpio_data/gpio2_io_o",
+          "DIG_TIMER_0/LIM"
+        ]
+      },
+      "axi_gpio_data1_gpio2_io_o": {
+        "ports": [
+          "axi_gpio_data1/gpio2_io_o",
+          "DIG_TIMER_1/LIM"
+        ]
+      },
+      "axi_gpio_data2_gpio2_io_o": {
+        "ports": [
+          "axi_gpio_data2/gpio2_io_o",
+          "DIG_TIMER_2/LIM"
+        ]
+      },
+      "axi_gpio_data3_gpio2_io_o": {
+        "ports": [
+          "axi_gpio_data3/gpio2_io_o",
+          "DIG_TIMER_3/LIM"
+        ]
+      },
+      "axi_gpio_util_gpio_io_o": {
+        "ports": [
+          "axi_gpio_util/gpio_io_o",
+          "ex_trig_or_0/Op1"
+        ]
+      },
+      "EX_TRIG_CTL_0_CTL": {
+        "ports": [
+          "EX_TRIG_CTL_0/CTL",
+          "ex_trig_or_0/Op2",
+          "ex_trig_or_1/Op2",
+          "ex_trig_or_2/Op2",
+          "ex_trig_or_3/Op1"
+        ]
+      },
+      "axi_gpio_util1_gpio_io_o": {
+        "ports": [
+          "axi_gpio_util1/gpio_io_o",
+          "ex_trig_or_1/Op1"
+        ]
+      },
+      "axi_gpio_util3_gpio_io_o": {
+        "ports": [
+          "axi_gpio_util3/gpio_io_o",
+          "ex_trig_or_2/Op1"
+        ]
+      },
+      "axi_gpio_util2_gpio_io_o": {
+        "ports": [
+          "axi_gpio_util2/gpio_io_o",
+          "ex_trig_or_3/Op2"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "EX_TRIG_CTL_0/MCLK"
+        ]
+      },
+      "FAR_BETTER_AND_0_OUT0": {
+        "ports": [
+          "FAR_BETTER_AND_0/OUT0",
+          "EX_TRIG_CTL_0/STOP"
+        ]
+      },
+      "TRIG_1": {
+        "ports": [
+          "TRIG",
+          "EX_TRIG_CTL_0/TRIG"
+        ]
+      },
+      "TRIG_RST_1": {
+        "ports": [
+          "TRIG_RST",
+          "EX_TRIG_CTL_0/RST"
+        ]
+      },
+      "util_vector_logic_4_Res": {
+        "ports": [
+          "ex_stop_or_0/Res",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "EX_TRIG_CTL_0_WINDOW": {
+        "ports": [
+          "EX_TRIG_CTL_0/WINDOW",
+          "ex_stop_or_0/Op1",
+          "ex_stop_or_1/Op2",
+          "ex_stop_or_2/Op1",
+          "ex_stop_or_3/Op2",
+          "EX_STOP_RDY"
+        ]
+      },
+      "ex_stop_or_1_Res": {
+        "ports": [
+          "ex_stop_or_1/Res",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "ex_stop_or_2_Res": {
+        "ports": [
+          "ex_stop_or_2/Res",
+          "util_vector_logic_2/Op1"
+        ]
+      },
+      "ex_stop_or_3_Res": {
+        "ports": [
+          "ex_stop_or_3/Res",
+          "util_vector_logic_3/Op1"
+        ]
+      },
+      "ex_stop_1": {
+        "ports": [
+          "ex_stop",
+          "EX_TRIG_CTL_0/EX_STOP"
+        ]
+      },
+      "ex_stop_en_1": {
+        "ports": [
+          "ex_stop_en",
+          "EX_TRIG_CTL_0/EX_STOP_EN"
         ]
       }
     },

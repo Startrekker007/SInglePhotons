@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# CTR_CTL, CTR_CTL, CTR_CTL, CTR_CTL, DIG_TIMER, DIG_TIMER, DIG_TIMER, DIG_TIMER
+# CTR_CTL, CTR_CTL, CTR_CTL, CTR_CTL, DIG_TIMER, DIG_TIMER, DIG_TIMER, DIG_TIMER, EX_TRIG_CTL, FAR_BETTER_AND
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -180,13 +180,19 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
+  set EX_STOP_RDY [ create_bd_port -dir O EX_STOP_RDY ]
+  set MCLK [ create_bd_port -dir I MCLK ]
   set P_SIG_EX [ create_bd_port -dir I P_SIG_EX ]
   set P_SIG_EX1 [ create_bd_port -dir I P_SIG_EX1 ]
   set P_SIG_EX2 [ create_bd_port -dir I P_SIG_EX2 ]
   set P_SIG_EX3 [ create_bd_port -dir I P_SIG_EX3 ]
   set TCLK [ create_bd_port -dir I TCLK ]
+  set TRIG [ create_bd_port -dir I TRIG ]
+  set TRIG_RST [ create_bd_port -dir I TRIG_RST ]
   set aclk [ create_bd_port -dir I aclk ]
   set aresetn [ create_bd_port -dir I aresetn ]
+  set ex_stop [ create_bd_port -dir I ex_stop ]
+  set ex_stop_en [ create_bd_port -dir I ex_stop_en ]
 
   # Create instance: CTR_CTL_0, and set properties
   set block_name CTR_CTL
@@ -272,6 +278,28 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $DIG_TIMER_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: EX_TRIG_CTL_0, and set properties
+  set block_name EX_TRIG_CTL
+  set block_cell_name EX_TRIG_CTL_0
+  if { [catch {set EX_TRIG_CTL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $EX_TRIG_CTL_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: FAR_BETTER_AND_0, and set properties
+  set block_name FAR_BETTER_AND
+  set block_cell_name FAR_BETTER_AND_0
+  if { [catch {set FAR_BETTER_AND_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $FAR_BETTER_AND_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -388,6 +416,70 @@ proc create_root_design { parentCell } {
    CONFIG.SCLR {true} \
  ] $c_counter_binary_3
 
+  # Create instance: ex_stop_or_0, and set properties
+  set ex_stop_or_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_stop_or_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_stop_or_0
+
+  # Create instance: ex_stop_or_1, and set properties
+  set ex_stop_or_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_stop_or_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_stop_or_1
+
+  # Create instance: ex_stop_or_2, and set properties
+  set ex_stop_or_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_stop_or_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_stop_or_2
+
+  # Create instance: ex_stop_or_3, and set properties
+  set ex_stop_or_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_stop_or_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_stop_or_3
+
+  # Create instance: ex_trig_or_0, and set properties
+  set ex_trig_or_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_trig_or_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_trig_or_0
+
+  # Create instance: ex_trig_or_1, and set properties
+  set ex_trig_or_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_trig_or_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_trig_or_1
+
+  # Create instance: ex_trig_or_2, and set properties
+  set ex_trig_or_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_trig_or_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_trig_or_2
+
+  # Create instance: ex_trig_or_3, and set properties
+  set ex_trig_or_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 ex_trig_or_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $ex_trig_or_3
+
   # Create instance: util_vector_logic_0, and set properties
   set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
   set_property -dict [ list \
@@ -439,33 +531,49 @@ proc create_root_design { parentCell } {
   connect_bd_net -net CTR_CTL_0_SCLR_O1 [get_bd_pins CTR_CTL_1/SCLR_O] [get_bd_pins c_counter_binary_1/SCLR]
   connect_bd_net -net CTR_CTL_0_SCLR_O2 [get_bd_pins CTR_CTL_2/SCLR_O] [get_bd_pins c_counter_binary_2/SCLR]
   connect_bd_net -net CTR_CTL_0_SCLR_O3 [get_bd_pins CTR_CTL_3/SCLR_O] [get_bd_pins c_counter_binary_3/SCLR]
-  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins axi_gpio_util/gpio2_io_i] [get_bd_pins util_vector_logic_0/Op1]
-  connect_bd_net -net DIG_TIMER_0_DATA_IND1 [get_bd_pins DIG_TIMER_1/DATA_IND] [get_bd_pins axi_gpio_util1/gpio2_io_i] [get_bd_pins util_vector_logic_1/Op1]
-  connect_bd_net -net DIG_TIMER_0_DATA_IND2 [get_bd_pins DIG_TIMER_2/DATA_IND] [get_bd_pins axi_gpio_util2/gpio2_io_i] [get_bd_pins util_vector_logic_2/Op1]
-  connect_bd_net -net DIG_TIMER_0_DATA_IND3 [get_bd_pins DIG_TIMER_3/DATA_IND] [get_bd_pins axi_gpio_util3/gpio2_io_i] [get_bd_pins util_vector_logic_3/Op1]
-  connect_bd_net -net Net [get_bd_pins CTR_CTL_0/RST] [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins axi_gpio_util/gpio_io_o]
-  connect_bd_net -net Net1 [get_bd_pins CTR_CTL_1/RST] [get_bd_pins DIG_TIMER_1/RST] [get_bd_pins axi_gpio_util1/gpio_io_o]
-  connect_bd_net -net Net2 [get_bd_pins CTR_CTL_2/RST] [get_bd_pins DIG_TIMER_2/RST] [get_bd_pins axi_gpio_util2/gpio_io_o]
-  connect_bd_net -net Net3 [get_bd_pins CTR_CTL_3/RST] [get_bd_pins DIG_TIMER_3/RST] [get_bd_pins axi_gpio_util3/gpio_io_o]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND [get_bd_pins DIG_TIMER_0/DATA_IND] [get_bd_pins FAR_BETTER_AND_0/IN0] [get_bd_pins axi_gpio_util/gpio2_io_i] [get_bd_pins ex_stop_or_0/Op2]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND1 [get_bd_pins DIG_TIMER_1/DATA_IND] [get_bd_pins FAR_BETTER_AND_0/IN1] [get_bd_pins axi_gpio_util1/gpio2_io_i] [get_bd_pins ex_stop_or_1/Op1]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND2 [get_bd_pins DIG_TIMER_2/DATA_IND] [get_bd_pins FAR_BETTER_AND_0/IN3] [get_bd_pins axi_gpio_util2/gpio2_io_i] [get_bd_pins ex_stop_or_2/Op2]
+  connect_bd_net -net DIG_TIMER_0_DATA_IND3 [get_bd_pins DIG_TIMER_3/DATA_IND] [get_bd_pins FAR_BETTER_AND_0/IN2] [get_bd_pins axi_gpio_util3/gpio2_io_i] [get_bd_pins ex_stop_or_3/Op1]
+  connect_bd_net -net EX_TRIG_CTL_0_CTL [get_bd_pins EX_TRIG_CTL_0/CTL] [get_bd_pins ex_trig_or_0/Op2] [get_bd_pins ex_trig_or_1/Op2] [get_bd_pins ex_trig_or_2/Op2] [get_bd_pins ex_trig_or_3/Op1]
+  connect_bd_net -net EX_TRIG_CTL_0_WINDOW [get_bd_ports EX_STOP_RDY] [get_bd_pins EX_TRIG_CTL_0/WINDOW] [get_bd_pins ex_stop_or_0/Op1] [get_bd_pins ex_stop_or_1/Op2] [get_bd_pins ex_stop_or_2/Op1] [get_bd_pins ex_stop_or_3/Op2]
+  connect_bd_net -net FAR_BETTER_AND_0_OUT0 [get_bd_pins EX_TRIG_CTL_0/STOP] [get_bd_pins FAR_BETTER_AND_0/OUT0]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins EX_TRIG_CTL_0/MCLK]
+  connect_bd_net -net Net [get_bd_pins CTR_CTL_0/RST] [get_bd_pins DIG_TIMER_0/RST] [get_bd_pins ex_trig_or_0/Res]
+  connect_bd_net -net Net1 [get_bd_pins CTR_CTL_1/RST] [get_bd_pins DIG_TIMER_1/RST] [get_bd_pins ex_trig_or_1/Res]
+  connect_bd_net -net Net2 [get_bd_pins CTR_CTL_2/RST] [get_bd_pins DIG_TIMER_2/RST] [get_bd_pins ex_trig_or_3/Res]
+  connect_bd_net -net Net3 [get_bd_pins CTR_CTL_3/RST] [get_bd_pins DIG_TIMER_3/RST] [get_bd_pins ex_trig_or_2/Res]
   connect_bd_net -net P_SIG_EX_1 [get_bd_ports P_SIG_EX] [get_bd_pins CTR_CTL_0/P_SIG_IN]
   connect_bd_net -net P_SIG_EX_2 [get_bd_ports P_SIG_EX1] [get_bd_pins CTR_CTL_1/P_SIG_IN]
   connect_bd_net -net P_SIG_EX_3 [get_bd_ports P_SIG_EX2] [get_bd_pins CTR_CTL_2/P_SIG_IN]
   connect_bd_net -net P_SIG_EX_4 [get_bd_ports P_SIG_EX3] [get_bd_pins CTR_CTL_3/P_SIG_IN]
   connect_bd_net -net TCLK_1 [get_bd_ports TCLK] [get_bd_pins CTR_CTL_0/CLK] [get_bd_pins CTR_CTL_1/CLK] [get_bd_pins CTR_CTL_2/CLK] [get_bd_pins CTR_CTL_3/CLK] [get_bd_pins DIG_TIMER_0/MCLK] [get_bd_pins DIG_TIMER_1/MCLK] [get_bd_pins DIG_TIMER_2/MCLK] [get_bd_pins DIG_TIMER_3/MCLK]
+  connect_bd_net -net TRIG_1 [get_bd_ports TRIG] [get_bd_pins EX_TRIG_CTL_0/TRIG]
+  connect_bd_net -net TRIG_RST_1 [get_bd_ports TRIG_RST] [get_bd_pins EX_TRIG_CTL_0/RST]
+  connect_bd_net -net axi_gpio_data1_gpio2_io_o [get_bd_pins DIG_TIMER_1/LIM] [get_bd_pins axi_gpio_data1/gpio2_io_o]
+  connect_bd_net -net axi_gpio_data2_gpio2_io_o [get_bd_pins DIG_TIMER_2/LIM] [get_bd_pins axi_gpio_data2/gpio2_io_o]
+  connect_bd_net -net axi_gpio_data3_gpio2_io_o [get_bd_pins DIG_TIMER_3/LIM] [get_bd_pins axi_gpio_data3/gpio2_io_o]
   connect_bd_net -net axi_gpio_data_gpio2_io_o [get_bd_pins DIG_TIMER_0/LIM] [get_bd_pins axi_gpio_data/gpio2_io_o]
-  connect_bd_net -net axi_gpio_data_gpio2_io_o1 [get_bd_pins DIG_TIMER_1/LIM] [get_bd_pins axi_gpio_data1/gpio2_io_o]
-  connect_bd_net -net axi_gpio_data_gpio2_io_o2 [get_bd_pins DIG_TIMER_2/LIM] [get_bd_pins axi_gpio_data2/gpio2_io_o]
-  connect_bd_net -net axi_gpio_data_gpio2_io_o3 [get_bd_pins DIG_TIMER_3/LIM] [get_bd_pins axi_gpio_data3/gpio2_io_o]
+  connect_bd_net -net axi_gpio_util1_gpio_io_o [get_bd_pins axi_gpio_util1/gpio_io_o] [get_bd_pins ex_trig_or_1/Op1]
+  connect_bd_net -net axi_gpio_util2_gpio_io_o [get_bd_pins axi_gpio_util2/gpio_io_o] [get_bd_pins ex_trig_or_3/Op2]
+  connect_bd_net -net axi_gpio_util3_gpio_io_o [get_bd_pins axi_gpio_util3/gpio_io_o] [get_bd_pins ex_trig_or_2/Op1]
+  connect_bd_net -net axi_gpio_util_gpio_io_o [get_bd_pins axi_gpio_util/gpio_io_o] [get_bd_pins ex_trig_or_0/Op1]
   connect_bd_net -net c_counter_binary_0_Q [get_bd_pins axi_gpio_data/gpio_io_i] [get_bd_pins c_counter_binary_0/Q]
   connect_bd_net -net c_counter_binary_0_Q1 [get_bd_pins axi_gpio_data1/gpio_io_i] [get_bd_pins c_counter_binary_1/Q]
   connect_bd_net -net c_counter_binary_0_Q2 [get_bd_pins axi_gpio_data2/gpio_io_i] [get_bd_pins c_counter_binary_2/Q]
   connect_bd_net -net c_counter_binary_0_Q3 [get_bd_pins axi_gpio_data3/gpio_io_i] [get_bd_pins c_counter_binary_3/Q]
+  connect_bd_net -net ex_stop_1 [get_bd_ports ex_stop] [get_bd_pins EX_TRIG_CTL_0/EX_STOP]
+  connect_bd_net -net ex_stop_en_1 [get_bd_ports ex_stop_en] [get_bd_pins EX_TRIG_CTL_0/EX_STOP_EN]
+  connect_bd_net -net ex_stop_or_1_Res [get_bd_pins ex_stop_or_1/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net ex_stop_or_2_Res [get_bd_pins ex_stop_or_2/Res] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net ex_stop_or_3_Res [get_bd_pins ex_stop_or_3/Res] [get_bd_pins util_vector_logic_3/Op1]
   connect_bd_net -net s_axi_clk_1 [get_bd_ports aclk] [get_bd_pins axi_gpio_data/s_axi_aclk] [get_bd_pins axi_gpio_data1/s_axi_aclk] [get_bd_pins axi_gpio_data2/s_axi_aclk] [get_bd_pins axi_gpio_data3/s_axi_aclk] [get_bd_pins axi_gpio_util/s_axi_aclk] [get_bd_pins axi_gpio_util1/s_axi_aclk] [get_bd_pins axi_gpio_util2/s_axi_aclk] [get_bd_pins axi_gpio_util3/s_axi_aclk]
   connect_bd_net -net s_axi_rst_1 [get_bd_ports aresetn] [get_bd_pins axi_gpio_data/s_axi_aresetn] [get_bd_pins axi_gpio_data1/s_axi_aresetn] [get_bd_pins axi_gpio_data2/s_axi_aresetn] [get_bd_pins axi_gpio_data3/s_axi_aresetn] [get_bd_pins axi_gpio_util/s_axi_aresetn] [get_bd_pins axi_gpio_util1/s_axi_aresetn] [get_bd_pins axi_gpio_util2/s_axi_aresetn] [get_bd_pins axi_gpio_util3/s_axi_aresetn]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_pins c_counter_binary_0/CE] [get_bd_pins util_vector_logic_0/Res]
   connect_bd_net -net util_vector_logic_0_Res1 [get_bd_pins c_counter_binary_1/CE] [get_bd_pins util_vector_logic_1/Res]
   connect_bd_net -net util_vector_logic_0_Res2 [get_bd_pins c_counter_binary_2/CE] [get_bd_pins util_vector_logic_2/Res]
   connect_bd_net -net util_vector_logic_0_Res3 [get_bd_pins c_counter_binary_3/CE] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net util_vector_logic_4_Res [get_bd_pins ex_stop_or_0/Res] [get_bd_pins util_vector_logic_0/Op1]
 
   # Create address segments
 

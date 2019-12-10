@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 1
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -65,6 +66,9 @@ set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Viv
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/constrs_1/new/PYNQ-Z1.xdc}}
+set_property used_in_implementation false [get_files {{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/constrs_1/new/PYNQ-Z1.xdc}}]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1

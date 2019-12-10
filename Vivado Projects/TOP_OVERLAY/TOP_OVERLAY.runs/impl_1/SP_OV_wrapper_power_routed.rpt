@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Dec  6 08:58:33 2019
+| Date             : Tue Dec 10 12:45:46 2019
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file SP_OV_wrapper_power_routed.rpt -pb SP_OV_wrapper_power_summary_routed.pb -rpx SP_OV_wrapper_power_routed.rpx
 | Design           : SP_OV_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.704        |
+| Total On-Chip Power (W)  | 1.773        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.559        |
-| Device Static (W)        | 0.145        |
+| Dynamic (W)              | 1.626        |
+| Device Static (W)        | 0.147        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.4         |
-| Junction Temperature (C) | 44.6         |
+| Max Ambient (C)          | 64.6         |
+| Junction Temperature (C) | 45.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,22 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.045 |        8 |       --- |             --- |
-| Slice Logic             |     0.005 |    10157 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     2859 |     53200 |            5.37 |
-|   CARRY4                |    <0.001 |      214 |     13300 |            1.61 |
-|   Register              |    <0.001 |     5820 |    106400 |            5.47 |
+| Clocks                  |     0.065 |        8 |       --- |             --- |
+| Slice Logic             |     0.020 |    12069 |       --- |             --- |
+|   LUT as Logic          |     0.012 |     3366 |     53200 |            6.33 |
+|   CARRY4                |     0.004 |      354 |     13300 |            2.66 |
+|   Register              |     0.003 |     6857 |    106400 |            6.44 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
-|   F7/F8 Muxes           |    <0.001 |        1 |     53200 |           <0.01 |
-|   Others                |     0.000 |      503 |       --- |             --- |
-| Signals                 |     0.008 |     7744 |       --- |             --- |
+|   F7/F8 Muxes           |    <0.001 |        3 |     53200 |           <0.01 |
+|   Others                |     0.000 |      686 |       --- |             --- |
+| Signals                 |     0.023 |     9148 |       --- |             --- |
+| Block RAM               |     0.017 |        2 |       140 |            1.43 |
 | MMCM                    |     0.239 |        2 |         4 |           50.00 |
 | DSPs                    |    <0.001 |        4 |       220 |            1.82 |
-| I/O                     |     0.005 |       19 |       125 |           15.20 |
+| I/O                     |     0.006 |       21 |       125 |           16.80 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
-| Static Power            |     0.145 |          |           |                 |
-| Total                   |     1.704 |          |           |                 |
+| Static Power            |     0.147 |          |           |                 |
+| Total                   |     1.773 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,20 +77,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.076 |       0.061 |      0.015 |
-| Vccaux    |       1.800 |     0.147 |       0.132 |      0.015 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vccint    |       1.000 |     0.140 |       0.125 |      0.016 |
+| Vccaux    |       1.800 |     0.148 |       0.132 |      0.015 |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.677 |       0.647 |      0.030 |
+| Vccpint   |       1.000 |     0.678 |       0.647 |      0.031 |
 | Vccpaux   |       1.800 |     0.036 |       0.026 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.354 |       0.352 |      0.002 |
@@ -142,7 +143,7 @@ Table of Contents
 | clk_fpga_0                 | SP_OV_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
 | clk_out1_SP_OV_TIMER_CLK_0 | SP_OV_i/REF_CLK/inst/clk_out1_SP_OV_TIMER_CLK_0          |             2.2 |
 | clk_out1_SP_OV_clk_wiz_0_0 | SP_OV_i/TIMER_CLK/inst/clk_out1_SP_OV_clk_wiz_0_0        |             8.0 |
-| clkfbout_SP_OV_TIMER_CLK_0 | SP_OV_i/REF_CLK/inst/clkfbout_SP_OV_TIMER_CLK_0          |             8.0 |
+| clkfbout_SP_OV_TIMER_CLK_0 | SP_OV_i/REF_CLK/inst/clkfbout_SP_OV_TIMER_CLK_0          |            40.0 |
 | clkfbout_SP_OV_clk_wiz_0_0 | SP_OV_i/TIMER_CLK/inst/clkfbout_SP_OV_clk_wiz_0_0        |             8.0 |
 | sys_clock                  | sys_clock                                                |             8.0 |
 +----------------------------+----------------------------------------------------------+-----------------+
@@ -157,24 +158,24 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| SP_OV_wrapper               |     1.559 |
-|   SP_OV_i                   |     1.553 |
-|     CT_AXI_PERIPH_wrapper_0 |     0.004 |
-|       U0                    |     0.004 |
-|     PG_AXI_PERIPH_wrapper_0 |     0.024 |
-|       U0                    |     0.024 |
-|     P_COUNTER_wrapper_0     |     0.014 |
-|       U0                    |     0.014 |
+| SP_OV_wrapper               |     1.626 |
+|   SP_OV_i                   |     1.619 |
+|     CT_AXI_PERIPH_wrapper_0 |     0.005 |
+|       U0                    |     0.005 |
+|     DDS_AXI_PERIPH_wrapp_0  |     0.086 |
+|       U0                    |     0.086 |
+|     P_COUNTER_wrapper_0     |     0.016 |
+|       U0                    |     0.016 |
 |     REF_CLK                 |     0.134 |
 |       inst                  |     0.134 |
 |     ST_AXI_PERIPH_wrapper_0 |     0.005 |
 |       U0                    |     0.005 |
 |     TIMER_CLK               |     0.107 |
 |       inst                  |     0.107 |
-|     axi_interconnect_0      |     0.009 |
-|       s00_couplers          |     0.005 |
-|       tier2_xbar_0          |     0.001 |
+|     axi_interconnect_0      |     0.008 |
+|       s00_couplers          |     0.004 |
 |       tier2_xbar_1          |     0.001 |
+|       tier2_xbar_2          |     0.001 |
 |       xbar                  |     0.001 |
 |     processing_system7_0    |     1.258 |
 |       inst                  |     1.258 |

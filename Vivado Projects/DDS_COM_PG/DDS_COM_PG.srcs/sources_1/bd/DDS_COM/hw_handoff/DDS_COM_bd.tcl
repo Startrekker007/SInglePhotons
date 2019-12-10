@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# filter, filter
+# DC_EN_MOD, DC_EN_MOD, DC_EN_MOD, DC_EN_MOD, DELAY_SYNC, filter, filter, filter, filter
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -164,25 +164,98 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set DC0 [ create_bd_port -dir I -from 31 -to 0 DC0 ]
+  set DC1 [ create_bd_port -dir I -from 31 -to 0 DC1 ]
+  set DC2 [ create_bd_port -dir I -from 31 -to 0 DC2 ]
+  set DC3 [ create_bd_port -dir I -from 31 -to 0 DC3 ]
+  set DEBUG [ create_bd_port -dir O -from 3 -to 0 DEBUG ]
+  set DEBUG2 [ create_bd_port -dir O -from 3 -to 0 DEBUG2 ]
+  set DEL0 [ create_bd_port -dir I -from 31 -to 0 DEL0 ]
+  set DEL1 [ create_bd_port -dir I -from 31 -to 0 DEL1 ]
+  set DEL2 [ create_bd_port -dir I -from 31 -to 0 DEL2 ]
+  set DEL3 [ create_bd_port -dir I -from 31 -to 0 DEL3 ]
   set clk [ create_bd_port -dir I clk ]
+  set done [ create_bd_port -dir O done ]
   set phase_inc0 [ create_bd_port -dir I -from 47 -to 0 phase_inc0 ]
   set phase_inc1 [ create_bd_port -dir I -from 47 -to 0 phase_inc1 ]
+  set phase_inc2 [ create_bd_port -dir I -from 47 -to 0 phase_inc2 ]
+  set phase_inc3 [ create_bd_port -dir I -from 47 -to 0 phase_inc3 ]
   set rst [ create_bd_port -dir I rst ]
   set sig_out [ create_bd_port -dir O sig_out ]
   set sig_out1 [ create_bd_port -dir O sig_out1 ]
+  set sig_out2 [ create_bd_port -dir O sig_out2 ]
+  set sig_out3 [ create_bd_port -dir O sig_out3 ]
   set tval0 [ create_bd_port -dir I tval0 ]
   set tval1 [ create_bd_port -dir I tval1 ]
+  set tval2 [ create_bd_port -dir I tval2 ]
+  set tval3 [ create_bd_port -dir I tval3 ]
 
+  # Create instance: DC_EN_MOD_0, and set properties
+  set block_name DC_EN_MOD
+  set block_cell_name DC_EN_MOD_0
+  if { [catch {set DC_EN_MOD_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DC_EN_MOD_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: DC_EN_MOD_1, and set properties
+  set block_name DC_EN_MOD
+  set block_cell_name DC_EN_MOD_1
+  if { [catch {set DC_EN_MOD_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DC_EN_MOD_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: DC_EN_MOD_2, and set properties
+  set block_name DC_EN_MOD
+  set block_cell_name DC_EN_MOD_2
+  if { [catch {set DC_EN_MOD_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DC_EN_MOD_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: DC_EN_MOD_3, and set properties
+  set block_name DC_EN_MOD
+  set block_cell_name DC_EN_MOD_3
+  if { [catch {set DC_EN_MOD_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DC_EN_MOD_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: DELAY_SYNC_0, and set properties
+  set block_name DELAY_SYNC
+  set block_cell_name DELAY_SYNC_0
+  if { [catch {set DELAY_SYNC_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DELAY_SYNC_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: dds_compiler_0, and set properties
   set dds_compiler_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_0 ]
   set_property -dict [ list \
+   CONFIG.Amplitude_Mode {Unit_Circle} \
    CONFIG.Channels {1} \
    CONFIG.DATA_Has_TLAST {Not_Required} \
-   CONFIG.DDS_Clock_Rate {464.063} \
+   CONFIG.DDS_Clock_Rate {460} \
    CONFIG.Frequency_Resolution {1.64869e-6} \
    CONFIG.Has_ARESETn {true} \
    CONFIG.Has_Phase_Out {false} \
-   CONFIG.Latency {5} \
+   CONFIG.Latency {6} \
    CONFIG.M_DATA_Has_TUSER {Not_Required} \
    CONFIG.M_PHASE_Has_TUSER {Not_Required} \
    CONFIG.Mode_of_Operation {Standard} \
@@ -190,25 +263,27 @@ proc create_root_design { parentCell } {
    CONFIG.Output_Frequency1 {0} \
    CONFIG.Output_Selection {Sine} \
    CONFIG.Output_Width {8} \
-   CONFIG.PINC1 {10010100000101010000} \
+   CONFIG.PINC1 {1000110100111000111000100110100011111011} \
+   CONFIG.POFF1 {100000000000000000000000000000000000000000000000} \
    CONFIG.Parameter_Entry {Hardware_Parameters} \
    CONFIG.PartsPresent {Phase_Generator_and_SIN_COS_LUT} \
    CONFIG.Phase_Increment {Programmable} \
    CONFIG.Phase_Width {48} \
-   CONFIG.Phase_offset {None} \
+   CONFIG.Phase_offset {Fixed} \
    CONFIG.S_PHASE_Has_TUSER {Not_Required} \
  ] $dds_compiler_0
 
   # Create instance: dds_compiler_1, and set properties
   set dds_compiler_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_1 ]
   set_property -dict [ list \
+   CONFIG.Amplitude_Mode {Unit_Circle} \
    CONFIG.Channels {1} \
    CONFIG.DATA_Has_TLAST {Not_Required} \
-   CONFIG.DDS_Clock_Rate {464.063} \
+   CONFIG.DDS_Clock_Rate {460} \
    CONFIG.Frequency_Resolution {0.4} \
    CONFIG.Has_ARESETn {true} \
    CONFIG.Has_Phase_Out {false} \
-   CONFIG.Latency {5} \
+   CONFIG.Latency {6} \
    CONFIG.M_DATA_Has_TUSER {Not_Required} \
    CONFIG.M_PHASE_Has_TUSER {Not_Required} \
    CONFIG.Mode_of_Operation {Standard} \
@@ -216,14 +291,71 @@ proc create_root_design { parentCell } {
    CONFIG.Output_Frequency1 {0} \
    CONFIG.Output_Selection {Sine} \
    CONFIG.Output_Width {8} \
-   CONFIG.PINC1 {10010100000101010000} \
+   CONFIG.PINC1 {10001101001110001110001001101000111110110} \
+   CONFIG.POFF1 {100000000000000000000000000000000000000000000000} \
    CONFIG.Parameter_Entry {Hardware_Parameters} \
    CONFIG.PartsPresent {Phase_Generator_and_SIN_COS_LUT} \
    CONFIG.Phase_Increment {Programmable} \
    CONFIG.Phase_Width {48} \
-   CONFIG.Phase_offset {None} \
+   CONFIG.Phase_offset {Fixed} \
    CONFIG.S_PHASE_Has_TUSER {Not_Required} \
  ] $dds_compiler_1
+
+  # Create instance: dds_compiler_2, and set properties
+  set dds_compiler_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_2 ]
+  set_property -dict [ list \
+   CONFIG.Amplitude_Mode {Unit_Circle} \
+   CONFIG.Channels {1} \
+   CONFIG.DATA_Has_TLAST {Not_Required} \
+   CONFIG.DDS_Clock_Rate {460} \
+   CONFIG.Frequency_Resolution {0.4} \
+   CONFIG.Has_ARESETn {true} \
+   CONFIG.Has_Phase_Out {false} \
+   CONFIG.Latency {6} \
+   CONFIG.M_DATA_Has_TUSER {Not_Required} \
+   CONFIG.M_PHASE_Has_TUSER {Not_Required} \
+   CONFIG.Mode_of_Operation {Standard} \
+   CONFIG.Noise_Shaping {None} \
+   CONFIG.Output_Frequency1 {0} \
+   CONFIG.Output_Selection {Sine} \
+   CONFIG.Output_Width {8} \
+   CONFIG.PINC1 {10001101001110001110001001101000111110110} \
+   CONFIG.POFF1 {100000000000000000000000000000000000000000000000} \
+   CONFIG.Parameter_Entry {Hardware_Parameters} \
+   CONFIG.PartsPresent {Phase_Generator_and_SIN_COS_LUT} \
+   CONFIG.Phase_Increment {Programmable} \
+   CONFIG.Phase_Width {48} \
+   CONFIG.Phase_offset {Fixed} \
+   CONFIG.S_PHASE_Has_TUSER {Not_Required} \
+ ] $dds_compiler_2
+
+  # Create instance: dds_compiler_3, and set properties
+  set dds_compiler_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_3 ]
+  set_property -dict [ list \
+   CONFIG.Amplitude_Mode {Unit_Circle} \
+   CONFIG.Channels {1} \
+   CONFIG.DATA_Has_TLAST {Not_Required} \
+   CONFIG.DDS_Clock_Rate {460} \
+   CONFIG.Frequency_Resolution {0.4} \
+   CONFIG.Has_ARESETn {true} \
+   CONFIG.Has_Phase_Out {false} \
+   CONFIG.Latency {6} \
+   CONFIG.M_DATA_Has_TUSER {Not_Required} \
+   CONFIG.M_PHASE_Has_TUSER {Not_Required} \
+   CONFIG.Mode_of_Operation {Standard} \
+   CONFIG.Noise_Shaping {None} \
+   CONFIG.Output_Frequency1 {0} \
+   CONFIG.Output_Selection {Sine} \
+   CONFIG.Output_Width {8} \
+   CONFIG.PINC1 {10001101001110001110001001101000111110110} \
+   CONFIG.POFF1 {100000000000000000000000000000000000000000000000} \
+   CONFIG.Parameter_Entry {Hardware_Parameters} \
+   CONFIG.PartsPresent {Phase_Generator_and_SIN_COS_LUT} \
+   CONFIG.Phase_Increment {Programmable} \
+   CONFIG.Phase_Width {48} \
+   CONFIG.Phase_offset {Fixed} \
+   CONFIG.S_PHASE_Has_TUSER {Not_Required} \
+ ] $dds_compiler_3
 
   # Create instance: filter_0, and set properties
   set block_name filter
@@ -247,17 +379,78 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: filter_2, and set properties
+  set block_name filter
+  set block_cell_name filter_2
+  if { [catch {set filter_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $filter_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: filter_3, and set properties
+  set block_name filter
+  set block_cell_name filter_3
+  if { [catch {set filter_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $filter_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  set_property -dict [ list \
+   CONFIG.NUM_PORTS {4} \
+ ] $xlconcat_0
+
+  # Create instance: xlconcat_1, and set properties
+  set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
+  set_property -dict [ list \
+   CONFIG.NUM_PORTS {4} \
+ ] $xlconcat_1
+
   # Create port connections
-  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins dds_compiler_0/aclk] [get_bd_pins dds_compiler_1/aclk] [get_bd_pins filter_0/mclk] [get_bd_pins filter_1/mclk]
+  connect_bd_net -net DC0_1 [get_bd_ports DC0] [get_bd_pins DC_EN_MOD_0/DC]
+  connect_bd_net -net DC1_1 [get_bd_ports DC1] [get_bd_pins DC_EN_MOD_1/DC]
+  connect_bd_net -net DC2_1 [get_bd_ports DC2] [get_bd_pins DC_EN_MOD_2/DC]
+  connect_bd_net -net DC3_1 [get_bd_ports DC3] [get_bd_pins DC_EN_MOD_3/DC]
+  connect_bd_net -net DC_EN_MOD_0_RES [get_bd_ports sig_out] [get_bd_pins DC_EN_MOD_0/RES]
+  connect_bd_net -net DC_EN_MOD_1_RES [get_bd_ports sig_out1] [get_bd_pins DC_EN_MOD_1/RES]
+  connect_bd_net -net DC_EN_MOD_2_RES [get_bd_ports sig_out2] [get_bd_pins DC_EN_MOD_2/RES]
+  connect_bd_net -net DC_EN_MOD_3_RES [get_bd_ports sig_out3] [get_bd_pins DC_EN_MOD_3/RES]
+  connect_bd_net -net DEL0_1 [get_bd_ports DEL0] [get_bd_pins DELAY_SYNC_0/DEL0]
+  connect_bd_net -net DEL1_1 [get_bd_ports DEL1] [get_bd_pins DELAY_SYNC_0/DEL1]
+  connect_bd_net -net DEL2_1 [get_bd_ports DEL2] [get_bd_pins DELAY_SYNC_0/DEL2]
+  connect_bd_net -net DEL3_1 [get_bd_ports DEL3] [get_bd_pins DELAY_SYNC_0/DEL3]
+  connect_bd_net -net DELAY_SYNC_0_DONE [get_bd_ports done] [get_bd_pins DELAY_SYNC_0/DONE]
+  connect_bd_net -net DELAY_SYNC_0_RST0 [get_bd_pins DC_EN_MOD_0/RSTn] [get_bd_pins DELAY_SYNC_0/RST0] [get_bd_pins dds_compiler_0/aresetn] [get_bd_pins filter_0/rst] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net DELAY_SYNC_0_RST1 [get_bd_pins DC_EN_MOD_1/RSTn] [get_bd_pins DELAY_SYNC_0/RST1] [get_bd_pins dds_compiler_1/aresetn] [get_bd_pins filter_1/rst] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net DELAY_SYNC_0_RST2 [get_bd_pins DC_EN_MOD_2/RSTn] [get_bd_pins DELAY_SYNC_0/RST2] [get_bd_pins dds_compiler_2/aresetn] [get_bd_pins filter_2/rst] [get_bd_pins xlconcat_0/In2]
+  connect_bd_net -net DELAY_SYNC_0_RST3 [get_bd_pins DC_EN_MOD_3/RSTn] [get_bd_pins DELAY_SYNC_0/RST3] [get_bd_pins dds_compiler_3/aresetn] [get_bd_pins filter_3/rst] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins DC_EN_MOD_0/MCLK] [get_bd_pins DC_EN_MOD_1/MCLK] [get_bd_pins DC_EN_MOD_2/MCLK] [get_bd_pins DC_EN_MOD_3/MCLK] [get_bd_pins DELAY_SYNC_0/MCLK] [get_bd_pins dds_compiler_0/aclk] [get_bd_pins dds_compiler_1/aclk] [get_bd_pins dds_compiler_2/aclk] [get_bd_pins dds_compiler_3/aclk] [get_bd_pins filter_0/mclk] [get_bd_pins filter_1/mclk] [get_bd_pins filter_2/mclk] [get_bd_pins filter_3/mclk]
   connect_bd_net -net dds_compiler_0_m_axis_data_tdata [get_bd_pins dds_compiler_0/m_axis_data_tdata] [get_bd_pins filter_0/data]
   connect_bd_net -net dds_compiler_1_m_axis_data_tdata [get_bd_pins dds_compiler_1/m_axis_data_tdata] [get_bd_pins filter_1/data]
-  connect_bd_net -net filter_0_c_out [get_bd_ports sig_out] [get_bd_pins filter_0/c_out]
-  connect_bd_net -net filter_1_c_out [get_bd_ports sig_out1] [get_bd_pins filter_1/c_out]
+  connect_bd_net -net dds_compiler_2_m_axis_data_tdata [get_bd_pins dds_compiler_2/m_axis_data_tdata] [get_bd_pins filter_2/data]
+  connect_bd_net -net dds_compiler_3_m_axis_data_tdata [get_bd_pins dds_compiler_3/m_axis_data_tdata] [get_bd_pins filter_3/data]
+  connect_bd_net -net filter_0_c_out [get_bd_pins DC_EN_MOD_0/TRIGr] [get_bd_pins filter_0/c_out] [get_bd_pins xlconcat_1/In0]
+  connect_bd_net -net filter_1_c_out [get_bd_pins DC_EN_MOD_1/TRIGr] [get_bd_pins filter_1/c_out] [get_bd_pins xlconcat_1/In1]
+  connect_bd_net -net filter_2_c_out [get_bd_pins DC_EN_MOD_2/TRIGr] [get_bd_pins filter_2/c_out] [get_bd_pins xlconcat_1/In2]
+  connect_bd_net -net filter_3_c_out [get_bd_pins DC_EN_MOD_3/TRIGr] [get_bd_pins filter_3/c_out] [get_bd_pins xlconcat_1/In3]
   connect_bd_net -net phase_inc1_1 [get_bd_ports phase_inc1] [get_bd_pins dds_compiler_1/s_axis_config_tdata]
+  connect_bd_net -net phase_inc2_1 [get_bd_ports phase_inc2] [get_bd_pins dds_compiler_2/s_axis_config_tdata]
+  connect_bd_net -net phase_inc3_1 [get_bd_ports phase_inc3] [get_bd_pins dds_compiler_3/s_axis_config_tdata]
   connect_bd_net -net phase_inc_1 [get_bd_ports phase_inc0] [get_bd_pins dds_compiler_0/s_axis_config_tdata]
-  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins dds_compiler_0/aresetn] [get_bd_pins dds_compiler_1/aresetn] [get_bd_pins filter_0/rst] [get_bd_pins filter_1/rst]
+  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins DELAY_SYNC_0/RSTn]
   connect_bd_net -net tval1_1 [get_bd_ports tval1] [get_bd_pins dds_compiler_1/s_axis_config_tvalid]
+  connect_bd_net -net tval2_1 [get_bd_ports tval2] [get_bd_pins dds_compiler_2/s_axis_config_tvalid]
+  connect_bd_net -net tval3_1 [get_bd_ports tval3] [get_bd_pins dds_compiler_3/s_axis_config_tvalid]
   connect_bd_net -net tval_1 [get_bd_ports tval0] [get_bd_pins dds_compiler_0/s_axis_config_tvalid]
+  connect_bd_net -net xlconcat_0_dout [get_bd_ports DEBUG] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_ports DEBUG2] [get_bd_pins xlconcat_1/dout]
 
   # Create address segments
 

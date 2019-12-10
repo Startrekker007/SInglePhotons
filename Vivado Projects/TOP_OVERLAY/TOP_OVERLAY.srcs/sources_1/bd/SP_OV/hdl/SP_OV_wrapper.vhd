@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Dec  6 08:51:54 2019
+--Date        : Tue Dec 10 12:38:18 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SP_OV_wrapper.bd
 --Design      : SP_OV_wrapper
@@ -18,7 +18,6 @@ entity SP_OV_wrapper is
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
     CLK_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 );
-    CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 );
     CT_ARMED : out STD_LOGIC_VECTOR ( 0 to 0 );
     CT_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -36,6 +35,8 @@ entity SP_OV_wrapper is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    DEBUG : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    E_TRIG : in STD_LOGIC;
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -46,6 +47,7 @@ entity SP_OV_wrapper is
     SIG_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
     ST_ARMED : out STD_LOGIC;
     ST_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
+    TRIG_T0 : in STD_LOGIC;
     sys_clock : in STD_LOGIC
   );
 end SP_OV_wrapper;
@@ -59,13 +61,15 @@ architecture STRUCTURE of SP_OV_wrapper is
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
     SIG_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    CSTATE : out STD_LOGIC_VECTOR ( 3 downto 0 );
     ST_ARMED : out STD_LOGIC;
     ST_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
     CT_ARMED : out STD_LOGIC_VECTOR ( 0 to 0 );
     CT_WAITING : out STD_LOGIC_VECTOR ( 0 to 0 );
     PG_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 );
     CLK_STABLE : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DEBUG : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    TRIG_T0 : in STD_LOGIC;
+    E_TRIG : in STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -97,7 +101,6 @@ SP_OV_i: component SP_OV
       CH2 => CH2,
       CH3 => CH3,
       CLK_STABLE(0) => CLK_STABLE(0),
-      CSTATE(3 downto 0) => CSTATE(3 downto 0),
       CT_ARMED(0) => CT_ARMED(0),
       CT_WAITING(0) => CT_WAITING(0),
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -115,6 +118,8 @@ SP_OV_i: component SP_OV
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
+      DEBUG(3 downto 0) => DEBUG(3 downto 0),
+      E_TRIG => E_TRIG,
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
@@ -125,6 +130,7 @@ SP_OV_i: component SP_OV
       SIG_OUT(3 downto 0) => SIG_OUT(3 downto 0),
       ST_ARMED => ST_ARMED,
       ST_WAITING(0) => ST_WAITING(0),
+      TRIG_T0 => TRIG_T0,
       sys_clock => sys_clock
     );
 end STRUCTURE;

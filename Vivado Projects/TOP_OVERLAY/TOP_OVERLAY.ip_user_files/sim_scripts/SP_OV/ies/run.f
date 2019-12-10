@@ -64,66 +64,6 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_clk_wiz_0_0/SP_OV_clk_wiz_0_0_clk_wiz.v" \
   "../../../bd/SP_OV/ip/SP_OV_clk_wiz_0_0/SP_OV_clk_wiz_0_0.v" \
--endlib
--makelib ies_lib/xbip_utils_v3_0_10 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/c_reg_fd_v12_0_6 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xbip_dsp48_wrapper_v3_0_4 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xbip_pipe_v3_0_6 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xbip_dsp48_addsub_v3_0_6 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xbip_addsub_v3_0_6 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/c_addsub_v12_0_13 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/c_addsub_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/c_gate_bit_v12_0_6 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xbip_counter_v3_0_6 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/c_counter_binary_v12_0_13 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/sim/counter.vhd" \
--endlib
--makelib ies_lib/axi_lite_ipif_v3_0_4 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/interrupt_control_v3_1_4 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
--endlib
--makelib ies_lib/axi_gpio_v2_0_21 \
-  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_0/sim/PG_AXI_PERIPH_axi_gpio_0_0.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_0/sim/PG_AXI_PERIPH_axi_ch_0_0.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_1/sim/PG_AXI_PERIPH_axi_ch_0_1.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_2/sim/PG_AXI_PERIPH_axi_ch_0_2.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_1/sim/PG_AXI_PERIPH_axi_gpio_0_1.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_delay_0_0/sim/PG_AXI_PERIPH_axi_delay_0_0.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_2/sim/PG_AXI_PERIPH_axi_gpio_0_2.vhd" \
-  "../../../bd/SP_OV/ipshared/8b4a/sim/PG_AXI_PERIPH_PG_CORE_1_0.vhd" \
-  "../../../bd/SP_OV/ipshared/8b4a/sim/PG_AXI_PERIPH_PG_META_H_0_0.vhd" \
-  "../../../bd/SP_OV/ipshared/8b4a/src/PG_CORE.vhd" \
-  "../../../bd/SP_OV/ipshared/8b4a/src/PG_META_H.vhd" \
-  "../../../bd/SP_OV/ipshared/8b4a/sim/PG_AXI_PERIPH.vhd" \
-  "../../../bd/SP_OV/ipshared/8b4a/src/PG_AXI_PERIPH_wrapper.vhd" \
-  "../../../bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/sim/SP_OV_PG_AXI_PERIPH_wrapper_0_0.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_TIMER_CLK_0/SP_OV_TIMER_CLK_0_clk_wiz.v" \
   "../../../bd/SP_OV/ip/SP_OV_TIMER_CLK_0/SP_OV_TIMER_CLK_0.v" \
 -endlib
@@ -134,9 +74,50 @@
   "../../../bd/SP_OV/ip/SP_OV_util_vector_logic_0_0/sim/SP_OV_util_vector_logic_0_0.v" \
   "../../../bd/SP_OV/ip/SP_OV_util_vector_logic_0_1/sim/SP_OV_util_vector_logic_0_1.v" \
 -endlib
+-makelib ies_lib/axi_lite_ipif_v3_0_4 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/interrupt_control_v3_1_4 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/axi_gpio_v2_0_21 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+-endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_axi_gpio_0_0/sim/ST_AXI_PERIPH_axi_gpio_0_0.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_axi_gpio_0_1/sim/ST_AXI_PERIPH_axi_gpio_0_1.vhd" \
+-endlib
+-makelib ies_lib/xbip_utils_v3_0_10 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/c_reg_fd_v12_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/edec/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_dsp48_wrapper_v3_0_4 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/cdbf/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_pipe_v3_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/7468/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_dsp48_addsub_v3_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/910d/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_addsub_v3_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/cfdd/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/c_addsub_v12_0_13 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/cbe4/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/c_gate_bit_v12_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/7161/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_counter_v3_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/9ac8/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/c_counter_binary_v12_0_13 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/ipshared/23f1/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/src/ST_AXI_PERIPH_SCH_IA_wrapper_0_0/src/SCH_IA_c_counter_binary_0_0/sim/SCH_IA_c_counter_binary_0_0.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
@@ -158,6 +139,7 @@
   "../../../bd/SP_OV/ipshared/9ee9/sim/ST_AXI_PERIPH.vhd" \
   "../../../bd/SP_OV/ipshared/9ee9/src/ST_AXI_PERIPH_wrapper.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_ST_AXI_PERIPH_wrapper_0_0/sim/SP_OV_ST_AXI_PERIPH_wrapper_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/PC_T_CTR/sim/PC_T_CTR.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_axi_gpio_data_0/sim/P_COUNTER_axi_gpio_data_0.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_axi_gpio_data1_0/sim/P_COUNTER_axi_gpio_data1_0.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_axi_gpio_data2_0/sim/P_COUNTER_axi_gpio_data2_0.vhd" \
@@ -176,20 +158,32 @@
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_1_0/sim/P_COUNTER_util_vector_logic_1_0.v" \
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_2_0/sim/P_COUNTER_util_vector_logic_2_0.v" \
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_3_0/sim/P_COUNTER_util_vector_logic_3_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_4_0/sim/P_COUNTER_util_vector_logic_4_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_4_1/sim/P_COUNTER_util_vector_logic_4_1.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_trig_or_1_0/sim/P_COUNTER_ex_trig_or_1_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_trig_or_2_0/sim/P_COUNTER_ex_trig_or_2_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_4_2/sim/P_COUNTER_util_vector_logic_4_2.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_stop_or_0_0/sim/P_COUNTER_ex_stop_or_0_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_stop_or_1_0/sim/P_COUNTER_ex_stop_or_1_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_stop_or_2_0/sim/P_COUNTER_ex_stop_or_2_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_CTR_CTL_0_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_CTR_CTL_1_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_CTR_CTL_2_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_CTR_CTL_3_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_DIG_TIMER_0_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_DIG_TIMER_1_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_DIG_TIMER_2_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER_DIG_TIMER_3_0.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/sim/P_COUNTER.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/src/DIG_TIMER.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/src/CTR_CTL.vhd" \
-  "../../../bd/SP_OV/ipshared/30f9/src/P_COUNTER_wrapper.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_CTR_CTL_0_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_CTR_CTL_1_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_CTR_CTL_2_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_CTR_CTL_3_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_DIG_TIMER_0_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_DIG_TIMER_0_1.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_DIG_TIMER_1_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_DIG_TIMER_2_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_EX_TRIG_CTL_0_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER_FAR_BETTER_AND_0_0.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/src/CTR_CTL.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/src/DIG_TIMER.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/src/EX_TRIG_CTL.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/src/FAR_BETTER_AND.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/sim/P_COUNTER.vhd" \
+  "../../../bd/SP_OV/ipshared/6386/src/P_COUNTER_wrapper.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/sim/SP_OV_P_COUNTER_wrapper_0_0.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/src/t_counter_0/sim/t_counter_0.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/src/CT_AXI_PERIPH_axi_gpio_0_0/sim/CT_AXI_PERIPH_axi_gpio_0_0.vhd" \
@@ -203,7 +197,93 @@
   "../../../bd/SP_OV/ipshared/3717/src/MH_CT.vhd" \
   "../../../bd/SP_OV/ipshared/3717/src/CT_AXI_PERIPH_wrapper.vhd" \
   "../../../bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/sim/SP_OV_CT_AXI_PERIPH_wrapper_0_0.vhd" \
-  "../../../bd/SP_OV/sim/SP_OV.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_DEL_CTR/sim/DDS_DEL_CTR.vhd" \
+-endlib
+-makelib ies_lib/axi_utils_v2_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/1971/hdl/axi_utils_v2_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_bram18k_v3_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/d367/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/mult_gen_v12_0_15 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/d4d2/hdl/mult_gen_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xbip_dsp48_multadd_v3_0_6 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/b0ac/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/dds_compiler_v6_0_18 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/ce25/hdl/dds_compiler_v6_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_0_0/sim/DDS_COM_dds_compiler_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_0_1/sim/DDS_COM_dds_compiler_0_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_1_0/sim/DDS_COM_dds_compiler_1_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_2_0/sim/DDS_COM_dds_compiler_2_0.vhd" \
+-endlib
+-makelib ies_lib/xlconcat_v2_1_3 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_xlconcat_0_0/sim/DDS_COM_xlconcat_0_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_xlconcat_0_1/sim/DDS_COM_xlconcat_0_1.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_filter_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_filter_0_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_filter_1_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_filter_2_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_DELAY_SYNC_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_DC_EN_MOD_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_DC_EN_MOD_0_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_DC_EN_MOD_1_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM_DC_EN_MOD_2_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/src/filter.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/src/DELAY_SYNC.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/src/DC_EN_MOD.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/sim/DDS_COM.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/35cd/src/DDS_COM_wrapper.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/sim/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_0/sim/DDS_AXI_PERIPH_axi_gpio_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_0_0/sim/DDS_AXI_PERIPH_phase_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_1_0/sim/DDS_AXI_PERIPH_phase_1_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_2_0/sim/DDS_AXI_PERIPH_phase_2_0.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_0_0/sim/DDS_AXI_PERIPH_xlconcat_0_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_0_1/sim/DDS_AXI_PERIPH_xlconcat_0_1.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_1_0/sim/DDS_AXI_PERIPH_xlconcat_1_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_2_0/sim/DDS_AXI_PERIPH_xlconcat_2_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_1/sim/DDS_AXI_PERIPH_axi_gpio_0_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_0_1/sim/DDS_AXI_PERIPH_aux_0_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_1_1/sim/DDS_AXI_PERIPH_aux_1_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_2_1/sim/DDS_AXI_PERIPH_aux_2_1.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_2/sim/DDS_AXI_PERIPH_axi_gpio_0_2.vhd" \
+-endlib
+-makelib ies_lib/xlslice_v1_0_2 \
+  "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_0_0/sim/DDS_AXI_PERIPH_xlslice_0_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_0_1/sim/DDS_AXI_PERIPH_xlslice_0_1.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_1_0/sim/DDS_AXI_PERIPH_xlslice_1_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_2_0/sim/DDS_AXI_PERIPH_xlslice_2_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_4_0/sim/DDS_AXI_PERIPH_xlconcat_4_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ipshared/71ac/sim/DDS_AXI_PERIPH.vhd" \
+  "../../../bd/SP_OV/ipshared/71ac/src/DDS_AXI_PERIPH_wrapper.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/sim/SP_OV_DDS_AXI_PERIPH_wrapp_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_ENABLER_0_0/sim/SP_OV_ENABLER_0_0.vhd" \
+  "../../../bd/SP_OV/ip/SP_OV_axi_gpio_0_0/sim/SP_OV_axi_gpio_0_0.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_xlslice_0_0/sim/SP_OV_xlslice_0_0.v" \
+  "../../../bd/SP_OV/ip/SP_OV_xlslice_0_1/sim/SP_OV_xlslice_0_1.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/ip/SP_OV_axi_gpio_0_1/sim/SP_OV_axi_gpio_0_1.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/sim/SP_OV_tier2_xbar_0_0.v" \
@@ -215,6 +295,9 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SP_OV/ip/SP_OV_auto_pc_0/sim/SP_OV_auto_pc_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/SP_OV/sim/SP_OV.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

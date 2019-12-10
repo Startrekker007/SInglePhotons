@@ -41,33 +41,46 @@ entity DIG_TIMER is
 end DIG_TIMER;
 
 architecture Behavioral of DIG_TIMER is
-constant max_outp : unsigned(31 downto 0) := "11111111111111111111111111111111";
-constant zero_val : unsigned(31 downto 0) := "00000000000000000000000000000000";
-signal count : unsigned(31 downto 0) := zero_val;
-signal th_lim : unsigned(31 downto 0) := max_outp;
+signal count : std_logic_vector(31 downto 0);
+signal pipelined_count : unsigned(31 downto 0) := x"00000000";
+signal th_lim : unsigned(31 downto 0) := x"FFFFFFFF";
 signal IDAT_IND : std_logic := '0';
+signal ctr_clk_ctl : std_logic := '1';
+signal ctr_clk : std_logic;
+signal ctr_rst : std_logic := '0';
+component PC_T_CTR is port(
+    CLK : IN STD_LOGIC;
+    CE : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
+    Q : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+);
+end component;
 begin
+ctr_clk <= ctr_clk_ctl and MCLK;
+BRUH : PC_T_CTR port map(
+    CLK => ctr_clk,
+    CE => '1',
+    SCLR => ctr_rst,
+    Q => count
+);
 SYNC_PROC : process(MCLK)
 begin
     if(rising_edge(MCLK)) then
         if(RST = '0') then
-            count <= zero_val;
+            ctr_rst <= '1';
             th_lim <= unsigned(LIM);
+            pipelined_count <= x"00000000";
             IDAT_IND <= '0';
+            ctr_clk_ctl <= '1';
+            CARRY <= '0';
         else
-            if(count <= zero_val) then
-                th_lim <= unsigned(LIM);
-            end if;
-            count <= count+1;
-            if(count >= th_lim/2) then
-                CARRY <= '0';
-            else
-                CARRY <= '1';
-            end if;
-            if(count >= th_lim) then
+            pipelined_count <= unsigned(count);
+            ctr_rst <= '0';
+            if(pipelined_count >= th_lim-1) then
                 th_lim <= unsigned(LIM);
                 CARRY <= '1';
                 IDAT_IND <= '1';
+                ctr_clk_ctl <= '0';
             end if;
         end if;
     end if;

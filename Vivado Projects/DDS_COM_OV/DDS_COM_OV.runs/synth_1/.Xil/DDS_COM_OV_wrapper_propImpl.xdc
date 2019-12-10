@@ -1,5 +1,6 @@
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/sources_1/bd/DDS_COM_OV/ip/DDS_COM_OV_processing_system7_0_0/DDS_COM_OV_processing_system7_0_0.xdc} rfile:../../../DDS_COM_OV.srcs/sources_1/bd/DDS_COM_OV/ip/DDS_COM_OV_processing_system7_0_0/DDS_COM_OV_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:DDS_COM_OV_i/processing_system7_0/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/sources_1/bd/DDS_COM_OV/ip/DDS_COM_OV_clk_wiz_0_0/DDS_COM_OV_clk_wiz_0_0.xdc} rfile:../../../DDS_COM_OV.srcs/sources_1/bd/DDS_COM_OV/ip/DDS_COM_OV_clk_wiz_0_0/DDS_COM_OV_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:DDS_COM_OV_i/clk_wiz_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../DDS_COM_OV.srcs/constrs_1/new/PYNQ-Z1.xdc id:3} [current_design]
 current_instance DDS_COM_OV_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3
@@ -267,3 +268,8 @@ current_instance
 current_instance DDS_COM_OV_i/clk_wiz_0/inst
 set_property src_info {type:SCOPED_XDC file:2 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.08
+current_instance
+set_property src_info {type:XDC file:3 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V16 [get_ports ch0]
+set_property src_info {type:XDC file:3 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W16 [get_ports ch1]

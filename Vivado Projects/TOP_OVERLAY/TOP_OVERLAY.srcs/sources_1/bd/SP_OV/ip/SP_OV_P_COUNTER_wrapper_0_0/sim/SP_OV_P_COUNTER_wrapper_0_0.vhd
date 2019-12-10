@@ -55,11 +55,15 @@ USE ieee.numeric_std.ALL;
 
 ENTITY SP_OV_P_COUNTER_wrapper_0_0 IS
   PORT (
+    EX_STOP_RDY : OUT STD_LOGIC;
+    MCLK : IN STD_LOGIC;
     P_SIG_EX : IN STD_LOGIC;
     P_SIG_EX1 : IN STD_LOGIC;
     P_SIG_EX2 : IN STD_LOGIC;
     P_SIG_EX3 : IN STD_LOGIC;
     TCLK : IN STD_LOGIC;
+    TRIG : IN STD_LOGIC;
+    TRIG_RST : IN STD_LOGIC;
     aclk : IN STD_LOGIC;
     aresetn : IN STD_LOGIC;
     data1_araddr : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -130,6 +134,8 @@ ENTITY SP_OV_P_COUNTER_wrapper_0_0 IS
     data_wready : OUT STD_LOGIC;
     data_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     data_wvalid : IN STD_LOGIC;
+    ex_stop : IN STD_LOGIC;
+    ex_stop_en : IN STD_LOGIC;
     util1_araddr : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
     util1_arready : OUT STD_LOGIC;
     util1_arvalid : IN STD_LOGIC;
@@ -206,11 +212,15 @@ ARCHITECTURE SP_OV_P_COUNTER_wrapper_0_0_arch OF SP_OV_P_COUNTER_wrapper_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF SP_OV_P_COUNTER_wrapper_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT P_COUNTER_wrapper IS
     PORT (
+      EX_STOP_RDY : OUT STD_LOGIC;
+      MCLK : IN STD_LOGIC;
       P_SIG_EX : IN STD_LOGIC;
       P_SIG_EX1 : IN STD_LOGIC;
       P_SIG_EX2 : IN STD_LOGIC;
       P_SIG_EX3 : IN STD_LOGIC;
       TCLK : IN STD_LOGIC;
+      TRIG : IN STD_LOGIC;
+      TRIG_RST : IN STD_LOGIC;
       aclk : IN STD_LOGIC;
       aresetn : IN STD_LOGIC;
       data1_araddr : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -281,6 +291,8 @@ ARCHITECTURE SP_OV_P_COUNTER_wrapper_0_0_arch OF SP_OV_P_COUNTER_wrapper_0_0 IS
       data_wready : OUT STD_LOGIC;
       data_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       data_wvalid : IN STD_LOGIC;
+      ex_stop : IN STD_LOGIC;
+      ex_stop_en : IN STD_LOGIC;
       util1_araddr : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
       util1_arready : OUT STD_LOGIC;
       util1_arvalid : IN STD_LOGIC;
@@ -511,14 +523,20 @@ ARCHITECTURE SP_OV_P_COUNTER_wrapper_0_0_arch OF SP_OV_P_COUNTER_wrapper_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 aresetn RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk, ASSOCIATED_BUSIF data:data1:data2:data3:util:util1:util2:util3, ASSOCIATED_RESET aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN SP_OV_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk CLK";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF TRIG_RST: SIGNAL IS "XIL_INTERFACENAME TRIG_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF TRIG_RST: SIGNAL IS "xilinx.com:signal:reset:1.0 TRIG_RST RST";
 BEGIN
   U0 : P_COUNTER_wrapper
     PORT MAP (
+      EX_STOP_RDY => EX_STOP_RDY,
+      MCLK => MCLK,
       P_SIG_EX => P_SIG_EX,
       P_SIG_EX1 => P_SIG_EX1,
       P_SIG_EX2 => P_SIG_EX2,
       P_SIG_EX3 => P_SIG_EX3,
       TCLK => TCLK,
+      TRIG => TRIG,
+      TRIG_RST => TRIG_RST,
       aclk => aclk,
       aresetn => aresetn,
       data1_araddr => data1_araddr,
@@ -589,6 +607,8 @@ BEGIN
       data_wready => data_wready,
       data_wstrb => data_wstrb,
       data_wvalid => data_wvalid,
+      ex_stop => ex_stop,
+      ex_stop_en => ex_stop_en,
       util1_araddr => util1_araddr,
       util1_arready => util1_arready,
       util1_arvalid => util1_arvalid,

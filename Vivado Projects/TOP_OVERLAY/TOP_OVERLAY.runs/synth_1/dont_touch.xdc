@@ -21,33 +21,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_rst_ps7_0
 # IP: bd/SP_OV/ip/SP_OV_clk_wiz_0_0/SP_OV_clk_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_clk_wiz_0_0 || ORIG_REF_NAME==SP_OV_clk_wiz_0_0} -quiet] -quiet
 
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/SP_OV_PG_AXI_PERIPH_wrapper_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_PG_AXI_PERIPH_wrapper_0_0 || ORIG_REF_NAME==SP_OV_PG_AXI_PERIPH_wrapper_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/counter/counter.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==counter || ORIG_REF_NAME==counter} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_0/PG_AXI_PERIPH_axi_gpio_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_1 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_1} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_2 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_2} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_delay_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_delay_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_2 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_2} -quiet] -quiet
-
 # IP: bd/SP_OV/ip/SP_OV_TIMER_CLK_0/SP_OV_TIMER_CLK_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_TIMER_CLK_0 || ORIG_REF_NAME==SP_OV_TIMER_CLK_0} -quiet] -quiet
 
@@ -77,6 +50,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCH_IA_util_vec
 
 # IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/SP_OV_P_COUNTER_wrapper_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_P_COUNTER_wrapper_0_0 || ORIG_REF_NAME==SP_OV_P_COUNTER_wrapper_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/PC_T_CTR/PC_T_CTR.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==PC_T_CTR || ORIG_REF_NAME==PC_T_CTR} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_axi_gpio_data_0/P_COUNTER_axi_gpio_data_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_axi_gpio_data_0 || ORIG_REF_NAME==P_COUNTER_axi_gpio_data_0} -quiet] -quiet
@@ -126,6 +102,30 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_util_
 # IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_3_0/P_COUNTER_util_vector_logic_3_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_util_vector_logic_3_0 || ORIG_REF_NAME==P_COUNTER_util_vector_logic_3_0} -quiet] -quiet
 
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_4_0/P_COUNTER_util_vector_logic_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_util_vector_logic_4_0 || ORIG_REF_NAME==P_COUNTER_util_vector_logic_4_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_4_1/P_COUNTER_util_vector_logic_4_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_util_vector_logic_4_1 || ORIG_REF_NAME==P_COUNTER_util_vector_logic_4_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_trig_or_1_0/P_COUNTER_ex_trig_or_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_ex_trig_or_1_0 || ORIG_REF_NAME==P_COUNTER_ex_trig_or_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_trig_or_2_0/P_COUNTER_ex_trig_or_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_ex_trig_or_2_0 || ORIG_REF_NAME==P_COUNTER_ex_trig_or_2_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_util_vector_logic_4_2/P_COUNTER_util_vector_logic_4_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_util_vector_logic_4_2 || ORIG_REF_NAME==P_COUNTER_util_vector_logic_4_2} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_stop_or_0_0/P_COUNTER_ex_stop_or_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_ex_stop_or_0_0 || ORIG_REF_NAME==P_COUNTER_ex_stop_or_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_stop_or_1_0/P_COUNTER_ex_stop_or_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_ex_stop_or_1_0 || ORIG_REF_NAME==P_COUNTER_ex_stop_or_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/src/P_COUNTER_ex_stop_or_2_0/P_COUNTER_ex_stop_or_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==P_COUNTER_ex_stop_or_2_0 || ORIG_REF_NAME==P_COUNTER_ex_stop_or_2_0} -quiet] -quiet
+
 # IP: bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/SP_OV_CT_AXI_PERIPH_wrapper_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_CT_AXI_PERIPH_wrapper_0_0 || ORIG_REF_NAME==SP_OV_CT_AXI_PERIPH_wrapper_0_0} -quiet] -quiet
 
@@ -137,6 +137,102 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==CT_AXI_PERIPH_a
 
 # IP: bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/src/CT_AXI_PERIPH_axi_gpio_0_1/CT_AXI_PERIPH_axi_gpio_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==CT_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==CT_AXI_PERIPH_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/SP_OV_DDS_AXI_PERIPH_wrapp_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_DDS_AXI_PERIPH_wrapp_0_0 || ORIG_REF_NAME==SP_OV_DDS_AXI_PERIPH_wrapp_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_DDS_COM_wrapper_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_DDS_COM_wrapper_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_DEL_CTR/DDS_DEL_CTR.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_DEL_CTR || ORIG_REF_NAME==DDS_DEL_CTR} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_0_0/DDS_COM_dds_compiler_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_COM_dds_compiler_0_0 || ORIG_REF_NAME==DDS_COM_dds_compiler_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_0_1/DDS_COM_dds_compiler_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_COM_dds_compiler_0_1 || ORIG_REF_NAME==DDS_COM_dds_compiler_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_1_0/DDS_COM_dds_compiler_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_COM_dds_compiler_1_0 || ORIG_REF_NAME==DDS_COM_dds_compiler_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_dds_compiler_2_0/DDS_COM_dds_compiler_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_COM_dds_compiler_2_0 || ORIG_REF_NAME==DDS_COM_dds_compiler_2_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_xlconcat_0_0/DDS_COM_xlconcat_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_COM_xlconcat_0_0 || ORIG_REF_NAME==DDS_COM_xlconcat_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_xlconcat_0_1/DDS_COM_xlconcat_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_COM_xlconcat_0_1 || ORIG_REF_NAME==DDS_COM_xlconcat_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_0/DDS_AXI_PERIPH_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_0_0/DDS_AXI_PERIPH_phase_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_1_0/DDS_AXI_PERIPH_phase_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_1_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_2_0/DDS_AXI_PERIPH_phase_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_2_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_2_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_0_0/DDS_AXI_PERIPH_xlconcat_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlconcat_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlconcat_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_0_1/DDS_AXI_PERIPH_xlconcat_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlconcat_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlconcat_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_1_0/DDS_AXI_PERIPH_xlconcat_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlconcat_1_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlconcat_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_2_0/DDS_AXI_PERIPH_xlconcat_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlconcat_2_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlconcat_2_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_1/DDS_AXI_PERIPH_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_0_1/DDS_AXI_PERIPH_aux_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_1_1/DDS_AXI_PERIPH_aux_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_1_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_1_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_2_1/DDS_AXI_PERIPH_aux_2_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_2_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_2_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_2/DDS_AXI_PERIPH_axi_gpio_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_2 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_0_0/DDS_AXI_PERIPH_xlslice_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlslice_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_0_1/DDS_AXI_PERIPH_xlslice_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlslice_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlslice_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_1_0/DDS_AXI_PERIPH_xlslice_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlslice_1_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlslice_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlslice_2_0/DDS_AXI_PERIPH_xlslice_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlslice_2_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlslice_2_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_xlconcat_4_0/DDS_AXI_PERIPH_xlconcat_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_xlconcat_4_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_xlconcat_4_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_ENABLER_0_0/SP_OV_ENABLER_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_ENABLER_0_0 || ORIG_REF_NAME==SP_OV_ENABLER_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_axi_gpio_0_0/SP_OV_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_0 || ORIG_REF_NAME==SP_OV_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_xlslice_0_0/SP_OV_xlslice_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_xlslice_0_0 || ORIG_REF_NAME==SP_OV_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_xlslice_0_1/SP_OV_xlslice_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_xlslice_0_1 || ORIG_REF_NAME==SP_OV_xlslice_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_1 || ORIG_REF_NAME==SP_OV_axi_gpio_0_1} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/SP_OV_tier2_xbar_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_tier2_xbar_0_0 || ORIG_REF_NAME==SP_OV_tier2_xbar_0_0} -quiet] -quiet
@@ -166,64 +262,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_clk_wiz_0_0 || ORIG_REF_NAME==SP_OV_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/SP_OV/ip/SP_OV_clk_wiz_0_0/SP_OV_clk_wiz_0_0_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_0/PG_AXI_PERIPH_axi_gpio_0_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_0/PG_AXI_PERIPH_axi_gpio_0_0_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_0/PG_AXI_PERIPH_axi_gpio_0_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_0/PG_AXI_PERIPH_axi_ch_0_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_1 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_1/PG_AXI_PERIPH_axi_ch_0_1.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_1 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_2 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_ch_0_2/PG_AXI_PERIPH_axi_ch_0_2.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_ch_0_2 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_ch_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_1/PG_AXI_PERIPH_axi_gpio_0_1.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_delay_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_delay_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_delay_0_0/PG_AXI_PERIPH_axi_delay_0_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_delay_0_0 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_delay_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_2 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_PG_AXI_PERIPH_wrapper_0_0/src/PG_AXI_PERIPH_axi_gpio_0_2/PG_AXI_PERIPH_axi_gpio_0_2.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==PG_AXI_PERIPH_axi_gpio_0_2 || ORIG_REF_NAME==PG_AXI_PERIPH_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/SP_OV/ip/SP_OV_TIMER_CLK_0/SP_OV_TIMER_CLK_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_TIMER_CLK_0 || ORIG_REF_NAME==SP_OV_TIMER_CLK_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
@@ -336,6 +374,98 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/SP_OV/ip/SP_OV_CT_AXI_PERIPH_wrapper_0_0/src/CT_AXI_PERIPH_axi_gpio_0_1/CT_AXI_PERIPH_axi_gpio_0_1.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==CT_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==CT_AXI_PERIPH_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/src/DDS_COM_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_0/DDS_AXI_PERIPH_axi_gpio_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_0/DDS_AXI_PERIPH_axi_gpio_0_0_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_0/DDS_AXI_PERIPH_axi_gpio_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_0_0/DDS_AXI_PERIPH_phase_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_0_0/DDS_AXI_PERIPH_phase_0_0_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_0_0/DDS_AXI_PERIPH_phase_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_0_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_1_0/DDS_AXI_PERIPH_phase_1_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_1_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_1_0/DDS_AXI_PERIPH_phase_1_0_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_1_0/DDS_AXI_PERIPH_phase_1_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_1_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_2_0/DDS_AXI_PERIPH_phase_2_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_2_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_2_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_2_0/DDS_AXI_PERIPH_phase_2_0_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_phase_2_0/DDS_AXI_PERIPH_phase_2_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_phase_2_0 || ORIG_REF_NAME==DDS_AXI_PERIPH_phase_2_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_1/DDS_AXI_PERIPH_axi_gpio_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_1/DDS_AXI_PERIPH_axi_gpio_0_1_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_1/DDS_AXI_PERIPH_axi_gpio_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_0_1/DDS_AXI_PERIPH_aux_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_0_1/DDS_AXI_PERIPH_aux_0_1_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_0_1/DDS_AXI_PERIPH_aux_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_0_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_1_1/DDS_AXI_PERIPH_aux_1_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_1_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_1_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_1_1/DDS_AXI_PERIPH_aux_1_1_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_1_1/DDS_AXI_PERIPH_aux_1_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_1_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_1_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_2_1/DDS_AXI_PERIPH_aux_2_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_2_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_2_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_2_1/DDS_AXI_PERIPH_aux_2_1_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_aux_2_1/DDS_AXI_PERIPH_aux_2_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_aux_2_1 || ORIG_REF_NAME==DDS_AXI_PERIPH_aux_2_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_2/DDS_AXI_PERIPH_axi_gpio_0_2_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_2 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_2/DDS_AXI_PERIPH_axi_gpio_0_2_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_axi_gpio_0_2/DDS_AXI_PERIPH_axi_gpio_0_2.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_2 || ORIG_REF_NAME==DDS_AXI_PERIPH_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_axi_gpio_0_0/SP_OV_axi_gpio_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_0 || ORIG_REF_NAME==SP_OV_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_axi_gpio_0_0/SP_OV_axi_gpio_0_0_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_axi_gpio_0_0/SP_OV_axi_gpio_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_0 || ORIG_REF_NAME==SP_OV_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_1 || ORIG_REF_NAME==SP_OV_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_1 || ORIG_REF_NAME==SP_OV_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/SP_OV_tier2_xbar_0_0_ooc.xdc
 

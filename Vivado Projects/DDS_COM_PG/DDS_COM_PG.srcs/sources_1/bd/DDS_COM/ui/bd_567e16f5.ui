@@ -2,30 +2,85 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
 #  -string -flagsOSRD
-preplace port clk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
-preplace port rst -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
-preplace port tval0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
-preplace port sig_out -pg 1 -lvl 3 -x 680 -y 120 -defaultsOSRD
-preplace port tval1 -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
-preplace port sig_out1 -pg 1 -lvl 3 -x 680 -y 330 -defaultsOSRD
-preplace portBus phase_inc0 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
-preplace portBus phase_inc1 -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD
-preplace inst dds_compiler_0 -pg 1 -lvl 1 -x 230 -y 100 -defaultsOSRD
-preplace inst filter_0 -pg 1 -lvl 2 -x 550 -y 120 -defaultsOSRD
-preplace inst dds_compiler_1 -pg 1 -lvl 1 -x 230 -y 310 -defaultsOSRD
-preplace inst filter_1 -pg 1 -lvl 2 -x 550 -y 330 -defaultsOSRD
-preplace netloc clk_1 1 0 2 30 200 430
-preplace netloc rst_1 1 0 2 20 210 440
-preplace netloc tval_1 1 0 1 NJ 100
-preplace netloc filter_0_c_out 1 2 1 NJ 120
-preplace netloc dds_compiler_0_m_axis_data_tdata 1 1 1 N 100
-preplace netloc dds_compiler_1_m_axis_data_tdata 1 1 1 N 310
-preplace netloc phase_inc_1 1 0 1 NJ 80
-preplace netloc phase_inc1_1 1 0 1 NJ 290
-preplace netloc tval1_1 1 0 1 NJ 310
-preplace netloc filter_1_c_out 1 2 1 NJ 330
-levelinfo -pg 1 0 230 550 680
-pagesize -pg 1 -db -bbox -sgen -160 0 790 410
+preplace port clk -pg 1 -lvl 0 -x -20 -y 120 -defaultsOSRD
+preplace port rst -pg 1 -lvl 0 -x -20 -y 190 -defaultsOSRD
+preplace port tval0 -pg 1 -lvl 0 -x -20 -y 370 -defaultsOSRD
+preplace port sig_out -pg 1 -lvl 5 -x 1300 -y 510 -defaultsOSRD
+preplace port tval1 -pg 1 -lvl 0 -x -20 -y 100 -defaultsOSRD
+preplace port sig_out1 -pg 1 -lvl 5 -x 1300 -y 190 -defaultsOSRD
+preplace port tval2 -pg 1 -lvl 0 -x -20 -y 600 -defaultsOSRD
+preplace port sig_out2 -pg 1 -lvl 5 -x 1300 -y 990 -defaultsOSRD
+preplace port sig_out3 -pg 1 -lvl 5 -x 1300 -y 830 -defaultsOSRD
+preplace port tval3 -pg 1 -lvl 0 -x -20 -y 920 -defaultsOSRD
+preplace port done -pg 1 -lvl 5 -x 1300 -y 100 -defaultsOSRD
+preplace portBus phase_inc0 -pg 1 -lvl 0 -x -20 -y 350 -defaultsOSRD
+preplace portBus phase_inc1 -pg 1 -lvl 0 -x -20 -y 80 -defaultsOSRD
+preplace portBus phase_inc2 -pg 1 -lvl 0 -x -20 -y 580 -defaultsOSRD
+preplace portBus phase_inc3 -pg 1 -lvl 0 -x -20 -y 900 -defaultsOSRD
+preplace portBus DEL0 -pg 1 -lvl 0 -x -20 -y 210 -defaultsOSRD
+preplace portBus DEL1 -pg 1 -lvl 0 -x -20 -y 230 -defaultsOSRD
+preplace portBus DEL2 -pg 1 -lvl 0 -x -20 -y 250 -defaultsOSRD
+preplace portBus DEL3 -pg 1 -lvl 0 -x -20 -y 270 -defaultsOSRD
+preplace portBus DC0 -pg 1 -lvl 0 -x -20 -y 480 -defaultsOSRD
+preplace portBus DC1 -pg 1 -lvl 0 -x -20 -y 330 -defaultsOSRD
+preplace portBus DC2 -pg 1 -lvl 0 -x -20 -y 820 -defaultsOSRD
+preplace portBus DC3 -pg 1 -lvl 0 -x -20 -y 800 -defaultsOSRD
+preplace portBus DEBUG -pg 1 -lvl 5 -x 1300 -y 350 -defaultsOSRD
+preplace portBus DEBUG2 -pg 1 -lvl 5 -x 1300 -y 670 -defaultsOSRD
+preplace inst dds_compiler_0 -pg 1 -lvl 2 -x 510 -y 370 -defaultsOSRD
+preplace inst dds_compiler_1 -pg 1 -lvl 2 -x 510 -y 100 -defaultsOSRD
+preplace inst dds_compiler_2 -pg 1 -lvl 2 -x 510 -y 600 -defaultsOSRD
+preplace inst dds_compiler_3 -pg 1 -lvl 2 -x 510 -y 920 -defaultsOSRD
+preplace inst filter_0 -pg 1 -lvl 3 -x 900 -y 400 -defaultsOSRD
+preplace inst filter_1 -pg 1 -lvl 3 -x 900 -y 190 -defaultsOSRD
+preplace inst filter_2 -pg 1 -lvl 3 -x 900 -y 570 -defaultsOSRD
+preplace inst filter_3 -pg 1 -lvl 3 -x 900 -y 710 -defaultsOSRD
+preplace inst DELAY_SYNC_0 -pg 1 -lvl 1 -x 130 -y 220 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 4 -x 1180 -y 350 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 4 -x 1180 -y 670 -defaultsOSRD
+preplace inst DC_EN_MOD_0 -pg 1 -lvl 4 -x 1180 -y 510 -defaultsOSRD
+preplace inst DC_EN_MOD_1 -pg 1 -lvl 4 -x 1180 -y 190 -defaultsOSRD
+preplace inst DC_EN_MOD_2 -pg 1 -lvl 4 -x 1180 -y 990 -defaultsOSRD
+preplace inst DC_EN_MOD_3 -pg 1 -lvl 4 -x 1180 -y 830 -defaultsOSRD
+preplace netloc clk_1 1 0 4 20 110 260 230 750 110 1040
+preplace netloc tval_1 1 0 2 NJ 370 NJ
+preplace netloc dds_compiler_0_m_axis_data_tdata 1 2 1 N 380
+preplace netloc dds_compiler_1_m_axis_data_tdata 1 2 1 740 110n
+preplace netloc phase_inc_1 1 0 2 NJ 350 NJ
+preplace netloc phase_inc1_1 1 0 2 NJ 80 NJ
+preplace netloc tval1_1 1 0 2 0J 70 300J
+preplace netloc dds_compiler_2_m_axis_data_tdata 1 2 1 730 550n
+preplace netloc tval2_1 1 0 2 NJ 600 NJ
+preplace netloc phase_inc2_1 1 0 2 NJ 580 NJ
+preplace netloc phase_inc3_1 1 0 2 NJ 900 NJ
+preplace netloc tval3_1 1 0 2 NJ 920 NJ
+preplace netloc dds_compiler_3_m_axis_data_tdata 1 2 1 760 690n
+preplace netloc DELAY_SYNC_0_RST0 1 1 3 270 470 770 490 1080
+preplace netloc DELAY_SYNC_0_RST1 1 1 3 280 210 730 90 1070
+preplace netloc DELAY_SYNC_0_RST2 1 1 3 250 700 770 790 1070
+preplace netloc DELAY_SYNC_0_RST3 1 1 3 240 820 780 820 1020
+preplace netloc rst_1 1 0 1 NJ 190
+preplace netloc DEL0_1 1 0 1 NJ 210
+preplace netloc DEL3_1 1 0 1 NJ 270
+preplace netloc DEL2_1 1 0 1 NJ 250
+preplace netloc DEL1_1 1 0 1 NJ 230
+preplace netloc filter_1_c_out 1 3 1 1060 190n
+preplace netloc filter_0_c_out 1 3 1 1050 400n
+preplace netloc filter_2_c_out 1 3 1 1010 570n
+preplace netloc filter_3_c_out 1 3 1 1080 700n
+preplace netloc DC_EN_MOD_1_RES 1 4 1 NJ 190
+preplace netloc DC_EN_MOD_0_RES 1 4 1 NJ 510
+preplace netloc DC_EN_MOD_2_RES 1 4 1 NJ 990
+preplace netloc DC_EN_MOD_3_RES 1 4 1 NJ 830
+preplace netloc DELAY_SYNC_0_DONE 1 1 4 NJ 260 720J 100 NJ 100 NJ
+preplace netloc DC0_1 1 0 4 NJ 480 NJ 480 NJ 480 NJ
+preplace netloc DC1_1 1 0 4 10J 100 290J 200 710J 80 1080J
+preplace netloc DC2_1 1 0 4 10J 810 NJ 810 NJ 810 1030J
+preplace netloc DC3_1 1 0 4 NJ 800 NJ 800 NJ 800 NJ
+preplace netloc xlconcat_0_dout 1 4 1 NJ 350
+preplace netloc xlconcat_1_dout 1 4 1 NJ 670
+levelinfo -pg 1 -20 130 510 900 1180 1300
+pagesize -pg 1 -db -bbox -sgen -180 0 1440 1080
 "
 }
 {

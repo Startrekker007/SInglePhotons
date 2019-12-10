@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Dec  6 08:58:28 2019
+| Date         : Tue Dec 10 12:45:40 2019
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_drc -file SP_OV_wrapper_drc_routed.rpt -pb SP_OV_wrapper_drc_routed.pb -rpx SP_OV_wrapper_drc_routed.rpx
 | Design       : SP_OV_wrapper
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 12
+             Violations found: 20
 +-------------+----------+-----------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                     | Violations |
 +-------------+----------+-----------------------------------------------------------------+------------+
-| PDRC-153    | Warning  | Gated clock check                                               | 4          |
-| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations     | 4          |
+| PDRC-153    | Warning  | Gated clock check                                               | 8          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations     | 8          |
 | AVAL-5      | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 4          |
 +-------------+----------+-----------------------------------------------------------------+------------+
 
@@ -37,46 +37,90 @@ Table of Contents
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
-Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/c_counter_binary_0_i_1/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/c_counter_binary_0_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/O_CLK/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/O_CLK. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/c_counter_binary_1_i_1/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/c_counter_binary_1_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/O_CLK/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/O_CLK. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/c_counter_binary_2_i_1/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/c_counter_binary_2_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/O_CLK/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/O_CLK. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/c_counter_binary_3_i_1/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/c_counter_binary_3_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/O_CLK/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/O_CLK. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH_i_1/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH_i_1__0/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH_i_1__1/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH_i_1__2/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH_i_1__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/c_counter_binary_0_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/O_CLK is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/c_counter_binary_0/U0/i_synth/i_baseip.i_xbip_counter/i_dsp48.i_dsp/i_vx7.i_dsp48e_wrap/i_primitive
 Related violations: <none>
 
 PLHOLDVIO-2#2 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/c_counter_binary_1_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_1/U0/O_CLK is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/c_counter_binary_1/U0/i_synth/i_baseip.i_xbip_counter/i_dsp48.i_dsp/i_vx7.i_dsp48e_wrap/i_primitive
 Related violations: <none>
 
 PLHOLDVIO-2#3 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/c_counter_binary_2_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_2/U0/O_CLK is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/c_counter_binary_2/U0/i_synth/i_baseip.i_xbip_counter/i_dsp48.i_dsp/i_vx7.i_dsp48e_wrap/i_primitive
 Related violations: <none>
 
 PLHOLDVIO-2#4 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/c_counter_binary_3_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_3/U0/O_CLK is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/c_counter_binary_3/U0/i_synth/i_baseip.i_xbip_counter/i_dsp48.i_dsp/i_vx7.i_dsp48e_wrap/i_primitive
+Related violations: <none>
+
+PLHOLDVIO-2#5 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH_i_1 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[10], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[11], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[12], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[13], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[14], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[15], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[17], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[18], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[19], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[1], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[20], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[21], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[22], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_0/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[23] (the first 15 of 32 listed)
+Related violations: <none>
+
+PLHOLDVIO-2#6 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH_i_1__0 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[10], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[11], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[12], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[13], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[14], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[15], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[17], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[18], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[19], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[1], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[20], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[21], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[22], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_1/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[23] (the first 15 of 32 listed)
+Related violations: <none>
+
+PLHOLDVIO-2#7 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH_i_1__1 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[10], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[11], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[12], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[13], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[14], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[15], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[17], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[18], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[19], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[1], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[20], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[21], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[22], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_2/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[23] (the first 15 of 32 listed)
+Related violations: <none>
+
+PLHOLDVIO-2#8 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH_i_1__2 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[10], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[11], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[12], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[13], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[14], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[15], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[17], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[18], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[19], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[1], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[20], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[21], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[22], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[23] (the first 15 of 32 listed)
 Related violations: <none>
 
 AVAL-5#1 Advisory

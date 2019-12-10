@@ -66,6 +66,10 @@ begin
     THRESH <= "00000000000000000000000000001010";
     wait for 50ns;
     reset <= '1';
+    wait for 100ns;
+    reset <= '0';
+    wait for 5ns;
+    reset <= '1';
     wait;
 end process;
 MCLK <= not MCLK after 1ns;

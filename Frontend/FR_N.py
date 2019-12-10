@@ -101,9 +101,13 @@ class MainWindow:
         lblWindow.grid(row=1,column=1)
         txtWindow = Entry(self.pcw)
         txtWindow.grid(row=1,column=2)
-        btnStart = Button(self.pcw,text="Start",command = lambda: self.tx("PC"+str(float(txtWindow.get()))))
+        btnStart = Button(self.pcw,text="Start",command = lambda: self.tx("PC"+"0"+str(float(txtWindow.get()))))
         btnStart.grid(row=2,column=1)
-
+        btnStart1 = Button(self.pcw, text="Start with ex-trig", command=lambda: self.tx("PC" + "1"+str(float(txtWindow.get()))))
+        btnStart1.grid(row=3, column=1)
+        btnStart2 = Button(self.pcw, text="Start with ex-trig and stop",
+                           command=lambda: self.tx("PC" + "2" + str(float(txtWindow.get()))))
+        btnStart2.grid(row=4, column=1)
     def CTSTWin(self):
         if(self.ctstw != None):
             self.ctstw.destroy()
@@ -118,12 +122,15 @@ class MainWindow:
             self.pgw.destroy()
         self.pgw = Toplevel()
         self.pgw.wm_title("Pulse Generator")
+        self.tgldcv = 0
         ch0g = LabelFrame(self.pgw,text="Channel Options",padx=5,pady=5)
         ch0g.pack(side='top')
         var = IntVar()
         chkenabled = Checkbutton(ch0g,text="Enabled?",variable = var)
         chkenabled.v = var
         chkenabled.grid(row=1,column=1)
+
+
         lblFreq = Label(ch0g,text="Frequency (Hz):")
         lblFreq.grid(row=2,column=1)
         txtFreq = Entry(ch0g)
@@ -138,7 +145,8 @@ class MainWindow:
         txtDel.grid(row=4, column=2)
         elemlist = [chkenabled,txtFreq,txtDC,txtDel]
         cbtns = []
-
+        btnDCToggle = Button(ch0g, text="Define pulse width", command = lambda: self.toggleDC([btnDCToggle,lblDC]))
+        btnDCToggle.grid(row=1,column=2)
         cbtns.append(Button(ch0g,text=("Apply to CH"+str(0)),command= lambda: self.configurePG(elemlist,0)))
         cbtns[0].grid(row=(5+0),column=1)
         cbtns.append(Button(ch0g, text=("Apply to CH" + str(1)), command=lambda: self.configurePG(elemlist, 1)))
@@ -150,12 +158,23 @@ class MainWindow:
     def configurePG(self,elemlist,channel):
         en = elemlist[0].v.get()
         freq = float(elemlist[1].get())
-        dc = float(elemlist[2].get())/100
+        if(self.tgldcv==0):
+            dc = float(elemlist[2].get())/100
+        else:
+            dc = float(elemlist[2].get())
         delay = float(elemlist[3].get())/1000
-        paramdict = {'ch':channel,'enable':en,'frequency':freq,'dc':dc,'del':delay}
+        paramdict = {'ch':channel,'enable':en,'frequency':freq,'dc':dc,'del':delay,'dcm':self.tgldcv}
         jspayload = json.dumps(paramdict)
         self.tx("PG"+jspayload)
-
+    def toggleDC(self,ellist):
+        if(self.tgldcv==0):
+            ellist[0]['text']="Define duty cycle"
+            ellist[1]['text']="Pulse width (ms):"
+            self.tgldcv=1
+        else:
+            ellist[0]['text'] = "Define pulse width"
+            ellist[1]['text'] = "Duty Cycle (%):"
+            self.tgldcv = 0
     def tx(self,text):
         print("TX:"+text)
         self.websocket.sendall(text.encode())
@@ -204,10 +223,10 @@ class MainWindow:
             if(dat[:2]=="PC"):
                 vals = json.loads(dat[2:])
                 self.pcr=vals
-            if(dat[:2]=="ST"):
+            elif(dat[:2]=="ST"):
                 vals=dat[2:]
                 self.stct[0]=float(vals)
-            if (dat[:2] == "CT"):
+            elif (dat[:2] == "CT"):
                 vals = dat[2:]
                 self.stct[1] = float(vals)
             self.updateResWin()

@@ -3,10 +3,6 @@
   "../../../bd/P_COUNTER/ip/P_COUNTER_CTR_CTL_1_0/sim/P_COUNTER_CTR_CTL_1_0.vhd" \
   "../../../bd/P_COUNTER/ip/P_COUNTER_CTR_CTL_2_0/sim/P_COUNTER_CTR_CTL_2_0.vhd" \
   "../../../bd/P_COUNTER/ip/P_COUNTER_CTR_CTL_3_0/sim/P_COUNTER_CTR_CTL_3_0.vhd" \
-  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_0_0/sim/P_COUNTER_DIG_TIMER_0_0.vhd" \
-  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_1_0/sim/P_COUNTER_DIG_TIMER_1_0.vhd" \
-  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_2_0/sim/P_COUNTER_DIG_TIMER_2_0.vhd" \
-  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_3_0/sim/P_COUNTER_DIG_TIMER_3_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
   "../../../../COUNTER_IP.srcs/sources_1/bd/P_COUNTER/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
@@ -74,6 +70,32 @@
   "../../../bd/P_COUNTER/ip/P_COUNTER_util_vector_logic_1_0/sim/P_COUNTER_util_vector_logic_1_0.v" \
   "../../../bd/P_COUNTER/ip/P_COUNTER_util_vector_logic_2_0/sim/P_COUNTER_util_vector_logic_2_0.v" \
   "../../../bd/P_COUNTER/ip/P_COUNTER_util_vector_logic_3_0/sim/P_COUNTER_util_vector_logic_3_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_0_0/sim/P_COUNTER_DIG_TIMER_0_0.vhd" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_0_1/sim/P_COUNTER_DIG_TIMER_0_1.vhd" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_1_0/sim/P_COUNTER_DIG_TIMER_1_0.vhd" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_DIG_TIMER_2_0/sim/P_COUNTER_DIG_TIMER_2_0.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_util_vector_logic_4_0/sim/P_COUNTER_util_vector_logic_4_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_EX_TRIG_CTL_0_0/sim/P_COUNTER_EX_TRIG_CTL_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_util_vector_logic_4_1/sim/P_COUNTER_util_vector_logic_4_1.v" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_ex_trig_or_1_0/sim/P_COUNTER_ex_trig_or_1_0.v" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_ex_trig_or_2_0/sim/P_COUNTER_ex_trig_or_2_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_FAR_BETTER_AND_0_0/sim/P_COUNTER_FAR_BETTER_AND_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_util_vector_logic_4_2/sim/P_COUNTER_util_vector_logic_4_2.v" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_ex_stop_or_0_0/sim/P_COUNTER_ex_stop_or_0_0.v" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_ex_stop_or_1_0/sim/P_COUNTER_ex_stop_or_1_0.v" \
+  "../../../bd/P_COUNTER/ip/P_COUNTER_ex_stop_or_2_0/sim/P_COUNTER_ex_stop_or_2_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/P_COUNTER/sim/P_COUNTER.vhd" \

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec  4 12:29:31 2019
+--Date        : Tue Dec 10 11:28:18 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target P_COUNTER_wrapper.bd
 --Design      : P_COUNTER_wrapper
@@ -13,11 +13,15 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity P_COUNTER_wrapper is
   port (
+    EX_STOP_RDY : out STD_LOGIC;
+    MCLK : in STD_LOGIC;
     P_SIG_EX : in STD_LOGIC;
     P_SIG_EX1 : in STD_LOGIC;
     P_SIG_EX2 : in STD_LOGIC;
     P_SIG_EX3 : in STD_LOGIC;
     TCLK : in STD_LOGIC;
+    TRIG : in STD_LOGIC;
+    TRIG_RST : in STD_LOGIC;
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     data1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
@@ -88,6 +92,8 @@ entity P_COUNTER_wrapper is
     data_wready : out STD_LOGIC;
     data_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     data_wvalid : in STD_LOGIC;
+    ex_stop : in STD_LOGIC;
+    ex_stop_en : in STD_LOGIC;
     util1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     util1_arready : out STD_LOGIC;
     util1_arvalid : in STD_LOGIC;
@@ -169,6 +175,12 @@ architecture STRUCTURE of P_COUNTER_wrapper is
     TCLK : in STD_LOGIC;
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    TRIG : in STD_LOGIC;
+    TRIG_RST : in STD_LOGIC;
+    ex_stop : in STD_LOGIC;
+    ex_stop_en : in STD_LOGIC;
+    EX_STOP_RDY : out STD_LOGIC;
     data_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     data_arready : out STD_LOGIC;
     data_arvalid : in STD_LOGIC;
@@ -186,23 +198,6 @@ architecture STRUCTURE of P_COUNTER_wrapper is
     data_wready : out STD_LOGIC;
     data_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     data_wvalid : in STD_LOGIC;
-    data1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data1_arready : out STD_LOGIC;
-    data1_arvalid : in STD_LOGIC;
-    data1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    data1_awready : out STD_LOGIC;
-    data1_awvalid : in STD_LOGIC;
-    data1_bready : in STD_LOGIC;
-    data1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data1_bvalid : out STD_LOGIC;
-    data1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    data1_rready : in STD_LOGIC;
-    data1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    data1_rvalid : out STD_LOGIC;
-    data1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    data1_wready : out STD_LOGIC;
-    data1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    data1_wvalid : in STD_LOGIC;
     data2_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     data2_arready : out STD_LOGIC;
     data2_arvalid : in STD_LOGIC;
@@ -254,6 +249,23 @@ architecture STRUCTURE of P_COUNTER_wrapper is
     util_wready : out STD_LOGIC;
     util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     util_wvalid : in STD_LOGIC;
+    util3_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util3_arready : out STD_LOGIC;
+    util3_arvalid : in STD_LOGIC;
+    util3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util3_awready : out STD_LOGIC;
+    util3_awvalid : in STD_LOGIC;
+    util3_bready : in STD_LOGIC;
+    util3_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util3_bvalid : out STD_LOGIC;
+    util3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    util3_rready : in STD_LOGIC;
+    util3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util3_rvalid : out STD_LOGIC;
+    util3_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    util3_wready : out STD_LOGIC;
+    util3_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    util3_wvalid : in STD_LOGIC;
     util1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     util1_arready : out STD_LOGIC;
     util1_arvalid : in STD_LOGIC;
@@ -288,33 +300,37 @@ architecture STRUCTURE of P_COUNTER_wrapper is
     util2_wready : out STD_LOGIC;
     util2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     util2_wvalid : in STD_LOGIC;
-    util3_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util3_arready : out STD_LOGIC;
-    util3_arvalid : in STD_LOGIC;
-    util3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util3_awready : out STD_LOGIC;
-    util3_awvalid : in STD_LOGIC;
-    util3_bready : in STD_LOGIC;
-    util3_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util3_bvalid : out STD_LOGIC;
-    util3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    util3_rready : in STD_LOGIC;
-    util3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util3_rvalid : out STD_LOGIC;
-    util3_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    util3_wready : out STD_LOGIC;
-    util3_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    util3_wvalid : in STD_LOGIC
+    data1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data1_arready : out STD_LOGIC;
+    data1_arvalid : in STD_LOGIC;
+    data1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    data1_awready : out STD_LOGIC;
+    data1_awvalid : in STD_LOGIC;
+    data1_bready : in STD_LOGIC;
+    data1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data1_bvalid : out STD_LOGIC;
+    data1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    data1_rready : in STD_LOGIC;
+    data1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    data1_rvalid : out STD_LOGIC;
+    data1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    data1_wready : out STD_LOGIC;
+    data1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    data1_wvalid : in STD_LOGIC
   );
   end component P_COUNTER;
 begin
 P_COUNTER_i: component P_COUNTER
      port map (
+      EX_STOP_RDY => EX_STOP_RDY,
+      MCLK => MCLK,
       P_SIG_EX => P_SIG_EX,
       P_SIG_EX1 => P_SIG_EX1,
       P_SIG_EX2 => P_SIG_EX2,
       P_SIG_EX3 => P_SIG_EX3,
       TCLK => TCLK,
+      TRIG => TRIG,
+      TRIG_RST => TRIG_RST,
       aclk => aclk,
       aresetn => aresetn,
       data1_araddr(8 downto 0) => data1_araddr(8 downto 0),
@@ -385,6 +401,8 @@ P_COUNTER_i: component P_COUNTER
       data_wready => data_wready,
       data_wstrb(3 downto 0) => data_wstrb(3 downto 0),
       data_wvalid => data_wvalid,
+      ex_stop => ex_stop,
+      ex_stop_en => ex_stop_en,
       util1_araddr(8 downto 0) => util1_araddr(8 downto 0),
       util1_arready => util1_arready,
       util1_arvalid => util1_arvalid,

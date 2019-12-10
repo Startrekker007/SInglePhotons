@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xEF41D5DD603D8AED",
+      "boundary_crc": "0xAE59222EE98AD701",
       "device": "xc7z020clg400-1",
       "name": "DDS_COM",
       "synth_flow_mode": "None",
@@ -10,9 +10,20 @@
     },
     "design_tree": {
       "dds_compiler_0": "",
-      "filter_0": "",
       "dds_compiler_1": "",
-      "filter_1": ""
+      "dds_compiler_2": "",
+      "dds_compiler_3": "",
+      "filter_0": "",
+      "filter_1": "",
+      "filter_2": "",
+      "filter_3": "",
+      "DELAY_SYNC_0": "",
+      "xlconcat_0": "",
+      "xlconcat_1": "",
+      "DC_EN_MOD_0": "",
+      "DC_EN_MOD_1": "",
+      "DC_EN_MOD_2": "",
+      "DC_EN_MOD_3": ""
     },
     "ports": {
       "phase_inc0": {
@@ -48,6 +59,93 @@
       },
       "sig_out1": {
         "direction": "O"
+      },
+      "phase_inc2": {
+        "direction": "I",
+        "left": "47",
+        "right": "0"
+      },
+      "tval2": {
+        "direction": "I"
+      },
+      "sig_out2": {
+        "direction": "O"
+      },
+      "phase_inc3": {
+        "direction": "I",
+        "left": "47",
+        "right": "0"
+      },
+      "sig_out3": {
+        "direction": "O"
+      },
+      "tval3": {
+        "direction": "I"
+      },
+      "DEL0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DEL1": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DEL2": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DEL3": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "done": {
+        "direction": "O"
+      },
+      "DC0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DC1": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DC2": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DC3": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "DEBUG": {
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "PortWidth": {
+            "value": "4",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "DEBUG2": {
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "PortWidth": {
+            "value": "4",
+            "value_src": "ip_prop"
+          }
+        }
       }
     },
     "components": {
@@ -55,6 +153,9 @@
         "vlnv": "xilinx.com:ip:dds_compiler:6.0",
         "xci_name": "DDS_COM_dds_compiler_0_0",
         "parameters": {
+          "Amplitude_Mode": {
+            "value": "Unit_Circle"
+          },
           "Channels": {
             "value": "1"
           },
@@ -62,7 +163,7 @@
             "value": "Not_Required"
           },
           "DDS_Clock_Rate": {
-            "value": "464.063"
+            "value": "460"
           },
           "Frequency_Resolution": {
             "value": "1.64869e-6"
@@ -74,7 +175,7 @@
             "value": "false"
           },
           "Latency": {
-            "value": "5"
+            "value": "6"
           },
           "M_DATA_Has_TUSER": {
             "value": "Not_Required"
@@ -98,7 +199,10 @@
             "value": "8"
           },
           "PINC1": {
-            "value": "10010100000101010000"
+            "value": "1000110100111000111000100110100011111011"
+          },
+          "POFF1": {
+            "value": "100000000000000000000000000000000000000000000000"
           },
           "Parameter_Entry": {
             "value": "Hardware_Parameters"
@@ -113,7 +217,232 @@
             "value": "48"
           },
           "Phase_offset": {
+            "value": "Fixed"
+          },
+          "S_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          }
+        }
+      },
+      "dds_compiler_1": {
+        "vlnv": "xilinx.com:ip:dds_compiler:6.0",
+        "xci_name": "DDS_COM_dds_compiler_0_1",
+        "parameters": {
+          "Amplitude_Mode": {
+            "value": "Unit_Circle"
+          },
+          "Channels": {
+            "value": "1"
+          },
+          "DATA_Has_TLAST": {
+            "value": "Not_Required"
+          },
+          "DDS_Clock_Rate": {
+            "value": "460"
+          },
+          "Frequency_Resolution": {
+            "value": "0.4"
+          },
+          "Has_ARESETn": {
+            "value": "true"
+          },
+          "Has_Phase_Out": {
+            "value": "false"
+          },
+          "Latency": {
+            "value": "6"
+          },
+          "M_DATA_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "M_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "Mode_of_Operation": {
+            "value": "Standard"
+          },
+          "Noise_Shaping": {
             "value": "None"
+          },
+          "Output_Frequency1": {
+            "value": "0"
+          },
+          "Output_Selection": {
+            "value": "Sine"
+          },
+          "Output_Width": {
+            "value": "8"
+          },
+          "PINC1": {
+            "value": "10001101001110001110001001101000111110110"
+          },
+          "POFF1": {
+            "value": "100000000000000000000000000000000000000000000000"
+          },
+          "Parameter_Entry": {
+            "value": "Hardware_Parameters"
+          },
+          "PartsPresent": {
+            "value": "Phase_Generator_and_SIN_COS_LUT"
+          },
+          "Phase_Increment": {
+            "value": "Programmable"
+          },
+          "Phase_Width": {
+            "value": "48"
+          },
+          "Phase_offset": {
+            "value": "Fixed"
+          },
+          "S_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          }
+        }
+      },
+      "dds_compiler_2": {
+        "vlnv": "xilinx.com:ip:dds_compiler:6.0",
+        "xci_name": "DDS_COM_dds_compiler_1_0",
+        "parameters": {
+          "Amplitude_Mode": {
+            "value": "Unit_Circle"
+          },
+          "Channels": {
+            "value": "1"
+          },
+          "DATA_Has_TLAST": {
+            "value": "Not_Required"
+          },
+          "DDS_Clock_Rate": {
+            "value": "460"
+          },
+          "Frequency_Resolution": {
+            "value": "0.4"
+          },
+          "Has_ARESETn": {
+            "value": "true"
+          },
+          "Has_Phase_Out": {
+            "value": "false"
+          },
+          "Latency": {
+            "value": "6"
+          },
+          "M_DATA_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "M_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "Mode_of_Operation": {
+            "value": "Standard"
+          },
+          "Noise_Shaping": {
+            "value": "None"
+          },
+          "Output_Frequency1": {
+            "value": "0"
+          },
+          "Output_Selection": {
+            "value": "Sine"
+          },
+          "Output_Width": {
+            "value": "8"
+          },
+          "PINC1": {
+            "value": "10001101001110001110001001101000111110110"
+          },
+          "POFF1": {
+            "value": "100000000000000000000000000000000000000000000000"
+          },
+          "Parameter_Entry": {
+            "value": "Hardware_Parameters"
+          },
+          "PartsPresent": {
+            "value": "Phase_Generator_and_SIN_COS_LUT"
+          },
+          "Phase_Increment": {
+            "value": "Programmable"
+          },
+          "Phase_Width": {
+            "value": "48"
+          },
+          "Phase_offset": {
+            "value": "Fixed"
+          },
+          "S_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          }
+        }
+      },
+      "dds_compiler_3": {
+        "vlnv": "xilinx.com:ip:dds_compiler:6.0",
+        "xci_name": "DDS_COM_dds_compiler_2_0",
+        "parameters": {
+          "Amplitude_Mode": {
+            "value": "Unit_Circle"
+          },
+          "Channels": {
+            "value": "1"
+          },
+          "DATA_Has_TLAST": {
+            "value": "Not_Required"
+          },
+          "DDS_Clock_Rate": {
+            "value": "460"
+          },
+          "Frequency_Resolution": {
+            "value": "0.4"
+          },
+          "Has_ARESETn": {
+            "value": "true"
+          },
+          "Has_Phase_Out": {
+            "value": "false"
+          },
+          "Latency": {
+            "value": "6"
+          },
+          "M_DATA_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "M_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "Mode_of_Operation": {
+            "value": "Standard"
+          },
+          "Noise_Shaping": {
+            "value": "None"
+          },
+          "Output_Frequency1": {
+            "value": "0"
+          },
+          "Output_Selection": {
+            "value": "Sine"
+          },
+          "Output_Width": {
+            "value": "8"
+          },
+          "PINC1": {
+            "value": "10001101001110001110001001101000111110110"
+          },
+          "POFF1": {
+            "value": "100000000000000000000000000000000000000000000000"
+          },
+          "Parameter_Entry": {
+            "value": "Hardware_Parameters"
+          },
+          "PartsPresent": {
+            "value": "Phase_Generator_and_SIN_COS_LUT"
+          },
+          "Phase_Increment": {
+            "value": "Programmable"
+          },
+          "Phase_Width": {
+            "value": "48"
+          },
+          "Phase_offset": {
+            "value": "Fixed"
           },
           "S_PHASE_Has_TUSER": {
             "value": "Not_Required"
@@ -146,75 +475,6 @@
           }
         }
       },
-      "dds_compiler_1": {
-        "vlnv": "xilinx.com:ip:dds_compiler:6.0",
-        "xci_name": "DDS_COM_dds_compiler_0_1",
-        "parameters": {
-          "Channels": {
-            "value": "1"
-          },
-          "DATA_Has_TLAST": {
-            "value": "Not_Required"
-          },
-          "DDS_Clock_Rate": {
-            "value": "464.063"
-          },
-          "Frequency_Resolution": {
-            "value": "0.4"
-          },
-          "Has_ARESETn": {
-            "value": "true"
-          },
-          "Has_Phase_Out": {
-            "value": "false"
-          },
-          "Latency": {
-            "value": "5"
-          },
-          "M_DATA_Has_TUSER": {
-            "value": "Not_Required"
-          },
-          "M_PHASE_Has_TUSER": {
-            "value": "Not_Required"
-          },
-          "Mode_of_Operation": {
-            "value": "Standard"
-          },
-          "Noise_Shaping": {
-            "value": "None"
-          },
-          "Output_Frequency1": {
-            "value": "0"
-          },
-          "Output_Selection": {
-            "value": "Sine"
-          },
-          "Output_Width": {
-            "value": "8"
-          },
-          "PINC1": {
-            "value": "10010100000101010000"
-          },
-          "Parameter_Entry": {
-            "value": "Hardware_Parameters"
-          },
-          "PartsPresent": {
-            "value": "Phase_Generator_and_SIN_COS_LUT"
-          },
-          "Phase_Increment": {
-            "value": "Programmable"
-          },
-          "Phase_Width": {
-            "value": "48"
-          },
-          "Phase_offset": {
-            "value": "None"
-          },
-          "S_PHASE_Has_TUSER": {
-            "value": "Not_Required"
-          }
-        }
-      },
       "filter_1": {
         "vlnv": "xilinx.com:module_ref:filter:1.0",
         "xci_name": "DDS_COM_filter_0_1",
@@ -240,6 +500,275 @@
             "direction": "I"
           }
         }
+      },
+      "filter_2": {
+        "vlnv": "xilinx.com:module_ref:filter:1.0",
+        "xci_name": "DDS_COM_filter_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "filter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "c_out": {
+            "direction": "O"
+          },
+          "mclk": {
+            "direction": "I"
+          }
+        }
+      },
+      "filter_3": {
+        "vlnv": "xilinx.com:module_ref:filter:1.0",
+        "xci_name": "DDS_COM_filter_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "filter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "c_out": {
+            "direction": "O"
+          },
+          "mclk": {
+            "direction": "I"
+          }
+        }
+      },
+      "DELAY_SYNC_0": {
+        "vlnv": "xilinx.com:module_ref:DELAY_SYNC:1.0",
+        "xci_name": "DDS_COM_DELAY_SYNC_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DELAY_SYNC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DEL0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL2": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DEL3": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "RST0": {
+            "direction": "O"
+          },
+          "RST1": {
+            "direction": "O"
+          },
+          "RST2": {
+            "direction": "O"
+          },
+          "RST3": {
+            "direction": "O"
+          },
+          "DONE": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "DDS_COM_xlconcat_0_0",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "4"
+          }
+        }
+      },
+      "xlconcat_1": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "DDS_COM_xlconcat_0_1",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "4"
+          }
+        }
+      },
+      "DC_EN_MOD_0": {
+        "vlnv": "xilinx.com:module_ref:DC_EN_MOD:1.0",
+        "xci_name": "DDS_COM_DC_EN_MOD_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DC_EN_MOD",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "DC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "RES": {
+            "direction": "O"
+          },
+          "TRIGr": {
+            "direction": "I"
+          }
+        }
+      },
+      "DC_EN_MOD_1": {
+        "vlnv": "xilinx.com:module_ref:DC_EN_MOD:1.0",
+        "xci_name": "DDS_COM_DC_EN_MOD_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DC_EN_MOD",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "DC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "RES": {
+            "direction": "O"
+          },
+          "TRIGr": {
+            "direction": "I"
+          }
+        }
+      },
+      "DC_EN_MOD_2": {
+        "vlnv": "xilinx.com:module_ref:DC_EN_MOD:1.0",
+        "xci_name": "DDS_COM_DC_EN_MOD_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DC_EN_MOD",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "DC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "RES": {
+            "direction": "O"
+          },
+          "TRIGr": {
+            "direction": "I"
+          }
+        }
+      },
+      "DC_EN_MOD_3": {
+        "vlnv": "xilinx.com:module_ref:DC_EN_MOD:1.0",
+        "xci_name": "DDS_COM_DC_EN_MOD_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DC_EN_MOD",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RSTn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "DC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "RES": {
+            "direction": "O"
+          },
+          "TRIGr": {
+            "direction": "I"
+          }
+        }
       }
     },
     "nets": {
@@ -247,30 +776,24 @@
         "ports": [
           "clk",
           "dds_compiler_0/aclk",
+          "dds_compiler_1/aclk",
+          "dds_compiler_2/aclk",
+          "dds_compiler_3/aclk",
           "filter_0/mclk",
           "filter_1/mclk",
-          "dds_compiler_1/aclk"
-        ]
-      },
-      "rst_1": {
-        "ports": [
-          "rst",
-          "dds_compiler_0/aresetn",
-          "filter_0/rst",
-          "filter_1/rst",
-          "dds_compiler_1/aresetn"
+          "filter_2/mclk",
+          "filter_3/mclk",
+          "DELAY_SYNC_0/MCLK",
+          "DC_EN_MOD_0/MCLK",
+          "DC_EN_MOD_1/MCLK",
+          "DC_EN_MOD_2/MCLK",
+          "DC_EN_MOD_3/MCLK"
         ]
       },
       "tval_1": {
         "ports": [
           "tval0",
           "dds_compiler_0/s_axis_config_tvalid"
-        ]
-      },
-      "filter_0_c_out": {
-        "ports": [
-          "filter_0/c_out",
-          "sig_out"
         ]
       },
       "dds_compiler_0_m_axis_data_tdata": {
@@ -303,10 +826,200 @@
           "dds_compiler_1/s_axis_config_tvalid"
         ]
       },
+      "dds_compiler_2_m_axis_data_tdata": {
+        "ports": [
+          "dds_compiler_2/m_axis_data_tdata",
+          "filter_2/data"
+        ]
+      },
+      "tval2_1": {
+        "ports": [
+          "tval2",
+          "dds_compiler_2/s_axis_config_tvalid"
+        ]
+      },
+      "phase_inc2_1": {
+        "ports": [
+          "phase_inc2",
+          "dds_compiler_2/s_axis_config_tdata"
+        ]
+      },
+      "phase_inc3_1": {
+        "ports": [
+          "phase_inc3",
+          "dds_compiler_3/s_axis_config_tdata"
+        ]
+      },
+      "tval3_1": {
+        "ports": [
+          "tval3",
+          "dds_compiler_3/s_axis_config_tvalid"
+        ]
+      },
+      "dds_compiler_3_m_axis_data_tdata": {
+        "ports": [
+          "dds_compiler_3/m_axis_data_tdata",
+          "filter_3/data"
+        ]
+      },
+      "DELAY_SYNC_0_RST0": {
+        "ports": [
+          "DELAY_SYNC_0/RST0",
+          "dds_compiler_0/aresetn",
+          "filter_0/rst",
+          "xlconcat_0/In0",
+          "DC_EN_MOD_0/RSTn"
+        ]
+      },
+      "DELAY_SYNC_0_RST1": {
+        "ports": [
+          "DELAY_SYNC_0/RST1",
+          "dds_compiler_1/aresetn",
+          "filter_1/rst",
+          "xlconcat_0/In1",
+          "DC_EN_MOD_1/RSTn"
+        ]
+      },
+      "DELAY_SYNC_0_RST2": {
+        "ports": [
+          "DELAY_SYNC_0/RST2",
+          "dds_compiler_2/aresetn",
+          "filter_2/rst",
+          "xlconcat_0/In2",
+          "DC_EN_MOD_2/RSTn"
+        ]
+      },
+      "DELAY_SYNC_0_RST3": {
+        "ports": [
+          "DELAY_SYNC_0/RST3",
+          "dds_compiler_3/aresetn",
+          "filter_3/rst",
+          "xlconcat_0/In3",
+          "DC_EN_MOD_3/RSTn"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "DELAY_SYNC_0/RSTn"
+        ]
+      },
+      "DEL0_1": {
+        "ports": [
+          "DEL0",
+          "DELAY_SYNC_0/DEL0"
+        ]
+      },
+      "DEL3_1": {
+        "ports": [
+          "DEL3",
+          "DELAY_SYNC_0/DEL3"
+        ]
+      },
+      "DEL2_1": {
+        "ports": [
+          "DEL2",
+          "DELAY_SYNC_0/DEL2"
+        ]
+      },
+      "DEL1_1": {
+        "ports": [
+          "DEL1",
+          "DELAY_SYNC_0/DEL1"
+        ]
+      },
       "filter_1_c_out": {
         "ports": [
           "filter_1/c_out",
+          "xlconcat_1/In1",
+          "DC_EN_MOD_1/TRIGr"
+        ]
+      },
+      "filter_0_c_out": {
+        "ports": [
+          "filter_0/c_out",
+          "xlconcat_1/In0",
+          "DC_EN_MOD_0/TRIGr"
+        ]
+      },
+      "filter_2_c_out": {
+        "ports": [
+          "filter_2/c_out",
+          "xlconcat_1/In2",
+          "DC_EN_MOD_2/TRIGr"
+        ]
+      },
+      "filter_3_c_out": {
+        "ports": [
+          "filter_3/c_out",
+          "xlconcat_1/In3",
+          "DC_EN_MOD_3/TRIGr"
+        ]
+      },
+      "DC_EN_MOD_1_RES": {
+        "ports": [
+          "DC_EN_MOD_1/RES",
           "sig_out1"
+        ]
+      },
+      "DC_EN_MOD_0_RES": {
+        "ports": [
+          "DC_EN_MOD_0/RES",
+          "sig_out"
+        ]
+      },
+      "DC_EN_MOD_2_RES": {
+        "ports": [
+          "DC_EN_MOD_2/RES",
+          "sig_out2"
+        ]
+      },
+      "DC_EN_MOD_3_RES": {
+        "ports": [
+          "DC_EN_MOD_3/RES",
+          "sig_out3"
+        ]
+      },
+      "DELAY_SYNC_0_DONE": {
+        "ports": [
+          "DELAY_SYNC_0/DONE",
+          "done"
+        ]
+      },
+      "DC0_1": {
+        "ports": [
+          "DC0",
+          "DC_EN_MOD_0/DC"
+        ]
+      },
+      "DC1_1": {
+        "ports": [
+          "DC1",
+          "DC_EN_MOD_1/DC"
+        ]
+      },
+      "DC2_1": {
+        "ports": [
+          "DC2",
+          "DC_EN_MOD_2/DC"
+        ]
+      },
+      "DC3_1": {
+        "ports": [
+          "DC3",
+          "DC_EN_MOD_3/DC"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "DEBUG"
+        ]
+      },
+      "xlconcat_1_dout": {
+        "ports": [
+          "xlconcat_1/dout",
+          "DEBUG2"
         ]
       }
     }

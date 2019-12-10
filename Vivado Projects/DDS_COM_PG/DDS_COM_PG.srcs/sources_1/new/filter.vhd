@@ -52,15 +52,19 @@ begin
             passed <= '0';
             c_out_p <= '0';
         else
-            if(udat >= 127) then
-                if(passed = '0') then
-                    c_out_p <= not c_out_p;
-                    passed <= '1';
-                end if;
+            --if(udat >= 127) then
+            --    if(passed = '0') then
+            --        c_out_p <= not c_out_p;
+             --       passed <= '1';
+            --    end if;
+            --end if;
+            --if(udat < 127) then
+             --   passed <= '0';
+            --end if;
+            if(passed = '0' and data(7) = '1') then
+                c_out_p <= not c_out_p;
             end if;
-            if(udat < 127) then
-                passed <= '0';
-            end if;
+            passed <= data(7);
         end if;
     end if;
 end process;

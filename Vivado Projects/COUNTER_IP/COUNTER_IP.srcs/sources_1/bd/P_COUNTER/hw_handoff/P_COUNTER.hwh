@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  4 12:29:33 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec 10 11:28:18 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="P_COUNTER" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -26,14 +26,14 @@
     </PORT>
     <PORT DIR="I" NAME="TCLK" SIGIS="undef" SIGNAME="External_Ports_TCLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DIG_TIMER_0" PORT="MCLK"/>
         <CONNECTION INSTANCE="CTR_CTL_0" PORT="CLK"/>
-        <CONNECTION INSTANCE="DIG_TIMER_1" PORT="MCLK"/>
         <CONNECTION INSTANCE="CTR_CTL_1" PORT="CLK"/>
-        <CONNECTION INSTANCE="DIG_TIMER_3" PORT="MCLK"/>
         <CONNECTION INSTANCE="CTR_CTL_3" PORT="CLK"/>
-        <CONNECTION INSTANCE="DIG_TIMER_2" PORT="MCLK"/>
         <CONNECTION INSTANCE="CTR_CTL_2" PORT="CLK"/>
+        <CONNECTION INSTANCE="DIG_TIMER_1" PORT="MCLK"/>
+        <CONNECTION INSTANCE="DIG_TIMER_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="DIG_TIMER_2" PORT="MCLK"/>
+        <CONNECTION INSTANCE="DIG_TIMER_3" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
@@ -58,6 +58,36 @@
         <CONNECTION INSTANCE="axi_gpio_util2" PORT="s_axi_aresetn"/>
         <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_aresetn"/>
         <CONNECTION INSTANCE="axi_gpio_util1" PORT="s_axi_aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="MCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TRIG" SIGIS="undef" SIGNAME="External_Ports_TRIG">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="TRIG"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TRIG_RST" SIGIS="undef" SIGNAME="External_Ports_TRIG_RST">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="RST"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ex_stop" SIGIS="undef" SIGNAME="External_Ports_ex_stop">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="EX_STOP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ex_stop_en" SIGIS="undef" SIGNAME="External_Ports_ex_stop_en">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="EX_STOP_EN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="EX_STOP_RDY" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_WINDOW">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="WINDOW"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="data_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data_s_axi_araddr">
@@ -143,91 +173,6 @@
     <PORT DIR="I" NAME="data_wvalid" SIGIS="undef" SIGNAME="axi_gpio_data_s_axi_wvalid">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_gpio_data" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data1_arready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data1_arvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="data1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data1_awready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data1_awvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data1_bready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data1_bvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="data1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data1_rready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="data1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data1_rvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="data1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="data1_wready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="data1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="data1_wvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="data2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data2_s_axi_araddr">
@@ -485,6 +430,91 @@
         <CONNECTION INSTANCE="axi_gpio_util" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_arready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_arvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_awready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_awvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_bready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_bvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="util3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_rready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_rvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="util3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util3_wready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="util3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util3_wvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" LEFT="8" NAME="util1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util1_s_axi_araddr">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_gpio_util1" PORT="s_axi_araddr"/>
@@ -655,89 +685,89 @@
         <CONNECTION INSTANCE="axi_gpio_util2" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_araddr">
+    <PORT DIR="I" LEFT="8" NAME="data1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_araddr"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util3_arready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_arready">
+    <PORT DIR="O" NAME="data1_arready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_arready"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util3_arvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_arvalid">
+    <PORT DIR="I" NAME="data1_arvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_arvalid"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_arvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_awaddr">
+    <PORT DIR="I" LEFT="8" NAME="data1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_awaddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_awaddr"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_awaddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util3_awready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_awready">
+    <PORT DIR="O" NAME="data1_awready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_awready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_awready"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_awready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util3_awvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_awvalid">
+    <PORT DIR="I" NAME="data1_awvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_awvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_awvalid"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_awvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util3_bready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_bready">
+    <PORT DIR="I" NAME="data1_bready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_bready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_bready"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_bready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_bresp">
+    <PORT DIR="O" LEFT="1" NAME="data1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_bresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_bresp"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_bresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util3_bvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_bvalid">
+    <PORT DIR="O" NAME="data1_bvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_bvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_bvalid"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_bvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="util3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rdata">
+    <PORT DIR="O" LEFT="31" NAME="data1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rdata"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util3_rready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rready">
+    <PORT DIR="I" NAME="data1_rready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rready"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rresp">
+    <PORT DIR="O" LEFT="1" NAME="data1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rresp"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util3_rvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_rvalid">
+    <PORT DIR="O" NAME="data1_rvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_rvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_rvalid"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_rvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="util3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wdata">
+    <PORT DIR="I" LEFT="31" NAME="data1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wdata"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="util3_wready" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wready">
+    <PORT DIR="O" NAME="data1_wready" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wready"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="util3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wstrb">
+    <PORT DIR="I" LEFT="3" NAME="data1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wstrb">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wstrb"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wstrb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="util3_wvalid" SIGIS="undef" SIGNAME="axi_gpio_util3_s_axi_wvalid">
+    <PORT DIR="I" NAME="data1_wvalid" SIGIS="undef" SIGNAME="axi_gpio_data1_s_axi_wvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_util3" PORT="s_axi_wvalid"/>
+        <CONNECTION INSTANCE="axi_gpio_data1" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1185,9 +1215,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_0_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_0" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_TCLK">
@@ -1220,9 +1250,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util1_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_1_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util1" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_1" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_TCLK">
@@ -1255,9 +1285,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util2_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_3_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util2" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_3" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_TCLK">
@@ -1290,9 +1320,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util3_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_2_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util3" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_2" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_TCLK">
@@ -1337,15 +1367,16 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="CUR_VAL" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" NAME="CARRY" SIGIS="undef"/>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_0_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_0" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="DATA_IND" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio2_io_i"/>
-            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+            <CONNECTION INSTANCE="ex_stop_or_0" PORT="Op2"/>
+            <CONNECTION INSTANCE="FAR_BETTER_AND_0" PORT="IN0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1354,7 +1385,7 @@
     <MODULE COREREVISION="1" FULLNAME="/DIG_TIMER_1" HWVERSION="1.0" INSTANCE="DIG_TIMER_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DIG_TIMER" VLNV="xilinx.com:module_ref:DIG_TIMER:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_DIG_TIMER_1_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_DIG_TIMER_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1370,15 +1401,16 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="CUR_VAL" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" NAME="CARRY" SIGIS="undef"/>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util1_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_1_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util1" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_1" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="DATA_IND" SIGIS="undef" SIGNAME="DIG_TIMER_1_DATA_IND">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_util1" PORT="gpio2_io_i"/>
-            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op1"/>
+            <CONNECTION INSTANCE="ex_stop_or_1" PORT="Op1"/>
+            <CONNECTION INSTANCE="FAR_BETTER_AND_0" PORT="IN1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1387,7 +1419,7 @@
     <MODULE COREREVISION="1" FULLNAME="/DIG_TIMER_2" HWVERSION="1.0" INSTANCE="DIG_TIMER_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DIG_TIMER" VLNV="xilinx.com:module_ref:DIG_TIMER:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_DIG_TIMER_2_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_DIG_TIMER_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1403,15 +1435,16 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="CUR_VAL" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" NAME="CARRY" SIGIS="undef"/>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util2_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_3_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util2" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_3" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="DATA_IND" SIGIS="undef" SIGNAME="DIG_TIMER_2_DATA_IND">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_util2" PORT="gpio2_io_i"/>
-            <CONNECTION INSTANCE="util_vector_logic_2" PORT="Op1"/>
+            <CONNECTION INSTANCE="ex_stop_or_2" PORT="Op2"/>
+            <CONNECTION INSTANCE="FAR_BETTER_AND_0" PORT="IN3"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1420,7 +1453,7 @@
     <MODULE COREREVISION="1" FULLNAME="/DIG_TIMER_3" HWVERSION="1.0" INSTANCE="DIG_TIMER_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DIG_TIMER" VLNV="xilinx.com:module_ref:DIG_TIMER:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_DIG_TIMER_3_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_DIG_TIMER_2_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1436,15 +1469,108 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="CUR_VAL" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" NAME="CARRY" SIGIS="undef"/>
-        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="axi_gpio_util3_gpio_io_o">
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="ex_trig_or_2_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_util3" PORT="gpio_io_o"/>
+            <CONNECTION INSTANCE="ex_trig_or_2" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="DATA_IND" SIGIS="undef" SIGNAME="DIG_TIMER_3_DATA_IND">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_util3" PORT="gpio2_io_i"/>
-            <CONNECTION INSTANCE="util_vector_logic_3" PORT="Op1"/>
+            <CONNECTION INSTANCE="ex_stop_or_3" PORT="Op1"/>
+            <CONNECTION INSTANCE="FAR_BETTER_AND_0" PORT="IN2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/EX_TRIG_CTL_0" HWVERSION="1.0" INSTANCE="EX_TRIG_CTL_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="EX_TRIG_CTL" VLNV="xilinx.com:module_ref:EX_TRIG_CTL:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_EX_TRIG_CTL_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="TRIG" SIGIS="undef" SIGNAME="External_Ports_TRIG">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TRIG"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="External_Ports_TRIG_RST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TRIG_RST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CTL" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_CTL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ex_trig_or_0" PORT="Op2"/>
+            <CONNECTION INSTANCE="ex_trig_or_1" PORT="Op2"/>
+            <CONNECTION INSTANCE="ex_trig_or_2" PORT="Op2"/>
+            <CONNECTION INSTANCE="ex_trig_or_3" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="STOP" SIGIS="undef" SIGNAME="FAR_BETTER_AND_0_OUT0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="FAR_BETTER_AND_0" PORT="OUT0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EX_STOP_EN" SIGIS="undef" SIGNAME="External_Ports_ex_stop_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ex_stop_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EX_STOP" SIGIS="undef" SIGNAME="External_Ports_ex_stop">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ex_stop"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="WINDOW" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_WINDOW">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ex_stop_or_0" PORT="Op1"/>
+            <CONNECTION INSTANCE="ex_stop_or_1" PORT="Op2"/>
+            <CONNECTION INSTANCE="ex_stop_or_2" PORT="Op1"/>
+            <CONNECTION INSTANCE="ex_stop_or_3" PORT="Op2"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="EX_STOP_RDY"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/FAR_BETTER_AND_0" HWVERSION="1.0" INSTANCE="FAR_BETTER_AND_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="FAR_BETTER_AND" VLNV="xilinx.com:module_ref:FAR_BETTER_AND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_FAR_BETTER_AND_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="IN0" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IN1" SIGIS="undef" SIGNAME="DIG_TIMER_1_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_1" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IN2" SIGIS="undef" SIGNAME="DIG_TIMER_3_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_3" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IN3" SIGIS="undef" SIGNAME="DIG_TIMER_2_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_2" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="OUT0" SIGIS="undef" SIGNAME="FAR_BETTER_AND_0_OUT0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="STOP"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2366,8 +2492,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="RST"/>
-            <CONNECTION INSTANCE="CTR_CTL_0" PORT="RST"/>
+            <CONNECTION INSTANCE="ex_trig_or_0" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
@@ -2565,8 +2690,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util1_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_1" PORT="RST"/>
-            <CONNECTION INSTANCE="CTR_CTL_1" PORT="RST"/>
+            <CONNECTION INSTANCE="ex_trig_or_1" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_1_DATA_IND">
@@ -2764,8 +2888,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util2_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_2" PORT="RST"/>
-            <CONNECTION INSTANCE="CTR_CTL_2" PORT="RST"/>
+            <CONNECTION INSTANCE="ex_trig_or_3" PORT="Op2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_2_DATA_IND">
@@ -2963,8 +3086,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_3" PORT="RST"/>
-            <CONNECTION INSTANCE="CTR_CTL_3" PORT="RST"/>
+            <CONNECTION INSTANCE="ex_trig_or_2" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_3_DATA_IND">
@@ -3342,6 +3464,234 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_stop_or_0" HWVERSION="2.0" INSTANCE="ex_stop_or_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_util_vector_logic_4_2"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_WINDOW">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="WINDOW"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_stop_or_1" HWVERSION="2.0" INSTANCE="ex_stop_or_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_ex_stop_or_0_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_1_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_1" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_WINDOW">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="WINDOW"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_stop_or_2" HWVERSION="2.0" INSTANCE="ex_stop_or_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_ex_stop_or_1_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_WINDOW">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="WINDOW"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_2_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_2" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_2_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_2" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_stop_or_3" HWVERSION="2.0" INSTANCE="ex_stop_or_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_ex_stop_or_2_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_3_DATA_IND">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DIG_TIMER_3" PORT="DATA_IND"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_WINDOW">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="WINDOW"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_3" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_trig_or_0" HWVERSION="2.0" INSTANCE="ex_trig_or_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_util_vector_logic_4_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_util" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_CTL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="CTL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_trig_or_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CTL_0" PORT="RST"/>
+            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="RST"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_trig_or_1" HWVERSION="2.0" INSTANCE="ex_trig_or_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_util_vector_logic_4_1"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util1_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_util1" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_CTL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="CTL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_trig_or_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CTL_1" PORT="RST"/>
+            <CONNECTION INSTANCE="DIG_TIMER_1" PORT="RST"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_trig_or_2" HWVERSION="2.0" INSTANCE="ex_trig_or_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_ex_trig_or_1_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util3_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_util3" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_CTL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="CTL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_trig_or_2_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CTL_3" PORT="RST"/>
+            <CONNECTION INSTANCE="DIG_TIMER_3" PORT="RST"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ex_trig_or_3" HWVERSION="2.0" INSTANCE="ex_trig_or_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="P_COUNTER_ex_trig_or_2_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="EX_TRIG_CTL_0_CTL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EX_TRIG_CTL_0" PORT="CTL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_util2_gpio_io_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_util2" PORT="gpio_io_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="ex_trig_or_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CTR_CTL_2" PORT="RST"/>
+            <CONNECTION INSTANCE="DIG_TIMER_2" PORT="RST"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -3352,9 +3702,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_0_DATA_IND">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_0_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_0" PORT="DATA_IND"/>
+            <CONNECTION INSTANCE="ex_stop_or_0" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
@@ -3375,9 +3725,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_1_DATA_IND">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_1_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_1" PORT="DATA_IND"/>
+            <CONNECTION INSTANCE="ex_stop_or_1" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
@@ -3398,9 +3748,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_2_DATA_IND">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_2_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_2" PORT="DATA_IND"/>
+            <CONNECTION INSTANCE="ex_stop_or_2" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_2_Res">
@@ -3421,9 +3771,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="DIG_TIMER_3_DATA_IND">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="ex_stop_or_3_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DIG_TIMER_3" PORT="DATA_IND"/>
+            <CONNECTION INSTANCE="ex_stop_or_3" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_3_Res">

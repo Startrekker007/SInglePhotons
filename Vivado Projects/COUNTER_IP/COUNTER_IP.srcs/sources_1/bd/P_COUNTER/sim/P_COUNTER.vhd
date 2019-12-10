@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec  4 12:29:31 2019
+--Date        : Tue Dec 10 11:28:18 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target P_COUNTER.bd
 --Design      : P_COUNTER
@@ -13,11 +13,15 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity P_COUNTER is
   port (
+    EX_STOP_RDY : out STD_LOGIC;
+    MCLK : in STD_LOGIC;
     P_SIG_EX : in STD_LOGIC;
     P_SIG_EX1 : in STD_LOGIC;
     P_SIG_EX2 : in STD_LOGIC;
     P_SIG_EX3 : in STD_LOGIC;
     TCLK : in STD_LOGIC;
+    TRIG : in STD_LOGIC;
+    TRIG_RST : in STD_LOGIC;
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     data1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
@@ -88,6 +92,8 @@ entity P_COUNTER is
     data_wready : out STD_LOGIC;
     data_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     data_wvalid : in STD_LOGIC;
+    ex_stop : in STD_LOGIC;
+    ex_stop_en : in STD_LOGIC;
     util1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     util1_arready : out STD_LOGIC;
     util1_arvalid : in STD_LOGIC;
@@ -158,7 +164,7 @@ entity P_COUNTER is
     util_wvalid : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of P_COUNTER : entity is "P_COUNTER,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=P_COUNTER,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of P_COUNTER : entity is "P_COUNTER,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=P_COUNTER,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=34,numReposBlks=34,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=10,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of P_COUNTER : entity is "P_COUNTER.hwdef";
 end P_COUNTER;
@@ -200,46 +206,6 @@ architecture STRUCTURE of P_COUNTER is
     SCLR_O : out STD_LOGIC
   );
   end component P_COUNTER_CTR_CTL_3_0;
-  component P_COUNTER_DIG_TIMER_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CARRY : out STD_LOGIC;
-    RST : in STD_LOGIC;
-    DATA_IND : out STD_LOGIC
-  );
-  end component P_COUNTER_DIG_TIMER_0_0;
-  component P_COUNTER_DIG_TIMER_1_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CARRY : out STD_LOGIC;
-    RST : in STD_LOGIC;
-    DATA_IND : out STD_LOGIC
-  );
-  end component P_COUNTER_DIG_TIMER_1_0;
-  component P_COUNTER_DIG_TIMER_2_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CARRY : out STD_LOGIC;
-    RST : in STD_LOGIC;
-    DATA_IND : out STD_LOGIC
-  );
-  end component P_COUNTER_DIG_TIMER_2_0;
-  component P_COUNTER_DIG_TIMER_3_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CARRY : out STD_LOGIC;
-    RST : in STD_LOGIC;
-    DATA_IND : out STD_LOGIC
-  );
-  end component P_COUNTER_DIG_TIMER_3_0;
   component P_COUNTER_axi_gpio_data_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -496,6 +462,123 @@ architecture STRUCTURE of P_COUNTER is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component P_COUNTER_util_vector_logic_3_0;
+  component P_COUNTER_DIG_TIMER_0_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CARRY : out STD_LOGIC;
+    RST : in STD_LOGIC;
+    DATA_IND : out STD_LOGIC
+  );
+  end component P_COUNTER_DIG_TIMER_0_0;
+  component P_COUNTER_DIG_TIMER_0_1 is
+  port (
+    MCLK : in STD_LOGIC;
+    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CARRY : out STD_LOGIC;
+    RST : in STD_LOGIC;
+    DATA_IND : out STD_LOGIC
+  );
+  end component P_COUNTER_DIG_TIMER_0_1;
+  component P_COUNTER_DIG_TIMER_1_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CARRY : out STD_LOGIC;
+    RST : in STD_LOGIC;
+    DATA_IND : out STD_LOGIC
+  );
+  end component P_COUNTER_DIG_TIMER_1_0;
+  component P_COUNTER_DIG_TIMER_2_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    LIM : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CUR_VAL : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CARRY : out STD_LOGIC;
+    RST : in STD_LOGIC;
+    DATA_IND : out STD_LOGIC
+  );
+  end component P_COUNTER_DIG_TIMER_2_0;
+  component P_COUNTER_util_vector_logic_4_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_util_vector_logic_4_0;
+  component P_COUNTER_util_vector_logic_4_1 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_util_vector_logic_4_1;
+  component P_COUNTER_ex_trig_or_1_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_ex_trig_or_1_0;
+  component P_COUNTER_ex_trig_or_2_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_ex_trig_or_2_0;
+  component P_COUNTER_util_vector_logic_4_2 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_util_vector_logic_4_2;
+  component P_COUNTER_EX_TRIG_CTL_0_0 is
+  port (
+    TRIG : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    RST : in STD_LOGIC;
+    CTL : out STD_LOGIC;
+    STOP : in STD_LOGIC;
+    EX_STOP_EN : in STD_LOGIC;
+    EX_STOP : in STD_LOGIC;
+    WINDOW : out STD_LOGIC
+  );
+  end component P_COUNTER_EX_TRIG_CTL_0_0;
+  component P_COUNTER_ex_stop_or_0_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_ex_stop_or_0_0;
+  component P_COUNTER_ex_stop_or_1_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_ex_stop_or_1_0;
+  component P_COUNTER_ex_stop_or_2_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component P_COUNTER_ex_stop_or_2_0;
+  component P_COUNTER_FAR_BETTER_AND_0_0 is
+  port (
+    IN0 : in STD_LOGIC;
+    IN1 : in STD_LOGIC;
+    IN2 : in STD_LOGIC;
+    IN3 : in STD_LOGIC;
+    OUT0 : out STD_LOGIC
+  );
+  end component P_COUNTER_FAR_BETTER_AND_0_0;
   signal CTR_CTL_0_O_CLK : STD_LOGIC;
   signal CTR_CTL_0_O_CLK1 : STD_LOGIC;
   signal CTR_CTL_0_O_CLK2 : STD_LOGIC;
@@ -508,6 +591,10 @@ architecture STRUCTURE of P_COUNTER is
   signal DIG_TIMER_0_DATA_IND1 : STD_LOGIC;
   signal DIG_TIMER_0_DATA_IND2 : STD_LOGIC;
   signal DIG_TIMER_0_DATA_IND3 : STD_LOGIC;
+  signal EX_TRIG_CTL_0_CTL : STD_LOGIC;
+  signal EX_TRIG_CTL_0_WINDOW : STD_LOGIC;
+  signal FAR_BETTER_AND_0_OUT0 : STD_LOGIC;
+  signal MCLK_1 : STD_LOGIC;
   signal Net : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Net1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Net2 : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -585,14 +672,25 @@ architecture STRUCTURE of P_COUNTER is
   signal S_AXI_0_4_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal S_AXI_0_4_WVALID : STD_LOGIC;
   signal TCLK_1 : STD_LOGIC;
+  signal TRIG_1 : STD_LOGIC;
+  signal TRIG_RST_1 : STD_LOGIC;
+  signal axi_gpio_data1_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_gpio_data2_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_gpio_data3_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_gpio_data_gpio2_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_gpio_data_gpio2_io_o1 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_gpio_data_gpio2_io_o2 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_gpio_data_gpio2_io_o3 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_gpio_util1_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_gpio_util2_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_gpio_util3_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_gpio_util_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal c_counter_binary_0_Q : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal c_counter_binary_0_Q1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal c_counter_binary_0_Q2 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal c_counter_binary_0_Q3 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal ex_stop_1 : STD_LOGIC;
+  signal ex_stop_en_1 : STD_LOGIC;
+  signal ex_stop_or_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal ex_stop_or_2_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal ex_stop_or_3_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal s_axi_1_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal s_axi_1_1_ARREADY : STD_LOGIC;
   signal s_axi_1_1_ARVALID : STD_LOGIC;
@@ -667,6 +765,7 @@ architecture STRUCTURE of P_COUNTER is
   signal util_vector_logic_0_Res1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal util_vector_logic_0_Res2 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal util_vector_logic_0_Res3 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal util_vector_logic_4_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_DIG_TIMER_0_CARRY_UNCONNECTED : STD_LOGIC;
   signal NLW_DIG_TIMER_0_CUR_VAL_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_DIG_TIMER_1_CARRY_UNCONNECTED : STD_LOGIC;
@@ -822,6 +921,8 @@ architecture STRUCTURE of P_COUNTER is
   attribute X_INTERFACE_INFO of util_wdata : signal is "xilinx.com:interface:aximm:1.0 util WDATA";
   attribute X_INTERFACE_INFO of util_wstrb : signal is "xilinx.com:interface:aximm:1.0 util WSTRB";
 begin
+  EX_STOP_RDY <= EX_TRIG_CTL_0_WINDOW;
+  MCLK_1 <= MCLK;
   P_SIG_EX_1 <= P_SIG_EX;
   P_SIG_EX_2 <= P_SIG_EX1;
   P_SIG_EX_3 <= P_SIG_EX2;
@@ -863,6 +964,8 @@ begin
   S_AXI_0_4_WSTRB(3 downto 0) <= data3_wstrb(3 downto 0);
   S_AXI_0_4_WVALID <= data3_wvalid;
   TCLK_1 <= TCLK;
+  TRIG_1 <= TRIG;
+  TRIG_RST_1 <= TRIG_RST;
   data1_arready <= S_AXI_0_2_ARREADY;
   data1_awready <= S_AXI_0_2_AWREADY;
   data1_bresp(1 downto 0) <= S_AXI_0_2_BRESP(1 downto 0);
@@ -895,6 +998,8 @@ begin
   data_rresp(1 downto 0) <= S_AXI_0_1_RRESP(1 downto 0);
   data_rvalid <= S_AXI_0_1_RVALID;
   data_wready <= S_AXI_0_1_WREADY;
+  ex_stop_1 <= ex_stop;
+  ex_stop_en_1 <= ex_stop_en;
   s_axi_1_1_ARADDR(8 downto 0) <= util_araddr(8 downto 0);
   s_axi_1_1_ARVALID <= util_arvalid;
   s_axi_1_1_AWADDR(8 downto 0) <= util_awaddr(8 downto 0);
@@ -1006,32 +1111,51 @@ DIG_TIMER_0: component P_COUNTER_DIG_TIMER_0_0
       MCLK => TCLK_1,
       RST => Net(0)
     );
-DIG_TIMER_1: component P_COUNTER_DIG_TIMER_1_0
+DIG_TIMER_1: component P_COUNTER_DIG_TIMER_0_1
      port map (
       CARRY => NLW_DIG_TIMER_1_CARRY_UNCONNECTED,
       CUR_VAL(31 downto 0) => NLW_DIG_TIMER_1_CUR_VAL_UNCONNECTED(31 downto 0),
       DATA_IND => DIG_TIMER_0_DATA_IND1,
-      LIM(31 downto 0) => axi_gpio_data_gpio2_io_o1(31 downto 0),
+      LIM(31 downto 0) => axi_gpio_data1_gpio2_io_o(31 downto 0),
       MCLK => TCLK_1,
       RST => Net1(0)
     );
-DIG_TIMER_2: component P_COUNTER_DIG_TIMER_2_0
+DIG_TIMER_2: component P_COUNTER_DIG_TIMER_1_0
      port map (
       CARRY => NLW_DIG_TIMER_2_CARRY_UNCONNECTED,
       CUR_VAL(31 downto 0) => NLW_DIG_TIMER_2_CUR_VAL_UNCONNECTED(31 downto 0),
       DATA_IND => DIG_TIMER_0_DATA_IND2,
-      LIM(31 downto 0) => axi_gpio_data_gpio2_io_o2(31 downto 0),
+      LIM(31 downto 0) => axi_gpio_data2_gpio2_io_o(31 downto 0),
       MCLK => TCLK_1,
       RST => Net2(0)
     );
-DIG_TIMER_3: component P_COUNTER_DIG_TIMER_3_0
+DIG_TIMER_3: component P_COUNTER_DIG_TIMER_2_0
      port map (
       CARRY => NLW_DIG_TIMER_3_CARRY_UNCONNECTED,
       CUR_VAL(31 downto 0) => NLW_DIG_TIMER_3_CUR_VAL_UNCONNECTED(31 downto 0),
       DATA_IND => DIG_TIMER_0_DATA_IND3,
-      LIM(31 downto 0) => axi_gpio_data_gpio2_io_o3(31 downto 0),
+      LIM(31 downto 0) => axi_gpio_data3_gpio2_io_o(31 downto 0),
       MCLK => TCLK_1,
       RST => Net3(0)
+    );
+EX_TRIG_CTL_0: component P_COUNTER_EX_TRIG_CTL_0_0
+     port map (
+      CTL => EX_TRIG_CTL_0_CTL,
+      EX_STOP => ex_stop_1,
+      EX_STOP_EN => ex_stop_en_1,
+      MCLK => MCLK_1,
+      RST => TRIG_RST_1,
+      STOP => FAR_BETTER_AND_0_OUT0,
+      TRIG => TRIG_1,
+      WINDOW => EX_TRIG_CTL_0_WINDOW
+    );
+FAR_BETTER_AND_0: component P_COUNTER_FAR_BETTER_AND_0_0
+     port map (
+      IN0 => DIG_TIMER_0_DATA_IND,
+      IN1 => DIG_TIMER_0_DATA_IND1,
+      IN2 => DIG_TIMER_0_DATA_IND3,
+      IN3 => DIG_TIMER_0_DATA_IND2,
+      OUT0 => FAR_BETTER_AND_0_OUT0
     );
 axi_gpio_data: component P_COUNTER_axi_gpio_data_0
      port map (
@@ -1059,7 +1183,7 @@ axi_gpio_data: component P_COUNTER_axi_gpio_data_0
     );
 axi_gpio_data1: component P_COUNTER_axi_gpio_data1_0
      port map (
-      gpio2_io_o(31 downto 0) => axi_gpio_data_gpio2_io_o1(31 downto 0),
+      gpio2_io_o(31 downto 0) => axi_gpio_data1_gpio2_io_o(31 downto 0),
       gpio_io_i(31 downto 0) => c_counter_binary_0_Q1(31 downto 0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => S_AXI_0_2_ARADDR(8 downto 0),
@@ -1083,7 +1207,7 @@ axi_gpio_data1: component P_COUNTER_axi_gpio_data1_0
     );
 axi_gpio_data2: component P_COUNTER_axi_gpio_data2_0
      port map (
-      gpio2_io_o(31 downto 0) => axi_gpio_data_gpio2_io_o2(31 downto 0),
+      gpio2_io_o(31 downto 0) => axi_gpio_data2_gpio2_io_o(31 downto 0),
       gpio_io_i(31 downto 0) => c_counter_binary_0_Q2(31 downto 0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => S_AXI_0_3_ARADDR(8 downto 0),
@@ -1107,7 +1231,7 @@ axi_gpio_data2: component P_COUNTER_axi_gpio_data2_0
     );
 axi_gpio_data3: component P_COUNTER_axi_gpio_data3_0
      port map (
-      gpio2_io_o(31 downto 0) => axi_gpio_data_gpio2_io_o3(31 downto 0),
+      gpio2_io_o(31 downto 0) => axi_gpio_data3_gpio2_io_o(31 downto 0),
       gpio_io_i(31 downto 0) => c_counter_binary_0_Q3(31 downto 0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => S_AXI_0_4_ARADDR(8 downto 0),
@@ -1132,7 +1256,7 @@ axi_gpio_data3: component P_COUNTER_axi_gpio_data3_0
 axi_gpio_util: component P_COUNTER_axi_gpio_util_0
      port map (
       gpio2_io_i(0) => DIG_TIMER_0_DATA_IND,
-      gpio_io_o(0) => Net(0),
+      gpio_io_o(0) => axi_gpio_util_gpio_io_o(0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => s_axi_1_1_ARADDR(8 downto 0),
       s_axi_aresetn => s_axi_rst_1,
@@ -1156,7 +1280,7 @@ axi_gpio_util: component P_COUNTER_axi_gpio_util_0
 axi_gpio_util1: component P_COUNTER_axi_gpio_util1_0
      port map (
       gpio2_io_i(0) => DIG_TIMER_0_DATA_IND1,
-      gpio_io_o(0) => Net1(0),
+      gpio_io_o(0) => axi_gpio_util1_gpio_io_o(0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => s_axi_1_2_ARADDR(8 downto 0),
       s_axi_aresetn => s_axi_rst_1,
@@ -1180,7 +1304,7 @@ axi_gpio_util1: component P_COUNTER_axi_gpio_util1_0
 axi_gpio_util2: component P_COUNTER_axi_gpio_util2_0
      port map (
       gpio2_io_i(0) => DIG_TIMER_0_DATA_IND2,
-      gpio_io_o(0) => Net2(0),
+      gpio_io_o(0) => axi_gpio_util2_gpio_io_o(0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => s_axi_1_3_ARADDR(8 downto 0),
       s_axi_aresetn => s_axi_rst_1,
@@ -1204,7 +1328,7 @@ axi_gpio_util2: component P_COUNTER_axi_gpio_util2_0
 axi_gpio_util3: component P_COUNTER_axi_gpio_util3_0
      port map (
       gpio2_io_i(0) => DIG_TIMER_0_DATA_IND3,
-      gpio_io_o(0) => Net3(0),
+      gpio_io_o(0) => axi_gpio_util3_gpio_io_o(0),
       s_axi_aclk => s_axi_clk_1,
       s_axi_araddr(8 downto 0) => s_axi_1_4_ARADDR(8 downto 0),
       s_axi_aresetn => s_axi_rst_1,
@@ -1253,24 +1377,72 @@ c_counter_binary_3: component P_COUNTER_c_counter_binary_3_0
       Q(31 downto 0) => c_counter_binary_0_Q3(31 downto 0),
       SCLR => CTR_CTL_0_SCLR_O3
     );
+ex_stop_or_0: component P_COUNTER_util_vector_logic_4_2
+     port map (
+      Op1(0) => EX_TRIG_CTL_0_WINDOW,
+      Op2(0) => DIG_TIMER_0_DATA_IND,
+      Res(0) => util_vector_logic_4_Res(0)
+    );
+ex_stop_or_1: component P_COUNTER_ex_stop_or_0_0
+     port map (
+      Op1(0) => DIG_TIMER_0_DATA_IND1,
+      Op2(0) => EX_TRIG_CTL_0_WINDOW,
+      Res(0) => ex_stop_or_1_Res(0)
+    );
+ex_stop_or_2: component P_COUNTER_ex_stop_or_1_0
+     port map (
+      Op1(0) => EX_TRIG_CTL_0_WINDOW,
+      Op2(0) => DIG_TIMER_0_DATA_IND2,
+      Res(0) => ex_stop_or_2_Res(0)
+    );
+ex_stop_or_3: component P_COUNTER_ex_stop_or_2_0
+     port map (
+      Op1(0) => DIG_TIMER_0_DATA_IND3,
+      Op2(0) => EX_TRIG_CTL_0_WINDOW,
+      Res(0) => ex_stop_or_3_Res(0)
+    );
+ex_trig_or_0: component P_COUNTER_util_vector_logic_4_0
+     port map (
+      Op1(0) => axi_gpio_util_gpio_io_o(0),
+      Op2(0) => EX_TRIG_CTL_0_CTL,
+      Res(0) => Net(0)
+    );
+ex_trig_or_1: component P_COUNTER_util_vector_logic_4_1
+     port map (
+      Op1(0) => axi_gpio_util1_gpio_io_o(0),
+      Op2(0) => EX_TRIG_CTL_0_CTL,
+      Res(0) => Net1(0)
+    );
+ex_trig_or_2: component P_COUNTER_ex_trig_or_1_0
+     port map (
+      Op1(0) => axi_gpio_util3_gpio_io_o(0),
+      Op2(0) => EX_TRIG_CTL_0_CTL,
+      Res(0) => Net3(0)
+    );
+ex_trig_or_3: component P_COUNTER_ex_trig_or_2_0
+     port map (
+      Op1(0) => EX_TRIG_CTL_0_CTL,
+      Op2(0) => axi_gpio_util2_gpio_io_o(0),
+      Res(0) => Net2(0)
+    );
 util_vector_logic_0: component P_COUNTER_util_vector_logic_0_0
      port map (
-      Op1(0) => DIG_TIMER_0_DATA_IND,
+      Op1(0) => util_vector_logic_4_Res(0),
       Res(0) => util_vector_logic_0_Res(0)
     );
 util_vector_logic_1: component P_COUNTER_util_vector_logic_1_0
      port map (
-      Op1(0) => DIG_TIMER_0_DATA_IND1,
+      Op1(0) => ex_stop_or_1_Res(0),
       Res(0) => util_vector_logic_0_Res1(0)
     );
 util_vector_logic_2: component P_COUNTER_util_vector_logic_2_0
      port map (
-      Op1(0) => DIG_TIMER_0_DATA_IND2,
+      Op1(0) => ex_stop_or_2_Res(0),
       Res(0) => util_vector_logic_0_Res2(0)
     );
 util_vector_logic_3: component P_COUNTER_util_vector_logic_3_0
      port map (
-      Op1(0) => DIG_TIMER_0_DATA_IND3,
+      Op1(0) => ex_stop_or_3_Res(0),
       Res(0) => util_vector_logic_0_Res3(0)
     );
 end STRUCTURE;

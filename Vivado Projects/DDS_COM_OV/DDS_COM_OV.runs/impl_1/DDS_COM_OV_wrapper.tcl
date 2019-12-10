@@ -66,8 +66,10 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint {D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.runs/impl_1/DDS_COM_OV_wrapper.dcp}
+  create_project -in_memory -part xc7z020clg400-1
+  set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.cache/wt} [current_project]
   set_property parent.project_path {D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.xpr} [current_project]
   set_property ip_repo_paths D:/SInglePhotons/HW_IP/DDS_COM_TEST [current_project]
@@ -75,6 +77,16 @@ set rc [catch {
   set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  add_files -quiet {{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.runs/synth_1/DDS_COM_OV_wrapper.dcp}}
+  set_msg_config -source 4 -id {BD 41-1661} -limit 0
+  set_param project.isImplRun true
+  add_files {{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/sources_1/bd/DDS_COM_OV/DDS_COM_OV.bd}}
+  set_param project.isImplRun false
+  read_xdc {{D:/SInglePhotons/Vivado Projects/DDS_COM_OV/DDS_COM_OV.srcs/constrs_1/new/PYNQ-Z1.xdc}}
+  set_param project.isImplRun true
+  link_design -top DDS_COM_OV_wrapper -part xc7z020clg400-1
+  set_param project.isImplRun false
+  write_hwdef -force -file DDS_COM_OV_wrapper.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
