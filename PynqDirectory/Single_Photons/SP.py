@@ -1,17 +1,20 @@
 from pynq import Overlay
 from pynq import MMIO
 from time import sleep
-TIMER_CLK = 125000000
-REF_CLK = 450000000
-axi_base_addr = 0x43c00000
+import _thread
+TIMER_CLK = 125e6 #Window Timer clock
+REF_CLK = 460e6 #Detection + DDS reference clock
+axi_base_addr = 0x43c00000 #peripheral base
 axi_range = 0x10000
-ch1_data = 0x0
-ch1_dir = 0x4
-ch2_data = 0x8
-ch2_dir = 0xc
-agpi = 0xFFFFFFFF
-agpo = 0x0
-slt = 0.2
+ch1_data = 0x0 #Axi gpio ch1 data address
+ch1_dir = 0x4 #Axi gpio ch1 direction address
+ch2_data = 0x8 #Axi gpio ch2 data address
+ch2_dir = 0xc #Axi gpio ch2 direction address
+agpi = 0xFFFFFFFF #Input set
+agpo = 0x0 #Output set
+slt = 0.2 #Sleep time
+#Hardware defs
+PHASE_BIT_DEPTH = 48
 class SP_TOOLS:
     def __init__(self):
         self.OV = Overlay("Single_Photons/SP_OVERLAY.bit",0)
@@ -33,6 +36,12 @@ class SP_TOOLS:
             self.PC_UTIL[i].write(ch1_dir,agpo)#Reset
             self.PC_UTIL[i].write(ch1_data,0x0)#Hold in reset
             self.PC_UTIL[i].write(ch2_dir,agpi)#Ready
+        #Initialize trigger controller
+        self.T_UTIL = MMIO(0x41200000,0x10000)
+        self.T_UTIL.write(ch2_dir,0x0)
+        self.T_UTIL.write(ch2_data,0x0)
+        self.T_RDY_UTIL = MMIO(0x41210000,0x10000)
+        self.T_RDY_UTIL.write(ch1_dir,0x1)
         ##Initialize single channel inter-rising_edge detection
         axi_offset = 8
         self.ST_DAT = MMIO(axi_base_addr + axi_offset*axi_range,axi_range)
@@ -51,36 +60,48 @@ class SP_TOOLS:
         self.CT_RDY.write(ch1_dir,agpi)
         ##Initialize Pulse generator
         axi_offset = 12
-        iDC = 0x7F
-        iTL = 0xFF
-        self.PG_CH = []
-        self.chset = []
-        for i in range(4):
-            self.PG_CH.append(MMIO(axi_base_addr + (i+axi_offset)*axi_range,axi_range))
-            self.PG_CH[i].write(ch1_dir,agpo)
-            self.PG_CH[i].write(ch1_data,iTL)
-            self.PG_CH[i].write(ch2_dir,agpo)
-            self.PG_CH[i].write(ch2_data,iDC)
-            self.chset.append([255, 127])
-            self.chea = 0xf
-        axi_offset = 16
-        self.PG_D0 = MMIO(axi_base_addr + axi_offset*axi_range,axi_range)
-        self.PG_D0.write(ch1_dir,agpo)
-        self.PG_D0.write(ch1_data,0x0)
-        self.PG_D0.write(ch2_dir,agpo)
-        self.PG_D0.write(ch2_data,0x0)
-        axi_offset+=1
-        self.PG_D1 = MMIO(axi_base_addr + axi_offset * axi_range, axi_range)
-        self.PG_D1.write(ch1_dir,agpo)
-        self.PG_D1.write(ch1_data,0x0)
-        self.PG_D1.write(ch2_dir,agpo)
-        self.PG_D1.write(ch2_data,0x0)
-        axi_offset+=1
-        self.PG_UTIL = MMIO(axi_base_addr + axi_range*axi_offset,axi_range)
+        iDC = 0.5
+        iFREQ = 440.0
+        ph0,ph1 = self.encode_phase_inc(iFREQ)
+        iDCenc = self.calc_dc_lim(iFREQ,iDC)
+        self.PG_PH = []
+        self.PG_AUX = []
+        self.chfreqs = [440.0,440.0,440.0,440.0]
+        self.chdcs = [0.5,0.5,0.5,0.5]
+        self.chdelays = [0,0,0,0]
+        for i in range(4): #Phase increments
+            tap = MMIO(axi_base_addr+(axi_offset*axi_range),axi_range)
+            tap.write(ch1_dir,agpo)
+            tap.write(ch2_dir, agpo)
+            tap.write(ch1_data,ph0)
+            tap.write(ch2_data, ph1)
+            self.PG_PH.append(tap)
+            axi_offset+=1
+            self.chfreqs[i]=440.0
+        for i in range(4):#Duty length and delay
+            tdc = MMIO(axi_base_addr+(axi_offset*axi_range),axi_range)
+            tdc.write(ch1_dir,agpo)
+            tdc.write(ch1_data,iDCenc)
+            tdc.write(ch2_dir, agpo)
+            tdc.write(ch2_data,0x0)
+            self.PG_AUX.append(tdc)
+            axi_offset+=1
+            self.chdcs[i]=0.5
+        self.PG_UTIL = MMIO(0x43D40000,0x10000)#increment load and master reset
         self.PG_UTIL.write(ch1_dir,agpo)
-        self.PG_UTIL.write(ch1_data,0x0)#System in reset
         self.PG_UTIL.write(ch2_dir,agpo)
-        self.PG_UTIL.write(ch2_data,0xF)#Disable all channels
+        self.PG_UTIL.write(ch1_data,0x0)#SEt loader to 0
+        self.PG_UTIL.write(ch2_data,0x0)#Hold in reset
+        #Routine to write initial phase increments
+        self.PG_UTIL.write(ch2_data,0x1)
+        self.PG_UTIL.write(ch1_data,0xF)
+        sleep(slt)
+        self.PG_UTIL.write(ch1_data,0x0)
+        #Channel enable controller
+        self.T_UTIL.write(ch1_dir,0x0)
+        self.T_UTIL.write(ch1_data,0xF)#SEt all channels to high impedance
+        self.pg_ch_stat = 0xF
+        #self.PG_UTIL.write(ch2_data,0x0)
     ####------------------PHOTON COUNTER---------------------------------------------------####
     def pc_set_window(self,window,channels):#Channels is 4 bit integer, window is in seconds
         m = 0B0001
@@ -92,14 +113,38 @@ class SP_TOOLS:
             if((0B0001 << i) & channels)!=0:
                 self.PC_DAT[i].write(ch2_data,wval)
 
-    def pc_wait_for_rdy(self,channel):
-        if(self.PC_UTIL[channel].read(ch2_data) == 0):
-            while(self.PC_UTIL[channel].read(ch2_data) == 0):
-                pass
+    def pc_wait_for_rdy(self,channel,mode):
+        if mode == 0:
+            if (self.PC_UTIL[channel].read(ch2_data) == 0):
+                while (self.PC_UTIL[channel].read(ch2_data) == 0):
+                    pass
+            else:
+                while (self.PC_UTIL[channel].read(ch2_data) == 1):
+                    pass
         else:
-            while(self.PC_UTIL[channel].read(ch2_data) == 1):
-                pass
+            if(self.T_RDY_UTIL.read(ch1_data)==0):
+                while(self.T_RDY_UTIL.read(ch1_data)==0):
+                    pass
 
+    def pc_ex_triggered(self,window):
+        self.pc_set_window(window,0xF)
+        self.T_UTIL.write(ch2_data,0x1)
+        self.pc_wait_for_rdy(0,0)
+        retval = []
+        for i in range(4):
+            retval.append(self.pc_read_counts(i))
+        self.T_UTIL.write(ch2_data,0x0)
+        return retval
+    def pc_ex_trig_stop(self):
+        self.T_UTIL.write(ch2_data,0x3)
+        for i in range(4):
+            self.PC_DAT[i].write(ch2_data,0xFFFFFFFF)
+        self.pc_wait_for_rdy(0,1)
+        retval = []
+        for i in range(4):
+            retval.append(self.pc_read_counts(i))
+        self.T_UTIL.write(ch2_data,0x0)
+        return retval
     def pc_enable_channels(self,channels):#channels a 4 bit integer
         for i in range(4):
             if((0B0001 << i) & channels)!= 0:
@@ -138,75 +183,56 @@ class SP_TOOLS:
             self.CT_DAT.write(ch2_data, 0x0)
         return op * (1 / REF_CLK)
     ####---------------------Signal generator---------------------------------------------####
-    def pg_disable_channels(self):
-        self.PG_UTIL.write(ch2_data, 0xF)#Disable channels
-        self.PG_UTIL.write(ch1_data, 0x0)#Hold block in reset
-        #self.chea = 0xf
-    def pg_enable_channels(self):
-        self.PG_UTIL.write(ch1_data,0x1)
+
+    def pg_disable(self):
         self.PG_UTIL.write(ch2_data,0x0)
-        self.chea = 0x0
-    def pg_restore_channels(self):
-        self.PG_UTIL.write(ch1_data,0x1)
-        self.PG_UTIL.write(ch2_data,self.chea)
-    def pg_set_enabled(self,channel):#Enable individual channels to enable on restore_channels
-        if(channel>3 or channel <0):
-            print("Invalid channel")
-            return
-        self.chea = ~(~self.chea | 0B0001 << channel)
-    def pg_set_disabled(self,channel):#Opposite of above
-        if(channel>3 or channel <0):
-            print("Invalid channel")
-            return
-        #print(bin(self.chea))
-        self.chea = self.chea | 0B0001 << channel
-    def pg_set_channel_freq(self,channel,freqi):
-        if (freqi > REF_CLK or freqi < 0.1):
-            print("Invalid frequency, must be between 450Mhz and 0.1Hz")
-            return
-        ratio = self.chset[channel][0]/self.chset[channel][1]
-        newtlim = (1/freqi)/(1/REF_CLK)
-        #newtlim = int(input("Override: "))#Debug
-        newdc = newtlim/ratio
-        self.chset[channel][0] = newtlim
-        self.chset[channel][1] = newdc
-        self.pg_disable_channels()
-        self.pg_set_enabled(channel)
-        self.PG_CH[channel].write(ch1_data, int(self.chset[channel][0]))
-        self.PG_CH[channel].write(ch2_data, int(self.chset[channel][1]))
-        #self.read_debug()
+    def pg_enable(self):
+        self.PG_UTIL.write(ch2_data,0x1)
+    def pg_enable_channel(self,channel):
+        self.pg_ch_stat = ~(~self.pg_ch_stat | (0B0001 << channel))
+        self.T_UTIL.write(ch1_data,self.pg_ch_stat)
+    def pg_disable_channel(self,channel):
+        self.pg_ch_stat = self.pg_ch_stat | (0b0001 << channel)
+        self.T_UTIL.write(ch1_data, self.pg_ch_stat)
+    def pg_set_channel_freq(self,channel,freq):
+        nenc = self.encode_phase_inc(2*freq)
+        self.PG_PH[channel].write(ch1_data,nenc[0])
+        self.PG_PH[channel].write(ch2_data, nenc[1])
+        self.PG_UTIL.write(ch1_data,0xF)
         sleep(slt)
-        self.pg_restore_channels()
-        print("Actual Frequency: "+str(REF_CLK/int(self.chset[channel][0])))
-    def pg_set_dc(self,channel,dcr):#Set duty cycle of channel, requires fractional value from 0 to 1
-        if(dcr>1 or dcr<0):
-            print("Invalid duty cycle")
-            return
-        newdc = self.chset[channel][0]*dcr
-        self.chset[channel][1]=newdc;
-        self.pg_disable_channels()
-        self.PG_CH[channel].write(ch2_data, int(newdc))
-        self.pg_set_enabled(channel)
-        sleep(slt)
-        self.pg_restore_channels()
-    def pg_set_delay(self,channel,delayS):#Channel delay, accepts time in sec0nds from 0 to 1 second
-        if(delayS > 1 or delayS < 0):
-            print("Mate, between 0 and 1 second")
-            return
-        delayval = delayS*REF_CLK
-        print("Delayval: "+str(delayval))
-        self.pg_disable_channels()
-        self.pg_set_enabled(channel)
-        if(channel==0):
-            self.PG_D0.write(ch1_data,int(delayval))
-        elif(channel==1):
-            self.PG_D0.write(ch2_data,int(delayval))
-        elif(channel==2):
-            self.PG_D1.write(ch1_data,int(delayval))
-        elif(channel==3):
-            self.PG_D1.write(ch2_data,int(delayval))
-        else:
-            pass
-        sleep(slt)
-        self.pg_restore_channels()
-        print("Actual delay: "+str(int(delayval)/REF_CLK))
+        self.PG_UTIL.write(ch1_data,0x0)
+        newdc = self.calc_dc_lim(freq,self.chdcs[channel])
+        self.PG_UTIL.write(ch2_data,0x0)
+        self.PG_AUX[channel].write(ch1_data,newdc)
+        self.PG_AUX[channel].write(ch2_data,self.calc_delay(self.chdelays[channel]))
+        self.PG_UTIL.write(ch2_data,0x1)
+        self.chfreqs[channel]=freq
+    def pg_set_dc(self,channel,dc):#Dc from 0 to 1
+        dcenc = self.calc_dc_lim(self.chfreqs[channel],dc)
+        self.PG_UTIL.write(ch2_data,0x0)
+        self.PG_AUX[channel].write(ch1_data,dcenc)
+        self.PG_UTIL.write(ch2_data,0x1)
+        self.chdcs[channel]=dc
+    def pg_set_pw(self,channel,pw):
+        pwv = self.calc_delay(pw/1000)
+        self.PG_UTIL.write(ch2_data,0x0)
+        self.PG_AUX[channel].write(ch1_data,pwv)
+        self.PG_UTIL.write(ch2_data,0x1)
+        tlim = REF_CLK/self.chfreqs[channel]
+        self.chdcs[channel]=pwv/tlim
+    def pg_set_delay(self,channel,delay):#Delay in seconds
+        delv = self.calc_delay(delay)
+        self.PG_UTIL.write(ch2_data,0x0)
+        self.PG_AUX[channel].write(ch2_data,delv)
+        self.chdelays[channel]=delay
+        self.PG_UTIL.write(ch2_data,0x1)
+    def encode_phase_inc(self,freq):
+        enc = int((freq*2**PHASE_BIT_DEPTH)/REF_CLK)
+        lsb = enc & 0xFFFFFFFF
+        msb = (enc >> 32) & 0xFFFF
+        return [lsb,msb]
+    def calc_dc_lim(self,freq,dc): #dc from 0 to 1
+        dc_t = int(REF_CLK/freq)
+        return int(dc_t*dc)
+    def calc_delay(self,delay):
+        return int(delay*REF_CLK)

@@ -2,7 +2,6 @@ vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
 vlib modelsim_lib/msim/xil_defaultlib
-vlib modelsim_lib/msim/xpm
 vlib modelsim_lib/msim/xbip_utils_v3_0_10
 vlib modelsim_lib/msim/c_reg_fd_v12_0_6
 vlib modelsim_lib/msim/xbip_dsp48_wrapper_v3_0_4
@@ -13,11 +12,10 @@ vlib modelsim_lib/msim/c_addsub_v12_0_13
 vlib modelsim_lib/msim/c_gate_bit_v12_0_6
 vlib modelsim_lib/msim/xbip_counter_v3_0_6
 vlib modelsim_lib/msim/c_counter_binary_v12_0_13
-vlib modelsim_lib/msim/blk_mem_gen_v8_4_3
-vlib modelsim_lib/msim/xlconstant_v1_1_6
+vlib modelsim_lib/msim/xlconcat_v2_1_3
+vlib modelsim_lib/msim/util_vector_logic_v2_0_1
 
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
-vmap xpm modelsim_lib/msim/xpm
 vmap xbip_utils_v3_0_10 modelsim_lib/msim/xbip_utils_v3_0_10
 vmap c_reg_fd_v12_0_6 modelsim_lib/msim/c_reg_fd_v12_0_6
 vmap xbip_dsp48_wrapper_v3_0_4 modelsim_lib/msim/xbip_dsp48_wrapper_v3_0_4
@@ -28,14 +26,11 @@ vmap c_addsub_v12_0_13 modelsim_lib/msim/c_addsub_v12_0_13
 vmap c_gate_bit_v12_0_6 modelsim_lib/msim/c_gate_bit_v12_0_6
 vmap xbip_counter_v3_0_6 modelsim_lib/msim/xbip_counter_v3_0_6
 vmap c_counter_binary_v12_0_13 modelsim_lib/msim/c_counter_binary_v12_0_13
-vmap blk_mem_gen_v8_4_3 modelsim_lib/msim/blk_mem_gen_v8_4_3
-vmap xlconstant_v1_1_6 modelsim_lib/msim/xlconstant_v1_1_6
+vmap xlconcat_v2_1_3 modelsim_lib/msim/xlconcat_v2_1_3
+vmap util_vector_logic_v2_0_1 modelsim_lib/msim/util_vector_logic_v2_0_1
 
-vlog -work xil_defaultlib -64 -incr -sv \
-"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
-
-vcom -work xpm -64 -93 \
-"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
+vcom -work xil_defaultlib -64 -93 \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_TRIG_CTL_0_0/sim/TIME_TAG_TT_TRIG_CTL_0_0.vhd" \
 
 vcom -work xbip_utils_v3_0_10 -64 -93 \
 "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
@@ -69,24 +64,29 @@ vcom -work c_counter_binary_v12_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_c_counter_binary_0_0/sim/TIME_TAG_c_counter_binary_0_0.vhd" \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_incident_ctr_0/sim/TIME_TAG_incident_ctr_0.vhd" \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_c_counter_binary_0_1/sim/TIME_TAG_c_counter_binary_0_1.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_0_0/sim/TIME_TAG_TT_DETECTOR_0_0.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_TIMER_CTL_0_0/sim/TIME_TAG_TT_TIMER_CTL_0_0.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_OUTPUT_CTRL_0_0/sim/TIME_TAG_OUTPUT_CTRL_0_0.vhd" \
 
-vlog -work blk_mem_gen_v8_4_3 -64 -incr \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/c001/simulation/blk_mem_gen_v8_4.v" \
+vlog -work xlconcat_v2_1_3 -64 -incr \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 -incr \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_blk_mem_gen_0_1/sim/TIME_TAG_blk_mem_gen_0_1.v" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_xlconcat_0_0/sim/TIME_TAG_xlconcat_0_0.v" \
 
 vcom -work xil_defaultlib -64 -93 \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_R_CTL_0_0/sim/TIME_TAG_TT_R_CTL_0_0.vhd" \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_ADDR_SEL_0_0/sim/TIME_TAG_ADDR_SEL_0_0.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_0_1/sim/TIME_TAG_TT_DETECTOR_0_1.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_1_0/sim/TIME_TAG_TT_DETECTOR_1_0.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_2_0/sim/TIME_TAG_TT_DETECTOR_2_0.vhd" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/sim/TIME_TAG.vhd" \
 
-vlog -work xlconstant_v1_1_6 -64 -incr \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
+vlog -work util_vector_logic_v2_0_1 -64 -incr \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 -incr \
-"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_xlconstant_0_0/sim/TIME_TAG_xlconstant_0_0.v" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_util_vector_logic_0_0/sim/TIME_TAG_util_vector_logic_0_0.v" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_util_vector_logic_1_0/sim/TIME_TAG_util_vector_logic_1_0.v" \
+"../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_util_vector_logic_0_1/sim/TIME_TAG_util_vector_logic_0_1.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

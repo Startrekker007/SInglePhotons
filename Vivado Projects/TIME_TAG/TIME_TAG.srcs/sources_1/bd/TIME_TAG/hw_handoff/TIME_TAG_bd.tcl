@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# ADDR_SEL, TT_RED, TT_R_CTL
+# OUTPUT_CTRL, TT_DETECTOR, TT_DETECTOR, TT_DETECTOR, TT_DETECTOR, TT_TIMER_CTL, TT_TRIG_CTL
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -51,7 +51,6 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
    create_project project_1 myproj -part xc7z020clg400-1
-   set_property BOARD_PART www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
 }
 
 
@@ -166,123 +165,172 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set CH0 [ create_bd_port -dir I CH0 ]
-  set CLK_460_000 [ create_bd_port -dir I CLK_460_000 ]
-  set MS [ create_bd_port -dir I MS ]
+  set CH1 [ create_bd_port -dir I CH1 ]
+  set CH2 [ create_bd_port -dir I CH2 ]
+  set CH3 [ create_bd_port -dir I CH3 ]
+  set DATA_RDY [ create_bd_port -dir O DATA_RDY ]
+  set DET_STATES [ create_bd_port -dir O -from 3 -to 0 DET_STATES ]
+  set MCLK [ create_bd_port -dir I MCLK ]
+  set OBUF_RSTn [ create_bd_port -dir I OBUF_RSTn ]
   set RSTn [ create_bd_port -dir I RSTn ]
-  set d_rdy [ create_bd_port -dir O d_rdy ]
-  set douta [ create_bd_port -dir O -from 47 -to 0 douta ]
-  set r_rdy [ create_bd_port -dir I r_rdy ]
+  set T0 [ create_bd_port -dir I T0 ]
+  set T1 [ create_bd_port -dir O -from 47 -to 0 T1 ]
+  set T2 [ create_bd_port -dir O -from 47 -to 0 T2 ]
+  set T3 [ create_bd_port -dir O -from 47 -to 0 T3 ]
+  set T4 [ create_bd_port -dir O -from 47 -to 0 T4 ]
+  set TIME_OUT [ create_bd_port -dir I -from 47 -to 0 TIME_OUT ]
 
-  # Create instance: ADDR_SEL_0, and set properties
-  set block_name ADDR_SEL
-  set block_cell_name ADDR_SEL_0
-  if { [catch {set ADDR_SEL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: OUTPUT_CTRL_0, and set properties
+  set block_name OUTPUT_CTRL
+  set block_cell_name OUTPUT_CTRL_0
+  if { [catch {set OUTPUT_CTRL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ADDR_SEL_0 eq "" } {
+   } elseif { $OUTPUT_CTRL_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: TT_RED_0, and set properties
-  set block_name TT_RED
-  set block_cell_name TT_RED_0
-  if { [catch {set TT_RED_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: TT_DETECTOR_0, and set properties
+  set block_name TT_DETECTOR
+  set block_cell_name TT_DETECTOR_0
+  if { [catch {set TT_DETECTOR_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $TT_RED_0 eq "" } {
+   } elseif { $TT_DETECTOR_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /TT_RED_0/ictr_rst]
-
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /TT_RED_0/tctr_rst]
-
-  # Create instance: TT_R_CTL_0, and set properties
-  set block_name TT_R_CTL
-  set block_cell_name TT_R_CTL_0
-  if { [catch {set TT_R_CTL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: TT_DETECTOR_1, and set properties
+  set block_name TT_DETECTOR
+  set block_cell_name TT_DETECTOR_1
+  if { [catch {set TT_DETECTOR_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $TT_R_CTL_0 eq "" } {
+   } elseif { $TT_DETECTOR_1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /TT_R_CTL_0/r_ct_rst]
-
-  # Create instance: blk_mem_gen_0, and set properties
-  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
-  set_property -dict [ list \
-   CONFIG.Byte_Size {9} \
-   CONFIG.EN_SAFETY_CKT {false} \
-   CONFIG.Enable_32bit_Address {false} \
-   CONFIG.Read_Width_A {48} \
-   CONFIG.Read_Width_B {48} \
-   CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
-   CONFIG.Use_Byte_Write_Enable {false} \
-   CONFIG.Use_RSTA_Pin {false} \
-   CONFIG.Write_Depth_A {16344} \
-   CONFIG.Write_Width_A {48} \
-   CONFIG.Write_Width_B {48} \
-   CONFIG.use_bram_block {Stand_Alone} \
- ] $blk_mem_gen_0
-
-  # Create instance: incident_ctr, and set properties
-  set incident_ctr [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 incident_ctr ]
-  set_property -dict [ list \
-   CONFIG.CE {true} \
-   CONFIG.Output_Width {14} \
-   CONFIG.SCLR {true} \
- ] $incident_ctr
-
-  # Create instance: read_ctr, and set properties
-  set read_ctr [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 read_ctr ]
+  # Create instance: TT_DETECTOR_2, and set properties
+  set block_name TT_DETECTOR
+  set block_cell_name TT_DETECTOR_2
+  if { [catch {set TT_DETECTOR_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_DETECTOR_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: TT_DETECTOR_3, and set properties
+  set block_name TT_DETECTOR
+  set block_cell_name TT_DETECTOR_3
+  if { [catch {set TT_DETECTOR_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_DETECTOR_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: TT_TIMER, and set properties
+  set TT_TIMER [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 TT_TIMER ]
   set_property -dict [ list \
    CONFIG.CE {false} \
-   CONFIG.Output_Width {14} \
-   CONFIG.SCLR {true} \
- ] $read_ctr
-
-  # Create instance: timer, and set properties
-  set timer [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 timer ]
-  set_property -dict [ list \
-   CONFIG.CE {true} \
    CONFIG.Output_Width {48} \
    CONFIG.SCLR {true} \
- ] $timer
+ ] $TT_TIMER
 
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  # Create instance: TT_TIMER_CTL_0, and set properties
+  set block_name TT_TIMER_CTL
+  set block_cell_name TT_TIMER_CTL_0
+  if { [catch {set TT_TIMER_CTL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_TIMER_CTL_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] [get_bd_pins /TT_TIMER_CTL_0/C_RST]
+
+  # Create instance: TT_TRIG_CTL_0, and set properties
+  set block_name TT_TRIG_CTL
+  set block_cell_name TT_TRIG_CTL_0
+  if { [catch {set TT_TRIG_CTL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_TRIG_CTL_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: active_accel, and set properties
+  set active_accel [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 active_accel ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {and} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_andgate.png} \
+ ] $active_accel
+
+  # Create instance: rst_accel, and set properties
+  set rst_accel [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 rst_accel ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {and} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_andgate.png} \
+ ] $rst_accel
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  set_property -dict [ list \
+   CONFIG.NUM_PORTS {4} \
+ ] $xlconcat_0
 
   # Create port connections
-  connect_bd_net -net ADDR_SEL_0_addra [get_bd_pins ADDR_SEL_0/addra] [get_bd_pins blk_mem_gen_0/addra]
-  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TT_RED_0/inp] [get_bd_pins incident_ctr/CLK]
-  connect_bd_net -net CLK_460_000_1 [get_bd_ports CLK_460_000] [get_bd_pins TT_RED_0/MCLK] [get_bd_pins TT_R_CTL_0/mclk] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins timer/CLK]
-  connect_bd_net -net MS_1 [get_bd_ports MS] [get_bd_pins TT_RED_0/MS]
-  connect_bd_net -net RSTn_1 [get_bd_ports RSTn] [get_bd_pins TT_RED_0/RSTn]
-  connect_bd_net -net TT_RED_0_ictr_en [get_bd_pins TT_RED_0/ictr_en] [get_bd_pins incident_ctr/CE]
-  connect_bd_net -net TT_RED_0_ictr_rst [get_bd_pins TT_RED_0/ictr_rst] [get_bd_pins incident_ctr/SCLR]
-  connect_bd_net -net TT_RED_0_rctl [get_bd_pins ADDR_SEL_0/rctl] [get_bd_pins TT_RED_0/rctl] [get_bd_pins TT_R_CTL_0/rstn]
-  connect_bd_net -net TT_RED_0_tctr_en [get_bd_pins TT_RED_0/tctr_en] [get_bd_pins timer/CE]
-  connect_bd_net -net TT_RED_0_tctr_rst [get_bd_pins TT_RED_0/tctr_rst] [get_bd_pins timer/SCLR]
-  connect_bd_net -net TT_RED_0_wea [get_bd_pins TT_RED_0/wea] [get_bd_pins blk_mem_gen_0/wea]
-  connect_bd_net -net TT_R_CTL_0_d_rdy [get_bd_ports d_rdy] [get_bd_pins TT_R_CTL_0/d_rdy]
-  connect_bd_net -net TT_R_CTL_0_r_ct_pls [get_bd_pins TT_R_CTL_0/r_ct_pls] [get_bd_pins read_ctr/CLK]
-  connect_bd_net -net TT_R_CTL_0_r_ct_rst [get_bd_pins TT_R_CTL_0/r_ct_rst] [get_bd_pins read_ctr/SCLR]
-  connect_bd_net -net blk_mem_gen_0_douta [get_bd_ports douta] [get_bd_pins blk_mem_gen_0/douta]
-  connect_bd_net -net incident_ctr_Q [get_bd_pins ADDR_SEL_0/incident] [get_bd_pins TT_RED_0/ictr] [get_bd_pins TT_R_CTL_0/ictr] [get_bd_pins incident_ctr/Q]
-  connect_bd_net -net r_rdy_1 [get_bd_ports r_rdy] [get_bd_pins TT_R_CTL_0/r_rdy]
-  connect_bd_net -net read_ctr_Q [get_bd_pins ADDR_SEL_0/read] [get_bd_pins TT_R_CTL_0/rctr] [get_bd_pins read_ctr/Q]
-  connect_bd_net -net timer_Q [get_bd_pins blk_mem_gen_0/dina] [get_bd_pins timer/Q]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins blk_mem_gen_0/ena] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TT_DETECTOR_0/CHANNEL]
+  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins TT_DETECTOR_1/CHANNEL]
+  connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins TT_DETECTOR_2/CHANNEL]
+  connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins TT_DETECTOR_3/CHANNEL]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins OUTPUT_CTRL_0/MCLK] [get_bd_pins TT_DETECTOR_0/MCLK] [get_bd_pins TT_DETECTOR_1/MCLK] [get_bd_pins TT_DETECTOR_2/MCLK] [get_bd_pins TT_DETECTOR_3/MCLK] [get_bd_pins TT_TIMER/CLK] [get_bd_pins TT_TIMER_CTL_0/MCLK] [get_bd_pins TT_TRIG_CTL_0/MCLK]
+  connect_bd_net -net Net [get_bd_pins TT_DETECTOR_0/RSTn] [get_bd_pins TT_DETECTOR_1/RSTn] [get_bd_pins TT_DETECTOR_2/RSTn] [get_bd_pins TT_DETECTOR_3/RSTn] [get_bd_pins rst_accel/Res]
+  connect_bd_net -net OBUF_RST_1 [get_bd_ports OBUF_RSTn] [get_bd_pins OUTPUT_CTRL_0/RSTn]
+  connect_bd_net -net OUTPUT_CTRL_0_DATA_RDY [get_bd_ports DATA_RDY] [get_bd_pins OUTPUT_CTRL_0/DATA_RDY]
+  connect_bd_net -net OUTPUT_CTRL_0_T1_o [get_bd_ports T1] [get_bd_pins OUTPUT_CTRL_0/T1_o]
+  connect_bd_net -net OUTPUT_CTRL_0_T2_o [get_bd_ports T2] [get_bd_pins OUTPUT_CTRL_0/T2_o]
+  connect_bd_net -net OUTPUT_CTRL_0_T3_o [get_bd_ports T3] [get_bd_pins OUTPUT_CTRL_0/T3_o]
+  connect_bd_net -net OUTPUT_CTRL_0_T4_o [get_bd_ports T4] [get_bd_pins OUTPUT_CTRL_0/T4_o]
+  connect_bd_net -net RSTn_1 [get_bd_ports RSTn] [get_bd_pins TT_TRIG_CTL_0/RSTn] [get_bd_pins rst_accel/Op1]
+  connect_bd_net -net T0_1 [get_bd_ports T0] [get_bd_pins TT_TRIG_CTL_0/TRIG]
+  connect_bd_net -net TIME_OUT_1 [get_bd_ports TIME_OUT] [get_bd_pins TT_TIMER_CTL_0/TIME_OUT]
+  connect_bd_net -net TT_DETECTOR_0_RDY [get_bd_pins OUTPUT_CTRL_0/RDY0] [get_bd_pins TT_DETECTOR_0/RDY] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net TT_DETECTOR_0_TIME_ch [get_bd_pins OUTPUT_CTRL_0/T1_i] [get_bd_pins TT_DETECTOR_0/TIME_ch]
+  connect_bd_net -net TT_DETECTOR_1_RDY [get_bd_pins OUTPUT_CTRL_0/RDY1] [get_bd_pins TT_DETECTOR_1/RDY] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net TT_DETECTOR_1_TIME_ch [get_bd_pins OUTPUT_CTRL_0/T2_i] [get_bd_pins TT_DETECTOR_1/TIME_ch]
+  connect_bd_net -net TT_DETECTOR_2_RDY [get_bd_pins OUTPUT_CTRL_0/RDY2] [get_bd_pins TT_DETECTOR_2/RDY] [get_bd_pins xlconcat_0/In2]
+  connect_bd_net -net TT_DETECTOR_2_TIME_ch [get_bd_pins OUTPUT_CTRL_0/T3_i] [get_bd_pins TT_DETECTOR_2/TIME_ch]
+  connect_bd_net -net TT_DETECTOR_3_RDY [get_bd_pins OUTPUT_CTRL_0/RDY3] [get_bd_pins TT_DETECTOR_3/RDY] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net TT_DETECTOR_3_TIME_ch [get_bd_pins OUTPUT_CTRL_0/T4_i] [get_bd_pins TT_DETECTOR_3/TIME_ch]
+  connect_bd_net -net TT_TIMER_CTL_0_C_RST [get_bd_pins TT_TIMER_CTL_0/C_RST] [get_bd_pins active_accel/Op2]
+  connect_bd_net -net TT_TIMER_CTL_0_D_EN [get_bd_pins TT_DETECTOR_0/EN] [get_bd_pins TT_DETECTOR_1/EN] [get_bd_pins TT_DETECTOR_2/EN] [get_bd_pins TT_DETECTOR_3/EN] [get_bd_pins TT_TIMER_CTL_0/D_EN]
+  connect_bd_net -net TT_TIMER_CTL_0_T_END [get_bd_pins OUTPUT_CTRL_0/TO_RDY] [get_bd_pins TT_TIMER_CTL_0/T_END]
+  connect_bd_net -net TT_TIMER_Q [get_bd_pins TT_DETECTOR_0/CTR] [get_bd_pins TT_DETECTOR_1/CTR] [get_bd_pins TT_DETECTOR_2/CTR] [get_bd_pins TT_DETECTOR_3/CTR] [get_bd_pins TT_TIMER/Q] [get_bd_pins TT_TIMER_CTL_0/Q]
+  connect_bd_net -net TT_TRIG_CTL_0_ACTIVE [get_bd_pins TT_TIMER_CTL_0/RSTn] [get_bd_pins TT_TRIG_CTL_0/ACTIVE] [get_bd_pins rst_accel/Op2] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins TT_TIMER/SCLR] [get_bd_pins active_accel/Res]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins active_accel/Op1] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net xlconcat_0_dout [get_bd_ports DET_STATES] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
 

@@ -1,8 +1,5 @@
--makelib xcelium_lib/xil_defaultlib -sv \
-  "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
--endlib
--makelib xcelium_lib/xpm \
-  "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_TRIG_CTL_0_0/sim/TIME_TAG_TT_TRIG_CTL_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/xbip_utils_v3_0_10 \
   "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/1123/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
@@ -36,24 +33,29 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_c_counter_binary_0_0/sim/TIME_TAG_c_counter_binary_0_0.vhd" \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_incident_ctr_0/sim/TIME_TAG_incident_ctr_0.vhd" \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_c_counter_binary_0_1/sim/TIME_TAG_c_counter_binary_0_1.vhd" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_0_0/sim/TIME_TAG_TT_DETECTOR_0_0.vhd" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_TIMER_CTL_0_0/sim/TIME_TAG_TT_TIMER_CTL_0_0.vhd" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_OUTPUT_CTRL_0_0/sim/TIME_TAG_OUTPUT_CTRL_0_0.vhd" \
 -endlib
--makelib xcelium_lib/blk_mem_gen_v8_4_3 \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/c001/simulation/blk_mem_gen_v8_4.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_blk_mem_gen_0_1/sim/TIME_TAG_blk_mem_gen_0_1.v" \
+-makelib xcelium_lib/xlconcat_v2_1_3 \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_R_CTL_0_0/sim/TIME_TAG_TT_R_CTL_0_0.vhd" \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_ADDR_SEL_0_0/sim/TIME_TAG_ADDR_SEL_0_0.vhd" \
--endlib
--makelib xcelium_lib/xlconstant_v1_1_6 \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_xlconcat_0_0/sim/TIME_TAG_xlconcat_0_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_xlconstant_0_0/sim/TIME_TAG_xlconstant_0_0.v" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_0_1/sim/TIME_TAG_TT_DETECTOR_0_1.vhd" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_1_0/sim/TIME_TAG_TT_DETECTOR_1_0.vhd" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_TT_DETECTOR_2_0/sim/TIME_TAG_TT_DETECTOR_2_0.vhd" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/sim/TIME_TAG.vhd" \
+-endlib
+-makelib xcelium_lib/util_vector_logic_v2_0_1 \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_util_vector_logic_0_0/sim/TIME_TAG_util_vector_logic_0_0.v" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_util_vector_logic_1_0/sim/TIME_TAG_util_vector_logic_1_0.v" \
+  "../../../../TIME_TAG.srcs/sources_1/bd/TIME_TAG/ip/TIME_TAG_util_vector_logic_0_1/sim/TIME_TAG_util_vector_logic_0_1.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

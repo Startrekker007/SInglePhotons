@@ -59,9 +59,8 @@ USE c_counter_binary_v12_0_13.c_counter_binary_v12_0_13;
 ENTITY TIME_TAG_c_counter_binary_0_0 IS
   PORT (
     CLK : IN STD_LOGIC;
-    CE : IN STD_LOGIC;
     SCLR : IN STD_LOGIC;
-    Q : OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
+    Q : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   );
 END TIME_TAG_c_counter_binary_0_0;
 
@@ -101,20 +100,18 @@ ARCHITECTURE TIME_TAG_c_counter_binary_0_0_arch OF TIME_TAG_c_counter_binary_0_0
       SINIT : IN STD_LOGIC;
       UP : IN STD_LOGIC;
       LOAD : IN STD_LOGIC;
-      L : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+      L : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
       THRESH0 : OUT STD_LOGIC;
-      Q : OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
+      Q : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );
   END COMPONENT c_counter_binary_v12_0_13;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 14} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}" & 
-"} value false}}}} DATA_WIDTH 14}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 48} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}" & 
+"} value false}}}} DATA_WIDTH 48}";
   ATTRIBUTE X_INTERFACE_INFO OF Q: SIGNAL IS "xilinx.com:signal:data:1.0 q_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF SCLR: SIGNAL IS "xilinx.com:signal:reset:1.0 sclr_intf RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF CE: SIGNAL IS "XIL_INTERFACENAME ce_intf, POLARITY ACTIVE_LOW";
-  ATTRIBUTE X_INTERFACE_INFO OF CE: SIGNAL IS "xilinx.com:signal:clockenable:1.0 ce_intf CE";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF q_intf:thresh0_intf:l_intf:load_intf:up_intf:sinit_intf:sset_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 10000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
 BEGIN
@@ -123,8 +120,8 @@ BEGIN
       C_IMPLEMENTATION => 0,
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "zynq",
-      C_WIDTH => 14,
-      C_HAS_CE => 1,
+      C_WIDTH => 48,
+      C_HAS_CE => 0,
       C_HAS_SCLR => 1,
       C_RESTRICT_COUNT => 0,
       C_COUNT_TO => "1",
@@ -145,13 +142,13 @@ BEGIN
     )
     PORT MAP (
       CLK => CLK,
-      CE => CE,
+      CE => '1',
       SCLR => SCLR,
       SSET => '0',
       SINIT => '0',
       UP => '1',
       LOAD => '0',
-      L => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 14)),
+      L => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 48)),
       Q => Q
     );
 END TIME_TAG_c_counter_binary_0_0_arch;
