@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 11 10:53:16 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 11 15:35:44 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="TIME_TAG" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -9,10 +9,11 @@
         <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="CHANNEL"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="RSTn" SIGIS="undef" SIGNAME="External_Ports_RSTn">
+    <PORT DIR="I" NAME="resetn" SIGIS="undef" SIGNAME="External_Ports_resetn">
       <CONNECTIONS>
         <CONNECTION INSTANCE="TT_TRIG_CTL_0" PORT="RSTn"/>
         <CONNECTION INSTANCE="rst_accel" PORT="Op1"/>
+        <CONNECTION INSTANCE="External_Ports" PORT="DEBUG0"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
@@ -82,9 +83,19 @@
         <CONNECTION INSTANCE="OUTPUT_CTRL_0" PORT="T4_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="OBUF_RSTn" SIGIS="undef" SIGNAME="External_Ports_OBUF_RSTn">
+    <PORT DIR="I" NAME="obuf_resetn" SIGIS="undef" SIGNAME="External_Ports_obuf_resetn">
       <CONNECTIONS>
         <CONNECTION INSTANCE="OUTPUT_CTRL_0" PORT="RSTn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="ACTIVE" RIGHT="0" SIGIS="undef" SIGNAME="rst_accel_Res">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="rst_accel" PORT="Res"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DEBUG0" SIGIS="undef" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -134,9 +145,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RSTn" SIGIS="rst" SIGNAME="External_Ports_OBUF_RSTn">
+        <PORT DIR="I" NAME="RSTn" SIGIS="rst" SIGNAME="External_Ports_obuf_resetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="OBUF_RSTn"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="obuf_resetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="47" NAME="T1_i" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_TIME_ch">
@@ -506,9 +517,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RSTn" SIGIS="rst" SIGNAME="External_Ports_RSTn">
+        <PORT DIR="I" NAME="RSTn" SIGIS="rst" SIGNAME="External_Ports_resetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="RSTn"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ACTIVE" SIGIS="undef" SIGNAME="TT_TRIG_CTL_0_ACTIVE">
@@ -559,9 +570,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_RSTn">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_resetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="RSTn"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="TT_TRIG_CTL_0_ACTIVE">
@@ -575,6 +586,7 @@
             <CONNECTION INSTANCE="TT_DETECTOR_2" PORT="RSTn"/>
             <CONNECTION INSTANCE="TT_DETECTOR_1" PORT="RSTn"/>
             <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="RSTn"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="ACTIVE"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

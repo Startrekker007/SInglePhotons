@@ -164,21 +164,23 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set ACTIVE [ create_bd_port -dir O -from 0 -to 0 ACTIVE ]
   set CH0 [ create_bd_port -dir I CH0 ]
   set CH1 [ create_bd_port -dir I CH1 ]
   set CH2 [ create_bd_port -dir I CH2 ]
   set CH3 [ create_bd_port -dir I CH3 ]
   set DATA_RDY [ create_bd_port -dir O DATA_RDY ]
+  set DEBUG0 [ create_bd_port -dir O DEBUG0 ]
   set DET_STATES [ create_bd_port -dir O -from 3 -to 0 DET_STATES ]
   set MCLK [ create_bd_port -dir I MCLK ]
-  set OBUF_RSTn [ create_bd_port -dir I OBUF_RSTn ]
-  set RSTn [ create_bd_port -dir I RSTn ]
   set T0 [ create_bd_port -dir I T0 ]
   set T1 [ create_bd_port -dir O -from 47 -to 0 T1 ]
   set T2 [ create_bd_port -dir O -from 47 -to 0 T2 ]
   set T3 [ create_bd_port -dir O -from 47 -to 0 T3 ]
   set T4 [ create_bd_port -dir O -from 47 -to 0 T4 ]
   set TIME_OUT [ create_bd_port -dir I -from 47 -to 0 TIME_OUT ]
+  set obuf_resetn [ create_bd_port -dir I obuf_resetn ]
+  set resetn [ create_bd_port -dir I resetn ]
 
   # Create instance: OUTPUT_CTRL_0, and set properties
   set block_name OUTPUT_CTRL
@@ -305,14 +307,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins TT_DETECTOR_2/CHANNEL]
   connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins TT_DETECTOR_3/CHANNEL]
   connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins OUTPUT_CTRL_0/MCLK] [get_bd_pins TT_DETECTOR_0/MCLK] [get_bd_pins TT_DETECTOR_1/MCLK] [get_bd_pins TT_DETECTOR_2/MCLK] [get_bd_pins TT_DETECTOR_3/MCLK] [get_bd_pins TT_TIMER/CLK] [get_bd_pins TT_TIMER_CTL_0/MCLK] [get_bd_pins TT_TRIG_CTL_0/MCLK]
-  connect_bd_net -net Net [get_bd_pins TT_DETECTOR_0/RSTn] [get_bd_pins TT_DETECTOR_1/RSTn] [get_bd_pins TT_DETECTOR_2/RSTn] [get_bd_pins TT_DETECTOR_3/RSTn] [get_bd_pins rst_accel/Res]
-  connect_bd_net -net OBUF_RST_1 [get_bd_ports OBUF_RSTn] [get_bd_pins OUTPUT_CTRL_0/RSTn]
+  connect_bd_net -net Net [get_bd_ports ACTIVE] [get_bd_pins TT_DETECTOR_0/RSTn] [get_bd_pins TT_DETECTOR_1/RSTn] [get_bd_pins TT_DETECTOR_2/RSTn] [get_bd_pins TT_DETECTOR_3/RSTn] [get_bd_pins rst_accel/Res]
+  connect_bd_net -net OBUF_RST_1 [get_bd_ports obuf_resetn] [get_bd_pins OUTPUT_CTRL_0/RSTn]
   connect_bd_net -net OUTPUT_CTRL_0_DATA_RDY [get_bd_ports DATA_RDY] [get_bd_pins OUTPUT_CTRL_0/DATA_RDY]
   connect_bd_net -net OUTPUT_CTRL_0_T1_o [get_bd_ports T1] [get_bd_pins OUTPUT_CTRL_0/T1_o]
   connect_bd_net -net OUTPUT_CTRL_0_T2_o [get_bd_ports T2] [get_bd_pins OUTPUT_CTRL_0/T2_o]
   connect_bd_net -net OUTPUT_CTRL_0_T3_o [get_bd_ports T3] [get_bd_pins OUTPUT_CTRL_0/T3_o]
   connect_bd_net -net OUTPUT_CTRL_0_T4_o [get_bd_ports T4] [get_bd_pins OUTPUT_CTRL_0/T4_o]
-  connect_bd_net -net RSTn_1 [get_bd_ports RSTn] [get_bd_pins TT_TRIG_CTL_0/RSTn] [get_bd_pins rst_accel/Op1]
+  connect_bd_net -net RSTn_1 [get_bd_ports DEBUG0] [get_bd_ports resetn] [get_bd_pins TT_TRIG_CTL_0/RSTn] [get_bd_pins rst_accel/Op1]
   connect_bd_net -net T0_1 [get_bd_ports T0] [get_bd_pins TT_TRIG_CTL_0/TRIG]
   connect_bd_net -net TIME_OUT_1 [get_bd_ports TIME_OUT] [get_bd_pins TT_TIMER_CTL_0/TIME_OUT]
   connect_bd_net -net TT_DETECTOR_0_RDY [get_bd_pins OUTPUT_CTRL_0/RDY0] [get_bd_pins TT_DETECTOR_0/RDY] [get_bd_pins xlconcat_0/In0]

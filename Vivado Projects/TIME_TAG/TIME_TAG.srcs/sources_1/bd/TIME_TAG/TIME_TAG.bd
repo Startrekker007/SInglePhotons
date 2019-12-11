@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x18296F1C668FACA7",
+      "boundary_crc": "0x1489878747853D7F",
       "device": "xc7z020clg400-1",
       "name": "TIME_TAG",
       "synth_flow_mode": "None",
@@ -26,7 +26,7 @@
       "CH0": {
         "direction": "I"
       },
-      "RSTn": {
+      "resetn": {
         "direction": "I"
       },
       "CH1": {
@@ -83,8 +83,16 @@
         "left": "47",
         "right": "0"
       },
-      "OBUF_RSTn": {
+      "obuf_resetn": {
         "direction": "I"
+      },
+      "ACTIVE": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "DEBUG0": {
+        "direction": "O"
       }
     },
     "components": {
@@ -534,9 +542,10 @@
       },
       "RSTn_1": {
         "ports": [
-          "RSTn",
+          "resetn",
           "TT_TRIG_CTL_0/RSTn",
-          "rst_accel/Op1"
+          "rst_accel/Op1",
+          "DEBUG0"
         ]
       },
       "TT_TRIG_CTL_0_ACTIVE": {
@@ -650,7 +659,7 @@
       },
       "OBUF_RST_1": {
         "ports": [
-          "OBUF_RSTn",
+          "obuf_resetn",
           "OUTPUT_CTRL_0/RSTn"
         ]
       },
@@ -720,7 +729,8 @@
           "TT_DETECTOR_3/RSTn",
           "TT_DETECTOR_2/RSTn",
           "TT_DETECTOR_1/RSTn",
-          "TT_DETECTOR_0/RSTn"
+          "TT_DETECTOR_0/RSTn",
+          "ACTIVE"
         ]
       }
     }

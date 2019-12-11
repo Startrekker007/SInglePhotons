@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
+using System.Diagnostics;
+using System.Threading;
 namespace FrontEnd
 {
     public partial class Connection : Form
@@ -37,9 +39,25 @@ namespace FrontEnd
                 try
                 {
                     Form1.sock.Connect(remoteEP);
+                    Form1.sock.Blocking = true;
+                    Form1.sock.Send(Encoding.ASCII.GetBytes("START"));
+                    
+                    byte[] inc = new byte[1024];
+                    Form1.sock.Receive(inc);
+                    string rec = Encoding.ASCII.GetString(inc);
+                    Debug.WriteLine(rec);
+                    if (rec.Equals("DONE"))
+                    {
+                        Form1.sock.Close();
+                        throw new Exception("Failed to get remote  confirmation");
+                    }
                     MessageBox.Show("Connection succeeded!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form1.datathread = new Thread(new ThreadStart(main.dataLoop));
+                    Form1.datathread.Start();
+                    Form1.dataThreadAlive = true;
                     main.enableFunctions();
                     this.Close();
+                    Form1.dataThreadAlive = true;
                     break;
                 }
                 catch (Exception exc)

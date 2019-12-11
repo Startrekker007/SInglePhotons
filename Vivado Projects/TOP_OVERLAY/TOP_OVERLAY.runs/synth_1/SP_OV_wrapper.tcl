@@ -18,7 +18,6 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -39,6 +38,8 @@ set_property ip_repo_paths {
   d:/SInglePhotons/HW_IP/COUNTER_AXI
   d:/SInglePhotons/HW_IP/DDS_AXI_PERIPH
   d:/SInglePhotons/HW_IP/DDS_COM_TEST
+  d:/SInglePhotons/HW_IP/TIME_TAGGER
+  d:/SInglePhotons/HW_IP/TT_AXI_PERIPH
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.cache/ip} [current_project]
@@ -132,9 +133,30 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_1/SP_OV_axi_gpio_0_1.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_1/TT_AXI_PERIPH_axi_gpio_0_1_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_1/TT_AXI_PERIPH_axi_gpio_0_1_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_1/TT_AXI_PERIPH_axi_gpio_0_1.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_2/TT_AXI_PERIPH_axi_gpio_0_2_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_2/TT_AXI_PERIPH_axi_gpio_0_2_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_2/TT_AXI_PERIPH_axi_gpio_0_2.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_2/TT_AXI_PERIPH_T1_2_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_2/TT_AXI_PERIPH_T1_2_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_2/TT_AXI_PERIPH_T1_2.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_3/TT_AXI_PERIPH_T1_3_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_3/TT_AXI_PERIPH_T1_3_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_3/TT_AXI_PERIPH_T1_3.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_4/TT_AXI_PERIPH_T1_4_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_4/TT_AXI_PERIPH_T1_4_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_4/TT_AXI_PERIPH_T1_4.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/SP_OV_tier2_xbar_0_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_tier2_xbar_1_0/SP_OV_tier2_xbar_1_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_tier2_xbar_2_0/SP_OV_tier2_xbar_2_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_tier2_xbar_3_0/SP_OV_tier2_xbar_3_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_auto_pc_0/SP_OV_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/SP_OV_ooc.xdc}}]
 

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Dec 10 12:45:40 2019
+| Date         : Wed Dec 11 15:46:05 2019
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_drc -file SP_OV_wrapper_drc_routed.rpt -pb SP_OV_wrapper_drc_routed.pb -rpx SP_OV_wrapper_drc_routed.rpx
 | Design       : SP_OV_wrapper
@@ -24,10 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 20
+             Violations found: 21
 +-------------+----------+-----------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                     | Violations |
 +-------------+----------+-----------------------------------------------------------------+------------+
+| IOSR-1      | Warning  | IOB set reset sharing                                           | 1          |
 | PDRC-153    | Warning  | Gated clock check                                               | 8          |
 | PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations     | 8          |
 | AVAL-5      | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 4          |
@@ -35,6 +36,11 @@ Table of Contents
 
 2. REPORT DETAILS
 -----------------
+IOSR-1#1 Warning
+IOB set reset sharing  
+IO TRIG_T0 connects to flops which have these SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/EX_TRIG_CTL_0/U0/p_1_in, SP_OV_i/TT_AXI_PERIPH_wrapper_0/U0/TT_AXI_PERIPH_i/TIME_TAG_wrapper_0/U0/TIME_TAG_i/TT_TRIG_CTL_0/U0/l_trig_i_1_n_0 set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Related violations: <none>
+
 PDRC-153#1 Warning
 Gated clock check  
 Net SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/CLK is a gated clock net sourced by a combinational pin SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/O_CLK/O, cell SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/CTR_CTL_0/U0/O_CLK. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.

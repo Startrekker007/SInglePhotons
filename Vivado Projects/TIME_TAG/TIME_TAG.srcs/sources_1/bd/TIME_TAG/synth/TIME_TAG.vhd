@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec 11 10:53:15 2019
+--Date        : Wed Dec 11 15:35:44 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TIME_TAG.bd
 --Design      : TIME_TAG
@@ -13,21 +13,23 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity TIME_TAG is
   port (
+    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
     CH0 : in STD_LOGIC;
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
     DATA_RDY : out STD_LOGIC;
+    DEBUG0 : out STD_LOGIC;
     DET_STATES : out STD_LOGIC_VECTOR ( 3 downto 0 );
     MCLK : in STD_LOGIC;
-    OBUF_RSTn : in STD_LOGIC;
-    RSTn : in STD_LOGIC;
     T0 : in STD_LOGIC;
     T1 : out STD_LOGIC_VECTOR ( 47 downto 0 );
     T2 : out STD_LOGIC_VECTOR ( 47 downto 0 );
     T3 : out STD_LOGIC_VECTOR ( 47 downto 0 );
     T4 : out STD_LOGIC_VECTOR ( 47 downto 0 );
-    TIME_OUT : in STD_LOGIC_VECTOR ( 47 downto 0 )
+    TIME_OUT : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    obuf_resetn : in STD_LOGIC;
+    resetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of TIME_TAG : entity is "TIME_TAG,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TIME_TAG,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
@@ -187,15 +189,17 @@ architecture STRUCTURE of TIME_TAG is
   signal util_vector_logic_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
 begin
+  ACTIVE(0) <= Net(0);
   CH0_1 <= CH0;
   CH1_1 <= CH1;
   CH2_1 <= CH2;
   CH3_1 <= CH3;
   DATA_RDY <= OUTPUT_CTRL_0_DATA_RDY;
+  DEBUG0 <= RSTn_1;
   DET_STATES(3 downto 0) <= xlconcat_0_dout(3 downto 0);
   MCLK_1 <= MCLK;
-  OBUF_RST_1 <= OBUF_RSTn;
-  RSTn_1 <= RSTn;
+  OBUF_RST_1 <= obuf_resetn;
+  RSTn_1 <= resetn;
   T0_1 <= T0;
   T1(47 downto 0) <= OUTPUT_CTRL_0_T1_o(47 downto 0);
   T2(47 downto 0) <= OUTPUT_CTRL_0_T2_o(47 downto 0);
