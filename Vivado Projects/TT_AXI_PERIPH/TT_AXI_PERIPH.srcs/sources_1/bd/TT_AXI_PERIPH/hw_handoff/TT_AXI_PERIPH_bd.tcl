@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source TT_AXI_PERIPH_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# TT_META48, TT_META48, TT_META48, TT_META48, TT_META5
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -169,12 +176,13 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set ACTIVE [ create_bd_port -dir O -from 0 -to 0 ACTIVE ]
+  set ACTIVE [ create_bd_port -dir O ACTIVE ]
   set CH0 [ create_bd_port -dir I CH0 ]
   set CH1 [ create_bd_port -dir I CH1 ]
   set CH2 [ create_bd_port -dir I CH2 ]
   set CH3 [ create_bd_port -dir I CH3 ]
   set DEBUG0 [ create_bd_port -dir O DEBUG0 ]
+  set DEBUG1 [ create_bd_port -dir O DEBUG1 ]
   set D_RDY [ create_bd_port -dir O D_RDY ]
   set MCLK [ create_bd_port -dir I MCLK ]
   set T0 [ create_bd_port -dir I T0 ]
@@ -293,9 +301,64 @@ proc create_root_design { parentCell } {
    CONFIG.C_IS_DUAL {1} \
  ] $T4
 
-  # Create instance: TIME_TAG_wrapper_0, and set properties
-  set TIME_TAG_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:TIME_TAG_wrapper:1.0 TIME_TAG_wrapper_0 ]
+  # Create instance: TIME_TAG_M_0, and set properties
+  set TIME_TAG_M_0 [ create_bd_cell -type ip -vlnv cri.nz:user:TIME_TAG_M:1.0 TIME_TAG_M_0 ]
 
+  # Create instance: TT_META48_0, and set properties
+  set block_name TT_META48
+  set block_cell_name TT_META48_0
+  if { [catch {set TT_META48_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_META48_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: TT_META48_1, and set properties
+  set block_name TT_META48
+  set block_cell_name TT_META48_1
+  if { [catch {set TT_META48_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_META48_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: TT_META48_2, and set properties
+  set block_name TT_META48
+  set block_cell_name TT_META48_2
+  if { [catch {set TT_META48_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_META48_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: TT_META48_3, and set properties
+  set block_name TT_META48
+  set block_cell_name TT_META48_3
+  if { [catch {set TT_META48_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_META48_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: TT_META5_0, and set properties
+  set block_name TT_META5
+  set block_cell_name TT_META5_0
+  if { [catch {set TT_META5_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $TT_META5_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: time_out_gpio, and set properties
   set time_out_gpio [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 time_out_gpio ]
   set_property -dict [ list \
@@ -313,7 +376,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_ALL_INPUTS_2 {1} \
    CONFIG.C_ALL_OUTPUTS {1} \
    CONFIG.C_GPIO2_WIDTH {5} \
-   CONFIG.C_GPIO_WIDTH {2} \
+   CONFIG.C_GPIO_WIDTH {1} \
    CONFIG.C_IS_DUAL {1} \
  ] $util
 
@@ -331,23 +394,6 @@ proc create_root_design { parentCell } {
    CONFIG.IN1_WIDTH {1} \
  ] $xlconcat_1
 
-  # Create instance: xlslice_0, and set properties
-  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {0} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {2} \
- ] $xlslice_0
-
-  # Create instance: xlslice_1, and set properties
-  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {1} \
-   CONFIG.DIN_TO {1} \
-   CONFIG.DIN_WIDTH {2} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_1
-
   # Create interface connections
   connect_bd_intf_net -intf_net T1_1 [get_bd_intf_ports T1] [get_bd_intf_pins T1/S_AXI]
   connect_bd_intf_net -intf_net T2_1 [get_bd_intf_ports T2] [get_bd_intf_pins T2/S_AXI]
@@ -357,29 +403,33 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net util_1 [get_bd_intf_ports util] [get_bd_intf_pins util/S_AXI]
 
   # Create port connections
-  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TIME_TAG_wrapper_0/CH0]
-  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins TIME_TAG_wrapper_0/CH1]
-  connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins TIME_TAG_wrapper_0/CH2]
-  connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins TIME_TAG_wrapper_0/CH3]
-  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins TIME_TAG_wrapper_0/MCLK]
-  connect_bd_net -net Net [get_bd_pins util/gpio_io_o] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
-  connect_bd_net -net T0_1 [get_bd_ports T0] [get_bd_pins TIME_TAG_wrapper_0/T0]
-  connect_bd_net -net TIME_TAG_wrapper_0_ACTIVE [get_bd_ports ACTIVE] [get_bd_pins TIME_TAG_wrapper_0/ACTIVE]
-  connect_bd_net -net TIME_TAG_wrapper_0_DATA_RDY [get_bd_ports D_RDY] [get_bd_pins TIME_TAG_wrapper_0/DATA_RDY] [get_bd_pins xlconcat_1/In1]
-  connect_bd_net -net TIME_TAG_wrapper_0_DEBUG0 [get_bd_ports DEBUG0] [get_bd_pins TIME_TAG_wrapper_0/DEBUG0]
-  connect_bd_net -net TIME_TAG_wrapper_0_DET_STATES [get_bd_pins TIME_TAG_wrapper_0/DET_STATES] [get_bd_pins xlconcat_1/In0]
-  connect_bd_net -net TIME_TAG_wrapper_0_T1 [get_bd_pins LSB_T1/Din] [get_bd_pins MSB_T1/Din] [get_bd_pins TIME_TAG_wrapper_0/T1]
-  connect_bd_net -net TIME_TAG_wrapper_0_T2 [get_bd_pins LSB_T2/Din] [get_bd_pins MSB_T2/Din] [get_bd_pins TIME_TAG_wrapper_0/T2]
-  connect_bd_net -net TIME_TAG_wrapper_0_T3 [get_bd_pins LSB_T3/Din] [get_bd_pins MSB_T3/Din] [get_bd_pins TIME_TAG_wrapper_0/T3]
-  connect_bd_net -net TIME_TAG_wrapper_0_T4 [get_bd_pins LSB_T4/Din] [get_bd_pins MSB_T4/Din] [get_bd_pins TIME_TAG_wrapper_0/T4]
-  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins T1/s_axi_aclk] [get_bd_pins T2/s_axi_aclk] [get_bd_pins T3/s_axi_aclk] [get_bd_pins T4/s_axi_aclk] [get_bd_pins time_out_gpio/s_axi_aclk] [get_bd_pins util/s_axi_aclk]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins TIME_TAG_M_0/CH0]
+  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins TIME_TAG_M_0/CH1]
+  connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins TIME_TAG_M_0/CH2]
+  connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins TIME_TAG_M_0/CH3]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins TIME_TAG_M_0/MCLK]
+  connect_bd_net -net T0_1 [get_bd_ports T0] [get_bd_pins TIME_TAG_M_0/T0]
+  connect_bd_net -net TIME_TAG_M_0_DEBUG [get_bd_ports DEBUG1] [get_bd_pins TIME_TAG_M_0/DEBUG]
+  connect_bd_net -net TIME_TAG_M_0_ch_timeouts [get_bd_pins TIME_TAG_M_0/ch_timeouts] [get_bd_pins xlconcat_1/In0]
+  connect_bd_net -net TIME_TAG_M_0_listening [get_bd_ports ACTIVE] [get_bd_pins TIME_TAG_M_0/listening]
+  connect_bd_net -net TIME_TAG_M_0_t1 [get_bd_pins TIME_TAG_M_0/t1] [get_bd_pins TT_META48_0/INP]
+  connect_bd_net -net TIME_TAG_M_0_t2 [get_bd_pins TIME_TAG_M_0/t2] [get_bd_pins TT_META48_1/INP]
+  connect_bd_net -net TIME_TAG_M_0_t3 [get_bd_pins TIME_TAG_M_0/t3] [get_bd_pins TT_META48_2/INP]
+  connect_bd_net -net TIME_TAG_M_0_t4 [get_bd_pins TIME_TAG_M_0/t4] [get_bd_pins TT_META48_3/INP]
+  connect_bd_net -net TIME_TAG_M_0_waiting [get_bd_ports DEBUG0] [get_bd_pins TIME_TAG_M_0/waiting]
+  connect_bd_net -net TIME_TAG_wrapper_0_DATA_RDY [get_bd_ports D_RDY] [get_bd_pins TIME_TAG_M_0/D_RDY] [get_bd_pins xlconcat_1/In1]
+  connect_bd_net -net TIME_TAG_wrapper_0_T1 [get_bd_pins LSB_T1/Din] [get_bd_pins MSB_T1/Din] [get_bd_pins TT_META48_0/OUTP]
+  connect_bd_net -net TIME_TAG_wrapper_0_T2 [get_bd_pins LSB_T2/Din] [get_bd_pins MSB_T2/Din] [get_bd_pins TT_META48_1/OUTP]
+  connect_bd_net -net TIME_TAG_wrapper_0_T3 [get_bd_pins LSB_T3/Din] [get_bd_pins MSB_T3/Din] [get_bd_pins TT_META48_2/OUTP]
+  connect_bd_net -net TIME_TAG_wrapper_0_T4 [get_bd_pins LSB_T4/Din] [get_bd_pins MSB_T4/Din] [get_bd_pins TT_META48_3/OUTP]
+  connect_bd_net -net TT_META5_0_OUTP [get_bd_pins TT_META5_0/OUTP] [get_bd_pins util/gpio2_io_i]
+  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins T1/s_axi_aclk] [get_bd_pins T2/s_axi_aclk] [get_bd_pins T3/s_axi_aclk] [get_bd_pins T4/s_axi_aclk] [get_bd_pins TT_META48_0/MCLK] [get_bd_pins TT_META48_1/MCLK] [get_bd_pins TT_META48_2/MCLK] [get_bd_pins TT_META48_3/MCLK] [get_bd_pins TT_META5_0/MCLK] [get_bd_pins time_out_gpio/s_axi_aclk] [get_bd_pins util/s_axi_aclk]
   connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins T1/s_axi_aresetn] [get_bd_pins T2/s_axi_aresetn] [get_bd_pins T3/s_axi_aresetn] [get_bd_pins T4/s_axi_aresetn] [get_bd_pins time_out_gpio/s_axi_aresetn] [get_bd_pins util/s_axi_aresetn]
   connect_bd_net -net time_out_gpio_gpio2_io_o [get_bd_pins time_out_gpio/gpio2_io_o] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net time_out_gpio_gpio_io_o [get_bd_pins time_out_gpio/gpio_io_o] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins TIME_TAG_wrapper_0/TIME_OUT] [get_bd_pins xlconcat_0/dout]
-  connect_bd_net -net xlconcat_1_dout [get_bd_pins util/gpio2_io_i] [get_bd_pins xlconcat_1/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins TIME_TAG_wrapper_0/resetn] [get_bd_pins xlslice_0/Dout]
-  connect_bd_net -net xlslice_1_Dout [get_bd_pins TIME_TAG_wrapper_0/obuf_resetn] [get_bd_pins xlslice_1/Dout]
+  connect_bd_net -net util_gpio_io_o [get_bd_pins TIME_TAG_M_0/ReSeTn] [get_bd_pins util/gpio_io_o]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins TIME_TAG_M_0/timeout] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins TT_META5_0/INP] [get_bd_pins xlconcat_1/dout]
   connect_bd_net -net xlslice_2_Dout [get_bd_pins LSB_T1/Dout] [get_bd_pins T1/gpio_io_i]
   connect_bd_net -net xlslice_2_Dout1 [get_bd_pins LSB_T2/Dout] [get_bd_pins T2/gpio_io_i]
   connect_bd_net -net xlslice_2_Dout2 [get_bd_pins LSB_T3/Dout] [get_bd_pins T3/gpio_io_i]

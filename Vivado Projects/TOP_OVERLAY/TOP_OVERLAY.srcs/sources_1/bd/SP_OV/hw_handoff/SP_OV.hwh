@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 11 15:39:04 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec 13 16:09:58 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="SP_OV" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -52,9 +52,9 @@
         <CONNECTION INSTANCE="util_vector_logic_3" PORT="Res"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="CT_ARMED" RIGHT="0" SIGIS="undef" SIGNAME="CT_AXI_PERIPH_wrapper_0_ARMED">
+    <PORT DIR="O" LEFT="0" NAME="CT_ARMED" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_5_Res">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_AXI_PERIPH_wrapper_0" PORT="ARMED"/>
+        <CONNECTION INSTANCE="util_vector_logic_5" PORT="Res"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="0" NAME="CT_WAITING" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_4_Res">
@@ -260,7 +260,7 @@
       <PORTS>
         <PORT DIR="O" LEFT="0" NAME="ARMED" RIGHT="0" SIGIS="undef" SIGNAME="CT_AXI_PERIPH_wrapper_0_ARMED">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="CT_ARMED"/>
+            <CONNECTION INSTANCE="util_vector_logic_5" PORT="Op2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
@@ -4687,7 +4687,7 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x43DAFFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="ACTIVE" RIGHT="0" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_ACTIVE">
+        <PORT DIR="O" NAME="ACTIVE" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_ACTIVE">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_2" PORT="Op2"/>
           </CONNECTIONS>
@@ -4715,6 +4715,11 @@
         <PORT DIR="O" NAME="DEBUG0" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_DEBUG0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_4" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DEBUG1" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_DEBUG1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_5" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="D_RDY" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_D_RDY">
@@ -6864,6 +6869,66 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M23_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M23_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M24_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M24_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M25_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M25_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M26_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M26_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M27_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M27_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M28_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M28_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWID"/>
@@ -7054,91 +7119,91 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_awaddr"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_awvalid">
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_awvalid"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_awready">
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_awready"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wdata"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wstrb"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wvalid">
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wvalid"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wready">
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wready"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_bresp"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_bvalid">
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_bvalid"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_bready">
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_bready"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_araddr"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_arvalid">
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_arvalid"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_arready">
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_arready"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rdata"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rresp"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rvalid">
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rvalid"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rready">
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rready"/>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data1_awaddr">
@@ -7228,93 +7293,6 @@
             <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data1_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data2_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data2_awaddr"/>
@@ -7400,6 +7378,93 @@
         <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data2_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data2_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data3_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awaddr">
@@ -9055,79 +9120,12 @@
             <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M23_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M23_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M24_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M24_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M25_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M25_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M26_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M26_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M27_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M27_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M28_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M28_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M23_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T1_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M23_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M23_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M23_AXI_awvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T1_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_awvalid"/>
@@ -9148,7 +9146,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M23_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M23_AXI_wvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T1_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_wvalid"/>
@@ -9179,14 +9176,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M23_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M23_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M23_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M23_AXI_arvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T1_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_arvalid"/>
@@ -9207,7 +9197,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M23_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M23_AXI_rvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T1_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T1_rvalid"/>
@@ -9223,14 +9212,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M24_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M24_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M24_AXI_awvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T2_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_awvalid"/>
@@ -9251,7 +9233,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M24_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M24_AXI_wvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T2_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_wvalid"/>
@@ -9282,14 +9263,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M24_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M24_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M24_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M24_AXI_arvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T2_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_arvalid"/>
@@ -9310,7 +9284,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M24_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M24_AXI_rvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T2_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T2_rvalid"/>
@@ -9326,14 +9299,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M25_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M25_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M25_AXI_awvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T3_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_awvalid"/>
@@ -9354,7 +9320,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M25_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M25_AXI_wvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T3_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_wvalid"/>
@@ -9385,14 +9350,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M25_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M25_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M25_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M25_AXI_arvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T3_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_arvalid"/>
@@ -9413,7 +9371,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M25_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M25_AXI_rvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T3_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T3_rvalid"/>
@@ -9429,14 +9386,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M26_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M26_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M26_AXI_awvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T4_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_awvalid"/>
@@ -9457,7 +9407,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M26_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M26_AXI_wvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T4_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_wvalid"/>
@@ -9488,14 +9437,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M26_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M26_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M26_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M26_AXI_arvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T4_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_arvalid"/>
@@ -9516,7 +9458,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M26_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M26_AXI_rvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_T4_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="T4_rvalid"/>
@@ -9532,14 +9473,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M27_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M27_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M27_AXI_awvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_TIME_OUT_GPIO_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_awvalid"/>
@@ -9560,7 +9494,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M27_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M27_AXI_wvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_TIME_OUT_GPIO_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_wvalid"/>
@@ -9591,14 +9524,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M27_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M27_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M27_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M27_AXI_arvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_TIME_OUT_GPIO_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_arvalid"/>
@@ -9619,7 +9545,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M27_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M27_AXI_rvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_TIME_OUT_GPIO_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="TIME_OUT_GPIO_rvalid"/>
@@ -9635,14 +9560,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M28_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M28_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M28_AXI_awvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_util_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_awvalid"/>
@@ -9663,7 +9581,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M28_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M28_AXI_wvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_util_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_wvalid"/>
@@ -9694,14 +9611,7 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M28_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M28_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M28_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M28_AXI_arvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_util_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_arvalid"/>
@@ -9722,7 +9632,6 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M28_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M28_AXI_rvalid" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_util_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="util_rvalid"/>
@@ -10309,38 +10218,22 @@
         <BUSINTERFACE BUSNAME="axi_interconnect_0_M23_AXI" DATAWIDTH="32" NAME="M23_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M23_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M23_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M23_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M23_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M23_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M23_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M23_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M23_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M23_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M23_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M23_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M23_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M23_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M23_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M23_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M23_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M23_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M23_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M23_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M23_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M23_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M23_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M23_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M23_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M23_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M23_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M23_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M23_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M23_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M23_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M23_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M23_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M23_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M23_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M23_AXI_rready"/>
           </PORTMAPS>
@@ -10348,38 +10241,22 @@
         <BUSINTERFACE BUSNAME="axi_interconnect_0_M24_AXI" DATAWIDTH="32" NAME="M24_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M24_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M24_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M24_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M24_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M24_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M24_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M24_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M24_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M24_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M24_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M24_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M24_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M24_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M24_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M24_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M24_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M24_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M24_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M24_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M24_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M24_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M24_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M24_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M24_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M24_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M24_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M24_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M24_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M24_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M24_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M24_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M24_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M24_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M24_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M24_AXI_rready"/>
           </PORTMAPS>
@@ -10387,38 +10264,22 @@
         <BUSINTERFACE BUSNAME="axi_interconnect_0_M25_AXI" DATAWIDTH="32" NAME="M25_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M25_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M25_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M25_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M25_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M25_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M25_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M25_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M25_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M25_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M25_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M25_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M25_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M25_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M25_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M25_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M25_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M25_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M25_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M25_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M25_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M25_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M25_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M25_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M25_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M25_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M25_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M25_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M25_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M25_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M25_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M25_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M25_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M25_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M25_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M25_AXI_rready"/>
           </PORTMAPS>
@@ -10426,38 +10287,22 @@
         <BUSINTERFACE BUSNAME="axi_interconnect_0_M26_AXI" DATAWIDTH="32" NAME="M26_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M26_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M26_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M26_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M26_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M26_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M26_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M26_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M26_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M26_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M26_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M26_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M26_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M26_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M26_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M26_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M26_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M26_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M26_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M26_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M26_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M26_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M26_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M26_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M26_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M26_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M26_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M26_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M26_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M26_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M26_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M26_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M26_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M26_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M26_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M26_AXI_rready"/>
           </PORTMAPS>
@@ -10465,38 +10310,22 @@
         <BUSINTERFACE BUSNAME="axi_interconnect_0_M27_AXI" DATAWIDTH="32" NAME="M27_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M27_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M27_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M27_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M27_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M27_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M27_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M27_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M27_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M27_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M27_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M27_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M27_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M27_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M27_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M27_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M27_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M27_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M27_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M27_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M27_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M27_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M27_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M27_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M27_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M27_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M27_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M27_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M27_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M27_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M27_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M27_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M27_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M27_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M27_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M27_AXI_rready"/>
           </PORTMAPS>
@@ -10504,38 +10333,22 @@
         <BUSINTERFACE BUSNAME="axi_interconnect_0_M28_AXI" DATAWIDTH="32" NAME="M28_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M28_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M28_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M28_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M28_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M28_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M28_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M28_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M28_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M28_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M28_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M28_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M28_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M28_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M28_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M28_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M28_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M28_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M28_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M28_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M28_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M28_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M28_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M28_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M28_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M28_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M28_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M28_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M28_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M28_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M28_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M28_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M28_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M28_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M28_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M28_AXI_rready"/>
           </PORTMAPS>
@@ -12223,6 +12036,34 @@
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_4_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="CT_WAITING"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_5" HWVERSION="2.0" INSTANCE="util_vector_logic_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="SP_OV_util_vector_logic_3_2"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="TT_AXI_PERIPH_wrapper_0_DEBUG1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_AXI_PERIPH_wrapper_0" PORT="DEBUG1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="CT_AXI_PERIPH_wrapper_0_ARMED">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CT_AXI_PERIPH_wrapper_0" PORT="ARMED"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_5_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CT_ARMED"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

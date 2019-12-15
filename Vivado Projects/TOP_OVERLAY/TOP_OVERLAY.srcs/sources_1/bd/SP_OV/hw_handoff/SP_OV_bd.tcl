@@ -1108,6 +1108,14 @@ proc create_root_design { parentCell } {
    CONFIG.LOGO_FILE {data/sym_orgate.png} \
  ] $util_vector_logic_4
 
+  # Create instance: util_vector_logic_5, and set properties
+  set util_vector_logic_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_5 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $util_vector_logic_5
+
   # Create interface connections
   connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data] [get_bd_intf_pins axi_interconnect_0/M00_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data1] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
@@ -1146,7 +1154,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins CT_AXI_PERIPH_wrapper_0/CH1] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX1] [get_bd_pins TT_AXI_PERIPH_wrapper_0/CH1]
   connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX2] [get_bd_pins TT_AXI_PERIPH_wrapper_0/CH2]
   connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX3] [get_bd_pins TT_AXI_PERIPH_wrapper_0/CH3]
-  connect_bd_net -net CT_AXI_PERIPH_wrapper_0_ARMED [get_bd_ports CT_ARMED] [get_bd_pins CT_AXI_PERIPH_wrapper_0/ARMED]
+  connect_bd_net -net CT_AXI_PERIPH_wrapper_0_ARMED [get_bd_pins CT_AXI_PERIPH_wrapper_0/ARMED] [get_bd_pins util_vector_logic_5/Op2]
   connect_bd_net -net CT_AXI_PERIPH_wrapper_0_WAITING [get_bd_pins CT_AXI_PERIPH_wrapper_0/WAITING] [get_bd_pins util_vector_logic_4/Op1]
   connect_bd_net -net DDS_AXI_PERIPH_wrapp_0_CH_OUT [get_bd_pins DDS_AXI_PERIPH_wrapp_0/CH_OUT] [get_bd_pins ENABLER_0/CH_IN]
   connect_bd_net -net DDS_AXI_PERIPH_wrapp_0_DEBUG [get_bd_ports DEBUG] [get_bd_pins DDS_AXI_PERIPH_wrapp_0/DEBUG]
@@ -1166,6 +1174,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net TRIG_T0_1 [get_bd_ports TRIG_T0] [get_bd_pins P_COUNTER_wrapper_0/TRIG] [get_bd_pins TT_AXI_PERIPH_wrapper_0/T0]
   connect_bd_net -net TT_AXI_PERIPH_wrapper_0_ACTIVE [get_bd_pins TT_AXI_PERIPH_wrapper_0/ACTIVE] [get_bd_pins util_vector_logic_2/Op2]
   connect_bd_net -net TT_AXI_PERIPH_wrapper_0_DEBUG0 [get_bd_pins TT_AXI_PERIPH_wrapper_0/DEBUG0] [get_bd_pins util_vector_logic_4/Op2]
+  connect_bd_net -net TT_AXI_PERIPH_wrapper_0_DEBUG1 [get_bd_pins TT_AXI_PERIPH_wrapper_0/DEBUG1] [get_bd_pins util_vector_logic_5/Op1]
   connect_bd_net -net TT_AXI_PERIPH_wrapper_0_D_RDY [get_bd_pins TT_AXI_PERIPH_wrapper_0/D_RDY] [get_bd_pins util_vector_logic_3/Op2]
   connect_bd_net -net T_UTIL_gpio2_io_o [get_bd_pins EX_STOP_EN_SL/Din] [get_bd_pins TRIG_RST_SL/Din] [get_bd_pins T_UTIL/gpio2_io_o]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins ENABLER_0/EN] [get_bd_pins T_UTIL/gpio_io_o]
@@ -1178,6 +1187,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net util_vector_logic_2_Res [get_bd_ports ST_ARMED] [get_bd_pins util_vector_logic_2/Res]
   connect_bd_net -net util_vector_logic_3_Res [get_bd_ports ST_WAITING] [get_bd_pins util_vector_logic_3/Res]
   connect_bd_net -net util_vector_logic_4_Res [get_bd_ports CT_WAITING] [get_bd_pins util_vector_logic_4/Res]
+  connect_bd_net -net util_vector_logic_5_Res [get_bd_ports CT_ARMED] [get_bd_pins util_vector_logic_5/Res]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x43CA0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs CT_AXI_PERIPH_wrapper_0/data/reg0] SEG_CT_AXI_PERIPH_wrapper_0_reg0

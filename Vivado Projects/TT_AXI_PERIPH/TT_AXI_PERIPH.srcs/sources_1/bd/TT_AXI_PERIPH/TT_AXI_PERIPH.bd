@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x2C3941BD4D9818C0",
+      "boundary_crc": "0xD88FB6624E0E3863",
       "device": "xc7z020clg400-1",
       "name": "TT_AXI_PERIPH",
       "synth_flow_mode": "None",
@@ -12,8 +12,6 @@
       "time_out_gpio": "",
       "xlconcat_0": "",
       "util": "",
-      "xlslice_0": "",
-      "xlslice_1": "",
       "xlconcat_1": "",
       "T1": "",
       "LSB_T1": "",
@@ -27,7 +25,12 @@
       "LSB_T4": "",
       "MSB_T4": "",
       "T4": "",
-      "TIME_TAG_wrapper_0": ""
+      "TT_META5_0": "",
+      "TT_META48_0": "",
+      "TT_META48_1": "",
+      "TT_META48_2": "",
+      "TT_META48_3": "",
+      "TIME_TAG_M_0": ""
     },
     "interface_ports": {
       "util": {
@@ -812,15 +815,16 @@
       "aresetn": {
         "direction": "I"
       },
-      "ACTIVE": {
-        "direction": "O",
-        "left": "0",
-        "right": "0"
-      },
       "D_RDY": {
         "direction": "O"
       },
       "DEBUG0": {
+        "direction": "O"
+      },
+      "ACTIVE": {
+        "direction": "O"
+      },
+      "DEBUG1": {
         "direction": "O"
       }
     },
@@ -875,42 +879,9 @@
             "value": "5"
           },
           "C_GPIO_WIDTH": {
-            "value": "2"
+            "value": "1"
           },
           "C_IS_DUAL": {
-            "value": "1"
-          }
-        }
-      },
-      "xlslice_0": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "TT_AXI_PERIPH_xlslice_0_0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "0"
-          },
-          "DIN_TO": {
-            "value": "0"
-          },
-          "DIN_WIDTH": {
-            "value": "2"
-          }
-        }
-      },
-      "xlslice_1": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "TT_AXI_PERIPH_xlslice_1_0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "1"
-          },
-          "DIN_TO": {
-            "value": "1"
-          },
-          "DIN_WIDTH": {
-            "value": "2"
-          },
-          "DOUT_WIDTH": {
             "value": "1"
           }
         }
@@ -1143,18 +1114,138 @@
           }
         }
       },
-      "TIME_TAG_wrapper_0": {
-        "vlnv": "cri.nz:user:TIME_TAG_wrapper:1.0",
-        "xci_name": "TT_AXI_PERIPH_TIME_TAG_wrapper_0_0"
+      "TT_META5_0": {
+        "vlnv": "xilinx.com:module_ref:TT_META5:1.0",
+        "xci_name": "TT_AXI_PERIPH_TT_META5_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_META5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "5",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          }
+        }
+      },
+      "TT_META48_0": {
+        "vlnv": "xilinx.com:module_ref:TT_META48:1.0",
+        "xci_name": "TT_AXI_PERIPH_TT_META48_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_META48",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I",
+            "left": "47",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O",
+            "left": "47",
+            "right": "0"
+          }
+        }
+      },
+      "TT_META48_1": {
+        "vlnv": "xilinx.com:module_ref:TT_META48:1.0",
+        "xci_name": "TT_AXI_PERIPH_TT_META48_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_META48",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I",
+            "left": "47",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O",
+            "left": "47",
+            "right": "0"
+          }
+        }
+      },
+      "TT_META48_2": {
+        "vlnv": "xilinx.com:module_ref:TT_META48:1.0",
+        "xci_name": "TT_AXI_PERIPH_TT_META48_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_META48",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I",
+            "left": "47",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O",
+            "left": "47",
+            "right": "0"
+          }
+        }
+      },
+      "TT_META48_3": {
+        "vlnv": "xilinx.com:module_ref:TT_META48:1.0",
+        "xci_name": "TT_AXI_PERIPH_TT_META48_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_META48",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I",
+            "left": "47",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O",
+            "left": "47",
+            "right": "0"
+          }
+        }
+      },
+      "TIME_TAG_M_0": {
+        "vlnv": "cri.nz:user:TIME_TAG_M:1.0",
+        "xci_name": "TT_AXI_PERIPH_TIME_TAG_M_0_0"
       }
     },
     "interface_nets": {
-      "T4_1": {
-        "interface_ports": [
-          "T4",
-          "T4/S_AXI"
-        ]
-      },
       "TIME_OUT_GPIO_1": {
         "interface_ports": [
           "TIME_OUT_GPIO",
@@ -1173,10 +1264,10 @@
           "T1/S_AXI"
         ]
       },
-      "T3_1": {
+      "T4_1": {
         "interface_ports": [
-          "T3",
-          "T3/S_AXI"
+          "T4",
+          "T4/S_AXI"
         ]
       },
       "util_1": {
@@ -1184,51 +1275,15 @@
           "util",
           "util/S_AXI"
         ]
+      },
+      "T3_1": {
+        "interface_ports": [
+          "T3",
+          "T3/S_AXI"
+        ]
       }
     },
     "nets": {
-      "CH0_1": {
-        "ports": [
-          "CH0",
-          "TIME_TAG_wrapper_0/CH0"
-        ]
-      },
-      "CH1_1": {
-        "ports": [
-          "CH1",
-          "TIME_TAG_wrapper_0/CH1"
-        ]
-      },
-      "CH2_1": {
-        "ports": [
-          "CH2",
-          "TIME_TAG_wrapper_0/CH2"
-        ]
-      },
-      "CH3_1": {
-        "ports": [
-          "CH3",
-          "TIME_TAG_wrapper_0/CH3"
-        ]
-      },
-      "MCLK_1": {
-        "ports": [
-          "MCLK",
-          "TIME_TAG_wrapper_0/MCLK"
-        ]
-      },
-      "T0_1": {
-        "ports": [
-          "T0",
-          "TIME_TAG_wrapper_0/T0"
-        ]
-      },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "TIME_TAG_wrapper_0/TIME_OUT"
-        ]
-      },
       "time_out_gpio_gpio_io_o": {
         "ports": [
           "time_out_gpio/gpio_io_o",
@@ -1241,42 +1296,11 @@
           "xlconcat_0/In1"
         ]
       },
-      "Net": {
-        "ports": [
-          "util/gpio_io_o",
-          "xlslice_0/Din",
-          "xlslice_1/Din"
-        ]
-      },
-      "xlslice_0_Dout": {
-        "ports": [
-          "xlslice_0/Dout",
-          "TIME_TAG_wrapper_0/resetn"
-        ]
-      },
-      "xlslice_1_Dout": {
-        "ports": [
-          "xlslice_1/Dout",
-          "TIME_TAG_wrapper_0/obuf_resetn"
-        ]
-      },
-      "xlconcat_1_dout": {
-        "ports": [
-          "xlconcat_1/dout",
-          "util/gpio2_io_i"
-        ]
-      },
       "TIME_TAG_wrapper_0_DATA_RDY": {
         "ports": [
-          "TIME_TAG_wrapper_0/DATA_RDY",
+          "TIME_TAG_M_0/D_RDY",
           "xlconcat_1/In1",
           "D_RDY"
-        ]
-      },
-      "TIME_TAG_wrapper_0_DET_STATES": {
-        "ports": [
-          "TIME_TAG_wrapper_0/DET_STATES",
-          "xlconcat_1/In0"
         ]
       },
       "xlslice_2_Dout": {
@@ -1329,28 +1353,28 @@
       },
       "TIME_TAG_wrapper_0_T1": {
         "ports": [
-          "TIME_TAG_wrapper_0/T1",
+          "TT_META48_0/OUTP",
           "LSB_T1/Din",
           "MSB_T1/Din"
         ]
       },
       "TIME_TAG_wrapper_0_T2": {
         "ports": [
-          "TIME_TAG_wrapper_0/T2",
+          "TT_META48_1/OUTP",
           "LSB_T2/Din",
           "MSB_T2/Din"
         ]
       },
       "TIME_TAG_wrapper_0_T3": {
         "ports": [
-          "TIME_TAG_wrapper_0/T3",
+          "TT_META48_2/OUTP",
           "LSB_T3/Din",
           "MSB_T3/Din"
         ]
       },
       "TIME_TAG_wrapper_0_T4": {
         "ports": [
-          "TIME_TAG_wrapper_0/T4",
+          "TT_META48_3/OUTP",
           "LSB_T4/Din",
           "MSB_T4/Din"
         ]
@@ -1363,7 +1387,12 @@
           "util/s_axi_aclk",
           "T4/s_axi_aclk",
           "T3/s_axi_aclk",
-          "T2/s_axi_aclk"
+          "T2/s_axi_aclk",
+          "TT_META5_0/MCLK",
+          "TT_META48_0/MCLK",
+          "TT_META48_1/MCLK",
+          "TT_META48_2/MCLK",
+          "TT_META48_3/MCLK"
         ]
       },
       "aresetn_1": {
@@ -1377,16 +1406,112 @@
           "T2/s_axi_aresetn"
         ]
       },
-      "TIME_TAG_wrapper_0_ACTIVE": {
+      "util_gpio_io_o": {
         "ports": [
-          "TIME_TAG_wrapper_0/ACTIVE",
+          "util/gpio_io_o",
+          "TIME_TAG_M_0/ReSeTn"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "TIME_TAG_M_0/MCLK"
+        ]
+      },
+      "T0_1": {
+        "ports": [
+          "T0",
+          "TIME_TAG_M_0/T0"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "TIME_TAG_M_0/CH0"
+        ]
+      },
+      "CH1_1": {
+        "ports": [
+          "CH1",
+          "TIME_TAG_M_0/CH1"
+        ]
+      },
+      "CH2_1": {
+        "ports": [
+          "CH2",
+          "TIME_TAG_M_0/CH2"
+        ]
+      },
+      "CH3_1": {
+        "ports": [
+          "CH3",
+          "TIME_TAG_M_0/CH3"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "TIME_TAG_M_0/timeout"
+        ]
+      },
+      "TIME_TAG_M_0_listening": {
+        "ports": [
+          "TIME_TAG_M_0/listening",
           "ACTIVE"
         ]
       },
-      "TIME_TAG_wrapper_0_DEBUG0": {
+      "TIME_TAG_M_0_waiting": {
         "ports": [
-          "TIME_TAG_wrapper_0/DEBUG0",
+          "TIME_TAG_M_0/waiting",
           "DEBUG0"
+        ]
+      },
+      "TIME_TAG_M_0_ch_timeouts": {
+        "ports": [
+          "TIME_TAG_M_0/ch_timeouts",
+          "xlconcat_1/In0"
+        ]
+      },
+      "TIME_TAG_M_0_DEBUG": {
+        "ports": [
+          "TIME_TAG_M_0/DEBUG",
+          "DEBUG1"
+        ]
+      },
+      "TIME_TAG_M_0_t1": {
+        "ports": [
+          "TIME_TAG_M_0/t1",
+          "TT_META48_0/INP"
+        ]
+      },
+      "TIME_TAG_M_0_t2": {
+        "ports": [
+          "TIME_TAG_M_0/t2",
+          "TT_META48_1/INP"
+        ]
+      },
+      "TIME_TAG_M_0_t3": {
+        "ports": [
+          "TIME_TAG_M_0/t3",
+          "TT_META48_2/INP"
+        ]
+      },
+      "TIME_TAG_M_0_t4": {
+        "ports": [
+          "TIME_TAG_M_0/t4",
+          "TT_META48_3/INP"
+        ]
+      },
+      "xlconcat_1_dout": {
+        "ports": [
+          "xlconcat_1/dout",
+          "TT_META5_0/INP"
+        ]
+      },
+      "TT_META5_0_OUTP": {
+        "ports": [
+          "TT_META5_0/OUTP",
+          "util/gpio2_io_i"
         ]
       }
     },

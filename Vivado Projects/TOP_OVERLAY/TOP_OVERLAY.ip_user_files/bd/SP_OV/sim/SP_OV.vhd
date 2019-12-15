@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec 11 15:38:56 2019
+--Date        : Fri Dec 13 16:09:51 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SP_OV.bd
 --Design      : SP_OV
@@ -8433,7 +8433,7 @@ entity SP_OV is
     sys_clock : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of SP_OV : entity is "SP_OV,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SP_OV,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=60,numReposBlks=25,numNonXlnxBlks=5,numHierBlks=35,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=4,da_clkrst_cnt=27,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of SP_OV : entity is "SP_OV,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SP_OV,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=61,numReposBlks=26,numNonXlnxBlks=5,numHierBlks=35,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=4,da_clkrst_cnt=27,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of SP_OV : entity is "SP_OV.hwdef";
 end SP_OV;
@@ -9040,14 +9040,29 @@ architecture STRUCTURE of SP_OV is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SP_OV_util_vector_logic_3_0;
+  component SP_OV_util_vector_logic_3_1 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component SP_OV_util_vector_logic_3_1;
+  component SP_OV_util_vector_logic_3_2 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component SP_OV_util_vector_logic_3_2;
   component SP_OV_TT_AXI_PERIPH_wrapper_0_0 is
   port (
-    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ACTIVE : out STD_LOGIC;
     CH0 : in STD_LOGIC;
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
     DEBUG0 : out STD_LOGIC;
+    DEBUG1 : out STD_LOGIC;
     D_RDY : out STD_LOGIC;
     MCLK : in STD_LOGIC;
     T0 : in STD_LOGIC;
@@ -9157,13 +9172,6 @@ architecture STRUCTURE of SP_OV is
     util_wvalid : in STD_LOGIC
   );
   end component SP_OV_TT_AXI_PERIPH_wrapper_0_0;
-  component SP_OV_util_vector_logic_3_1 is
-  port (
-    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component SP_OV_util_vector_logic_3_1;
   signal CH1_1 : STD_LOGIC;
   signal CH2_1 : STD_LOGIC;
   signal CH3_1 : STD_LOGIC;
@@ -9185,8 +9193,9 @@ architecture STRUCTURE of SP_OV is
   signal TIMER_CLK_locked : STD_LOGIC;
   signal TRIG_RST_SL_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal TRIG_T0_1 : STD_LOGIC;
-  signal TT_AXI_PERIPH_wrapper_0_ACTIVE : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal TT_AXI_PERIPH_wrapper_0_ACTIVE : STD_LOGIC;
   signal TT_AXI_PERIPH_wrapper_0_DEBUG0 : STD_LOGIC;
+  signal TT_AXI_PERIPH_wrapper_0_DEBUG1 : STD_LOGIC;
   signal TT_AXI_PERIPH_wrapper_0_D_RDY : STD_LOGIC;
   signal T_UTIL_gpio2_io_o : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_gpio_0_gpio_io_o : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -9751,6 +9760,7 @@ architecture STRUCTURE of SP_OV is
   signal util_vector_logic_2_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal util_vector_logic_3_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal util_vector_logic_4_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal util_vector_logic_5_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_DDS_AXI_PERIPH_wrapp_0_DEBUG2_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -9790,7 +9800,7 @@ begin
   CH2_1 <= CH2;
   CH3_1 <= CH3;
   CLK_STABLE(0) <= util_vector_logic_1_Res(0);
-  CT_ARMED(0) <= CT_AXI_PERIPH_wrapper_0_ARMED(0);
+  CT_ARMED(0) <= util_vector_logic_5_Res(0);
   CT_WAITING(0) <= util_vector_logic_4_Res(0);
   DEBUG(3 downto 0) <= DDS_AXI_PERIPH_wrapp_0_DEBUG(3 downto 0);
   E_TRIG_1 <= E_TRIG;
@@ -10235,12 +10245,13 @@ TRIG_RST_SL: component SP_OV_xlslice_0_0
     );
 TT_AXI_PERIPH_wrapper_0: component SP_OV_TT_AXI_PERIPH_wrapper_0_0
      port map (
-      ACTIVE(0) => TT_AXI_PERIPH_wrapper_0_ACTIVE(0),
+      ACTIVE => TT_AXI_PERIPH_wrapper_0_ACTIVE,
       CH0 => Net,
       CH1 => CH1_1,
       CH2 => CH2_1,
       CH3 => CH3_1,
       DEBUG0 => TT_AXI_PERIPH_wrapper_0_DEBUG0,
+      DEBUG1 => TT_AXI_PERIPH_wrapper_0_DEBUG1,
       D_RDY => TT_AXI_PERIPH_wrapper_0_D_RDY,
       MCLK => REF_CLK_clk_out1,
       T0 => TRIG_T0_1,
@@ -11088,7 +11099,7 @@ util_vector_logic_1: component SP_OV_util_vector_logic_0_1
 util_vector_logic_2: component SP_OV_util_vector_logic_2_0
      port map (
       Op1(0) => ST_AXI_PERIPH_wrapper_0_ARMED,
-      Op2(0) => TT_AXI_PERIPH_wrapper_0_ACTIVE(0),
+      Op2(0) => TT_AXI_PERIPH_wrapper_0_ACTIVE,
       Res(0) => util_vector_logic_2_Res(0)
     );
 util_vector_logic_3: component SP_OV_util_vector_logic_3_0
@@ -11102,5 +11113,11 @@ util_vector_logic_4: component SP_OV_util_vector_logic_3_1
       Op1(0) => CT_AXI_PERIPH_wrapper_0_WAITING(0),
       Op2(0) => TT_AXI_PERIPH_wrapper_0_DEBUG0,
       Res(0) => util_vector_logic_4_Res(0)
+    );
+util_vector_logic_5: component SP_OV_util_vector_logic_3_2
+     port map (
+      Op1(0) => TT_AXI_PERIPH_wrapper_0_DEBUG1,
+      Op2(0) => CT_AXI_PERIPH_wrapper_0_ARMED(0),
+      Res(0) => util_vector_logic_5_Res(0)
     );
 end STRUCTURE;

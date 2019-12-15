@@ -55,12 +55,13 @@ USE ieee.numeric_std.ALL;
 
 ENTITY SP_OV_TT_AXI_PERIPH_wrapper_0_0 IS
   PORT (
-    ACTIVE : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ACTIVE : OUT STD_LOGIC;
     CH0 : IN STD_LOGIC;
     CH1 : IN STD_LOGIC;
     CH2 : IN STD_LOGIC;
     CH3 : IN STD_LOGIC;
     DEBUG0 : OUT STD_LOGIC;
+    DEBUG1 : OUT STD_LOGIC;
     D_RDY : OUT STD_LOGIC;
     MCLK : IN STD_LOGIC;
     T0 : IN STD_LOGIC;
@@ -176,12 +177,13 @@ ARCHITECTURE SP_OV_TT_AXI_PERIPH_wrapper_0_0_arch OF SP_OV_TT_AXI_PERIPH_wrapper
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF SP_OV_TT_AXI_PERIPH_wrapper_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT TT_AXI_PERIPH_wrapper IS
     PORT (
-      ACTIVE : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+      ACTIVE : OUT STD_LOGIC;
       CH0 : IN STD_LOGIC;
       CH1 : IN STD_LOGIC;
       CH2 : IN STD_LOGIC;
       CH3 : IN STD_LOGIC;
       DEBUG0 : OUT STD_LOGIC;
+      DEBUG1 : OUT STD_LOGIC;
       D_RDY : OUT STD_LOGIC;
       MCLK : IN STD_LOGIC;
       T0 : IN STD_LOGIC;
@@ -426,6 +428,7 @@ BEGIN
       CH2 => CH2,
       CH3 => CH3,
       DEBUG0 => DEBUG0,
+      DEBUG1 => DEBUG1,
       D_RDY => D_RDY,
       MCLK => MCLK,
       T0 => T0,

@@ -27,6 +27,10 @@ namespace FrontEnd
             while (true)
             {
                 main.disableFunctions();
+                if (Form1.datathread != null)
+                {
+                    Form1.datathread.Abort();
+                }
                 Form1.HOST = txtAddr.Text;
                 Form1.PORT = Int32.Parse(txtPort.Text);
                 IPAddress ipAddress = IPAddress.Parse(Form1.HOST);

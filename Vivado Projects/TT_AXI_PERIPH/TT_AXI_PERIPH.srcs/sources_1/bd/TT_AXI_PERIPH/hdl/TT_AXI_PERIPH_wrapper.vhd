@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec 11 15:37:13 2019
+--Date        : Fri Dec 13 16:00:00 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TT_AXI_PERIPH_wrapper.bd
 --Design      : TT_AXI_PERIPH_wrapper
@@ -13,12 +13,13 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity TT_AXI_PERIPH_wrapper is
   port (
-    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ACTIVE : out STD_LOGIC;
     CH0 : in STD_LOGIC;
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
     DEBUG0 : out STD_LOGIC;
+    DEBUG1 : out STD_LOGIC;
     D_RDY : out STD_LOGIC;
     MCLK : in STD_LOGIC;
     T0 : in STD_LOGIC;
@@ -140,6 +141,10 @@ architecture STRUCTURE of TT_AXI_PERIPH_wrapper is
     T0 : in STD_LOGIC;
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
+    D_RDY : out STD_LOGIC;
+    DEBUG0 : out STD_LOGIC;
+    ACTIVE : out STD_LOGIC;
+    DEBUG1 : out STD_LOGIC;
     TIME_OUT_GPIO_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     TIME_OUT_GPIO_arready : out STD_LOGIC;
     TIME_OUT_GPIO_arvalid : in STD_LOGIC;
@@ -157,23 +162,6 @@ architecture STRUCTURE of TT_AXI_PERIPH_wrapper is
     TIME_OUT_GPIO_wready : out STD_LOGIC;
     TIME_OUT_GPIO_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     TIME_OUT_GPIO_wvalid : in STD_LOGIC;
-    T1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    T1_arready : out STD_LOGIC;
-    T1_arvalid : in STD_LOGIC;
-    T1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    T1_awready : out STD_LOGIC;
-    T1_awvalid : in STD_LOGIC;
-    T1_bready : in STD_LOGIC;
-    T1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    T1_bvalid : out STD_LOGIC;
-    T1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T1_rready : in STD_LOGIC;
-    T1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    T1_rvalid : out STD_LOGIC;
-    T1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    T1_wready : out STD_LOGIC;
-    T1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T1_wvalid : in STD_LOGIC;
     T2_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     T2_arready : out STD_LOGIC;
     T2_arvalid : in STD_LOGIC;
@@ -191,40 +179,23 @@ architecture STRUCTURE of TT_AXI_PERIPH_wrapper is
     T2_wready : out STD_LOGIC;
     T2_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     T2_wvalid : in STD_LOGIC;
-    T3_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    T3_arready : out STD_LOGIC;
-    T3_arvalid : in STD_LOGIC;
-    T3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    T3_awready : out STD_LOGIC;
-    T3_awvalid : in STD_LOGIC;
-    T3_bready : in STD_LOGIC;
-    T3_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    T3_bvalid : out STD_LOGIC;
-    T3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T3_rready : in STD_LOGIC;
-    T3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    T3_rvalid : out STD_LOGIC;
-    T3_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    T3_wready : out STD_LOGIC;
-    T3_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T3_wvalid : in STD_LOGIC;
-    util_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util_arready : out STD_LOGIC;
-    util_arvalid : in STD_LOGIC;
-    util_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    util_awready : out STD_LOGIC;
-    util_awvalid : in STD_LOGIC;
-    util_bready : in STD_LOGIC;
-    util_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util_bvalid : out STD_LOGIC;
-    util_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    util_rready : in STD_LOGIC;
-    util_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    util_rvalid : out STD_LOGIC;
-    util_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    util_wready : out STD_LOGIC;
-    util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    util_wvalid : in STD_LOGIC;
+    T1_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    T1_arready : out STD_LOGIC;
+    T1_arvalid : in STD_LOGIC;
+    T1_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    T1_awready : out STD_LOGIC;
+    T1_awvalid : in STD_LOGIC;
+    T1_bready : in STD_LOGIC;
+    T1_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    T1_bvalid : out STD_LOGIC;
+    T1_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T1_rready : in STD_LOGIC;
+    T1_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    T1_rvalid : out STD_LOGIC;
+    T1_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    T1_wready : out STD_LOGIC;
+    T1_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T1_wvalid : in STD_LOGIC;
     T4_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     T4_arready : out STD_LOGIC;
     T4_arvalid : in STD_LOGIC;
@@ -242,20 +213,52 @@ architecture STRUCTURE of TT_AXI_PERIPH_wrapper is
     T4_wready : out STD_LOGIC;
     T4_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     T4_wvalid : in STD_LOGIC;
-    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
-    D_RDY : out STD_LOGIC;
-    DEBUG0 : out STD_LOGIC
+    util_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util_arready : out STD_LOGIC;
+    util_arvalid : in STD_LOGIC;
+    util_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    util_awready : out STD_LOGIC;
+    util_awvalid : in STD_LOGIC;
+    util_bready : in STD_LOGIC;
+    util_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util_bvalid : out STD_LOGIC;
+    util_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    util_rready : in STD_LOGIC;
+    util_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    util_rvalid : out STD_LOGIC;
+    util_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    util_wready : out STD_LOGIC;
+    util_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    util_wvalid : in STD_LOGIC;
+    T3_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    T3_arready : out STD_LOGIC;
+    T3_arvalid : in STD_LOGIC;
+    T3_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    T3_awready : out STD_LOGIC;
+    T3_awvalid : in STD_LOGIC;
+    T3_bready : in STD_LOGIC;
+    T3_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    T3_bvalid : out STD_LOGIC;
+    T3_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T3_rready : in STD_LOGIC;
+    T3_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    T3_rvalid : out STD_LOGIC;
+    T3_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    T3_wready : out STD_LOGIC;
+    T3_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T3_wvalid : in STD_LOGIC
   );
   end component TT_AXI_PERIPH;
 begin
 TT_AXI_PERIPH_i: component TT_AXI_PERIPH
      port map (
-      ACTIVE(0) => ACTIVE(0),
+      ACTIVE => ACTIVE,
       CH0 => CH0,
       CH1 => CH1,
       CH2 => CH2,
       CH3 => CH3,
       DEBUG0 => DEBUG0,
+      DEBUG1 => DEBUG1,
       D_RDY => D_RDY,
       MCLK => MCLK,
       T0 => T0,

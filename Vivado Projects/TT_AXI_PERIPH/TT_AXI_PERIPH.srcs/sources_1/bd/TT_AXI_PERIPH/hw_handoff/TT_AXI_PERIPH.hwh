@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 11 15:37:14 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec 13 16:00:01 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="TT_AXI_PERIPH" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="CH0"/>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="CH0"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="CH1"/>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="CH1"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CH2" SIGIS="undef" SIGNAME="External_Ports_CH2">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="CH2"/>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="CH2"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CH3" SIGIS="undef" SIGNAME="External_Ports_CH3">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="CH3"/>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="CH3"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="T0" SIGIS="undef" SIGNAME="External_Ports_T0">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T0"/>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="T0"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="aclk" SIGIS="undef" SIGNAME="External_Ports_aclk">
@@ -42,6 +42,11 @@
         <CONNECTION INSTANCE="T4" PORT="s_axi_aclk"/>
         <CONNECTION INSTANCE="T3" PORT="s_axi_aclk"/>
         <CONNECTION INSTANCE="T2" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="TT_META5_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="TT_META48_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="TT_META48_1" PORT="MCLK"/>
+        <CONNECTION INSTANCE="TT_META48_2" PORT="MCLK"/>
+        <CONNECTION INSTANCE="TT_META48_3" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="aresetn" SIGIS="undef" SIGNAME="External_Ports_aresetn">
@@ -52,6 +57,26 @@
         <CONNECTION INSTANCE="T4" PORT="s_axi_aresetn"/>
         <CONNECTION INSTANCE="T3" PORT="s_axi_aresetn"/>
         <CONNECTION INSTANCE="T2" PORT="s_axi_aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="D_RDY" SIGIS="undef" SIGNAME="TIME_TAG_M_0_D_RDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="D_RDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DEBUG0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_waiting">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="waiting"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ACTIVE" SIGIS="undef" SIGNAME="TIME_TAG_M_0_listening">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="listening"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DEBUG1" SIGIS="undef" SIGNAME="TIME_TAG_M_0_DEBUG">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="DEBUG"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="TIME_OUT_GPIO_araddr" RIGHT="0" SIGIS="undef" SIGNAME="time_out_gpio_s_axi_araddr">
@@ -139,91 +164,6 @@
         <CONNECTION INSTANCE="time_out_gpio" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="T1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="T1_arready" SIGIS="undef" SIGNAME="T1_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="T1_arvalid" SIGIS="undef" SIGNAME="T1_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="T1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="T1_awready" SIGIS="undef" SIGNAME="T1_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="T1_awvalid" SIGIS="undef" SIGNAME="T1_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="T1_bready" SIGIS="undef" SIGNAME="T1_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="T1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="T1_bvalid" SIGIS="undef" SIGNAME="T1_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="T1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="T1_rready" SIGIS="undef" SIGNAME="T1_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="T1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="T1_rvalid" SIGIS="undef" SIGNAME="T1_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="T1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="T1_wready" SIGIS="undef" SIGNAME="T1_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="T1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="T1_wvalid" SIGIS="undef" SIGNAME="T1_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="T1" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" LEFT="8" NAME="T2_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T2_s_axi_araddr">
       <CONNECTIONS>
         <CONNECTION INSTANCE="T2" PORT="s_axi_araddr"/>
@@ -309,174 +249,89 @@
         <CONNECTION INSTANCE="T2" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="T3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_araddr">
+    <PORT DIR="I" LEFT="8" NAME="T1_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_araddr"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="T3_arready" SIGIS="undef" SIGNAME="T3_s_axi_arready">
+    <PORT DIR="O" NAME="T1_arready" SIGIS="undef" SIGNAME="T1_s_axi_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_arready"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="T3_arvalid" SIGIS="undef" SIGNAME="T3_s_axi_arvalid">
+    <PORT DIR="I" NAME="T1_arvalid" SIGIS="undef" SIGNAME="T1_s_axi_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_arvalid"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_arvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="T3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_awaddr">
+    <PORT DIR="I" LEFT="8" NAME="T1_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_awaddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_awaddr"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_awaddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="T3_awready" SIGIS="undef" SIGNAME="T3_s_axi_awready">
+    <PORT DIR="O" NAME="T1_awready" SIGIS="undef" SIGNAME="T1_s_axi_awready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_awready"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_awready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="T3_awvalid" SIGIS="undef" SIGNAME="T3_s_axi_awvalid">
+    <PORT DIR="I" NAME="T1_awvalid" SIGIS="undef" SIGNAME="T1_s_axi_awvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_awvalid"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_awvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="T3_bready" SIGIS="undef" SIGNAME="T3_s_axi_bready">
+    <PORT DIR="I" NAME="T1_bready" SIGIS="undef" SIGNAME="T1_s_axi_bready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_bready"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_bready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="T3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_bresp">
+    <PORT DIR="O" LEFT="1" NAME="T1_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_bresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_bresp"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_bresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="T3_bvalid" SIGIS="undef" SIGNAME="T3_s_axi_bvalid">
+    <PORT DIR="O" NAME="T1_bvalid" SIGIS="undef" SIGNAME="T1_s_axi_bvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_bvalid"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_bvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="T3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_rdata">
+    <PORT DIR="O" LEFT="31" NAME="T1_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_rdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_rdata"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_rdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="T3_rready" SIGIS="undef" SIGNAME="T3_s_axi_rready">
+    <PORT DIR="I" NAME="T1_rready" SIGIS="undef" SIGNAME="T1_s_axi_rready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_rready"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_rready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="T3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_rresp">
+    <PORT DIR="O" LEFT="1" NAME="T1_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_rresp">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_rresp"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_rresp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="T3_rvalid" SIGIS="undef" SIGNAME="T3_s_axi_rvalid">
+    <PORT DIR="O" NAME="T1_rvalid" SIGIS="undef" SIGNAME="T1_s_axi_rvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_rvalid"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_rvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="31" NAME="T3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_wdata">
+    <PORT DIR="I" LEFT="31" NAME="T1_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_wdata">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_wdata"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_wdata"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="T3_wready" SIGIS="undef" SIGNAME="T3_s_axi_wready">
+    <PORT DIR="O" NAME="T1_wready" SIGIS="undef" SIGNAME="T1_s_axi_wready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_wready"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_wready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="T3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_wstrb">
+    <PORT DIR="I" LEFT="3" NAME="T1_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T1_s_axi_wstrb">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_wstrb"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_wstrb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="T3_wvalid" SIGIS="undef" SIGNAME="T3_s_axi_wvalid">
+    <PORT DIR="I" NAME="T1_wvalid" SIGIS="undef" SIGNAME="T1_s_axi_wvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="T3" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="util_arready" SIGIS="undef" SIGNAME="util_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="util_arvalid" SIGIS="undef" SIGNAME="util_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="util_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="util_awready" SIGIS="undef" SIGNAME="util_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="util_awvalid" SIGIS="undef" SIGNAME="util_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="util_bready" SIGIS="undef" SIGNAME="util_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util_bresp" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="util_bvalid" SIGIS="undef" SIGNAME="util_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="util_rdata" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="util_rready" SIGIS="undef" SIGNAME="util_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="util_rresp" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="util_rvalid" SIGIS="undef" SIGNAME="util_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="util_wdata" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="util_wready" SIGIS="undef" SIGNAME="util_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="util_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="util_wvalid" SIGIS="undef" SIGNAME="util_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util" PORT="s_axi_wvalid"/>
+        <CONNECTION INSTANCE="T1" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="T4_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T4_s_axi_araddr">
@@ -564,19 +419,174 @@
         <CONNECTION INSTANCE="T4" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="ACTIVE" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_ACTIVE">
+    <PORT DIR="I" LEFT="8" NAME="util_araddr" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="ACTIVE"/>
+        <CONNECTION INSTANCE="util" PORT="s_axi_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="D_RDY" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DATA_RDY">
+    <PORT DIR="O" NAME="util_arready" SIGIS="undef" SIGNAME="util_s_axi_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="DATA_RDY"/>
+        <CONNECTION INSTANCE="util" PORT="s_axi_arready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="DEBUG0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DEBUG0">
+    <PORT DIR="I" NAME="util_arvalid" SIGIS="undef" SIGNAME="util_s_axi_arvalid">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="DEBUG0"/>
+        <CONNECTION INSTANCE="util" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="util_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util_awready" SIGIS="undef" SIGNAME="util_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util_awvalid" SIGIS="undef" SIGNAME="util_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util_bready" SIGIS="undef" SIGNAME="util_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util_bresp" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util_bvalid" SIGIS="undef" SIGNAME="util_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="util_rdata" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util_rready" SIGIS="undef" SIGNAME="util_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="util_rresp" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util_rvalid" SIGIS="undef" SIGNAME="util_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="util_wdata" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="util_wready" SIGIS="undef" SIGNAME="util_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="util_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="util_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="util_wvalid" SIGIS="undef" SIGNAME="util_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="T3_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="T3_arready" SIGIS="undef" SIGNAME="T3_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T3_arvalid" SIGIS="undef" SIGNAME="T3_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="T3_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="T3_awready" SIGIS="undef" SIGNAME="T3_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T3_awvalid" SIGIS="undef" SIGNAME="T3_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T3_bready" SIGIS="undef" SIGNAME="T3_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="T3_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="T3_bvalid" SIGIS="undef" SIGNAME="T3_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="T3_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T3_rready" SIGIS="undef" SIGNAME="T3_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="T3_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="T3_rvalid" SIGIS="undef" SIGNAME="T3_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="T3_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="T3_wready" SIGIS="undef" SIGNAME="T3_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="T3_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T3_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T3_wvalid" SIGIS="undef" SIGNAME="T3_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="T3" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -920,9 +930,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T1">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_0_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T1"/>
+            <CONNECTION INSTANCE="TT_META48_0" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="LSB_T1_Dout">
@@ -944,9 +954,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T2">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_1_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T2"/>
+            <CONNECTION INSTANCE="TT_META48_1" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="LSB_T2_Dout">
@@ -968,9 +978,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T3">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_2_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T3"/>
+            <CONNECTION INSTANCE="TT_META48_2" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="LSB_T3_Dout">
@@ -992,9 +1002,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T4">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_3_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T4"/>
+            <CONNECTION INSTANCE="TT_META48_3" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="LSB_T4_Dout">
@@ -1016,9 +1026,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T1">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_0_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T1"/>
+            <CONNECTION INSTANCE="TT_META48_0" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="MSB_T1_Dout">
@@ -1040,9 +1050,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T2">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_1_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T2"/>
+            <CONNECTION INSTANCE="TT_META48_1" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="MSB_T2_Dout">
@@ -1064,9 +1074,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T3">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_2_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T3"/>
+            <CONNECTION INSTANCE="TT_META48_2" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="MSB_T3_Dout">
@@ -1088,9 +1098,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T4">
+        <PORT DIR="I" LEFT="47" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_3_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="T4"/>
+            <CONNECTION INSTANCE="TT_META48_3" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="MSB_T4_Dout">
@@ -1893,16 +1903,21 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/TIME_TAG_wrapper_0" HWVERSION="1.0" INSTANCE="TIME_TAG_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TIME_TAG_wrapper" VLNV="cri.nz:user:TIME_TAG_wrapper:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/TIME_TAG_M_0" HWVERSION="1.0" INSTANCE="TIME_TAG_M_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TIME_TAG_M" VLNV="cri.nz:user:TIME_TAG_M:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TIME_TAG_wrapper_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TIME_TAG_M_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="ACTIVE" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_ACTIVE">
+        <PORT DIR="I" LEFT="47" NAME="timeout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="ACTIVE"/>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="T0" SIGIS="undef" SIGNAME="External_Ports_T0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
@@ -1925,69 +1940,189 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CH3"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="DATA_RDY" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DATA_RDY">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_1" PORT="In1"/>
-            <CONNECTION INSTANCE="External_Ports" PORT="D_RDY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="DEBUG0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DEBUG0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DET_STATES" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DET_STATES">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_1" PORT="In0"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="T0" SIGIS="undef" SIGNAME="External_Ports_T0">
+        <PORT DIR="I" NAME="ReSeTn" SIGIS="rst" SIGNAME="util_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
+            <CONNECTION INSTANCE="util" PORT="gpio_io_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="47" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T1">
+        <PORT DIR="O" NAME="D_RDY" SIGIS="undef" SIGNAME="TIME_TAG_M_0_D_RDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_1" PORT="In1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="D_RDY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="listening" SIGIS="undef" SIGNAME="TIME_TAG_M_0_listening">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ACTIVE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="TIME_TAG_M_0_waiting">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="t1" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_META48_0" PORT="INP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="t2" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_META48_1" PORT="INP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="t3" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_META48_2" PORT="INP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="t4" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_META48_3" PORT="INP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="ch_timeouts" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_ch_timeouts">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_1" PORT="In0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DEBUG" SIGIS="undef" SIGNAME="TIME_TAG_M_0_DEBUG">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_META48_0" HWVERSION="1.0" INSTANCE="TT_META48_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_META48" VLNV="xilinx.com:module_ref:TT_META48:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TT_META48_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="47" NAME="INP" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="t1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="OUTP" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_0_OUTP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LSB_T1" PORT="Din"/>
             <CONNECTION INSTANCE="MSB_T1" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="47" NAME="T2" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T2">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_META48_1" HWVERSION="1.0" INSTANCE="TT_META48_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_META48" VLNV="xilinx.com:module_ref:TT_META48:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TT_META48_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="47" NAME="INP" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="t2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="OUTP" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_1_OUTP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LSB_T2" PORT="Din"/>
             <CONNECTION INSTANCE="MSB_T2" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="47" NAME="T3" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T3">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_META48_2" HWVERSION="1.0" INSTANCE="TT_META48_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_META48" VLNV="xilinx.com:module_ref:TT_META48:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TT_META48_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="47" NAME="INP" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="t3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="OUTP" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_2_OUTP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LSB_T3" PORT="Din"/>
             <CONNECTION INSTANCE="MSB_T3" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="47" NAME="T4" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_T4">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_META48_3" HWVERSION="1.0" INSTANCE="TT_META48_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_META48" VLNV="xilinx.com:module_ref:TT_META48:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TT_META48_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="47" NAME="INP" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_t4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="t4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="47" NAME="OUTP" RIGHT="0" SIGIS="undef" SIGNAME="TT_META48_3_OUTP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LSB_T4" PORT="Din"/>
             <CONNECTION INSTANCE="MSB_T4" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="47" NAME="TIME_OUT" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_META5_0" HWVERSION="1.0" INSTANCE="TT_META5_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_META5" VLNV="xilinx.com:module_ref:TT_META5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_TT_META5_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="4" NAME="INP" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+            <CONNECTION INSTANCE="xlconcat_1" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="obuf_resetn" SIGIS="rst" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="O" LEFT="4" NAME="OUTP" RIGHT="0" SIGIS="undef" SIGNAME="TT_META5_0_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+            <CONNECTION INSTANCE="util" PORT="gpio2_io_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2199,7 +2334,7 @@
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="9"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_GPIO_WIDTH" VALUE="2"/>
+        <PARAMETER NAME="C_GPIO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ALL_INPUTS" VALUE="0"/>
         <PARAMETER NAME="C_ALL_INPUTS_2" VALUE="1"/>
@@ -2313,15 +2448,14 @@
             <CONNECTION INSTANCE="TT_AXI_PERIPH_imp" PORT="util_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="util_gpio_io_o">
+        <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="util_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Din"/>
-            <CONNECTION INSTANCE="xlslice_1" PORT="Din"/>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="ReSeTn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_1_dout">
+        <PORT DIR="I" LEFT="4" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="TT_META5_0_OUTP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_1" PORT="dout"/>
+            <CONNECTION INSTANCE="TT_META5_0" PORT="OUTP"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2443,7 +2577,7 @@
         </PORT>
         <PORT DIR="O" LEFT="47" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="TIME_OUT"/>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="timeout"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2490,67 +2624,19 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="3" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DET_STATES">
+        <PORT DIR="I" LEFT="3" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_ch_timeouts">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="DET_STATES"/>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="ch_timeouts"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_wrapper_0_DATA_RDY">
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="TIME_TAG_M_0_D_RDY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="DATA_RDY"/>
+            <CONNECTION INSTANCE="TIME_TAG_M_0" PORT="D_RDY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="4" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="util" PORT="gpio2_io_i"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/xlslice_0" HWVERSION="1.0" INSTANCE="xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
-        <PARAMETER NAME="DIN_TO" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_xlslice_0_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="1" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="util_gpio_io_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="util" PORT="gpio_io_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="resetn"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/xlslice_1" HWVERSION="1.0" INSTANCE="xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="1"/>
-        <PARAMETER NAME="DIN_TO" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="TT_AXI_PERIPH_xlslice_1_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="1" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="util_gpio_io_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="util" PORT="gpio_io_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="TIME_TAG_wrapper_0" PORT="obuf_resetn"/>
+            <CONNECTION INSTANCE="TT_META5_0" PORT="INP"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

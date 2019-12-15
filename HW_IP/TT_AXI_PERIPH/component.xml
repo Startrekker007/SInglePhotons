@@ -1001,9 +1001,6 @@
         <spirit:language>VHDL</spirit:language>
         <spirit:modelName>TT_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagesynthesis_cri_nz_user_TIME_TAG_wrapper_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
@@ -1013,12 +1010,15 @@
           <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_xlslice_1_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_cri_nz_user_TIME_TAG_M_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>545b6edd</spirit:value>
+            <spirit:value>a51e06d3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1029,9 +1029,6 @@
         <spirit:language>VHDL</spirit:language>
         <spirit:modelName>TT_AXI_PERIPH_wrapper</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_cri_nz_user_TIME_TAG_wrapper_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
@@ -1041,12 +1038,15 @@
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_xlslice_1_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_cri_nz_user_TIME_TAG_M_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6c4c3611</spirit:value>
+            <spirit:value>2f10bec8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1055,9 +1055,6 @@
         <spirit:displayName>Implementation</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
         <spirit:modelName>TT_AXI_PERIPH_wrapper</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_implementation_cri_nz_user_TIME_TAG_wrapper_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_implementation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
@@ -1068,12 +1065,15 @@
           <spirit:localName>xilinx_implementation_xilinx_com_ip_xlslice_1_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:fileSetRef>
+          <spirit:localName>xilinx_implementation_cri_nz_user_TIME_TAG_M_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
           <spirit:localName>xilinx_implementation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e5622437</spirit:value>
+            <spirit:value>e9d5816d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1097,13 +1097,9 @@
         <spirit:name>ACTIVE</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">0</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
-              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
@@ -1164,6 +1160,19 @@
       </spirit:port>
       <spirit:port>
         <spirit:name>DEBUG0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DEBUG1</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2909,14 +2918,29 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:name>src/TT_AXI_PERIPH_TT_META48_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_TIME_TAG_wrapper_0</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_AXI_PERIPH_TT_META48_0_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_AXI_PERIPH_TT_META48_1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_AXI_PERIPH_TT_META48_2_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_AXI_PERIPH_TT_META5_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0.xci</spirit:name>
@@ -2943,26 +2967,6 @@
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_util</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>src/TT_AXI_PERIPH_xlslice_0_0/TT_AXI_PERIPH_xlslice_0_0.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_xlslice_0</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>src/TT_AXI_PERIPH_xlslice_1_0/TT_AXI_PERIPH_xlslice_1_0.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_xlslice_1</spirit:userFileType>
         <spirit:define>
           <spirit:name>processing_order</spirit:name>
           <spirit:value>early</spirit:value>
@@ -3099,6 +3103,26 @@
         </spirit:define>
       </spirit:file>
       <spirit:file>
+        <spirit:name>src/TT_AXI_PERIPH_TIME_TAG_M_0_0/TT_AXI_PERIPH_TIME_TAG_M_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_TIME_TAG_M_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_META48.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_META4.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>src/TT_AXI_PERIPH.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
@@ -3113,25 +3137,15 @@
       <spirit:file>
         <spirit:name>src/TT_AXI_PERIPH_wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_453549b2</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_d874232f</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_cri_nz_user_TIME_TAG_wrapper_1_0__ref_view_fileset</spirit:name>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TIME_TAG_wrapper" xilinx:version="1.0">
-            <xilinx:mode xilinx:name="create_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3158,16 +3172,41 @@
       </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_cri_nz_user_TIME_TAG_M_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TIME_TAG_M" xilinx:version="1.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:name>sim/TT_AXI_PERIPH_TT_META48_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_TIME_TAG_wrapper_0</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/TT_AXI_PERIPH_TT_META48_0_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/TT_AXI_PERIPH_TT_META48_1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/TT_AXI_PERIPH_TT_META48_2_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/TT_AXI_PERIPH_TT_META5_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0.xci</spirit:name>
@@ -3194,26 +3233,6 @@
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>CELL_NAME_util</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>src/TT_AXI_PERIPH_xlslice_0_0/TT_AXI_PERIPH_xlslice_0_0.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_xlslice_0</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>src/TT_AXI_PERIPH_xlslice_1_0/TT_AXI_PERIPH_xlslice_1_0.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:userFileType>CELL_NAME_xlslice_1</spirit:userFileType>
         <spirit:define>
           <spirit:name>processing_order</spirit:name>
           <spirit:value>early</spirit:value>
@@ -3350,6 +3369,26 @@
         </spirit:define>
       </spirit:file>
       <spirit:file>
+        <spirit:name>src/TT_AXI_PERIPH_TIME_TAG_M_0_0/TT_AXI_PERIPH_TIME_TAG_M_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_TIME_TAG_M_0</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_META48.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/TT_META4.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>sim/TT_AXI_PERIPH.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
@@ -3366,20 +3405,10 @@
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagebehavioralsimulation_cri_nz_user_TIME_TAG_wrapper_1_0__ref_view_fileset</spirit:name>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TIME_TAG_wrapper" xilinx:version="1.0">
-            <xilinx:mode xilinx:name="create_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3400,6 +3429,16 @@
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
           <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlslice" xilinx:version="1.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_cri_nz_user_TIME_TAG_M_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TIME_TAG_M" xilinx:version="1.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3469,20 +3508,10 @@
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_implementation_cri_nz_user_TIME_TAG_wrapper_1_0__ref_view_fileset</spirit:name>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TIME_TAG_wrapper" xilinx:version="1.0">
-            <xilinx:mode xilinx:name="create_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
       <spirit:name>xilinx_implementation_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3503,6 +3532,16 @@
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
           <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlslice" xilinx:version="1.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_implementation_cri_nz_user_TIME_TAG_M_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="cri.nz" xilinx:library="user" xilinx:name="TIME_TAG_M" xilinx:version="1.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -3536,21 +3575,21 @@
       <xilinx:displayName>TT_AXI_PERIPH_wrapper_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-12-11T02:37:49Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-12-13T03:00:44Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2baa3a58_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d7aa78a_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@187d2295_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@61d5bbde_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2270dce3_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2842ce3a_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fee94e3_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@482f1840_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6901571e_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2082878a_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/TT_AXI_PERIPH</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a76be6ee"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3039c613"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1762e12b"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="485b580d"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d09fc90f"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="5eb5e6b0"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="96c9469c"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

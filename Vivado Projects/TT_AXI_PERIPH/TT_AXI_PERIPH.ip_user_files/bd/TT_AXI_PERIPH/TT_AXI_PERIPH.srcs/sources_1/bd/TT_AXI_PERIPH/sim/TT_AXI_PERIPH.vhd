@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Dec 11 15:37:13 2019
+--Date        : Fri Dec 13 16:00:00 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TT_AXI_PERIPH.bd
 --Design      : TT_AXI_PERIPH
@@ -13,12 +13,13 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity TT_AXI_PERIPH is
   port (
-    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ACTIVE : out STD_LOGIC;
     CH0 : in STD_LOGIC;
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
     DEBUG0 : out STD_LOGIC;
+    DEBUG1 : out STD_LOGIC;
     D_RDY : out STD_LOGIC;
     MCLK : in STD_LOGIC;
     T0 : in STD_LOGIC;
@@ -128,7 +129,7 @@ entity TT_AXI_PERIPH is
     util_wvalid : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of TT_AXI_PERIPH : entity is "TT_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TT_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=19,numReposBlks=19,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of TT_AXI_PERIPH : entity is "TT_AXI_PERIPH,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TT_AXI_PERIPH,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=22,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of TT_AXI_PERIPH : entity is "TT_AXI_PERIPH.hwdef";
 end TT_AXI_PERIPH;
@@ -187,22 +188,10 @@ architecture STRUCTURE of TT_AXI_PERIPH is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    gpio_io_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     gpio2_io_i : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component TT_AXI_PERIPH_axi_gpio_0_1;
-  component TT_AXI_PERIPH_xlslice_0_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component TT_AXI_PERIPH_xlslice_0_0;
-  component TT_AXI_PERIPH_xlslice_1_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component TT_AXI_PERIPH_xlslice_1_0;
   component TT_AXI_PERIPH_xlconcat_1_0 is
   port (
     In0 : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -358,33 +347,67 @@ architecture STRUCTURE of TT_AXI_PERIPH is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component TT_AXI_PERIPH_T1_4;
-  component TT_AXI_PERIPH_TIME_TAG_wrapper_0_0 is
+  component TT_AXI_PERIPH_TT_META5_0_0 is
   port (
-    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
+    INP : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC_VECTOR ( 4 downto 0 )
+  );
+  end component TT_AXI_PERIPH_TT_META5_0_0;
+  component TT_AXI_PERIPH_TT_META48_0_0 is
+  port (
+    INP : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC_VECTOR ( 47 downto 0 )
+  );
+  end component TT_AXI_PERIPH_TT_META48_0_0;
+  component TT_AXI_PERIPH_TT_META48_0_1 is
+  port (
+    INP : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC_VECTOR ( 47 downto 0 )
+  );
+  end component TT_AXI_PERIPH_TT_META48_0_1;
+  component TT_AXI_PERIPH_TT_META48_1_0 is
+  port (
+    INP : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC_VECTOR ( 47 downto 0 )
+  );
+  end component TT_AXI_PERIPH_TT_META48_1_0;
+  component TT_AXI_PERIPH_TT_META48_2_0 is
+  port (
+    INP : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    MCLK : in STD_LOGIC;
+    OUTP : out STD_LOGIC_VECTOR ( 47 downto 0 )
+  );
+  end component TT_AXI_PERIPH_TT_META48_2_0;
+  component TT_AXI_PERIPH_TIME_TAG_M_0_0 is
+  port (
+    timeout : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    T0 : in STD_LOGIC;
     CH0 : in STD_LOGIC;
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
-    DATA_RDY : out STD_LOGIC;
-    DEBUG0 : out STD_LOGIC;
-    DET_STATES : out STD_LOGIC_VECTOR ( 3 downto 0 );
     MCLK : in STD_LOGIC;
-    T0 : in STD_LOGIC;
-    T1 : out STD_LOGIC_VECTOR ( 47 downto 0 );
-    T2 : out STD_LOGIC_VECTOR ( 47 downto 0 );
-    T3 : out STD_LOGIC_VECTOR ( 47 downto 0 );
-    T4 : out STD_LOGIC_VECTOR ( 47 downto 0 );
-    TIME_OUT : in STD_LOGIC_VECTOR ( 47 downto 0 );
-    obuf_resetn : in STD_LOGIC;
-    resetn : in STD_LOGIC
+    ReSeTn : in STD_LOGIC;
+    D_RDY : out STD_LOGIC;
+    listening : out STD_LOGIC;
+    waiting : out STD_LOGIC;
+    t1 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    t2 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    t3 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    t4 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    ch_timeouts : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    DEBUG : out STD_LOGIC
   );
-  end component TT_AXI_PERIPH_TIME_TAG_wrapper_0_0;
+  end component TT_AXI_PERIPH_TIME_TAG_M_0_0;
   signal CH0_1 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
   signal CH2_1 : STD_LOGIC;
   signal CH3_1 : STD_LOGIC;
   signal MCLK_1 : STD_LOGIC;
-  signal Net : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal T0_1 : STD_LOGIC;
   signal T1_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal T1_1_ARREADY : STD_LOGIC;
@@ -471,14 +494,20 @@ architecture STRUCTURE of TT_AXI_PERIPH is
   signal TIME_OUT_GPIO_1_WREADY : STD_LOGIC;
   signal TIME_OUT_GPIO_1_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal TIME_OUT_GPIO_1_WVALID : STD_LOGIC;
-  signal TIME_TAG_wrapper_0_ACTIVE : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal TIME_TAG_M_0_DEBUG : STD_LOGIC;
+  signal TIME_TAG_M_0_ch_timeouts : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal TIME_TAG_M_0_listening : STD_LOGIC;
+  signal TIME_TAG_M_0_t1 : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TIME_TAG_M_0_t2 : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TIME_TAG_M_0_t3 : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TIME_TAG_M_0_t4 : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TIME_TAG_M_0_waiting : STD_LOGIC;
   signal TIME_TAG_wrapper_0_DATA_RDY : STD_LOGIC;
-  signal TIME_TAG_wrapper_0_DEBUG0 : STD_LOGIC;
-  signal TIME_TAG_wrapper_0_DET_STATES : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal TIME_TAG_wrapper_0_T1 : STD_LOGIC_VECTOR ( 47 downto 0 );
   signal TIME_TAG_wrapper_0_T2 : STD_LOGIC_VECTOR ( 47 downto 0 );
   signal TIME_TAG_wrapper_0_T3 : STD_LOGIC_VECTOR ( 47 downto 0 );
   signal TIME_TAG_wrapper_0_T4 : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_META5_0_OUTP : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal aclk_1 : STD_LOGIC;
   signal aresetn_1 : STD_LOGIC;
   signal time_out_gpio_gpio2_io_o : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -500,10 +529,9 @@ architecture STRUCTURE of TT_AXI_PERIPH is
   signal util_1_WREADY : STD_LOGIC;
   signal util_1_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal util_1_WVALID : STD_LOGIC;
+  signal util_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 47 downto 0 );
   signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 4 downto 0 );
-  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlslice_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlslice_2_Dout : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal xlslice_2_Dout1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal xlslice_2_Dout2 : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -623,12 +651,13 @@ architecture STRUCTURE of TT_AXI_PERIPH is
   attribute X_INTERFACE_INFO of util_wdata : signal is "xilinx.com:interface:aximm:1.0 util WDATA";
   attribute X_INTERFACE_INFO of util_wstrb : signal is "xilinx.com:interface:aximm:1.0 util WSTRB";
 begin
-  ACTIVE(0) <= TIME_TAG_wrapper_0_ACTIVE(0);
+  ACTIVE <= TIME_TAG_M_0_listening;
   CH0_1 <= CH0;
   CH1_1 <= CH1;
   CH2_1 <= CH2;
   CH3_1 <= CH3;
-  DEBUG0 <= TIME_TAG_wrapper_0_DEBUG0;
+  DEBUG0 <= TIME_TAG_M_0_waiting;
+  DEBUG1 <= TIME_TAG_M_0_DEBUG;
   D_RDY <= TIME_TAG_wrapper_0_DATA_RDY;
   MCLK_1 <= MCLK;
   T0_1 <= T0;
@@ -872,25 +901,55 @@ T4: component TT_AXI_PERIPH_T1_4
       s_axi_wstrb(3 downto 0) => T4_1_WSTRB(3 downto 0),
       s_axi_wvalid => T4_1_WVALID
     );
-TIME_TAG_wrapper_0: component TT_AXI_PERIPH_TIME_TAG_wrapper_0_0
+TIME_TAG_M_0: component TT_AXI_PERIPH_TIME_TAG_M_0_0
      port map (
-      ACTIVE(0) => TIME_TAG_wrapper_0_ACTIVE(0),
       CH0 => CH0_1,
       CH1 => CH1_1,
       CH2 => CH2_1,
       CH3 => CH3_1,
-      DATA_RDY => TIME_TAG_wrapper_0_DATA_RDY,
-      DEBUG0 => TIME_TAG_wrapper_0_DEBUG0,
-      DET_STATES(3 downto 0) => TIME_TAG_wrapper_0_DET_STATES(3 downto 0),
+      DEBUG => TIME_TAG_M_0_DEBUG,
+      D_RDY => TIME_TAG_wrapper_0_DATA_RDY,
       MCLK => MCLK_1,
+      ReSeTn => util_gpio_io_o(0),
       T0 => T0_1,
-      T1(47 downto 0) => TIME_TAG_wrapper_0_T1(47 downto 0),
-      T2(47 downto 0) => TIME_TAG_wrapper_0_T2(47 downto 0),
-      T3(47 downto 0) => TIME_TAG_wrapper_0_T3(47 downto 0),
-      T4(47 downto 0) => TIME_TAG_wrapper_0_T4(47 downto 0),
-      TIME_OUT(47 downto 0) => xlconcat_0_dout(47 downto 0),
-      obuf_resetn => xlslice_1_Dout(0),
-      resetn => xlslice_0_Dout(0)
+      ch_timeouts(3 downto 0) => TIME_TAG_M_0_ch_timeouts(3 downto 0),
+      listening => TIME_TAG_M_0_listening,
+      t1(47 downto 0) => TIME_TAG_M_0_t1(47 downto 0),
+      t2(47 downto 0) => TIME_TAG_M_0_t2(47 downto 0),
+      t3(47 downto 0) => TIME_TAG_M_0_t3(47 downto 0),
+      t4(47 downto 0) => TIME_TAG_M_0_t4(47 downto 0),
+      timeout(47 downto 0) => xlconcat_0_dout(47 downto 0),
+      waiting => TIME_TAG_M_0_waiting
+    );
+TT_META48_0: component TT_AXI_PERIPH_TT_META48_0_0
+     port map (
+      INP(47 downto 0) => TIME_TAG_M_0_t1(47 downto 0),
+      MCLK => aclk_1,
+      OUTP(47 downto 0) => TIME_TAG_wrapper_0_T1(47 downto 0)
+    );
+TT_META48_1: component TT_AXI_PERIPH_TT_META48_0_1
+     port map (
+      INP(47 downto 0) => TIME_TAG_M_0_t2(47 downto 0),
+      MCLK => aclk_1,
+      OUTP(47 downto 0) => TIME_TAG_wrapper_0_T2(47 downto 0)
+    );
+TT_META48_2: component TT_AXI_PERIPH_TT_META48_1_0
+     port map (
+      INP(47 downto 0) => TIME_TAG_M_0_t3(47 downto 0),
+      MCLK => aclk_1,
+      OUTP(47 downto 0) => TIME_TAG_wrapper_0_T3(47 downto 0)
+    );
+TT_META48_3: component TT_AXI_PERIPH_TT_META48_2_0
+     port map (
+      INP(47 downto 0) => TIME_TAG_M_0_t4(47 downto 0),
+      MCLK => aclk_1,
+      OUTP(47 downto 0) => TIME_TAG_wrapper_0_T4(47 downto 0)
+    );
+TT_META5_0: component TT_AXI_PERIPH_TT_META5_0_0
+     port map (
+      INP(4 downto 0) => xlconcat_1_dout(4 downto 0),
+      MCLK => aclk_1,
+      OUTP(4 downto 0) => TT_META5_0_OUTP(4 downto 0)
     );
 time_out_gpio: component TT_AXI_PERIPH_axi_gpio_0_0
      port map (
@@ -918,8 +977,8 @@ time_out_gpio: component TT_AXI_PERIPH_axi_gpio_0_0
     );
 util: component TT_AXI_PERIPH_axi_gpio_0_1
      port map (
-      gpio2_io_i(4 downto 0) => xlconcat_1_dout(4 downto 0),
-      gpio_io_o(1 downto 0) => Net(1 downto 0),
+      gpio2_io_i(4 downto 0) => TT_META5_0_OUTP(4 downto 0),
+      gpio_io_o(0) => util_gpio_io_o(0),
       s_axi_aclk => aclk_1,
       s_axi_araddr(8 downto 0) => util_1_ARADDR(8 downto 0),
       s_axi_aresetn => aresetn_1,
@@ -948,18 +1007,8 @@ xlconcat_0: component TT_AXI_PERIPH_xlconcat_0_0
     );
 xlconcat_1: component TT_AXI_PERIPH_xlconcat_1_0
      port map (
-      In0(3 downto 0) => TIME_TAG_wrapper_0_DET_STATES(3 downto 0),
+      In0(3 downto 0) => TIME_TAG_M_0_ch_timeouts(3 downto 0),
       In1(0) => TIME_TAG_wrapper_0_DATA_RDY,
       dout(4 downto 0) => xlconcat_1_dout(4 downto 0)
-    );
-xlslice_0: component TT_AXI_PERIPH_xlslice_0_0
-     port map (
-      Din(1 downto 0) => Net(1 downto 0),
-      Dout(0) => xlslice_0_Dout(0)
-    );
-xlslice_1: component TT_AXI_PERIPH_xlslice_1_0
-     port map (
-      Din(1 downto 0) => Net(1 downto 0),
-      Dout(0) => xlslice_1_Dout(0)
     );
 end STRUCTURE;

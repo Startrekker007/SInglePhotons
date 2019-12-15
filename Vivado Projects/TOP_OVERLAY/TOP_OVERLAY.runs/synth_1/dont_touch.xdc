@@ -237,24 +237,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_
 # IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/SP_OV_TT_AXI_PERIPH_wrapper_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_TT_AXI_PERIPH_wrapper_0_0 || ORIG_REF_NAME==SP_OV_TT_AXI_PERIPH_wrapper_0_0} -quiet] -quiet
 
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_TIME_TAG_wrapper_0_0 || ORIG_REF_NAME==TT_AXI_PERIPH_TIME_TAG_wrapper_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_c_counter_binary_0_0/TIME_TAG_c_counter_binary_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TIME_TAG_c_counter_binary_0_0 || ORIG_REF_NAME==TIME_TAG_c_counter_binary_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_xlconcat_0_0/TIME_TAG_xlconcat_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TIME_TAG_xlconcat_0_0 || ORIG_REF_NAME==TIME_TAG_xlconcat_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_util_vector_logic_0_0/TIME_TAG_util_vector_logic_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TIME_TAG_util_vector_logic_0_0 || ORIG_REF_NAME==TIME_TAG_util_vector_logic_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_util_vector_logic_1_0/TIME_TAG_util_vector_logic_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TIME_TAG_util_vector_logic_1_0 || ORIG_REF_NAME==TIME_TAG_util_vector_logic_1_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_util_vector_logic_0_1/TIME_TAG_util_vector_logic_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TIME_TAG_util_vector_logic_0_1 || ORIG_REF_NAME==TIME_TAG_util_vector_logic_0_1} -quiet] -quiet
-
 # IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==TT_AXI_PERIPH_axi_gpio_0_0} -quiet] -quiet
 
@@ -263,12 +245,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_x
 
 # IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_1/TT_AXI_PERIPH_axi_gpio_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_axi_gpio_0_1 || ORIG_REF_NAME==TT_AXI_PERIPH_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_xlslice_0_0/TT_AXI_PERIPH_xlslice_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_xlslice_0_0 || ORIG_REF_NAME==TT_AXI_PERIPH_xlslice_0_0} -quiet] -quiet
-
-# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_xlslice_1_0/TT_AXI_PERIPH_xlslice_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_xlslice_1_0 || ORIG_REF_NAME==TT_AXI_PERIPH_xlslice_1_0} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_xlconcat_1_0/TT_AXI_PERIPH_xlconcat_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_xlconcat_1_0 || ORIG_REF_NAME==TT_AXI_PERIPH_xlconcat_1_0} -quiet] -quiet
@@ -309,6 +285,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_M
 # IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_T1_4/TT_AXI_PERIPH_T1_4.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_T1_4 || ORIG_REF_NAME==TT_AXI_PERIPH_T1_4} -quiet] -quiet
 
+# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_M_0_0/TT_AXI_PERIPH_TIME_TAG_M_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_TIME_TAG_M_0_0 || ORIG_REF_NAME==TT_AXI_PERIPH_TIME_TAG_M_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_M_0_0/src/TT_ctr/TT_ctr.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TT_ctr || ORIG_REF_NAME==TT_ctr} -quiet] -quiet
+
 # IP: bd/SP_OV/ip/SP_OV_util_vector_logic_2_0/SP_OV_util_vector_logic_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_util_vector_logic_2_0 || ORIG_REF_NAME==SP_OV_util_vector_logic_2_0} -quiet] -quiet
 
@@ -317,6 +299,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_util_vect
 
 # IP: bd/SP_OV/ip/SP_OV_util_vector_logic_3_1/SP_OV_util_vector_logic_3_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_util_vector_logic_3_1 || ORIG_REF_NAME==SP_OV_util_vector_logic_3_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_util_vector_logic_3_2/SP_OV_util_vector_logic_3_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_util_vector_logic_3_2 || ORIG_REF_NAME==SP_OV_util_vector_logic_3_2} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/SP_OV_tier2_xbar_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_tier2_xbar_0_0 || ORIG_REF_NAME==SP_OV_tier2_xbar_0_0} -quiet] -quiet
@@ -555,8 +540,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_axi_gpio_0_1 || ORIG_REF_NAME==SP_OV_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_ooc.xdc
-
-# XDC: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_TIME_TAG_wrapper_0_0/src/TIME_TAG_ooc.xdc
 
 # XDC: bd/SP_OV/ip/SP_OV_TT_AXI_PERIPH_wrapper_0_0/src/TT_AXI_PERIPH_axi_gpio_0_0/TT_AXI_PERIPH_axi_gpio_0_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TT_AXI_PERIPH_axi_gpio_0_0 || ORIG_REF_NAME==TT_AXI_PERIPH_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet

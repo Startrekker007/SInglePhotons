@@ -76,6 +76,8 @@ namespace FrontEnd
             {
                 channels[i] = new Channel(i, false, 1000.0, 0, 0.5, false);
             }
+            btnArm.Enabled = true;
+            btnStop.Enabled = false;
         }
         public void disableFunctions()
         {
@@ -97,6 +99,12 @@ namespace FrontEnd
             {
                 mode = 2;
             }
+            double temp = 0;
+            if (Double.TryParse(txtw0.Text,out temp) == false)
+            {
+                MessageBox.Show("Enter a float please", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string txo = "PC" + mode.ToString() + txtw0.Text;
             byte[] bytes = Encoding.ASCII.GetBytes(txo);
             sock.Send(bytes);
@@ -108,7 +116,15 @@ namespace FrontEnd
             {
                 try
                 {
+                    if (socketConnected() == false)
+                    {
+                        disableFunctions();
+                        MessageBox.Show("Server has stopped doing its job", "Pynq disconnected");
+                        dataThreadAlive = false;
+                        break;
+                    }
                     byte[] rxbuf = new byte[1024];
+                    
                     string rx = recieveString();
                     if (rx.Substring(0, 2) == "PC")
                     {
@@ -152,12 +168,37 @@ namespace FrontEnd
             }
             
         }
+        private bool socketConnected()
+        {
+            if (sock != null)
+            {
+                bool part1 = sock.Poll(1000, SelectMode.SelectRead);
+                bool part2 = (sock.Available == 0);
+                if (part1 && part2)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
 
+
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             dataThreadAlive = false;
             DialogResult msg = MessageBox.Show("Cya mate", "Exiting");
-            sock.Close();
+            if (sock != null)
+            {
+                sock.Close();
+            }
+            
         }
         private string recieveString()
         {
@@ -166,7 +207,7 @@ namespace FrontEnd
             sock.Receive(temp);
             
             retval = Encoding.ASCII.GetString(temp);
-            Debug.WriteLine(retval);
+            Debug.WriteLine(retval+"\n");
             return retval;
         }
 
@@ -184,10 +225,13 @@ namespace FrontEnd
         {
             stctscale -=3;
             lbltscale.Text = parseTimescale(stctscale).ToString();
+            lblTTscale.Text = parseTimescale(stctscale).ToString();
             btndectscale.Enabled = true;
+            btnTTdec.Enabled = true;
             if (stctscale == 0)
             {
                 btninctscale.Enabled = false;
+                btnTTInc.Enabled = false;
             }
             updatestctLabels();
         }
@@ -218,10 +262,13 @@ namespace FrontEnd
         {
             stctscale += 3;
             lbltscale.Text = parseTimescale(stctscale).ToString();
+            lblTTscale.Text = parseTimescale(stctscale).ToString();
             btninctscale.Enabled = true;
+            btnTTInc.Enabled = true;
             if(stctscale == 9)
             {
                 btndectscale.Enabled = false;
+                btnTTdec.Enabled = false;
             }
             updatestctLabels();
         }
@@ -241,13 +288,15 @@ namespace FrontEnd
 
         private void btnArm_Click(object sender, EventArgs e)
         {
-            btnStop.Enabled = true;
-            btnArm.Enabled = false;
-            double timeout = Double.Parse(txtTimeout.Text);
-            if(timeout <=0 || timeout >= 345600){
-                MessageBox.Show("0<t<=345600", "Error");
+            
+            double timeout = 1.0;
+            bool valid = Double.TryParse(txtTimeout.Text,out timeout);
+            if(timeout <=0 || timeout >= 345600 || valid == false){
+                MessageBox.Show("0<t<=345600", "Invalid input",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
+            btnStop.Enabled = true;
+            btnArm.Enabled = false;
             sendToPynq("TT" + "1" + timeout.ToString());
         }
         private void sendToPynq(string val)
@@ -259,10 +308,13 @@ namespace FrontEnd
         {
             stctscale -= 3;
             lblTTscale.Text = parseTimescale(stctscale).ToString();
+            lbltscale.Text = parseTimescale(stctscale).ToString();
             btnTTdec.Enabled = true;
+            btndectscale.Enabled = true;
             if (stctscale == 0)
             {
                 btnTTInc.Enabled = false;
+                btninctscale.Enabled = false;
             }
             updatestctLabels();
         }
@@ -271,10 +323,13 @@ namespace FrontEnd
         {
             stctscale += 3;
             lblTTscale.Text = parseTimescale(stctscale).ToString();
+            lbltscale.Text = parseTimescale(stctscale).ToString();
             btnTTInc.Enabled = true;
+            btninctscale.Enabled = true;
             if (stctscale == 9)
             {
                 btnTTdec.Enabled = false;
+                btndectscale.Enabled = false;
             }
             updatestctLabels();
         }
@@ -317,37 +372,80 @@ namespace FrontEnd
 
         private void btnch0_Click(object sender, EventArgs e)
         {
-            channels[0].setFrequency(Double.Parse(txtFrequency.Text));
-            channels[0].setDC(Double.Parse(txtDC.Text));
-            channels[0].setDelay(Double.Parse(txtDelay.Text));
-            channels[0].setDCMode(chkdcmode.Checked);
+            Object[] stuff = getSigGenVals();
+            if (stuff == null)
+            {
+                return;
+            }
+            channels[0].setFrequency((double)stuff[0]);
+            channels[0].setDC((double)stuff[1]);
+            channels[0].setDelay((double)stuff[2]);
+            channels[0].setDCMode((bool)stuff[3]);
             sendToPynq("PG" + channels[0].toJSON());
         }
-
+        private Object[] getSigGenVals()
+        {
+            Object[] mystuff = new Object[4];
+            double freq = 1000.0;
+            double dc = 50.0;
+            double delay = 0.0;
+            bool valid = false;
+            valid = Double.TryParse(txtFrequency.Text, out freq);
+            valid = Double.TryParse(txtDC.Text, out dc);
+            valid = Double.TryParse(txtDelay.Text, out delay);
+            if(valid == false)
+            {
+                MessageBox.Show("Invalid input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                mystuff[0] = freq;
+                mystuff[1] = dc;
+                mystuff[2] = delay;
+                mystuff[3] = chkdcmode.Checked;
+                return mystuff;
+            }
+        }
         private void btnch1_Click(object sender, EventArgs e)
         {
-            channels[1].setFrequency(Double.Parse(txtFrequency.Text));
-            channels[1].setDC(Double.Parse(txtDC.Text));
-            channels[1].setDelay(Double.Parse(txtDelay.Text));
-            channels[1].setDCMode(chkdcmode.Checked);
+            Object[] stuff = getSigGenVals();
+            if (stuff == null)
+            {
+                return;
+            }
+            channels[1].setFrequency((double)stuff[0]);
+            channels[1].setDC((double)stuff[1]);
+            channels[1].setDelay((double)stuff[2]);
+            channels[1].setDCMode((bool)stuff[3]);
             sendToPynq("PG" + channels[1].toJSON());
         }
 
         private void btnch2_Click(object sender, EventArgs e)
         {
-            channels[2].setFrequency(Double.Parse(txtFrequency.Text));
-            channels[2].setDC(Double.Parse(txtDC.Text));
-            channels[2].setDelay(Double.Parse(txtDelay.Text));
-            channels[2].setDCMode(chkdcmode.Checked);
+            Object[] stuff = getSigGenVals();
+            if (stuff == null)
+            {
+                return;
+            }
+            channels[2].setFrequency((double)stuff[0]);
+            channels[2].setDC((double)stuff[1]);
+            channels[2].setDelay((double)stuff[2]);
+            channels[2].setDCMode((bool)stuff[3]);
             sendToPynq("PG" + channels[2].toJSON());
         }
 
         private void btnch3_Click(object sender, EventArgs e)
         {
-            channels[3].setFrequency(Double.Parse(txtFrequency.Text));
-            channels[3].setDC(Double.Parse(txtDC.Text));
-            channels[3].setDelay(Double.Parse(txtDelay.Text));
-            channels[3].setDCMode(chkdcmode.Checked);
+            Object[] stuff = getSigGenVals();
+            if (stuff == null)
+            {
+                return;
+            }
+            channels[3].setFrequency((double)stuff[0]);
+            channels[3].setDC((double)stuff[1]);
+            channels[3].setDelay((double)stuff[2]);
+            channels[3].setDCMode((bool)stuff[3]);
             sendToPynq("PG" + channels[3].toJSON());
         }
     }
