@@ -1,0 +1,694 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x15F9614661A9E86F",
+      "device": "xc7z020clg400-1",
+      "name": "IODELAY_BLK",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "IDELAY_WRAPPER_0": "",
+      "IDELAY_WRAPPER_1": "",
+      "IDELAY_WRAPPER_2": "",
+      "IDELAY_WRAPPER_3": "",
+      "IDELAY_WRAPPER_4": "",
+      "IDELAY_WRAPPER_5": "",
+      "IDELAY_WRAPPER_6": "",
+      "IDELAY_WRAPPER_7": "",
+      "DD_CTRL_0": ""
+    },
+    "ports": {
+      "IDATA": {
+        "direction": "I"
+      },
+      "TAP": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "STAGE": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "RCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "resetn",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "IODELAY_BLK_RCLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "310000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "IODELAY_BLK_MCLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "LD": {
+        "direction": "I"
+      },
+      "ODATA": {
+        "direction": "O"
+      },
+      "DEBUG0": {
+        "direction": "O",
+        "left": "4",
+        "right": "0"
+      },
+      "DEBUG1": {
+        "direction": "O",
+        "left": "4",
+        "right": "0"
+      },
+      "DEBUG2": {
+        "direction": "O",
+        "left": "4",
+        "right": "0"
+      },
+      "DEBUG3": {
+        "direction": "O",
+        "left": "4",
+        "right": "0"
+      },
+      "DEBUG4": {
+        "direction": "O",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "IDELAY_WRAPPER_0": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_1": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_2": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_3": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_4": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_5": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_1_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_6": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_2_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "IDELAY_WRAPPER_7": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_WRAPPER:1.0",
+        "xci_name": "IODELAY_BLK_IDELAY_WRAPPER_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_RCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          }
+        }
+      },
+      "DD_CTRL_0": {
+        "vlnv": "xilinx.com:module_ref:DD_CTRL:1.0",
+        "xci_name": "IODELAY_BLK_DD_CTRL_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DD_CTRL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "STAGE": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "TAP0": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP1": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP2": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP3": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP4": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP5": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP6": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "TAP7": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "IODELAY_BLK_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      }
+    },
+    "nets": {
+      "IDELAY_WRAPPER_0_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_0/ODATA",
+          "IDELAY_WRAPPER_1/IDATA"
+        ]
+      },
+      "IDELAY_WRAPPER_1_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_1/ODATA",
+          "IDELAY_WRAPPER_2/IDATA"
+        ]
+      },
+      "IDELAY_WRAPPER_2_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_2/ODATA",
+          "IDELAY_WRAPPER_3/IDATA"
+        ]
+      },
+      "IDELAY_WRAPPER_3_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_3/ODATA",
+          "IDELAY_WRAPPER_4/IDATA"
+        ]
+      },
+      "IDELAY_WRAPPER_4_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_4/ODATA",
+          "IDELAY_WRAPPER_5/IDATA"
+        ]
+      },
+      "IDELAY_WRAPPER_5_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_5/ODATA",
+          "IDELAY_WRAPPER_6/IDATA"
+        ]
+      },
+      "IDELAY_WRAPPER_6_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_6/ODATA",
+          "IDELAY_WRAPPER_7/IDATA"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "RCLK",
+          "IDELAY_WRAPPER_6/LD_CLK",
+          "IDELAY_WRAPPER_7/LD_CLK",
+          "IDELAY_WRAPPER_3/LD_CLK",
+          "IDELAY_WRAPPER_2/LD_CLK",
+          "IDELAY_WRAPPER_1/LD_CLK",
+          "IDELAY_WRAPPER_5/LD_CLK",
+          "IDELAY_WRAPPER_0/LD_CLK",
+          "IDELAY_WRAPPER_4/LD_CLK"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "LD",
+          "IDELAY_WRAPPER_4/LD",
+          "IDELAY_WRAPPER_0/LD",
+          "IDELAY_WRAPPER_1/LD",
+          "IDELAY_WRAPPER_5/LD",
+          "IDELAY_WRAPPER_2/LD",
+          "IDELAY_WRAPPER_6/LD",
+          "IDELAY_WRAPPER_3/LD",
+          "IDELAY_WRAPPER_7/LD"
+        ]
+      },
+      "DD_CTRL_0_TAP0": {
+        "ports": [
+          "DD_CTRL_0/TAP0",
+          "IDELAY_WRAPPER_0/TAP",
+          "DEBUG0"
+        ]
+      },
+      "DD_CTRL_0_TAP1": {
+        "ports": [
+          "DD_CTRL_0/TAP1",
+          "IDELAY_WRAPPER_1/TAP"
+        ]
+      },
+      "DD_CTRL_0_TAP2": {
+        "ports": [
+          "DD_CTRL_0/TAP2",
+          "IDELAY_WRAPPER_2/TAP",
+          "DEBUG1"
+        ]
+      },
+      "DD_CTRL_0_TAP3": {
+        "ports": [
+          "DD_CTRL_0/TAP3",
+          "IDELAY_WRAPPER_3/TAP"
+        ]
+      },
+      "DD_CTRL_0_TAP4": {
+        "ports": [
+          "DD_CTRL_0/TAP4",
+          "IDELAY_WRAPPER_4/TAP",
+          "DEBUG2"
+        ]
+      },
+      "DD_CTRL_0_TAP5": {
+        "ports": [
+          "DD_CTRL_0/TAP5",
+          "IDELAY_WRAPPER_5/TAP"
+        ]
+      },
+      "DD_CTRL_0_TAP6": {
+        "ports": [
+          "DD_CTRL_0/TAP6",
+          "IDELAY_WRAPPER_6/TAP",
+          "DEBUG3"
+        ]
+      },
+      "DD_CTRL_0_TAP7": {
+        "ports": [
+          "DD_CTRL_0/TAP7",
+          "IDELAY_WRAPPER_7/TAP"
+        ]
+      },
+      "IDATA_1": {
+        "ports": [
+          "IDATA",
+          "IDELAY_WRAPPER_0/IDATA"
+        ]
+      },
+      "TAP_1": {
+        "ports": [
+          "TAP",
+          "DD_CTRL_0/TAP"
+        ]
+      },
+      "STAGE_1": {
+        "ports": [
+          "STAGE",
+          "DD_CTRL_0/STAGE"
+        ]
+      },
+      "Net2": {
+        "ports": [
+          "resetn",
+          "DD_CTRL_0/RESETn",
+          "DEBUG4"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "DD_CTRL_0/MCLK"
+        ]
+      },
+      "IDELAY_WRAPPER_7_ODATA": {
+        "ports": [
+          "IDELAY_WRAPPER_7/ODATA",
+          "ODATA"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x97EE2F254DD36BFA",
+      "device": "xc7z020clg400-1",
+      "name": "IO_DELAY",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "IDELAY_CTRL_BOI_0": "",
+      "clk_wiz_0": "",
+      "xlconstant_0": "",
+      "xlconstant_1": "",
+      "xlconstant_2": "",
+      "xlconstant_3": "",
+      "xlconstant_4": "",
+      "IDELAY_BOI_0": "",
+      "IDELAY_BOI_1": "",
+      "IDELAY_BOI_2": ""
+    },
+    "ports": {
+      "INP": {
+        "direction": "I"
+      },
+      "OUTP": {
+        "direction": "O"
+      },
+      "RESET": {
+        "direction": "I"
+      },
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "IO_DELAY_sys_clock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "125000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000"
+          }
+        }
+      },
+      "RDY": {
+        "direction": "O"
+      },
+      "OUTP1": {
+        "direction": "O"
+      },
+      "OUTP2": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "IDELAY_CTRL_BOI_0": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_CTRL_BOI:1.0",
+        "xci_name": "IO_DELAY_IDELAY_CTRL_BOI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_CTRL_BOI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "REF_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "RDY": {
+            "direction": "O"
+          }
+        }
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "IO_DELAY_clk_wiz_0_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "99.414"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "96.901"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "310.000"
+          },
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "7.750"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "3.125"
+          },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "IO_DELAY_xlconstant_0_0"
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "IO_DELAY_xlconstant_1_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlconstant_2": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "IO_DELAY_xlconstant_2_0"
+      },
+      "xlconstant_3": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "IO_DELAY_xlconstant_1_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "1"
+          },
+          "CONST_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "xlconstant_4": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "IO_DELAY_xlconstant_3_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "4"
+          },
+          "CONST_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "IDELAY_BOI_0": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_BOI:1.0",
+        "xci_name": "IO_DELAY_IDELAY_BOI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_BOI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          },
+          "LCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "IDELAY_BOI_1": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_BOI:1.0",
+        "xci_name": "IO_DELAY_IDELAY_BOI_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_BOI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          },
+          "LCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "IDELAY_BOI_2": {
+        "vlnv": "xilinx.com:module_ref:IDELAY_BOI:1.0",
+        "xci_name": "IO_DELAY_IDELAY_BOI_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IDELAY_BOI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "INP": {
+            "direction": "I"
+          },
+          "OUTP": {
+            "direction": "O"
+          },
+          "TAP": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "I"
+          },
+          "LCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "310000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      }
+    },
+    "nets": {
+      "INP_1": {
+        "ports": [
+          "INP",
+          "IDELAY_BOI_0/INP",
+          "IDELAY_BOI_1/INP",
+          "IDELAY_BOI_2/INP"
+        ]
+      },
+      "IDELAY_BOI_0_OUTP": {
+        "ports": [
+          "IDELAY_BOI_0/OUTP",
+          "OUTP"
+        ]
+      },
+      "RESET_1": {
+        "ports": [
+          "RESET",
+          "IDELAY_CTRL_BOI_0/RESET"
+        ]
+      },
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "IDELAY_CTRL_BOI_0/REF_CLK",
+          "IDELAY_BOI_0/LCLK",
+          "IDELAY_BOI_1/LCLK",
+          "IDELAY_BOI_2/LCLK"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "clk_wiz_0/resetn"
+        ]
+      },
+      "IDELAY_CTRL_BOI_0_RDY": {
+        "ports": [
+          "IDELAY_CTRL_BOI_0/RDY",
+          "RDY"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "IDELAY_BOI_0/TAP"
+        ]
+      },
+      "xlconstant_2_dout": {
+        "ports": [
+          "xlconstant_2/dout",
+          "IDELAY_BOI_0/LD",
+          "IDELAY_BOI_1/LD",
+          "IDELAY_BOI_2/LD"
+        ]
+      },
+      "xlconstant_3_dout": {
+        "ports": [
+          "xlconstant_3/dout",
+          "IDELAY_BOI_1/TAP"
+        ]
+      },
+      "IDELAY_BOI_1_OUTP": {
+        "ports": [
+          "IDELAY_BOI_1/OUTP",
+          "OUTP1"
+        ]
+      },
+      "IDELAY_BOI_2_OUTP": {
+        "ports": [
+          "IDELAY_BOI_2/OUTP",
+          "OUTP2"
+        ]
+      },
+      "xlconstant_4_dout": {
+        "ports": [
+          "xlconstant_4/dout",
+          "IDELAY_BOI_2/TAP"
+        ]
+      }
+    }
+  }
+}

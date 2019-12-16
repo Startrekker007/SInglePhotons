@@ -1,0 +1,376 @@
+
+*** Running vivado
+    with args -log IODELAY_BLK_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IODELAY_BLK_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source IODELAY_BLK_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'LD_CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'LD_CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESETn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'RESETn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-3157] Bus Interface 'RESETn': Bus parameter POLARITY is ACTIVE_LOW but port 'RESETn' is not *resetn - please double check the POLARITY setting.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+add_files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 301.746 ; gain = 0.000
+Command: synth_design -top IODELAY_BLK_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5404 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 736.586 ; gain = 178.633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_wrapper' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/hdl/IODELAY_BLK_wrapper.vhd:31]
+INFO: [Synth 8-3491] module 'IODELAY_BLK' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:14' bound to instance 'IODELAY_BLK_i' of component 'IODELAY_BLK' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/hdl/IODELAY_BLK_wrapper.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:35]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_DD_CTRL_0_0' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_DD_CTRL_0_0/synth/IODELAY_BLK_DD_CTRL_0_0.vhd:56' bound to instance 'DD_CTRL_0' of component 'IODELAY_BLK_DD_CTRL_0_0' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_DD_CTRL_0_0' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_DD_CTRL_0_0/synth/IODELAY_BLK_DD_CTRL_0_0.vhd:73]
+INFO: [Synth 8-3491] module 'DD_CTRL' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/DD_CTRL.vhd:34' bound to instance 'U0' of component 'DD_CTRL' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_DD_CTRL_0_0/synth/IODELAY_BLK_DD_CTRL_0_0.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'DD_CTRL' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/DD_CTRL.vhd:49]
+WARNING: [Synth 8-6014] Unused sequential element sg_reg was removed.  [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/DD_CTRL.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'DD_CTRL' (1#1) [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/DD_CTRL.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_DD_CTRL_0_0' (2#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_DD_CTRL_0_0/synth/IODELAY_BLK_DD_CTRL_0_0.vhd:73]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_0_0' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_0/synth/IODELAY_BLK_IDELAY_WRAPPER_0_0.vhd:56' bound to instance 'IDELAY_WRAPPER_0' of component 'IODELAY_BLK_IDELAY_WRAPPER_0_0' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_0_0' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_0/synth/IODELAY_BLK_IDELAY_WRAPPER_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_0/synth/IODELAY_BLK_IDELAY_WRAPPER_0_0.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'IDELAY_WRAPPER' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:42]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: DATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
+	Parameter IDELAY_TYPE bound to: VAR_LOAD - type: string 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
+	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 310.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+INFO: [Synth 8-113] binding component instance 'IDELAYE2_inst' to cell 'IDELAYE2' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'IDELAY_WRAPPER' (3#1) [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_0_0' (4#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_0/synth/IODELAY_BLK_IDELAY_WRAPPER_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_0_1' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_1/synth/IODELAY_BLK_IDELAY_WRAPPER_0_1.vhd:56' bound to instance 'IDELAY_WRAPPER_1' of component 'IODELAY_BLK_IDELAY_WRAPPER_0_1' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_0_1' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_1/synth/IODELAY_BLK_IDELAY_WRAPPER_0_1.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_1/synth/IODELAY_BLK_IDELAY_WRAPPER_0_1.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_0_1' (5#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_1/synth/IODELAY_BLK_IDELAY_WRAPPER_0_1.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_1_0' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_0/synth/IODELAY_BLK_IDELAY_WRAPPER_1_0.vhd:56' bound to instance 'IDELAY_WRAPPER_2' of component 'IODELAY_BLK_IDELAY_WRAPPER_1_0' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:199]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_1_0' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_0/synth/IODELAY_BLK_IDELAY_WRAPPER_1_0.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_0/synth/IODELAY_BLK_IDELAY_WRAPPER_1_0.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_1_0' (6#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_0/synth/IODELAY_BLK_IDELAY_WRAPPER_1_0.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_2_0' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_0/synth/IODELAY_BLK_IDELAY_WRAPPER_2_0.vhd:56' bound to instance 'IDELAY_WRAPPER_3' of component 'IODELAY_BLK_IDELAY_WRAPPER_2_0' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_2_0' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_0/synth/IODELAY_BLK_IDELAY_WRAPPER_2_0.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_0/synth/IODELAY_BLK_IDELAY_WRAPPER_2_0.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_2_0' (7#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_0/synth/IODELAY_BLK_IDELAY_WRAPPER_2_0.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_0_2' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_2/synth/IODELAY_BLK_IDELAY_WRAPPER_0_2.vhd:56' bound to instance 'IDELAY_WRAPPER_4' of component 'IODELAY_BLK_IDELAY_WRAPPER_0_2' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:215]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_0_2' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_2/synth/IODELAY_BLK_IDELAY_WRAPPER_0_2.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_2/synth/IODELAY_BLK_IDELAY_WRAPPER_0_2.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_0_2' (8#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_0_2/synth/IODELAY_BLK_IDELAY_WRAPPER_0_2.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_1_1' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_1/synth/IODELAY_BLK_IDELAY_WRAPPER_1_1.vhd:56' bound to instance 'IDELAY_WRAPPER_5' of component 'IODELAY_BLK_IDELAY_WRAPPER_1_1' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_1_1' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_1/synth/IODELAY_BLK_IDELAY_WRAPPER_1_1.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_1/synth/IODELAY_BLK_IDELAY_WRAPPER_1_1.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_1_1' (9#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_1_1/synth/IODELAY_BLK_IDELAY_WRAPPER_1_1.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_2_1' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_1/synth/IODELAY_BLK_IDELAY_WRAPPER_2_1.vhd:56' bound to instance 'IDELAY_WRAPPER_6' of component 'IODELAY_BLK_IDELAY_WRAPPER_2_1' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:231]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_2_1' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_1/synth/IODELAY_BLK_IDELAY_WRAPPER_2_1.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_1/synth/IODELAY_BLK_IDELAY_WRAPPER_2_1.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_2_1' (10#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_2_1/synth/IODELAY_BLK_IDELAY_WRAPPER_2_1.vhd:66]
+INFO: [Synth 8-3491] module 'IODELAY_BLK_IDELAY_WRAPPER_3_0' declared at 'd:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_3_0/synth/IODELAY_BLK_IDELAY_WRAPPER_3_0.vhd:56' bound to instance 'IDELAY_WRAPPER_7' of component 'IODELAY_BLK_IDELAY_WRAPPER_3_0' [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:239]
+INFO: [Synth 8-638] synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_3_0' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_3_0/synth/IODELAY_BLK_IDELAY_WRAPPER_3_0.vhd:66]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'U0' of component 'IDELAY_WRAPPER' [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_3_0/synth/IODELAY_BLK_IDELAY_WRAPPER_3_0.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_IDELAY_WRAPPER_3_0' (11#1) [d:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/ip/IODELAY_BLK_IDELAY_WRAPPER_3_0/synth/IODELAY_BLK_IDELAY_WRAPPER_3_0.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK' (12#1) [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/synth/IODELAY_BLK.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'IODELAY_BLK_wrapper' (13#1) [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.srcs/sources_1/bd/IODELAY_BLK/hdl/IODELAY_BLK_wrapper.vhd:31]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 793.477 ; gain = 235.523
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 798.656 ; gain = 240.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 798.656 ; gain = 240.703
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 907.578 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 907.578 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/DD_CTRL_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_4. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_5. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_6. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for IODELAY_BLK_i/IDELAY_WRAPPER_7. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module DD_CTRL 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 907.578 ; gain = 349.625
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 909.629 ; gain = 351.676
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |IDELAYE2 |     8|
+|3     |LUT1     |     1|
+|4     |LUT2     |     1|
+|5     |LUT3     |     2|
+|6     |LUT4     |     4|
+|7     |LUT5     |    40|
+|8     |FDRE     |    40|
+|9     |IBUF     |    14|
+|10    |OBUF     |    21|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------------+-------------------------------+------+
+|      |Instance             |Module                         |Cells |
++------+---------------------+-------------------------------+------+
+|1     |top                  |                               |   133|
+|2     |  IODELAY_BLK_i      |IODELAY_BLK                    |    96|
+|3     |    DD_CTRL_0        |IODELAY_BLK_DD_CTRL_0_0        |    88|
+|4     |      U0             |DD_CTRL                        |    88|
+|5     |    IDELAY_WRAPPER_0 |IODELAY_BLK_IDELAY_WRAPPER_0_0 |     1|
+|6     |      U0             |IDELAY_WRAPPER_6               |     1|
+|7     |    IDELAY_WRAPPER_1 |IODELAY_BLK_IDELAY_WRAPPER_0_1 |     1|
+|8     |      U0             |IDELAY_WRAPPER_5               |     1|
+|9     |    IDELAY_WRAPPER_2 |IODELAY_BLK_IDELAY_WRAPPER_1_0 |     1|
+|10    |      U0             |IDELAY_WRAPPER_4               |     1|
+|11    |    IDELAY_WRAPPER_3 |IODELAY_BLK_IDELAY_WRAPPER_2_0 |     1|
+|12    |      U0             |IDELAY_WRAPPER_3               |     1|
+|13    |    IDELAY_WRAPPER_4 |IODELAY_BLK_IDELAY_WRAPPER_0_2 |     1|
+|14    |      U0             |IDELAY_WRAPPER_2               |     1|
+|15    |    IDELAY_WRAPPER_5 |IODELAY_BLK_IDELAY_WRAPPER_1_1 |     1|
+|16    |      U0             |IDELAY_WRAPPER_1               |     1|
+|17    |    IDELAY_WRAPPER_6 |IODELAY_BLK_IDELAY_WRAPPER_2_1 |     1|
+|18    |      U0             |IDELAY_WRAPPER_0               |     1|
+|19    |    IDELAY_WRAPPER_7 |IODELAY_BLK_IDELAY_WRAPPER_3_0 |     1|
+|20    |      U0             |IDELAY_WRAPPER                 |     1|
++------+---------------------+-------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 925.418 ; gain = 258.543
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 925.418 ; gain = 367.465
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 944.590 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+69 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 944.590 ; gain = 642.844
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 944.590 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/IODELAY_BLK/IODELAY_BLK.runs/synth_1/IODELAY_BLK_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file IODELAY_BLK_wrapper_utilization_synth.rpt -pb IODELAY_BLK_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 16 16:02:49 2019...
