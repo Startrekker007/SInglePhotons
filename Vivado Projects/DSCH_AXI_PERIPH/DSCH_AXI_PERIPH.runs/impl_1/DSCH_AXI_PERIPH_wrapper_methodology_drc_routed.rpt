@@ -1,0 +1,650 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Dec 17 16:43:04 2019
+| Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_methodology -file DSCH_AXI_PERIPH_wrapper_methodology_drc_routed.rpt -pb DSCH_AXI_PERIPH_wrapper_methodology_drc_routed.pb -rpx DSCH_AXI_PERIPH_wrapper_methodology_drc_routed.rpx
+| Design       : DSCH_AXI_PERIPH_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Placed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_DSCH_AXI_PERIPH_wrapper
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 122
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 2          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 1          |
+| TIMING-7  | Critical Warning | No common node between related clocks              | 1          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                       | 1          |
+| TIMING-16 | Warning          | Large setup violation                              | 115        |
++-----------+------------------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock DSCH_AXI_PERIPH_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-4#2 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock DSCH_AXI_PERIPH_i/ref_clk/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0]
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock DSCH_AXI_PERIPH_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin DSCH_AXI_PERIPH_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-27#2 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock DSCH_AXI_PERIPH_i/ref_clk/inst/clk_in1 is created on an inappropriate internal pin DSCH_AXI_PERIPH_i/ref_clk/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell DSCH_AXI_PERIPH_i/Temptest_0/OUTP_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) DSCH_AXI_PERIPH_i/IDELAY_CTRL_WRAPPER_0/U0/IDELAYCTRL_inst/RST, DSCH_AXI_PERIPH_i/IDELAY_CTRL_WRAPPER_0/U0/IDELAYCTRL_inst_REPLICATED_0/RST, DSCH_AXI_PERIPH_i/IDELAY_CTRL_WRAPPER_0/U0/IDELAYCTRL_inst_REPLICATED_0_1/RST, DSCH_AXI_PERIPH_i/IDELAY_CTRL_WRAPPER_0/U0/IDELAYCTRL_inst_REPLICATED_0_2/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.007 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[27].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.012 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[27].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.026 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[49].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.030 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[27].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.046 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.048 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.070 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.085 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[20].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.096 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.098 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.098 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.111 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.114 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.114 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.124 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -1.125 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -1.143 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -1.150 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -1.151 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -1.155 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -1.170 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -1.187 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -1.191 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -1.193 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -1.238 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -1.261 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -1.265 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -1.265 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -1.274 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -1.289 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -1.299 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -1.306 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -1.317 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -1.330 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -1.332 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -1.333 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -1.334 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -1.346 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP1_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL1/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -1.371 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -1.404 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -1.447 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -1.458 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -1.468 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[55].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -1.468 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[55].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -1.473 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -1.476 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -1.488 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[55].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -1.489 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[55].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -1.516 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -1.531 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -1.558 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -1.563 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -1.580 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[55].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -1.580 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[56].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -1.614 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -1.620 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -1.624 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -1.624 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -1.629 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -1.640 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -1.641 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -1.648 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -1.648 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[4] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -1.657 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[3] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -1.670 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[61].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[0] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -1.774 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[1] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -1.774 ns between DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[62].DELX/TAP0_reg[4]/C (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DELAYLINE_wrapper_0/U0/DELAYLINE_i/Delays_0/U0/GEN_DEL[58].DELX/DEL0/IDELAYE2_inst/CNTVALUEIN[2] (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -3.076 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/ctr_rst_reg/D (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -3.183 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/llval_reg/D (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -3.232 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/lval_reg/D (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay1_reg[0]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay1_reg[1]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[16]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[17]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[19]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[20]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[21]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[22]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[23]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[24]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[25]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[26]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[27]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[29]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[30]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -3.628 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[6]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay0_reg[0]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay0_reg[1]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay0_reg[2]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay0_reg[3]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay0_reg[4]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay0_reg[5]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay1_reg[2]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay1_reg[3]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay1_reg[4]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/Delay1_reg[5]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#97 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/brdy_reg/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#98 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[12]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#99 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[8]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#100 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[9]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#101 Warning
+Large setup violation  
+There is a large setup violation of -3.752 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[0]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#102 Warning
+Large setup violation  
+There is a large setup violation of -3.752 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[10]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#103 Warning
+Large setup violation  
+There is a large setup violation of -3.752 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[11]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#104 Warning
+Large setup violation  
+There is a large setup violation of -3.752 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[13]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#105 Warning
+Large setup violation  
+There is a large setup violation of -3.752 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[14]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#106 Warning
+Large setup violation  
+There is a large setup violation of -3.752 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[15]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#107 Warning
+Large setup violation  
+There is a large setup violation of -3.762 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[28]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#108 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[18]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#109 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[1]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#110 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[2]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#111 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[31]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#112 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[3]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#113 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[4]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#114 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[5]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#115 Warning
+Large setup violation  
+There is a large setup violation of -3.898 ns between DSCH_AXI_PERIPH_i/UTIL/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DSCH_AXI_PERIPH_i/DSCH_BD_wrapper_0/U0/DSCH_BD_i/DSCH_EDGE_DETECT_0/U0/iretime_reg[7]/R (clocked by clk_out1_DSCH_AXI_PERIPH_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+

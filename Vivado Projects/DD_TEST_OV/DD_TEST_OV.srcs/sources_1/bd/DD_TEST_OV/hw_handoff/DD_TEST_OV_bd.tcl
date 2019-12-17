@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source DD_TEST_OV_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# INTDELAY_WRAPPER, INTDELAY_WRAPPER, INTDELAY_WRAPPER, INTDELAY_WRAPPER
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -167,53 +174,78 @@ proc create_root_design { parentCell } {
   set IDATA [ create_bd_port -dir I -type data IDATA ]
   set ODATA0 [ create_bd_port -dir O ODATA0 ]
   set ODATA1 [ create_bd_port -dir O ODATA1 ]
+  set ODATA2 [ create_bd_port -dir O ODATA2 ]
+  set ODATA3 [ create_bd_port -dir O ODATA3 ]
   set RDY [ create_bd_port -dir O RDY ]
-  set sys_clock [ create_bd_port -dir I -type clk sys_clock ]
-  set_property -dict [ list \
-   CONFIG.FREQ_HZ {125000000} \
-   CONFIG.PHASE {0.000} \
- ] $sys_clock
 
   # Create instance: DD_AXI_PERIPH_wrapper_0, and set properties
   set DD_AXI_PERIPH_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:DD_AXI_PERIPH_wrapper:1.0 DD_AXI_PERIPH_wrapper_0 ]
 
+  # Create instance: INTDELAY_WRAPPER_0, and set properties
+  set block_name INTDELAY_WRAPPER
+  set block_cell_name INTDELAY_WRAPPER_0
+  if { [catch {set INTDELAY_WRAPPER_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $INTDELAY_WRAPPER_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: INTDELAY_WRAPPER_1, and set properties
+  set block_name INTDELAY_WRAPPER
+  set block_cell_name INTDELAY_WRAPPER_1
+  if { [catch {set INTDELAY_WRAPPER_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $INTDELAY_WRAPPER_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: INTDELAY_WRAPPER_2, and set properties
+  set block_name INTDELAY_WRAPPER
+  set block_cell_name INTDELAY_WRAPPER_2
+  if { [catch {set INTDELAY_WRAPPER_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $INTDELAY_WRAPPER_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: INTDELAY_WRAPPER_3, and set properties
+  set block_name INTDELAY_WRAPPER
+  set block_cell_name INTDELAY_WRAPPER_3
+  if { [catch {set INTDELAY_WRAPPER_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $INTDELAY_WRAPPER_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {6} \
+   CONFIG.NUM_MI {9} \
  ] $axi_interconnect_0
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {119.348} \
-   CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125.000} \
-   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {8.000} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.CLKOUT1_JITTER {96.239} \
+   CONFIG.CLKOUT1_PHASE_ERROR {88.872} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {310.000} \
+   CONFIG.JITTER_SEL {Min_O_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {HIGH} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {11.625} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {3.750} \
+   CONFIG.PRIM_IN_FREQ {100.000} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_BOARD_FLOW {true} \
    CONFIG.USE_LOCKED {false} \
  ] $clk_wiz_0
-
-  # Create instance: clk_wiz_1, and set properties
-  set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {99.414} \
-   CONFIG.CLKOUT1_PHASE_ERROR {96.901} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {310.0} \
-   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {7.750} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {3.125} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_BOARD_FLOW {true} \
-   CONFIG.USE_LOCKED {false} \
- ] $clk_wiz_1
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -991,38 +1023,80 @@ proc create_root_design { parentCell } {
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1} \
+   CONFIG.CONST_WIDTH {5} \
+ ] $xlconstant_0
+
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+   CONFIG.CONST_WIDTH {5} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {19} \
+   CONFIG.CONST_WIDTH {5} \
+ ] $xlconstant_2
+
+  # Create instance: xlconstant_3, and set properties
+  set xlconstant_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_3 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+   CONFIG.CONST_WIDTH {5} \
+ ] $xlconstant_3
+
   # Create interface connections
   connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
   connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_DATA0] [get_bd_intf_pins axi_interconnect_0/M00_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_DATA1] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_UTIL0] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_UTIL1] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_MISC] [get_bd_intf_pins axi_interconnect_0/M04_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_DEBUG] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_DATA2] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_DATA3] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_UTIL0] [get_bd_intf_pins axi_interconnect_0/M04_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_UTIL1] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_UTIL2] [get_bd_intf_pins axi_interconnect_0/M06_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_UTIL3] [get_bd_intf_pins axi_interconnect_0/M07_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M08_AXI [get_bd_intf_pins DD_AXI_PERIPH_wrapper_0/DD_MISC] [get_bd_intf_pins axi_interconnect_0/M08_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
   connect_bd_net -net DD_AXI_PERIPH_wrapper_0_DEBUG0 [get_bd_ports DEBUG0] [get_bd_pins DD_AXI_PERIPH_wrapper_0/DEBUG0]
   connect_bd_net -net DD_AXI_PERIPH_wrapper_0_DEBUG1 [get_bd_ports DEBUG1] [get_bd_pins DD_AXI_PERIPH_wrapper_0/DEBUG1]
-  connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA0 [get_bd_ports ODATA0] [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA0]
-  connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA1 [get_bd_ports ODATA1] [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA1]
+  connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA0 [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA0] [get_bd_pins INTDELAY_WRAPPER_0/IDATA]
+  connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA1 [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA1] [get_bd_pins INTDELAY_WRAPPER_1/IDATA]
+  connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA2 [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA2] [get_bd_pins INTDELAY_WRAPPER_2/IDATA]
+  connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA3 [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA3] [get_bd_pins INTDELAY_WRAPPER_3/IDATA]
   connect_bd_net -net DD_AXI_PERIPH_wrapper_0_RDY [get_bd_ports RDY] [get_bd_pins DD_AXI_PERIPH_wrapper_0/RDY]
-  connect_bd_net -net Net [get_bd_ports IDATA] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA0] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA1]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins DD_AXI_PERIPH_wrapper_0/MCLK] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins DD_AXI_PERIPH_wrapper_0/RCLK] [get_bd_pins clk_wiz_1/clk_out1]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DD_AXI_PERIPH_wrapper_0/aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DD_AXI_PERIPH_wrapper_0/aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins clk_wiz_1/clk_in1]
+  connect_bd_net -net INTDELAY_WRAPPER_0_ODATA [get_bd_ports ODATA0] [get_bd_pins INTDELAY_WRAPPER_0/ODATA]
+  connect_bd_net -net INTDELAY_WRAPPER_1_ODATA [get_bd_ports ODATA1] [get_bd_pins INTDELAY_WRAPPER_1/ODATA]
+  connect_bd_net -net INTDELAY_WRAPPER_2_ODATA [get_bd_ports ODATA2] [get_bd_pins INTDELAY_WRAPPER_2/ODATA]
+  connect_bd_net -net INTDELAY_WRAPPER_3_ODATA [get_bd_ports ODATA3] [get_bd_pins INTDELAY_WRAPPER_3/ODATA]
+  connect_bd_net -net Net [get_bd_ports IDATA] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA0] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA1] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA2] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA3]
+  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins DD_AXI_PERIPH_wrapper_0/MCLK] [get_bd_pins DD_AXI_PERIPH_wrapper_0/RCLK] [get_bd_pins INTDELAY_WRAPPER_0/LD_CLK] [get_bd_pins INTDELAY_WRAPPER_1/LD_CLK] [get_bd_pins INTDELAY_WRAPPER_2/LD_CLK] [get_bd_pins INTDELAY_WRAPPER_3/LD_CLK] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DD_AXI_PERIPH_wrapper_0/aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DD_AXI_PERIPH_wrapper_0/aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins INTDELAY_WRAPPER_0/TAP] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins INTDELAY_WRAPPER_1/TAP] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins INTDELAY_WRAPPER_2/TAP] [get_bd_pins xlconstant_2/dout]
+  connect_bd_net -net xlconstant_3_dout [get_bd_pins INTDELAY_WRAPPER_3/TAP] [get_bd_pins xlconstant_3/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_DATA0/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg0
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_UTIL0/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg01
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_UTIL0/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg01
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_DATA1/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg02
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_UTIL1/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg03
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_MISC/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg04
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_DEBUG/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg05
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_UTIL1/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg03
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_DATA2/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg04
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C60000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_UTIL2/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg05
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_DATA3/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg06
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C70000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_UTIL3/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg07
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C80000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DD_AXI_PERIPH_wrapper_0/DD_MISC/reg0] SEG_DD_AXI_PERIPH_wrapper_0_reg08
 
 
   # Restore current instance

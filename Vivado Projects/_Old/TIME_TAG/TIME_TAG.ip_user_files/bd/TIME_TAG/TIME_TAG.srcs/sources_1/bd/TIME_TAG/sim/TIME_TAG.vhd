@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Dec 10 16:26:53 2019
+--Date        : Wed Dec 11 15:35:44 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TIME_TAG.bd
 --Design      : TIME_TAG
@@ -13,16 +13,26 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity TIME_TAG is
   port (
+    ACTIVE : out STD_LOGIC_VECTOR ( 0 to 0 );
     CH0 : in STD_LOGIC;
-    CLK_460_000 : in STD_LOGIC;
-    MS : in STD_LOGIC;
-    RSTn : in STD_LOGIC;
-    d_rdy : out STD_LOGIC;
-    douta : out STD_LOGIC_VECTOR ( 47 downto 0 );
-    r_rdy : in STD_LOGIC
+    CH1 : in STD_LOGIC;
+    CH2 : in STD_LOGIC;
+    CH3 : in STD_LOGIC;
+    DATA_RDY : out STD_LOGIC;
+    DEBUG0 : out STD_LOGIC;
+    DET_STATES : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    MCLK : in STD_LOGIC;
+    T0 : in STD_LOGIC;
+    T1 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    T2 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    T3 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    T4 : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    TIME_OUT : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    obuf_resetn : in STD_LOGIC;
+    resetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of TIME_TAG : entity is "TIME_TAG,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TIME_TAG,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_aeth_cnt=1,da_board_cnt=4,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of TIME_TAG : entity is "TIME_TAG,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TIME_TAG,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of TIME_TAG : entity is "TIME_TAG.hwdef";
 end TIME_TAG;
@@ -31,167 +41,276 @@ architecture STRUCTURE of TIME_TAG is
   component TIME_TAG_c_counter_binary_0_0 is
   port (
     CLK : in STD_LOGIC;
-    CE : in STD_LOGIC;
-    SCLR : in STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component TIME_TAG_c_counter_binary_0_0;
-  component TIME_TAG_incident_ctr_0 is
-  port (
-    CLK : in STD_LOGIC;
-    SCLR : in STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component TIME_TAG_incident_ctr_0;
-  component TIME_TAG_c_counter_binary_0_1 is
-  port (
-    CLK : in STD_LOGIC;
-    CE : in STD_LOGIC;
     SCLR : in STD_LOGIC;
     Q : out STD_LOGIC_VECTOR ( 47 downto 0 )
   );
-  end component TIME_TAG_c_counter_binary_0_1;
-  component TIME_TAG_blk_mem_gen_0_1 is
+  end component TIME_TAG_c_counter_binary_0_0;
+  component TIME_TAG_TT_TRIG_CTL_0_0 is
   port (
-    clka : in STD_LOGIC;
-    ena : in STD_LOGIC;
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 47 downto 0 );
-    douta : out STD_LOGIC_VECTOR ( 47 downto 0 )
+    MCLK : in STD_LOGIC;
+    TRIG : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    ACTIVE : out STD_LOGIC
   );
-  end component TIME_TAG_blk_mem_gen_0_1;
-  component TIME_TAG_ADDR_SEL_0_0 is
+  end component TIME_TAG_TT_TRIG_CTL_0_0;
+  component TIME_TAG_xlconcat_0_0 is
   port (
-    rctl : in STD_LOGIC;
-    read : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    incident : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    addra : out STD_LOGIC_VECTOR ( 13 downto 0 )
+    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  end component TIME_TAG_ADDR_SEL_0_0;
-  component TIME_TAG_xlconstant_0_0 is
+  end component TIME_TAG_xlconcat_0_0;
+  component TIME_TAG_TT_DETECTOR_0_0 is
   port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+    MCLK : in STD_LOGIC;
+    CTR : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    CHANNEL : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    RDY : out STD_LOGIC;
+    TIME_ch : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    EN : in STD_LOGIC
   );
-  end component TIME_TAG_xlconstant_0_0;
-  component TIME_TAG_TT_R_CTL_0_0 is
+  end component TIME_TAG_TT_DETECTOR_0_0;
+  component TIME_TAG_TT_DETECTOR_0_1 is
   port (
-    rstn : in STD_LOGIC;
-    mclk : in STD_LOGIC;
-    r_rdy : in STD_LOGIC;
-    r_ct_pls : out STD_LOGIC;
-    r_ct_rst : out STD_LOGIC;
-    d_rdy : out STD_LOGIC;
-    ictr : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    rctr : in STD_LOGIC_VECTOR ( 13 downto 0 )
+    MCLK : in STD_LOGIC;
+    CTR : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    CHANNEL : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    RDY : out STD_LOGIC;
+    TIME_ch : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    EN : in STD_LOGIC
   );
-  end component TIME_TAG_TT_R_CTL_0_0;
-  component TIME_TAG_TT_RED_0_0 is
+  end component TIME_TAG_TT_DETECTOR_0_1;
+  component TIME_TAG_TT_DETECTOR_1_0 is
   port (
-    inp : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    CTR : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    CHANNEL : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    RDY : out STD_LOGIC;
+    TIME_ch : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    EN : in STD_LOGIC
+  );
+  end component TIME_TAG_TT_DETECTOR_1_0;
+  component TIME_TAG_TT_DETECTOR_2_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    CTR : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    CHANNEL : in STD_LOGIC;
+    RSTn : in STD_LOGIC;
+    RDY : out STD_LOGIC;
+    TIME_ch : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    EN : in STD_LOGIC
+  );
+  end component TIME_TAG_TT_DETECTOR_2_0;
+  component TIME_TAG_TT_TIMER_CTL_0_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    RSTn : in STD_LOGIC;
+    C_RST : out STD_LOGIC;
+    D_EN : out STD_LOGIC;
+    T_END : out STD_LOGIC;
+    TIME_OUT : in STD_LOGIC_VECTOR ( 47 downto 0 )
+  );
+  end component TIME_TAG_TT_TIMER_CTL_0_0;
+  component TIME_TAG_OUTPUT_CTRL_0_0 is
+  port (
+    RDY0 : in STD_LOGIC;
+    RDY1 : in STD_LOGIC;
+    RDY2 : in STD_LOGIC;
+    RDY3 : in STD_LOGIC;
+    TO_RDY : in STD_LOGIC;
+    DATA_RDY : out STD_LOGIC;
     MCLK : in STD_LOGIC;
     RSTn : in STD_LOGIC;
-    wea : out STD_LOGIC;
-    ictr : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    rctl : out STD_LOGIC;
-    ictr_rst : out STD_LOGIC;
-    ictr_en : out STD_LOGIC;
-    tctr_en : out STD_LOGIC;
-    tctr_rst : out STD_LOGIC;
-    MS : in STD_LOGIC
+    T1_i : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    T2_i : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    T3_i : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    T4_i : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    T1_o : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    T2_o : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    T3_o : out STD_LOGIC_VECTOR ( 47 downto 0 );
+    T4_o : out STD_LOGIC_VECTOR ( 47 downto 0 )
   );
-  end component TIME_TAG_TT_RED_0_0;
-  signal ADDR_SEL_0_addra : STD_LOGIC_VECTOR ( 13 downto 0 );
+  end component TIME_TAG_OUTPUT_CTRL_0_0;
+  component TIME_TAG_util_vector_logic_0_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component TIME_TAG_util_vector_logic_0_0;
+  component TIME_TAG_util_vector_logic_1_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component TIME_TAG_util_vector_logic_1_0;
+  component TIME_TAG_util_vector_logic_0_1 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component TIME_TAG_util_vector_logic_0_1;
   signal CH0_1 : STD_LOGIC;
-  signal CLK_460_000_1 : STD_LOGIC;
-  signal MS_1 : STD_LOGIC;
+  signal CH1_1 : STD_LOGIC;
+  signal CH2_1 : STD_LOGIC;
+  signal CH3_1 : STD_LOGIC;
+  signal MCLK_1 : STD_LOGIC;
+  signal Net : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal OBUF_RST_1 : STD_LOGIC;
+  signal OUTPUT_CTRL_0_DATA_RDY : STD_LOGIC;
+  signal OUTPUT_CTRL_0_T1_o : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal OUTPUT_CTRL_0_T2_o : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal OUTPUT_CTRL_0_T3_o : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal OUTPUT_CTRL_0_T4_o : STD_LOGIC_VECTOR ( 47 downto 0 );
   signal RSTn_1 : STD_LOGIC;
-  signal TT_RED_0_ictr_en : STD_LOGIC;
-  signal TT_RED_0_ictr_rst : STD_LOGIC;
-  signal TT_RED_0_rctl : STD_LOGIC;
-  signal TT_RED_0_tctr_en : STD_LOGIC;
-  signal TT_RED_0_tctr_rst : STD_LOGIC;
-  signal TT_RED_0_wea : STD_LOGIC;
-  signal TT_R_CTL_0_d_rdy : STD_LOGIC;
-  signal TT_R_CTL_0_r_ct_pls : STD_LOGIC;
-  signal TT_R_CTL_0_r_ct_rst : STD_LOGIC;
-  signal blk_mem_gen_0_douta : STD_LOGIC_VECTOR ( 47 downto 0 );
-  signal incident_ctr_Q : STD_LOGIC_VECTOR ( 13 downto 0 );
-  signal r_rdy_1 : STD_LOGIC;
-  signal read_ctr_Q : STD_LOGIC_VECTOR ( 13 downto 0 );
-  signal timer_Q : STD_LOGIC_VECTOR ( 47 downto 0 );
-  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal T0_1 : STD_LOGIC;
+  signal TIME_OUT_1 : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_DETECTOR_0_RDY : STD_LOGIC;
+  signal TT_DETECTOR_0_TIME_ch : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_DETECTOR_1_RDY : STD_LOGIC;
+  signal TT_DETECTOR_1_TIME_ch : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_DETECTOR_2_RDY : STD_LOGIC;
+  signal TT_DETECTOR_2_TIME_ch : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_DETECTOR_3_RDY : STD_LOGIC;
+  signal TT_DETECTOR_3_TIME_ch : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_TIMER_CTL_0_C_RST : STD_LOGIC;
+  signal TT_TIMER_CTL_0_D_EN : STD_LOGIC;
+  signal TT_TIMER_CTL_0_T_END : STD_LOGIC;
+  signal TT_TIMER_Q : STD_LOGIC_VECTOR ( 47 downto 0 );
+  signal TT_TRIG_CTL_0_ACTIVE : STD_LOGIC;
+  signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal util_vector_logic_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
 begin
+  ACTIVE(0) <= Net(0);
   CH0_1 <= CH0;
-  CLK_460_000_1 <= CLK_460_000;
-  MS_1 <= MS;
-  RSTn_1 <= RSTn;
-  d_rdy <= TT_R_CTL_0_d_rdy;
-  douta(47 downto 0) <= blk_mem_gen_0_douta(47 downto 0);
-  r_rdy_1 <= r_rdy;
-ADDR_SEL_0: component TIME_TAG_ADDR_SEL_0_0
+  CH1_1 <= CH1;
+  CH2_1 <= CH2;
+  CH3_1 <= CH3;
+  DATA_RDY <= OUTPUT_CTRL_0_DATA_RDY;
+  DEBUG0 <= RSTn_1;
+  DET_STATES(3 downto 0) <= xlconcat_0_dout(3 downto 0);
+  MCLK_1 <= MCLK;
+  OBUF_RST_1 <= obuf_resetn;
+  RSTn_1 <= resetn;
+  T0_1 <= T0;
+  T1(47 downto 0) <= OUTPUT_CTRL_0_T1_o(47 downto 0);
+  T2(47 downto 0) <= OUTPUT_CTRL_0_T2_o(47 downto 0);
+  T3(47 downto 0) <= OUTPUT_CTRL_0_T3_o(47 downto 0);
+  T4(47 downto 0) <= OUTPUT_CTRL_0_T4_o(47 downto 0);
+  TIME_OUT_1(47 downto 0) <= TIME_OUT(47 downto 0);
+OUTPUT_CTRL_0: component TIME_TAG_OUTPUT_CTRL_0_0
      port map (
-      addra(13 downto 0) => ADDR_SEL_0_addra(13 downto 0),
-      incident(13 downto 0) => incident_ctr_Q(13 downto 0),
-      rctl => TT_RED_0_rctl,
-      read(13 downto 0) => read_ctr_Q(13 downto 0)
+      DATA_RDY => OUTPUT_CTRL_0_DATA_RDY,
+      MCLK => MCLK_1,
+      RDY0 => TT_DETECTOR_0_RDY,
+      RDY1 => TT_DETECTOR_1_RDY,
+      RDY2 => TT_DETECTOR_2_RDY,
+      RDY3 => TT_DETECTOR_3_RDY,
+      RSTn => OBUF_RST_1,
+      T1_i(47 downto 0) => TT_DETECTOR_0_TIME_ch(47 downto 0),
+      T1_o(47 downto 0) => OUTPUT_CTRL_0_T1_o(47 downto 0),
+      T2_i(47 downto 0) => TT_DETECTOR_1_TIME_ch(47 downto 0),
+      T2_o(47 downto 0) => OUTPUT_CTRL_0_T2_o(47 downto 0),
+      T3_i(47 downto 0) => TT_DETECTOR_2_TIME_ch(47 downto 0),
+      T3_o(47 downto 0) => OUTPUT_CTRL_0_T3_o(47 downto 0),
+      T4_i(47 downto 0) => TT_DETECTOR_3_TIME_ch(47 downto 0),
+      T4_o(47 downto 0) => OUTPUT_CTRL_0_T4_o(47 downto 0),
+      TO_RDY => TT_TIMER_CTL_0_T_END
     );
-TT_RED_0: component TIME_TAG_TT_RED_0_0
+TT_DETECTOR_0: component TIME_TAG_TT_DETECTOR_0_0
      port map (
-      MCLK => CLK_460_000_1,
-      MS => MS_1,
+      CHANNEL => CH0_1,
+      CTR(47 downto 0) => TT_TIMER_Q(47 downto 0),
+      EN => TT_TIMER_CTL_0_D_EN,
+      MCLK => MCLK_1,
+      RDY => TT_DETECTOR_0_RDY,
+      RSTn => Net(0),
+      TIME_ch(47 downto 0) => TT_DETECTOR_0_TIME_ch(47 downto 0)
+    );
+TT_DETECTOR_1: component TIME_TAG_TT_DETECTOR_0_1
+     port map (
+      CHANNEL => CH1_1,
+      CTR(47 downto 0) => TT_TIMER_Q(47 downto 0),
+      EN => TT_TIMER_CTL_0_D_EN,
+      MCLK => MCLK_1,
+      RDY => TT_DETECTOR_1_RDY,
+      RSTn => Net(0),
+      TIME_ch(47 downto 0) => TT_DETECTOR_1_TIME_ch(47 downto 0)
+    );
+TT_DETECTOR_2: component TIME_TAG_TT_DETECTOR_1_0
+     port map (
+      CHANNEL => CH2_1,
+      CTR(47 downto 0) => TT_TIMER_Q(47 downto 0),
+      EN => TT_TIMER_CTL_0_D_EN,
+      MCLK => MCLK_1,
+      RDY => TT_DETECTOR_2_RDY,
+      RSTn => Net(0),
+      TIME_ch(47 downto 0) => TT_DETECTOR_2_TIME_ch(47 downto 0)
+    );
+TT_DETECTOR_3: component TIME_TAG_TT_DETECTOR_2_0
+     port map (
+      CHANNEL => CH3_1,
+      CTR(47 downto 0) => TT_TIMER_Q(47 downto 0),
+      EN => TT_TIMER_CTL_0_D_EN,
+      MCLK => MCLK_1,
+      RDY => TT_DETECTOR_3_RDY,
+      RSTn => Net(0),
+      TIME_ch(47 downto 0) => TT_DETECTOR_3_TIME_ch(47 downto 0)
+    );
+TT_TIMER: component TIME_TAG_c_counter_binary_0_0
+     port map (
+      CLK => MCLK_1,
+      Q(47 downto 0) => TT_TIMER_Q(47 downto 0),
+      SCLR => util_vector_logic_0_Res(0)
+    );
+TT_TIMER_CTL_0: component TIME_TAG_TT_TIMER_CTL_0_0
+     port map (
+      C_RST => TT_TIMER_CTL_0_C_RST,
+      D_EN => TT_TIMER_CTL_0_D_EN,
+      MCLK => MCLK_1,
+      Q(47 downto 0) => TT_TIMER_Q(47 downto 0),
+      RSTn => TT_TRIG_CTL_0_ACTIVE,
+      TIME_OUT(47 downto 0) => TIME_OUT_1(47 downto 0),
+      T_END => TT_TIMER_CTL_0_T_END
+    );
+TT_TRIG_CTL_0: component TIME_TAG_TT_TRIG_CTL_0_0
+     port map (
+      ACTIVE => TT_TRIG_CTL_0_ACTIVE,
+      MCLK => MCLK_1,
       RSTn => RSTn_1,
-      ictr(13 downto 0) => incident_ctr_Q(13 downto 0),
-      ictr_en => TT_RED_0_ictr_en,
-      ictr_rst => TT_RED_0_ictr_rst,
-      inp => CH0_1,
-      rctl => TT_RED_0_rctl,
-      tctr_en => TT_RED_0_tctr_en,
-      tctr_rst => TT_RED_0_tctr_rst,
-      wea => TT_RED_0_wea
+      TRIG => T0_1
     );
-TT_R_CTL_0: component TIME_TAG_TT_R_CTL_0_0
+active_accel: component TIME_TAG_util_vector_logic_0_0
      port map (
-      d_rdy => TT_R_CTL_0_d_rdy,
-      ictr(13 downto 0) => incident_ctr_Q(13 downto 0),
-      mclk => CLK_460_000_1,
-      r_ct_pls => TT_R_CTL_0_r_ct_pls,
-      r_ct_rst => TT_R_CTL_0_r_ct_rst,
-      r_rdy => r_rdy_1,
-      rctr(13 downto 0) => read_ctr_Q(13 downto 0),
-      rstn => TT_RED_0_rctl
+      Op1(0) => util_vector_logic_1_Res(0),
+      Op2(0) => TT_TIMER_CTL_0_C_RST,
+      Res(0) => util_vector_logic_0_Res(0)
     );
-blk_mem_gen_0: component TIME_TAG_blk_mem_gen_0_1
+rst_accel: component TIME_TAG_util_vector_logic_0_1
      port map (
-      addra(13 downto 0) => ADDR_SEL_0_addra(13 downto 0),
-      clka => CLK_460_000_1,
-      dina(47 downto 0) => timer_Q(47 downto 0),
-      douta(47 downto 0) => blk_mem_gen_0_douta(47 downto 0),
-      ena => xlconstant_0_dout(0),
-      wea(0) => TT_RED_0_wea
+      Op1(0) => RSTn_1,
+      Op2(0) => TT_TRIG_CTL_0_ACTIVE,
+      Res(0) => Net(0)
     );
-incident_ctr: component TIME_TAG_c_counter_binary_0_0
+util_vector_logic_1: component TIME_TAG_util_vector_logic_1_0
      port map (
-      CE => TT_RED_0_ictr_en,
-      CLK => CH0_1,
-      Q(13 downto 0) => incident_ctr_Q(13 downto 0),
-      SCLR => TT_RED_0_ictr_rst
+      Op1(0) => TT_TRIG_CTL_0_ACTIVE,
+      Res(0) => util_vector_logic_1_Res(0)
     );
-read_ctr: component TIME_TAG_incident_ctr_0
+xlconcat_0: component TIME_TAG_xlconcat_0_0
      port map (
-      CLK => TT_R_CTL_0_r_ct_pls,
-      Q(13 downto 0) => read_ctr_Q(13 downto 0),
-      SCLR => TT_R_CTL_0_r_ct_rst
-    );
-timer: component TIME_TAG_c_counter_binary_0_1
-     port map (
-      CE => TT_RED_0_tctr_en,
-      CLK => CLK_460_000_1,
-      Q(47 downto 0) => timer_Q(47 downto 0),
-      SCLR => TT_RED_0_tctr_rst
-    );
-xlconstant_0: component TIME_TAG_xlconstant_0_0
-     port map (
-      dout(0) => xlconstant_0_dout(0)
+      In0(0) => TT_DETECTOR_0_RDY,
+      In1(0) => TT_DETECTOR_1_RDY,
+      In2(0) => TT_DETECTOR_2_RDY,
+      In3(0) => TT_DETECTOR_3_RDY,
+      dout(3 downto 0) => xlconcat_0_dout(3 downto 0)
     );
 end STRUCTURE;

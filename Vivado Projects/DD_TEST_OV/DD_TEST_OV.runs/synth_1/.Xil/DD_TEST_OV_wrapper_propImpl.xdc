@@ -1,7 +1,6 @@
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_processing_system7_0_0/DD_TEST_OV_processing_system7_0_0.xdc} rfile:../../../DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_processing_system7_0_0/DD_TEST_OV_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:DD_TEST_OV_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_0/DD_TEST_OV_clk_wiz_0_0.xdc} rfile:../../../DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_0/DD_TEST_OV_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:DD_TEST_OV_i/clk_wiz_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_1/DD_TEST_OV_clk_wiz_0_1.xdc} rfile:../../../DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_1/DD_TEST_OV_clk_wiz_0_1.xdc id:3 order:EARLY scoped_inst:DD_TEST_OV_i/clk_wiz_1/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../DD_TEST_OV.srcs/constrs_1/new/PYNQ-Z1.xdc id:4} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_2/DD_TEST_OV_clk_wiz_0_2.xdc} rfile:../../../DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_2/DD_TEST_OV_clk_wiz_0_2.xdc id:2 order:EARLY scoped_inst:DD_TEST_OV_i/clk_wiz_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../DD_TEST_OV.srcs/constrs_1/new/PYNQ-Z1.xdc id:3} [current_design]
 current_instance DD_TEST_OV_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3
@@ -268,17 +267,21 @@ set_property PACKAGE_PIN "E7" [get_ports "PS_CLK"]
 current_instance
 current_instance DD_TEST_OV_i/clk_wiz_0/inst
 set_property src_info {type:SCOPED_XDC file:2 line:57 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.08
+set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.1
 current_instance
-current_instance DD_TEST_OV_i/clk_wiz_1/inst
-set_property src_info {type:SCOPED_XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.08
-current_instance
-set_property src_info {type:XDC file:4 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W14 [get_ports IDATA]
-set_property src_info {type:XDC file:4 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:3 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V16 [get_ports ODATA0]
-set_property src_info {type:XDC file:4 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W16 [get_ports ODATA1]
-set_property src_info {type:XDC file:4 line:14 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:14 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN N15 [get_ports RDY]
+set_property src_info {type:XDC file:3 line:17 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN G17 [get_ports DEBUG0]
+set_property src_info {type:XDC file:3 line:18 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L14 [get_ports DEBUG1]
+set_property src_info {type:XDC file:3 line:26 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V12 [get_ports ODATA2]
+set_property src_info {type:XDC file:3 line:27 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W13 [get_ports ODATA3]

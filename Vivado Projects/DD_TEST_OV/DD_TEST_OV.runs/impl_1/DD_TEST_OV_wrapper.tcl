@@ -60,14 +60,17 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint {D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.runs/impl_1/DD_TEST_OV_wrapper.dcp}
+  create_project -in_memory -part xc7z020clg400-1
+  set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.cache/wt} [current_project]
   set_property parent.project_path {D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.xpr} [current_project]
   set_property ip_repo_paths {
@@ -78,6 +81,16 @@ set rc [catch {
   set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  add_files -quiet {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.runs/synth_1/DD_TEST_OV_wrapper.dcp}}
+  set_msg_config -source 4 -id {BD 41-1661} -limit 0
+  set_param project.isImplRun true
+  add_files {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/DD_TEST_OV.bd}}
+  set_param project.isImplRun false
+  read_xdc {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/constrs_1/new/PYNQ-Z1.xdc}}
+  set_param project.isImplRun true
+  link_design -top DD_TEST_OV_wrapper -part xc7z020clg400-1
+  set_param project.isImplRun false
+  write_hwdef -force -file DD_TEST_OV_wrapper.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {

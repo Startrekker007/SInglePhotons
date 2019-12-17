@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -37,17 +38,14 @@ set_property ip_repo_paths {
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/hdl/DD_TEST_OV_wrapper.vhd}}
+read_vhdl -library xil_defaultlib {
+  {D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/new/INTDELAY_WRAPPER.vhd}
+  {D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/hdl/DD_TEST_OV_wrapper.vhd}
+}
 add_files {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/DD_TEST_OV.bd}}
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_processing_system7_0_0/DD_TEST_OV_processing_system7_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_rst_ps7_0_100M_0/DD_TEST_OV_rst_ps7_0_100M_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_rst_ps7_0_100M_0/DD_TEST_OV_rst_ps7_0_100M_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_0/DD_TEST_OV_clk_wiz_0_0_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_0/DD_TEST_OV_clk_wiz_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_0/DD_TEST_OV_clk_wiz_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_1/DD_TEST_OV_clk_wiz_0_1_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_1/DD_TEST_OV_clk_wiz_0_1.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_1/DD_TEST_OV_clk_wiz_0_1_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_0/src/IODELAY_BLK_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_0/DD_AXI_PERIPH_axi_gpio_0_0_board.xdc}}]
@@ -66,9 +64,23 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_2/DD_AXI_PERIPH_axi_gpio_0_2_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_2/DD_AXI_PERIPH_axi_gpio_0_2_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_2/DD_AXI_PERIPH_axi_gpio_0_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_3/DD_AXI_PERIPH_axi_gpio_0_3_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_3/DD_AXI_PERIPH_axi_gpio_0_3_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_axi_gpio_0_3/DD_AXI_PERIPH_axi_gpio_0_3.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_1_0/src/IODELAY_BLK_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_2_0/src/IODELAY_BLK_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_DATA1_0/DD_AXI_PERIPH_DD_DATA1_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_DATA1_0/DD_AXI_PERIPH_DD_DATA1_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_DATA1_0/DD_AXI_PERIPH_DD_DATA1_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_UTIL1_0/DD_AXI_PERIPH_DD_UTIL1_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_UTIL1_0/DD_AXI_PERIPH_DD_UTIL1_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_UTIL1_0/DD_AXI_PERIPH_DD_UTIL1_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_DATA2_0/DD_AXI_PERIPH_DD_DATA2_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_DATA2_0/DD_AXI_PERIPH_DD_DATA2_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_DATA2_0/DD_AXI_PERIPH_DD_DATA2_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_UTIL2_0/DD_AXI_PERIPH_DD_UTIL2_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_UTIL2_0/DD_AXI_PERIPH_DD_UTIL2_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_DD_AXI_PERIPH_wrapper_0_2/src/DD_AXI_PERIPH_DD_UTIL2_0/DD_AXI_PERIPH_DD_UTIL2_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_2/DD_TEST_OV_clk_wiz_0_2_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_2/DD_TEST_OV_clk_wiz_0_2.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_clk_wiz_0_2/DD_TEST_OV_clk_wiz_0_2_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/ip/DD_TEST_OV_auto_pc_0/DD_TEST_OV_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/DD_TEST_OV/DD_TEST_OV.srcs/sources_1/bd/DD_TEST_OV/DD_TEST_OV_ooc.xdc}}]
 

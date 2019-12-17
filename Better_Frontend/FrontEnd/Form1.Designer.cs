@@ -47,67 +47,81 @@ namespace FrontEnd
             this.txtw0 = new System.Windows.Forms.TextBox();
             this.btnpcstart = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnsch = new System.Windows.Forms.Button();
-            this.btnct = new System.Windows.Forms.Button();
-            this.btninctscale = new System.Windows.Forms.Button();
-            this.btndectscale = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblscired = new System.Windows.Forms.Label();
+            this.lbltscale = new System.Windows.Forms.Label();
             this.lbltch = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbltscale = new System.Windows.Forms.Label();
-            this.txtTimeout = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnArm = new System.Windows.Forms.Button();
+            this.lblscired = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btninctscale = new System.Windows.Forms.Button();
+            this.btndectscale = new System.Windows.Forms.Button();
+            this.btnct = new System.Windows.Forms.Button();
+            this.btnsch = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rbnTch3 = new System.Windows.Forms.CheckBox();
+            this.rbnTch2 = new System.Windows.Forms.CheckBox();
+            this.rbnTch1 = new System.Windows.Forms.CheckBox();
+            this.rbnTch0 = new System.Windows.Forms.CheckBox();
+            this.btnStop = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTT0 = new System.Windows.Forms.TextBox();
-            this.txtTT1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTTscale = new System.Windows.Forms.Label();
+            this.txtTT3 = new System.Windows.Forms.TextBox();
+            this.btnTTInc = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnTTdec = new System.Windows.Forms.Button();
             this.txtTT2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTT3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.lblTTscale = new System.Windows.Forms.Label();
-            this.btnTTInc = new System.Windows.Forms.Button();
-            this.btnTTdec = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chken0 = new System.Windows.Forms.CheckBox();
-            this.chken1 = new System.Windows.Forms.CheckBox();
-            this.chken2 = new System.Windows.Forms.CheckBox();
-            this.chken3 = new System.Windows.Forms.CheckBox();
-            this.txtFrequency = new System.Windows.Forms.TextBox();
-            this.txtDC = new System.Windows.Forms.TextBox();
-            this.txtDelay = new System.Windows.Forms.TextBox();
-            this.chkdcmode = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnch0 = new System.Windows.Forms.Button();
-            this.btnch1 = new System.Windows.Forms.Button();
-            this.btnch3 = new System.Windows.Forms.Button();
+            this.txtTT1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTT0 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnArm = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTimeout = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnch2 = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.rbnTch0 = new System.Windows.Forms.CheckBox();
-            this.rbnTch1 = new System.Windows.Forms.CheckBox();
-            this.rbnTch2 = new System.Windows.Forms.CheckBox();
-            this.rbnTch3 = new System.Windows.Forms.CheckBox();
+            this.btnch3 = new System.Windows.Forms.Button();
+            this.btnch1 = new System.Windows.Forms.Button();
+            this.btnch0 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.chkdcmode = new System.Windows.Forms.CheckBox();
+            this.txtDelay = new System.Windows.Forms.TextBox();
+            this.txtDC = new System.Windows.Forms.TextBox();
+            this.txtFrequency = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chken3 = new System.Windows.Forms.CheckBox();
+            this.chken2 = new System.Windows.Forms.CheckBox();
+            this.chken1 = new System.Windows.Forms.CheckBox();
+            this.chken0 = new System.Windows.Forms.CheckBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtTap = new System.Windows.Forms.TextBox();
+            this.txtDelStage = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnDDCH0 = new System.Windows.Forms.Button();
+            this.btnDDCH1 = new System.Windows.Forms.Button();
+            this.btnDDCH2 = new System.Windows.Forms.Button();
+            this.btnDDCH3 = new System.Windows.Forms.Button();
+            this.btnDDTRIG = new System.Windows.Forms.Button();
+            this.btnDDSTOP = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -150,6 +164,7 @@ namespace FrontEnd
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
@@ -314,61 +329,73 @@ namespace FrontEnd
             this.tabPage2.Text = "Timing";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // groupBox3
             // 
-            this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Controls.Add(this.btnStop);
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.btnArm);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.txtTimeout);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(501, 227);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Time Tagging";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.lbltscale);
+            this.groupBox3.Controls.Add(this.lbltch);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblscired);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.btninctscale);
+            this.groupBox3.Controls.Add(this.btndectscale);
+            this.groupBox3.Location = new System.Drawing.Point(268, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(227, 163);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Results";
             // 
-            // tabPage4
+            // lbltscale
             // 
-            this.tabPage4.Controls.Add(this.btnch2);
-            this.tabPage4.Controls.Add(this.btnch3);
-            this.tabPage4.Controls.Add(this.btnch1);
-            this.tabPage4.Controls.Add(this.btnch0);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.label9);
-            this.tabPage4.Controls.Add(this.chkdcmode);
-            this.tabPage4.Controls.Add(this.txtDelay);
-            this.tabPage4.Controls.Add(this.txtDC);
-            this.tabPage4.Controls.Add(this.txtFrequency);
-            this.tabPage4.Controls.Add(this.groupBox5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(501, 227);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Signal Generator";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.lbltscale.AutoSize = true;
+            this.lbltscale.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbltscale.Location = new System.Drawing.Point(125, 19);
+            this.lbltscale.MinimumSize = new System.Drawing.Size(50, 20);
+            this.lbltscale.Name = "lbltscale";
+            this.lbltscale.Size = new System.Drawing.Size(50, 20);
+            this.lbltscale.TabIndex = 8;
+            this.lbltscale.Text = "s";
+            this.lbltscale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnsch
+            // lbltch
             // 
-            this.btnsch.Location = new System.Drawing.Point(6, 6);
-            this.btnsch.Name = "btnsch";
-            this.btnsch.Size = new System.Drawing.Size(147, 38);
-            this.btnsch.TabIndex = 0;
-            this.btnsch.Text = "Single Channel Inter-rising edge timing";
-            this.btnsch.UseVisualStyleBackColor = true;
-            this.btnsch.Click += new System.EventHandler(this.btnsch_Click);
+            this.lbltch.AutoSize = true;
+            this.lbltch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbltch.Location = new System.Drawing.Point(65, 109);
+            this.lbltch.MinimumSize = new System.Drawing.Size(80, 20);
+            this.lbltch.Name = "lbltch";
+            this.lbltch.Size = new System.Drawing.Size(80, 20);
+            this.lbltch.TabIndex = 7;
+            this.lbltch.Text = "0.0";
             // 
-            // btnct
+            // label4
             // 
-            this.btnct.Location = new System.Drawing.Point(6, 50);
-            this.btnct.Name = "btnct";
-            this.btnct.Size = new System.Drawing.Size(147, 40);
-            this.btnct.TabIndex = 1;
-            this.btnct.Text = "Two Channel Coincidence Timing";
-            this.btnct.UseVisualStyleBackColor = true;
-            this.btnct.Click += new System.EventHandler(this.btnct_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "TC-CT:";
+            // 
+            // lblscired
+            // 
+            this.lblscired.AutoSize = true;
+            this.lblscired.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblscired.Location = new System.Drawing.Point(65, 89);
+            this.lblscired.MinimumSize = new System.Drawing.Size(80, 20);
+            this.lblscired.Name = "lblscired";
+            this.lblscired.Size = new System.Drawing.Size(80, 20);
+            this.lblscired.TabIndex = 5;
+            this.lblscired.Text = "0.0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "SC-IRED:";
             // 
             // btninctscale
             // 
@@ -391,100 +418,109 @@ namespace FrontEnd
             this.btndectscale.UseVisualStyleBackColor = true;
             this.btndectscale.Click += new System.EventHandler(this.btndectscale_Click);
             // 
-            // groupBox3
+            // btnct
             // 
-            this.groupBox3.Controls.Add(this.lbltscale);
-            this.groupBox3.Controls.Add(this.lbltch);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.lblscired);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.btninctscale);
-            this.groupBox3.Controls.Add(this.btndectscale);
-            this.groupBox3.Location = new System.Drawing.Point(268, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(227, 163);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Results";
+            this.btnct.Location = new System.Drawing.Point(6, 50);
+            this.btnct.Name = "btnct";
+            this.btnct.Size = new System.Drawing.Size(147, 40);
+            this.btnct.TabIndex = 1;
+            this.btnct.Text = "Two Channel Coincidence Timing";
+            this.btnct.UseVisualStyleBackColor = true;
+            this.btnct.Click += new System.EventHandler(this.btnct_Click);
             // 
-            // label2
+            // btnsch
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "SC-IRED:";
+            this.btnsch.Location = new System.Drawing.Point(6, 6);
+            this.btnsch.Name = "btnsch";
+            this.btnsch.Size = new System.Drawing.Size(147, 38);
+            this.btnsch.TabIndex = 0;
+            this.btnsch.Text = "Single Channel Inter-rising edge timing";
+            this.btnsch.UseVisualStyleBackColor = true;
+            this.btnsch.Click += new System.EventHandler(this.btnsch_Click);
             // 
-            // lblscired
+            // tabPage3
             // 
-            this.lblscired.AutoSize = true;
-            this.lblscired.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblscired.Location = new System.Drawing.Point(65, 89);
-            this.lblscired.MinimumSize = new System.Drawing.Size(80, 20);
-            this.lblscired.Name = "lblscired";
-            this.lblscired.Size = new System.Drawing.Size(80, 20);
-            this.lblscired.TabIndex = 5;
-            this.lblscired.Text = "0.0";
+            this.tabPage3.Controls.Add(this.groupBox6);
+            this.tabPage3.Controls.Add(this.btnStop);
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.btnArm);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.txtTimeout);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(501, 227);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Time Tagging";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // lbltch
+            // groupBox6
             // 
-            this.lbltch.AutoSize = true;
-            this.lbltch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbltch.Location = new System.Drawing.Point(65, 109);
-            this.lbltch.MinimumSize = new System.Drawing.Size(80, 20);
-            this.lbltch.Name = "lbltch";
-            this.lbltch.Size = new System.Drawing.Size(80, 20);
-            this.lbltch.TabIndex = 7;
-            this.lbltch.Text = "0.0";
+            this.groupBox6.Controls.Add(this.rbnTch3);
+            this.groupBox6.Controls.Add(this.rbnTch2);
+            this.groupBox6.Controls.Add(this.rbnTch1);
+            this.groupBox6.Controls.Add(this.rbnTch0);
+            this.groupBox6.Location = new System.Drawing.Point(391, 63);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(107, 137);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Timeouts";
             // 
-            // label4
+            // rbnTch3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "TC-CT:";
+            this.rbnTch3.AutoSize = true;
+            this.rbnTch3.Enabled = false;
+            this.rbnTch3.Location = new System.Drawing.Point(6, 87);
+            this.rbnTch3.Name = "rbnTch3";
+            this.rbnTch3.Size = new System.Drawing.Size(47, 17);
+            this.rbnTch3.TabIndex = 3;
+            this.rbnTch3.Text = "CH3";
+            this.rbnTch3.UseVisualStyleBackColor = true;
             // 
-            // lbltscale
+            // rbnTch2
             // 
-            this.lbltscale.AutoSize = true;
-            this.lbltscale.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbltscale.Location = new System.Drawing.Point(125, 19);
-            this.lbltscale.MinimumSize = new System.Drawing.Size(50, 20);
-            this.lbltscale.Name = "lbltscale";
-            this.lbltscale.Size = new System.Drawing.Size(50, 20);
-            this.lbltscale.TabIndex = 8;
-            this.lbltscale.Text = "s";
-            this.lbltscale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbnTch2.AutoSize = true;
+            this.rbnTch2.Enabled = false;
+            this.rbnTch2.Location = new System.Drawing.Point(6, 64);
+            this.rbnTch2.Name = "rbnTch2";
+            this.rbnTch2.Size = new System.Drawing.Size(47, 17);
+            this.rbnTch2.TabIndex = 2;
+            this.rbnTch2.Text = "CH2";
+            this.rbnTch2.UseVisualStyleBackColor = true;
             // 
-            // txtTimeout
+            // rbnTch1
             // 
-            this.txtTimeout.Location = new System.Drawing.Point(74, 8);
-            this.txtTimeout.Name = "txtTimeout";
-            this.txtTimeout.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeout.TabIndex = 0;
-            this.txtTimeout.Text = "0";
+            this.rbnTch1.AutoSize = true;
+            this.rbnTch1.Enabled = false;
+            this.rbnTch1.Location = new System.Drawing.Point(6, 41);
+            this.rbnTch1.Name = "rbnTch1";
+            this.rbnTch1.Size = new System.Drawing.Size(47, 17);
+            this.rbnTch1.TabIndex = 1;
+            this.rbnTch1.Text = "CH1";
+            this.rbnTch1.UseVisualStyleBackColor = true;
+            this.rbnTch1.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // label3
+            // rbnTch0
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Time out (s):";
+            this.rbnTch0.AutoSize = true;
+            this.rbnTch0.Enabled = false;
+            this.rbnTch0.Location = new System.Drawing.Point(6, 18);
+            this.rbnTch0.Name = "rbnTch0";
+            this.rbnTch0.Size = new System.Drawing.Size(47, 17);
+            this.rbnTch0.TabIndex = 0;
+            this.rbnTch0.Text = "CH0";
+            this.rbnTch0.UseVisualStyleBackColor = true;
             // 
-            // btnArm
+            // btnStop
             // 
-            this.btnArm.Location = new System.Drawing.Point(6, 34);
-            this.btnArm.Name = "btnArm";
-            this.btnArm.Size = new System.Drawing.Size(75, 23);
-            this.btnArm.TabIndex = 2;
-            this.btnArm.Text = "Arm";
-            this.btnArm.UseVisualStyleBackColor = true;
-            this.btnArm.Click += new System.EventHandler(this.btnArm_Click);
+            this.btnStop.Enabled = false;
+            this.btnStop.Location = new System.Drawing.Point(100, 34);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 4;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // groupBox4
             // 
@@ -506,41 +542,56 @@ namespace FrontEnd
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Times relative to T0 pulse";
             // 
-            // label5
+            // lblTTscale
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Channel 0 Time:";
+            this.lblTTscale.AutoSize = true;
+            this.lblTTscale.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTTscale.Location = new System.Drawing.Point(323, 16);
+            this.lblTTscale.MinimumSize = new System.Drawing.Size(50, 20);
+            this.lblTTscale.Name = "lblTTscale";
+            this.lblTTscale.Size = new System.Drawing.Size(50, 20);
+            this.lblTTscale.TabIndex = 11;
+            this.lblTTscale.Text = "s";
+            this.lblTTscale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtTT0
+            // txtTT3
             // 
-            this.txtTT0.Enabled = false;
-            this.txtTT0.Location = new System.Drawing.Point(94, 13);
-            this.txtTT0.Name = "txtTT0";
-            this.txtTT0.Size = new System.Drawing.Size(100, 20);
-            this.txtTT0.TabIndex = 1;
-            this.txtTT0.Text = "0";
+            this.txtTT3.Enabled = false;
+            this.txtTT3.Location = new System.Drawing.Point(94, 91);
+            this.txtTT3.Name = "txtTT3";
+            this.txtTT3.Size = new System.Drawing.Size(100, 20);
+            this.txtTT3.TabIndex = 7;
+            this.txtTT3.Text = "0";
             // 
-            // txtTT1
+            // btnTTInc
             // 
-            this.txtTT1.Enabled = false;
-            this.txtTT1.Location = new System.Drawing.Point(94, 39);
-            this.txtTT1.Name = "txtTT1";
-            this.txtTT1.Size = new System.Drawing.Size(100, 20);
-            this.txtTT1.TabIndex = 3;
-            this.txtTT1.Text = "0";
+            this.btnTTInc.Enabled = false;
+            this.btnTTInc.Location = new System.Drawing.Point(204, 16);
+            this.btnTTInc.Name = "btnTTInc";
+            this.btnTTInc.Size = new System.Drawing.Size(113, 24);
+            this.btnTTInc.TabIndex = 9;
+            this.btnTTInc.Text = "Increase Timescale";
+            this.btnTTInc.UseVisualStyleBackColor = true;
+            this.btnTTInc.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Channel 1 Time:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 94);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Channel 3 Time:";
+            // 
+            // btnTTdec
+            // 
+            this.btnTTdec.Location = new System.Drawing.Point(204, 46);
+            this.btnTTdec.Name = "btnTTdec";
+            this.btnTTdec.Size = new System.Drawing.Size(113, 24);
+            this.btnTTdec.TabIndex = 10;
+            this.btnTTdec.Text = "Decrease Timescale";
+            this.btnTTdec.UseVisualStyleBackColor = true;
+            this.btnTTdec.Click += new System.EventHandler(this.btnTTdec_Click);
             // 
             // txtTT2
             // 
@@ -560,67 +611,190 @@ namespace FrontEnd
             this.label7.TabIndex = 4;
             this.label7.Text = "Channel 2 Time:";
             // 
-            // txtTT3
+            // txtTT1
             // 
-            this.txtTT3.Enabled = false;
-            this.txtTT3.Location = new System.Drawing.Point(94, 91);
-            this.txtTT3.Name = "txtTT3";
-            this.txtTT3.Size = new System.Drawing.Size(100, 20);
-            this.txtTT3.TabIndex = 7;
-            this.txtTT3.Text = "0";
+            this.txtTT1.Enabled = false;
+            this.txtTT1.Location = new System.Drawing.Point(94, 39);
+            this.txtTT1.Name = "txtTT1";
+            this.txtTT1.Size = new System.Drawing.Size(100, 20);
+            this.txtTT1.TabIndex = 3;
+            this.txtTT1.Text = "0";
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 94);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Channel 3 Time:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Channel 1 Time:";
             // 
-            // btnStop
+            // txtTT0
             // 
-            this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(100, 34);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 4;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.txtTT0.Enabled = false;
+            this.txtTT0.Location = new System.Drawing.Point(94, 13);
+            this.txtTT0.Name = "txtTT0";
+            this.txtTT0.Size = new System.Drawing.Size(100, 20);
+            this.txtTT0.TabIndex = 1;
+            this.txtTT0.Text = "0";
             // 
-            // lblTTscale
+            // label5
             // 
-            this.lblTTscale.AutoSize = true;
-            this.lblTTscale.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTTscale.Location = new System.Drawing.Point(323, 16);
-            this.lblTTscale.MinimumSize = new System.Drawing.Size(50, 20);
-            this.lblTTscale.Name = "lblTTscale";
-            this.lblTTscale.Size = new System.Drawing.Size(50, 20);
-            this.lblTTscale.TabIndex = 11;
-            this.lblTTscale.Text = "s";
-            this.lblTTscale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Channel 0 Time:";
             // 
-            // btnTTInc
+            // btnArm
             // 
-            this.btnTTInc.Enabled = false;
-            this.btnTTInc.Location = new System.Drawing.Point(204, 16);
-            this.btnTTInc.Name = "btnTTInc";
-            this.btnTTInc.Size = new System.Drawing.Size(113, 24);
-            this.btnTTInc.TabIndex = 9;
-            this.btnTTInc.Text = "Increase Timescale";
-            this.btnTTInc.UseVisualStyleBackColor = true;
-            this.btnTTInc.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnArm.Location = new System.Drawing.Point(6, 34);
+            this.btnArm.Name = "btnArm";
+            this.btnArm.Size = new System.Drawing.Size(75, 23);
+            this.btnArm.TabIndex = 2;
+            this.btnArm.Text = "Arm";
+            this.btnArm.UseVisualStyleBackColor = true;
+            this.btnArm.Click += new System.EventHandler(this.btnArm_Click);
             // 
-            // btnTTdec
+            // label3
             // 
-            this.btnTTdec.Location = new System.Drawing.Point(204, 46);
-            this.btnTTdec.Name = "btnTTdec";
-            this.btnTTdec.Size = new System.Drawing.Size(113, 24);
-            this.btnTTdec.TabIndex = 10;
-            this.btnTTdec.Text = "Decrease Timescale";
-            this.btnTTdec.UseVisualStyleBackColor = true;
-            this.btnTTdec.Click += new System.EventHandler(this.btnTTdec_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Time out (s):";
+            // 
+            // txtTimeout
+            // 
+            this.txtTimeout.Location = new System.Drawing.Point(74, 8);
+            this.txtTimeout.Name = "txtTimeout";
+            this.txtTimeout.Size = new System.Drawing.Size(100, 20);
+            this.txtTimeout.TabIndex = 0;
+            this.txtTimeout.Text = "0";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnch2);
+            this.tabPage4.Controls.Add(this.btnch3);
+            this.tabPage4.Controls.Add(this.btnch1);
+            this.tabPage4.Controls.Add(this.btnch0);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.chkdcmode);
+            this.tabPage4.Controls.Add(this.txtDelay);
+            this.tabPage4.Controls.Add(this.txtDC);
+            this.tabPage4.Controls.Add(this.txtFrequency);
+            this.tabPage4.Controls.Add(this.groupBox5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(501, 227);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Signal Generator";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnch2
+            // 
+            this.btnch2.Location = new System.Drawing.Point(123, 133);
+            this.btnch2.Name = "btnch2";
+            this.btnch2.Size = new System.Drawing.Size(91, 23);
+            this.btnch2.TabIndex = 11;
+            this.btnch2.Text = "Apply to CH2";
+            this.btnch2.UseVisualStyleBackColor = true;
+            this.btnch2.Click += new System.EventHandler(this.btnch2_Click);
+            // 
+            // btnch3
+            // 
+            this.btnch3.Location = new System.Drawing.Point(220, 133);
+            this.btnch3.Name = "btnch3";
+            this.btnch3.Size = new System.Drawing.Size(91, 23);
+            this.btnch3.TabIndex = 10;
+            this.btnch3.Text = "Apply to CH3";
+            this.btnch3.UseVisualStyleBackColor = true;
+            this.btnch3.Click += new System.EventHandler(this.btnch3_Click);
+            // 
+            // btnch1
+            // 
+            this.btnch1.Location = new System.Drawing.Point(220, 104);
+            this.btnch1.Name = "btnch1";
+            this.btnch1.Size = new System.Drawing.Size(91, 23);
+            this.btnch1.TabIndex = 9;
+            this.btnch1.Text = "Apply to CH1";
+            this.btnch1.UseVisualStyleBackColor = true;
+            this.btnch1.Click += new System.EventHandler(this.btnch1_Click);
+            // 
+            // btnch0
+            // 
+            this.btnch0.Location = new System.Drawing.Point(123, 104);
+            this.btnch0.Name = "btnch0";
+            this.btnch0.Size = new System.Drawing.Size(91, 23);
+            this.btnch0.TabIndex = 8;
+            this.btnch0.Text = "Apply to CH0";
+            this.btnch0.UseVisualStyleBackColor = true;
+            this.btnch0.Click += new System.EventHandler(this.btnch0_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(155, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Delay (ms):";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(120, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "DC or PW (%, ms):";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(132, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Frequency (Hz):";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkdcmode
+            // 
+            this.chkdcmode.AutoSize = true;
+            this.chkdcmode.Location = new System.Drawing.Point(326, 46);
+            this.chkdcmode.Name = "chkdcmode";
+            this.chkdcmode.Size = new System.Drawing.Size(149, 17);
+            this.chkdcmode.TabIndex = 4;
+            this.chkdcmode.Text = "Duty Cycle or Pulse Width";
+            this.chkdcmode.UseVisualStyleBackColor = true;
+            // 
+            // txtDelay
+            // 
+            this.txtDelay.Location = new System.Drawing.Point(220, 70);
+            this.txtDelay.Name = "txtDelay";
+            this.txtDelay.Size = new System.Drawing.Size(100, 20);
+            this.txtDelay.TabIndex = 3;
+            // 
+            // txtDC
+            // 
+            this.txtDC.Location = new System.Drawing.Point(220, 44);
+            this.txtDC.Name = "txtDC";
+            this.txtDC.Size = new System.Drawing.Size(100, 20);
+            this.txtDC.TabIndex = 2;
+            // 
+            // txtFrequency
+            // 
+            this.txtFrequency.Location = new System.Drawing.Point(220, 18);
+            this.txtFrequency.Name = "txtFrequency";
+            this.txtFrequency.Size = new System.Drawing.Size(100, 20);
+            this.txtFrequency.TabIndex = 1;
             // 
             // groupBox5
             // 
@@ -635,27 +809,16 @@ namespace FrontEnd
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Active Channels";
             // 
-            // chken0
+            // chken3
             // 
-            this.chken0.AutoSize = true;
-            this.chken0.Location = new System.Drawing.Point(7, 20);
-            this.chken0.Name = "chken0";
-            this.chken0.Size = new System.Drawing.Size(74, 17);
-            this.chken0.TabIndex = 0;
-            this.chken0.Text = "Channel 0";
-            this.chken0.UseVisualStyleBackColor = true;
-            this.chken0.CheckedChanged += new System.EventHandler(this.chken0_CheckedChanged);
-            // 
-            // chken1
-            // 
-            this.chken1.AutoSize = true;
-            this.chken1.Location = new System.Drawing.Point(7, 43);
-            this.chken1.Name = "chken1";
-            this.chken1.Size = new System.Drawing.Size(74, 17);
-            this.chken1.TabIndex = 1;
-            this.chken1.Text = "Channel 1";
-            this.chken1.UseVisualStyleBackColor = true;
-            this.chken1.CheckedChanged += new System.EventHandler(this.chken1_CheckedChanged);
+            this.chken3.AutoSize = true;
+            this.chken3.Location = new System.Drawing.Point(7, 89);
+            this.chken3.Name = "chken3";
+            this.chken3.Size = new System.Drawing.Size(74, 17);
+            this.chken3.TabIndex = 3;
+            this.chken3.Text = "Channel 3";
+            this.chken3.UseVisualStyleBackColor = true;
+            this.chken3.CheckedChanged += new System.EventHandler(this.chken3_CheckedChanged);
             // 
             // chken2
             // 
@@ -668,175 +831,148 @@ namespace FrontEnd
             this.chken2.UseVisualStyleBackColor = true;
             this.chken2.CheckedChanged += new System.EventHandler(this.chken2_CheckedChanged);
             // 
-            // chken3
+            // chken1
             // 
-            this.chken3.AutoSize = true;
-            this.chken3.Location = new System.Drawing.Point(7, 89);
-            this.chken3.Name = "chken3";
-            this.chken3.Size = new System.Drawing.Size(74, 17);
-            this.chken3.TabIndex = 3;
-            this.chken3.Text = "Channel 3";
-            this.chken3.UseVisualStyleBackColor = true;
-            this.chken3.CheckedChanged += new System.EventHandler(this.chken3_CheckedChanged);
+            this.chken1.AutoSize = true;
+            this.chken1.Location = new System.Drawing.Point(7, 43);
+            this.chken1.Name = "chken1";
+            this.chken1.Size = new System.Drawing.Size(74, 17);
+            this.chken1.TabIndex = 1;
+            this.chken1.Text = "Channel 1";
+            this.chken1.UseVisualStyleBackColor = true;
+            this.chken1.CheckedChanged += new System.EventHandler(this.chken1_CheckedChanged);
             // 
-            // txtFrequency
+            // chken0
             // 
-            this.txtFrequency.Location = new System.Drawing.Point(220, 18);
-            this.txtFrequency.Name = "txtFrequency";
-            this.txtFrequency.Size = new System.Drawing.Size(100, 20);
-            this.txtFrequency.TabIndex = 1;
+            this.chken0.AutoSize = true;
+            this.chken0.Location = new System.Drawing.Point(7, 20);
+            this.chken0.Name = "chken0";
+            this.chken0.Size = new System.Drawing.Size(74, 17);
+            this.chken0.TabIndex = 0;
+            this.chken0.Text = "Channel 0";
+            this.chken0.UseVisualStyleBackColor = true;
+            this.chken0.CheckedChanged += new System.EventHandler(this.chken0_CheckedChanged);
             // 
-            // txtDC
+            // tabPage5
             // 
-            this.txtDC.Location = new System.Drawing.Point(220, 44);
-            this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(100, 20);
-            this.txtDC.TabIndex = 2;
+            this.tabPage5.Controls.Add(this.groupBox7);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(501, 227);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "I/O Delays";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // txtDelay
+            // groupBox7
             // 
-            this.txtDelay.Location = new System.Drawing.Point(220, 70);
-            this.txtDelay.Name = "txtDelay";
-            this.txtDelay.Size = new System.Drawing.Size(100, 20);
-            this.txtDelay.TabIndex = 3;
+            this.groupBox7.Controls.Add(this.btnDDSTOP);
+            this.groupBox7.Controls.Add(this.btnDDTRIG);
+            this.groupBox7.Controls.Add(this.btnDDCH3);
+            this.groupBox7.Controls.Add(this.btnDDCH2);
+            this.groupBox7.Controls.Add(this.btnDDCH1);
+            this.groupBox7.Controls.Add(this.btnDDCH0);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.label12);
+            this.groupBox7.Controls.Add(this.txtDelStage);
+            this.groupBox7.Controls.Add(this.txtTap);
+            this.groupBox7.Location = new System.Drawing.Point(3, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(241, 221);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Input Delays";
             // 
-            // chkdcmode
+            // txtTap
             // 
-            this.chkdcmode.AutoSize = true;
-            this.chkdcmode.Location = new System.Drawing.Point(326, 46);
-            this.chkdcmode.Name = "chkdcmode";
-            this.chkdcmode.Size = new System.Drawing.Size(149, 17);
-            this.chkdcmode.TabIndex = 4;
-            this.chkdcmode.Text = "Duty Cycle or Pulse Width";
-            this.chkdcmode.UseVisualStyleBackColor = true;
+            this.txtTap.Location = new System.Drawing.Point(94, 19);
+            this.txtTap.Name = "txtTap";
+            this.txtTap.Size = new System.Drawing.Size(100, 20);
+            this.txtTap.TabIndex = 0;
             // 
-            // label9
+            // txtDelStage
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(132, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Frequency (Hz):";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtDelStage.Location = new System.Drawing.Point(94, 45);
+            this.txtDelStage.Name = "txtDelStage";
+            this.txtDelStage.Size = new System.Drawing.Size(100, 20);
+            this.txtDelStage.TabIndex = 1;
             // 
-            // label10
+            // label12
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(120, 47);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "DC or PW (%, ms):";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Delay Line Tap:";
             // 
-            // label11
+            // label13
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(155, 73);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Delay (ms):";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(0, 48);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Delay Line Stage:";
             // 
-            // btnch0
+            // btnDDCH0
             // 
-            this.btnch0.Location = new System.Drawing.Point(123, 104);
-            this.btnch0.Name = "btnch0";
-            this.btnch0.Size = new System.Drawing.Size(91, 23);
-            this.btnch0.TabIndex = 8;
-            this.btnch0.Text = "Apply to CH0";
-            this.btnch0.UseVisualStyleBackColor = true;
-            this.btnch0.Click += new System.EventHandler(this.btnch0_Click);
+            this.btnDDCH0.Location = new System.Drawing.Point(6, 71);
+            this.btnDDCH0.Name = "btnDDCH0";
+            this.btnDDCH0.Size = new System.Drawing.Size(111, 23);
+            this.btnDDCH0.TabIndex = 4;
+            this.btnDDCH0.Text = "Apply to Channel 0";
+            this.btnDDCH0.UseVisualStyleBackColor = true;
+            this.btnDDCH0.Click += new System.EventHandler(this.btnDDCH0_Click);
             // 
-            // btnch1
+            // btnDDCH1
             // 
-            this.btnch1.Location = new System.Drawing.Point(220, 104);
-            this.btnch1.Name = "btnch1";
-            this.btnch1.Size = new System.Drawing.Size(91, 23);
-            this.btnch1.TabIndex = 9;
-            this.btnch1.Text = "Apply to CH1";
-            this.btnch1.UseVisualStyleBackColor = true;
-            this.btnch1.Click += new System.EventHandler(this.btnch1_Click);
+            this.btnDDCH1.Location = new System.Drawing.Point(6, 100);
+            this.btnDDCH1.Name = "btnDDCH1";
+            this.btnDDCH1.Size = new System.Drawing.Size(111, 23);
+            this.btnDDCH1.TabIndex = 5;
+            this.btnDDCH1.Text = "Apply to Channel 1";
+            this.btnDDCH1.UseVisualStyleBackColor = true;
+            this.btnDDCH1.Click += new System.EventHandler(this.btnDDCH1_Click);
             // 
-            // btnch3
+            // btnDDCH2
             // 
-            this.btnch3.Location = new System.Drawing.Point(220, 133);
-            this.btnch3.Name = "btnch3";
-            this.btnch3.Size = new System.Drawing.Size(91, 23);
-            this.btnch3.TabIndex = 10;
-            this.btnch3.Text = "Apply to CH3";
-            this.btnch3.UseVisualStyleBackColor = true;
-            this.btnch3.Click += new System.EventHandler(this.btnch3_Click);
+            this.btnDDCH2.Location = new System.Drawing.Point(6, 129);
+            this.btnDDCH2.Name = "btnDDCH2";
+            this.btnDDCH2.Size = new System.Drawing.Size(111, 23);
+            this.btnDDCH2.TabIndex = 6;
+            this.btnDDCH2.Text = "Apply to Channel 2";
+            this.btnDDCH2.UseVisualStyleBackColor = true;
+            this.btnDDCH2.Click += new System.EventHandler(this.btnDDCH2_Click);
             // 
-            // btnch2
+            // btnDDCH3
             // 
-            this.btnch2.Location = new System.Drawing.Point(123, 133);
-            this.btnch2.Name = "btnch2";
-            this.btnch2.Size = new System.Drawing.Size(91, 23);
-            this.btnch2.TabIndex = 11;
-            this.btnch2.Text = "Apply to CH2";
-            this.btnch2.UseVisualStyleBackColor = true;
-            this.btnch2.Click += new System.EventHandler(this.btnch2_Click);
+            this.btnDDCH3.Location = new System.Drawing.Point(123, 71);
+            this.btnDDCH3.Name = "btnDDCH3";
+            this.btnDDCH3.Size = new System.Drawing.Size(111, 23);
+            this.btnDDCH3.TabIndex = 7;
+            this.btnDDCH3.Text = "Apply to Channel 3";
+            this.btnDDCH3.UseVisualStyleBackColor = true;
+            this.btnDDCH3.Click += new System.EventHandler(this.btnDDCH3_Click);
             // 
-            // groupBox6
+            // btnDDTRIG
             // 
-            this.groupBox6.Controls.Add(this.rbnTch3);
-            this.groupBox6.Controls.Add(this.rbnTch2);
-            this.groupBox6.Controls.Add(this.rbnTch1);
-            this.groupBox6.Controls.Add(this.rbnTch0);
-            this.groupBox6.Location = new System.Drawing.Point(391, 63);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(107, 137);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Timeouts";
+            this.btnDDTRIG.Location = new System.Drawing.Point(123, 100);
+            this.btnDDTRIG.Name = "btnDDTRIG";
+            this.btnDDTRIG.Size = new System.Drawing.Size(111, 23);
+            this.btnDDTRIG.TabIndex = 8;
+            this.btnDDTRIG.Text = "Apply to T0/Trig";
+            this.btnDDTRIG.UseVisualStyleBackColor = true;
+            this.btnDDTRIG.Click += new System.EventHandler(this.btnDDTRIG_Click);
             // 
-            // rbnTch0
+            // btnDDSTOP
             // 
-            this.rbnTch0.AutoSize = true;
-            this.rbnTch0.Enabled = false;
-            this.rbnTch0.Location = new System.Drawing.Point(6, 18);
-            this.rbnTch0.Name = "rbnTch0";
-            this.rbnTch0.Size = new System.Drawing.Size(47, 17);
-            this.rbnTch0.TabIndex = 0;
-            this.rbnTch0.Text = "CH0";
-            this.rbnTch0.UseVisualStyleBackColor = true;
-            // 
-            // rbnTch1
-            // 
-            this.rbnTch1.AutoSize = true;
-            this.rbnTch1.Enabled = false;
-            this.rbnTch1.Location = new System.Drawing.Point(6, 41);
-            this.rbnTch1.Name = "rbnTch1";
-            this.rbnTch1.Size = new System.Drawing.Size(47, 17);
-            this.rbnTch1.TabIndex = 1;
-            this.rbnTch1.Text = "CH1";
-            this.rbnTch1.UseVisualStyleBackColor = true;
-            this.rbnTch1.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // rbnTch2
-            // 
-            this.rbnTch2.AutoSize = true;
-            this.rbnTch2.Enabled = false;
-            this.rbnTch2.Location = new System.Drawing.Point(6, 64);
-            this.rbnTch2.Name = "rbnTch2";
-            this.rbnTch2.Size = new System.Drawing.Size(47, 17);
-            this.rbnTch2.TabIndex = 2;
-            this.rbnTch2.Text = "CH2";
-            this.rbnTch2.UseVisualStyleBackColor = true;
-            // 
-            // rbnTch3
-            // 
-            this.rbnTch3.AutoSize = true;
-            this.rbnTch3.Enabled = false;
-            this.rbnTch3.Location = new System.Drawing.Point(6, 87);
-            this.rbnTch3.Name = "rbnTch3";
-            this.rbnTch3.Size = new System.Drawing.Size(47, 17);
-            this.rbnTch3.TabIndex = 3;
-            this.rbnTch3.Text = "CH3";
-            this.rbnTch3.UseVisualStyleBackColor = true;
+            this.btnDDSTOP.Location = new System.Drawing.Point(123, 129);
+            this.btnDDSTOP.Name = "btnDDSTOP";
+            this.btnDDSTOP.Size = new System.Drawing.Size(111, 23);
+            this.btnDDSTOP.TabIndex = 9;
+            this.btnDDSTOP.Text = "Apply to Stop";
+            this.btnDDSTOP.UseVisualStyleBackColor = true;
+            this.btnDDSTOP.Click += new System.EventHandler(this.btnDDSTOP_Click);
             // 
             // Form1
             // 
@@ -860,18 +996,21 @@ namespace FrontEnd
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -946,6 +1085,18 @@ namespace FrontEnd
         private System.Windows.Forms.CheckBox rbnTch1;
         private System.Windows.Forms.CheckBox rbnTch0;
         private System.Windows.Forms.CheckBox rbnTch3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnDDSTOP;
+        private System.Windows.Forms.Button btnDDTRIG;
+        private System.Windows.Forms.Button btnDDCH3;
+        private System.Windows.Forms.Button btnDDCH2;
+        private System.Windows.Forms.Button btnDDCH1;
+        private System.Windows.Forms.Button btnDDCH0;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtDelStage;
+        private System.Windows.Forms.TextBox txtTap;
     }
 }
 

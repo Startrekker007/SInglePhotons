@@ -32,21 +32,18 @@
   "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_DATA_0/sim/DD_AXI_PERIPH_DD_DATA_0.vhd" \
   "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_UTIL_0/sim/DD_AXI_PERIPH_DD_UTIL_0.vhd" \
   "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_1/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_1.vhd" \
-  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_IDELAY_CTRL_WRAPPER_0_0/sim/DD_AXI_PERIPH_IDELAY_CTRL_WRAPPER_0_0.vhd" \
-  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_axi_gpio_0_2/sim/DD_AXI_PERIPH_axi_gpio_0_2.vhd" \
-  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_axi_gpio_0_3/sim/DD_AXI_PERIPH_axi_gpio_0_3.vhd" \
--endlib
--makelib ies_lib/xlconcat_v2_1_3 \
-  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_xlconcat_0_0/sim/DD_AXI_PERIPH_xlconcat_0_0.v" \
-  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_xlconcat_0_1/sim/DD_AXI_PERIPH_xlconcat_0_1.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
   "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/sim/DD_AXI_PERIPH.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  glbl.v
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_IODELAY_BLK_wrapper_1_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_1_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_IODELAY_BLK_wrapper_2_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_2_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_DATA1_0/sim/DD_AXI_PERIPH_DD_DATA1_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_UTIL1_0/sim/DD_AXI_PERIPH_DD_UTIL1_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_DATA2_0/sim/DD_AXI_PERIPH_DD_DATA2_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_UTIL2_0/sim/DD_AXI_PERIPH_DD_UTIL2_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_IODELAY_BLK_wrapper_3_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_3_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_IODELAY_BLK_wrapper_4_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_4_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_DATA3_0/sim/DD_AXI_PERIPH_DD_DATA3_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_UTIL3_0/sim/DD_AXI_PERIPH_DD_UTIL3_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_DATA4_0/sim/DD_AXI_PERIPH_DD_DATA4_0.vhd" \
+  "../../../../DD_AXI_PERIPH.srcs/sources_1/bd/DD_AXI_PERIPH/ip/DD_AXI_PERIPH_DD_UTIL4_0/sim/DD_AXI_PERIPH_DD_UTIL4_0.vhd" \
 -endlib
 

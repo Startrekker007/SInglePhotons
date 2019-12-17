@@ -136,12 +136,6 @@ vcom -work proc_sys_reset_v5_0_13 -64 -93 \
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/SP_OV/ip/SP_OV_rst_ps7_0_100M_0/sim/SP_OV_rst_ps7_0_100M_0.vhd" \
 
-vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/SP_OV/ip/SP_OV_clk_wiz_0_0/SP_OV_clk_wiz_0_0_clk_wiz.v" \
-"../../../bd/SP_OV/ip/SP_OV_clk_wiz_0_0/SP_OV_clk_wiz_0_0.v" \
-"../../../bd/SP_OV/ip/SP_OV_TIMER_CLK_0/SP_OV_TIMER_CLK_0_clk_wiz.v" \
-"../../../bd/SP_OV/ip/SP_OV_TIMER_CLK_0/SP_OV_TIMER_CLK_0.v" \
-
 vlog -work util_vector_logic_v2_0_1 -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
 
@@ -414,19 +408,73 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/source
 "../../../bd/SP_OV/ip/SP_OV_util_vector_logic_3_0/sim/SP_OV_util_vector_logic_3_0.v" \
 "../../../bd/SP_OV/ip/SP_OV_util_vector_logic_3_1/sim/SP_OV_util_vector_logic_3_1.v" \
 "../../../bd/SP_OV/ip/SP_OV_util_vector_logic_3_2/sim/SP_OV_util_vector_logic_3_2.v" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_DD_CTRL_0_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_0_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_0_1.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_1_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_2_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_0_2.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_1_1.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_2_1.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK_IDELAY_WRAPPER_3_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/src/DD_CTRL.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/src/IDELAY_WRAPPER.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/sim/IODELAY_BLK.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/ipshared/1075/src/IODELAY_BLK_wrapper.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_axi_gpio_0_0/sim/DD_AXI_PERIPH_axi_gpio_0_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_axi_gpio_0_1/sim/DD_AXI_PERIPH_axi_gpio_0_1.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_DATA_0/sim/DD_AXI_PERIPH_DD_DATA_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_UTIL_0/sim/DD_AXI_PERIPH_DD_UTIL_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_1/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_0_1.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_1_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_1_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_2_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_2_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_DATA1_0/sim/DD_AXI_PERIPH_DD_DATA1_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_UTIL1_0/sim/DD_AXI_PERIPH_DD_UTIL1_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_DATA2_0/sim/DD_AXI_PERIPH_DD_DATA2_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_UTIL2_0/sim/DD_AXI_PERIPH_DD_UTIL2_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_3_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_3_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_IODELAY_BLK_wrapper_4_0/sim/DD_AXI_PERIPH_IODELAY_BLK_wrapper_4_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_DATA3_0/sim/DD_AXI_PERIPH_DD_DATA3_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_UTIL3_0/sim/DD_AXI_PERIPH_DD_UTIL3_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_DATA4_0/sim/DD_AXI_PERIPH_DD_DATA4_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/src/DD_AXI_PERIPH_DD_UTIL4_0/sim/DD_AXI_PERIPH_DD_UTIL4_0.vhd" \
+"../../../bd/SP_OV/ipshared/141f/sim/DD_AXI_PERIPH.vhd" \
+"../../../bd/SP_OV/ipshared/141f/src/DD_AXI_PERIPH_wrapper.vhd" \
+"../../../bd/SP_OV/ipshared/141f/src/IDELAY_CTRL_WRAPPER.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_DD_AXI_PERIPH_wrapper_0_0/sim/SP_OV_DD_AXI_PERIPH_wrapper_0_0.vhd" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/SP_OV/ip/SP_OV_clk_wiz_0_1/SP_OV_clk_wiz_0_1_clk_wiz.v" \
+"../../../bd/SP_OV/ip/SP_OV_clk_wiz_0_1/SP_OV_clk_wiz_0_1.v" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/SP_OV/ip/SP_OV_IDELAY_CTRL_WRAPPER_0_0/sim/SP_OV_IDELAY_CTRL_WRAPPER_0_0.vhd" \
+"../../../bd/SP_OV/sim/SP_OV.vhd" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/SP_OV/ip/SP_OV_clk_wiz_1_1/SP_OV_clk_wiz_1_1_clk_wiz.v" \
+"../../../bd/SP_OV/ip/SP_OV_clk_wiz_1_1/SP_OV_clk_wiz_1_1.v" \
+"../../../bd/SP_OV/ip/SP_OV_clk_wiz_1_2/SP_OV_clk_wiz_1_2_clk_wiz.v" \
+"../../../bd/SP_OV/ip/SP_OV_clk_wiz_1_2/SP_OV_clk_wiz_1_2.v" \
+"../../../bd/SP_OV/ip/SP_OV_util_vector_logic_6_0/sim/SP_OV_util_vector_logic_6_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_util_vector_logic_7_0/sim/SP_OV_util_vector_logic_7_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_xlconcat_0_0/sim/SP_OV_xlconcat_0_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_util_vector_logic_6_1/sim/SP_OV_util_vector_logic_6_1.v" \
 "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/sim/SP_OV_tier2_xbar_0_0.v" \
 "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_1_0/sim/SP_OV_tier2_xbar_1_0.v" \
 "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_2_0/sim/SP_OV_tier2_xbar_2_0.v" \
 "../../../bd/SP_OV/ip/SP_OV_tier2_xbar_3_0/sim/SP_OV_tier2_xbar_3_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_tier2_xbar_4_0/sim/SP_OV_tier2_xbar_4_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_tier2_xbar_5_0/sim/SP_OV_tier2_xbar_5_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/SP_OV/ip/SP_OV_auto_pc_0/sim/SP_OV_auto_pc_0.v" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/SP_OV/sim/SP_OV.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

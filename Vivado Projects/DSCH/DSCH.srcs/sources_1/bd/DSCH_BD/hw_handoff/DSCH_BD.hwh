@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec 17 15:04:34 2019" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="DSCH_BD" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_IDATA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAYLINE_wrapper_0" PORT="IDATA"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="resetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="460000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="REF_CLK"/>
+        <CONNECTION INSTANCE="DELAYLINE_wrapper_0" PORT="LDCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="sdelay" RIGHT="0" SIGIS="data" SIGNAME="DSCH_EDGE_DETECT_0_Delay0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="Delay0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="edelay" RIGHT="0" SIGIS="data" SIGNAME="DSCH_EDGE_DETECT_0_Delay1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="Delay1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="iretime" RIGHT="0" SIGIS="data" SIGNAME="DSCH_EDGE_DETECT_0_iretime">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="iretime"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="drdy" SIGIS="data" SIGNAME="DSCH_EDGE_DETECT_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/DELAYLINE_wrapper_0" HWVERSION="1.0" INSTANCE="DELAYLINE_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DELAYLINE_wrapper" VLNV="cri.nz:user:DELAYLINE_wrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="DSCH_BD_DELAYLINE_wrapper_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="63" NAME="DELAY_PIPE" RIGHT="0" SIGIS="undef" SIGNAME="DELAYLINE_wrapper_0_DELAY_PIPE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Din"/>
+            <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="delaypipe"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_IDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="IDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="LD" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="LDCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/DSCH_EDGE_DETECT_0" HWVERSION="1.0" INSTANCE="DSCH_EDGE_DETECT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DSCH_EDGE_DETECT" VLNV="xilinx.com:module_ref:DSCH_EDGE_DETECT:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="DSCH_BD_DSCH_EDGE_DETECT_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="460000000" DIR="I" NAME="REF_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="delaypipe" RIGHT="0" SIGIS="undef" SIGNAME="DELAYLINE_wrapper_0_DELAY_PIPE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DELAYLINE_wrapper_0" PORT="DELAY_PIPE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="Delay0" RIGHT="0" SIGIS="undef" SIGNAME="DSCH_EDGE_DETECT_0_Delay0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sdelay"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="Delay1" RIGHT="0" SIGIS="undef" SIGNAME="DSCH_EDGE_DETECT_0_Delay1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="edelay"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="iretime" RIGHT="0" SIGIS="undef" SIGNAME="DSCH_EDGE_DETECT_0_iretime">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="iretime"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="DSCH_EDGE_DETECT_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="drdy"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="6" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="Component_Name" VALUE="DSCH_BD_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DELAYLINE_wrapper_0" PORT="LD"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/xlslice_0" HWVERSION="1.0" INSTANCE="xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="DSCH_BD_xlslice_0_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="63" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="DELAYLINE_wrapper_0_DELAY_PIPE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DELAYLINE_wrapper_0" PORT="DELAY_PIPE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DSCH_EDGE_DETECT_0" PORT="IDATA"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

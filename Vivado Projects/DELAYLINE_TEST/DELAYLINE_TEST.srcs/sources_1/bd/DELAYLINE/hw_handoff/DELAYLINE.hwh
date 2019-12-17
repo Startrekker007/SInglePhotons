@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec 17 14:54:13 2019" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="DELAYLINE" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_IDATA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Delays_0" PORT="IDATA"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="LDCLK" SIGIS="undef" SIGNAME="External_Ports_LDCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Delays_0" PORT="LD_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="LD" SIGIS="undef" SIGNAME="External_Ports_LD">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Delays_0" PORT="LD"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="63" NAME="DELAY_PIPE" RIGHT="0" SIGIS="undef" SIGNAME="Delays_0_ODATA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Delays_0" PORT="ODATA"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/Delays_0" HWVERSION="1.0" INSTANCE="Delays_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Delays" VLNV="xilinx.com:module_ref:Delays:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="DELAYLINE_Delays_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_IDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="IDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="LD_CLK" SIGIS="clk" SIGNAME="External_Ports_LDCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LDCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="LD" SIGIS="undef" SIGNAME="External_Ports_LD">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LD"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="ODATA" RIGHT="0" SIGIS="undef" SIGNAME="Delays_0_ODATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DELAY_PIPE"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

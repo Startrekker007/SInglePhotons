@@ -82,6 +82,8 @@ set rc [catch {
   D:/SInglePhotons/HW_IP/DDS_COM_TEST
   D:/SInglePhotons/HW_IP/TIME_TAGGER
   D:/SInglePhotons/HW_IP/TT_AXI_PERIPH
+  D:/SInglePhotons/HW_IP/DD_AXI_PERIPH
+  D:/SInglePhotons/HW_IP/DELAY8
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.cache/ip}} [current_project]

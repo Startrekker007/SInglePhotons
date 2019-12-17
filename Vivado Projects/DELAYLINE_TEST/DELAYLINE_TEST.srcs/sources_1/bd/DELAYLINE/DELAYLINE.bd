@@ -1,0 +1,85 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x4C660D02ED0F7945",
+      "device": "xc7z020clg400-1",
+      "name": "DELAYLINE",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Delays_0": ""
+    },
+    "ports": {
+      "IDATA": {
+        "direction": "I"
+      },
+      "LDCLK": {
+        "direction": "I"
+      },
+      "LD": {
+        "direction": "I"
+      },
+      "DELAY_PIPE": {
+        "direction": "O",
+        "left": "63",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Delays_0": {
+        "vlnv": "xilinx.com:module_ref:Delays:1.0",
+        "xci_name": "DELAYLINE_Delays_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Delays",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "LD_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "LD": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "IDATA_1": {
+        "ports": [
+          "IDATA",
+          "Delays_0/IDATA"
+        ]
+      },
+      "LDCLK_1": {
+        "ports": [
+          "LDCLK",
+          "Delays_0/LD_CLK"
+        ]
+      },
+      "LD_1": {
+        "ports": [
+          "LD",
+          "Delays_0/LD"
+        ]
+      },
+      "Delays_0_ODATA": {
+        "ports": [
+          "Delays_0/ODATA",
+          "DELAY_PIPE"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,620 @@
+
+*** Running vivado
+    with args -log DELAYLINE_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source DELAYLINE_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source DELAYLINE_wrapper.tcl -notrace
+INFO: [IP_Flow 19-5107] Inferred bus interface 'resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'REF_CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'REF_CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'resetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'REF_CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'LD_CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'LD_CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Command: synth_design -top DELAYLINE_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5836 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 738.188 ; gain = 179.145
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'DELAYLINE_wrapper' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/hdl/DELAYLINE_wrapper.vhd:27]
+INFO: [Synth 8-3491] module 'DELAYLINE' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/synth/DELAYLINE.vhd:14' bound to instance 'DELAYLINE_i' of component 'DELAYLINE' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/hdl/DELAYLINE_wrapper.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'DELAYLINE' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/synth/DELAYLINE.vhd:31]
+INFO: [Synth 8-3491] module 'DELAYLINE_Delays_0_0' declared at 'd:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_Delays_0_0/synth/DELAYLINE_Delays_0_0.vhd:56' bound to instance 'Delays_0' of component 'DELAYLINE_Delays_0_0' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/synth/DELAYLINE.vhd:77]
+INFO: [Synth 8-638] synthesizing module 'DELAYLINE_Delays_0_0' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_Delays_0_0/synth/DELAYLINE_Delays_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'Delays' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:34' bound to instance 'U0' of component 'Delays' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_Delays_0_0/synth/DELAYLINE_Delays_0_0.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'Delays' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:41]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:41]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'DEL0' of component 'IDELAY_WRAPPER' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'IDELAY_WRAPPER' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/IDELAY_WRAPPER.vhd:42]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: DATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
+	Parameter IDELAY_TYPE bound to: VAR_LOAD - type: string 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
+	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 310.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+INFO: [Synth 8-113] binding component instance 'IDELAYE2_inst' to cell 'IDELAYE2' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/IDELAY_WRAPPER.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'IDELAY_WRAPPER' (1#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/IDELAY_WRAPPER.vhd:42]
+INFO: [Synth 8-3491] module 'IDELAY_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/IDELAY_WRAPPER.vhd:34' bound to instance 'DEL1' of component 'IDELAY_WRAPPER' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'CASCADE_DELAY' (2#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:41]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-3491] module 'CASCADE_DELAY' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/CASCADE_DELAY.vhd:34' bound to instance 'DELX' of component 'CASCADE_DELAY' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'Delays' (3#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/Delays.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'DELAYLINE_Delays_0_0' (4#1) [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_Delays_0_0/synth/DELAYLINE_Delays_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'DELAYLINE_EDGE_DETECT_0_0' declared at 'd:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_EDGE_DETECT_0_0/synth/DELAYLINE_EDGE_DETECT_0_0.vhd:56' bound to instance 'EDGE_DETECT_0' of component 'DELAYLINE_EDGE_DETECT_0_0' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/synth/DELAYLINE.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'DELAYLINE_EDGE_DETECT_0_0' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_EDGE_DETECT_0_0/synth/DELAYLINE_EDGE_DETECT_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'EDGE_DETECT' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/EDGE_DETECT.vhd:34' bound to instance 'U0' of component 'EDGE_DETECT' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_EDGE_DETECT_0_0/synth/DELAYLINE_EDGE_DETECT_0_0.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'EDGE_DETECT' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/EDGE_DETECT.vhd:45]
+INFO: [Synth 8-3491] module 'DSCH_TIMER' declared at 'd:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/ip/DSCH_TIMER/synth/DSCH_TIMER.vhd:59' bound to instance 'timer' of component 'DSCH_TIMER' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/EDGE_DETECT.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'DSCH_TIMER' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/ip/DSCH_TIMER/synth/DSCH_TIMER.vhd:67]
+	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_WIDTH bound to: 32 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_RESTRICT_COUNT bound to: 0 - type: integer 
+	Parameter C_COUNT_TO bound to: 1 - type: string 
+	Parameter C_COUNT_BY bound to: 1 - type: string 
+	Parameter C_COUNT_MODE bound to: 0 - type: integer 
+	Parameter C_THRESH0_VALUE bound to: 1 - type: string 
+	Parameter C_CE_OVERRIDES_SYNC bound to: 0 - type: integer 
+	Parameter C_HAS_THRESH0 bound to: 0 - type: integer 
+	Parameter C_HAS_LOAD bound to: 0 - type: integer 
+	Parameter C_LOAD_LOW bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_FB_LATENCY bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_13' declared at 'd:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/ip/DSCH_TIMER/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2147' bound to instance 'U0' of component 'c_counter_binary_v12_0_13' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/ip/DSCH_TIMER/synth/DSCH_TIMER.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'DSCH_TIMER' (12#1) [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/ip/DSCH_TIMER/synth/DSCH_TIMER.vhd:67]
+INFO: [Synth 8-3491] module 'bin_enc' declared at 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/bin_enc.vhd:34' bound to instance 'encoder64' of component 'bin_enc' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/EDGE_DETECT.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'bin_enc' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/bin_enc.vhd:40]
+WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/bin_enc.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'bin_enc' (13#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/bin_enc.vhd:40]
+WARNING: [Synth 8-6014] Unused sequential element temp_reg was removed.  [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/EDGE_DETECT.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'EDGE_DETECT' (14#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/new/EDGE_DETECT.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'DELAYLINE_EDGE_DETECT_0_0' (15#1) [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_EDGE_DETECT_0_0/synth/DELAYLINE_EDGE_DETECT_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'DELAYLINE_xlslice_0_0' declared at 'd:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_xlslice_0_0/synth/DELAYLINE_xlslice_0_0.v:57' bound to instance 'xlslice_0' of component 'DELAYLINE_xlslice_0_0' [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/synth/DELAYLINE.vhd:95]
+INFO: [Synth 8-6157] synthesizing module 'DELAYLINE_xlslice_0_0' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_xlslice_0_0/synth/DELAYLINE_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 64 - type: integer 
+	Parameter DIN_FROM bound to: 0 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (16#1) [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'DELAYLINE_xlslice_0_0' (17#1) [d:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/ip/DELAYLINE_xlslice_0_0/synth/DELAYLINE_xlslice_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'DELAYLINE' (18#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/synth/DELAYLINE.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'DELAYLINE_wrapper' (19#1) [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.srcs/sources_1/bd/DELAYLINE/hdl/DELAYLINE_wrapper.vhd:27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[63]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[62]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[61]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[60]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[59]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[58]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[57]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[56]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[55]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[54]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[53]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[52]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[51]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[50]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[49]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[48]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[47]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[46]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[45]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[44]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[43]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[42]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[41]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[40]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[39]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[38]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[37]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[36]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[35]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[34]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[33]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[32]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[31]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[29]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[28]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[26]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[25]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[24]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[23]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[22]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[21]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[20]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[19]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[18]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[17]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[16]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[10]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[9]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[8]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[7]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[6]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[5]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[1]
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port CE
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port AINIT
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port ACLR
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port ASET
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[31]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[30]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[29]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[28]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[27]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[26]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[25]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[24]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[23]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[22]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[21]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[20]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[19]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[18]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[17]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[16]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[15]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[14]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[13]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[12]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[11]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[10]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[9]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[8]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[7]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[6]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[5]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[4]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[3]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[2]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[1]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 810.082 ; gain = 251.039
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 810.313 ; gain = 251.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 810.313 ; gain = 251.270
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 189 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 934.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 934.129 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for DELAYLINE_i/EDGE_DETECT_0/U0/timer. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DELAYLINE_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DELAYLINE_i/Delays_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DELAYLINE_i/EDGE_DETECT_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DELAYLINE_i/xlslice_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[0].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[1].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[2].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[3].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[4].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[5].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[6].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[7].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[8].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[9].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[10].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[11].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[12].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[13].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[14].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[15].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[16].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[17].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[18].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[0]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[1]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[2]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[3]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[20].DELX/TAP0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DELAYLINE_i/Delays_0/U0/GEN_DEL[19].DELX/TAP0_reg[4]' (FDS) to 'DELAYLINE_i/Delays_0/U0/GEN_DEL[20].DELX/TAP0_reg[2]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DELAYLINE_i/Delays_0/\U0/GEN_DEL[30].DELX/TAP0_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DELAYLINE_i/Delays_0/\U0/GEN_DEL[30].DELX/TAP1_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DELAYLINE_i/Delays_0/\U0/GEN_DEL[31].DELX/TAP1_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DELAYLINE_i/Delays_0/\U0/GEN_DEL[61].DELX/TAP1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DELAYLINE_i/EDGE_DETECT_0/\U0/encoder64/output_reg[7] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 934.129 ; gain = 375.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |IDELAYE2 |   126|
+|3     |LUT1     |     2|
+|4     |LUT2     |    24|
+|5     |LUT3     |     1|
+|6     |LUT4     |    37|
+|7     |LUT5     |    15|
+|8     |LUT6     |    38|
+|9     |MUXCY    |    31|
+|10    |XORCY    |    32|
+|11    |FDRE     |    90|
+|12    |FDSE     |     1|
+|13    |IBUF     |     3|
+|14    |OBUF     |    49|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 937.117 ; gain = 378.074
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 102 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 937.117 ; gain = 254.258
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 937.117 ; gain = 378.074
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 189 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 956.961 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+228 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 956.961 ; gain = 654.559
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 956.961 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/DELAYLINE_TEST/DELAYLINE_TEST.runs/synth_1/DELAYLINE_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file DELAYLINE_wrapper_utilization_synth.rpt -pb DELAYLINE_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 17 14:49:39 2019...

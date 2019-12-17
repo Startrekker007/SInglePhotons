@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Dec 16 16:18:53 2019
+--Date        : Tue Dec 17 13:36:03 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target DD_TEST_OV_wrapper.bd
 --Design      : DD_TEST_OV_wrapper
@@ -39,14 +39,23 @@ entity DD_TEST_OV_wrapper is
     IDATA : in STD_LOGIC;
     ODATA0 : out STD_LOGIC;
     ODATA1 : out STD_LOGIC;
-    RDY : out STD_LOGIC;
-    sys_clock : in STD_LOGIC
+    ODATA2 : out STD_LOGIC;
+    ODATA3 : out STD_LOGIC;
+    RDY : out STD_LOGIC
   );
 end DD_TEST_OV_wrapper;
 
 architecture STRUCTURE of DD_TEST_OV_wrapper is
   component DD_TEST_OV is
   port (
+    ODATA0 : out STD_LOGIC;
+    ODATA1 : out STD_LOGIC;
+    RDY : out STD_LOGIC;
+    IDATA : in STD_LOGIC;
+    DEBUG0 : out STD_LOGIC;
+    DEBUG1 : out STD_LOGIC;
+    ODATA2 : out STD_LOGIC;
+    ODATA3 : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -67,14 +76,7 @@ architecture STRUCTURE of DD_TEST_OV_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    sys_clock : in STD_LOGIC;
-    ODATA0 : out STD_LOGIC;
-    ODATA1 : out STD_LOGIC;
-    RDY : out STD_LOGIC;
-    IDATA : in STD_LOGIC;
-    DEBUG0 : out STD_LOGIC;
-    DEBUG1 : out STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC
   );
   end component DD_TEST_OV;
 begin
@@ -106,7 +108,8 @@ DD_TEST_OV_i: component DD_TEST_OV
       IDATA => IDATA,
       ODATA0 => ODATA0,
       ODATA1 => ODATA1,
-      RDY => RDY,
-      sys_clock => sys_clock
+      ODATA2 => ODATA2,
+      ODATA3 => ODATA3,
+      RDY => RDY
     );
 end STRUCTURE;

@@ -448,5 +448,54 @@ namespace FrontEnd
             channels[3].setDCMode((bool)stuff[3]);
             sendToPynq("PG" + channels[3].toJSON());
         }
+
+        private void btnDDCH0_Click(object sender, EventArgs e)
+        {
+            delayctlfunc(0);
+        }
+        private void delayctlfunc(int channel)
+        {
+            int tap = 0;
+            int stage = 0;
+            bool res = Int32.TryParse(txtTap.Text, out tap);
+            res = Int32.TryParse(txtDelStage.Text, out stage);
+            if (res == false)
+            {
+                MessageBox.Show("Invalid input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int[] delayctl = new int[3];
+            delayctl[0] = channel;
+            delayctl[1] = tap;
+            delayctl[2] = stage;
+            string jsonpayload = "";
+            jsonpayload = JsonConvert.SerializeObject(delayctl);
+            sendToPynq("iDD" + jsonpayload);
+        }
+
+        private void btnDDCH1_Click(object sender, EventArgs e)
+        {
+            delayctlfunc(1);
+        }
+
+        private void btnDDCH2_Click(object sender, EventArgs e)
+        {
+            delayctlfunc(2);
+        }
+
+        private void btnDDCH3_Click(object sender, EventArgs e)
+        {
+            delayctlfunc(3);
+        }
+
+        private void btnDDTRIG_Click(object sender, EventArgs e)
+        {
+            delayctlfunc(4);
+        }
+
+        private void btnDDSTOP_Click(object sender, EventArgs e)
+        {
+            delayctlfunc(5);
+        }
     }
 }
