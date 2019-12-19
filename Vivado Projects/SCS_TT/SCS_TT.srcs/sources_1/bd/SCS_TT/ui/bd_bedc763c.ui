@@ -9,52 +9,56 @@ preplace port CH2 -pg 1 -lvl 0 -x -20 -y 620 -defaultsOSRD
 preplace port CH3 -pg 1 -lvl 0 -x -20 -y 320 -defaultsOSRD
 preplace port MCLK -pg 1 -lvl 0 -x -20 -y 560 -defaultsOSRD
 preplace port resetn -pg 1 -lvl 0 -x -20 -y 600 -defaultsOSRD
-preplace port DRDY -pg 1 -lvl 3 -x 730 -y 530 -defaultsOSRD
+preplace port DRDY -pg 1 -lvl 3 -x 860 -y 530 -defaultsOSRD
+preplace port WAITING -pg 1 -lvl 3 -x 860 -y 620 -defaultsOSRD
+preplace port LISTENING -pg 1 -lvl 3 -x 860 -y 660 -defaultsOSRD
 preplace portBus SCS_CLKS -pg 1 -lvl 0 -x -20 -y 60 -defaultsOSRD
 preplace portBus TIMEOUT -pg 1 -lvl 0 -x -20 -y 580 -defaultsOSRD
-preplace portBus T1 -pg 1 -lvl 3 -x 730 -y 430 -defaultsOSRD
-preplace portBus T2 -pg 1 -lvl 3 -x 730 -y 450 -defaultsOSRD
-preplace portBus T3 -pg 1 -lvl 3 -x 730 -y 470 -defaultsOSRD
-preplace portBus T4 -pg 1 -lvl 3 -x 730 -y 490 -defaultsOSRD
-preplace portBus TIMEOUTS -pg 1 -lvl 3 -x 730 -y 510 -defaultsOSRD
-preplace portBus DELT -pg 1 -lvl 3 -x 730 -y 330 -defaultsOSRD
-preplace portBus DEL0 -pg 1 -lvl 3 -x 730 -y 350 -defaultsOSRD
-preplace portBus DEL1 -pg 1 -lvl 3 -x 730 -y 370 -defaultsOSRD
-preplace portBus DEL2 -pg 1 -lvl 3 -x 730 -y 390 -defaultsOSRD
-preplace portBus DEL3 -pg 1 -lvl 3 -x 730 -y 410 -defaultsOSRD
+preplace portBus T1 -pg 1 -lvl 3 -x 860 -y 430 -defaultsOSRD
+preplace portBus T2 -pg 1 -lvl 3 -x 860 -y 450 -defaultsOSRD
+preplace portBus T3 -pg 1 -lvl 3 -x 860 -y 470 -defaultsOSRD
+preplace portBus T4 -pg 1 -lvl 3 -x 860 -y 490 -defaultsOSRD
+preplace portBus TIMEOUTS -pg 1 -lvl 3 -x 860 -y 510 -defaultsOSRD
+preplace portBus DELT -pg 1 -lvl 3 -x 860 -y 330 -defaultsOSRD
+preplace portBus DEL0 -pg 1 -lvl 3 -x 860 -y 350 -defaultsOSRD
+preplace portBus DEL1 -pg 1 -lvl 3 -x 860 -y 370 -defaultsOSRD
+preplace portBus DEL2 -pg 1 -lvl 3 -x 860 -y 390 -defaultsOSRD
+preplace portBus DEL3 -pg 1 -lvl 3 -x 860 -y 410 -defaultsOSRD
+preplace inst TT_DETECTOR_0 -pg 1 -lvl 2 -x 560 -y 430 -defaultsOSRD
 preplace inst TT_CDELAY_0 -pg 1 -lvl 1 -x 190 -y 220 -defaultsOSRD
 preplace inst TT_CDELAY_1 -pg 1 -lvl 1 -x 190 -y 370 -defaultsOSRD
 preplace inst TT_CDELAY_2 -pg 1 -lvl 1 -x 190 -y 680 -defaultsOSRD
 preplace inst TT_CDELAY_3 -pg 1 -lvl 1 -x 190 -y 490 -defaultsOSRD
 preplace inst CDELAY_T0 -pg 1 -lvl 1 -x 190 -y 70 -defaultsOSRD
-preplace inst TT_DETECTOR_0 -pg 1 -lvl 2 -x 550 -y 430 -defaultsOSRD
-preplace netloc T0_1 1 0 2 40 140 390
-preplace netloc CH0_1 1 0 2 30 290 360J
-preplace netloc CH1_1 1 0 2 40 150 370J
-preplace netloc CH2_1 1 0 2 50 300 340J
-preplace netloc CH3_1 1 0 2 10 560 340J
-preplace netloc SCS_CLKS_1 1 0 1 20 60n
-preplace netloc TT_CDELAY_0_DLINE 1 1 1 350 220n
-preplace netloc CDELAY_T0_DLINE 1 1 1 380 70n
-preplace netloc TT_CDELAY_1_DLINE 1 1 1 330 370n
+preplace netloc T0_1 1 0 2 40 150 390
+preplace netloc CH0_1 1 0 2 40 290 370
+preplace netloc CH1_1 1 0 2 20 300 330
+preplace netloc CH2_1 1 0 2 40 610 350
+preplace netloc CH3_1 1 0 2 10 560 340
+preplace netloc SCS_CLKS_1 1 0 1 30 60n
+preplace netloc TT_CDELAY_0_DLINE 1 1 1 360 210n
+preplace netloc CDELAY_T0_DLINE 1 1 1 380 60n
+preplace netloc TT_CDELAY_1_DLINE 1 1 1 330 360n
 preplace netloc TT_CDELAY_2_DLINE 1 1 1 370 470n
-preplace netloc TT_CDELAY_3_DLINE 1 1 1 N 490
+preplace netloc TT_CDELAY_3_DLINE 1 1 1 330 480n
 preplace netloc MCLK_1 1 0 2 0J 570 360J
 preplace netloc resetn_1 1 0 2 NJ 600 380J
 preplace netloc TIMEOUT_1 1 0 2 NJ 580 390J
-preplace netloc TT_DETECTOR_0_T1 1 2 1 NJ 430
-preplace netloc TT_DETECTOR_0_T2 1 2 1 NJ 450
-preplace netloc TT_DETECTOR_0_T3 1 2 1 NJ 470
-preplace netloc TT_DETECTOR_0_T4 1 2 1 NJ 490
-preplace netloc TT_DETECTOR_0_TIME_OUTS 1 2 1 NJ 510
-preplace netloc TT_DETECTOR_0_DRDY 1 2 1 NJ 530
-preplace netloc TT_DETECTOR_0_ODELT 1 2 1 NJ 330
-preplace netloc TT_DETECTOR_0_ODEL0 1 2 1 NJ 350
-preplace netloc TT_DETECTOR_0_ODEL1 1 2 1 NJ 370
-preplace netloc TT_DETECTOR_0_ODEL2 1 2 1 NJ 390
-preplace netloc TT_DETECTOR_0_ODEL3 1 2 1 NJ 410
-levelinfo -pg 1 -20 190 550 730
-pagesize -pg 1 -db -bbox -sgen -180 0 890 750
+preplace netloc TT_DETECTOR_0_T1 1 2 1 790J 410n
+preplace netloc TT_DETECTOR_0_T2 1 2 1 780J 430n
+preplace netloc TT_DETECTOR_0_T3 1 2 1 770J 450n
+preplace netloc TT_DETECTOR_0_T4 1 2 1 760J 470n
+preplace netloc TT_DETECTOR_0_TIME_OUTS 1 2 1 750J 490n
+preplace netloc TT_DETECTOR_0_DRDY 1 2 1 740J 510n
+preplace netloc TT_DETECTOR_0_ODELT 1 2 1 840J 310n
+preplace netloc TT_DETECTOR_0_ODEL0 1 2 1 830J 330n
+preplace netloc TT_DETECTOR_0_ODEL1 1 2 1 820J 350n
+preplace netloc TT_DETECTOR_0_ODEL2 1 2 1 810J 370n
+preplace netloc TT_DETECTOR_0_ODEL3 1 2 1 800J 390n
+preplace netloc TT_DETECTOR_0_ttwait 1 2 1 730 530n
+preplace netloc TT_DETECTOR_0_ttlistening 1 2 1 720 550n
+levelinfo -pg 1 -20 190 560 860
+pagesize -pg 1 -db -bbox -sgen -180 -20 1020 750
 "
 }
-
+0

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCB316FEDFA07E8E5",
+      "boundary_crc": "0xE33D07F16D04BA31",
       "device": "xc7z020clg400-1",
       "name": "SCS_TT",
       "synth_flow_mode": "None",
@@ -9,12 +9,12 @@
       "validated": "true"
     },
     "design_tree": {
+      "TT_DETECTOR_0": "",
       "TT_CDELAY_0": "",
       "TT_CDELAY_1": "",
       "TT_CDELAY_2": "",
       "TT_CDELAY_3": "",
-      "CDELAY_T0": "",
-      "TT_DETECTOR_0": ""
+      "CDELAY_T0": ""
     },
     "ports": {
       "T0": {
@@ -231,199 +231,29 @@
             "value_src": "default"
           }
         }
+      },
+      "WAITING": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "LISTENING": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
-      "TT_CDELAY_0": {
-        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
-        "xci_name": "SCS_TT_TT_CDELAY_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "TT_CDELAY",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "SCS_CLKS": {
-            "direction": "I",
-            "left": "3",
-            "right": "0",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_TT_SCS_CLKS",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "460000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "IDATA": {
-            "direction": "I"
-          },
-          "DLINE": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "TT_CDELAY_1": {
-        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
-        "xci_name": "SCS_TT_TT_CDELAY_0_1",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "TT_CDELAY",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "SCS_CLKS": {
-            "direction": "I",
-            "left": "3",
-            "right": "0",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_TT_SCS_CLKS",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "460000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "IDATA": {
-            "direction": "I"
-          },
-          "DLINE": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "TT_CDELAY_2": {
-        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
-        "xci_name": "SCS_TT_TT_CDELAY_1_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "TT_CDELAY",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "SCS_CLKS": {
-            "direction": "I",
-            "left": "3",
-            "right": "0",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_TT_SCS_CLKS",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "460000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "IDATA": {
-            "direction": "I"
-          },
-          "DLINE": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "TT_CDELAY_3": {
-        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
-        "xci_name": "SCS_TT_TT_CDELAY_2_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "TT_CDELAY",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "SCS_CLKS": {
-            "direction": "I",
-            "left": "3",
-            "right": "0",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_TT_SCS_CLKS",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "460000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "IDATA": {
-            "direction": "I"
-          },
-          "DLINE": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "CDELAY_T0": {
-        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
-        "xci_name": "SCS_TT_TT_CDELAY_2_1",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "TT_CDELAY",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "SCS_CLKS": {
-            "direction": "I",
-            "left": "3",
-            "right": "0",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_TT_SCS_CLKS",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "460000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "IDATA": {
-            "direction": "I"
-          },
-          "DLINE": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
       "TT_DETECTOR_0": {
         "vlnv": "xilinx.com:module_ref:TT_DETECTOR:1.0",
         "xci_name": "SCS_TT_TT_DETECTOR_0_0",
@@ -563,6 +393,217 @@
           },
           "DRDY": {
             "direction": "O"
+          },
+          "ttwait": {
+            "direction": "O"
+          },
+          "ttlistening": {
+            "direction": "O"
+          }
+        }
+      },
+      "TT_CDELAY_0": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
+          }
+        }
+      },
+      "TT_CDELAY_1": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
+          }
+        }
+      },
+      "TT_CDELAY_2": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
+          }
+        }
+      },
+      "TT_CDELAY_3": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
+          }
+        }
+      },
+      "CDELAY_T0": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_2_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
           }
         }
       }
@@ -606,11 +647,11 @@
       "SCS_CLKS_1": {
         "ports": [
           "SCS_CLKS",
+          "TT_CDELAY_0/SCS_CLKS",
+          "TT_CDELAY_1/SCS_CLKS",
           "TT_CDELAY_2/SCS_CLKS",
           "TT_CDELAY_3/SCS_CLKS",
-          "CDELAY_T0/SCS_CLKS",
-          "TT_CDELAY_1/SCS_CLKS",
-          "TT_CDELAY_0/SCS_CLKS"
+          "CDELAY_T0/SCS_CLKS"
         ]
       },
       "TT_CDELAY_0_DLINE": {
@@ -725,6 +766,18 @@
         "ports": [
           "TT_DETECTOR_0/ODEL3",
           "DEL3"
+        ]
+      },
+      "TT_DETECTOR_0_ttwait": {
+        "ports": [
+          "TT_DETECTOR_0/ttwait",
+          "WAITING"
+        ]
+      },
+      "TT_DETECTOR_0_ttlistening": {
+        "ports": [
+          "TT_DETECTOR_0/ttlistening",
+          "LISTENING"
         ]
       }
     }

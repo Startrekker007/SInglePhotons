@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Dec 19 15:52:40 2019
+| Date             : Fri Dec 20 11:00:24 2019
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file SCS_TT_TEST_wrapper_power_routed.rpt -pb SCS_TT_TEST_wrapper_power_summary_routed.pb -rpx SCS_TT_TEST_wrapper_power_routed.rpx
 | Design           : SCS_TT_TEST_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.532        |
+| Total On-Chip Power (W)  | 1.553        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.395        |
-| Device Static (W)        | 0.137        |
+| Dynamic (W)              | 1.412        |
+| Device Static (W)        | 0.141        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 67.3         |
-| Junction Temperature (C) | 42.7         |
+| Max Ambient (C)          | 67.1         |
+| Junction Temperature (C) | 42.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.027 |        9 |       --- |             --- |
-| Slice Logic             |     0.002 |     3995 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      969 |     53200 |            1.82 |
-|   Register              |    <0.001 |     2445 |    106400 |            2.30 |
+| Clocks                  |     0.039 |        9 |       --- |             --- |
+| Slice Logic             |     0.002 |     4437 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1078 |     53200 |            2.03 |
+|   Register              |    <0.001 |     2747 |    106400 |            2.58 |
 |   CARRY4                |    <0.001 |       38 |     13300 |            0.29 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
-|   F7/F8 Muxes           |    <0.001 |        1 |     53200 |           <0.01 |
-|   Others                |     0.000 |      258 |       --- |             --- |
-| Signals                 |     0.003 |     3138 |       --- |             --- |
+|   F7/F8 Muxes           |    <0.001 |        2 |     53200 |           <0.01 |
+|   Others                |     0.000 |      269 |       --- |             --- |
+| Signals                 |     0.005 |     3496 |       --- |             --- |
 | MMCM                    |     0.107 |        1 |         4 |           25.00 |
-| I/O                     |    <0.001 |        5 |       125 |            4.00 |
+| I/O                     |     0.003 |        7 |       125 |            5.60 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
-| Static Power            |     0.137 |          |           |                 |
-| Total                   |     1.532 |          |           |                 |
+| Static Power            |     0.141 |          |           |                 |
+| Total                   |     1.553 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.050 |       0.036 |      0.014 |
+| Vccint    |       1.000 |     0.064 |       0.050 |      0.014 |
 | Vccaux    |       1.800 |     0.072 |       0.057 |      0.015 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -88,7 +88,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.675 |       0.647 |      0.028 |
+| Vccpint   |       1.000 |     0.675 |       0.647 |      0.029 |
 | Vccpaux   |       1.800 |     0.036 |       0.026 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.354 |       0.352 |      0.002 |
@@ -157,16 +157,16 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| SCS_TT_TEST_wrapper      |     1.395 |
-|   SCS_TT_TEST_i          |     1.395 |
+| SCS_TT_TEST_wrapper      |     1.412 |
+|   SCS_TT_TEST_i          |     1.408 |
 |     DATA0                |     0.002 |
 |       U0                 |     0.002 |
 |     DATA1                |     0.002 |
 |       U0                 |     0.002 |
-|     DATA_UTIL            |     0.001 |
-|       U0                 |     0.001 |
-|     SCS_TT_wrapper_0     |     0.017 |
-|       U0                 |     0.017 |
+|     DELAY_DATA           |     0.002 |
+|       U0                 |     0.002 |
+|     SCS_TT_wrapper_0     |     0.030 |
+|       U0                 |     0.030 |
 |     clk_wiz_0            |     0.108 |
 |       inst               |     0.108 |
 |     processing_system7_0 |     1.257 |

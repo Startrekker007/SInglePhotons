@@ -174,6 +174,7 @@ proc create_root_design { parentCell } {
   set DEL3 [ create_bd_port -dir O -from 3 -to 0 -type data DEL3 ]
   set DELT [ create_bd_port -dir O -from 3 -to 0 -type data DELT ]
   set DRDY [ create_bd_port -dir O -type data DRDY ]
+  set LISTENING [ create_bd_port -dir O -type data LISTENING ]
   set MCLK [ create_bd_port -dir I -type clk MCLK ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {460000000} \
@@ -189,6 +190,7 @@ proc create_root_design { parentCell } {
   set T4 [ create_bd_port -dir O -from 31 -to 0 -type data T4 ]
   set TIMEOUT [ create_bd_port -dir I -from 31 -to 0 -type data TIMEOUT ]
   set TIMEOUTS [ create_bd_port -dir O -from 3 -to 0 -type data TIMEOUTS ]
+  set WAITING [ create_bd_port -dir O -type data WAITING ]
   set resetn [ create_bd_port -dir I -type rst resetn ]
 
   # Create instance: CDELAY_T0, and set properties
@@ -282,6 +284,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net TT_DETECTOR_0_T3 [get_bd_ports T3] [get_bd_pins TT_DETECTOR_0/T3]
   connect_bd_net -net TT_DETECTOR_0_T4 [get_bd_ports T4] [get_bd_pins TT_DETECTOR_0/T4]
   connect_bd_net -net TT_DETECTOR_0_TIME_OUTS [get_bd_ports TIMEOUTS] [get_bd_pins TT_DETECTOR_0/TIME_OUTS]
+  connect_bd_net -net TT_DETECTOR_0_ttlistening [get_bd_ports LISTENING] [get_bd_pins TT_DETECTOR_0/ttlistening]
+  connect_bd_net -net TT_DETECTOR_0_ttwait [get_bd_ports WAITING] [get_bd_pins TT_DETECTOR_0/ttwait]
   connect_bd_net -net resetn_1 [get_bd_ports resetn] [get_bd_pins TT_DETECTOR_0/RESETN]
 
   # Create address segments

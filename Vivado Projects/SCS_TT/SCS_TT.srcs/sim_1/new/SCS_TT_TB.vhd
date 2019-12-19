@@ -56,7 +56,9 @@ component SCS_TT_WRAPPER is port(
     T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     TIMEOUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
     TIMEOUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    resetn : in STD_LOGIC
+    resetn : in STD_LOGIC;
+    WAITING : out std_logic;
+    listening : out std_logic
 );
 end component;
 signal ch0 : std_logic := '0';
@@ -140,9 +142,9 @@ begin
     resetn <= '1';
     wait for 10ns;
     t0 <= '1';
-    wait for 12.3ns;
+    wait for 14.1ns;
     ch0 <= '1';
-    wait for 14.8ns;
+    wait for 11.1ns;
     ch1 <= '1';
     wait for 23.1ns;
     ch2 <= '1';

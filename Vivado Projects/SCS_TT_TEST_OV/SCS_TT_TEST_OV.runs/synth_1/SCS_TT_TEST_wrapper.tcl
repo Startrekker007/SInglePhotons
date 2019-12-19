@@ -34,7 +34,10 @@ set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCS_TT [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {{D:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/hdl/SCS_TT_TEST_wrapper.vhd}}
+read_vhdl -library xil_defaultlib {
+  {D:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/imports/new/CLOCK_EXPAND.vhd}
+  {D:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/hdl/SCS_TT_TEST_wrapper.vhd}
+}
 add_files {{D:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/SCS_TT_TEST.bd}}
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_SCS_TT_wrapper_0_0/src/SCS_TT_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_processing_system7_0_0/SCS_TT_TEST_processing_system7_0_0.xdc}}]
@@ -55,6 +58,9 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_0_0/SCS_TT_TEST_clk_wiz_0_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_rst_ps7_0_100M_0/SCS_TT_TEST_rst_ps7_0_100M_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_rst_ps7_0_100M_0/SCS_TT_TEST_rst_ps7_0_100M_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_auto_pc_0/SCS_TT_TEST_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/SCS_TT_TEST_OV/SCS_TT_TEST_OV.srcs/sources_1/bd/SCS_TT_TEST/SCS_TT_TEST_ooc.xdc}}]
 

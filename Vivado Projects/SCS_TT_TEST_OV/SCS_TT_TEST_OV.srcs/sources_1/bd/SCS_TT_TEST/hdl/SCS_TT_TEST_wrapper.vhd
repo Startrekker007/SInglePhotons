@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Dec 19 15:48:56 2019
+--Date        : Fri Dec 20 10:56:12 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_TT_TEST_wrapper.bd
 --Design      : SCS_TT_TEST_wrapper
@@ -34,17 +34,32 @@ entity SCS_TT_TEST_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    LISTENING : out STD_LOGIC;
     T0 : in STD_LOGIC;
     T1 : in STD_LOGIC;
     T2 : in STD_LOGIC;
     T3 : in STD_LOGIC;
-    T4 : in STD_LOGIC
+    T4 : in STD_LOGIC;
+    WAITING : out STD_LOGIC
   );
 end SCS_TT_TEST_wrapper;
 
 architecture STRUCTURE of SCS_TT_TEST_wrapper is
   component SCS_TT_TEST is
   port (
+    T0 : in STD_LOGIC;
+    T1 : in STD_LOGIC;
+    T2 : in STD_LOGIC;
+    T3 : in STD_LOGIC;
+    T4 : in STD_LOGIC;
+    WAITING : out STD_LOGIC;
+    LISTENING : out STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -59,18 +74,7 @@ architecture STRUCTURE of SCS_TT_TEST_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    T0 : in STD_LOGIC;
-    T1 : in STD_LOGIC;
-    T2 : in STD_LOGIC;
-    T3 : in STD_LOGIC;
-    T4 : in STD_LOGIC
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component SCS_TT_TEST;
 begin
@@ -97,10 +101,12 @@ SCS_TT_TEST_i: component SCS_TT_TEST
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      LISTENING => LISTENING,
       T0 => T0,
       T1 => T1,
       T2 => T2,
       T3 => T3,
-      T4 => T4
+      T4 => T4,
+      WAITING => WAITING
     );
 end STRUCTURE;

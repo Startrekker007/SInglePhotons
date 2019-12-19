@@ -1,0 +1,369 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Dec 20 12:07:27 2019
+| Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_methodology -file SCS_ST_TEST_wrapper_methodology_drc_routed.rpt -pb SCS_ST_TEST_wrapper_methodology_drc_routed.pb -rpx SCS_ST_TEST_wrapper_methodology_drc_routed.rpx
+| Design       : SCS_ST_TEST_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_SCS_ST_TEST_wrapper
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 66
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 1          |
+| TIMING-7  | Critical Warning | No common node between related clocks              | 1          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
+| TIMING-16 | Warning          | Large setup violation                              | 62         |
++-----------+------------------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock SCS_ST_TEST_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_SCS_ST_TEST_clk_wiz_0_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_SCS_ST_TEST_clk_wiz_0_0]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_SCS_ST_TEST_clk_wiz_0_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_SCS_ST_TEST_clk_wiz_0_0]
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock SCS_ST_TEST_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin SCS_ST_TEST_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.119 ns between SCS_ST_TEST_i/SCS_ST_0/U0/delayln/idline_reg[7]/C (clocked by clk_out4_SCS_ST_TEST_clk_wiz_0_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[7]/D (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -3.152 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/ctr_rst_reg/D (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -3.312 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/DRDY_reg/D (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[4]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[5]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[6]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[17]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[18]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[19]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[20]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -3.665 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/sd_reg/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -3.674 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/ldata_reg/S (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -3.674 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdata_reg/S (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[0]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[1]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[2]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[3]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[4]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[5]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[6]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -3.682 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/SDELAY_reg[7]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -3.685 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[10]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -3.685 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[11]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -3.685 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[12]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -3.685 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[9]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -3.793 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[21]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -3.793 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[22]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -3.793 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[23]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -3.793 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[24]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -3.797 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[25]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -3.797 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[26]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -3.797 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[27]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -3.797 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[28]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -3.824 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[7]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -3.824 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[13]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -3.824 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[14]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -3.824 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[15]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -3.824 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[16]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -3.827 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[5]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -3.827 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[6]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -3.827 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[7]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -3.827 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[8]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -3.830 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[0]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -3.830 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[1]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -3.830 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[2]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -3.830 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/EDELAY_reg[3]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -3.830 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[0]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -3.832 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[1]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -3.832 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[2]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -3.832 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[3]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -3.832 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[4]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[0]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[1]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[2]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[3]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[4]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[5]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[6]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -3.943 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/pdel_reg[7]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -3.946 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[29]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -3.946 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[30]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -3.946 ns between SCS_ST_TEST_i/UTIL/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and SCS_ST_TEST_i/SCS_ST_0/U0/TIME_DATA_reg[31]/R (clocked by clk_out1_SCS_ST_TEST_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+

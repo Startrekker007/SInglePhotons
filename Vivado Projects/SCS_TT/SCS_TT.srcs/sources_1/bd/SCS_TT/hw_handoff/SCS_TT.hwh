@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 19 15:46:33 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec 20 09:17:30 2019" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SCS_TT" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -36,11 +36,11 @@
     </PORT>
     <PORT CLKFREQUENCY="460000000" DIR="I" LEFT="3" NAME="SCS_CLKS" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_SCS_CLKS">
       <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CDELAY_0" PORT="SCS_CLKS"/>
+        <CONNECTION INSTANCE="TT_CDELAY_1" PORT="SCS_CLKS"/>
         <CONNECTION INSTANCE="TT_CDELAY_2" PORT="SCS_CLKS"/>
         <CONNECTION INSTANCE="TT_CDELAY_3" PORT="SCS_CLKS"/>
         <CONNECTION INSTANCE="CDELAY_T0" PORT="SCS_CLKS"/>
-        <CONNECTION INSTANCE="TT_CDELAY_1" PORT="SCS_CLKS"/>
-        <CONNECTION INSTANCE="TT_CDELAY_0" PORT="SCS_CLKS"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="460000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
@@ -113,6 +113,16 @@
         <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ODEL3"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="O" NAME="WAITING" SIGIS="data" SIGNAME="TT_DETECTOR_0_ttwait">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ttwait"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LISTENING" SIGIS="data" SIGNAME="TT_DETECTOR_0_ttlistening">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ttlistening"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES/>
@@ -140,6 +150,7 @@
             <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DELT"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -165,6 +176,7 @@
             <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL0"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -190,6 +202,7 @@
             <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL1"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -215,6 +228,7 @@
             <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL2"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -240,6 +254,7 @@
             <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL3"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -368,6 +383,16 @@
         <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="TT_DETECTOR_0_DRDY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="DRDY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ttwait" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ttwait">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WAITING"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ttlistening" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ttlistening">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LISTENING"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

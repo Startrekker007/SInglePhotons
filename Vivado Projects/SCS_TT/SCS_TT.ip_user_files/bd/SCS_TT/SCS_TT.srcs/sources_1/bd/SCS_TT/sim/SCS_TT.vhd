@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Dec 19 15:46:32 2019
+--Date        : Fri Dec 20 09:17:30 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_TT.bd
 --Design      : SCS_TT
@@ -23,6 +23,7 @@ entity SCS_TT is
     DEL3 : out STD_LOGIC_VECTOR ( 3 downto 0 );
     DELT : out STD_LOGIC_VECTOR ( 3 downto 0 );
     DRDY : out STD_LOGIC;
+    LISTENING : out STD_LOGIC;
     MCLK : in STD_LOGIC;
     SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
     T0 : in STD_LOGIC;
@@ -32,6 +33,7 @@ entity SCS_TT is
     T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     TIMEOUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
     TIMEOUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    WAITING : out STD_LOGIC;
     resetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
@@ -41,41 +43,6 @@ entity SCS_TT is
 end SCS_TT;
 
 architecture STRUCTURE of SCS_TT is
-  component SCS_TT_TT_CDELAY_0_0 is
-  port (
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    IDATA : in STD_LOGIC;
-    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component SCS_TT_TT_CDELAY_0_0;
-  component SCS_TT_TT_CDELAY_0_1 is
-  port (
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    IDATA : in STD_LOGIC;
-    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component SCS_TT_TT_CDELAY_0_1;
-  component SCS_TT_TT_CDELAY_1_0 is
-  port (
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    IDATA : in STD_LOGIC;
-    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component SCS_TT_TT_CDELAY_1_0;
-  component SCS_TT_TT_CDELAY_2_0 is
-  port (
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    IDATA : in STD_LOGIC;
-    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component SCS_TT_TT_CDELAY_2_0;
-  component SCS_TT_TT_CDELAY_2_1 is
-  port (
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    IDATA : in STD_LOGIC;
-    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component SCS_TT_TT_CDELAY_2_1;
   component SCS_TT_TT_DETECTOR_0_0 is
   port (
     T0 : in STD_LOGIC;
@@ -101,9 +68,51 @@ architecture STRUCTURE of SCS_TT is
     T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     TIME_OUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
     TIME_OUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DRDY : out STD_LOGIC
+    DRDY : out STD_LOGIC;
+    ttwait : out STD_LOGIC;
+    ttlistening : out STD_LOGIC
   );
   end component SCS_TT_TT_DETECTOR_0_0;
+  component SCS_TT_TT_CDELAY_0_0 is
+  port (
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    IDATA : in STD_LOGIC;
+    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ODATA : out STD_LOGIC
+  );
+  end component SCS_TT_TT_CDELAY_0_0;
+  component SCS_TT_TT_CDELAY_0_1 is
+  port (
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    IDATA : in STD_LOGIC;
+    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ODATA : out STD_LOGIC
+  );
+  end component SCS_TT_TT_CDELAY_0_1;
+  component SCS_TT_TT_CDELAY_1_0 is
+  port (
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    IDATA : in STD_LOGIC;
+    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ODATA : out STD_LOGIC
+  );
+  end component SCS_TT_TT_CDELAY_1_0;
+  component SCS_TT_TT_CDELAY_2_0 is
+  port (
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    IDATA : in STD_LOGIC;
+    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ODATA : out STD_LOGIC
+  );
+  end component SCS_TT_TT_CDELAY_2_0;
+  component SCS_TT_TT_CDELAY_2_1 is
+  port (
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    IDATA : in STD_LOGIC;
+    DLINE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ODATA : out STD_LOGIC
+  );
+  end component SCS_TT_TT_CDELAY_2_1;
   signal CDELAY_T0_DLINE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal CH0_1 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
@@ -128,13 +137,24 @@ architecture STRUCTURE of SCS_TT is
   signal TT_DETECTOR_0_T3 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal TT_DETECTOR_0_T4 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal TT_DETECTOR_0_TIME_OUTS : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal TT_DETECTOR_0_ttlistening : STD_LOGIC;
+  signal TT_DETECTOR_0_ttwait : STD_LOGIC;
   signal resetn_1 : STD_LOGIC;
+  signal NLW_CDELAY_T0_ODATA_UNCONNECTED : STD_LOGIC;
+  signal NLW_TT_CDELAY_0_ODATA_UNCONNECTED : STD_LOGIC;
+  signal NLW_TT_CDELAY_1_ODATA_UNCONNECTED : STD_LOGIC;
+  signal NLW_TT_CDELAY_2_ODATA_UNCONNECTED : STD_LOGIC;
+  signal NLW_TT_CDELAY_3_ODATA_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DRDY : signal is "xilinx.com:signal:data:1.0 DATA.DRDY DATA";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of DRDY : signal is "XIL_INTERFACENAME DATA.DRDY, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of LISTENING : signal is "xilinx.com:signal:data:1.0 DATA.LISTENING DATA";
+  attribute X_INTERFACE_PARAMETER of LISTENING : signal is "XIL_INTERFACENAME DATA.LISTENING, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of MCLK : signal is "xilinx.com:signal:clock:1.0 CLK.MCLK CLK";
   attribute X_INTERFACE_PARAMETER of MCLK : signal is "XIL_INTERFACENAME CLK.MCLK, CLK_DOMAIN SCS_TT_MCLK, FREQ_HZ 460000000, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of WAITING : signal is "xilinx.com:signal:data:1.0 DATA.WAITING DATA";
+  attribute X_INTERFACE_PARAMETER of WAITING : signal is "XIL_INTERFACENAME DATA.WAITING, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of DEL0 : signal is "xilinx.com:signal:data:1.0 DATA.DEL0 DATA";
@@ -172,6 +192,7 @@ begin
   DEL3(3 downto 0) <= TT_DETECTOR_0_ODEL3(3 downto 0);
   DELT(3 downto 0) <= TT_DETECTOR_0_ODELT(3 downto 0);
   DRDY <= TT_DETECTOR_0_DRDY;
+  LISTENING <= TT_DETECTOR_0_ttlistening;
   MCLK_1 <= MCLK;
   SCS_CLKS_1(3 downto 0) <= SCS_CLKS(3 downto 0);
   T0_1 <= T0;
@@ -181,35 +202,41 @@ begin
   T4(31 downto 0) <= TT_DETECTOR_0_T4(31 downto 0);
   TIMEOUTS(3 downto 0) <= TT_DETECTOR_0_TIME_OUTS(3 downto 0);
   TIMEOUT_1(31 downto 0) <= TIMEOUT(31 downto 0);
+  WAITING <= TT_DETECTOR_0_ttwait;
   resetn_1 <= resetn;
 CDELAY_T0: component SCS_TT_TT_CDELAY_2_1
      port map (
       DLINE(3 downto 0) => CDELAY_T0_DLINE(3 downto 0),
       IDATA => T0_1,
+      ODATA => NLW_CDELAY_T0_ODATA_UNCONNECTED,
       SCS_CLKS(3 downto 0) => SCS_CLKS_1(3 downto 0)
     );
 TT_CDELAY_0: component SCS_TT_TT_CDELAY_0_0
      port map (
       DLINE(3 downto 0) => TT_CDELAY_0_DLINE(3 downto 0),
       IDATA => CH0_1,
+      ODATA => NLW_TT_CDELAY_0_ODATA_UNCONNECTED,
       SCS_CLKS(3 downto 0) => SCS_CLKS_1(3 downto 0)
     );
 TT_CDELAY_1: component SCS_TT_TT_CDELAY_0_1
      port map (
       DLINE(3 downto 0) => TT_CDELAY_1_DLINE(3 downto 0),
       IDATA => CH1_1,
+      ODATA => NLW_TT_CDELAY_1_ODATA_UNCONNECTED,
       SCS_CLKS(3 downto 0) => SCS_CLKS_1(3 downto 0)
     );
 TT_CDELAY_2: component SCS_TT_TT_CDELAY_1_0
      port map (
       DLINE(3 downto 0) => TT_CDELAY_2_DLINE(3 downto 0),
       IDATA => CH2_1,
+      ODATA => NLW_TT_CDELAY_2_ODATA_UNCONNECTED,
       SCS_CLKS(3 downto 0) => SCS_CLKS_1(3 downto 0)
     );
 TT_CDELAY_3: component SCS_TT_TT_CDELAY_2_0
      port map (
       DLINE(3 downto 0) => TT_CDELAY_3_DLINE(3 downto 0),
       IDATA => CH3_1,
+      ODATA => NLW_TT_CDELAY_3_ODATA_UNCONNECTED,
       SCS_CLKS(3 downto 0) => SCS_CLKS_1(3 downto 0)
     );
 TT_DETECTOR_0: component SCS_TT_TT_DETECTOR_0_0
@@ -237,6 +264,8 @@ TT_DETECTOR_0: component SCS_TT_TT_DETECTOR_0_0
       T3(31 downto 0) => TT_DETECTOR_0_T3(31 downto 0),
       T4(31 downto 0) => TT_DETECTOR_0_T4(31 downto 0),
       TIME_OUT(31 downto 0) => TIMEOUT_1(31 downto 0),
-      TIME_OUTS(3 downto 0) => TT_DETECTOR_0_TIME_OUTS(3 downto 0)
+      TIME_OUTS(3 downto 0) => TT_DETECTOR_0_TIME_OUTS(3 downto 0),
+      ttlistening => TT_DETECTOR_0_ttlistening,
+      ttwait => TT_DETECTOR_0_ttwait
     );
 end STRUCTURE;

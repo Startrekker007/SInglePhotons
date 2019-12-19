@@ -62,19 +62,19 @@ module SCS_TT_TEST_xlconcat_0_0 (
   dout
 );
 
-input wire [3 : 0] In0;
-input wire [3 : 0] In1;
-input wire [3 : 0] In2;
-input wire [3 : 0] In3;
-input wire [3 : 0] In4;
-output wire [19 : 0] dout;
+input wire [7 : 0] In0;
+input wire [7 : 0] In1;
+input wire [7 : 0] In2;
+input wire [7 : 0] In3;
+input wire [7 : 0] In4;
+output wire [39 : 0] dout;
 
   xlconcat_v2_1_3_xlconcat #(
-    .IN0_WIDTH(4),
-    .IN1_WIDTH(4),
-    .IN2_WIDTH(4),
-    .IN3_WIDTH(4),
-    .IN4_WIDTH(4),
+    .IN0_WIDTH(8),
+    .IN1_WIDTH(8),
+    .IN2_WIDTH(8),
+    .IN3_WIDTH(8),
+    .IN4_WIDTH(8),
     .IN5_WIDTH(1),
     .IN6_WIDTH(1),
     .IN7_WIDTH(1),
@@ -102,7 +102,7 @@ output wire [19 : 0] dout;
     .IN29_WIDTH(1),
     .IN30_WIDTH(1),
     .IN31_WIDTH(1),
-    .dout_width(20),
+    .dout_width(40),
     .NUM_PORTS(5)
   ) inst (
     .In0(In0),

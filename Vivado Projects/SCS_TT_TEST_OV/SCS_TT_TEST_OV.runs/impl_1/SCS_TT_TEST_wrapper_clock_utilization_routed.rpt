@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Dec 19 15:52:40 2019
+| Date         : Fri Dec 20 11:00:25 2019
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_clock_utilization -file SCS_TT_TEST_wrapper_clock_utilization_routed.rpt
 | Design       : SCS_TT_TEST_wrapper
@@ -53,11 +53,11 @@ Table of Contents
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+----------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                            | Driver Pin                                                                  | Net                                                               |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+----------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 5 |        2245 |               0 |       10.000 | clk_fpga_0                       | SCS_TT_TEST_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0                 |
-| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 3 |         253 |               0 |        2.174 | clk_out1_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout1_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1                             |
-| g2        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 2 |           5 |               0 |        2.174 | clk_out2_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout2_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2                             |
-| g3        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |           5 |               0 |        2.174 | clk_out3_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout3_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3                             |
-| g4        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 2 |           5 |               0 |        2.174 | clk_out4_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout4_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4                             |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 4 |        2448 |               0 |       10.000 | clk_fpga_0                       | SCS_TT_TEST_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0                 |
+| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 4 |         337 |               0 |        2.174 | clk_out1_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout1_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1                             |
+| g2        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 4 |          10 |               0 |        2.174 | clk_out2_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout2_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2                             |
+| g3        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 4 |          10 |               0 |        2.174 | clk_out3_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout3_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3                             |
+| g4        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 3 |          10 |               0 |        2.174 | clk_out4_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkout4_buf/O                                  | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4                             |
 | g5        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 1 |           1 |               0 |       50.000 | clkfbout_SCS_TT_TEST_clk_wiz_0_0 | SCS_TT_TEST_i/clk_wiz_0/inst/clkf_buf/O                                     | SCS_TT_TEST_i/clk_wiz_0/inst/clkfbout_buf_SCS_TT_TEST_clk_wiz_0_0 |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+----------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
@@ -91,10 +91,10 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2500 |    0 |  1000 |    0 |    60 |    0 |    30 |    0 |    60 |
 | X1Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  3200 |    0 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
-| X0Y1              |    5 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 1645 |  1200 |  537 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   50 |  2600 |   40 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
-| X0Y2              |    4 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  724 |  1200 |  234 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   26 |  2600 |   15 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
+| X0Y1              |    5 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 1955 |  1200 |  688 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y1              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   61 |  2600 |   31 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
+| X0Y2              |    5 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  700 |  1200 |  248 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y2              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   31 |  2600 |    3 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -106,8 +106,8 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y2 |  4 |  2 |
-| Y1 |  5 |  1 |
+| Y2 |  5 |  4 |
+| Y1 |  5 |  4 |
 | Y0 |  0 |  2 |
 +----+----+----+
 
@@ -118,7 +118,7 @@ All Modules
 +-----------+-----------------+-------------------+------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock      | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                               |
 +-----------+-----------------+-------------------+------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------+
-| g0        | BUFG/O          | n/a               | clk_fpga_0 |      10.000 | {0.000 5.000} |        2244 |        0 |              1 |        0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
+| g0        | BUFG/O          | n/a               | clk_fpga_0 |      10.000 | {0.000 5.000} |        2447 |        0 |              1 |        0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
 +-----------+-----------------+-------------------+------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -129,8 +129,8 @@ All Modules
 +----+-------+-----+
 |    | X0    | X1  |
 +----+-------+-----+
-| Y2 |   650 |  13 |
-| Y1 |  1531 |  50 |
+| Y2 |   530 |   0 |
+| Y1 |  1867 |  50 |
 | Y0 |     0 |   1 |
 +----+-------+-----+
 
@@ -141,7 +141,7 @@ All Modules
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                            | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                   |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
-| g1        | BUFG/O          | n/a               | clk_out1_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {0.000 1.087} |         253 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1 |
+| g1        | BUFG/O          | n/a               | clk_out1_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {0.000 1.087} |         337 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1 |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -152,8 +152,8 @@ All Modules
 +----+------+-----+
 |    | X0   | X1  |
 +----+------+-----+
-| Y2 |   80 |  13 |
-| Y1 |  160 |   0 |
+| Y2 |  169 |  25 |
+| Y1 |  134 |   9 |
 | Y0 |    0 |   0 |
 +----+------+-----+
 
@@ -164,7 +164,7 @@ All Modules
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                            | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                   |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
-| g2        | BUFG/O          | n/a               | clk_out2_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {0.543 1.630} |           5 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2 |
+| g2        | BUFG/O          | n/a               | clk_out2_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {0.272 1.359} |          10 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2 |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -175,8 +175,8 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y2 |  1 |  0 |
-| Y1 |  4 |  0 |
+| Y2 |  3 |  2 |
+| Y1 |  4 |  1 |
 | Y0 |  0 |  0 |
 +----+----+----+
 
@@ -187,7 +187,7 @@ All Modules
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                            | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                   |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
-| g3        | BUFG/O          | n/a               | clk_out3_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {1.087 2.174} |           5 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3 |
+| g3        | BUFG/O          | n/a               | clk_out3_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {0.543 1.630} |          10 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3 |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -198,8 +198,8 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y2 |  0 |  0 |
-| Y1 |  5 |  0 |
+| Y2 |  4 |  3 |
+| Y1 |  2 |  1 |
 | Y0 |  0 |  0 |
 +----+----+----+
 
@@ -210,7 +210,7 @@ All Modules
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                            | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                   |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
-| g4        | BUFG/O          | n/a               | clk_out4_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {1.630 2.717} |           5 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4 |
+| g4        | BUFG/O          | n/a               | clk_out4_SCS_TT_TEST_clk_wiz_0_0 |       2.174 | {0.815 1.902} |          10 |        0 |              0 |        0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4 |
 +-----------+-----------------+-------------------+----------------------------------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -221,8 +221,8 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y2 |  4 |  0 |
-| Y1 |  1 |  0 |
+| Y2 |  7 |  1 |
+| Y1 |  2 |  0 |
 | Y0 |  0 |  0 |
 +----+----+----+
 
@@ -270,11 +270,11 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                               |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1531 |               0 | 1475 |     56 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
-| g1        | n/a   | BUFG/O          | None       |         160 |               0 |  160 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1             |
+| g0        | n/a   | BUFG/O          | None       |        1867 |               0 | 1813 |     54 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
+| g1        | n/a   | BUFG/O          | None       |         134 |               0 |  134 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1             |
 | g2        | n/a   | BUFG/O          | None       |           4 |               0 |    4 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2             |
-| g3        | n/a   | BUFG/O          | None       |           5 |               0 |    5 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3             |
-| g4        | n/a   | BUFG/O          | None       |           1 |               0 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4             |
+| g3        | n/a   | BUFG/O          | None       |           2 |               0 |    2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3             |
+| g4        | n/a   | BUFG/O          | None       |           2 |               0 |    2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4             |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -288,6 +288,9 @@ All Modules
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                               |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
 | g0        | n/a   | BUFG/O          | None       |          50 |               0 | 50 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
+| g1        | n/a   | BUFG/O          | None       |           9 |               0 |  9 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1             |
+| g2        | n/a   | BUFG/O          | None       |           1 |               0 |  1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2             |
+| g3        | n/a   | BUFG/O          | None       |           1 |               0 |  1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3             |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -300,10 +303,11 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                               |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         650 |               0 | 639 |     10 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
-| g1        | n/a   | BUFG/O          | None       |          80 |               0 |  80 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1             |
-| g2        | n/a   | BUFG/O          | None       |           1 |               0 |   1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2             |
-| g4        | n/a   | BUFG/O          | None       |           4 |               0 |   4 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4             |
+| g0        | n/a   | BUFG/O          | None       |         530 |               0 | 517 |     12 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
+| g1        | n/a   | BUFG/O          | None       |         169 |               0 | 169 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1             |
+| g2        | n/a   | BUFG/O          | None       |           3 |               0 |   3 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2             |
+| g3        | n/a   | BUFG/O          | None       |           4 |               0 |   4 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3             |
+| g4        | n/a   | BUFG/O          | None       |           7 |               0 |   7 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4             |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -313,12 +317,14 @@ All Modules
 16. Clock Region Cell Placement per Global Clock: Region X1Y2
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                               |
-+-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |          13 |               0 | 13 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0 |
-| g1        | n/a   | BUFG/O          | None       |          13 |               0 | 13 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1             |
-+-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                   |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------+
+| g1        | n/a   | BUFG/O          | None       |          25 |               0 | 25 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1 |
+| g2        | n/a   | BUFG/O          | None       |           2 |               0 |  2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2 |
+| g3        | n/a   | BUFG/O          | None       |           3 |               0 |  3 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3 |
+| g4        | n/a   | BUFG/O          | None       |           1 |               0 |  1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+---------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -341,33 +347,33 @@ set_property LOC BUFGCTRL_X0Y0 [get_cells SCS_TT_TEST_i/clk_wiz_0/inst/clkout1_b
 #startgroup
 create_pblock {CLKAG_SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0}
 add_cells_to_pblock [get_pblocks  {CLKAG_SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=SCS_TT_TEST_i/clk_wiz_0/inst/mmcm_adv_inst} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0"}]]]
-resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup
 
 # Clock net "SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4" driven by instance "SCS_TT_TEST_i/clk_wiz_0/inst/clkout4_buf" located at site "BUFGCTRL_X0Y3"
 #startgroup
 create_pblock {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4}
 add_cells_to_pblock [get_pblocks  {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4"}]]]
-resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2}
+resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3" driven by instance "SCS_TT_TEST_i/clk_wiz_0/inst/clkout3_buf" located at site "BUFGCTRL_X0Y2"
 #startgroup
 create_pblock {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3}
 add_cells_to_pblock [get_pblocks  {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3"}]]]
-resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
+resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2" driven by instance "SCS_TT_TEST_i/clk_wiz_0/inst/clkout2_buf" located at site "BUFGCTRL_X0Y1"
 #startgroup
 create_pblock {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2}
 add_cells_to_pblock [get_pblocks  {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2"}]]]
-resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2}
+resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1" driven by instance "SCS_TT_TEST_i/clk_wiz_0/inst/clkout1_buf" located at site "BUFGCTRL_X0Y0"
 #startgroup
 create_pblock {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1}
 add_cells_to_pblock [get_pblocks  {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1"}]]]
-resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
