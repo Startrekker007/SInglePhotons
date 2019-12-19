@@ -1,0 +1,732 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xCB316FEDFA07E8E5",
+      "device": "xc7z020clg400-1",
+      "name": "SCS_TT",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "TT_CDELAY_0": "",
+      "TT_CDELAY_1": "",
+      "TT_CDELAY_2": "",
+      "TT_CDELAY_3": "",
+      "CDELAY_T0": "",
+      "TT_DETECTOR_0": ""
+    },
+    "ports": {
+      "T0": {
+        "direction": "I"
+      },
+      "CH0": {
+        "direction": "I"
+      },
+      "CH1": {
+        "direction": "I"
+      },
+      "CH2": {
+        "direction": "I"
+      },
+      "CH3": {
+        "direction": "I"
+      },
+      "SCS_CLKS": {
+        "type": "clk",
+        "direction": "I",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SCS_TT_SCS_CLKS",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SCS_TT_MCLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "TIMEOUT": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "T1": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "T2": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "T3": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "T4": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "TIMEOUTS": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "DRDY": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "DELT": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "DEL0": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "DEL1": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "DEL2": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "DEL3": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "TT_CDELAY_0": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "TT_CDELAY_1": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "TT_CDELAY_2": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "TT_CDELAY_3": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "CDELAY_T0": {
+        "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
+        "xci_name": "SCS_TT_TT_CDELAY_2_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_CDELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SCS_CLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "TT_DETECTOR_0": {
+        "vlnv": "xilinx.com:module_ref:TT_DETECTOR:1.0",
+        "xci_name": "SCS_TT_TT_DETECTOR_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_DETECTOR",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "T0": {
+            "direction": "I"
+          },
+          "CH0": {
+            "direction": "I"
+          },
+          "CH1": {
+            "direction": "I"
+          },
+          "CH2": {
+            "direction": "I"
+          },
+          "CH3": {
+            "direction": "I"
+          },
+          "DELT": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DEL0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DEL1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DEL2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DEL3": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ODELT": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODEL0": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODEL1": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODEL2": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ODEL3": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "T1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T3": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T4": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "TIME_OUTS": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "TIME_OUT": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "DRDY": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "T0_1": {
+        "ports": [
+          "T0",
+          "CDELAY_T0/IDATA",
+          "TT_DETECTOR_0/T0"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "TT_CDELAY_0/IDATA",
+          "TT_DETECTOR_0/CH0"
+        ]
+      },
+      "CH1_1": {
+        "ports": [
+          "CH1",
+          "TT_CDELAY_1/IDATA",
+          "TT_DETECTOR_0/CH1"
+        ]
+      },
+      "CH2_1": {
+        "ports": [
+          "CH2",
+          "TT_CDELAY_2/IDATA",
+          "TT_DETECTOR_0/CH2"
+        ]
+      },
+      "CH3_1": {
+        "ports": [
+          "CH3",
+          "TT_CDELAY_3/IDATA",
+          "TT_DETECTOR_0/CH3"
+        ]
+      },
+      "SCS_CLKS_1": {
+        "ports": [
+          "SCS_CLKS",
+          "TT_CDELAY_2/SCS_CLKS",
+          "TT_CDELAY_3/SCS_CLKS",
+          "CDELAY_T0/SCS_CLKS",
+          "TT_CDELAY_1/SCS_CLKS",
+          "TT_CDELAY_0/SCS_CLKS"
+        ]
+      },
+      "TT_CDELAY_0_DLINE": {
+        "ports": [
+          "TT_CDELAY_0/DLINE",
+          "TT_DETECTOR_0/DEL0"
+        ]
+      },
+      "CDELAY_T0_DLINE": {
+        "ports": [
+          "CDELAY_T0/DLINE",
+          "TT_DETECTOR_0/DELT"
+        ]
+      },
+      "TT_CDELAY_1_DLINE": {
+        "ports": [
+          "TT_CDELAY_1/DLINE",
+          "TT_DETECTOR_0/DEL1"
+        ]
+      },
+      "TT_CDELAY_2_DLINE": {
+        "ports": [
+          "TT_CDELAY_2/DLINE",
+          "TT_DETECTOR_0/DEL2"
+        ]
+      },
+      "TT_CDELAY_3_DLINE": {
+        "ports": [
+          "TT_CDELAY_3/DLINE",
+          "TT_DETECTOR_0/DEL3"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "TT_DETECTOR_0/MCLK"
+        ]
+      },
+      "resetn_1": {
+        "ports": [
+          "resetn",
+          "TT_DETECTOR_0/RESETN"
+        ]
+      },
+      "TIMEOUT_1": {
+        "ports": [
+          "TIMEOUT",
+          "TT_DETECTOR_0/TIME_OUT"
+        ]
+      },
+      "TT_DETECTOR_0_T1": {
+        "ports": [
+          "TT_DETECTOR_0/T1",
+          "T1"
+        ]
+      },
+      "TT_DETECTOR_0_T2": {
+        "ports": [
+          "TT_DETECTOR_0/T2",
+          "T2"
+        ]
+      },
+      "TT_DETECTOR_0_T3": {
+        "ports": [
+          "TT_DETECTOR_0/T3",
+          "T3"
+        ]
+      },
+      "TT_DETECTOR_0_T4": {
+        "ports": [
+          "TT_DETECTOR_0/T4",
+          "T4"
+        ]
+      },
+      "TT_DETECTOR_0_TIME_OUTS": {
+        "ports": [
+          "TT_DETECTOR_0/TIME_OUTS",
+          "TIMEOUTS"
+        ]
+      },
+      "TT_DETECTOR_0_DRDY": {
+        "ports": [
+          "TT_DETECTOR_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "TT_DETECTOR_0_ODELT": {
+        "ports": [
+          "TT_DETECTOR_0/ODELT",
+          "DELT"
+        ]
+      },
+      "TT_DETECTOR_0_ODEL0": {
+        "ports": [
+          "TT_DETECTOR_0/ODEL0",
+          "DEL0"
+        ]
+      },
+      "TT_DETECTOR_0_ODEL1": {
+        "ports": [
+          "TT_DETECTOR_0/ODEL1",
+          "DEL1"
+        ]
+      },
+      "TT_DETECTOR_0_ODEL2": {
+        "ports": [
+          "TT_DETECTOR_0/ODEL2",
+          "DEL2"
+        ]
+      },
+      "TT_DETECTOR_0_ODEL3": {
+        "ports": [
+          "TT_DETECTOR_0/ODEL3",
+          "DEL3"
+        ]
+      }
+    }
+  }
+}
