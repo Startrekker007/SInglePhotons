@@ -1,0 +1,262 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF8343707D882B380",
+      "device": "xc7z020clg400-1",
+      "name": "test",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "PH_CT_0": "",
+      "cdelay_0": "",
+      "cdelay_1": ""
+    },
+    "ports": {
+      "resetn": {
+        "direction": "I"
+      },
+      "CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "idata0": {
+        "direction": "I"
+      },
+      "idata1": {
+        "direction": "I"
+      },
+      "FSEL": {
+        "direction": "I"
+      },
+      "TDATA": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "DRDY": {
+        "type": "data",
+        "direction": "O"
+      },
+      "PRE_DELAY": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "POST_DELAY": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "SCS_CLKS": {
+        "type": "clk",
+        "direction": "I",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "460000000"
+          }
+        }
+      }
+    },
+    "components": {
+      "PH_CT_0": {
+        "vlnv": "xilinx.com:module_ref:PH_CT:1.0",
+        "xci_name": "test_PH_CT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PH_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "IDATA0": {
+            "direction": "I"
+          },
+          "IDATA1": {
+            "direction": "I"
+          },
+          "DLINE0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DLINE1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "TIME_DATA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "FSEL": {
+            "direction": "I"
+          },
+          "PRE_DELAY": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "POST_DELAY": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "cdelay_0": {
+        "vlnv": "xilinx.com:module_ref:cdelay:1.0",
+        "xci_name": "test_cdelay_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cdelay",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IDATA": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DCLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "cdelay_1": {
+        "vlnv": "xilinx.com:module_ref:cdelay:1.0",
+        "xci_name": "test_cdelay_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cdelay",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IDATA": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DCLKS": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DLINE": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "resetn_1": {
+        "ports": [
+          "resetn",
+          "PH_CT_0/RESETN"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "CLK",
+          "PH_CT_0/MCLK",
+          "cdelay_0/MCLK",
+          "cdelay_1/MCLK"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "SCS_CLKS",
+          "cdelay_0/DCLKS",
+          "cdelay_1/DCLKS"
+        ]
+      },
+      "idata_1": {
+        "ports": [
+          "idata0",
+          "PH_CT_0/IDATA0",
+          "cdelay_0/IDATA"
+        ]
+      },
+      "idata1_1": {
+        "ports": [
+          "idata1",
+          "PH_CT_0/IDATA1",
+          "cdelay_1/IDATA"
+        ]
+      },
+      "cdelay_0_DLINE": {
+        "ports": [
+          "cdelay_0/DLINE",
+          "PH_CT_0/DLINE0"
+        ]
+      },
+      "cdelay_1_DLINE": {
+        "ports": [
+          "cdelay_1/DLINE",
+          "PH_CT_0/DLINE1"
+        ]
+      },
+      "FSEL_1": {
+        "ports": [
+          "FSEL",
+          "PH_CT_0/FSEL"
+        ]
+      },
+      "PH_CT_0_TIME_DATA": {
+        "ports": [
+          "PH_CT_0/TIME_DATA",
+          "TDATA"
+        ]
+      },
+      "PH_CT_0_DRDY": {
+        "ports": [
+          "PH_CT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "PH_CT_0_PRE_DELAY": {
+        "ports": [
+          "PH_CT_0/PRE_DELAY",
+          "PRE_DELAY"
+        ]
+      },
+      "PH_CT_0_POST_DELAY": {
+        "ports": [
+          "PH_CT_0/POST_DELAY",
+          "POST_DELAY"
+        ]
+      }
+    }
+  }
+}

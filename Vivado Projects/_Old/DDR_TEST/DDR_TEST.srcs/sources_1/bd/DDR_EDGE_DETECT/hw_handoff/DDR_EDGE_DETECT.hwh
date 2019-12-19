@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 18 12:48:02 2019" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="DDR_EDGE_DETECT" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="DDR_EDGE_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_EDGE_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="SSTATE" SIGIS="undef" SIGNAME="DDR_EDGE_0_sstate">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_EDGE_0" PORT="sstate"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ESTATE" SIGIS="undef" SIGNAME="DDR_EDGE_0_estate">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_EDGE_0" PORT="estate"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="TIME_DATA" RIGHT="0" SIGIS="data" SIGNAME="DDR_EDGE_0_time_dat">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_EDGE_0" PORT="time_dat"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_RESETN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_EDGE_0" PORT="resetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="500000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_WRAPPER_0" PORT="DDR_CLK"/>
+        <CONNECTION INSTANCE="DDR_EDGE_0" PORT="MCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="DDR_DATA" SIGIS="data" SIGNAME="External_Ports_DDR_DATA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DDR_WRAPPER_0" PORT="DDR_DATA"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/DDR_EDGE_0" HWVERSION="1.0" INSTANCE="DDR_EDGE_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DDR_EDGE" VLNV="xilinx.com:module_ref:DDR_EDGE:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="DDR_EDGE_DETECT_DDR_EDGE_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1" NAME="IDATA" RIGHT="0" SIGIS="undef" SIGNAME="DDR_WRAPPER_0_ODATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDR_WRAPPER_0" PORT="ODATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_RESETN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESETN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="time_dat" RIGHT="0" SIGIS="undef" SIGNAME="DDR_EDGE_0_time_dat">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TIME_DATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sstate" SIGIS="undef" SIGNAME="DDR_EDGE_0_sstate">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SSTATE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="estate" SIGIS="undef" SIGNAME="DDR_EDGE_0_estate">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ESTATE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="DDR_EDGE_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DRDY"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/DDR_WRAPPER_0" HWVERSION="1.0" INSTANCE="DDR_WRAPPER_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DDR_WRAPPER" VLNV="xilinx.com:module_ref:DDR_WRAPPER:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="DDR_EDGE_DETECT_DDR_WRAPPER_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="DDR_DATA" SIGIS="undef" SIGNAME="External_Ports_DDR_DATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DDR_DATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="ODATA" RIGHT="0" SIGIS="undef" SIGNAME="DDR_WRAPPER_0_ODATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDR_EDGE_0" PORT="IDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="500000000" DIR="I" NAME="DDR_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

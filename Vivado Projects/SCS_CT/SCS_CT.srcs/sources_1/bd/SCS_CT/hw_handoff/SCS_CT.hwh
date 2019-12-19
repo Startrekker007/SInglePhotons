@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 19 13:39:01 2019" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SCS_CT" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="cdelay_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="cdelay_1" PORT="MCLK"/>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="MCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DRDY" SIGIS="data" SIGNAME="PH_CT_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="FSEL" SIGIS="undef" SIGNAME="External_Ports_FSEL">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="FSEL"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="POST_DELAY" RIGHT="0" SIGIS="data" SIGNAME="PH_CT_0_POST_DELAY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="POST_DELAY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="PRE_DELAY" RIGHT="0" SIGIS="data" SIGNAME="PH_CT_0_PRE_DELAY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="PRE_DELAY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="460000000" DIR="I" LEFT="3" NAME="SCS_CLKS" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_SCS_CLKS">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="cdelay_0" PORT="DCLKS"/>
+        <CONNECTION INSTANCE="cdelay_1" PORT="DCLKS"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="TDATA" RIGHT="0" SIGIS="data" SIGNAME="PH_CT_0_TIME_DATA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="TIME_DATA"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="idata0" SIGIS="undef" SIGNAME="External_Ports_idata0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="cdelay_0" PORT="IDATA"/>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="IDATA0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="idata1" SIGIS="undef" SIGNAME="External_Ports_idata1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="cdelay_1" PORT="IDATA"/>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="IDATA1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="resetn" SIGIS="undef" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PH_CT_0" PORT="RESETN"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/PH_CT_0" HWVERSION="1.0" INSTANCE="PH_CT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PH_CT" VLNV="xilinx.com:module_ref:PH_CT:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_CT_PH_CT_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="IDATA0" SIGIS="undef" SIGNAME="External_Ports_idata0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="idata0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA1" SIGIS="undef" SIGNAME="External_Ports_idata1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="idata1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DLINE0" RIGHT="0" SIGIS="undef" SIGNAME="cdelay_0_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cdelay_0" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DLINE1" RIGHT="0" SIGIS="undef" SIGNAME="cdelay_1_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cdelay_1" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="TIME_DATA" RIGHT="0" SIGIS="undef" SIGNAME="PH_CT_0_TIME_DATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="PH_CT_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DRDY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="FSEL" SIGIS="undef" SIGNAME="External_Ports_FSEL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="FSEL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="PRE_DELAY" RIGHT="0" SIGIS="undef" SIGNAME="PH_CT_0_PRE_DELAY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PRE_DELAY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="POST_DELAY" RIGHT="0" SIGIS="undef" SIGNAME="PH_CT_0_POST_DELAY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="POST_DELAY"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/cdelay_0" HWVERSION="1.0" INSTANCE="cdelay_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cdelay" VLNV="xilinx.com:module_ref:cdelay:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_CT_cdelay_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_idata0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="idata0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DCLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="cdelay_0_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PH_CT_0" PORT="DLINE0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/cdelay_1" HWVERSION="1.0" INSTANCE="cdelay_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cdelay" VLNV="xilinx.com:module_ref:cdelay:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_CT_cdelay_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_idata1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="idata1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DCLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="cdelay_1_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PH_CT_0" PORT="DLINE1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

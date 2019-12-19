@@ -1,0 +1,874 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Dec 19 11:09:09 2019
+| Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_methodology -file DDR_CT_TEST_OV_wrapper_methodology_drc_routed.rpt -pb DDR_CT_TEST_OV_wrapper_methodology_drc_routed.pb -rpx DDR_CT_TEST_OV_wrapper_methodology_drc_routed.rpx
+| Design       : DDR_CT_TEST_OV_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 167
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 2          |
+| TIMING-7  | Critical Warning | No common node between related clocks              | 2          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
+| TIMING-16 | Warning          | Large setup violation                              | 161        |
++-----------+------------------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock DDR_CT_TEST_OV_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0]
+Related violations: <none>
+
+TIMING-6#2 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0 and clk_fpga_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0] -to [get_clocks clk_fpga_0]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0]
+Related violations: <none>
+
+TIMING-7#2 Critical Warning
+No common node between related clocks  
+The clocks clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0 and clk_fpga_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0] -to [get_clocks clk_fpga_0]
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock DDR_CT_TEST_OV_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin DDR_CT_TEST_OV_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.858 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[13]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.887 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[25]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.972 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/SSTATE_reg/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META4_0/U0/idat_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.982 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[17]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[17]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.998 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[5]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.999 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[9]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -2.021 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[1]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -2.026 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[29]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[29]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -2.036 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[16]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -2.046 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[12]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -2.056 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[24]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -2.102 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[15]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -2.146 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[27]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[27]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -2.146 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[6]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -2.157 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/drdy_buf_reg/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META4_0/U0/idat_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -2.161 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[30]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[30]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -2.165 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[22]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[22]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -2.177 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[19]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -2.179 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[10]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -2.205 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[14]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -2.210 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[28]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[28]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -2.225 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/ESTATE_reg/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META4_0/U0/idat_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -2.228 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[20]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[20]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -2.229 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[21]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[21]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -2.235 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[23]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[23]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -2.244 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[3]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -2.257 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[2]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -2.285 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[26]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[26]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -2.288 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[0]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -2.293 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[18]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[18]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -2.304 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[4]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -2.308 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[11]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -2.309 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[8]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -2.326 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[31]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[31]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -2.373 ns between DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[7]/C (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0) and DDR_CT_TEST_OV_i/META32_0/U0/idat_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -2.996 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG0_reg[0]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -2.996 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG1_reg[1]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -2.996 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/ESTATE_reg/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -2.996 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/SD_reg/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -2.996 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[0]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -3.006 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG0_reg[1]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -3.006 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG1_reg[0]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -3.080 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG1_reg[0]/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -3.099 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[21]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -3.099 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[22]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -3.099 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[23]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -3.099 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[24]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -3.100 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[13]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -3.100 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[14]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -3.100 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[15]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -3.100 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[16]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -3.121 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[10]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -3.121 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[11]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -3.121 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[12]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -3.121 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[9]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -3.121 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/drdy_buf_reg/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[12]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[13]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[14]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[15]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[1]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[5]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[7]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -3.123 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[8]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -3.127 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[29]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -3.127 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[30]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -3.127 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[31]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[10]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[16]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[18]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[22]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[25]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[26]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[29]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[6]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[11]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[19]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[20]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[21]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[27]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[28]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[30]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -3.140 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[9]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -3.159 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[0]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -3.159 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[24]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -3.159 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[2]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -3.188 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[17]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -3.188 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[23]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -3.188 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[31]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -3.188 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[3]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -3.188 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pipelined_ctr_reg[4]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -3.248 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[17]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -3.248 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[18]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -3.248 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[19]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -3.248 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[20]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -3.255 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[1]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#97 Warning
+Large setup violation  
+There is a large setup violation of -3.255 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[2]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#98 Warning
+Large setup violation  
+There is a large setup violation of -3.255 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[3]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#99 Warning
+Large setup violation  
+There is a large setup violation of -3.255 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[4]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#100 Warning
+Large setup violation  
+There is a large setup violation of -3.263 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[5]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#101 Warning
+Large setup violation  
+There is a large setup violation of -3.263 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[6]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#102 Warning
+Large setup violation  
+There is a large setup violation of -3.263 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[7]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#103 Warning
+Large setup violation  
+There is a large setup violation of -3.263 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[8]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#104 Warning
+Large setup violation  
+There is a large setup violation of -3.268 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[25]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#105 Warning
+Large setup violation  
+There is a large setup violation of -3.268 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[26]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#106 Warning
+Large setup violation  
+There is a large setup violation of -3.268 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[27]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#107 Warning
+Large setup violation  
+There is a large setup violation of -3.268 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[28]/CE (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#108 Warning
+Large setup violation  
+There is a large setup violation of -3.285 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG0_reg[0]/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#109 Warning
+Large setup violation  
+There is a large setup violation of -3.311 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG1_reg[1]/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#110 Warning
+Large setup violation  
+There is a large setup violation of -3.335 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/ctr_rst_reg/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#111 Warning
+Large setup violation  
+There is a large setup violation of -3.337 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/ESTATE_reg/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#112 Warning
+Large setup violation  
+There is a large setup violation of -3.339 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/SD_reg/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#113 Warning
+Large setup violation  
+There is a large setup violation of -3.350 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG0_reg[1]/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#114 Warning
+Large setup violation  
+There is a large setup violation of -3.758 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/ctr_rst_reg/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#115 Warning
+Large setup violation  
+There is a large setup violation of -3.761 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG0_reg[0]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#116 Warning
+Large setup violation  
+There is a large setup violation of -3.761 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG1_reg[1]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#117 Warning
+Large setup violation  
+There is a large setup violation of -3.761 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/ESTATE_reg/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#118 Warning
+Large setup violation  
+There is a large setup violation of -3.761 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/SD_reg/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#119 Warning
+Large setup violation  
+There is a large setup violation of -3.761 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[0]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#120 Warning
+Large setup violation  
+There is a large setup violation of -3.762 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG0_reg[1]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#121 Warning
+Large setup violation  
+There is a large setup violation of -3.762 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/DEBUG1_reg[0]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#122 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/lDDR_IP0_reg[0]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#123 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/lDDR_IP0_reg[1]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#124 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/lDDR_IP1_reg[0]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#125 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/lDDR_IP1_reg[1]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#126 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pDDR_ip0_reg[0]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#127 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pDDR_ip0_reg[1]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#128 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pDDR_ip1_reg[0]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#129 Warning
+Large setup violation  
+There is a large setup violation of -3.766 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/pDDR_ip1_reg[1]/S (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#130 Warning
+Large setup violation  
+There is a large setup violation of -3.851 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[25]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#131 Warning
+Large setup violation  
+There is a large setup violation of -3.851 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[26]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#132 Warning
+Large setup violation  
+There is a large setup violation of -3.851 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[27]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#133 Warning
+Large setup violation  
+There is a large setup violation of -3.851 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[28]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#134 Warning
+Large setup violation  
+There is a large setup violation of -3.852 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[17]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#135 Warning
+Large setup violation  
+There is a large setup violation of -3.852 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[18]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#136 Warning
+Large setup violation  
+There is a large setup violation of -3.852 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[19]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#137 Warning
+Large setup violation  
+There is a large setup violation of -3.852 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[20]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#138 Warning
+Large setup violation  
+There is a large setup violation of -3.867 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[13]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#139 Warning
+Large setup violation  
+There is a large setup violation of -3.867 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[14]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#140 Warning
+Large setup violation  
+There is a large setup violation of -3.867 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[15]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#141 Warning
+Large setup violation  
+There is a large setup violation of -3.867 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[16]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#142 Warning
+Large setup violation  
+There is a large setup violation of -3.930 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio2_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/SSTATE_reg/D (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#143 Warning
+Large setup violation  
+There is a large setup violation of -3.988 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[29]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#144 Warning
+Large setup violation  
+There is a large setup violation of -3.988 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[30]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#145 Warning
+Large setup violation  
+There is a large setup violation of -3.988 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[31]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#146 Warning
+Large setup violation  
+There is a large setup violation of -3.989 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[21]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#147 Warning
+Large setup violation  
+There is a large setup violation of -3.989 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[22]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#148 Warning
+Large setup violation  
+There is a large setup violation of -3.989 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[23]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#149 Warning
+Large setup violation  
+There is a large setup violation of -3.989 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[24]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#150 Warning
+Large setup violation  
+There is a large setup violation of -4.008 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[10]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#151 Warning
+Large setup violation  
+There is a large setup violation of -4.008 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[11]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#152 Warning
+Large setup violation  
+There is a large setup violation of -4.008 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[12]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#153 Warning
+Large setup violation  
+There is a large setup violation of -4.008 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[9]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#154 Warning
+Large setup violation  
+There is a large setup violation of -4.014 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[5]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#155 Warning
+Large setup violation  
+There is a large setup violation of -4.014 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[6]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#156 Warning
+Large setup violation  
+There is a large setup violation of -4.014 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[7]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#157 Warning
+Large setup violation  
+There is a large setup violation of -4.014 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[8]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#158 Warning
+Large setup violation  
+There is a large setup violation of -4.050 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[1]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#159 Warning
+Large setup violation  
+There is a large setup violation of -4.050 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[2]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#160 Warning
+Large setup violation  
+There is a large setup violation of -4.050 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[3]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#161 Warning
+Large setup violation  
+There is a large setup violation of -4.050 ns between DDR_CT_TEST_OV_i/axi_gpio_1/U0/gpio_core_1/Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and DDR_CT_TEST_OV_i/DDR_CT_0/U0/time_dat_buf_reg[4]/R (clocked by clk_out1_DDR_CT_TEST_OV_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+

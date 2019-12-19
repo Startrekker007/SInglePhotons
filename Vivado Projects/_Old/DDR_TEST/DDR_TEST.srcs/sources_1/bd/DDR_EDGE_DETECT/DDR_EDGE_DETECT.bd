@@ -1,0 +1,233 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x4B07C89E494FEC60",
+      "device": "xc7z020clg400-1",
+      "name": "DDR_EDGE_DETECT",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "DDR_WRAPPER_0": "",
+      "DDR_EDGE_0": ""
+    },
+    "ports": {
+      "DRDY": {
+        "direction": "O"
+      },
+      "SSTATE": {
+        "direction": "O"
+      },
+      "ESTATE": {
+        "direction": "O"
+      },
+      "TIME_DATA": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "RESETN": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "DDR_EDGE_DETECT_MCLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "500000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "DDR_DATA": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "DDR_WRAPPER_0": {
+        "vlnv": "xilinx.com:module_ref:DDR_WRAPPER:1.0",
+        "xci_name": "DDR_EDGE_DETECT_DDR_WRAPPER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DDR_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DDR_EDGE_DETECT_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "500000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DDR_DATA": {
+            "direction": "I",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "ODATA": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "DDR_EDGE_0": {
+        "vlnv": "xilinx.com:module_ref:DDR_EDGE:1.0",
+        "xci_name": "DDR_EDGE_DETECT_DDR_EDGE_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_EDGE",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "IDATA": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DDR_EDGE_DETECT_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "500000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "time_dat": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "sstate": {
+            "direction": "O"
+          },
+          "estate": {
+            "direction": "O"
+          },
+          "DRDY": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "DDR_WRAPPER_0_ODATA": {
+        "ports": [
+          "DDR_WRAPPER_0/ODATA",
+          "DDR_EDGE_0/IDATA"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "MCLK",
+          "DDR_WRAPPER_0/DDR_CLK",
+          "DDR_EDGE_0/MCLK"
+        ]
+      },
+      "DDR_EDGE_0_DRDY": {
+        "ports": [
+          "DDR_EDGE_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "DDR_EDGE_0_sstate": {
+        "ports": [
+          "DDR_EDGE_0/sstate",
+          "SSTATE"
+        ]
+      },
+      "DDR_EDGE_0_estate": {
+        "ports": [
+          "DDR_EDGE_0/estate",
+          "ESTATE"
+        ]
+      },
+      "DDR_EDGE_0_time_dat": {
+        "ports": [
+          "DDR_EDGE_0/time_dat",
+          "TIME_DATA"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "DDR_EDGE_0/resetn"
+        ]
+      },
+      "DDR_DATA_1": {
+        "ports": [
+          "DDR_DATA",
+          "DDR_WRAPPER_0/DDR_DATA"
+        ]
+      }
+    }
+  }
+}

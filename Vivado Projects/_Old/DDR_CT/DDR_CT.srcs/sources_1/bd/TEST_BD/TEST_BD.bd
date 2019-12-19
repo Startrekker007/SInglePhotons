@@ -1,0 +1,269 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x11C70E8D74ECE4D4",
+      "device": "xc7z020clg400-1",
+      "name": "TEST_BD",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "DDR_WRAPPER_0": "",
+      "DDR_WRAPPER_1": "",
+      "DDR_CT_0": ""
+    },
+    "ports": {
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "500000000"
+          }
+        }
+      },
+      "RESETN": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "CH0": {
+        "type": "data",
+        "direction": "I"
+      },
+      "CH1": {
+        "type": "data",
+        "direction": "I"
+      },
+      "TIME_DATA": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "SSTATE": {
+        "type": "data",
+        "direction": "O"
+      },
+      "ESTATE": {
+        "type": "data",
+        "direction": "O"
+      },
+      "DRDY": {
+        "type": "data",
+        "direction": "O"
+      },
+      "inval": {
+        "direction": "O"
+      },
+      "fsel": {
+        "direction": "I"
+      },
+      "DEBUG0": {
+        "type": "data",
+        "direction": "O",
+        "left": "1",
+        "right": "0"
+      },
+      "DEBUG1": {
+        "type": "data",
+        "direction": "O",
+        "left": "1",
+        "right": "0"
+      }
+    },
+    "components": {
+      "DDR_WRAPPER_0": {
+        "vlnv": "xilinx.com:module_ref:DDR_WRAPPER:1.0",
+        "xci_name": "TEST_BD_DDR_WRAPPER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DDR_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DDR_DATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "DDR_WRAPPER_1": {
+        "vlnv": "xilinx.com:module_ref:DDR_WRAPPER:1.0",
+        "xci_name": "TEST_BD_DDR_WRAPPER_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DDR_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DDR_DATA": {
+            "direction": "I"
+          },
+          "ODATA": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "DDR_CT_0": {
+        "vlnv": "xilinx.com:module_ref:DDR_CT:1.0",
+        "xci_name": "TEST_BD_DDR_CT_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "DDR_IP0": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "DDR_IP1": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "FSEL": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "TIME_DATA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "SSTATE": {
+            "direction": "O"
+          },
+          "ESTATE": {
+            "direction": "O"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "INVAL": {
+            "direction": "O"
+          },
+          "DEBUG0": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "DEBUG1": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "DDR_WRAPPER_1/DDR_CLK",
+          "DDR_WRAPPER_0/DDR_CLK",
+          "DDR_CT_0/MCLK"
+        ]
+      },
+      "CH0_1": {
+        "ports": [
+          "CH0",
+          "DDR_WRAPPER_0/DDR_DATA"
+        ]
+      },
+      "CH1_1": {
+        "ports": [
+          "CH1",
+          "DDR_WRAPPER_1/DDR_DATA"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "DDR_CT_0/RESETN"
+        ]
+      },
+      "fsel_1": {
+        "ports": [
+          "fsel",
+          "DDR_CT_0/FSEL"
+        ]
+      },
+      "DDR_WRAPPER_0_ODATA": {
+        "ports": [
+          "DDR_WRAPPER_0/ODATA",
+          "DDR_CT_0/DDR_IP0"
+        ]
+      },
+      "DDR_WRAPPER_1_ODATA": {
+        "ports": [
+          "DDR_WRAPPER_1/ODATA",
+          "DDR_CT_0/DDR_IP1"
+        ]
+      },
+      "DDR_CT_0_SSTATE": {
+        "ports": [
+          "DDR_CT_0/SSTATE",
+          "SSTATE"
+        ]
+      },
+      "DDR_CT_0_ESTATE": {
+        "ports": [
+          "DDR_CT_0/ESTATE",
+          "ESTATE"
+        ]
+      },
+      "DDR_CT_0_DRDY": {
+        "ports": [
+          "DDR_CT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "DDR_CT_0_TIME_DATA": {
+        "ports": [
+          "DDR_CT_0/TIME_DATA",
+          "TIME_DATA"
+        ]
+      },
+      "DDR_CT_0_INVAL": {
+        "ports": [
+          "DDR_CT_0/INVAL",
+          "inval"
+        ]
+      },
+      "DDR_CT_0_DEBUG0": {
+        "ports": [
+          "DDR_CT_0/DEBUG0",
+          "DEBUG0"
+        ]
+      },
+      "DDR_CT_0_DEBUG1": {
+        "ports": [
+          "DDR_CT_0/DEBUG1",
+          "DEBUG1"
+        ]
+      }
+    }
+  }
+}
