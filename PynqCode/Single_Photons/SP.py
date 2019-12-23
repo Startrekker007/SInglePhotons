@@ -5,6 +5,7 @@ from pynq import Overlay
 from pynq import MMIO
 from time import sleep
 import logging
+from typing import List
 import _thread
 TIMER_CLK = 125e6 #Window Timer clock
 REF_CLK = 460e6 #Detection + DDS reference clock
@@ -214,8 +215,8 @@ class SP_TOOLS:
 
         Returns
         -------
-        :class:`int[]`
-            Array of counts for each channel
+        :class:`list` of `int`
+            List of counts for each channel
 
         """
         #Set the window of all channels to specified window value and start the counter
@@ -233,7 +234,7 @@ class SP_TOOLS:
 
         Returns
         -------
-        :class:`int[]`
+        :class:`list` of `int`
             Array of counts for each channel
         """
         # Set the trigger controller to start the counter when the start trigger is acquired
@@ -481,8 +482,13 @@ class SP_TOOLS:
 
         Returns
         -------
-        :class:`[float,float]`
+        :class:`list` of :class:`float`
             48 bit phase increment, first element is 32 bit LSB, second element is 16 bit MSB
+        :class:`float`
+            is 32 bit LSB
+        :class:`float`
+            is 16 bit MSB
+
         """
         enc = int((freq*2**PHASE_BIT_DEPTH)/REF_CLK)#Calculate the phase increment of the DDS to produce the required frequency
         #Split the 48 bit number into 32 and 16 bits

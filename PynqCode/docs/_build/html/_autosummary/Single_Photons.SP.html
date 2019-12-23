@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Single_Photons.SP module &mdash; Single Photons X.Y documentation</title>
+  <title>Single_Photons.SP module &mdash; Single Photons 1.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Developers" href="../authors.html" />
-    <link rel="prev" title="Single_Photons package" href="Single_Photons.html" /> 
+    <link rel="prev" title="Single_Photons.sp_MAIN module" href="Single_Photons.sp_MAIN.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                X.Y
+                1.0
               </div>
             
           
@@ -85,9 +85,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="modules.html">A</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Single_Photons.html">BBB</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CCCCC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single_Photons.sp_MAIN.html">Top Level Python application</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Single Photons Hardware wrapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Release Note</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
@@ -135,10 +134,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="modules.html">Single_Photons</a> &raquo;</li>
-        
-          <li><a href="Single_Photons.html">Single_Photons package</a> &raquo;</li>
         
       <li>Single_Photons.SP module</li>
     
@@ -227,7 +222,7 @@
 <dl class="method">
 <dt id="Single_Photons.SP.SP_TOOLS.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initializes the hardware by first loading and configuring the FPGA with the hardware design and then by creating handles for each AXI GPIO block that allows connjection from the processing system to the FPGA fabric.</p>
+<dd><p>Initializes the hardware by first loading and configuring the FPGA with the hardware design and then by creating handles for each AXI GPIO block that allows connection from the processing system to the FPGA fabric.</p>
 </dd></dl>
 
 <dl class="method">
@@ -285,7 +280,12 @@ Internally used function, should not be called directly.</p>
 <dd class="field-odd"><p><strong>freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Frequency in Hz</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">[float,float]</span></code> – 48 bit phase increment, first element is 32 bit LSB, second element is 16 bit MSB</p>
+<dd class="field-even"><p><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> – 48 bit phase increment, first element is 32 bit LSB, second element is 16 bit MSB</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> – is 32 bit LSB</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> – is 16 bit MSB</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -318,7 +318,7 @@ Internally used function, should not be called directly.</p>
 <dd><p>Enables and waits for the pulse counter to stop counting (based off when the stop signal is pulsed) and returns the counts for each channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int[]</span></code> – Array of counts for each channel</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of <cite>int</cite> – Array of counts for each channel</p>
 </dd>
 </dl>
 </dd></dl>
@@ -332,7 +332,7 @@ Internally used function, should not be called directly.</p>
 <dd class="field-odd"><p><strong>window</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Counting window (in seconds)</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int[]</span></code> – Array of counts for each channel</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of <cite>int</cite> – List of counts for each channel</p>
 </dd>
 </dl>
 </dd></dl>
@@ -512,7 +512,7 @@ Internally used function, should not be called directly.</p>
         <a href="../authors.html" class="btn btn-neutral float-right" title="Developers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Single_Photons.html" class="btn btn-neutral float-left" title="Single_Photons package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Single_Photons.sp_MAIN.html" class="btn btn-neutral float-left" title="Single_Photons.sp_MAIN module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -121,4 +121,5 @@ setup(
     install_requires=[],
     cmdclass={'docs': BuildDocs, 'apidocs': ApiDocs},
     packages=find_packages(include=('*',)),
+    include_package_data=True,
 )

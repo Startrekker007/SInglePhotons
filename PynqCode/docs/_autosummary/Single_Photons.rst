@@ -12,3 +12,4 @@ Submodules
 .. toctree::
 
    Single_Photons.SP
+   Single_Photons.sp_MAIN

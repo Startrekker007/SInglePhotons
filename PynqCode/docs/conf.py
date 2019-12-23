@@ -35,7 +35,7 @@ copyright = 'XXXXX'
 author = 'Measurement Standards Laboratory of New Zealand'
 
 # The short X.Y version
-version = 'X.Y'
+version = '1.0'
 # The full version, including alpha/beta/rc tags
 release = version
 
