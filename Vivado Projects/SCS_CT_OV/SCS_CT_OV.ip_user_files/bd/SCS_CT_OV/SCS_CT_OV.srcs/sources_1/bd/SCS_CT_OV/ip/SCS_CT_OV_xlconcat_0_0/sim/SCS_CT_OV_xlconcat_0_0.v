@@ -61,14 +61,14 @@ module SCS_CT_OV_xlconcat_0_0 (
 );
 
 input wire [0 : 0] In0;
-input wire [3 : 0] In1;
-input wire [3 : 0] In2;
-output wire [8 : 0] dout;
+input wire [7 : 0] In1;
+input wire [7 : 0] In2;
+output wire [16 : 0] dout;
 
   xlconcat_v2_1_3_xlconcat #(
     .IN0_WIDTH(1),
-    .IN1_WIDTH(4),
-    .IN2_WIDTH(4),
+    .IN1_WIDTH(8),
+    .IN2_WIDTH(8),
     .IN3_WIDTH(1),
     .IN4_WIDTH(1),
     .IN5_WIDTH(1),
@@ -98,7 +98,7 @@ output wire [8 : 0] dout;
     .IN29_WIDTH(1),
     .IN30_WIDTH(1),
     .IN31_WIDTH(1),
-    .dout_width(9),
+    .dout_width(17),
     .NUM_PORTS(3)
   ) inst (
     .In0(In0),

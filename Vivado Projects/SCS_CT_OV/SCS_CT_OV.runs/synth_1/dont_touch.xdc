@@ -39,6 +39,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_clk_w
 # IP: bd/SCS_CT_OV/ip/SCS_CT_OV_xlconcat_1_0/SCS_CT_OV_xlconcat_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_xlconcat_1_0 || ORIG_REF_NAME==SCS_CT_OV_xlconcat_1_0} -quiet] -quiet
 
+# IP: bd/SCS_CT_OV/ip/SCS_CT_OV_CLOCK_EXPAND_0_0/SCS_CT_OV_CLOCK_EXPAND_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_CLOCK_EXPAND_0_0 || ORIG_REF_NAME==SCS_CT_OV_CLOCK_EXPAND_0_0} -quiet] -quiet
+
 # IP: bd/SCS_CT_OV/ip/SCS_CT_OV_auto_pc_0/SCS_CT_OV_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_auto_pc_0 || ORIG_REF_NAME==SCS_CT_OV_auto_pc_0} -quiet] -quiet
 

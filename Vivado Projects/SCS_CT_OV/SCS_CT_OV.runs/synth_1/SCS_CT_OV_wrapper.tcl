@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,7 +34,10 @@ set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCS_CT [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {{D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/hdl/SCS_CT_OV_wrapper.vhd}}
+read_vhdl -library xil_defaultlib {
+  {D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/imports/new/CLOCK_EXPAND.vhd}
+  {D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/hdl/SCS_CT_OV_wrapper.vhd}
+}
 add_files {{D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/SCS_CT_OV.bd}}
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_processing_system7_0_0/SCS_CT_OV_processing_system7_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_axi_gpio_0_0/SCS_CT_OV_axi_gpio_0_0_board.xdc}}]

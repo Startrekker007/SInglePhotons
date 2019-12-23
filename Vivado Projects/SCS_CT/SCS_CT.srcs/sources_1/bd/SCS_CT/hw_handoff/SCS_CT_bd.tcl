@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# PH_CT, cdelay, cdelay
+# CT_CDELAY, CT_CDELAY, PH_CT
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -170,9 +170,9 @@ proc create_root_design { parentCell } {
  ] $CLK
   set DRDY [ create_bd_port -dir O -type data DRDY ]
   set FSEL [ create_bd_port -dir I FSEL ]
-  set POST_DELAY [ create_bd_port -dir O -from 3 -to 0 -type data POST_DELAY ]
-  set PRE_DELAY [ create_bd_port -dir O -from 3 -to 0 -type data PRE_DELAY ]
-  set SCS_CLKS [ create_bd_port -dir I -from 3 -to 0 -type clk SCS_CLKS ]
+  set POST_DELAY [ create_bd_port -dir O -from 7 -to 0 -type data POST_DELAY ]
+  set PRE_DELAY [ create_bd_port -dir O -from 7 -to 0 -type data PRE_DELAY ]
+  set SCS_CLKS [ create_bd_port -dir I -from 7 -to 0 -type clk SCS_CLKS ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {460000000} \
  ] $SCS_CLKS
@@ -181,6 +181,28 @@ proc create_root_design { parentCell } {
   set idata1 [ create_bd_port -dir I idata1 ]
   set resetn [ create_bd_port -dir I resetn ]
 
+  # Create instance: CT_CDELAY_0, and set properties
+  set block_name CT_CDELAY
+  set block_cell_name CT_CDELAY_0
+  if { [catch {set CT_CDELAY_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CT_CDELAY_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: CT_CDELAY_1, and set properties
+  set block_name CT_CDELAY
+  set block_cell_name CT_CDELAY_1
+  if { [catch {set CT_CDELAY_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CT_CDELAY_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: PH_CT_0, and set properties
   set block_name PH_CT
   set block_cell_name PH_CT_0
@@ -192,41 +214,19 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: cdelay_0, and set properties
-  set block_name cdelay
-  set block_cell_name cdelay_0
-  if { [catch {set cdelay_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $cdelay_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: cdelay_1, and set properties
-  set block_name cdelay
-  set block_cell_name cdelay_1
-  if { [catch {set cdelay_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $cdelay_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create port connections
+  connect_bd_net -net CT_CDELAY_0_DLINE [get_bd_pins CT_CDELAY_0/DLINE] [get_bd_pins PH_CT_0/DLINE0]
+  connect_bd_net -net CT_CDELAY_1_DLINE [get_bd_pins CT_CDELAY_1/DLINE] [get_bd_pins PH_CT_0/DLINE1]
   connect_bd_net -net FSEL_1 [get_bd_ports FSEL] [get_bd_pins PH_CT_0/FSEL]
   connect_bd_net -net PH_CT_0_DRDY [get_bd_ports DRDY] [get_bd_pins PH_CT_0/DRDY]
   connect_bd_net -net PH_CT_0_POST_DELAY [get_bd_ports POST_DELAY] [get_bd_pins PH_CT_0/POST_DELAY]
   connect_bd_net -net PH_CT_0_PRE_DELAY [get_bd_ports PRE_DELAY] [get_bd_pins PH_CT_0/PRE_DELAY]
   connect_bd_net -net PH_CT_0_TIME_DATA [get_bd_ports TDATA] [get_bd_pins PH_CT_0/TIME_DATA]
-  connect_bd_net -net cdelay_0_DLINE [get_bd_pins PH_CT_0/DLINE0] [get_bd_pins cdelay_0/DLINE]
-  connect_bd_net -net cdelay_1_DLINE [get_bd_pins PH_CT_0/DLINE1] [get_bd_pins cdelay_1/DLINE]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports CLK] [get_bd_pins PH_CT_0/MCLK] [get_bd_pins cdelay_0/MCLK] [get_bd_pins cdelay_1/MCLK]
-  connect_bd_net -net idata1_1 [get_bd_ports idata1] [get_bd_pins PH_CT_0/IDATA1] [get_bd_pins cdelay_1/IDATA]
-  connect_bd_net -net idata_1 [get_bd_ports idata0] [get_bd_pins PH_CT_0/IDATA0] [get_bd_pins cdelay_0/IDATA]
+  connect_bd_net -net SCS_CLKS_1 [get_bd_ports SCS_CLKS] [get_bd_pins CT_CDELAY_0/SCS_CLKS] [get_bd_pins CT_CDELAY_1/SCS_CLKS]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports CLK] [get_bd_pins PH_CT_0/MCLK]
+  connect_bd_net -net idata1_1 [get_bd_ports idata1] [get_bd_pins CT_CDELAY_1/IDATA] [get_bd_pins PH_CT_0/IDATA1]
+  connect_bd_net -net idata_1 [get_bd_ports idata0] [get_bd_pins CT_CDELAY_0/IDATA] [get_bd_pins PH_CT_0/IDATA0]
   connect_bd_net -net resetn_1 [get_bd_ports resetn] [get_bd_pins PH_CT_0/RESETN]
-  connect_bd_net -net xlconcat_0_dout [get_bd_ports SCS_CLKS] [get_bd_pins cdelay_0/DCLKS] [get_bd_pins cdelay_1/DCLKS]
 
   # Create address segments
 

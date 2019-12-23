@@ -34,15 +34,15 @@ use IEEE.NUMERIC_STD.ALL;
 entity PH_CT is
     Port ( IDATA0 : in STD_LOGIC;
            IDATA1 : in STD_LOGIC;
-           DLINE0 : in STD_LOGIC_VECTOR (3 downto 0);
-           DLINE1 : in STD_LOGIC_VECTOR (3 downto 0);
+           DLINE0 : in STD_LOGIC_VECTOR (7 downto 0);
+           DLINE1 : in STD_LOGIC_VECTOR (7 downto 0);
            MCLK : in STD_LOGIC;
            TIME_DATA : out STD_LOGIC_VECTOR (31 downto 0);
            DRDY : out STD_LOGIC := '0';
            RESETN : in STD_LOGIC;
            FSEL : in std_logic;
-           PRE_DELAY : out std_logic_vector(3 downto 0);
-           POST_DELAY : out std_logic_vector(3 downto 0));
+           PRE_DELAY : out std_logic_vector(7 downto 0);
+           POST_DELAY : out std_logic_vector(7 downto 0));
 end PH_CT;
 
 architecture Behavioral of PH_CT is
@@ -56,13 +56,13 @@ signal ldata0 : std_logic := '1';
 signal ldata1 : std_logic := '1';
 signal pdata0 : std_logic := '1';
 signal pdata1 : std_logic := '1';
-signal pdel0 : std_logic_vector(3 downto 0) := "0000";
-signal pdel1 : std_logic_vector(3 downto 0) := "0000";
+signal pdel0 : std_logic_vector(7 downto 0) := x"00";
+signal pdel1 : std_logic_vector(7 downto 0) := x"00";
 signal ctr_rst : std_logic := '1';
 signal ctr_val : std_logic_vector(31 downto 0);
 signal sd : std_logic := '0';
-signal PDEL : std_logic_vector(3 downto 0) := "0000";
-signal ADEL : std_logic_vector(3 downto 0) := "0000";
+signal PDEL : std_logic_vector(7 downto 0) := x"00";
+signal ADEL : std_logic_vector(7 downto 0) := x"00";
 signal ctrbuf : std_logic_vector(31 downto 0) := (others => '0');
 begin
 timer : ph_ctr port map(
@@ -82,13 +82,13 @@ begin
             ctr_rst <= '1';
             drdy <= '0';
             sd <= '0';
-            PDEL <= "0000";
-            ADEL <= "0000";
+            PDEL <= x"00";
+            ADEL <= x"00";
             ctrbuf <= (others => '0');
             pdata0 <= '1';
             pdata1 <= '1';
-            pdel0 <= "0000";
-            pdel1 <= "0000";
+            pdel0 <= x"00";
+            pdel1 <= x"00";
             
         elsif sd = '1' then
             drdy <= '1';

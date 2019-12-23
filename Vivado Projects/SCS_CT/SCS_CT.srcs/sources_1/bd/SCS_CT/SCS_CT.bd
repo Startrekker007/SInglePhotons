@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF286336B0D5E5654",
+      "boundary_crc": "0x2ADA373CFF55CA28",
       "device": "xc7z020clg400-1",
       "name": "SCS_CT",
       "synth_flow_mode": "None",
@@ -9,8 +9,8 @@
       "validated": "true"
     },
     "design_tree": {
-      "cdelay_0": "",
-      "cdelay_1": "",
+      "CT_CDELAY_0": "",
+      "CT_CDELAY_1": "",
       "PH_CT_0": ""
     },
     "ports": {
@@ -51,7 +51,7 @@
       "POST_DELAY": {
         "type": "data",
         "direction": "O",
-        "left": "3",
+        "left": "7",
         "right": "0",
         "parameters": {
           "LAYERED_METADATA": {
@@ -63,34 +63,11 @@
       "PRE_DELAY": {
         "type": "data",
         "direction": "O",
-        "left": "3",
+        "left": "7",
         "right": "0",
         "parameters": {
           "LAYERED_METADATA": {
             "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
-      "SCS_CLKS": {
-        "type": "clk",
-        "direction": "I",
-        "left": "3",
-        "right": "0",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "SCS_CT_SCS_CLKS",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "460000000"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.000",
             "value_src": "default"
           }
         }
@@ -115,41 +92,44 @@
       },
       "resetn": {
         "direction": "I"
+      },
+      "SCS_CLKS": {
+        "type": "clk",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SCS_CT_SCS_CLKS",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
-      "cdelay_0": {
-        "vlnv": "xilinx.com:module_ref:cdelay:1.0",
-        "xci_name": "SCS_CT_cdelay_0_0",
+      "CT_CDELAY_0": {
+        "vlnv": "xilinx.com:module_ref:CT_CDELAY:1.0",
+        "xci_name": "SCS_CT_CT_CDELAY_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "cdelay",
+          "ref_name": "CT_CDELAY",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "IDATA": {
-            "direction": "I"
-          },
-          "MCLK": {
+          "SCS_CLKS": {
             "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_CT_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "DCLKS": {
-            "direction": "I",
-            "left": "3",
+            "left": "7",
             "right": "0",
             "parameters": {
               "CLK_DOMAIN": {
@@ -166,45 +146,31 @@
               }
             }
           },
+          "IDATA": {
+            "direction": "I"
+          },
           "DLINE": {
             "direction": "O",
-            "left": "3",
+            "left": "7",
             "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
           }
         }
       },
-      "cdelay_1": {
-        "vlnv": "xilinx.com:module_ref:cdelay:1.0",
-        "xci_name": "SCS_CT_cdelay_1_0",
+      "CT_CDELAY_1": {
+        "vlnv": "xilinx.com:module_ref:CT_CDELAY:1.0",
+        "xci_name": "SCS_CT_CT_CDELAY_0_1",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "cdelay",
+          "ref_name": "CT_CDELAY",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "IDATA": {
-            "direction": "I"
-          },
-          "MCLK": {
+          "SCS_CLKS": {
             "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_CT_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "DCLKS": {
-            "direction": "I",
-            "left": "3",
+            "left": "7",
             "right": "0",
             "parameters": {
               "CLK_DOMAIN": {
@@ -221,10 +187,16 @@
               }
             }
           },
+          "IDATA": {
+            "direction": "I"
+          },
           "DLINE": {
             "direction": "O",
-            "left": "3",
+            "left": "7",
             "right": "0"
+          },
+          "ODATA": {
+            "direction": "O"
           }
         }
       },
@@ -255,12 +227,12 @@
           },
           "DLINE0": {
             "direction": "I",
-            "left": "3",
+            "left": "7",
             "right": "0"
           },
           "DLINE1": {
             "direction": "I",
-            "left": "3",
+            "left": "7",
             "right": "0"
           },
           "MCLK": {
@@ -293,12 +265,12 @@
           },
           "PRE_DELAY": {
             "direction": "O",
-            "left": "3",
+            "left": "7",
             "right": "0"
           },
           "POST_DELAY": {
             "direction": "O",
-            "left": "3",
+            "left": "7",
             "right": "0"
           }
         }
@@ -335,37 +307,23 @@
           "TDATA"
         ]
       },
-      "cdelay_0_DLINE": {
-        "ports": [
-          "cdelay_0/DLINE",
-          "PH_CT_0/DLINE0"
-        ]
-      },
-      "cdelay_1_DLINE": {
-        "ports": [
-          "cdelay_1/DLINE",
-          "PH_CT_0/DLINE1"
-        ]
-      },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "CLK",
-          "cdelay_0/MCLK",
-          "cdelay_1/MCLK",
           "PH_CT_0/MCLK"
         ]
       },
       "idata1_1": {
         "ports": [
           "idata1",
-          "cdelay_1/IDATA",
+          "CT_CDELAY_1/IDATA",
           "PH_CT_0/IDATA1"
         ]
       },
       "idata_1": {
         "ports": [
           "idata0",
-          "cdelay_0/IDATA",
+          "CT_CDELAY_0/IDATA",
           "PH_CT_0/IDATA0"
         ]
       },
@@ -375,11 +333,23 @@
           "PH_CT_0/RESETN"
         ]
       },
-      "xlconcat_0_dout": {
+      "SCS_CLKS_1": {
         "ports": [
           "SCS_CLKS",
-          "cdelay_0/DCLKS",
-          "cdelay_1/DCLKS"
+          "CT_CDELAY_0/SCS_CLKS",
+          "CT_CDELAY_1/SCS_CLKS"
+        ]
+      },
+      "CT_CDELAY_0_DLINE": {
+        "ports": [
+          "CT_CDELAY_0/DLINE",
+          "PH_CT_0/DLINE0"
+        ]
+      },
+      "CT_CDELAY_1_DLINE": {
+        "ports": [
+          "CT_CDELAY_1/DLINE",
+          "PH_CT_0/DLINE1"
         ]
       }
     }

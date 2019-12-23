@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Wed Dec 18 10:46:54 2019
+| Date         : Fri Dec 20 13:30:41 2019
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file SP_OV_wrapper_utilization_synth.rpt -pb SP_OV_wrapper_utilization_synth.pb
 | Design       : SP_OV_wrapper
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                |  6209 |     0 |     53200 | 11.67 |
-|   LUT as Logic             |  6143 |     0 |     53200 | 11.55 |
+| Slice LUTs*                |  6015 |     0 |     53200 | 11.31 |
+|   LUT as Logic             |  5949 |     0 |     53200 | 11.18 |
 |   LUT as Memory            |    66 |     0 |     17400 |  0.38 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |    66 |     0 |           |       |
-| Slice Registers            | 12593 |     0 |    106400 | 11.84 |
-|   Register as Flip Flop    | 12593 |     0 |    106400 | 11.84 |
+| Slice Registers            | 11935 |     0 |    106400 | 11.22 |
+|   Register as Flip Flop    | 11935 |     0 |    106400 | 11.22 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |     4 |     0 |     26600 |  0.02 |
 | F8 Muxes                   |     0 |     0 |     13300 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 1247  |          Yes |         Set |            - |
-| 11346 |          Yes |       Reset |            - |
+| 1200  |          Yes |         Set |            - |
+| 10735 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -118,7 +118,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    7 |     0 |        32 | 21.88 |
+| BUFGCTRL   |   10 |     0 |        32 | 31.25 |
 | BUFIO      |    0 |     0 |        16 |  0.00 |
 | MMCME2_ADV |    3 |     0 |         4 | 75.00 |
 | PLLE2_ADV  |    0 |     0 |         4 |  0.00 |
@@ -151,21 +151,21 @@ Table of Contents
 +------------+-------+----------------------+
 |  Ref Name  |  Used |  Functional Category |
 +------------+-------+----------------------+
-| FDRE       | 11346 |         Flop & Latch |
-| LUT5       |  2075 |                  LUT |
-| LUT6       |  1678 |                  LUT |
-| LUT4       |  1371 |                  LUT |
-| FDSE       |  1247 |         Flop & Latch |
-| LUT3       |   982 |                  LUT |
-| LUT2       |   783 |                  LUT |
-| LUT1       |   408 |                  LUT |
-| CARRY4     |   400 |           CarryLogic |
+| FDRE       | 10735 |         Flop & Latch |
+| LUT5       |  2065 |                  LUT |
+| LUT6       |  1600 |                  LUT |
+| LUT4       |  1297 |                  LUT |
+| FDSE       |  1200 |         Flop & Latch |
+| LUT3       |   882 |                  LUT |
+| LUT2       |   763 |                  LUT |
+| CARRY4     |   418 |           CarryLogic |
+| LUT1       |   412 |                  LUT |
 | BIBUF      |   130 |                   IO |
 | IDELAYE2   |    48 |                   IO |
 | SRLC32E    |    47 |   Distributed Memory |
 | SRL16E     |    19 |   Distributed Memory |
 | OBUF       |    10 |                   IO |
-| BUFG       |     7 |                Clock |
+| BUFG       |    10 |                Clock |
 | IBUF       |     6 |                   IO |
 | RAMB18E1   |     4 |         Block Memory |
 | OBUFT      |     4 |                   IO |

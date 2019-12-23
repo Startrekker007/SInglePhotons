@@ -66,39 +66,27 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  create_project -in_memory -part xc7z020clg400-1
-  set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint {D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.runs/impl_1/SP_OV_wrapper.dcp}
   set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.cache/wt} [current_project]
   set_property parent.project_path {D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.xpr} [current_project]
   set_property ip_repo_paths {
-  D:/SInglePhotons/HW_IP/CT_AXI_PERIPH
-  D:/SInglePhotons/HW_IP/ST_AXI_PERIPH
-  D:/SInglePhotons/HW_IP/SCH_IA_IP
-  D:/SInglePhotons/HW_IP/TDC
-  D:/SInglePhotons/HW_IP/COUNTER_AXI
-  D:/SInglePhotons/HW_IP/DDS_AXI_PERIPH
-  D:/SInglePhotons/HW_IP/DDS_COM_TEST
-  D:/SInglePhotons/HW_IP/TIME_TAGGER
-  D:/SInglePhotons/HW_IP/TT_AXI_PERIPH
-  D:/SInglePhotons/HW_IP/DD_AXI_PERIPH
-  D:/SInglePhotons/HW_IP/DELAY8
+  d:/SInglePhotons/HW_IP/COUNTER_AXI
+  d:/SInglePhotons/HW_IP/DDS_AXI_PERIPH
+  d:/SInglePhotons/HW_IP/DDS_COM_TEST
+  d:/SInglePhotons/HW_IP/DD_AXI_PERIPH
+  d:/SInglePhotons/HW_IP/DELAY8
+  d:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH
+  d:/SInglePhotons/HW_IP/SCS_TT_AXI_PERIPH
+  d:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH
+  D:/SInglePhotons/HW_IP/SCS_CT
+  D:/SInglePhotons/HW_IP/SCS_ST
+  D:/SInglePhotons/HW_IP/SCS_TT
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet {{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/SP_OV_wrapper.dcp}}
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files {{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/SP_OV.bd}}
-  set_param project.isImplRun false
-  read_xdc {{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc}}
-  set_param project.isImplRun true
-  link_design -top SP_OV_wrapper -part xc7z020clg400-1
-  set_param project.isImplRun false
-  write_hwdef -force -file SP_OV_wrapper.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {

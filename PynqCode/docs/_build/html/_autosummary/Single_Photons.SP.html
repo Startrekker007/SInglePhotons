@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Single_Photons.SP module &mdash; Single Photons X.Y documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developers" href="../authors.html" />
+    <link rel="prev" title="Single_Photons package" href="Single_Photons.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Single Photons
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                X.Y
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single_Photons.html">BBB</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CCCCC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Release Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Single Photons</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Single_Photons</a> &raquo;</li>
+        
+          <li><a href="Single_Photons.html">Single_Photons package</a> &raquo;</li>
+        
+      <li>Single_Photons.SP module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Single_Photons.SP">
+<span id="single-photons-sp-module"></span><h1>Single_Photons.SP module<a class="headerlink" href="#module-Single_Photons.SP" title="Permalink to this headline">¶</a></h1>
+<p>Underlying module consisting of all base functions controlling each feature of the hardware design</p>
+<dl class="class">
+<dt id="Single_Photons.SP.SP_TOOLS">
+<em class="property">class </em><code class="sig-name descname">SP_TOOLS</code><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.DD_idelay">
+<code class="sig-name descname">DD_idelay</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">tap</em>, <em class="sig-param">stage</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.DD_idelay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the input delay of the specified channel by configuring the delay line taps and the number of delay line stages to include</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to delay (0-3)</p></li>
+<li><p><strong>tap</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Delay line tap (0-31)</p></li>
+<li><p><strong>stage</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Number of delay line stages (0-7)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.TT_activate">
+<code class="sig-name descname">TT_activate</code><span class="sig-paren">(</span><em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.TT_activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the time out of the time tagger and pulls the time tagger out of reset, activating it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Time out in seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.TT_proc">
+<code class="sig-name descname">TT_proc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.TT_proc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time tagger sampling process, waits until time tagger has data ready, then calculates time intervals for each channel from T0 and includes fine times and returns a time interval for each channel and which channels timed out.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> – A dictionary containing time intervals (‘T1’…’T4’) and boolean time outs (‘T1s’…’T4s’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.TT_reset">
+<code class="sig-name descname">TT_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.TT_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Puts time tagger into reset, stopping it</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.TT_set_timeout">
+<code class="sig-name descname">TT_set_timeout</code><span class="sig-paren">(</span><em class="sig-param">timeval</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.TT_set_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the time out of the time tagger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Time out in seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.TT_wait_for_rdy">
+<code class="sig-name descname">TT_wait_for_rdy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.TT_wait_for_rdy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until time tagger tags each channel or times out (Hangs the thread)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the hardware by first loading and configuring the FPGA with the hardware design and then by creating handles for each AXI GPIO block that allows connjection from the processing system to the FPGA fabric.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.calc_dc_lim">
+<code class="sig-name descname">calc_dc_lim</code><span class="sig-paren">(</span><em class="sig-param">freq</em>, <em class="sig-param">dc</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.calc_dc_lim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the count value of the hardware counter where the output changes from high to low after this count value is passed by the hardware counter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Frequency of the signal currently being emitted.</p></li>
+<li><p><strong>dc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Duty cycle value (0-1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> – Count value the hardware counter counts up to before switching the output signal from high to low.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.calc_delay">
+<code class="sig-name descname">calc_delay</code><span class="sig-paren">(</span><em class="sig-param">delay</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.calc_delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the delay timer count value from a time in seconds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Delay time in seconds</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> – Count limit for delay timer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.ct_arm_and_wait">
+<code class="sig-name descname">ct_arm_and_wait</code><span class="sig-paren">(</span><em class="sig-param">first</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.ct_arm_and_wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Arm two channel rising edge coincidence timer and hang until time data is ready (On channel 0 and 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>first</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Defines which channel to listen for start rising edge (0 or 1)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> – Time between rising edges (in seconds)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.encode_phase_inc">
+<code class="sig-name descname">encode_phase_inc</code><span class="sig-paren">(</span><em class="sig-param">freq</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.encode_phase_inc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a supplied frequency to a phase increment amount that is supplied to the DDS modules to produce the necessary sine wave.
+Internally used function, should not be called directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Frequency in Hz</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">[float,float]</span></code> – 48 bit phase increment, first element is 32 bit LSB, second element is 16 bit MSB</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_disable_channels">
+<code class="sig-name descname">pc_disable_channels</code><span class="sig-paren">(</span><em class="sig-param">channels</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_disable_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable counting on supplied channels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channels to disable counting on (binary encoded)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_enable_channels">
+<code class="sig-name descname">pc_enable_channels</code><span class="sig-paren">(</span><em class="sig-param">channels</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_enable_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable counting on supplied channels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channels to enable counting on (binary encoded)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_ex_trig_stop">
+<code class="sig-name descname">pc_ex_trig_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_ex_trig_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables and waits for the pulse counter to stop counting (based off when the stop signal is pulsed) and returns the counts for each channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int[]</span></code> – Array of counts for each channel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_ex_triggered">
+<code class="sig-name descname">pc_ex_triggered</code><span class="sig-paren">(</span><em class="sig-param">window</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_ex_triggered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start counting function for externally supplied start signal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>window</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Counting window (in seconds)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int[]</span></code> – Array of counts for each channel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_read_counts">
+<code class="sig-name descname">pc_read_counts</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_read_counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read counts on channel specified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to read counts of (0-3)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> – Number of counts</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_set_window">
+<code class="sig-name descname">pc_set_window</code><span class="sig-paren">(</span><em class="sig-param">window</em>, <em class="sig-param">channels</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_set_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the pulse counter counting window period</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>window</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Time to count for (in seconds)</p></li>
+<li><p><strong>channels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channels to count on (binary encoded)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pc_wait_for_rdy">
+<code class="sig-name descname">pc_wait_for_rdy</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pc_wait_for_rdy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hangs the thread until the counter has data ready to be acquired</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to wait for</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Mode of operation, 0 for fixed window mode, or 1 for external stop trigger mode</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_disable">
+<code class="sig-name descname">pg_disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable signal generator, holds the submodule in reset bringing all outputs low</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_disable_channel">
+<code class="sig-name descname">pg_disable_channel</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_disable_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable specified channel, places channel into tristate high Z mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to disable (0-3)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_enable">
+<code class="sig-name descname">pg_enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables the signal generator, takes hardware submodule out of reset</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_enable_channel">
+<code class="sig-name descname">pg_enable_channel</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_enable_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable specified channel, takes channel out of tristate high Z mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to enable (0-3)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_set_channel_freq">
+<code class="sig-name descname">pg_set_channel_freq</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">freq</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_set_channel_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the frequency of the specified channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to set frequency of (0-3)</p></li>
+<li><p><strong>freq</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Frequency to set channel to (in Hz)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_set_dc">
+<code class="sig-name descname">pg_set_dc</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">dc</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_set_dc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the duty cycle of the specified channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to set the duty cycle of (0-3)</p></li>
+<li><p><strong>dc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Duty cycle to set the specified channel to (0-1)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_set_delay">
+<code class="sig-name descname">pg_set_delay</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">delay</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_set_delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the delay of the specified channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to set delay of (0-3)</p></li>
+<li><p><strong>delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The delay the specified channel is to be set to(in seconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.pg_set_pw">
+<code class="sig-name descname">pg_set_pw</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">pw</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.pg_set_pw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the pulse width of the channel specified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Channel to set pulse width of (0-3)</p></li>
+<li><p><strong>pw</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Pulse width to set channel to (in milliseconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.st_arm_and_wait">
+<code class="sig-name descname">st_arm_and_wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.st_arm_and_wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Arm single channel inter-rising_edge timer and hang until time data is ready to be acquired</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> – Time between detected rising edges (in seconds)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Single_Photons.SP.SP_TOOLS.uencode">
+<code class="sig-name descname">uencode</code><span class="sig-paren">(</span><em class="sig-param">val</em>, <em class="sig-param">length</em><span class="sig-paren">)</span><a class="headerlink" href="#Single_Photons.SP.SP_TOOLS.uencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of binary ones in an integer of specified length</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Arbitrary integer to get the number of binary ones from</p></li>
+<li><p><strong>length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Length of the binary integer to include when counting up the ones.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> – The total number of ones within the binary length specified in the specified integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../authors.html" class="btn btn-neutral float-right" title="Developers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Single_Photons.html" class="btn btn-neutral float-left" title="Single_Photons package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

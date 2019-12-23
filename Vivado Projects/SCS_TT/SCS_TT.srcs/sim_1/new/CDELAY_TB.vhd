@@ -37,14 +37,14 @@ end CDELAY_TB;
 
 architecture Behavioral of CDELAY_TB is
 component TT_CDELAY is port(
-    SCS_CLKS : in STD_LOGIC_vector(3 downto 0);
+    SCS_CLKS : in STD_LOGIC_vector(7 downto 0);
            IDATA : in STD_LOGIC;
-           DLINE : out STD_LOGIC_VECTOR (3 downto 0)
+           DLINE : out STD_LOGIC_VECTOR (7 downto 0)
 );
 end component;
-signal SCS_CLKS : std_logic_vector(3 downto 0) := "0000";
+signal SCS_CLKS : std_logic_vector(7 downto 0) := "00000000";
 signal IDATA : std_logic := '0';
-signal DLINE : std_logic_vector(3 downto 0);
+signal DLINE : std_logic_vector(7 downto 0);
 signal MCLK : std_logic := '0';
 begin
 DUT : TT_CDELAY port map(
@@ -62,7 +62,7 @@ begin
 end process;
 clk1 : process
 begin
-    wait for 0.5ns;
+    wait for 0.25ns;
     loop
     SCS_CLKS(1) <= not SCS_CLKS(1);
     wait for 1ns;
@@ -70,7 +70,7 @@ begin
 end process;
 clk2 : process
 begin
-    wait for 1ns;
+    wait for 0.5ns;
     loop
     SCS_CLKS(2) <= not SCS_CLKS(2);
     wait for 1ns;
@@ -78,9 +78,41 @@ begin
 end process;
 clk3 : process
 begin
-    wait for 1.5ns;
+    wait for 0.75ns;
     loop
     SCS_CLKS(3) <= not SCS_CLKS(3);
+    wait for 1ns;
+    end loop;
+end process;
+clk4 : process
+begin
+    wait for 1ns;
+    loop
+    SCS_CLKS(4) <= not SCS_CLKS(4);
+    wait for 1ns;
+    end loop;
+end process;
+clk5 : process
+begin
+    wait for 1.25ns;
+    loop
+    SCS_CLKS(5) <= not SCS_CLKS(5);
+    wait for 1ns;
+    end loop;
+end process;
+clk6 : process
+begin
+    wait for 1.5ns;
+    loop
+    SCS_CLKS(6) <= not SCS_CLKS(6);
+    wait for 1ns;
+    end loop;
+end process;
+clk7 : process
+begin
+    wait for 1.75ns;
+    loop
+    SCS_CLKS(7) <= not SCS_CLKS(7);
     wait for 1ns;
     end loop;
 end process;

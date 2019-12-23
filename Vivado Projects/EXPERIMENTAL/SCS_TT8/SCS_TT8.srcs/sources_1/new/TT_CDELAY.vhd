@@ -69,27 +69,27 @@ begin
     end if;
 end process;
 ----------------------------------
-process(SCS_CLKS(4))
+process(SCS_CLKS(0))
 begin
-    if(rising_edge(SCS_CLKS(4))) then
+    if(falling_edge(SCS_CLKS(0))) then
         idline(4) <= IDATA;
     end if;
 end process;
-process(SCS_CLKS(5))
+process(SCS_CLKS(1))
 begin
-    if(rising_edge(SCS_CLKS(5))) then
+    if(falling_edge(SCS_CLKS(1))) then
         idline(5) <= IDATA;
     end if;
 end process;
-process(SCS_CLKS(6))
+process(SCS_CLKS(2))
 begin
-    if(rising_edge(SCS_CLKS(6))) then
+    if(falling_edge(SCS_CLKS(2))) then
         idline(6) <= IDATA;
     end if;
 end process;
-process(SCS_CLKS(7))
+process(SCS_CLKS(3))
 begin
-    if(rising_edge(SCS_CLKS(7))) then
+    if(falling_edge(SCS_CLKS(3))) then
         idline(7) <= IDATA;
     end if;
 end process;

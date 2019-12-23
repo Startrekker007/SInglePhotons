@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Dec 19 13:39:55 2019
+--Date        : Fri Dec 20 12:38:16 2019
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_CT_OV.bd
 --Design      : SCS_CT_OV
@@ -1101,7 +1101,7 @@ entity SCS_CT_OV is
     idata1 : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of SCS_CT_OV : entity is "SCS_CT_OV,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SCS_CT_OV,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=10,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of SCS_CT_OV : entity is "SCS_CT_OV,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SCS_CT_OV,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=11,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of SCS_CT_OV : entity is "SCS_CT_OV.hwdef";
 end SCS_CT_OV;
@@ -1198,7 +1198,7 @@ architecture STRUCTURE of SCS_CT_OV is
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
     gpio_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    gpio2_io_i : in STD_LOGIC_VECTOR ( 8 downto 0 )
+    gpio2_io_i : in STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component SCS_CT_OV_axi_gpio_0_0;
   component SCS_CT_OV_rst_ps7_0_100M_0 is
@@ -1243,9 +1243,9 @@ architecture STRUCTURE of SCS_CT_OV is
   component SCS_CT_OV_xlconcat_0_0 is
   port (
     In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    In2 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    dout : out STD_LOGIC_VECTOR ( 8 downto 0 )
+    In1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    In2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component SCS_CT_OV_xlconcat_0_0;
   component SCS_CT_OV_clk_wiz_0_0 is
@@ -1272,18 +1272,25 @@ architecture STRUCTURE of SCS_CT_OV is
     CLK : in STD_LOGIC;
     DRDY : out STD_LOGIC;
     FSEL : in STD_LOGIC;
-    POST_DELAY : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    PRE_DELAY : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    POST_DELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    PRE_DELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
     TDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
     idata0 : in STD_LOGIC;
     idata1 : in STD_LOGIC;
     resetn : in STD_LOGIC
   );
   end component SCS_CT_OV_SCS_CT_wrapper_0_0;
+  component SCS_CT_OV_CLOCK_EXPAND_0_0 is
+  port (
+    MMCM_I : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    SCS_CLKS : out STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component SCS_CT_OV_CLOCK_EXPAND_0_0;
+  signal CLOCK_EXPAND_0_SCS_CLKS : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SCS_CT_wrapper_0_DRDY : STD_LOGIC;
-  signal SCS_CT_wrapper_0_POST_DELAY : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal SCS_CT_wrapper_0_PRE_DELAY : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal SCS_CT_wrapper_0_POST_DELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal SCS_CT_wrapper_0_PRE_DELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SCS_CT_wrapper_0_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_gpio_0_gpio2_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_0_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1389,7 +1396,7 @@ architecture STRUCTURE of SCS_CT_OV is
   signal ps7_0_axi_periph_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -1429,9 +1436,14 @@ architecture STRUCTURE of SCS_CT_OV is
 begin
   idata0_1 <= idata0;
   idata1_1 <= idata1;
+CLOCK_EXPAND_0: component SCS_CT_OV_CLOCK_EXPAND_0_0
+     port map (
+      MMCM_I(3 downto 0) => xlconcat_1_dout(3 downto 0),
+      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0)
+    );
 DATA: component SCS_CT_OV_axi_gpio_0_0
      port map (
-      gpio2_io_i(8 downto 0) => xlconcat_0_dout(8 downto 0),
+      gpio2_io_i(16 downto 0) => xlconcat_0_dout(16 downto 0),
       gpio_io_i(31 downto 0) => SCS_CT_wrapper_0_TDATA(31 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(8 downto 0),
@@ -1458,9 +1470,9 @@ SCS_CT_wrapper_0: component SCS_CT_OV_SCS_CT_wrapper_0_0
       CLK => clk_wiz_0_clk_out1,
       DRDY => SCS_CT_wrapper_0_DRDY,
       FSEL => axi_gpio_0_gpio2_io_o(0),
-      POST_DELAY(3 downto 0) => SCS_CT_wrapper_0_POST_DELAY(3 downto 0),
-      PRE_DELAY(3 downto 0) => SCS_CT_wrapper_0_PRE_DELAY(3 downto 0),
-      SCS_CLKS(3 downto 0) => xlconcat_1_dout(3 downto 0),
+      POST_DELAY(7 downto 0) => SCS_CT_wrapper_0_POST_DELAY(7 downto 0),
+      PRE_DELAY(7 downto 0) => SCS_CT_wrapper_0_PRE_DELAY(7 downto 0),
+      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0),
       TDATA(31 downto 0) => SCS_CT_wrapper_0_TDATA(31 downto 0),
       idata0 => idata0_1,
       idata1 => idata1_1,
@@ -1666,9 +1678,9 @@ rst_ps7_0_100M: component SCS_CT_OV_rst_ps7_0_100M_0
 xlconcat_0: component SCS_CT_OV_xlconcat_0_0
      port map (
       In0(0) => SCS_CT_wrapper_0_DRDY,
-      In1(3 downto 0) => SCS_CT_wrapper_0_PRE_DELAY(3 downto 0),
-      In2(3 downto 0) => SCS_CT_wrapper_0_POST_DELAY(3 downto 0),
-      dout(8 downto 0) => xlconcat_0_dout(8 downto 0)
+      In1(7 downto 0) => SCS_CT_wrapper_0_PRE_DELAY(7 downto 0),
+      In2(7 downto 0) => SCS_CT_wrapper_0_POST_DELAY(7 downto 0),
+      dout(16 downto 0) => xlconcat_0_dout(16 downto 0)
     );
 xlconcat_1: component SCS_CT_OV_xlconcat_1_0
      port map (

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Dec 18 10:53:35 2019
+| Date             : Fri Dec 20 14:41:13 2019
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file SP_OV_wrapper_power_routed.rpt -pb SP_OV_wrapper_power_summary_routed.pb -rpx SP_OV_wrapper_power_routed.rpx
 | Design           : SP_OV_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.109        |
+| Total On-Chip Power (W)  | 2.119        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.953        |
+| Dynamic (W)              | 1.962        |
 | Device Static (W)        | 0.157        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 60.7         |
-| Junction Temperature (C) | 49.3         |
+| Max Ambient (C)          | 60.6         |
+| Junction Temperature (C) | 49.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,22 +52,22 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.096 |       12 |       --- |             --- |
-| Slice Logic             |     0.182 |    18997 |       --- |             --- |
-|   Others                |     0.161 |     1032 |       --- |             --- |
-|   LUT as Logic          |     0.013 |     5548 |     53200 |           10.43 |
-|   CARRY4                |     0.005 |      372 |     13300 |            2.80 |
-|   Register              |     0.003 |    10926 |    106400 |           10.27 |
+| Clocks                  |     0.114 |       15 |       --- |             --- |
+| Slice Logic             |     0.183 |    18091 |       --- |             --- |
+|   Others                |     0.161 |      994 |       --- |             --- |
+|   LUT as Logic          |     0.014 |     5381 |     53200 |           10.11 |
+|   CARRY4                |     0.005 |      390 |     13300 |            2.93 |
+|   Register              |     0.003 |    10291 |    106400 |            9.67 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   F7/F8 Muxes           |    <0.001 |        4 |     53200 |           <0.01 |
-| Signals                 |     0.027 |    14434 |       --- |             --- |
+| Signals                 |     0.031 |    13803 |       --- |             --- |
 | Block RAM               |     0.017 |        2 |       140 |            1.43 |
-| MMCM                    |     0.350 |        3 |         4 |           75.00 |
+| MMCM                    |     0.336 |        3 |         4 |           75.00 |
 | DSPs                    |    <0.001 |        4 |       220 |            1.82 |
 | I/O                     |     0.025 |       20 |       125 |           16.00 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
 | Static Power            |     0.157 |          |           |                 |
-| Total                   |     2.109 |          |           |                 |
+| Total                   |     2.118 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.182 |       0.163 |      0.018 |
-| Vccaux    |       1.800 |     0.312 |       0.295 |      0.017 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vccint    |       1.000 |     0.207 |       0.189 |      0.018 |
+| Vccaux    |       1.800 |     0.302 |       0.285 |      0.017 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -90,7 +90,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.682 |       0.647 |      0.035 |
+| Vccpint   |       1.000 |     0.682 |       0.647 |      0.036 |
 | Vccpaux   |       1.800 |     0.036 |       0.026 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.354 |       0.352 |      0.002 |
@@ -145,6 +145,9 @@ Table of Contents
 | clk_out1_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAY_CLK/inst/clk_out1_SP_OV_clk_wiz_0_1        |             3.2 |
 | clk_out1_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clk_out1_SP_OV_clk_wiz_1_1          |             2.2 |
 | clk_out1_SP_OV_clk_wiz_1_2_1 | SP_OV_i/TIMER_CLK/inst/clk_out1_SP_OV_clk_wiz_1_2        |             8.0 |
+| clk_out2_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clk_out2_SP_OV_clk_wiz_1_1          |             2.2 |
+| clk_out3_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clk_out3_SP_OV_clk_wiz_1_1          |             2.2 |
+| clk_out4_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clk_out4_SP_OV_clk_wiz_1_1          |             2.2 |
 | clkfbout_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAY_CLK/inst/clkfbout_SP_OV_clk_wiz_0_1        |            50.0 |
 | clkfbout_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clkfbout_SP_OV_clk_wiz_1_1          |            50.0 |
 | clkfbout_SP_OV_clk_wiz_1_2_1 | SP_OV_i/TIMER_CLK/inst/clkfbout_SP_OV_clk_wiz_1_2        |            10.0 |
@@ -160,30 +163,30 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| SP_OV_wrapper               |     1.953 |
-|   SP_OV_i                   |     1.951 |
-|     CT_AXI_PERIPH_wrapper_0 |     0.004 |
-|       U0                    |     0.004 |
-|     DDS_AXI_PERIPH_wrapp_0  |     0.083 |
-|       U0                    |     0.083 |
-|     DD_AXI_PERIPH_wrapper_0 |     0.197 |
-|       U0                    |     0.197 |
+| SP_OV_wrapper               |     1.961 |
+|   SP_OV_i                   |     1.959 |
+|     DDS_AXI_PERIPH_wrapp_0  |     0.084 |
+|       U0                    |     0.084 |
+|     DD_AXI_PERIPH_wrapper_0 |     0.198 |
+|       U0                    |     0.198 |
 |     DELAY_CLK               |     0.123 |
 |       inst                  |     0.123 |
-|     P_COUNTER_wrapper_0     |     0.015 |
-|       U0                    |     0.015 |
-|     REF_CLK                 |     0.122 |
-|       inst                  |     0.122 |
-|     ST_AXI_PERIPH_wrapper_0 |     0.005 |
-|       U0                    |     0.005 |
+|     P_COUNTER_wrapper_0     |     0.016 |
+|       U0                    |     0.016 |
+|     REF_CLK                 |     0.108 |
+|       inst                  |     0.108 |
+|     SCS_CT_AXI_PERIPH_wr_0  |     0.011 |
+|       U0                    |     0.011 |
+|     SCS_ST_AXI_PERIPH_wr_0  |     0.009 |
+|       U0                    |     0.009 |
+|     SCS_TT_AXI_PERIPH_wr_0  |     0.033 |
+|       U0                    |     0.033 |
 |     TIMER_CLK               |     0.107 |
 |       inst                  |     0.107 |
-|     TT_AXI_PERIPH_wrapper_0 |     0.025 |
-|       U0                    |     0.025 |
-|     axi_interconnect_0      |     0.012 |
-|       s00_couplers          |     0.004 |
-|       tier2_xbar_0          |     0.001 |
+|     axi_interconnect_0      |     0.011 |
+|       s00_couplers          |     0.005 |
 |       tier2_xbar_1          |     0.001 |
+|       tier2_xbar_2          |     0.001 |
 |       tier2_xbar_3          |     0.001 |
 |       tier2_xbar_4          |     0.001 |
 |       xbar                  |     0.001 |

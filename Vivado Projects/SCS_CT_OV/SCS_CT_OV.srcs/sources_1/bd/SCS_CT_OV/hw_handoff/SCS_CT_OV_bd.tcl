@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source SCS_CT_OV_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# CLOCK_EXPAND
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -165,13 +172,24 @@ proc create_root_design { parentCell } {
   set idata0 [ create_bd_port -dir I -type data idata0 ]
   set idata1 [ create_bd_port -dir I -type data idata1 ]
 
+  # Create instance: CLOCK_EXPAND_0, and set properties
+  set block_name CLOCK_EXPAND
+  set block_cell_name CLOCK_EXPAND_0
+  if { [catch {set CLOCK_EXPAND_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CLOCK_EXPAND_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: DATA, and set properties
   set DATA [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DATA ]
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS {1} \
    CONFIG.C_ALL_INPUTS_2 {1} \
    CONFIG.C_ALL_OUTPUTS {0} \
-   CONFIG.C_GPIO2_WIDTH {9} \
+   CONFIG.C_GPIO2_WIDTH {17} \
    CONFIG.C_IS_DUAL {1} \
  ] $DATA
 
@@ -197,26 +215,26 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT2_JITTER {210.749} \
    CONFIG.CLKOUT2_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT2_REQUESTED_PHASE {90.000} \
+   CONFIG.CLKOUT2_REQUESTED_PHASE {45.000} \
    CONFIG.CLKOUT2_USED {true} \
    CONFIG.CLKOUT3_JITTER {210.749} \
    CONFIG.CLKOUT3_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT3_REQUESTED_PHASE {180.000} \
+   CONFIG.CLKOUT3_REQUESTED_PHASE {90.000} \
    CONFIG.CLKOUT3_USED {true} \
    CONFIG.CLKOUT4_JITTER {210.749} \
    CONFIG.CLKOUT4_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT4_REQUESTED_PHASE {270.000} \
+   CONFIG.CLKOUT4_REQUESTED_PHASE {135.000} \
    CONFIG.CLKOUT4_USED {true} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {46.000} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT1_PHASE {90.000} \
+   CONFIG.MMCM_CLKOUT1_PHASE {45.000} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT2_PHASE {180.000} \
+   CONFIG.MMCM_CLKOUT2_PHASE {90.000} \
    CONFIG.MMCM_CLKOUT3_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT3_PHASE {270.000} \
+   CONFIG.MMCM_CLKOUT3_PHASE {135.000} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
    CONFIG.NUM_OUT_CLKS {4} \
    CONFIG.RESET_PORT {resetn} \
@@ -1010,8 +1028,8 @@ proc create_root_design { parentCell } {
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
   set_property -dict [ list \
    CONFIG.IN0_WIDTH {1} \
-   CONFIG.IN1_WIDTH {4} \
-   CONFIG.IN2_WIDTH {4} \
+   CONFIG.IN1_WIDTH {8} \
+   CONFIG.IN2_WIDTH {8} \
    CONFIG.NUM_PORTS {3} \
  ] $xlconcat_0
 
@@ -1029,6 +1047,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins UTIL/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
 
   # Create port connections
+  connect_bd_net -net CLOCK_EXPAND_0_SCS_CLKS [get_bd_pins CLOCK_EXPAND_0/SCS_CLKS] [get_bd_pins SCS_CT_wrapper_0/SCS_CLKS]
   connect_bd_net -net SCS_CT_wrapper_0_DRDY [get_bd_pins SCS_CT_wrapper_0/DRDY] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net SCS_CT_wrapper_0_POST_DELAY [get_bd_pins SCS_CT_wrapper_0/POST_DELAY] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net SCS_CT_wrapper_0_PRE_DELAY [get_bd_pins SCS_CT_wrapper_0/PRE_DELAY] [get_bd_pins xlconcat_0/In1]
@@ -1045,7 +1064,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins DATA/gpio2_io_i] [get_bd_pins xlconcat_0/dout]
-  connect_bd_net -net xlconcat_1_dout [get_bd_pins SCS_CT_wrapper_0/SCS_CLKS] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins CLOCK_EXPAND_0/MMCM_I] [get_bd_pins xlconcat_1/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DATA/S_AXI/Reg] SEG_axi_gpio_0_Reg
