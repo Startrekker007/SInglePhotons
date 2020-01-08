@@ -2,10 +2,11 @@ vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
 vlib modelsim_lib/msim/xilinx_vip
+vlib modelsim_lib/msim/xil_defaultlib
+vlib modelsim_lib/msim/xpm
 vlib modelsim_lib/msim/axi_infrastructure_v1_1_0
 vlib modelsim_lib/msim/axi_vip_v1_1_5
 vlib modelsim_lib/msim/processing_system7_vip_v1_0_7
-vlib modelsim_lib/msim/xil_defaultlib
 vlib modelsim_lib/msim/axi_lite_ipif_v3_0_4
 vlib modelsim_lib/msim/lib_cdc_v1_0_2
 vlib modelsim_lib/msim/interrupt_control_v3_1_4
@@ -30,10 +31,11 @@ vlib modelsim_lib/msim/proc_sys_reset_v5_0_13
 vlib modelsim_lib/msim/axi_protocol_converter_v2_1_19
 
 vmap xilinx_vip modelsim_lib/msim/xilinx_vip
+vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
+vmap xpm modelsim_lib/msim/xpm
 vmap axi_infrastructure_v1_1_0 modelsim_lib/msim/axi_infrastructure_v1_1_0
 vmap axi_vip_v1_1_5 modelsim_lib/msim/axi_vip_v1_1_5
 vmap processing_system7_vip_v1_0_7 modelsim_lib/msim/processing_system7_vip_v1_0_7
-vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 vmap axi_lite_ipif_v3_0_4 modelsim_lib/msim/axi_lite_ipif_v3_0_4
 vmap lib_cdc_v1_0_2 modelsim_lib/msim/lib_cdc_v1_0_2
 vmap interrupt_control_v3_1_4 modelsim_lib/msim/interrupt_control_v3_1_4
@@ -67,6 +69,13 @@ vlog -work xilinx_vip -64 -incr -sv -L axi_vip_v1_1_5 -L processing_system7_vip_
 "C:/Xilinx/Vivado/2019.1/data/xilinx_vip/hdl/axi_vip_if.sv" \
 "C:/Xilinx/Vivado/2019.1/data/xilinx_vip/hdl/clk_vip_if.sv" \
 "C:/Xilinx/Vivado/2019.1/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+vlog -work xil_defaultlib -64 -incr -sv -L axi_vip_v1_1_5 -L processing_system7_vip_v1_0_7 -L xilinx_vip "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/8c62/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c923" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm -64 -93 \
+"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work axi_infrastructure_v1_1_0 -64 -incr "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/8c62/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c923" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
@@ -127,8 +136,8 @@ vcom -work c_counter_binary_v12_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_SCS_ST_0_0/src/SCS_CT_CTR/sim/SCS_CT_CTR.vhd" \
-"../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/b3fb/src/TT_CDELAY.vhd" \
-"../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/b3fb/src/SCS_ST.vhd" \
+"../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/0a57/src/TT_CDELAY.vhd" \
+"../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/0a57/src/SCS_ST.vhd" \
 "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_SCS_ST_0_0/sim/SCS_ST_TEST_SCS_ST_0_0.vhd" \
 
 vlog -work xlconcat_v2_1_3 -64 -incr "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/8c62/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c923" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
@@ -179,6 +188,10 @@ vcom -work proc_sys_reset_v5_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_rst_ps7_0_100M_0/sim/SCS_ST_TEST_rst_ps7_0_100M_0.vhd" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/8c62/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c923" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0_clk_wiz.v" \
+"../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/8c62/hdl" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c923" "+incdir+../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

@@ -11,11 +11,9 @@
     "design_tree": {
       "processing_system7_0": "",
       "DATA": "",
-      "SCS_ST_0": "",
       "xlconcat_0": "",
       "UTIL": "",
       "clk_wiz_0": "",
-      "CLOCK_EXPAND_0": "",
       "xlconcat_1": "",
       "ps7_0_axi_periph": {
         "xbar": "",
@@ -25,7 +23,10 @@
         "m00_couplers": {},
         "m01_couplers": {}
       },
-      "rst_ps7_0_100M": ""
+      "rst_ps7_0_100M": "",
+      "clk_wiz_1": "",
+      "CLOCK_EXPAND_0": "",
+      "SCS_ST_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1698,10 +1699,6 @@
           }
         }
       },
-      "SCS_ST_0": {
-        "vlnv": "cri.nz:user:SCS_ST:1.0",
-        "xci_name": "SCS_ST_TEST_SCS_ST_0_0"
-      },
       "xlconcat_0": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "SCS_ST_TEST_xlconcat_0_0",
@@ -1758,7 +1755,7 @@
             "value": "460.000"
           },
           "CLKOUT2_REQUESTED_PHASE": {
-            "value": "45"
+            "value": "22.5"
           },
           "CLKOUT2_USED": {
             "value": "true"
@@ -1773,7 +1770,7 @@
             "value": "460.000"
           },
           "CLKOUT3_REQUESTED_PHASE": {
-            "value": "90"
+            "value": "45"
           },
           "CLKOUT3_USED": {
             "value": "true"
@@ -1788,9 +1785,24 @@
             "value": "460.000"
           },
           "CLKOUT4_REQUESTED_PHASE": {
-            "value": "135"
+            "value": "67.5"
           },
           "CLKOUT4_USED": {
+            "value": "true"
+          },
+          "CLKOUT5_JITTER": {
+            "value": "210.749"
+          },
+          "CLKOUT5_PHASE_ERROR": {
+            "value": "303.235"
+          },
+          "CLKOUT5_REQUESTED_OUT_FREQ": {
+            "value": "460.000"
+          },
+          "CLKOUT5_REQUESTED_PHASE": {
+            "value": "90"
+          },
+          "CLKOUT5_USED": {
             "value": "true"
           },
           "JITTER_SEL": {
@@ -1809,25 +1821,31 @@
             "value": "2"
           },
           "MMCM_CLKOUT1_PHASE": {
-            "value": "45.000"
+            "value": "22.500"
           },
           "MMCM_CLKOUT2_DIVIDE": {
             "value": "2"
           },
           "MMCM_CLKOUT2_PHASE": {
-            "value": "90.000"
+            "value": "45.000"
           },
           "MMCM_CLKOUT3_DIVIDE": {
             "value": "2"
           },
           "MMCM_CLKOUT3_PHASE": {
-            "value": "135.000"
+            "value": "67.500"
+          },
+          "MMCM_CLKOUT4_DIVIDE": {
+            "value": "2"
+          },
+          "MMCM_CLKOUT4_PHASE": {
+            "value": "90.000"
           },
           "MMCM_DIVCLK_DIVIDE": {
             "value": "5"
           },
           "NUM_OUT_CLKS": {
-            "value": "4"
+            "value": "5"
           },
           "RESET_PORT": {
             "value": "resetn"
@@ -1840,51 +1858,12 @@
           }
         }
       },
-      "CLOCK_EXPAND_0": {
-        "vlnv": "xilinx.com:module_ref:CLOCK_EXPAND:1.0",
-        "xci_name": "SCS_ST_TEST_CLOCK_EXPAND_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "CLOCK_EXPAND",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "MMCM_I": {
-            "direction": "I",
-            "left": "3",
-            "right": "0",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "460000000:460000000:460000000:460000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "135.0:90.0:45.0:0.0",
-                "value_src": "ip_prop"
-              },
-              "PortType": {
-                "value": "clk",
-                "value_src": "ip_prop"
-              },
-              "PortWidth": {
-                "value": "4",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "SCS_CLKS": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
       "xlconcat_1": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "SCS_ST_TEST_xlconcat_1_0",
         "parameters": {
           "NUM_PORTS": {
-            "value": "4"
+            "value": "8"
           }
         }
       },
@@ -2049,16 +2028,16 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -2187,10 +2166,10 @@
           }
         },
         "interface_nets": {
-          "xbar_to_m01_couplers": {
+          "xbar_to_m00_couplers": {
             "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
             ]
           },
           "m01_couplers_to_ps7_0_axi_periph": {
@@ -2199,16 +2178,10 @@
               "m01_couplers/M_AXI"
             ]
           },
-          "xbar_to_m00_couplers": {
+          "s00_couplers_to_xbar": {
             "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
             ]
           },
           "ps7_0_axi_periph_to_s00_couplers": {
@@ -2217,10 +2190,16 @@
               "s00_couplers/S_AXI"
             ]
           },
-          "s00_couplers_to_xbar": {
+          "m00_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
             ]
           }
         },
@@ -2254,6 +2233,151 @@
       "rst_ps7_0_100M": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "SCS_ST_TEST_rst_ps7_0_100M_0"
+      },
+      "clk_wiz_1": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "SCS_ST_TEST_clk_wiz_1_0",
+        "parameters": {
+          "CLKIN1_JITTER_PS": {
+            "value": "21.74"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "81.270"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "90.087"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "460"
+          },
+          "CLKOUT1_REQUESTED_PHASE": {
+            "value": "22.5"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "81.270"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "90.087"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "460"
+          },
+          "CLKOUT2_REQUESTED_PHASE": {
+            "value": "45"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
+          "CLKOUT3_JITTER": {
+            "value": "81.270"
+          },
+          "CLKOUT3_PHASE_ERROR": {
+            "value": "90.087"
+          },
+          "CLKOUT3_REQUESTED_OUT_FREQ": {
+            "value": "460"
+          },
+          "CLKOUT3_REQUESTED_PHASE": {
+            "value": "67.5"
+          },
+          "CLKOUT3_USED": {
+            "value": "true"
+          },
+          "JITTER_SEL": {
+            "value": "Min_O_Jitter"
+          },
+          "MMCM_BANDWIDTH": {
+            "value": "HIGH"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "4.000"
+          },
+          "MMCM_CLKIN1_PERIOD": {
+            "value": "2.174"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.0"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "2.000"
+          },
+          "MMCM_CLKOUT0_PHASE": {
+            "value": "22.500"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "2"
+          },
+          "MMCM_CLKOUT1_PHASE": {
+            "value": "45.000"
+          },
+          "MMCM_CLKOUT2_DIVIDE": {
+            "value": "2"
+          },
+          "MMCM_CLKOUT2_PHASE": {
+            "value": "67.500"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "2"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "3"
+          },
+          "PRIM_IN_FREQ": {
+            "value": "460"
+          },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          }
+        }
+      },
+      "CLOCK_EXPAND_0": {
+        "vlnv": "xilinx.com:module_ref:CLOCK_EXPAND:1.0",
+        "xci_name": "SCS_ST_TEST_CLOCK_EXPAND_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CLOCK_EXPAND",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "MMCM_I": {
+            "direction": "I",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "460000000:460000000:460000000:460000000:460000000:460000000:460000000:460000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "157.5:135.0:112.5:90.0:67.5:45.0:22.5:0.0",
+                "value_src": "ip_prop"
+              },
+              "PortType": {
+                "value": "clk",
+                "value_src": "ip_prop"
+              },
+              "PortWidth": {
+                "value": "8",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "SCS_CLKS": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "SCS_ST_0": {
+        "vlnv": "cri.nz:user:SCS_ST:1.0",
+        "xci_name": "SCS_ST_TEST_SCS_ST_0_0"
       }
     },
     "interface_nets": {
@@ -2263,16 +2387,16 @@
           "processing_system7_0/DDR"
         ]
       },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
-        ]
-      },
       "processing_system7_0_M_AXI_GP0": {
         "interface_ports": [
           "processing_system7_0/M_AXI_GP0",
           "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
         ]
       },
       "ps7_0_axi_periph_M00_AXI": {
@@ -2354,7 +2478,8 @@
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
           "clk_wiz_0/resetn",
-          "rst_ps7_0_100M/ext_reset_in"
+          "rst_ps7_0_100M/ext_reset_in",
+          "clk_wiz_1/resetn"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
@@ -2398,6 +2523,31 @@
           "ps7_0_axi_periph/ARESETN",
           "UTIL/s_axi_aresetn",
           "ps7_0_axi_periph/M01_ARESETN"
+        ]
+      },
+      "clk_wiz_0_clk_out5": {
+        "ports": [
+          "clk_wiz_0/clk_out5",
+          "clk_wiz_1/clk_in1",
+          "xlconcat_1/In4"
+        ]
+      },
+      "clk_wiz_1_clk_out1": {
+        "ports": [
+          "clk_wiz_1/clk_out1",
+          "xlconcat_1/In5"
+        ]
+      },
+      "clk_wiz_1_clk_out2": {
+        "ports": [
+          "clk_wiz_1/clk_out2",
+          "xlconcat_1/In6"
+        ]
+      },
+      "clk_wiz_1_clk_out3": {
+        "ports": [
+          "clk_wiz_1/clk_out3",
+          "xlconcat_1/In7"
         ]
       }
     },

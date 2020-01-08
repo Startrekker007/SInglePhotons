@@ -35,11 +35,14 @@ namespace FrontEnd
         bool t3timeout = false;
         bool t4timeout = false;
         Channel[] channels = new Channel[4];
+        JsonSerializerSettings settings = null;
         public Form1()
         {
             InitializeComponent();
             
             Control.CheckForIllegalCrossThreadCalls = false;
+            settings = new JsonSerializerSettings();
+            settings.CheckAdditionalContent = false;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -129,7 +132,7 @@ namespace FrontEnd
                     if (rx.Substring(0, 2) == "PC")
                     {
                         Int64[] vals = new Int64[4];
-                        vals = (Int64[])JsonConvert.DeserializeObject(rx.Substring(2), typeof(Int64[]));
+                        vals = (Int64[])JsonConvert.DeserializeObject(rx.Substring(2), typeof(Int64[]),settings);
                         lblpc0.Text = vals[0].ToString();
                         lblpc1.Text = vals[1].ToString();
                         lblpc2.Text = vals[2].ToString();
@@ -146,7 +149,7 @@ namespace FrontEnd
                     }else if (rx.Substring(0, 2).Equals("TT"))
                     {
                         Dictionary<string, Object> incoming = new Dictionary<string, object>();
-                        incoming = (Dictionary<string, Object>)JsonConvert.DeserializeObject(rx.Substring(2), typeof(Dictionary<string, Object>));
+                        incoming = (Dictionary<string, Object>)JsonConvert.DeserializeObject(rx.Substring(2), typeof(Dictionary<string, Object>), settings);
                         
                         t1time = Double.Parse(incoming["T1"].ToString());
                         t2time = Double.Parse(incoming["T2"].ToString());

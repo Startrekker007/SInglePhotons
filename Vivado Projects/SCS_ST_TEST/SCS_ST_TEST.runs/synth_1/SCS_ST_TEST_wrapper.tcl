@@ -30,7 +30,7 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
-set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCS_ST [current_project]
+set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCS_ST16 [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -51,6 +51,9 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_0_0/SCS_ST_TEST_clk_wiz_0_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_rst_ps7_0_100M_0/SCS_ST_TEST_rst_ps7_0_100M_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_rst_ps7_0_100M_0/SCS_ST_TEST_rst_ps7_0_100M_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_auto_pc_0/SCS_ST_TEST_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/SCS_ST_TEST_ooc.xdc}}]
 
@@ -62,6 +65,9 @@ set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Viv
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{D:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc}}
+set_property used_in_implementation false [get_files {{D:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc}}]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1

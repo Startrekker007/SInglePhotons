@@ -2,45 +2,50 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 6 -x 1650 -y 500 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 6 -x 1650 -y 520 -defaultsOSRD
-preplace port idata0 -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
-preplace port idata1 -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1720 -y 500 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1720 -y 520 -defaultsOSRD
+preplace port idata0 -pg 1 -lvl 0 -x -10 -y 660 -defaultsOSRD
+preplace port idata1 -pg 1 -lvl 0 -x -10 -y 680 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -x 230 -y 550 -defaultsOSRD
-preplace inst DATA -pg 1 -lvl 3 -x 940 -y 610 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 620 -y 330 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 230 -y 260 -defaultsOSRD
-preplace inst UTIL -pg 1 -lvl 3 -x 940 -y 360 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 5 -x 1530 -y 290 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 230 -y 90 -defaultsOSRD
-preplace inst xlconcat_1 -pg 1 -lvl 2 -x 620 -y 90 -defaultsOSRD
-preplace inst SCS_CT_wrapper_0 -pg 1 -lvl 4 -x 1270 -y 300 -defaultsOSRD
-preplace inst CLOCK_EXPAND_0 -pg 1 -lvl 3 -x 940 -y 90 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 30 360 440 190 780
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 20 370 430
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 470 470 790
-preplace netloc SCS_CT_wrapper_0_TDATA 1 3 2 1120 490 1430
-preplace netloc xlconcat_0_dout 1 3 3 NJ 640 NJ 640 1630
-preplace netloc SCS_CT_wrapper_0_PRE_DELAY 1 4 1 1430 290n
-preplace netloc SCS_CT_wrapper_0_POST_DELAY 1 4 1 1420 290n
+preplace inst DATA -pg 1 -lvl 3 -x 1000 -y 610 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 650 -y 340 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 230 -y 280 -defaultsOSRD
+preplace inst UTIL -pg 1 -lvl 3 -x 1000 -y 360 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 5 -x 1590 -y 290 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 230 -y 100 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 2 -x 650 -y 90 -defaultsOSRD
+preplace inst CLOCK_EXPAND_0 -pg 1 -lvl 3 -x 1000 -y 90 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 1 -x 230 -y -70 -defaultsOSRD
+preplace inst SCS_CT_wrapper_0 -pg 1 -lvl 4 -x 1330 -y 300 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 30 380 490 490 830
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 20 390 430
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 440 480 840
+preplace netloc SCS_CT_wrapper_0_TDATA 1 3 2 N 600 1490
+preplace netloc xlconcat_0_dout 1 3 3 NJ 640 NJ 640 1690
+preplace netloc SCS_CT_wrapper_0_PRE_DELAY 1 4 1 1490 290n
+preplace netloc SCS_CT_wrapper_0_POST_DELAY 1 4 1 1480 290n
 preplace netloc SCS_CT_wrapper_0_DRDY 1 4 1 N 270
 preplace netloc axi_gpio_0_gpio_io_o 1 3 1 N 350
-preplace netloc axi_gpio_0_gpio2_io_o 1 3 1 1090 270n
-preplace netloc idata0_1 1 0 4 NJ 660 460J 480 NJ 480 1100J
-preplace netloc idata1_1 1 0 4 NJ 680 470J 490 NJ 490 1110J
-preplace netloc clk_wiz_0_clk_out1 1 1 3 430 180 NJ 180 1090
-preplace netloc clk_wiz_0_clk_out2 1 1 1 N 80
-preplace netloc clk_wiz_0_clk_out3 1 1 1 N 100
-preplace netloc clk_wiz_0_clk_out4 1 1 1 N 120
+preplace netloc axi_gpio_0_gpio2_io_o 1 3 1 1160 270n
+preplace netloc idata0_1 1 0 4 NJ 660 NJ 660 800J 270 1150J
+preplace netloc idata1_1 1 0 4 NJ 680 NJ 680 850J 490 1180J
+preplace netloc clk_wiz_0_clk_out1 1 1 3 430 -40 NJ -40 1180
+preplace netloc clk_wiz_0_clk_out2 1 1 1 440 40n
+preplace netloc clk_wiz_0_clk_out3 1 1 1 450 60n
+preplace netloc clk_wiz_0_clk_out4 1 1 1 490 80n
 preplace netloc xlconcat_1_dout 1 2 1 NJ 90
-preplace netloc CLOCK_EXPAND_0_SCS_CLKS 1 3 1 1100 90n
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 N 340
-preplace netloc processing_system7_0_DDR 1 1 5 NJ 500 NJ 500 NJ 500 NJ 500 NJ
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 770 320n
+preplace netloc CLOCK_EXPAND_0_SCS_CLKS 1 3 1 1170 90n
+preplace netloc clk_wiz_0_clk_out5 1 0 2 10 -150 460
+preplace netloc clk_wiz_1_clk_out1 1 1 1 500 -90n
+preplace netloc clk_wiz_1_clk_out2 1 1 1 480 -70n
+preplace netloc clk_wiz_1_clk_out3 1 1 1 470 -50n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 810 340n
 preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 520 NJ 520 NJ 520 NJ 520 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 450 250n
-levelinfo -pg 1 0 230 620 940 1270 1530 1650
-pagesize -pg 1 -db -bbox -sgen -90 0 1770 700
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 460 260n
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 500 NJ 500 NJ 500 NJ 500 NJ
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 820 330n
+levelinfo -pg 1 -10 230 650 1000 1330 1590 1720
+pagesize -pg 1 -db -bbox -sgen -100 -160 1840 700
 "
 }
 {

@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param chipscope.maxJobs 1
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,7 +30,7 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
-set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCS_CT [current_project]
+set_property ip_repo_paths d:/SInglePhotons/HW_IP/SCS_CT16 [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -52,6 +52,9 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_0_0/SCS_CT_OV_clk_wiz_0_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_0_0/SCS_CT_OV_clk_wiz_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_0_0/SCS_CT_OV_clk_wiz_0_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_auto_pc_0/SCS_CT_OV_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/SCS_CT_OV_ooc.xdc}}]
 

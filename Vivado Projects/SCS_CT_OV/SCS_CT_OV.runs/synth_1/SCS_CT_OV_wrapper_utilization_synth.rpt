@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Dec 20 12:40:02 2019
+| Date         : Wed Jan  8 15:55:04 2020
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file SCS_CT_OV_wrapper_utilization_synth.rpt -pb SCS_CT_OV_wrapper_utilization_synth.pb
 | Design       : SCS_CT_OV_wrapper
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  898 |     0 |     53200 |  1.69 |
-|   LUT as Logic             |  832 |     0 |     53200 |  1.56 |
+| Slice LUTs*                |  940 |     0 |     53200 |  1.77 |
+|   LUT as Logic             |  874 |     0 |     53200 |  1.64 |
 |   LUT as Memory            |   66 |     0 |     17400 |  0.38 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   66 |     0 |           |       |
-| Slice Registers            | 1379 |     0 |    106400 |  1.30 |
-|   Register as Flip Flop    | 1379 |     0 |    106400 |  1.30 |
+| Slice Registers            | 1405 |     0 |    106400 |  1.32 |
+|   Register as Flip Flop    | 1405 |     0 |    106400 |  1.32 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 76    |          Yes |         Set |            - |
-| 1303  |          Yes |       Reset |            - |
+| 1329  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -115,9 +115,9 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    6 |     0 |        32 | 18.75 |
+| BUFGCTRL   |   11 |     0 |        32 | 34.38 |
 | BUFIO      |    0 |     0 |        16 |  0.00 |
-| MMCME2_ADV |    1 |     0 |         4 | 25.00 |
+| MMCME2_ADV |    2 |     0 |         4 | 50.00 |
 | PLLE2_ADV  |    0 |     0 |         4 |  0.00 |
 | BUFMRCE    |    0 |     0 |         8 |  0.00 |
 | BUFHCE     |    0 |     0 |        72 |  0.00 |
@@ -148,22 +148,22 @@ Table of Contents
 +------------+------+----------------------+
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
-| FDRE       | 1303 |         Flop & Latch |
+| FDRE       | 1329 |         Flop & Latch |
 | LUT3       |  295 |                  LUT |
-| LUT6       |  206 |                  LUT |
-| LUT5       |  160 |                  LUT |
-| LUT1       |  156 |                  LUT |
-| LUT4       |  142 |                  LUT |
+| LUT6       |  224 |                  LUT |
+| LUT5       |  175 |                  LUT |
+| LUT1       |  160 |                  LUT |
+| LUT4       |  146 |                  LUT |
 | BIBUF      |  130 |                   IO |
 | FDSE       |   76 |         Flop & Latch |
-| LUT2       |   64 |                  LUT |
+| LUT2       |   65 |                  LUT |
 | SRLC32E    |   47 |   Distributed Memory |
-| CARRY4     |   34 |           CarryLogic |
+| CARRY4     |   26 |           CarryLogic |
 | SRL16E     |   19 |   Distributed Memory |
-| BUFG       |    6 |                Clock |
+| BUFG       |   11 |                Clock |
+| MMCME2_ADV |    2 |                Clock |
 | IBUF       |    2 |                   IO |
 | PS7        |    1 | Specialized Resource |
-| MMCME2_ADV |    1 |                Clock |
 +------------+------+----------------------+
 
 

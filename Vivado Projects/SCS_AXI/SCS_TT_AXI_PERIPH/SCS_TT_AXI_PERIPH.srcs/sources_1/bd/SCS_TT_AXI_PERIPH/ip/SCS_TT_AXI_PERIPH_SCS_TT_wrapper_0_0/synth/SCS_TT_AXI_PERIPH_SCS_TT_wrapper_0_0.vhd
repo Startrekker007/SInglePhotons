@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -67,7 +67,7 @@ ENTITY SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0 IS
     DRDY : OUT STD_LOGIC;
     LISTENING : OUT STD_LOGIC;
     MCLK : IN STD_LOGIC;
-    SCS_CLKS : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SCS_CLKS : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     T0 : IN STD_LOGIC;
     T1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     T2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -97,7 +97,7 @@ ARCHITECTURE SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0_arch OF SCS_TT_AXI_PERIPH_SCS_
       DRDY : OUT STD_LOGIC;
       LISTENING : OUT STD_LOGIC;
       MCLK : IN STD_LOGIC;
-      SCS_CLKS : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      SCS_CLKS : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       T0 : IN STD_LOGIC;
       T1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       T2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);

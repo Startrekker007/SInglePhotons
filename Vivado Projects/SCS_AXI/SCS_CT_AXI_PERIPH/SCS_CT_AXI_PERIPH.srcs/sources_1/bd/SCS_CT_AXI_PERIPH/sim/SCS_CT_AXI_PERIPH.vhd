@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Dec 20 13:00:50 2019
+--Date        : Wed Jan  8 16:13:29 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_CT_AXI_PERIPH.bd
 --Design      : SCS_CT_AXI_PERIPH
@@ -51,7 +51,7 @@ entity SCS_CT_AXI_PERIPH is
     IDAT0 : in STD_LOGIC;
     IDAT1 : in STD_LOGIC;
     MCLK : in STD_LOGIC;
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC
   );
@@ -62,20 +62,6 @@ entity SCS_CT_AXI_PERIPH is
 end SCS_CT_AXI_PERIPH;
 
 architecture STRUCTURE of SCS_CT_AXI_PERIPH is
-  component SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0 is
-  port (
-    CLK : in STD_LOGIC;
-    DRDY : out STD_LOGIC;
-    FSEL : in STD_LOGIC;
-    POST_DELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    PRE_DELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    TDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    idata0 : in STD_LOGIC;
-    idata1 : in STD_LOGIC;
-    resetn : in STD_LOGIC
-  );
-  end component SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0;
   component SCS_CT_AXI_PERIPH_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -134,6 +120,20 @@ architecture STRUCTURE of SCS_CT_AXI_PERIPH is
     gpio2_io_o : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SCS_CT_AXI_PERIPH_axi_gpio_0_1;
+  component SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0 is
+  port (
+    CLK : in STD_LOGIC;
+    DRDY : out STD_LOGIC;
+    FSEL : in STD_LOGIC;
+    POST_DELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    PRE_DELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    TDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    idata0 : in STD_LOGIC;
+    idata1 : in STD_LOGIC;
+    resetn : in STD_LOGIC
+  );
+  end component SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0;
   signal CT_DATA_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal CT_DATA_1_ARREADY : STD_LOGIC;
   signal CT_DATA_1_ARVALID : STD_LOGIC;
@@ -173,7 +173,7 @@ architecture STRUCTURE of SCS_CT_AXI_PERIPH is
   signal IDAT0_1 : STD_LOGIC;
   signal IDAT1_1 : STD_LOGIC;
   signal MCLK_1 : STD_LOGIC;
-  signal SCS_CLKS_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal SCS_CLKS_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal SCS_CT_wrapper_0_DRDY : STD_LOGIC;
   signal SCS_CT_wrapper_0_POST_DELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SCS_CT_wrapper_0_PRE_DELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -272,7 +272,7 @@ begin
   IDAT0_1 <= IDAT0;
   IDAT1_1 <= IDAT1;
   MCLK_1 <= MCLK;
-  SCS_CLKS_1(7 downto 0) <= SCS_CLKS(7 downto 0);
+  SCS_CLKS_1(15 downto 0) <= SCS_CLKS(15 downto 0);
   aclk_1 <= aclk;
   aresetn_1 <= aresetn;
 CT_DATA: component SCS_CT_AXI_PERIPH_axi_gpio_0_0
@@ -330,7 +330,7 @@ SCS_CT_wrapper_0: component SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0
       FSEL => CT_UTIL_gpio2_io_o(0),
       POST_DELAY(7 downto 0) => SCS_CT_wrapper_0_POST_DELAY(7 downto 0),
       PRE_DELAY(7 downto 0) => SCS_CT_wrapper_0_PRE_DELAY(7 downto 0),
-      SCS_CLKS(7 downto 0) => SCS_CLKS_1(7 downto 0),
+      SCS_CLKS(15 downto 0) => SCS_CLKS_1(15 downto 0),
       TDATA(31 downto 0) => SCS_CT_wrapper_0_TDATA(31 downto 0),
       idata0 => IDAT0_1,
       idata1 => IDAT1_1,

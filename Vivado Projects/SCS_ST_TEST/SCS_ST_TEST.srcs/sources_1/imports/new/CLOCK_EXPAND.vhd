@@ -32,14 +32,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity CLOCK_EXPAND is
-    Port ( MMCM_I : in STD_LOGIC_VECTOR (3 downto 0);
-           SCS_CLKS : out STD_LOGIC_VECTOR (7 downto 0));
+    Port ( MMCM_I : in STD_LOGIC_VECTOR (7 downto 0);
+           SCS_CLKS : out STD_LOGIC_VECTOR (15 downto 0));
 end CLOCK_EXPAND;
 
 architecture Behavioral of CLOCK_EXPAND is
 
 begin
-SCS_CLKS(3 downto 0) <= MMCM_I;
-SCS_CLKS(7 downto 4) <= not MMCM_I;
+SCS_CLKS(7 downto 0) <= MMCM_I;
+SCS_CLKS(15 downto 8) <= not MMCM_I;
 
 end Behavioral;

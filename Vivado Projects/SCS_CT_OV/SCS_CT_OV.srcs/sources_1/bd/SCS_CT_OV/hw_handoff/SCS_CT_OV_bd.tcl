@@ -215,32 +215,76 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT2_JITTER {210.749} \
    CONFIG.CLKOUT2_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT2_REQUESTED_PHASE {45.000} \
+   CONFIG.CLKOUT2_REQUESTED_PHASE {22.5} \
    CONFIG.CLKOUT2_USED {true} \
    CONFIG.CLKOUT3_JITTER {210.749} \
    CONFIG.CLKOUT3_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT3_REQUESTED_PHASE {90.000} \
+   CONFIG.CLKOUT3_REQUESTED_PHASE {45} \
    CONFIG.CLKOUT3_USED {true} \
    CONFIG.CLKOUT4_JITTER {210.749} \
    CONFIG.CLKOUT4_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT4_REQUESTED_PHASE {135.000} \
+   CONFIG.CLKOUT4_REQUESTED_PHASE {67.5} \
    CONFIG.CLKOUT4_USED {true} \
+   CONFIG.CLKOUT5_JITTER {210.749} \
+   CONFIG.CLKOUT5_PHASE_ERROR {303.235} \
+   CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT5_REQUESTED_PHASE {90} \
+   CONFIG.CLKOUT5_USED {true} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {46.000} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT1_PHASE {45.000} \
+   CONFIG.MMCM_CLKOUT1_PHASE {22.500} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT2_PHASE {90.000} \
+   CONFIG.MMCM_CLKOUT2_PHASE {45.000} \
    CONFIG.MMCM_CLKOUT3_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT3_PHASE {135.000} \
+   CONFIG.MMCM_CLKOUT3_PHASE {67.500} \
+   CONFIG.MMCM_CLKOUT4_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT4_PHASE {90.000} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
-   CONFIG.NUM_OUT_CLKS {4} \
+   CONFIG.NUM_OUT_CLKS {5} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_LOCKED {false} \
  ] $clk_wiz_0
+
+  # Create instance: clk_wiz_1, and set properties
+  set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
+  set_property -dict [ list \
+   CONFIG.CLKIN1_JITTER_PS {21.74} \
+   CONFIG.CLKOUT1_JITTER {81.270} \
+   CONFIG.CLKOUT1_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT1_REQUESTED_PHASE {22.5} \
+   CONFIG.CLKOUT2_JITTER {81.270} \
+   CONFIG.CLKOUT2_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT2_REQUESTED_PHASE {45} \
+   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT3_JITTER {81.270} \
+   CONFIG.CLKOUT3_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT3_REQUESTED_PHASE {67.5} \
+   CONFIG.CLKOUT3_USED {true} \
+   CONFIG.JITTER_SEL {Min_O_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {HIGH} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {4.000} \
+   CONFIG.MMCM_CLKIN1_PERIOD {2.174} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
+   CONFIG.MMCM_CLKOUT0_PHASE {22.500} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT1_PHASE {45.000} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT2_PHASE {67.500} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
+   CONFIG.NUM_OUT_CLKS {3} \
+   CONFIG.PRIM_IN_FREQ {460.000} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.USE_LOCKED {false} \
+ ] $clk_wiz_1
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1036,7 +1080,7 @@ proc create_root_design { parentCell } {
   # Create instance: xlconcat_1, and set properties
   set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
   set_property -dict [ list \
-   CONFIG.NUM_PORTS {4} \
+   CONFIG.NUM_PORTS {8} \
  ] $xlconcat_1
 
   # Create interface connections
@@ -1058,10 +1102,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins xlconcat_1/In1]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins clk_wiz_0/clk_out3] [get_bd_pins xlconcat_1/In2]
   connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_pins clk_wiz_0/clk_out4] [get_bd_pins xlconcat_1/In3]
+  connect_bd_net -net clk_wiz_0_clk_out5 [get_bd_pins clk_wiz_0/clk_out5] [get_bd_pins clk_wiz_1/clk_in1] [get_bd_pins xlconcat_1/In4]
+  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins xlconcat_1/In5]
+  connect_bd_net -net clk_wiz_1_clk_out2 [get_bd_pins clk_wiz_1/clk_out2] [get_bd_pins xlconcat_1/In6]
+  connect_bd_net -net clk_wiz_1_clk_out3 [get_bd_pins clk_wiz_1/clk_out3] [get_bd_pins xlconcat_1/In7]
   connect_bd_net -net idata0_1 [get_bd_ports idata0] [get_bd_pins SCS_CT_wrapper_0/idata0]
   connect_bd_net -net idata1_1 [get_bd_ports idata1] [get_bd_pins SCS_CT_wrapper_0/idata1]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins DATA/gpio2_io_i] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_1_dout [get_bd_pins CLOCK_EXPAND_0/MMCM_I] [get_bd_pins xlconcat_1/dout]

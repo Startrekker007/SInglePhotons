@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -73,7 +72,7 @@ set rc [catch {
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.cache/wt} [current_project]
   set_property parent.project_path {D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.xpr} [current_project]
-  set_property ip_repo_paths D:/SInglePhotons/HW_IP/SCS_CT [current_project]
+  set_property ip_repo_paths D:/SInglePhotons/HW_IP/SCS_CT16 [current_project]
   update_ip_catalog
   set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/SCS_CT_OV/SCS_CT_OV.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]

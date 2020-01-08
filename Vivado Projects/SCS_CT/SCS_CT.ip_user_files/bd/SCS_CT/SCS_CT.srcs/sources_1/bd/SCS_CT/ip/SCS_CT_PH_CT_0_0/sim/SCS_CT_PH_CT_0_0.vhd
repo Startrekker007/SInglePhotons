@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -57,8 +57,8 @@ ENTITY SCS_CT_PH_CT_0_0 IS
   PORT (
     IDATA0 : IN STD_LOGIC;
     IDATA1 : IN STD_LOGIC;
-    DLINE0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    DLINE1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    DLINE0 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DLINE1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     MCLK : IN STD_LOGIC;
     TIME_DATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     DRDY : OUT STD_LOGIC;
@@ -76,8 +76,8 @@ ARCHITECTURE SCS_CT_PH_CT_0_0_arch OF SCS_CT_PH_CT_0_0 IS
     PORT (
       IDATA0 : IN STD_LOGIC;
       IDATA1 : IN STD_LOGIC;
-      DLINE0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-      DLINE1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      DLINE0 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      DLINE1 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       MCLK : IN STD_LOGIC;
       TIME_DATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       DRDY : OUT STD_LOGIC;

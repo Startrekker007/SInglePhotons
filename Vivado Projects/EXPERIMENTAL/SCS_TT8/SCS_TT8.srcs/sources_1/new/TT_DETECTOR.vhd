@@ -74,6 +74,7 @@ component SCS_TT_CTR is port(
 end component;
 signal lt0 : std_logic := '1';
 signal pt0 : std_logic := '1';
+signal kt0 : std_logic := '1';
 signal lch0 : std_logic := '1';
 signal lch1 : std_logic := '1';
 signal lch2 : std_logic := '1';
@@ -82,6 +83,10 @@ signal pch0 : std_logic := '1';--Pipelined inputs
 signal pch1 : std_logic := '1';
 signal pch2 : std_logic := '1';
 signal pch3 : std_logic := '1';
+signal kch0 : std_logic := '1';
+signal kch1 : std_logic := '1';
+signal kch2 : std_logic := '1';
+signal kch3 : std_logic := '1';
 signal PDELT : std_logic_vector(7 downto 0) := x"00";--Pipelined delay lines
 signal PDEL0 : std_logic_vector(7 downto 0) := x"00";
 signal PDEL1 : std_logic_vector(7 downto 0) := x"00";
@@ -122,6 +127,7 @@ begin
         if(resetn = '0') then
             lt0 <= '1';
             pt0 <= '1';
+            kt0 <= '1';
             lch0 <= '1';
             lch1 <= '1';
             lch2 <= '1';
@@ -130,6 +136,10 @@ begin
             pch1 <= '1';
             pch2 <= '1';
             pch3 <= '1';
+            kch0 <= '1';
+            kch1 <= '1';
+            kch2 <= '1';
+            kch3 <= '1';
             PDELT <= x"00";
             PDEL0 <= x"00";
             PDEL1 <= x"00";
@@ -164,11 +174,16 @@ begin
                 var_trig_states := "0000";
             end if;
             --Pipeline updates
-            pch0 <= ch0;
-            pch1 <= ch1;
-            pch2 <= ch2;
-            pch3 <= ch3;
-            pt0 <= t0;
+            kch0 <= ch0;
+            kch1 <= ch1;
+            kch2 <= ch2;
+            kch3 <= ch3;
+            pch0 <= kch0;
+            pch1 <= kch1;
+            pch2 <= kch2;
+            pch3 <= kch3;
+            kt0 <= t0;
+            pt0 <= kt0;
             PDELT <= DELT;
             PDEL0 <= DEL0;
             PDEL1 <= DEL1;
@@ -191,22 +206,22 @@ begin
                 --Check rising edges
                 if(lch0 = '0' and pch0 = '1' and var_trig_states(0) = '0') then
                     T1DEL <= PDEL0;
-                    T1 <= std_logic_vector(unsigned(ctr_val) + x"00000001");
+                    T1 <= std_logic_vector(unsigned(ctr_val));
                     var_trig_states(0) := '1';
                 end if;
                 if(lch1 = '0' and pch1 = '1'and var_trig_states(1) = '0') then
                     T2DEL <= PDEL1;
-                    T2 <= std_logic_vector(unsigned(ctr_val) + x"00000001");
+                    T2 <= std_logic_vector(unsigned(ctr_val));
                     var_trig_states(1) := '1';
                 end if;
                 if(lch2 = '0' and pch2 = '1'and var_trig_states(2) = '0') then
                     T3DEL <= PDEL2;
-                    T3 <= std_logic_vector(unsigned(ctr_val) + x"00000001");
+                    T3 <= std_logic_vector(unsigned(ctr_val));
                     var_trig_states(2) := '1';
                 end if;
                 if(lch3 = '0' and pch3 = '1'and var_trig_states(3) = '0') then
                     T4DEL <= PDEL3;
-                    T4 <= std_logic_vector(unsigned(ctr_val) + x"00000001");
+                    T4 <= std_logic_vector(unsigned(ctr_val));
                     var_trig_states(3) := '1';
                 end if;
                 --On timeout OR all channels detected

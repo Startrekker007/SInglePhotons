@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Dec 20 13:00:04 2019
+--Date        : Wed Jan  8 09:06:24 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_ST_AXI_PERIPH.bd
 --Design      : SCS_ST_AXI_PERIPH
@@ -61,18 +61,6 @@ entity SCS_ST_AXI_PERIPH is
 end SCS_ST_AXI_PERIPH;
 
 architecture STRUCTURE of SCS_ST_AXI_PERIPH is
-  component SCS_ST_AXI_PERIPH_SCS_ST_0_0 is
-  port (
-    IDATA : in STD_LOGIC;
-    TIME_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    RESETN : in STD_LOGIC;
-    MCLK : in STD_LOGIC;
-    DRDY : out STD_LOGIC;
-    SDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    EDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component SCS_ST_AXI_PERIPH_SCS_ST_0_0;
   component SCS_ST_AXI_PERIPH_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -130,6 +118,18 @@ architecture STRUCTURE of SCS_ST_AXI_PERIPH is
     gpio_io_o : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SCS_ST_AXI_PERIPH_axi_gpio_1_0;
+  component SCS_ST_AXI_PERIPH_SCS_ST_0_0 is
+  port (
+    IDATA : in STD_LOGIC;
+    TIME_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    RESETN : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    DRDY : out STD_LOGIC;
+    SDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    EDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component SCS_ST_AXI_PERIPH_SCS_ST_0_0;
   signal CT_DATA_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal CT_DATA_1_ARREADY : STD_LOGIC;
   signal CT_DATA_1_ARVALID : STD_LOGIC;
@@ -191,16 +191,16 @@ architecture STRUCTURE of SCS_ST_AXI_PERIPH is
   attribute X_INTERFACE_INFO of ST_DATA_rvalid : signal is "xilinx.com:interface:aximm:1.0 ST_DATA RVALID";
   attribute X_INTERFACE_INFO of ST_DATA_wready : signal is "xilinx.com:interface:aximm:1.0 ST_DATA WREADY";
   attribute X_INTERFACE_INFO of ST_DATA_wvalid : signal is "xilinx.com:interface:aximm:1.0 ST_DATA WVALID";
-  attribute X_INTERFACE_INFO of ST_UTIL_arready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_arvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_awready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_awvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_bready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_bvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_rready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_rvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_wready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_wvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
+  attribute X_INTERFACE_INFO of ST_UTIL_arready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ARREADY";
+  attribute X_INTERFACE_INFO of ST_UTIL_arvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ARVALID";
+  attribute X_INTERFACE_INFO of ST_UTIL_awready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL AWREADY";
+  attribute X_INTERFACE_INFO of ST_UTIL_awvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL AWVALID";
+  attribute X_INTERFACE_INFO of ST_UTIL_bready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL BREADY";
+  attribute X_INTERFACE_INFO of ST_UTIL_bvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL BVALID";
+  attribute X_INTERFACE_INFO of ST_UTIL_rready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL RREADY";
+  attribute X_INTERFACE_INFO of ST_UTIL_rvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL RVALID";
+  attribute X_INTERFACE_INFO of ST_UTIL_wready : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL WREADY";
+  attribute X_INTERFACE_INFO of ST_UTIL_wvalid : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL WVALID";
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 CLK.ACLK CLK";
   attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME CLK.ACLK, ASSOCIATED_RESET aresetn, CLK_DOMAIN SCS_ST_AXI_PERIPH_aclk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 RST.ARESETN RST";
@@ -215,14 +215,14 @@ architecture STRUCTURE of SCS_ST_AXI_PERIPH is
   attribute X_INTERFACE_INFO of ST_DATA_rresp : signal is "xilinx.com:interface:aximm:1.0 ST_DATA RRESP";
   attribute X_INTERFACE_INFO of ST_DATA_wdata : signal is "xilinx.com:interface:aximm:1.0 ST_DATA WDATA";
   attribute X_INTERFACE_INFO of ST_DATA_wstrb : signal is "xilinx.com:interface:aximm:1.0 ST_DATA WSTRB";
-  attribute X_INTERFACE_INFO of ST_UTIL_araddr : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
+  attribute X_INTERFACE_INFO of ST_UTIL_araddr : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ARADDR";
   attribute X_INTERFACE_PARAMETER of ST_UTIL_araddr : signal is "XIL_INTERFACENAME ST_UTIL, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 0, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 1, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
-  attribute X_INTERFACE_INFO of ST_UTIL_awaddr : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_bresp : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_rdata : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_rresp : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_wdata : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
-  attribute X_INTERFACE_INFO of ST_UTIL_wstrb : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL ";
+  attribute X_INTERFACE_INFO of ST_UTIL_awaddr : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL AWADDR";
+  attribute X_INTERFACE_INFO of ST_UTIL_bresp : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL BRESP";
+  attribute X_INTERFACE_INFO of ST_UTIL_rdata : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL RDATA";
+  attribute X_INTERFACE_INFO of ST_UTIL_rresp : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL RRESP";
+  attribute X_INTERFACE_INFO of ST_UTIL_wdata : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL WDATA";
+  attribute X_INTERFACE_INFO of ST_UTIL_wstrb : signal is "xilinx.com:interface:aximm:1.0 ST_UTIL WSTRB";
 begin
   CT_DATA_1_ARADDR(8 downto 0) <= ST_UTIL_araddr(8 downto 0);
   CT_DATA_1_ARVALID <= ST_UTIL_arvalid;

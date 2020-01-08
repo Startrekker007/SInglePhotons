@@ -42,6 +42,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_xlcon
 # IP: bd/SCS_CT_OV/ip/SCS_CT_OV_CLOCK_EXPAND_0_0/SCS_CT_OV_CLOCK_EXPAND_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_CLOCK_EXPAND_0_0 || ORIG_REF_NAME==SCS_CT_OV_CLOCK_EXPAND_0_0} -quiet] -quiet
 
+# IP: bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_clk_wiz_1_0 || ORIG_REF_NAME==SCS_CT_OV_clk_wiz_1_0} -quiet] -quiet
+
 # IP: bd/SCS_CT_OV/ip/SCS_CT_OV_auto_pc_0/SCS_CT_OV_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_CT_OV_auto_pc_0 || ORIG_REF_NAME==SCS_CT_OV_auto_pc_0} -quiet] -quiet
 
@@ -79,6 +82,14 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_CT_OV_clk_wiz_0_0 || ORIG_REF_NAME==SCS_CT_OV_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_0_0/SCS_CT_OV_clk_wiz_0_0_ooc.xdc
+
+# XDC: bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_CT_OV_clk_wiz_1_0 || ORIG_REF_NAME==SCS_CT_OV_clk_wiz_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_CT_OV_clk_wiz_1_0 || ORIG_REF_NAME==SCS_CT_OV_clk_wiz_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0_ooc.xdc
 
 # XDC: bd/SCS_CT_OV/ip/SCS_CT_OV_auto_pc_0/SCS_CT_OV_auto_pc_0_ooc.xdc
 

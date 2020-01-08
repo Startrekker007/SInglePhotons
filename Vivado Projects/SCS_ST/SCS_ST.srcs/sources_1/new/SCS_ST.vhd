@@ -103,7 +103,7 @@ begin
                     ctr_rst <= '1';
                     sd <= '1';
                     edelay <= pdel;
-                    TIME_dATA <= std_logic_vector(unsigned(ctr_val)+x"00000001");
+                    TIME_dATA <= std_logic_vector(unsigned(ctr_val));
                 end if;
             end if;
             ldata <= pdata;

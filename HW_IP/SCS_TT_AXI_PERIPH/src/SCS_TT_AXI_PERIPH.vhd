@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Dec 20 13:10:51 2019
+--Date        : Wed Jan  8 11:45:18 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_TT_AXI_PERIPH.bd
 --Design      : SCS_TT_AXI_PERIPH
@@ -117,32 +117,6 @@ entity SCS_TT_AXI_PERIPH is
 end SCS_TT_AXI_PERIPH;
 
 architecture STRUCTURE of SCS_TT_AXI_PERIPH is
-  component SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0 is
-  port (
-    CH0 : in STD_LOGIC;
-    CH1 : in STD_LOGIC;
-    CH2 : in STD_LOGIC;
-    CH3 : in STD_LOGIC;
-    DEL0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DEL3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DELT : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DRDY : out STD_LOGIC;
-    LISTENING : out STD_LOGIC;
-    MCLK : in STD_LOGIC;
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    T0 : in STD_LOGIC;
-    T1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    TIMEOUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    TIMEOUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    WAITING : out STD_LOGIC;
-    resetn : in STD_LOGIC
-  );
-  end component SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0;
   component SCS_TT_AXI_PERIPH_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -283,6 +257,32 @@ architecture STRUCTURE of SCS_TT_AXI_PERIPH is
     gpio_io_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component SCS_TT_AXI_PERIPH_axi_gpio_0_3;
+  component SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0 is
+  port (
+    CH0 : in STD_LOGIC;
+    CH1 : in STD_LOGIC;
+    CH2 : in STD_LOGIC;
+    CH3 : in STD_LOGIC;
+    DEL0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DEL3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DELT : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DRDY : out STD_LOGIC;
+    LISTENING : out STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T0 : in STD_LOGIC;
+    T1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TIMEOUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    TIMEOUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    WAITING : out STD_LOGIC;
+    resetn : in STD_LOGIC
+  );
+  end component SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0;
   signal CH0_1 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
   signal CH2_1 : STD_LOGIC;

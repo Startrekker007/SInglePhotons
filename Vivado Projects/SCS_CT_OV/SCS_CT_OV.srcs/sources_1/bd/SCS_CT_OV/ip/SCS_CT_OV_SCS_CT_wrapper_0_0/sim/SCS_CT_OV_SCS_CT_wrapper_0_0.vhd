@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: cri.nz:user:SCS_CT_wrapper:1.0
--- IP Revision: 2
+-- IP Revision: 3
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,7 +60,7 @@ ENTITY SCS_CT_OV_SCS_CT_wrapper_0_0 IS
     FSEL : IN STD_LOGIC;
     POST_DELAY : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     PRE_DELAY : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SCS_CLKS : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SCS_CLKS : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     TDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     idata0 : IN STD_LOGIC;
     idata1 : IN STD_LOGIC;
@@ -78,7 +78,7 @@ ARCHITECTURE SCS_CT_OV_SCS_CT_wrapper_0_0_arch OF SCS_CT_OV_SCS_CT_wrapper_0_0 I
       FSEL : IN STD_LOGIC;
       POST_DELAY : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       PRE_DELAY : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-      SCS_CLKS : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      SCS_CLKS : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       TDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       idata0 : IN STD_LOGIC;
       idata1 : IN STD_LOGIC;

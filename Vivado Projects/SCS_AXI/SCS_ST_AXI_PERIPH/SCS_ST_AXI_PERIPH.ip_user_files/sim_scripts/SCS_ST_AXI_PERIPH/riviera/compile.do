@@ -67,8 +67,8 @@ vcom -work c_counter_binary_v12_0_13 -93 \
 
 vcom -work xil_defaultlib -93 \
 "../../../../SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ip/SCS_ST_AXI_PERIPH_SCS_ST_0_0/src/SCS_CT_CTR/sim/SCS_CT_CTR.vhd" \
-"../../../../SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ipshared/b3fb/src/TT_CDELAY.vhd" \
-"../../../../SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ipshared/b3fb/src/SCS_ST.vhd" \
+"../../../../SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ipshared/e6cd/src/TT_CDELAY.vhd" \
+"../../../../SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ipshared/e6cd/src/SCS_ST.vhd" \
 "../../../../SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ip/SCS_ST_AXI_PERIPH_SCS_ST_0_0/sim/SCS_ST_AXI_PERIPH_SCS_ST_0_0.vhd" \
 
 vcom -work axi_lite_ipif_v3_0_4 -93 \

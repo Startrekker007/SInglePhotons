@@ -1,5 +1,7 @@
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0/SCS_ST_TEST_processing_system7_0_0.xdc} rfile:../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_processing_system7_0_0/SCS_ST_TEST_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:SCS_ST_TEST_i/processing_system7_0/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_0_0/SCS_ST_TEST_clk_wiz_0_0.xdc} rfile:../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_0_0/SCS_ST_TEST_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:SCS_ST_TEST_i/clk_wiz_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0.xdc} rfile:../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0.xdc id:3 order:EARLY scoped_inst:SCS_ST_TEST_i/clk_wiz_1/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/SCS_ST_TEST/SCS_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../SCS_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc id:4} [current_design]
 current_instance SCS_ST_TEST_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3
@@ -267,3 +269,10 @@ current_instance
 current_instance SCS_ST_TEST_i/clk_wiz_0/inst
 set_property src_info {type:SCOPED_XDC file:2 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.1
+current_instance
+current_instance SCS_ST_TEST_i/clk_wiz_1/inst
+set_property src_info {type:SCOPED_XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.02174
+current_instance
+set_property src_info {type:XDC file:4 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W14 [get_ports IDATA]

@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -55,9 +55,9 @@ USE ieee.numeric_std.ALL;
 
 ENTITY SCS_CT_CT_CDELAY_0_1 IS
   PORT (
-    SCS_CLKS : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SCS_CLKS : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     IDATA : IN STD_LOGIC;
-    DLINE : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    DLINE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     ODATA : OUT STD_LOGIC
   );
 END SCS_CT_CT_CDELAY_0_1;
@@ -67,9 +67,9 @@ ARCHITECTURE SCS_CT_CT_CDELAY_0_1_arch OF SCS_CT_CT_CDELAY_0_1 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF SCS_CT_CT_CDELAY_0_1_arch: ARCHITECTURE IS "yes";
   COMPONENT CT_CDELAY IS
     PORT (
-      SCS_CLKS : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      SCS_CLKS : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       IDATA : IN STD_LOGIC;
-      DLINE : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      DLINE : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       ODATA : OUT STD_LOGIC
     );
   END COMPONENT CT_CDELAY;

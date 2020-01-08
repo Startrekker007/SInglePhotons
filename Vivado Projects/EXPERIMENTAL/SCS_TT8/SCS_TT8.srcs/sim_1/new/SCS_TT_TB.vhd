@@ -172,9 +172,9 @@ main_sim : process
 begin
     wait for 5ns;
     resetn <= '1';
-    wait for 10ns;
+    wait for 5.7ns;
     t0 <= '1';
-    wait for 14.1ns;
+    wait for 8.86ns;
     ch0 <= '1';
     wait for 11.1ns;
     ch1 <= '1';

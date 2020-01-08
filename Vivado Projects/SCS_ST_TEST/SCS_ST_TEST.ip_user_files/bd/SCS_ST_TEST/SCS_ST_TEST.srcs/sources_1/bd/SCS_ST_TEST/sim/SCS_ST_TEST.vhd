@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Fri Dec 20 12:02:38 2019
+--Date        : Wed Jan  8 16:34:00 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_ST_TEST.bd
 --Design      : SCS_ST_TEST
@@ -1100,7 +1100,7 @@ entity SCS_ST_TEST is
     IDATA : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of SCS_ST_TEST : entity is "SCS_ST_TEST,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SCS_ST_TEST,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=11,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of SCS_ST_TEST : entity is "SCS_ST_TEST,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SCS_ST_TEST,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=12,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of SCS_ST_TEST : entity is "SCS_ST_TEST.hwdef";
 end SCS_ST_TEST;
@@ -1200,18 +1200,6 @@ architecture STRUCTURE of SCS_ST_TEST is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component SCS_ST_TEST_axi_gpio_0_0;
-  component SCS_ST_TEST_SCS_ST_0_0 is
-  port (
-    IDATA : in STD_LOGIC;
-    TIME_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    RESETN : in STD_LOGIC;
-    MCLK : in STD_LOGIC;
-    DRDY : out STD_LOGIC;
-    SDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    EDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component SCS_ST_TEST_SCS_ST_0_0;
   component SCS_ST_TEST_xlconcat_0_0 is
   port (
     In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1251,22 +1239,21 @@ architecture STRUCTURE of SCS_ST_TEST is
     clk_out1 : out STD_LOGIC;
     clk_out2 : out STD_LOGIC;
     clk_out3 : out STD_LOGIC;
-    clk_out4 : out STD_LOGIC
+    clk_out4 : out STD_LOGIC;
+    clk_out5 : out STD_LOGIC
   );
   end component SCS_ST_TEST_clk_wiz_0_0;
-  component SCS_ST_TEST_CLOCK_EXPAND_0_0 is
-  port (
-    MMCM_I : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    SCS_CLKS : out STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component SCS_ST_TEST_CLOCK_EXPAND_0_0;
   component SCS_ST_TEST_xlconcat_1_0 is
   port (
     In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    In4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In5 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In6 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In7 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component SCS_ST_TEST_xlconcat_1_0;
   component SCS_ST_TEST_rst_ps7_0_100M_0 is
@@ -1283,7 +1270,34 @@ architecture STRUCTURE of SCS_ST_TEST is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SCS_ST_TEST_rst_ps7_0_100M_0;
-  signal CLOCK_EXPAND_0_SCS_CLKS : STD_LOGIC_VECTOR ( 7 downto 0 );
+  component SCS_ST_TEST_clk_wiz_1_0 is
+  port (
+    resetn : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
+    clk_out3 : out STD_LOGIC
+  );
+  end component SCS_ST_TEST_clk_wiz_1_0;
+  component SCS_ST_TEST_CLOCK_EXPAND_0_0 is
+  port (
+    MMCM_I : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : out STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component SCS_ST_TEST_CLOCK_EXPAND_0_0;
+  component SCS_ST_TEST_SCS_ST_0_0 is
+  port (
+    IDATA : in STD_LOGIC;
+    TIME_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    RESETN : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    DRDY : out STD_LOGIC;
+    SDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    EDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component SCS_ST_TEST_SCS_ST_0_0;
+  signal CLOCK_EXPAND_0_SCS_CLKS : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal IDATA_1 : STD_LOGIC;
   signal SCS_ST_0_DRDY : STD_LOGIC;
   signal SCS_ST_0_EDELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -1294,6 +1308,10 @@ architecture STRUCTURE of SCS_ST_TEST is
   signal clk_wiz_0_clk_out2 : STD_LOGIC;
   signal clk_wiz_0_clk_out3 : STD_LOGIC;
   signal clk_wiz_0_clk_out4 : STD_LOGIC;
+  signal clk_wiz_0_clk_out5 : STD_LOGIC;
+  signal clk_wiz_1_clk_out1 : STD_LOGIC;
+  signal clk_wiz_1_clk_out2 : STD_LOGIC;
+  signal clk_wiz_1_clk_out3 : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -1391,7 +1409,7 @@ architecture STRUCTURE of SCS_ST_TEST is
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_rst_ps7_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
@@ -1427,8 +1445,8 @@ begin
   IDATA_1 <= IDATA;
 CLOCK_EXPAND_0: component SCS_ST_TEST_CLOCK_EXPAND_0_0
      port map (
-      MMCM_I(3 downto 0) => xlconcat_1_dout(3 downto 0),
-      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0)
+      MMCM_I(7 downto 0) => xlconcat_1_dout(7 downto 0),
+      SCS_CLKS(15 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(15 downto 0)
     );
 DATA: component SCS_ST_TEST_axi_gpio_0_0
      port map (
@@ -1461,7 +1479,7 @@ SCS_ST_0: component SCS_ST_TEST_SCS_ST_0_0
       IDATA => IDATA_1,
       MCLK => clk_wiz_0_clk_out1,
       RESETN => axi_gpio_0_gpio_io_o(0),
-      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0),
+      SCS_CLKS(15 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(15 downto 0),
       SDELAY(7 downto 0) => SCS_ST_0_SDELAY(7 downto 0),
       TIME_DATA(31 downto 0) => SCS_ST_0_TIME_DATA(31 downto 0)
     );
@@ -1495,6 +1513,15 @@ clk_wiz_0: component SCS_ST_TEST_clk_wiz_0_0
       clk_out2 => clk_wiz_0_clk_out2,
       clk_out3 => clk_wiz_0_clk_out3,
       clk_out4 => clk_wiz_0_clk_out4,
+      clk_out5 => clk_wiz_0_clk_out5,
+      resetn => processing_system7_0_FCLK_RESET0_N
+    );
+clk_wiz_1: component SCS_ST_TEST_clk_wiz_1_0
+     port map (
+      clk_in1 => clk_wiz_0_clk_out5,
+      clk_out1 => clk_wiz_1_clk_out1,
+      clk_out2 => clk_wiz_1_clk_out2,
+      clk_out3 => clk_wiz_1_clk_out3,
       resetn => processing_system7_0_FCLK_RESET0_N
     );
 processing_system7_0: component SCS_ST_TEST_processing_system7_0_0
@@ -1674,6 +1701,10 @@ xlconcat_1: component SCS_ST_TEST_xlconcat_1_0
       In1(0) => clk_wiz_0_clk_out2,
       In2(0) => clk_wiz_0_clk_out3,
       In3(0) => clk_wiz_0_clk_out4,
-      dout(3 downto 0) => xlconcat_1_dout(3 downto 0)
+      In4(0) => clk_wiz_0_clk_out5,
+      In5(0) => clk_wiz_1_clk_out1,
+      In6(0) => clk_wiz_1_clk_out2,
+      In7(0) => clk_wiz_1_clk_out3,
+      dout(7 downto 0) => xlconcat_1_dout(7 downto 0)
     );
 end STRUCTURE;

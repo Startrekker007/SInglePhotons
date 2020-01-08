@@ -142,13 +142,13 @@ vcom -work c_counter_binary_v12_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_SCS_CT_wrapper_0_0/src/ph_ctr/sim/ph_ctr.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/sim/SCS_CT_PH_CT_0_0.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/sim/SCS_CT_CT_CDELAY_0_0.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/sim/SCS_CT_CT_CDELAY_0_1.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/src/PH_CT.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/src/TT_CDELAY.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/sim/SCS_CT.vhd" \
-"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/d110/src/SCS_CT_wrapper.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/sim/SCS_CT_PH_CT_0_0.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/sim/SCS_CT_CT_CDELAY_0_0.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/sim/SCS_CT_CT_CDELAY_0_1.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/src/PH_CT.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/src/TT_CDELAY.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/sim/SCS_CT.vhd" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/4d79/src/SCS_CT_wrapper.vhd" \
 "../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_SCS_CT_wrapper_0_0/sim/SCS_CT_OV_SCS_CT_wrapper_0_0.vhd" \
 "../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_axi_gpio_0_1/sim/SCS_CT_OV_axi_gpio_0_1.vhd" \
 
@@ -187,6 +187,10 @@ vlog -work xil_defaultlib -64 "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/S
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_CLOCK_EXPAND_0_0/sim/SCS_CT_OV_CLOCK_EXPAND_0_0.vhd" \
+
+vlog -work xil_defaultlib -64 "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/ec67/hdl" "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/8c62/hdl" "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/c923" "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0_clk_wiz.v" \
+"../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_clk_wiz_1_0/SCS_CT_OV_clk_wiz_1_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/ec67/hdl" "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/8c62/hdl" "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/c923" "+incdir+../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ip/SCS_CT_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SCS_CT_OV.srcs/sources_1/bd/SCS_CT_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

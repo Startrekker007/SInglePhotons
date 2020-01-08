@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity TT_CDELAY is
     Port ( SCS_CLKS : in STD_LOGIC_vector(7 downto 0);
            IDATA : in STD_LOGIC;
-           DLINE : out STD_LOGIC_VECTOR (7 downto 0);
+           DLINE : out STD_LOGIC_VECTOR (7 downto 0) := x"00";
            ODATA : out std_logic);
 end TT_CDELAY;
 
@@ -47,6 +47,7 @@ ODATA <= ddata;
 process(SCS_CLKS(0))
 begin
     if(rising_edge(SCS_CLKS(0))) then
+        dline <= idline;
         idline(0) <= IDATA;
     end if;
 end process;
@@ -93,5 +94,5 @@ begin
         idline(7) <= IDATA;
     end if;
 end process;
-dline <= idline;
+
 end Behavioral;

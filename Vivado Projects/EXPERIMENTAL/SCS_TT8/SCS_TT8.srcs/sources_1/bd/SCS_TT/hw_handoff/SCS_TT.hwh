@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan  8 11:21:18 2020" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SCS_TT" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="T0" SIGIS="undef" SIGNAME="External_Ports_T0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CDELAY_T0" PORT="IDATA"/>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="T0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CDELAY_0" PORT="IDATA"/>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="CH0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CDELAY_1" PORT="IDATA"/>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="CH1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH2" SIGIS="undef" SIGNAME="External_Ports_CH2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CDELAY_2" PORT="IDATA"/>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="CH2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CH3" SIGIS="undef" SIGNAME="External_Ports_CH3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CDELAY_3" PORT="IDATA"/>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="CH3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="460000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="MCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="RESETN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="TIMEOUT" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_TIMEOUT">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="TIME_OUT"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="T1" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_T1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="T1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="T2" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_T2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="T2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="T3" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_T3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="T3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="T4" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_T4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="T4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="TIMEOUTS" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_TIME_OUTS">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="TIME_OUTS"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DRDY" SIGIS="data" SIGNAME="TT_DETECTOR_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="WAITING" SIGIS="data" SIGNAME="TT_DETECTOR_0_ttwait">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ttwait"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LISTENING" SIGIS="data" SIGNAME="TT_DETECTOR_0_ttlistening">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ttlistening"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DELT" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_ODELT">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ODELT"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DEL0" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_ODEL0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ODEL0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DEL1" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_ODEL1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ODEL1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DEL2" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_ODEL2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ODEL2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DEL3" RIGHT="0" SIGIS="data" SIGNAME="TT_DETECTOR_0_ODEL3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="ODEL3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="460000000" DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_SCS_CLKS">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CDELAY_0" PORT="SCS_CLKS"/>
+        <CONNECTION INSTANCE="TT_CDELAY_1" PORT="SCS_CLKS"/>
+        <CONNECTION INSTANCE="TT_CDELAY_2" PORT="SCS_CLKS"/>
+        <CONNECTION INSTANCE="TT_CDELAY_3" PORT="SCS_CLKS"/>
+        <CONNECTION INSTANCE="CDELAY_T0" PORT="SCS_CLKS"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/CDELAY_T0" HWVERSION="1.0" INSTANCE="CDELAY_T0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_CDELAY" VLNV="xilinx.com:module_ref:TT_CDELAY:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_TT_TT_CDELAY_2_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_T0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="CDELAY_T0_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DELT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_CDELAY_0" HWVERSION="1.0" INSTANCE="TT_CDELAY_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_CDELAY" VLNV="xilinx.com:module_ref:TT_CDELAY:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_TT_TT_CDELAY_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_CH0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_0_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_CDELAY_1" HWVERSION="1.0" INSTANCE="TT_CDELAY_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_CDELAY" VLNV="xilinx.com:module_ref:TT_CDELAY:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_TT_TT_CDELAY_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_CH1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_1_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_CDELAY_2" HWVERSION="1.0" INSTANCE="TT_CDELAY_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_CDELAY" VLNV="xilinx.com:module_ref:TT_CDELAY:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_TT_TT_CDELAY_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_CH2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_2_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_CDELAY_3" HWVERSION="1.0" INSTANCE="TT_CDELAY_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_CDELAY" VLNV="xilinx.com:module_ref:TT_CDELAY:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_TT_TT_CDELAY_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="IDATA" SIGIS="undef" SIGNAME="External_Ports_CH3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DLINE" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_3_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_DETECTOR_0" PORT="DEL3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ODATA" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_DETECTOR_0" HWVERSION="1.0" INSTANCE="TT_DETECTOR_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_DETECTOR" VLNV="xilinx.com:module_ref:TT_DETECTOR:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SCS_TT_TT_DETECTOR_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="T0" SIGIS="undef" SIGNAME="External_Ports_T0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CH0" SIGIS="undef" SIGNAME="External_Ports_CH0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CH1" SIGIS="undef" SIGNAME="External_Ports_CH1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CH2" SIGIS="undef" SIGNAME="External_Ports_CH2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CH3" SIGIS="undef" SIGNAME="External_Ports_CH3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CH3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="DELT" RIGHT="0" SIGIS="undef" SIGNAME="CDELAY_T0_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CDELAY_T0" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="DEL0" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_0_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_CDELAY_0" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="DEL1" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_1_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_CDELAY_1" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="DEL2" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_2_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_CDELAY_2" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="DEL3" RIGHT="0" SIGIS="undef" SIGNAME="TT_CDELAY_3_DLINE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_CDELAY_3" PORT="DLINE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="ODELT" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ODELT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DELT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="ODEL0" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ODEL0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEL0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="ODEL1" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ODEL1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEL1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="ODEL2" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ODEL2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEL2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="ODEL3" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ODEL3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEL3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_T1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T2" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_T2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T3" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_T3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T4" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_T4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="TIME_OUTS" RIGHT="0" SIGIS="undef" SIGNAME="TT_DETECTOR_0_TIME_OUTS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TIMEOUTS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="TIME_OUT" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_TIMEOUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TIMEOUT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="TT_DETECTOR_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DRDY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ttwait" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ttwait">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WAITING"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ttlistening" SIGIS="undef" SIGNAME="TT_DETECTOR_0_ttlistening">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LISTENING"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

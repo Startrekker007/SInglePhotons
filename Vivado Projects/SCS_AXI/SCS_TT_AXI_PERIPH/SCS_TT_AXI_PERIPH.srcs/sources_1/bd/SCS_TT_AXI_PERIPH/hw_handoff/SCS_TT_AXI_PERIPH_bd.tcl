@@ -177,7 +177,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {460000000} \
  ] $MCLK
-  set SCS_CLKS [ create_bd_port -dir I -from 7 -to 0 -type clk SCS_CLKS ]
+  set SCS_CLKS [ create_bd_port -dir I -from 15 -to 0 -type clk SCS_CLKS ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {460000000} \
  ] $SCS_CLKS

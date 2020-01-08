@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x80C800F81C1DFFEF",
+      "boundary_crc": "0x9DB507D01E527FCB",
       "device": "xc7z020clg400-1",
       "name": "SCS_CT_AXI_PERIPH",
       "synth_flow_mode": "None",
@@ -9,10 +9,10 @@
       "validated": "true"
     },
     "design_tree": {
-      "SCS_CT_wrapper_0": "",
       "CT_DATA": "",
       "xlconcat_0": "",
-      "CT_UTIL": ""
+      "CT_UTIL": "",
+      "SCS_CT_wrapper_0": ""
     },
     "interface_ports": {
       "CT_DATA": {
@@ -303,7 +303,7 @@
       "SCS_CLKS": {
         "type": "clk",
         "direction": "I",
-        "left": "7",
+        "left": "15",
         "right": "0",
         "parameters": {
           "CLK_DOMAIN": {
@@ -384,10 +384,6 @@
       }
     },
     "components": {
-      "SCS_CT_wrapper_0": {
-        "vlnv": "cri.nz:user:SCS_CT_wrapper:1.0",
-        "xci_name": "SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0"
-      },
       "CT_DATA": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "SCS_CT_AXI_PERIPH_axi_gpio_0_0",
@@ -444,6 +440,10 @@
             "value": "1"
           }
         }
+      },
+      "SCS_CT_wrapper_0": {
+        "vlnv": "cri.nz:user:SCS_CT_wrapper:1.0",
+        "xci_name": "SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0"
       }
     },
     "interface_nets": {

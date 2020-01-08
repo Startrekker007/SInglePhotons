@@ -9,6 +9,13 @@
   "C:/Xilinx/Vivado/2019.1/data/xilinx_vip/hdl/clk_vip_if.sv" \
   "C:/Xilinx/Vivado/2019.1/data/xilinx_vip/hdl/rst_vip_if.sv" \
 -endlib
+-makelib ies_lib/xil_defaultlib -sv \
+  "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+-endlib
+-makelib ies_lib/xpm \
+  "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
+-endlib
 -makelib ies_lib/axi_infrastructure_v1_1_0 \
   "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 -endlib
@@ -68,8 +75,8 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_SCS_ST_0_0/src/SCS_CT_CTR/sim/SCS_CT_CTR.vhd" \
-  "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/b3fb/src/TT_CDELAY.vhd" \
-  "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/b3fb/src/SCS_ST.vhd" \
+  "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/0a57/src/TT_CDELAY.vhd" \
+  "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/0a57/src/SCS_ST.vhd" \
   "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_SCS_ST_0_0/sim/SCS_ST_TEST_SCS_ST_0_0.vhd" \
 -endlib
 -makelib ies_lib/xlconcat_v2_1_3 \
@@ -120,6 +127,10 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_rst_ps7_0_100M_0/sim/SCS_ST_TEST_rst_ps7_0_100M_0.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0_clk_wiz.v" \
+  "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ip/SCS_ST_TEST_clk_wiz_1_0/SCS_ST_TEST_clk_wiz_1_0.v" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../SCS_ST_TEST.srcs/sources_1/bd/SCS_ST_TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

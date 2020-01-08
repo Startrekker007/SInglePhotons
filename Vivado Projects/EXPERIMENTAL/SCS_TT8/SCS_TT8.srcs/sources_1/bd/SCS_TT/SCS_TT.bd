@@ -5,7 +5,8 @@
       "device": "xc7z020clg400-1",
       "name": "SCS_TT",
       "synth_flow_mode": "None",
-      "tool_version": "2019.1"
+      "tool_version": "2019.1",
+      "validated": "true"
     },
     "design_tree": {
       "TT_CDELAY_0": "",
@@ -35,92 +36,198 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SCS_TT_MCLK",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
           }
         }
       },
       "resetn": {
         "type": "rst",
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
       "TIMEOUT": {
         "type": "data",
         "direction": "I",
         "left": "31",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "T1": {
         "type": "data",
         "direction": "O",
         "left": "31",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "T2": {
         "type": "data",
         "direction": "O",
         "left": "31",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "T3": {
         "type": "data",
         "direction": "O",
         "left": "31",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "T4": {
         "type": "data",
         "direction": "O",
         "left": "31",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "TIMEOUTS": {
         "type": "data",
         "direction": "O",
         "left": "3",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "DRDY": {
         "type": "data",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "WAITING": {
         "type": "data",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "LISTENING": {
         "type": "data",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "DELT": {
         "type": "data",
         "direction": "O",
         "left": "7",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "DEL0": {
         "type": "data",
         "direction": "O",
         "left": "7",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "DEL1": {
         "type": "data",
         "direction": "O",
         "left": "7",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "DEL2": {
         "type": "data",
         "direction": "O",
         "left": "7",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "DEL3": {
         "type": "data",
         "direction": "O",
         "left": "7",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
       "SCS_CLKS": {
         "type": "clk",
@@ -128,8 +235,20 @@
         "left": "7",
         "right": "0",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SCS_TT_SCS_CLKS",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
           }
         }
       }
@@ -147,7 +266,21 @@
           "SCS_CLKS": {
             "direction": "I",
             "left": "7",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           },
           "IDATA": {
             "direction": "I"
@@ -174,7 +307,21 @@
           "SCS_CLKS": {
             "direction": "I",
             "left": "7",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           },
           "IDATA": {
             "direction": "I"
@@ -201,7 +348,21 @@
           "SCS_CLKS": {
             "direction": "I",
             "left": "7",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           },
           "IDATA": {
             "direction": "I"
@@ -228,7 +389,21 @@
           "SCS_CLKS": {
             "direction": "I",
             "left": "7",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           },
           "IDATA": {
             "direction": "I"
@@ -255,7 +430,21 @@
           "SCS_CLKS": {
             "direction": "I",
             "left": "7",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_SCS_CLKS",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           },
           "IDATA": {
             "direction": "I"
@@ -281,7 +470,13 @@
         "ports": {
           "RESETN": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
           },
           "T0": {
             "direction": "I"
@@ -349,7 +544,21 @@
             "right": "0"
           },
           "MCLK": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           },
           "T1": {
             "direction": "O",
@@ -379,7 +588,13 @@
           "TIME_OUT": {
             "direction": "I",
             "left": "31",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
           },
           "DRDY": {
             "direction": "O"

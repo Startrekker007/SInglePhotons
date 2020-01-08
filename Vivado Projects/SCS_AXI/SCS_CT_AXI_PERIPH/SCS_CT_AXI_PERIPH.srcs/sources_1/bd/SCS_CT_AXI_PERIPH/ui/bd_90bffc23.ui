@@ -2,22 +2,22 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port CT_DATA -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
-preplace port CT_UTIL -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD
-preplace port DRDY -pg 1 -lvl 4 -x 940 -y 160 -defaultsOSRD
-preplace port MCLK -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
-preplace port IDAT0 -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
-preplace port IDAT1 -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
-preplace port aclk -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
-preplace port aresetn -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
-preplace portBus SCS_CLKS -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
-preplace inst SCS_CT_wrapper_0 -pg 1 -lvl 2 -x 460 -y 140 -defaultsOSRD
+preplace port CT_DATA -pg 1 -lvl 0 -x -20 -y 250 -defaultsOSRD
+preplace port CT_UTIL -pg 1 -lvl 0 -x -20 -y 340 -defaultsOSRD
+preplace port DRDY -pg 1 -lvl 4 -x 950 -y 160 -defaultsOSRD
+preplace port MCLK -pg 1 -lvl 0 -x -20 -y 90 -defaultsOSRD
+preplace port IDAT0 -pg 1 -lvl 0 -x -20 -y 150 -defaultsOSRD
+preplace port IDAT1 -pg 1 -lvl 0 -x -20 -y 170 -defaultsOSRD
+preplace port aclk -pg 1 -lvl 0 -x -20 -y 360 -defaultsOSRD
+preplace port aresetn -pg 1 -lvl 0 -x -20 -y 380 -defaultsOSRD
+preplace portBus SCS_CLKS -pg 1 -lvl 0 -x -20 -y 130 -defaultsOSRD
 preplace inst CT_DATA -pg 1 -lvl 3 -x 770 -y 270 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 3 -x 770 -y 80 -defaultsOSRD
 preplace inst CT_UTIL -pg 1 -lvl 1 -x 160 -y 360 -defaultsOSRD
-preplace netloc SCS_CT_wrapper_0_DRDY 1 2 2 620 160 NJ
+preplace inst SCS_CT_wrapper_0 -pg 1 -lvl 2 -x 460 -y 140 -defaultsOSRD
+preplace netloc SCS_CT_wrapper_0_DRDY 1 2 2 630 160 NJ
 preplace netloc SCS_CT_wrapper_0_POST_DELAY 1 2 1 610 80n
-preplace netloc SCS_CT_wrapper_0_PRE_DELAY 1 2 1 630 100n
+preplace netloc SCS_CT_wrapper_0_PRE_DELAY 1 2 1 620 100n
 preplace netloc SCS_CT_wrapper_0_TDATA 1 2 2 N 170 910
 preplace netloc xlconcat_0_dout 1 3 1 920 80n
 preplace netloc CT_UTIL_gpio_io_o 1 1 1 310 190n
@@ -26,12 +26,12 @@ preplace netloc MCLK_1 1 0 2 NJ 90 NJ
 preplace netloc SCS_CLKS_1 1 0 2 NJ 130 NJ
 preplace netloc IDAT0_1 1 0 2 NJ 150 NJ
 preplace netloc IDAT1_1 1 0 2 NJ 170 NJ
-preplace netloc aclk_1 1 0 3 20 270 NJ 270 N
-preplace netloc aresetn_1 1 0 3 20 450 NJ 450 620J
-preplace netloc CT_DATA_1 1 0 3 NJ 250 NJ 250 NJ
+preplace netloc aclk_1 1 0 3 0 450 NJ 450 630
+preplace netloc aresetn_1 1 0 3 10 270 NJ 270 610J
 preplace netloc CT_UTIL_1 1 0 1 NJ 340
-levelinfo -pg 1 0 160 460 770 940
-pagesize -pg 1 -db -bbox -sgen -160 0 1030 460
+preplace netloc CT_DATA_1 1 0 3 NJ 250 NJ 250 NJ
+levelinfo -pg 1 -20 160 460 770 950
+pagesize -pg 1 -db -bbox -sgen -180 0 1040 460
 "
 }
-
+0

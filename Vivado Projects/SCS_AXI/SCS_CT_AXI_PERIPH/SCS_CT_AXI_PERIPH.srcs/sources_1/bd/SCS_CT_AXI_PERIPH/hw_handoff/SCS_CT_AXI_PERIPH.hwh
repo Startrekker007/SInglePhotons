@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec 20 13:00:51 2019" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan  8 16:13:29 2020" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SCS_CT_AXI_PERIPH" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -14,7 +14,7 @@
         <CONNECTION INSTANCE="SCS_CT_wrapper_0" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="460000000" DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_SCS_CLKS">
+    <PORT CLKFREQUENCY="460000000" DIR="I" LEFT="15" NAME="SCS_CLKS" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_SCS_CLKS">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SCS_CT_wrapper_0" PORT="SCS_CLKS"/>
       </CONNECTIONS>
@@ -29,89 +29,16 @@
         <CONNECTION INSTANCE="SCS_CT_wrapper_0" PORT="idata1"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="CT_DATA_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_araddr">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_araddr"/>
+        <CONNECTION INSTANCE="CT_UTIL" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_aclk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="CT_DATA_arready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_arready">
+    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_arvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="CT_DATA_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_awready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_awvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_bready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="CT_DATA_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_bvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="CT_DATA_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_rready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="CT_DATA_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_rvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="CT_DATA_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_wready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="CT_DATA_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_wvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wvalid"/>
+        <CONNECTION INSTANCE="CT_UTIL" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_aresetn"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="CT_UTIL_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CT_UTIL_s_axi_araddr">
@@ -199,16 +126,89 @@
         <CONNECTION INSTANCE="CT_UTIL" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+    <PORT DIR="I" LEFT="8" NAME="CT_DATA_araddr" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_UTIL" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+    <PORT DIR="O" NAME="CT_DATA_arready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="CT_UTIL" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_arvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="CT_DATA_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_awready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_awvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_bready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="CT_DATA_bresp" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_bvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="CT_DATA_rdata" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_rready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="CT_DATA_rresp" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_rvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="CT_DATA_wdata" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_wready" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="CT_DATA_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_wvalid" SIGIS="undef" SIGNAME="CT_DATA_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CT_DATA" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -721,7 +721,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/SCS_CT_wrapper_0" HWVERSION="1.0" INSTANCE="SCS_CT_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCS_CT_wrapper" VLNV="cri.nz:user:SCS_CT_wrapper:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/SCS_CT_wrapper_0" HWVERSION="1.0" INSTANCE="SCS_CT_wrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCS_CT_wrapper" VLNV="cri.nz:user:SCS_CT_wrapper:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0"/>
@@ -754,7 +754,7 @@
             <CONNECTION INSTANCE="xlconcat_0" PORT="In2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
+        <PORT DIR="I" LEFT="15" NAME="SCS_CLKS" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SCS_CLKS">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="SCS_CLKS"/>
           </CONNECTIONS>

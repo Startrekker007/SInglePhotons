@@ -172,7 +172,7 @@ proc create_root_design { parentCell } {
   set FSEL [ create_bd_port -dir I FSEL ]
   set POST_DELAY [ create_bd_port -dir O -from 7 -to 0 -type data POST_DELAY ]
   set PRE_DELAY [ create_bd_port -dir O -from 7 -to 0 -type data PRE_DELAY ]
-  set SCS_CLKS [ create_bd_port -dir I -from 7 -to 0 -type clk SCS_CLKS ]
+  set SCS_CLKS [ create_bd_port -dir I -from 15 -to 0 -type clk SCS_CLKS ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {460000000} \
  ] $SCS_CLKS

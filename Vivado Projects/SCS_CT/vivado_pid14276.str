@@ -1,0 +1,1173 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 14276
+License: Customer
+
+Current time: 	Wed Jan 08 08:40:38 NZDT 2020
+Time zone: 	New Zealand Standard Time (Pacific/Auckland)
+
+OS: Windows 7
+OS Version: 6.1
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 39 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	j.borbely
+User home directory: C:/Users/j.borbely
+User working directory: D:/SInglePhotons/Vivado Projects/SCS_CT
+User country: 	NZ
+User language: 	en
+User locale: 	en_NZ
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/j.borbely/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/j.borbely/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/j.borbely/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	D:/SInglePhotons/Vivado Projects/SCS_CT/vivado.log
+Vivado journal file location: 	D:/SInglePhotons/Vivado Projects/SCS_CT/vivado.jou
+Engine tmp dir: 	D:/SInglePhotons/Vivado Projects/SCS_CT/.Xil/Vivado-14276-CISS32101
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 610 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: D:\SInglePhotons\Vivado Projects\SCS_CT\SCS_CT.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 47 MB. Current time: 1/8/20, 8:40:41 AM NZDT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 104 MB (+106520kb) [00:00:14]
+// [Engine Memory]: 763 MB (+648309kb) [00:00:14]
+// [Engine Memory]: 802 MB (+919kb) [00:00:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  2136 ms.
+// Tcl Message: open_project {D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: SCS_CT; location: D:/SInglePhotons/Vivado Projects/SCS_CT; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 838.961 ; gain = 213.543 
+dismissDialog("Open Project"); // by (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 110 MB (+1172kb) [00:00:29]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 14 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd)]", 1); // B (F, cl)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd)]", 1); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd)]", 1); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd), SCS_CT_i : SCS_CT (SCS_CT.bd), SCS_CT(STRUCTURE) (SCS_CT.vhd)]", 3); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd), SCS_CT_i : SCS_CT (SCS_CT.bd), SCS_CT(STRUCTURE) (SCS_CT.vhd), PH_CT_0 : SCS_CT_PH_CT_0_0 (Module Reference Wrapper)]", 6); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd), SCS_CT_i : SCS_CT (SCS_CT.bd), SCS_CT(STRUCTURE) (SCS_CT.vhd), PH_CT_0 : SCS_CT_PH_CT_0_0 (Module Reference Wrapper), SCS_CT_PH_CT_0_0(SCS_CT_PH_CT_0_0_arch) (SCS_CT_PH_CT_0_0.vhd), U0 : PH_CT(Behavioral) (PH_CT.vhd)]", 8, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_CT_wrapper(STRUCTURE) (SCS_CT_wrapper.vhd), SCS_CT_i : SCS_CT (SCS_CT.bd), SCS_CT(STRUCTURE) (SCS_CT.vhd), PH_CT_0 : SCS_CT_PH_CT_0_0 (Module Reference Wrapper), SCS_CT_PH_CT_0_0(SCS_CT_PH_CT_0_0_arch) (SCS_CT_PH_CT_0_0.vhd), U0 : PH_CT(Behavioral) (PH_CT.vhd)]", 8, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+selectCodeEditor("PH_CT.vhd", 559, 364); // cl (w, cl)
+selectCodeEditor("PH_CT.vhd", 561, 451); // cl (w, cl)
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 835 MB. GUI used memory: 54 MB. Current time: 1/8/20, 8:41:31 AM NZDT
+// Elapsed time: 15 seconds
+selectButton(PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, "Refresh Changed Modules"); // h (cS, cl)
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// by (cl):  Refresh Changed Modules : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: update_module_reference SCS_CT_PH_CT_0_0 
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'RESETN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-4728] Bus Interface 'RESETN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'. INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT'. 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 854 MB (+13196kb) [00:01:06]
+// WARNING: HEventQueue.dispatchEvent() is taking  1497 ms.
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:module_ref:CT_CDELAY:1.0 - CT_CDELAY_0 Adding component instance block -- xilinx.com:module_ref:CT_CDELAY:1.0 - CT_CDELAY_1 Adding component instance block -- xilinx.com:module_ref:PH_CT:1.0 - PH_CT_0 
+// Tcl Message: Successfully read diagram <SCS_CT> from BD file <D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/SCS_CT.bd> 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Upgrading 'D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/SCS_CT.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_CT_PH_CT_0_0 to use current project options 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\SCS_CT\SCS_CT.srcs\sources_1\bd\SCS_CT\SCS_CT.bd>  
+dismissDialog("Refresh Changed Modules"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Generate Block Design]", 9, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_RSB_DESIGN
+// aI (cl): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/SCS_CT.bd}}] 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\SCS_CT\SCS_CT.srcs\sources_1\bd\SCS_CT\SCS_CT.bd>  
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// [Engine Memory]: 1,000 MB (+108160kb) [00:01:17]
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/synth/SCS_CT.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/sim/SCS_CT.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/hdl/SCS_CT_wrapper.vhd 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block PH_CT_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block CT_CDELAY_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block CT_CDELAY_1 . 
+// Tcl Message: Exporting to file D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/hw_handoff/SCS_CT.hwh Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/hw_handoff/SCS_CT_bd.tcl Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/synth/SCS_CT.hwdef 
+// Tcl Message: export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/SCS_CT/SCS_CT.srcs/sources_1/bd/SCS_CT/SCS_CT.bd}}] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// [GUI Memory]: 118 MB (+2154kb) [00:01:18]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,027 MB. GUI used memory: 59 MB. Current time: 1/8/20, 8:41:51 AM NZDT
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: FILE_SET_CHANGE
+// 'bo' command handler elapsed time: 70 seconds
+// Elapsed time: 70 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ae (cl)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cl): Create and Package New IP: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,055 MB. GUI used memory: 60 MB. Current time: 1/8/20, 8:43:01 AM NZDT
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+// [Engine Memory]: 1,055 MB (+5160kb) [00:02:33]
+selectRadioButton(PAResourceItoN.NewIpWizard_PACKAGE_YOUR_CURRENT_PROJECT_USE, "Package your current project. Use the project as the source for creating a new IP Definition."); // b (a, Q)
+// by (Q):  Analyze source files for top modules : addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+dismissDialog("Analyze source files for top modules"); // by (Q)
+selectButton(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, (String) null); // q (al, Q)
+setFolderChooser("D:/SInglePhotons/HW_IP/SCS_CT");
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("OptionPane.button", "Overwrite"); // JButton (A, G)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 19 seconds
+dismissDialog("Create and Package New IP"); // Q (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  IP Packager : addNotify
+// Tcl Message: ipx::package_project -root_dir D:/SInglePhotons/HW_IP/SCS_CT -vendor cri.nz -library user -taxonomy /UserIP -import_files -set_current false -force 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-4728] Bus Interface 'resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'. INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'resetn'. 
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: ipx::unload_core d:/SInglePhotons/HW_IP/SCS_CT/component.xml 
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory D:/SInglePhotons/HW_IP/SCS_CT d:/SInglePhotons/HW_IP/SCS_CT/component.xml 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  2974 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,108 MB. GUI used memory: 69 MB. Current time: 1/8/20, 8:43:29 AM NZDT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 1,110 MB (+1680kb) [00:03:00]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1109.098 ; gain = 50.344 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1130.727 ; gain = 71.973 
+// Elapsed time: 18 seconds
+dismissDialog("IP Packager"); // by (cl)
+// [GUI Memory]: 127 MB (+2891kb) [00:03:07]
+// [GUI Memory]: 139 MB (+6172kb) [00:03:09]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,161 MB. GUI used memory: 74 MB. Current time: 1/8/20, 8:44:16 AM NZDT
+// Elapsed time: 88 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Ports and Interfaces", 4); // ar (O, cl)
+selectButton(PAResourceOtoP.PackagerStepContentPanel_MESSAGES, "1"); // h (p, cl)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager]", 5); // ah (O, cl)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager, Ports and Interfaces Wizard]", 7); // ah (O, cl)
+// [Engine Memory]: 1,176 MB (+10825kb) [00:04:46]
+expandTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "Clock and Reset Signals ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 0); // M (O, cl)
+collapseTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "Clock and Reset Signals ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 0); // M (O, cl)
+// Elapsed time: 11 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (O, cl)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cl)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  Package IP : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,176 MB. GUI used memory: 71 MB. Current time: 1/8/20, 8:45:35 AM NZDT
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // by (cl)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path d:/SInglePhotons/HW_IP/SCS_CT 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT' 
+// TclEventType: FILE_SET_CHANGE
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// Elapsed time: 23 seconds
+setFileChooser("D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.xpr");
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,176 MB. GUI used memory: 66 MB. Current time: 1/8/20, 8:46:05 AM NZDT
+// Opening Vivado Project: D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.xpr. Version: Vivado v2019.1 
+// by (cl):  Open Project : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: close_project 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: SCS_CT_AXI_PERIPH; location: D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH; part: xc7z020clg400-1
+// 'i' command handler elapsed time: 28 seconds
+dismissDialog("Open Project"); // by (cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,181 MB. GUI used memory: 66 MB. Current time: 1/8/20, 8:47:11 AM NZDT
+// Elapsed time: 425 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 8, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// by (cl):  Open Block Design : addNotify
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: open_bd_design {D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.bd} 
+// Tcl Message: Adding component instance block -- cri.nz:user:SCS_CT_wrapper:1.0 - SCS_CT_wrapper_0 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - CT_DATA Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - CT_UTIL 
+// Tcl Message: Successfully read diagram <SCS_CT_AXI_PERIPH> from BD file <D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.bd> 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+dismissDialog("Open Block Design"); // by (cl)
+selectButton(PAResourceQtoS.SystemTab_REPORT_IP_STATUS, "Report IP Status"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (g, cl)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: upgrade_ip -vlnv cri.nz:user:SCS_CT_wrapper:1.0 [get_ips  SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0 to use current project options 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\SCS_AXI\SCS_CT_AXI_PERIPH\SCS_CT_AXI_PERIPH.srcs\sources_1\bd\SCS_CT_AXI_PERIPH\SCS_CT_AXI_PERIPH.bd>  Wrote  : <D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ui/bd_90bffc23.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0] -no_script -sync -force -quiet 
+// aI (cl): Generate Output Products: addNotify
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.bd}}] 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\SCS_AXI\SCS_CT_AXI_PERIPH\SCS_CT_AXI_PERIPH.srcs\sources_1\bd\SCS_CT_AXI_PERIPH\SCS_CT_AXI_PERIPH.bd>  VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/synth/SCS_CT_AXI_PERIPH.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/sim/SCS_CT_AXI_PERIPH.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/hdl/SCS_CT_AXI_PERIPH_wrapper.vhd 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block SCS_CT_wrapper_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block CT_DATA . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block CT_UTIL . 
+// Tcl Message: Exporting to file D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/hw_handoff/SCS_CT_AXI_PERIPH.hwh Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/hw_handoff/SCS_CT_AXI_PERIPH_bd.tcl Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/synth/SCS_CT_AXI_PERIPH.hwdef 
+// Tcl Message: export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/SCS_CT_AXI_PERIPH.bd}}] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,240 MB. GUI used memory: 70 MB. Current time: 1/8/20, 8:53:26 AM NZDT
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// [Engine Memory]: 1,244 MB (+10573kb) [00:12:58]
+// a (cl): Critical Messages: addNotify
+dismissDialog("Managing Output Products"); // by (cl)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 155 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cl): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_PACKAGE_YOUR_CURRENT_PROJECT_USE, "Package your current project. Use the project as the source for creating a new IP Definition."); // b (a, Q)
+// by (Q):  Analyze source files for top modules : addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+dismissDialog("Analyze source files for top modules"); // by (Q)
+selectButton(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, (String) null); // q (al, Q)
+setFolderChooser("D:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH");
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("OptionPane.button", "Overwrite"); // JButton (A, G)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 12 seconds
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Create and Package New IP"); // Q (cl)
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  IP Packager : addNotify
+// Tcl Message: ipx::package_project -root_dir D:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH -vendor cri.nz -library user -taxonomy /UserIP -import_files -set_current false -force 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: ipx::unload_core d:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH/component.xml 
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory D:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH d:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH/component.xml 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,323 MB (+17525kb) [00:15:53]
+// WARNING: HEventQueue.dispatchEvent() is taking  1640 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,329 MB. GUI used memory: 79 MB. Current time: 1/8/20, 8:56:26 AM NZDT
+// Tcl Message: create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1323.309 ; gain = 81.145 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1342.254 ; gain = 100.090 
+dismissDialog("IP Packager"); // by (cl)
+// [GUI Memory]: 156 MB (+10513kb) [00:15:59]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 73 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (O, cl)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cl)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  Package IP : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,331 MB. GUI used memory: 82 MB. Current time: 1/8/20, 8:57:45 AM NZDT
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // by (cl)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path d:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH' 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+// TclEventType: FILE_SET_CHANGE
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+setFileChooser("D:/SInglePhotons/Vivado Projects/SCS_ST/SCS_ST.xpr");
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,337 MB. GUI used memory: 79 MB. Current time: 1/8/20, 8:57:59 AM NZDT
+// Opening Vivado Project: D:/SInglePhotons/Vivado Projects/SCS_ST/SCS_ST.xpr. Version: Vivado v2019.1 
+// by (cl):  Open Project : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: close_project 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {D:/SInglePhotons/Vivado Projects/SCS_ST/SCS_ST.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: SCS_ST; location: D:/SInglePhotons/Vivado Projects/SCS_ST; part: xc7z020clg400-1
+// 'i' command handler elapsed time: 14 seconds
+dismissDialog("Open Project"); // by (cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 421 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_ST(Behavioral) (SCS_ST.vhd)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_ST(Behavioral) (SCS_ST.vhd)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,374 MB. GUI used memory: 80 MB. Current time: 1/8/20, 9:05:06 AM NZDT
+selectCodeEditor("SCS_ST.vhd", 552, 399); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cl): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_PACKAGE_YOUR_CURRENT_PROJECT_USE, "Package your current project. Use the project as the source for creating a new IP Definition."); // b (a, Q)
+// by (Q):  Analyze source files for top modules : addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+dismissDialog("Analyze source files for top modules"); // by (Q)
+selectButton(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, (String) null); // q (al, Q)
+setFolderChooser("D:/SInglePhotons/HW_IP/SCS_ST");
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("OptionPane.button", "Overwrite"); // JButton (A, G)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 13 seconds
+dismissDialog("Create and Package New IP"); // Q (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ipx::package_project -root_dir D:/SInglePhotons/HW_IP/SCS_ST -vendor cri.nz -library user -taxonomy /UserIP -import_files -set_current false -force 
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'RESETN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-4728] Bus Interface 'RESETN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'. INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: ipx::unload_core d:/SInglePhotons/HW_IP/SCS_ST/component.xml 
+// by (cl):  IP Packager : addNotify
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory D:/SInglePhotons/HW_IP/SCS_ST d:/SInglePhotons/HW_IP/SCS_ST/component.xml 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,397 MB (+7241kb) [00:25:07]
+// WARNING: HEventQueue.dispatchEvent() is taking  1497 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1428.879 ; gain = 59.227 
+// Tcl Message: current_project SCS_ST 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,434 MB. GUI used memory: 104 MB. Current time: 1/8/20, 9:05:41 AM NZDT
+dismissDialog("IP Packager"); // by (cl)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (O, cl)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cl)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  Package IP : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: current_project tmp_edit_project 
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,434 MB. GUI used memory: 91 MB. Current time: 1/8/20, 9:05:45 AM NZDT
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // by (cl)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path d:/SInglePhotons/HW_IP/SCS_ST 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST' 
+// TclEventType: FILE_SET_CHANGE
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+setFileChooser("D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.xpr");
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,491 MB. GUI used memory: 89 MB. Current time: 1/8/20, 9:05:58 AM NZDT
+// Opening Vivado Project: D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.xpr. Version: Vivado v2019.1 
+// by (cl):  Open Project : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: close_project 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,494 MB (+28885kb) [00:25:31]
+// Tcl Message: open_project {D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: SCS_ST_AXI_PERIPH; location: D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH; part: xc7z020clg400-1
+// 'i' command handler elapsed time: 13 seconds
+dismissDialog("Open Project"); // by (cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 8, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// by (cl):  Open Block Design : addNotify
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: open_bd_design {D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.bd} 
+// Tcl Message: Adding component instance block -- cri.nz:user:SCS_ST:1.0 - SCS_ST_0 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - ST_DATA Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - ST_UTIL 
+// Tcl Message: Successfully read diagram <SCS_ST_AXI_PERIPH> from BD file <D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.bd> 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+dismissDialog("Open Block Design"); // by (cl)
+selectButton(PAResourceQtoS.SystemTab_REPORT_IP_STATUS, "Report IP Status"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (g, cl)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// by (cl):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: upgrade_ip -vlnv cri.nz:user:SCS_ST:1.0 [get_ips  SCS_ST_AXI_PERIPH_SCS_ST_0_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_ST_AXI_PERIPH_SCS_ST_0_0 to use current project options 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\SCS_AXI\SCS_ST_AXI_PERIPH\SCS_ST_AXI_PERIPH.srcs\sources_1\bd\SCS_ST_AXI_PERIPH\SCS_ST_AXI_PERIPH.bd>  Wrote  : <D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/ui/bd_9d3ac433.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips SCS_ST_AXI_PERIPH_SCS_ST_0_0] -no_script -sync -force -quiet 
+// aI (cl): Generate Output Products: addNotify
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.bd}}] 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\SCS_AXI\SCS_ST_AXI_PERIPH\SCS_ST_AXI_PERIPH.srcs\sources_1\bd\SCS_ST_AXI_PERIPH\SCS_ST_AXI_PERIPH.bd>  VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/synth/SCS_ST_AXI_PERIPH.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/sim/SCS_ST_AXI_PERIPH.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/hdl/SCS_ST_AXI_PERIPH_wrapper.vhd 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block SCS_ST_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block ST_DATA . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block ST_UTIL . 
+// Tcl Message: Exporting to file D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/hw_handoff/SCS_ST_AXI_PERIPH.hwh Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/hw_handoff/SCS_ST_AXI_PERIPH_bd.tcl Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/synth/SCS_ST_AXI_PERIPH.hwdef 
+// Tcl Message: export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/SCS_AXI/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.srcs/sources_1/bd/SCS_ST_AXI_PERIPH/SCS_ST_AXI_PERIPH.bd}}] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,547 MB. GUI used memory: 91 MB. Current time: 1/8/20, 9:06:26 AM NZDT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// a (cl): Critical Messages: addNotify
+dismissDialog("Managing Output Products"); // by (cl)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cl): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_PACKAGE_YOUR_CURRENT_PROJECT_USE, "Package your current project. Use the project as the source for creating a new IP Definition."); // b (a, Q)
+// by (Q):  Analyze source files for top modules : addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+dismissDialog("Analyze source files for top modules"); // by (Q)
+selectButton(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, (String) null); // q (al, Q)
+setFolderChooser("D:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH");
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("OptionPane.button", "Overwrite"); // JButton (A, G)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 13 seconds
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Create and Package New IP"); // Q (cl)
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  IP Packager : addNotify
+// Tcl Message: ipx::package_project -root_dir D:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH -vendor cri.nz -library user -taxonomy /UserIP -import_files -set_current false -force 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: ipx::unload_core d:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH/component.xml 
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory D:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH d:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH/component.xml 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,576 MB (+8222kb) [00:26:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  1380 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,579 MB. GUI used memory: 99 MB. Current time: 1/8/20, 9:06:52 AM NZDT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1611.512 ; gain = 7.438 
+dismissDialog("IP Packager"); // by (cl)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (O, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 165 MB (+1733kb) [00:26:30]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cl)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  Package IP : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,608 MB. GUI used memory: 103 MB. Current time: 1/8/20, 9:07:02 AM NZDT
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // by (cl)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path d:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH' 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// [Engine Memory]: 1,676 MB (+22096kb) [00:26:43]
+setFileChooser("D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.xpr");
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,677 MB. GUI used memory: 99 MB. Current time: 1/8/20, 9:07:17 AM NZDT
+// Opening Vivado Project: D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.xpr. Version: Vivado v2019.1 
+// by (cl):  Open Project : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: close_project 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: SCS_TT8; location: D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8; part: xc7z020clg400-1
+// 'i' command handler elapsed time: 13 seconds
+dismissDialog("Open Project"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 8, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// by (cl):  Open Block Design : addNotify
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// Tcl Message: open_bd_design {D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/SCS_TT.bd} 
+// Tcl Message: Adding component instance block -- xilinx.com:module_ref:TT_CDELAY:1.0 - TT_CDELAY_0 
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: Adding component instance block -- xilinx.com:module_ref:TT_CDELAY:1.0 - TT_CDELAY_1 Adding component instance block -- xilinx.com:module_ref:TT_CDELAY:1.0 - TT_CDELAY_2 Adding component instance block -- xilinx.com:module_ref:TT_CDELAY:1.0 - TT_CDELAY_3 Adding component instance block -- xilinx.com:module_ref:TT_CDELAY:1.0 - CDELAY_T0 Adding component instance block -- xilinx.com:module_ref:TT_DETECTOR:1.0 - TT_DETECTOR_0 
+// Tcl Message: Successfully read diagram <SCS_TT> from BD file <D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/SCS_TT.bd> 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1790.617 ; gain = 0.000 
+// 'bB' command handler elapsed time: 5 seconds
+dismissDialog("Open Block Design"); // by (cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, "Refresh Changed Modules"); // h (cS, cl)
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// by (cl):  Refresh Changed Modules : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: update_module_reference {SCS_TT_TT_CDELAY_0_1 SCS_TT_TT_CDELAY_1_0 SCS_TT_TT_CDELAY_0_0 SCS_TT_TT_CDELAY_2_0 SCS_TT_TT_CDELAY_2_1} 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT'. 
+// Tcl Message: Upgrading 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/SCS_TT.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_TT_TT_CDELAY_0_0 to use current project options 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_TT_TT_CDELAY_0_1 to use current project options 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_TT_TT_CDELAY_1_0 to use current project options 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_TT_TT_CDELAY_2_0 to use current project options 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_TT_TT_CDELAY_2_1 to use current project options 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\EXPERIMENTAL\SCS_TT8\SCS_TT8.srcs\sources_1\bd\SCS_TT\SCS_TT.bd>  Wrote  : <D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/ui/bd_bedc763c.ui>  
+dismissDialog("Refresh Changed Modules"); // by (cl)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aK (aH, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_TT_wrapper(STRUCTURE) (SCS_TT_wrapper.vhd)]", 1); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_TT_wrapper(STRUCTURE) (SCS_TT_wrapper.vhd), SCS_TT_i : SCS_TT (SCS_TT.bd)]", 2); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_TT_wrapper(STRUCTURE) (SCS_TT_wrapper.vhd), SCS_TT_i : SCS_TT (SCS_TT.bd), SCS_TT_TT_DETECTOR_0_0 (Module Reference Wrapper)]", 8); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_TT_wrapper(STRUCTURE) (SCS_TT_wrapper.vhd), SCS_TT_i : SCS_TT (SCS_TT.bd), SCS_TT_TT_DETECTOR_0_0 (Module Reference Wrapper), TT_DETECTOR(Behavioral) (TT_DETECTOR.vhd)]", 9, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCS_TT_wrapper(STRUCTURE) (SCS_TT_wrapper.vhd), SCS_TT_i : SCS_TT (SCS_TT.bd), SCS_TT_TT_DETECTOR_0_0 (Module Reference Wrapper), TT_DETECTOR(Behavioral) (TT_DETECTOR.vhd)]", 9, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 82 seconds
+selectCodeEditor("TT_DETECTOR.vhd", 343, 246); // cl (w, cl)
+selectCodeEditor("TT_DETECTOR.vhd", 517, 281); // cl (w, cl)
+selectCodeEditor("TT_DETECTOR.vhd", 519, 363); // cl (w, cl)
+selectCodeEditor("TT_DETECTOR.vhd", 519, 452); // cl (w, cl)
+selectCodeEditor("TT_DETECTOR.vhd", 516, 381); // cl (w, cl)
+selectCodeEditor("TT_DETECTOR.vhd", 408, 248); // cl (w, cl)
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, "Refresh Changed Modules"); // h (cS, cl)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// Elapsed time: 24 seconds
+selectCodeEditor("TT_DETECTOR.vhd", 330, 263); // cl (w, cl)
+selectCodeEditor("TT_DETECTOR.vhd", 258, 231); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectButton(PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, "Refresh Changed Modules"); // h (cS, cl)
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  Refresh Changed Modules : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: update_module_reference SCS_TT_TT_DETECTOR_0_0 
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'RESETN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-4728] Bus Interface 'RESETN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'. INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT'. 
+// Tcl Message: Upgrading 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/SCS_TT.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated SCS_TT_TT_DETECTOR_0_0 to use current project options 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\EXPERIMENTAL\SCS_TT8\SCS_TT8.srcs\sources_1\bd\SCS_TT\SCS_TT.bd>  Wrote  : <D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/ui/bd_bedc763c.ui>  
+dismissDialog("Refresh Changed Modules"); // by (cl)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TT_DETECTOR.vhd", 1); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Generate Block Design]", 9, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_RSB_DESIGN
+// aI (cl): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/SCS_TT.bd}}] 
+// Tcl Message: Wrote  : <D:\SInglePhotons\Vivado Projects\EXPERIMENTAL\SCS_TT8\SCS_TT8.srcs\sources_1\bd\SCS_TT\SCS_TT.bd>  VHDL Output written to : D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/sim/SCS_TT.vhd VHDL Output written to : D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/hdl/SCS_TT_wrapper.vhd 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block TT_CDELAY_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block TT_CDELAY_1 . INFO: [BD 41-1029] Generation completed for the IP Integrator block TT_CDELAY_2 . INFO: [BD 41-1029] Generation completed for the IP Integrator block TT_CDELAY_3 . INFO: [BD 41-1029] Generation completed for the IP Integrator block CDELAY_T0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block TT_DETECTOR_0 . 
+// Tcl Message: Exporting to file D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/hw_handoff/SCS_TT.hwh Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/hw_handoff/SCS_TT_bd.tcl Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.hwdef 
+// Tcl Message: export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT8/SCS_TT8.srcs/sources_1/bd/SCS_TT/SCS_TT.bd}}] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,718 MB. GUI used memory: 103 MB. Current time: 1/8/20, 9:10:36 AM NZDT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: FILE_SET_CHANGE
+// 'bo' command handler elapsed time: 15 seconds
+// Elapsed time: 13 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cl): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_PACKAGE_YOUR_CURRENT_PROJECT_USE, "Package your current project. Use the project as the source for creating a new IP Definition."); // b (a, Q)
+// by (Q):  Analyze source files for top modules : addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+dismissDialog("Analyze source files for top modules"); // by (Q)
+selectButton(PAResourceItoN.NewIpWizard_IP_DEFINITION_SOURCE_LOCATION, (String) null); // q (al, Q)
+// Elapsed time: 15 seconds
+setFolderChooser("D:/SInglePhotons/HW_IP/SCS_TT");
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("OptionPane.button", "Overwrite"); // JButton (A, G)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 22 seconds
+dismissDialog("Create and Package New IP"); // Q (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// by (cl):  IP Packager : addNotify
+// Tcl Message: ipx::package_project -root_dir D:/SInglePhotons/HW_IP/SCS_TT -vendor cri.nz -library user -taxonomy /UserIP -import_files -set_current false -force 

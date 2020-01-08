@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x93F51AEC84EC6C7C",
+      "boundary_crc": "0x83274A7B8BB3A667",
       "device": "xc7z020clg400-1",
       "name": "SCS_TT_AXI_PERIPH",
       "synth_flow_mode": "None",
@@ -9,14 +9,14 @@
       "validated": "true"
     },
     "design_tree": {
-      "SCS_TT_wrapper_0": "",
       "TT_DATA0": "",
       "TT_DATA1": "",
       "TT_DELAY_DATA": "",
       "xlconcat_0": "",
       "TT_UTIL": "",
       "xlconcat_1": "",
-      "TT_CONFIG": ""
+      "TT_CONFIG": "",
+      "SCS_TT_wrapper_0": ""
     },
     "interface_ports": {
       "TT_DATA0": {
@@ -674,7 +674,7 @@
       "SCS_CLKS": {
         "type": "clk",
         "direction": "I",
-        "left": "7",
+        "left": "15",
         "right": "0",
         "parameters": {
           "CLK_DOMAIN": {
@@ -806,10 +806,6 @@
       }
     },
     "components": {
-      "SCS_TT_wrapper_0": {
-        "vlnv": "cri.nz:user:SCS_TT_wrapper:1.0",
-        "xci_name": "SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0"
-      },
       "TT_DATA0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "SCS_TT_AXI_PERIPH_axi_gpio_0_0",
@@ -920,6 +916,10 @@
             "value": "1"
           }
         }
+      },
+      "SCS_TT_wrapper_0": {
+        "vlnv": "cri.nz:user:SCS_TT_wrapper:1.0",
+        "xci_name": "SCS_TT_AXI_PERIPH_SCS_TT_wrapper_0_0"
       }
     },
     "interface_nets": {
@@ -935,16 +935,16 @@
           "TT_CONFIG/S_AXI"
         ]
       },
-      "TT_DATA0_1": {
-        "interface_ports": [
-          "TT_DATA0",
-          "TT_DATA0/S_AXI"
-        ]
-      },
       "TT_DELAY_DATA_1": {
         "interface_ports": [
           "TT_DELAY_DATA",
           "TT_DELAY_DATA/S_AXI"
+        ]
+      },
+      "TT_DATA0_1": {
+        "interface_ports": [
+          "TT_DATA0",
+          "TT_DATA0/S_AXI"
         ]
       },
       "TT_DATA1_1": {
