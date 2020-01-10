@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param chipscope.maxJobs 1
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -61,6 +61,12 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_1_0/SCS_TT_TEST_clk_wiz_1_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_1_0/SCS_TT_TEST_clk_wiz_1_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_1_0/SCS_TT_TEST_clk_wiz_1_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ip/SCS_TT_TEST_auto_pc_0/SCS_TT_TEST_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT_TEST16/SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/SCS_TT_TEST_ooc.xdc}}]
 

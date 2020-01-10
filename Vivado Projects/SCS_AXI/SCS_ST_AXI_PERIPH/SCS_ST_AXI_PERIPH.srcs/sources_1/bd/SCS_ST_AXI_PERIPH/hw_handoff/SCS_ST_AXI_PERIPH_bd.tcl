@@ -164,7 +164,7 @@ proc create_root_design { parentCell } {
   set DRDY_DEBUG [ create_bd_port -dir O -type data DRDY_DEBUG ]
   set IDATA [ create_bd_port -dir I -type data IDATA ]
   set MCLK [ create_bd_port -dir I MCLK ]
-  set SCS_CLKS [ create_bd_port -dir I -from 7 -to 0 -type clk SCS_CLKS ]
+  set SCS_CLKS [ create_bd_port -dir I -from 15 -to 0 -type clk SCS_CLKS ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {460000000} \
  ] $SCS_CLKS

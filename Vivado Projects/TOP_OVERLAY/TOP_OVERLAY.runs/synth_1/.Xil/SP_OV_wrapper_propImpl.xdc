@@ -1,7 +1,7 @@
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0/SP_OV_processing_system7_0_0.xdc} rfile:../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0/SP_OV_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:SP_OV_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_0_1/SP_OV_clk_wiz_0_1.xdc} rfile:../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_0_1/SP_OV_clk_wiz_0_1.xdc id:2 order:EARLY scoped_inst:SP_OV_i/DELAY_CLK/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_0_1/SP_OV_clk_wiz_0_1.xdc} rfile:../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_0_1/SP_OV_clk_wiz_0_1.xdc id:2 order:EARLY scoped_inst:SP_OV_i/DELAYTIMER_CLK/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_1_1/SP_OV_clk_wiz_1_1.xdc} rfile:../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_1_1/SP_OV_clk_wiz_1_1.xdc id:3 order:EARLY scoped_inst:SP_OV_i/REF_CLK/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_1_2/SP_OV_clk_wiz_1_2.xdc} rfile:../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_1_2/SP_OV_clk_wiz_1_2.xdc id:4 order:EARLY scoped_inst:SP_OV_i/TIMER_CLK/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_1_2/SP_OV_clk_wiz_1_2.xdc} rfile:../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_clk_wiz_1_2/SP_OV_clk_wiz_1_2.xdc id:4 order:EARLY scoped_inst:SP_OV_i/CASCADE_MMCM/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../TOP_OVERLAY.srcs/constrs_1/new/PYNQ-Z1.xdc id:5} [current_design]
 current_instance SP_OV_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
@@ -267,7 +267,7 @@ set_property PACKAGE_PIN "B10" [get_ports "PS_SRSTB"]
 set_property src_info {type:SCOPED_XDC file:1 line:721 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN "E7" [get_ports "PS_CLK"]
 current_instance
-current_instance SP_OV_i/DELAY_CLK/inst
+current_instance SP_OV_i/DELAYTIMER_CLK/inst
 set_property src_info {type:SCOPED_XDC file:2 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.1
 current_instance
@@ -275,9 +275,9 @@ current_instance SP_OV_i/REF_CLK/inst
 set_property src_info {type:SCOPED_XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.1
 current_instance
-current_instance SP_OV_i/TIMER_CLK/inst
+current_instance SP_OV_i/CASCADE_MMCM/inst
 set_property src_info {type:SCOPED_XDC file:4 line:57 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.1
+set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.02174
 current_instance
 set_property src_info {type:XDC file:5 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN R14 [get_ports {DEBUG[0]}]

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xE9FB4D583FED3A20",
+      "boundary_crc": "0xDE56C7EE626C8A18",
       "device": "xc7z020clg400-1",
       "name": "SCS_TT",
       "synth_flow_mode": "None",
@@ -9,12 +9,12 @@
       "validated": "true"
     },
     "design_tree": {
+      "TT_DETECTOR_0": "",
       "TT_CDELAY_0": "",
       "TT_CDELAY_1": "",
       "TT_CDELAY_2": "",
       "TT_CDELAY_3": "",
-      "CDELAY_T0": "",
-      "TT_DETECTOR_0": ""
+      "CDELAY_T0": ""
     },
     "ports": {
       "T0": {
@@ -251,9 +251,187 @@
             "value_src": "default"
           }
         }
+      },
+      "DEBUG0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "DEBUG1": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "DEBUG2": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
       }
     },
     "components": {
+      "TT_DETECTOR_0": {
+        "vlnv": "xilinx.com:module_ref:TT_DETECTOR:1.0",
+        "xci_name": "SCS_TT_TT_DETECTOR_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_DETECTOR",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "T0": {
+            "direction": "I"
+          },
+          "CH0": {
+            "direction": "I"
+          },
+          "CH1": {
+            "direction": "I"
+          },
+          "CH2": {
+            "direction": "I"
+          },
+          "CH3": {
+            "direction": "I"
+          },
+          "DELT": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "DEL0": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "DEL1": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "DEL2": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "DEL3": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "ODELT": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ODEL0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ODEL1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ODEL2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ODEL3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SCS_TT_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "460000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "T1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T3": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T4": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "TIME_OUTS": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "TIME_OUT": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "ttwait": {
+            "direction": "O"
+          },
+          "ttlistening": {
+            "direction": "O"
+          },
+          "DEBUG0": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DEBUG1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DEBUG2": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
       "TT_CDELAY_0": {
         "vlnv": "xilinx.com:module_ref:TT_CDELAY:1.0",
         "xci_name": "SCS_TT_TT_CDELAY_0_0",
@@ -458,190 +636,42 @@
             "direction": "O"
           }
         }
-      },
-      "TT_DETECTOR_0": {
-        "vlnv": "xilinx.com:module_ref:TT_DETECTOR:1.0",
-        "xci_name": "SCS_TT_TT_DETECTOR_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "TT_DETECTOR",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "RESETN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "T0": {
-            "direction": "I"
-          },
-          "CH0": {
-            "direction": "I"
-          },
-          "CH1": {
-            "direction": "I"
-          },
-          "CH2": {
-            "direction": "I"
-          },
-          "CH3": {
-            "direction": "I"
-          },
-          "DELT": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "DEL0": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "DEL1": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "DEL2": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "DEL3": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "ODELT": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "ODEL0": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "ODEL1": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "ODEL2": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "ODEL3": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "MCLK": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SCS_TT_MCLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "460000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "T1": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "T2": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "T3": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "T4": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "TIME_OUTS": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "TIME_OUT": {
-            "direction": "I",
-            "left": "31",
-            "right": "0",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": "undef",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "DRDY": {
-            "direction": "O"
-          },
-          "ttwait": {
-            "direction": "O"
-          },
-          "ttlistening": {
-            "direction": "O"
-          }
-        }
       }
     },
     "nets": {
       "T0_1": {
         "ports": [
           "T0",
-          "CDELAY_T0/IDATA",
-          "TT_DETECTOR_0/T0"
+          "TT_DETECTOR_0/T0",
+          "CDELAY_T0/IDATA"
         ]
       },
       "CH0_1": {
         "ports": [
           "CH0",
-          "TT_CDELAY_0/IDATA",
-          "TT_DETECTOR_0/CH0"
+          "TT_DETECTOR_0/CH0",
+          "TT_CDELAY_0/IDATA"
         ]
       },
       "CH1_1": {
         "ports": [
           "CH1",
-          "TT_CDELAY_1/IDATA",
-          "TT_DETECTOR_0/CH1"
+          "TT_DETECTOR_0/CH1",
+          "TT_CDELAY_1/IDATA"
         ]
       },
       "CH2_1": {
         "ports": [
           "CH2",
-          "TT_CDELAY_2/IDATA",
-          "TT_DETECTOR_0/CH2"
+          "TT_DETECTOR_0/CH2",
+          "TT_CDELAY_2/IDATA"
         ]
       },
       "CH3_1": {
         "ports": [
           "CH3",
-          "TT_CDELAY_3/IDATA",
-          "TT_DETECTOR_0/CH3"
+          "TT_DETECTOR_0/CH3",
+          "TT_CDELAY_3/IDATA"
         ]
       },
       "SCS_CLKS_1": {
@@ -778,6 +808,24 @@
         "ports": [
           "TT_DETECTOR_0/ODEL3",
           "DEL3"
+        ]
+      },
+      "TT_DETECTOR_0_DEBUG0": {
+        "ports": [
+          "TT_DETECTOR_0/DEBUG0",
+          "DEBUG0"
+        ]
+      },
+      "TT_DETECTOR_0_DEBUG1": {
+        "ports": [
+          "TT_DETECTOR_0/DEBUG1",
+          "DEBUG1"
+        ]
+      },
+      "TT_DETECTOR_0_DEBUG2": {
+        "ports": [
+          "TT_DETECTOR_0/DEBUG2",
+          "DEBUG2"
         ]
       }
     }

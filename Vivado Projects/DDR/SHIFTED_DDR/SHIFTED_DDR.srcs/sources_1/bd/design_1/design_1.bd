@@ -1,0 +1,192 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7942AE6285278106",
+      "device": "xc7z020clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "DDR_WRAPPER_0": "",
+      "DDR_WRAPPER_1": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "xlconcat_0": ""
+    },
+    "ports": {
+      "SCS2_IN": {
+        "type": "clk",
+        "direction": "I",
+        "left": "1",
+        "right": "0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_SCS2_IN",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "460000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "DATA_DDR": {
+        "direction": "I"
+      },
+      "DATA_OUT": {
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "PortWidth": {
+            "value": "4",
+            "value_src": "ip_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "DDR_WRAPPER_0": {
+        "vlnv": "xilinx.com:module_ref:DDR_WRAPPER:1.0",
+        "xci_name": "design_1_DDR_WRAPPER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DDR_IN": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DDR_O": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "DDR_WRAPPER_1": {
+        "vlnv": "xilinx.com:module_ref:DDR_WRAPPER:1.0",
+        "xci_name": "design_1_DDR_WRAPPER_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DDR_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DDR_IN": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DDR_O": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "2"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_0_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "2"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "design_1_xlconcat_0_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "2"
+          },
+          "IN1_WIDTH": {
+            "value": "2"
+          }
+        }
+      }
+    },
+    "nets": {
+      "SCS2_IN_1": {
+        "ports": [
+          "SCS2_IN",
+          "xlslice_0/Din",
+          "xlslice_1/Din"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "DDR_WRAPPER_1/MCLK"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "DDR_WRAPPER_0/MCLK"
+        ]
+      },
+      "DATA_DDR_1": {
+        "ports": [
+          "DATA_DDR",
+          "DDR_WRAPPER_0/DDR_IN",
+          "DDR_WRAPPER_1/DDR_IN"
+        ]
+      },
+      "DDR_WRAPPER_0_DDR_O": {
+        "ports": [
+          "DDR_WRAPPER_0/DDR_O",
+          "xlconcat_0/In0"
+        ]
+      },
+      "DDR_WRAPPER_1_DDR_O": {
+        "ports": [
+          "DDR_WRAPPER_1/DDR_O",
+          "xlconcat_0/In1"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "DATA_OUT"
+        ]
+      }
+    }
+  }
+}

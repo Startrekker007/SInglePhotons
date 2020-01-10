@@ -56,24 +56,27 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1___125.000______0.000______50.0______125.247_____98.575
+// clk_out1___460.000_____22.500______50.0_______81.270_____90.087
+// clk_out2___460.000_____45.000______50.0_______81.270_____90.087
+// clk_out3___460.000_____67.500______50.0_______81.270_____90.087
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary_________100.000____________0.010
+// __primary_____________460____________0.010
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "SP_OV_clk_wiz_1_2,clk_wiz_v6_0_3_0_0,{component_name=SP_OV_clk_wiz_1_2,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "SP_OV_clk_wiz_1_2,clk_wiz_v6_0_3_0_0,{component_name=SP_OV_clk_wiz_1_2,use_phase_alignment=true,use_min_o_jitter=true,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=2.174,clkin2_period=10.0,use_power_down=false,use_reset=true,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module SP_OV_clk_wiz_1_2 
  (
   // Clock out ports
   output        clk_out1,
+  output        clk_out2,
+  output        clk_out3,
   // Status and control signals
   input         resetn,
-  output        locked,
  // Clock in ports
   input         clk_in1
  );
@@ -82,9 +85,10 @@ module SP_OV_clk_wiz_1_2
   (
   // Clock out ports  
   .clk_out1(clk_out1),
+  .clk_out2(clk_out2),
+  .clk_out3(clk_out3),
   // Status and control signals               
   .resetn(resetn), 
-  .locked(locked),
  // Clock in ports
   .clk_in1(clk_in1)
   );

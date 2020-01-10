@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -102,7 +101,7 @@ start_step opt_design
 set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
-  opt_design 
+  opt_design -directive Explore
   write_checkpoint -force SCS_TT_TEST_wrapper_opt.dcp
   create_report "impl_1_opt_report_drc_0" "report_drc -file SCS_TT_TEST_wrapper_drc_opted.rpt -pb SCS_TT_TEST_wrapper_drc_opted.pb -rpx SCS_TT_TEST_wrapper_drc_opted.rpx"
   close_msg_db -file opt_design.pb
@@ -122,7 +121,7 @@ set rc [catch {
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 
     implement_debug_core 
   } 
-  place_design 
+  place_design -directive Explore
   write_checkpoint -force SCS_TT_TEST_wrapper_placed.dcp
   create_report "impl_1_place_report_io_0" "report_io -file SCS_TT_TEST_wrapper_io_placed.rpt"
   create_report "impl_1_place_report_utilization_0" "report_utilization -file SCS_TT_TEST_wrapper_utilization_placed.rpt -pb SCS_TT_TEST_wrapper_utilization_placed.pb"
@@ -137,11 +136,27 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+start_step phys_opt_design
+set ACTIVE_STEP phys_opt_design
+set rc [catch {
+  create_msg_db phys_opt_design.pb
+  phys_opt_design -directive Explore
+  write_checkpoint -force SCS_TT_TEST_wrapper_physopt.dcp
+  close_msg_db -file phys_opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step phys_opt_design
+  unset ACTIVE_STEP 
+}
+
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
-  route_design 
+  route_design -directive Explore
   write_checkpoint -force SCS_TT_TEST_wrapper_routed.dcp
   create_report "impl_1_route_report_drc_0" "report_drc -file SCS_TT_TEST_wrapper_drc_routed.rpt -pb SCS_TT_TEST_wrapper_drc_routed.pb -rpx SCS_TT_TEST_wrapper_drc_routed.rpx"
   create_report "impl_1_route_report_methodology_0" "report_methodology -file SCS_TT_TEST_wrapper_methodology_drc_routed.rpt -pb SCS_TT_TEST_wrapper_methodology_drc_routed.pb -rpx SCS_TT_TEST_wrapper_methodology_drc_routed.rpx"
@@ -159,26 +174,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force SCS_TT_TEST_wrapper.mmi }
-  write_bitstream -force SCS_TT_TEST_wrapper.bit 
-  catch { write_sysdef -hwdef SCS_TT_TEST_wrapper.hwdef -bitfile SCS_TT_TEST_wrapper.bit -meminfo SCS_TT_TEST_wrapper.mmi -file SCS_TT_TEST_wrapper.sysdef }
-  catch {write_debug_probes -quiet -force SCS_TT_TEST_wrapper}
-  catch {file copy -force SCS_TT_TEST_wrapper.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

@@ -1,0 +1,463 @@
+
+*** Running vivado
+    with args -log SCS_TT_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SCS_TT_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source SCS_TT_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT16'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'cri.nz:user:SCS_TT_wrapper:1.0'. The one found in IP location 'd:/SInglePhotons/HW_IP/SCS_TT' will take precedence over the same IP in location d:/SInglePhotons/HW_IP/SCS_TT16
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT16'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'cri.nz:user:SCS_TT_wrapper:1.0'. The one found in IP location 'd:/SInglePhotons/HW_IP/SCS_TT' will take precedence over the same IP in location d:/SInglePhotons/HW_IP/SCS_TT16
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESETN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'RESETN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT16'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SCS_TT'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'cri.nz:user:SCS_TT_wrapper:1.0'. The one found in IP location 'd:/SInglePhotons/HW_IP/SCS_TT' will take precedence over the same IP in location d:/SInglePhotons/HW_IP/SCS_TT16
+add_files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 301.324 ; gain = 0.000
+Command: synth_design -top SCS_TT_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12960 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 737.500 ; gain = 179.285
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_wrapper' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/hdl/SCS_TT_wrapper.vhd:41]
+INFO: [Synth 8-3491] module 'SCS_TT' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:14' bound to instance 'SCS_TT_i' of component 'SCS_TT' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/hdl/SCS_TT_wrapper.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:45]
+INFO: [Synth 8-3491] module 'SCS_TT_TT_CDELAY_2_1' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_1/synth/SCS_TT_TT_CDELAY_2_1.vhd:56' bound to instance 'CDELAY_T0' of component 'SCS_TT_TT_CDELAY_2_1' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_TT_CDELAY_2_1' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_1/synth/SCS_TT_TT_CDELAY_2_1.vhd:65]
+INFO: [Synth 8-3491] module 'TT_CDELAY' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:34' bound to instance 'U0' of component 'TT_CDELAY' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_1/synth/SCS_TT_TT_CDELAY_2_1.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'TT_CDELAY' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'TT_CDELAY' (1#1) [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_TT_CDELAY_2_1' (2#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_1/synth/SCS_TT_TT_CDELAY_2_1.vhd:65]
+INFO: [Synth 8-3491] module 'SCS_TT_TT_CDELAY_0_0' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_0/synth/SCS_TT_TT_CDELAY_0_0.vhd:56' bound to instance 'TT_CDELAY_0' of component 'SCS_TT_TT_CDELAY_0_0' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:214]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_TT_CDELAY_0_0' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_0/synth/SCS_TT_TT_CDELAY_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'TT_CDELAY' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:34' bound to instance 'U0' of component 'TT_CDELAY' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_0/synth/SCS_TT_TT_CDELAY_0_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_TT_CDELAY_0_0' (3#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_0/synth/SCS_TT_TT_CDELAY_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'SCS_TT_TT_CDELAY_0_1' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_1/synth/SCS_TT_TT_CDELAY_0_1.vhd:56' bound to instance 'TT_CDELAY_1' of component 'SCS_TT_TT_CDELAY_0_1' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:221]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_TT_CDELAY_0_1' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_1/synth/SCS_TT_TT_CDELAY_0_1.vhd:65]
+INFO: [Synth 8-3491] module 'TT_CDELAY' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:34' bound to instance 'U0' of component 'TT_CDELAY' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_1/synth/SCS_TT_TT_CDELAY_0_1.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_TT_CDELAY_0_1' (4#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_0_1/synth/SCS_TT_TT_CDELAY_0_1.vhd:65]
+INFO: [Synth 8-3491] module 'SCS_TT_TT_CDELAY_1_0' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_1_0/synth/SCS_TT_TT_CDELAY_1_0.vhd:56' bound to instance 'TT_CDELAY_2' of component 'SCS_TT_TT_CDELAY_1_0' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:228]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_TT_CDELAY_1_0' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_1_0/synth/SCS_TT_TT_CDELAY_1_0.vhd:65]
+INFO: [Synth 8-3491] module 'TT_CDELAY' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:34' bound to instance 'U0' of component 'TT_CDELAY' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_1_0/synth/SCS_TT_TT_CDELAY_1_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_TT_CDELAY_1_0' (5#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_1_0/synth/SCS_TT_TT_CDELAY_1_0.vhd:65]
+INFO: [Synth 8-3491] module 'SCS_TT_TT_CDELAY_2_0' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_0/synth/SCS_TT_TT_CDELAY_2_0.vhd:56' bound to instance 'TT_CDELAY_3' of component 'SCS_TT_TT_CDELAY_2_0' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:235]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_TT_CDELAY_2_0' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_0/synth/SCS_TT_TT_CDELAY_2_0.vhd:65]
+INFO: [Synth 8-3491] module 'TT_CDELAY' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_CDELAY.vhd:34' bound to instance 'U0' of component 'TT_CDELAY' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_0/synth/SCS_TT_TT_CDELAY_2_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_TT_CDELAY_2_0' (6#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_CDELAY_2_0/synth/SCS_TT_TT_CDELAY_2_0.vhd:65]
+INFO: [Synth 8-3491] module 'SCS_TT_TT_DETECTOR_0_0' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_DETECTOR_0_0/synth/SCS_TT_TT_DETECTOR_0_0.vhd:56' bound to instance 'TT_DETECTOR_0' of component 'SCS_TT_TT_DETECTOR_0_0' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:242]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_TT_DETECTOR_0_0' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_DETECTOR_0_0/synth/SCS_TT_TT_DETECTOR_0_0.vhd:87]
+INFO: [Synth 8-3491] module 'TT_DETECTOR' declared at 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:39' bound to instance 'U0' of component 'TT_DETECTOR' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_DETECTOR_0_0/synth/SCS_TT_TT_DETECTOR_0_0.vhd:133]
+INFO: [Synth 8-638] synthesizing module 'TT_DETECTOR' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:68]
+INFO: [Synth 8-3491] module 'SCS_TT_CTR' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/ip/SCS_TT_CTR/synth/SCS_TT_CTR.vhd:59' bound to instance 'timer' of component 'SCS_TT_CTR' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:123]
+INFO: [Synth 8-638] synthesizing module 'SCS_TT_CTR' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/ip/SCS_TT_CTR/synth/SCS_TT_CTR.vhd:67]
+	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_WIDTH bound to: 32 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_RESTRICT_COUNT bound to: 0 - type: integer 
+	Parameter C_COUNT_TO bound to: 1 - type: string 
+	Parameter C_COUNT_BY bound to: 1 - type: string 
+	Parameter C_COUNT_MODE bound to: 0 - type: integer 
+	Parameter C_THRESH0_VALUE bound to: 1 - type: string 
+	Parameter C_CE_OVERRIDES_SYNC bound to: 0 - type: integer 
+	Parameter C_HAS_THRESH0 bound to: 0 - type: integer 
+	Parameter C_HAS_LOAD bound to: 0 - type: integer 
+	Parameter C_LOAD_LOW bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_FB_LATENCY bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_13' declared at 'd:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/ip/SCS_TT_CTR/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2147' bound to instance 'U0' of component 'c_counter_binary_v12_0_13' [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/ip/SCS_TT_CTR/synth/SCS_TT_CTR.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_CTR' (14#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/ip/SCS_TT_CTR/synth/SCS_TT_CTR.vhd:67]
+INFO: [Synth 8-4471] merging register 'ttwait_reg' into 'waitftrig_reg' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:258]
+INFO: [Synth 8-4471] merging register 'ttlistening_reg' into 'listening_reg' [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:259]
+WARNING: [Synth 8-6014] Unused sequential element ttwait_reg was removed.  [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:258]
+WARNING: [Synth 8-6014] Unused sequential element ttlistening_reg was removed.  [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:259]
+INFO: [Synth 8-256] done synthesizing module 'TT_DETECTOR' (15#1) [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/new/TT_DETECTOR.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_TT_DETECTOR_0_0' (16#1) [d:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/ip/SCS_TT_TT_DETECTOR_0_0/synth/SCS_TT_TT_DETECTOR_0_0.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT' (17#1) [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/synth/SCS_TT.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'SCS_TT_wrapper' (18#1) [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.srcs/sources_1/bd/SCS_TT/hdl/SCS_TT_wrapper.vhd:41]
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port CE
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port AINIT
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port ACLR
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port ASET
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design c_reg_fd_v12_0_6_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[31]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[30]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[29]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[28]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[27]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[26]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[25]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[24]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[23]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[22]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[21]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[20]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[19]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[18]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[17]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[16]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[15]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[14]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[13]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[12]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[11]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[10]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[9]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[8]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[7]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[6]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[5]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[4]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[3]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[2]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[1]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port b[0]
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_lut6_legacy has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_legacy has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_legacy has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_legacy has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_13_legacy has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port up
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port ce
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port load
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[31]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[30]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[29]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[28]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[27]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[26]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[25]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[24]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[23]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[22]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[21]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[20]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[19]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[18]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[17]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[16]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[15]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[14]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[13]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[12]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[11]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[10]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[9]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[8]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[7]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[6]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[5]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[4]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[3]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[2]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[1]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port l[0]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[31]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[30]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[29]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[28]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[27]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[26]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[25]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[24]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[23]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[22]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[21]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[20]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[19]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[18]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[17]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[16]
+WARNING: [Synth 8-3331] design c_counter_binary_v12_0_13_legacy has unconnected port iv[15]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 809.297 ; gain = 251.082
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 809.527 ; gain = 251.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 809.527 ; gain = 251.313
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 933.102 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 933.102 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for SCS_TT_i/TT_DETECTOR_0/U0/timer. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i/TT_CDELAY_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i/TT_CDELAY_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i/TT_CDELAY_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i/TT_CDELAY_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i/CDELAY_T0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SCS_TT_i/TT_DETECTOR_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T4DEL_reg[5]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T4DEL_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T4DEL_reg[6]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T4DEL_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SCS_TT_i/TT_DETECTOR_0/\U0/T4DEL_reg[7] )
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T3DEL_reg[5]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T3DEL_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T3DEL_reg[6]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T3DEL_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SCS_TT_i/TT_DETECTOR_0/\U0/T3DEL_reg[7] )
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T2DEL_reg[5]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T2DEL_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T2DEL_reg[6]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T2DEL_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SCS_TT_i/TT_DETECTOR_0/\U0/T2DEL_reg[7] )
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T1DEL_reg[5]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T1DEL_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T1DEL_reg[6]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T1DEL_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SCS_TT_i/TT_DETECTOR_0/\U0/T1DEL_reg[7] )
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T0DEL_reg[5]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T0DEL_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SCS_TT_i/TT_DETECTOR_0/U0/T0DEL_reg[6]' (FDRE) to 'SCS_TT_i/TT_DETECTOR_0/U0/T0DEL_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (SCS_TT_i/TT_DETECTOR_0/\U0/T0DEL_reg[7] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     9|
+|2     |CARRY4 |    12|
+|3     |LUT1   |    33|
+|4     |LUT2   |     3|
+|5     |LUT3   |    45|
+|6     |LUT4   |    37|
+|7     |LUT5   |    34|
+|8     |LUT6   |    58|
+|9     |MUXCY  |    31|
+|10    |XORCY  |    32|
+|11    |FDRE   |   501|
+|12    |FDSE   |    16|
+|13    |IBUF   |    47|
+|14    |OBUF   |   175|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 77 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 933.102 ; gain = 251.313
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 933.102 ; gain = 374.887
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 75 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 946.695 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+80 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 946.695 ; gain = 645.371
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 946.695 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/EXPERIMENTAL/SCS_TT16/SCS_TT16.runs/synth_1/SCS_TT_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SCS_TT_wrapper_utilization_synth.rpt -pb SCS_TT_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  9 14:58:27 2020...

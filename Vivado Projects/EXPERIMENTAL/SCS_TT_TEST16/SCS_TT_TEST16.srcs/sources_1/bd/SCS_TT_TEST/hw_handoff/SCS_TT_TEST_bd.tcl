@@ -214,6 +214,23 @@ proc create_root_design { parentCell } {
    CONFIG.C_IS_DUAL {1} \
  ] $DATA_UTIL
 
+  # Create instance: DEBUG0, and set properties
+  set DEBUG0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DEBUG0 ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {1} \
+   CONFIG.C_ALL_INPUTS_2 {1} \
+   CONFIG.C_GPIO2_WIDTH {32} \
+   CONFIG.C_GPIO_WIDTH {32} \
+   CONFIG.C_IS_DUAL {1} \
+ ] $DEBUG0
+
+  # Create instance: DEBUG1, and set properties
+  set DEBUG1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DEBUG1 ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {1} \
+   CONFIG.C_GPIO_WIDTH {16} \
+ ] $DEBUG1
+
   # Create instance: SCS_TT_wrapper_0, and set properties
   set SCS_TT_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SCS_TT_wrapper:1.0 SCS_TT_wrapper_0 ]
 
@@ -229,43 +246,52 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {210.749} \
-   CONFIG.CLKOUT1_PHASE_ERROR {303.235} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT2_JITTER {210.749} \
-   CONFIG.CLKOUT2_PHASE_ERROR {303.235} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT1_DRIVES {BUFG} \
+   CONFIG.CLKOUT1_JITTER {166.405} \
+   CONFIG.CLKOUT1_PHASE_ERROR {313.695} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {310} \
+   CONFIG.CLKOUT2_DRIVES {BUFG} \
+   CONFIG.CLKOUT2_JITTER {166.405} \
+   CONFIG.CLKOUT2_PHASE_ERROR {313.695} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT2_REQUESTED_PHASE {22.5} \
    CONFIG.CLKOUT2_USED {true} \
-   CONFIG.CLKOUT3_JITTER {210.749} \
-   CONFIG.CLKOUT3_PHASE_ERROR {303.235} \
-   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT3_DRIVES {BUFG} \
+   CONFIG.CLKOUT3_JITTER {166.405} \
+   CONFIG.CLKOUT3_PHASE_ERROR {313.695} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT3_REQUESTED_PHASE {45} \
    CONFIG.CLKOUT3_USED {true} \
-   CONFIG.CLKOUT4_JITTER {210.749} \
-   CONFIG.CLKOUT4_PHASE_ERROR {303.235} \
-   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT4_DRIVES {BUFG} \
+   CONFIG.CLKOUT4_JITTER {166.405} \
+   CONFIG.CLKOUT4_PHASE_ERROR {313.695} \
+   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT4_REQUESTED_PHASE {67.5} \
    CONFIG.CLKOUT4_USED {true} \
-   CONFIG.CLKOUT5_JITTER {210.749} \
-   CONFIG.CLKOUT5_PHASE_ERROR {303.235} \
-   CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT5_DRIVES {BUFG} \
+   CONFIG.CLKOUT5_JITTER {166.405} \
+   CONFIG.CLKOUT5_PHASE_ERROR {313.695} \
+   CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT5_REQUESTED_PHASE {90} \
    CONFIG.CLKOUT5_USED {true} \
+   CONFIG.CLKOUT6_DRIVES {BUFG} \
+   CONFIG.CLKOUT7_DRIVES {BUFG} \
    CONFIG.JITTER_SEL {Min_O_Jitter} \
    CONFIG.MMCM_BANDWIDTH {HIGH} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {46.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {62} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {4} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {4} \
    CONFIG.MMCM_CLKOUT1_PHASE {22.500} \
-   CONFIG.MMCM_CLKOUT2_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {4} \
    CONFIG.MMCM_CLKOUT2_PHASE {45.000} \
-   CONFIG.MMCM_CLKOUT3_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {4} \
    CONFIG.MMCM_CLKOUT3_PHASE {67.500} \
-   CONFIG.MMCM_CLKOUT4_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT4_DIVIDE {4} \
    CONFIG.MMCM_CLKOUT4_PHASE {90.000} \
+   CONFIG.MMCM_COMPENSATION {ZHOLD} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
    CONFIG.NUM_OUT_CLKS {5} \
+   CONFIG.PRIMITIVE {PLL} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_LOCKED {false} \
@@ -274,28 +300,37 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_1, and set properties
   set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
   set_property -dict [ list \
-   CONFIG.CLKIN1_JITTER_PS {21.74} \
-   CONFIG.CLKOUT1_JITTER {81.270} \
-   CONFIG.CLKOUT1_PHASE_ERROR {90.087} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKIN1_JITTER_PS {32.25} \
+   CONFIG.CLKOUT1_DRIVES {BUFG} \
+   CONFIG.CLKOUT1_JITTER {85.994} \
+   CONFIG.CLKOUT1_PHASE_ERROR {103.565} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT1_REQUESTED_PHASE {22.5} \
-   CONFIG.CLKOUT2_JITTER {81.270} \
-   CONFIG.CLKOUT2_PHASE_ERROR {90.087} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT2_DRIVES {BUFG} \
+   CONFIG.CLKOUT2_JITTER {85.994} \
+   CONFIG.CLKOUT2_PHASE_ERROR {103.565} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT2_REQUESTED_PHASE {45} \
    CONFIG.CLKOUT2_USED {true} \
-   CONFIG.CLKOUT3_JITTER {81.270} \
-   CONFIG.CLKOUT3_PHASE_ERROR {90.087} \
-   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT3_DRIVES {BUFG} \
+   CONFIG.CLKOUT3_JITTER {85.994} \
+   CONFIG.CLKOUT3_PHASE_ERROR {103.565} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {310} \
    CONFIG.CLKOUT3_REQUESTED_PHASE {67.5} \
    CONFIG.CLKOUT3_USED {true} \
+   CONFIG.CLKOUT4_DRIVES {BUFG} \
    CONFIG.CLKOUT4_JITTER {210.749} \
    CONFIG.CLKOUT4_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460} \
    CONFIG.CLKOUT4_REQUESTED_PHASE {90} \
    CONFIG.CLKOUT4_USED {false} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {4.000} \
-   CONFIG.MMCM_CLKIN1_PERIOD {2.174} \
+   CONFIG.CLKOUT5_DRIVES {BUFG} \
+   CONFIG.CLKOUT6_DRIVES {BUFG} \
+   CONFIG.CLKOUT7_DRIVES {BUFG} \
+   CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+   CONFIG.MMCM_BANDWIDTH {OPTIMIZED} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {2.000} \
+   CONFIG.MMCM_CLKIN1_PERIOD {3.226} \
    CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
    CONFIG.MMCM_CLKOUT0_PHASE {22.500} \
@@ -305,9 +340,10 @@ proc create_root_design { parentCell } {
    CONFIG.MMCM_CLKOUT2_PHASE {67.500} \
    CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
    CONFIG.MMCM_CLKOUT3_PHASE {90.000} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
+   CONFIG.MMCM_COMPENSATION {ZHOLD} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
    CONFIG.NUM_OUT_CLKS {3} \
-   CONFIG.PRIM_IN_FREQ {460} \
+   CONFIG.PRIMITIVE {MMCM} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_LOCKED {false} \
@@ -1089,7 +1125,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {4} \
+   CONFIG.NUM_MI {6} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -1128,9 +1164,14 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins DATA0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins DATA1/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins DATA_UTIL/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins DEBUG0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins DEBUG1/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M05_AXI]
 
   # Create port connections
   connect_bd_net -net CLOCK_EXPAND_0_SCS_CLKS [get_bd_pins CLOCK_EXPAND_0/SCS_CLKS] [get_bd_pins SCS_TT_wrapper_0/SCS_CLKS]
+  connect_bd_net -net SCS_TT_wrapper_0_DEBUG0 [get_bd_pins DEBUG0/gpio_io_i] [get_bd_pins SCS_TT_wrapper_0/DEBUG0]
+  connect_bd_net -net SCS_TT_wrapper_0_DEBUG1 [get_bd_pins DEBUG0/gpio2_io_i] [get_bd_pins SCS_TT_wrapper_0/DEBUG1]
+  connect_bd_net -net SCS_TT_wrapper_0_DEBUG2 [get_bd_pins DEBUG1/gpio_io_i] [get_bd_pins SCS_TT_wrapper_0/DEBUG2]
   connect_bd_net -net SCS_TT_wrapper_0_DEL0 [get_bd_pins SCS_TT_wrapper_0/DEL0] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net SCS_TT_wrapper_0_DEL1 [get_bd_pins SCS_TT_wrapper_0/DEL1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net SCS_TT_wrapper_0_DEL2 [get_bd_pins SCS_TT_wrapper_0/DEL2] [get_bd_pins xlconcat_0/In2]
@@ -1159,9 +1200,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins xlconcat_2/In5]
   connect_bd_net -net clk_wiz_1_clk_out2 [get_bd_pins clk_wiz_1/clk_out2] [get_bd_pins xlconcat_2/In6]
   connect_bd_net -net clk_wiz_1_clk_out3 [get_bd_pins clk_wiz_1/clk_out3] [get_bd_pins xlconcat_2/In7]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DATA0/s_axi_aclk] [get_bd_pins DATA1/s_axi_aclk] [get_bd_pins DATA_UTIL/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DATA0/s_axi_aclk] [get_bd_pins DATA1/s_axi_aclk] [get_bd_pins DATA_UTIL/s_axi_aclk] [get_bd_pins DEBUG0/s_axi_aclk] [get_bd_pins DEBUG1/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DATA0/s_axi_aresetn] [get_bd_pins DATA1/s_axi_aresetn] [get_bd_pins DATA_UTIL/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DATA0/s_axi_aresetn] [get_bd_pins DATA1/s_axi_aresetn] [get_bd_pins DATA_UTIL/s_axi_aresetn] [get_bd_pins DEBUG0/s_axi_aresetn] [get_bd_pins DEBUG1/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins DATA_UTIL/gpio_io_i] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_1_dout [get_bd_pins DATA_UTIL/gpio2_io_i] [get_bd_pins xlconcat_1/dout]
   connect_bd_net -net xlconcat_2_dout [get_bd_pins CLOCK_EXPAND_0/MMCM_I] [get_bd_pins xlconcat_2/dout]
@@ -1170,6 +1211,8 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DATA0/S_AXI/Reg] SEG_DATA0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41220000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DATA1/S_AXI/Reg] SEG_DATA1_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41230000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DATA_UTIL/S_AXI/Reg] SEG_DATA_UTIL_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41250000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DEBUG1/S_AXI/Reg] SEG_DEBUG1_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41240000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DEBUG0/S_AXI/Reg] SEG_DEBUG_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs UTIL/S_AXI/Reg] SEG_UTIL_Reg
 
 

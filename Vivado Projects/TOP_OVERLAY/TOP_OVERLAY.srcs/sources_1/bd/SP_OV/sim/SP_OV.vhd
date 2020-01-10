@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan  8 13:02:58 2020
+--Date        : Thu Jan  9 11:00:10 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SP_OV.bd
 --Design      : SP_OV
@@ -11959,7 +11959,9 @@ architecture STRUCTURE of SP_OV is
   port (
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC
+    clk_out1 : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
+    locked : out STD_LOGIC
   );
   end component SP_OV_clk_wiz_0_1;
   component SP_OV_IDELAY_CTRL_WRAPPER_0_0 is
@@ -11977,7 +11979,8 @@ architecture STRUCTURE of SP_OV is
     clk_out2 : out STD_LOGIC;
     clk_out3 : out STD_LOGIC;
     clk_out4 : out STD_LOGIC;
-    locked : out STD_LOGIC
+    locked : out STD_LOGIC;
+    clk_out5 : out STD_LOGIC
   );
   end component SP_OV_clk_wiz_1_1;
   component SP_OV_clk_wiz_1_2 is
@@ -11985,7 +11988,8 @@ architecture STRUCTURE of SP_OV is
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
     clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC
+    clk_out2 : out STD_LOGIC;
+    clk_out3 : out STD_LOGIC
   );
   end component SP_OV_clk_wiz_1_2;
   component SP_OV_util_vector_logic_6_0 is
@@ -12018,110 +12022,25 @@ architecture STRUCTURE of SP_OV is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SP_OV_util_vector_logic_6_1;
-  component SP_OV_CLOCK_EXPAND_0_0 is
-  port (
-    MMCM_I : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    SCS_CLKS : out STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component SP_OV_CLOCK_EXPAND_0_0;
   component SP_OV_xlconcat_1_0 is
   port (
     In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    In4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In5 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In6 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In7 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component SP_OV_xlconcat_1_0;
-  component SP_OV_SCS_CT_AXI_PERIPH_wr_0_0 is
+  component SP_OV_CLOCK_EXPAND_0_0 is
   port (
-    CT_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    CT_DATA_arready : out STD_LOGIC;
-    CT_DATA_arvalid : in STD_LOGIC;
-    CT_DATA_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    CT_DATA_awready : out STD_LOGIC;
-    CT_DATA_awvalid : in STD_LOGIC;
-    CT_DATA_bready : in STD_LOGIC;
-    CT_DATA_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    CT_DATA_bvalid : out STD_LOGIC;
-    CT_DATA_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CT_DATA_rready : in STD_LOGIC;
-    CT_DATA_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    CT_DATA_rvalid : out STD_LOGIC;
-    CT_DATA_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CT_DATA_wready : out STD_LOGIC;
-    CT_DATA_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    CT_DATA_wvalid : in STD_LOGIC;
-    CT_UTIL_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    CT_UTIL_arready : out STD_LOGIC;
-    CT_UTIL_arvalid : in STD_LOGIC;
-    CT_UTIL_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    CT_UTIL_awready : out STD_LOGIC;
-    CT_UTIL_awvalid : in STD_LOGIC;
-    CT_UTIL_bready : in STD_LOGIC;
-    CT_UTIL_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    CT_UTIL_bvalid : out STD_LOGIC;
-    CT_UTIL_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CT_UTIL_rready : in STD_LOGIC;
-    CT_UTIL_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    CT_UTIL_rvalid : out STD_LOGIC;
-    CT_UTIL_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CT_UTIL_wready : out STD_LOGIC;
-    CT_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    CT_UTIL_wvalid : in STD_LOGIC;
-    DRDY : out STD_LOGIC;
-    IDAT0 : in STD_LOGIC;
-    IDAT1 : in STD_LOGIC;
-    MCLK : in STD_LOGIC;
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC
+    MMCM_I : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  end component SP_OV_SCS_CT_AXI_PERIPH_wr_0_0;
-  component SP_OV_SCS_ST_AXI_PERIPH_wr_0_0 is
-  port (
-    DRDY_DEBUG : out STD_LOGIC;
-    IDATA : in STD_LOGIC;
-    MCLK : in STD_LOGIC;
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    ST_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ST_DATA_arready : out STD_LOGIC;
-    ST_DATA_arvalid : in STD_LOGIC;
-    ST_DATA_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ST_DATA_awready : out STD_LOGIC;
-    ST_DATA_awvalid : in STD_LOGIC;
-    ST_DATA_bready : in STD_LOGIC;
-    ST_DATA_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ST_DATA_bvalid : out STD_LOGIC;
-    ST_DATA_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    ST_DATA_rready : in STD_LOGIC;
-    ST_DATA_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ST_DATA_rvalid : out STD_LOGIC;
-    ST_DATA_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    ST_DATA_wready : out STD_LOGIC;
-    ST_DATA_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ST_DATA_wvalid : in STD_LOGIC;
-    ST_UTIL_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ST_UTIL_arready : out STD_LOGIC;
-    ST_UTIL_arvalid : in STD_LOGIC;
-    ST_UTIL_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    ST_UTIL_awready : out STD_LOGIC;
-    ST_UTIL_awvalid : in STD_LOGIC;
-    ST_UTIL_bready : in STD_LOGIC;
-    ST_UTIL_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ST_UTIL_bvalid : out STD_LOGIC;
-    ST_UTIL_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    ST_UTIL_rready : in STD_LOGIC;
-    ST_UTIL_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    ST_UTIL_rvalid : out STD_LOGIC;
-    ST_UTIL_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    ST_UTIL_wready : out STD_LOGIC;
-    ST_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ST_UTIL_wvalid : in STD_LOGIC;
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC
-  );
-  end component SP_OV_SCS_ST_AXI_PERIPH_wr_0_0;
+  end component SP_OV_CLOCK_EXPAND_0_0;
   component SP_OV_SCS_TT_AXI_PERIPH_wr_0_0 is
   port (
     CH0 : in STD_LOGIC;
@@ -12131,7 +12050,7 @@ architecture STRUCTURE of SP_OV is
     DB_LISTENING : out STD_LOGIC;
     DB_WAITING : out STD_LOGIC;
     MCLK : in STD_LOGIC;
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
     T0 : in STD_LOGIC;
     TT_CONFIG_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     TT_CONFIG_arready : out STD_LOGIC;
@@ -12222,6 +12141,95 @@ architecture STRUCTURE of SP_OV is
     aresetn : in STD_LOGIC
   );
   end component SP_OV_SCS_TT_AXI_PERIPH_wr_0_0;
+  component SP_OV_SCS_CT_AXI_PERIPH_wr_0_0 is
+  port (
+    CT_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    CT_DATA_arready : out STD_LOGIC;
+    CT_DATA_arvalid : in STD_LOGIC;
+    CT_DATA_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    CT_DATA_awready : out STD_LOGIC;
+    CT_DATA_awvalid : in STD_LOGIC;
+    CT_DATA_bready : in STD_LOGIC;
+    CT_DATA_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CT_DATA_bvalid : out STD_LOGIC;
+    CT_DATA_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CT_DATA_rready : in STD_LOGIC;
+    CT_DATA_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CT_DATA_rvalid : out STD_LOGIC;
+    CT_DATA_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CT_DATA_wready : out STD_LOGIC;
+    CT_DATA_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    CT_DATA_wvalid : in STD_LOGIC;
+    CT_UTIL_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    CT_UTIL_arready : out STD_LOGIC;
+    CT_UTIL_arvalid : in STD_LOGIC;
+    CT_UTIL_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    CT_UTIL_awready : out STD_LOGIC;
+    CT_UTIL_awvalid : in STD_LOGIC;
+    CT_UTIL_bready : in STD_LOGIC;
+    CT_UTIL_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CT_UTIL_bvalid : out STD_LOGIC;
+    CT_UTIL_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CT_UTIL_rready : in STD_LOGIC;
+    CT_UTIL_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CT_UTIL_rvalid : out STD_LOGIC;
+    CT_UTIL_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CT_UTIL_wready : out STD_LOGIC;
+    CT_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    CT_UTIL_wvalid : in STD_LOGIC;
+    DRDY : out STD_LOGIC;
+    IDAT0 : in STD_LOGIC;
+    IDAT1 : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC
+  );
+  end component SP_OV_SCS_CT_AXI_PERIPH_wr_0_0;
+  component SP_OV_SCS_ST_AXI_PERIPH_wr_0_0 is
+  port (
+    DRDY_DEBUG : out STD_LOGIC;
+    IDATA : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    ST_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ST_DATA_arready : out STD_LOGIC;
+    ST_DATA_arvalid : in STD_LOGIC;
+    ST_DATA_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ST_DATA_awready : out STD_LOGIC;
+    ST_DATA_awvalid : in STD_LOGIC;
+    ST_DATA_bready : in STD_LOGIC;
+    ST_DATA_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ST_DATA_bvalid : out STD_LOGIC;
+    ST_DATA_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    ST_DATA_rready : in STD_LOGIC;
+    ST_DATA_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ST_DATA_rvalid : out STD_LOGIC;
+    ST_DATA_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ST_DATA_wready : out STD_LOGIC;
+    ST_DATA_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    ST_DATA_wvalid : in STD_LOGIC;
+    ST_UTIL_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ST_UTIL_arready : out STD_LOGIC;
+    ST_UTIL_arvalid : in STD_LOGIC;
+    ST_UTIL_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    ST_UTIL_awready : out STD_LOGIC;
+    ST_UTIL_awvalid : in STD_LOGIC;
+    ST_UTIL_bready : in STD_LOGIC;
+    ST_UTIL_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ST_UTIL_bvalid : out STD_LOGIC;
+    ST_UTIL_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    ST_UTIL_rready : in STD_LOGIC;
+    ST_UTIL_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    ST_UTIL_rvalid : out STD_LOGIC;
+    ST_UTIL_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ST_UTIL_wready : out STD_LOGIC;
+    ST_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    ST_UTIL_wvalid : in STD_LOGIC;
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC
+  );
+  end component SP_OV_SCS_ST_AXI_PERIPH_wr_0_0;
   signal CH0_1 : STD_LOGIC;
   signal CH0_2 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
@@ -12230,7 +12238,7 @@ architecture STRUCTURE of SP_OV is
   signal CH2_2 : STD_LOGIC;
   signal CH3_1 : STD_LOGIC;
   signal CH3_2 : STD_LOGIC;
-  signal CLOCK_EXPAND_0_SCS_CLKS : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal CLOCK_EXPAND_0_SCS_CLKS : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal DDS_AXI_PERIPH_wrapp_0_CH_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal DDS_AXI_PERIPH_wrapp_0_DEBUG : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal DDS_AXI_PERIPH_wrapp_0_DONE : STD_LOGIC;
@@ -12241,6 +12249,8 @@ architecture STRUCTURE of SP_OV is
   signal DD_AXI_PERIPH_wrapper_0_DEBUG4 : STD_LOGIC;
   signal DD_AXI_PERIPH_wrapper_0_DEBUG5 : STD_LOGIC;
   signal DD_AXI_PERIPH_wrapper_0_ODATA5 : STD_LOGIC;
+  signal DELAYTIMER_CLK_clk_out2 : STD_LOGIC;
+  signal DELAYTIMER_CLK_locked : STD_LOGIC;
   signal ENABLER_0_CH_O : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal EX_STOP_EN_SL_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal E_TRIG_1 : STD_LOGIC;
@@ -12249,13 +12259,15 @@ architecture STRUCTURE of SP_OV is
   signal REF_CLK_clk_out2 : STD_LOGIC;
   signal REF_CLK_clk_out3 : STD_LOGIC;
   signal REF_CLK_clk_out4 : STD_LOGIC;
-  signal REF_CLK_locked : STD_LOGIC;
+  signal REF_CLK_clk_out5 : STD_LOGIC;
   signal REF_CLK_locked1 : STD_LOGIC;
   signal SCS_CT_AXI_PERIPH_wr_0_DRDY : STD_LOGIC;
   signal SCS_ST_AXI_PERIPH_wr_0_DRDY_DEBUG : STD_LOGIC;
   signal SCS_TT_AXI_PERIPH_wr_0_DB_LISTENING : STD_LOGIC;
   signal SCS_TT_AXI_PERIPH_wr_0_DB_WAITING : STD_LOGIC;
   signal TIMER_CLK_clk_out1 : STD_LOGIC;
+  signal TIMER_CLK_clk_out2 : STD_LOGIC;
+  signal TIMER_CLK_clk_out3 : STD_LOGIC;
   signal TRIG_RST_SL_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal TRIG_T0_1 : STD_LOGIC;
   signal TRIG_T0_2 : STD_LOGIC;
@@ -13010,7 +13022,7 @@ architecture STRUCTURE of SP_OV is
   signal util_vector_logic_7_Res : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal util_vector_logic_8_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_DDS_AXI_PERIPH_wrapp_0_DEBUG2_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_IDELAY_CTRL_WRAPPER_0_RDY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
@@ -13061,10 +13073,18 @@ begin
   TRIG_T0_1 <= TRIG_T0;
   TTDB_LISTENING <= SCS_TT_AXI_PERIPH_wr_0_DB_LISTENING;
   TTDB_WAITING <= SCS_TT_AXI_PERIPH_wr_0_DB_WAITING;
+CASCADE_MMCM: component SP_OV_clk_wiz_1_2
+     port map (
+      clk_in1 => REF_CLK_clk_out5,
+      clk_out1 => TIMER_CLK_clk_out1,
+      clk_out2 => TIMER_CLK_clk_out2,
+      clk_out3 => TIMER_CLK_clk_out3,
+      resetn => processing_system7_0_FCLK_RESET0_N
+    );
 CLOCK_EXPAND_0: component SP_OV_CLOCK_EXPAND_0_0
      port map (
-      MMCM_I(3 downto 0) => xlconcat_1_dout(3 downto 0),
-      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0)
+      MMCM_I(7 downto 0) => xlconcat_1_dout(7 downto 0),
+      SCS_CLKS(15 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(15 downto 0)
     );
 DDS_AXI_PERIPH_wrapp_0: component SP_OV_DDS_AXI_PERIPH_wrapp_0_0
      port map (
@@ -13458,10 +13478,12 @@ DD_AXI_PERIPH_wrapper_0: component SP_OV_DD_AXI_PERIPH_wrapper_0_0
       aclk => processing_system7_0_FCLK_CLK0,
       aresetn => rst_ps7_0_100M_peripheral_aresetn(0)
     );
-DELAY_CLK: component SP_OV_clk_wiz_0_1
+DELAYTIMER_CLK: component SP_OV_clk_wiz_0_1
      port map (
       clk_in1 => processing_system7_0_FCLK_CLK0,
       clk_out1 => clk_wiz_0_clk_out1,
+      clk_out2 => DELAYTIMER_CLK_clk_out2,
+      locked => DELAYTIMER_CLK_locked,
       resetn => processing_system7_0_FCLK_RESET0_N
     );
 ENABLER_0: component SP_OV_ENABLER_0_0
@@ -13489,7 +13511,7 @@ P_COUNTER_wrapper_0: component SP_OV_P_COUNTER_wrapper_0_0
       P_SIG_EX1 => CH1_2,
       P_SIG_EX2 => CH2_2,
       P_SIG_EX3 => CH3_2,
-      TCLK => TIMER_CLK_clk_out1,
+      TCLK => DELAYTIMER_CLK_clk_out2,
       TRIG => TRIG_T0_2,
       TRIG_RST => TRIG_RST_SL_Dout(0),
       aclk => processing_system7_0_FCLK_CLK0,
@@ -13640,6 +13662,7 @@ REF_CLK: component SP_OV_clk_wiz_1_1
       clk_out2 => REF_CLK_clk_out2,
       clk_out3 => REF_CLK_clk_out3,
       clk_out4 => REF_CLK_clk_out4,
+      clk_out5 => REF_CLK_clk_out5,
       locked => REF_CLK_locked1,
       resetn => processing_system7_0_FCLK_RESET0_N
     );
@@ -13683,7 +13706,7 @@ SCS_CT_AXI_PERIPH_wr_0: component SP_OV_SCS_CT_AXI_PERIPH_wr_0_0
       IDAT0 => CH0_1,
       IDAT1 => CH1_2,
       MCLK => REF_CLK_clk_out1,
-      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0),
+      SCS_CLKS(15 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(15 downto 0),
       aclk => processing_system7_0_FCLK_CLK0,
       aresetn => rst_ps7_0_100M_peripheral_aresetn(0)
     );
@@ -13692,7 +13715,7 @@ SCS_ST_AXI_PERIPH_wr_0: component SP_OV_SCS_ST_AXI_PERIPH_wr_0_0
       DRDY_DEBUG => SCS_ST_AXI_PERIPH_wr_0_DRDY_DEBUG,
       IDATA => CH0_1,
       MCLK => REF_CLK_clk_out1,
-      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0),
+      SCS_CLKS(15 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(15 downto 0),
       ST_DATA_araddr(8 downto 0) => axi_interconnect_0_M08_AXI_ARADDR(8 downto 0),
       ST_DATA_arready => axi_interconnect_0_M08_AXI_ARREADY,
       ST_DATA_arvalid => axi_interconnect_0_M08_AXI_ARVALID,
@@ -13739,7 +13762,7 @@ SCS_TT_AXI_PERIPH_wr_0: component SP_OV_SCS_TT_AXI_PERIPH_wr_0_0
       DB_LISTENING => SCS_TT_AXI_PERIPH_wr_0_DB_LISTENING,
       DB_WAITING => SCS_TT_AXI_PERIPH_wr_0_DB_WAITING,
       MCLK => REF_CLK_clk_out1,
-      SCS_CLKS(7 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(7 downto 0),
+      SCS_CLKS(15 downto 0) => CLOCK_EXPAND_0_SCS_CLKS(15 downto 0),
       T0 => TRIG_T0_2,
       TT_CONFIG_araddr(8 downto 0) => axi_interconnect_0_M26_AXI_ARADDR(8 downto 0),
       TT_CONFIG_arready => axi_interconnect_0_M26_AXI_ARREADY,
@@ -13828,13 +13851,6 @@ SCS_TT_AXI_PERIPH_wr_0: component SP_OV_SCS_TT_AXI_PERIPH_wr_0_0
       TT_UTIL_wvalid => axi_interconnect_0_M27_AXI_WVALID,
       aclk => processing_system7_0_FCLK_CLK0,
       aresetn => rst_ps7_0_100M_peripheral_aresetn(0)
-    );
-TIMER_CLK: component SP_OV_clk_wiz_1_2
-     port map (
-      clk_in1 => processing_system7_0_FCLK_CLK0,
-      clk_out1 => TIMER_CLK_clk_out1,
-      locked => REF_CLK_locked,
-      resetn => processing_system7_0_FCLK_RESET0_N
     );
 TRIG_RST_SL: component SP_OV_xlslice_0_0
      port map (
@@ -14776,14 +14792,14 @@ rst_ps7_0_100M: component SP_OV_rst_ps7_0_100M_0
     );
 util_vector_logic_0: component SP_OV_util_vector_logic_0_0
      port map (
-      Op1(0) => REF_CLK_locked,
+      Op1(0) => DELAYTIMER_CLK_locked,
       Op2(0) => DDS_AXI_PERIPH_wrapp_0_DONE,
       Res(0) => util_vector_logic_0_Res(0)
     );
 util_vector_logic_1: component SP_OV_util_vector_logic_0_1
      port map (
       Op1(0) => REF_CLK_locked1,
-      Op2(0) => REF_CLK_locked,
+      Op2(0) => '0',
       Res(0) => util_vector_logic_1_Res(0)
     );
 util_vector_logic_6: component SP_OV_util_vector_logic_6_0
@@ -14818,6 +14834,10 @@ xlconcat_1: component SP_OV_xlconcat_1_0
       In1(0) => REF_CLK_clk_out2,
       In2(0) => REF_CLK_clk_out3,
       In3(0) => REF_CLK_clk_out4,
-      dout(3 downto 0) => xlconcat_1_dout(3 downto 0)
+      In4(0) => REF_CLK_clk_out5,
+      In5(0) => TIMER_CLK_clk_out1,
+      In6(0) => TIMER_CLK_clk_out2,
+      In7(0) => TIMER_CLK_clk_out3,
+      dout(7 downto 0) => xlconcat_1_dout(7 downto 0)
     );
 end STRUCTURE;

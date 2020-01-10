@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan  8 14:23:29 2020
+--Date        : Fri Jan 10 12:25:49 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_TT.bd
 --Design      : SCS_TT
@@ -17,6 +17,9 @@ entity SCS_TT is
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
+    DEBUG0 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG2 : out STD_LOGIC_VECTOR ( 15 downto 0 );
     DEL0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -43,6 +46,39 @@ entity SCS_TT is
 end SCS_TT;
 
 architecture STRUCTURE of SCS_TT is
+  component SCS_TT_TT_DETECTOR_0_0 is
+  port (
+    T0 : in STD_LOGIC;
+    CH0 : in STD_LOGIC;
+    CH1 : in STD_LOGIC;
+    CH2 : in STD_LOGIC;
+    CH3 : in STD_LOGIC;
+    DELT : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    DEL0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    DEL1 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    DEL2 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    DEL3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    ODELT : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    ODEL0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    ODEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    ODEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    ODEL3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    MCLK : in STD_LOGIC;
+    RESETN : in STD_LOGIC;
+    T1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TIME_OUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    TIME_OUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    DRDY : out STD_LOGIC;
+    ttwait : out STD_LOGIC;
+    ttlistening : out STD_LOGIC;
+    DEBUG0 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG2 : out STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component SCS_TT_TT_DETECTOR_0_0;
   component SCS_TT_TT_CDELAY_0_0 is
   port (
     SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -83,36 +119,6 @@ architecture STRUCTURE of SCS_TT is
     ODATA : out STD_LOGIC
   );
   end component SCS_TT_TT_CDELAY_2_1;
-  component SCS_TT_TT_DETECTOR_0_0 is
-  port (
-    T0 : in STD_LOGIC;
-    CH0 : in STD_LOGIC;
-    CH1 : in STD_LOGIC;
-    CH2 : in STD_LOGIC;
-    CH3 : in STD_LOGIC;
-    DELT : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    DEL0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    DEL1 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    DEL2 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    DEL3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    ODELT : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    ODEL0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    ODEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    ODEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    ODEL3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    MCLK : in STD_LOGIC;
-    RESETN : in STD_LOGIC;
-    T1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    TIME_OUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    TIME_OUT : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    DRDY : out STD_LOGIC;
-    ttwait : out STD_LOGIC;
-    ttlistening : out STD_LOGIC
-  );
-  end component SCS_TT_TT_DETECTOR_0_0;
   signal CDELAY_T0_DLINE : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal CH0_1 : STD_LOGIC;
   signal CH1_1 : STD_LOGIC;
@@ -126,6 +132,9 @@ architecture STRUCTURE of SCS_TT is
   signal TT_CDELAY_1_DLINE : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal TT_CDELAY_2_DLINE : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal TT_CDELAY_3_DLINE : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal TT_DETECTOR_0_DEBUG0 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal TT_DETECTOR_0_DEBUG1 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal TT_DETECTOR_0_DEBUG2 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal TT_DETECTOR_0_DRDY : STD_LOGIC;
   signal TT_DETECTOR_0_ODEL0 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal TT_DETECTOR_0_ODEL1 : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -186,6 +195,9 @@ begin
   CH1_1 <= CH1;
   CH2_1 <= CH2;
   CH3_1 <= CH3;
+  DEBUG0(31 downto 0) <= TT_DETECTOR_0_DEBUG0(31 downto 0);
+  DEBUG1(31 downto 0) <= TT_DETECTOR_0_DEBUG1(31 downto 0);
+  DEBUG2(15 downto 0) <= TT_DETECTOR_0_DEBUG2(15 downto 0);
   DEL0(7 downto 0) <= TT_DETECTOR_0_ODEL0(7 downto 0);
   DEL1(7 downto 0) <= TT_DETECTOR_0_ODEL1(7 downto 0);
   DEL2(7 downto 0) <= TT_DETECTOR_0_ODEL2(7 downto 0);
@@ -245,6 +257,9 @@ TT_DETECTOR_0: component SCS_TT_TT_DETECTOR_0_0
       CH1 => CH1_1,
       CH2 => CH2_1,
       CH3 => CH3_1,
+      DEBUG0(31 downto 0) => TT_DETECTOR_0_DEBUG0(31 downto 0),
+      DEBUG1(31 downto 0) => TT_DETECTOR_0_DEBUG1(31 downto 0),
+      DEBUG2(15 downto 0) => TT_DETECTOR_0_DEBUG2(15 downto 0),
       DEL0(15 downto 0) => TT_CDELAY_0_DLINE(15 downto 0),
       DEL1(15 downto 0) => TT_CDELAY_1_DLINE(15 downto 0),
       DEL2(15 downto 0) => TT_CDELAY_2_DLINE(15 downto 0),

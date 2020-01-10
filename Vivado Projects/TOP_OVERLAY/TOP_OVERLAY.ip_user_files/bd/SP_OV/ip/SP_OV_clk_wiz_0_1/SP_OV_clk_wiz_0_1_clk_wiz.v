@@ -57,6 +57,7 @@
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
 // clk_out1___310.000______0.000______50.0______204.659____297.890
+// clk_out2___125.937______0.000______50.0______232.152____297.890
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -70,8 +71,10 @@ module SP_OV_clk_wiz_0_1_clk_wiz
  (// Clock in ports
   // Clock out ports
   output        clk_out1,
+  output        clk_out2,
   // Status and control signals
   input         resetn,
+  output        locked,
   input         clk_in1
  );
   // Input buffering
@@ -108,7 +111,6 @@ wire clk_in2_SP_OV_clk_wiz_0_1;
   wire        clkfbout_buf_SP_OV_clk_wiz_0_1;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
-   wire clkout1_unused;
    wire clkout1b_unused;
    wire clkout2_unused;
    wire clkout2b_unused;
@@ -134,6 +136,10 @@ wire clk_in2_SP_OV_clk_wiz_0_1;
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
+    .CLKOUT1_DIVIDE       (8),
+    .CLKOUT1_PHASE        (0.000),
+    .CLKOUT1_DUTY_CYCLE   (0.500),
+    .CLKOUT1_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.000))
   mmcm_adv_inst
     // Output clocks
@@ -142,7 +148,7 @@ wire clk_in2_SP_OV_clk_wiz_0_1;
     .CLKFBOUTB           (clkfboutb_unused),
     .CLKOUT0             (clk_out1_SP_OV_clk_wiz_0_1),
     .CLKOUT0B            (clkout0b_unused),
-    .CLKOUT1             (clkout1_unused),
+    .CLKOUT1             (clk_out2_SP_OV_clk_wiz_0_1),
     .CLKOUT1B            (clkout1b_unused),
     .CLKOUT2             (clkout2_unused),
     .CLKOUT2B            (clkout2b_unused),
@@ -178,6 +184,7 @@ wire clk_in2_SP_OV_clk_wiz_0_1;
     .RST                 (reset_high));
   assign reset_high = ~resetn; 
 
+  assign locked = locked_int;
 // Clock Monitor clock assigning
 //--------------------------------------
  // Output buffering
@@ -196,6 +203,10 @@ wire clk_in2_SP_OV_clk_wiz_0_1;
    (.O   (clk_out1),
     .I   (clk_out1_SP_OV_clk_wiz_0_1));
 
+
+  BUFG clkout2_buf
+   (.O   (clk_out2),
+    .I   (clk_out2_SP_OV_clk_wiz_0_1));
 
 
 

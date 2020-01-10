@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Jan  8 14:45:57 2020
+| Date             : Fri Jan 10 16:20:31 2020
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file SCS_TT_TEST_wrapper_power_routed.rpt -pb SCS_TT_TEST_wrapper_power_summary_routed.pb -rpx SCS_TT_TEST_wrapper_power_routed.rpx
 | Design           : SCS_TT_TEST_wrapper
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.680        |
+| Total On-Chip Power (W)  | 1.677        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.535        |
+| Dynamic (W)              | 1.533        |
 | Device Static (W)        | 0.144        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.6         |
-| Junction Temperature (C) | 44.4         |
-| Confidence Level         | Low          |
+| Max Ambient (C)          | 65.7         |
+| Junction Temperature (C) | 44.3         |
+| Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,20 +52,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.048 |       15 |       --- |             --- |
-| Slice Logic             |     0.004 |     4491 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     1108 |     53200 |            2.08 |
-|   Register              |    <0.001 |     2761 |    106400 |            2.59 |
+| Clocks                  |     0.041 |       20 |       --- |             --- |
+| Slice Logic             |     0.008 |     5709 |       --- |             --- |
+|   LUT as Logic          |     0.007 |     1414 |     53200 |            2.66 |
+|   Register              |     0.001 |     3649 |    106400 |            3.43 |
 |   CARRY4                |    <0.001 |       38 |     13300 |            0.29 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   F7/F8 Muxes           |    <0.001 |        1 |     53200 |           <0.01 |
-|   Others                |     0.000 |      266 |       --- |             --- |
-| Signals                 |     0.008 |     3547 |       --- |             --- |
-| MMCM                    |     0.216 |        2 |         4 |           50.00 |
+|   Others                |     0.000 |      286 |       --- |             --- |
+| Signals                 |     0.021 |     4571 |       --- |             --- |
+| MMCM                    |     0.091 |        1 |         4 |           25.00 |
+| PLL                     |     0.112 |        1 |         4 |           25.00 |
 | I/O                     |     0.004 |        7 |       125 |            5.60 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
 | Static Power            |     0.144 |          |           |                 |
-| Total                   |     1.680 |          |           |                 |
+| Total                   |     1.677 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,8 +76,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.084 |       0.069 |      0.015 |
-| Vccaux    |       1.800 |     0.131 |       0.115 |      0.015 |
+| Vccint    |       1.000 |     0.094 |       0.079 |      0.015 |
+| Vccaux    |       1.800 |     0.123 |       0.108 |      0.015 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -101,17 +102,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
-+-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                                       |                                                                                                            |
-| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
-| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
-| Device models               | High       | Device models are Production                           |                                                                                                            |
-|                             |            |                                                        |                                                                                                            |
-| Overall confidence level    | Low        |                                                        |                                                                                                            |
-+-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -138,19 +139,24 @@ Table of Contents
 +------------------------------------+----------------------------------------------------------------+-----------------+
 | Clock                              | Domain                                                         | Constraint (ns) |
 +------------------------------------+----------------------------------------------------------------+-----------------+
+| T0                                 | T0                                                             |            10.0 |
+| T1                                 | T1                                                             |            10.0 |
+| T2                                 | T2                                                             |            10.0 |
+| T3                                 | T3                                                             |            10.0 |
+| T4                                 | T4                                                             |            10.0 |
 | clk_fpga_0                         | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK0              |            10.0 |
 | clk_fpga_0                         | SCS_TT_TEST_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
-| clk_out1_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1_SCS_TT_TEST_clk_wiz_0_0  |             2.2 |
-| clk_out1_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clk_out1_SCS_TT_TEST_clk_wiz_1_0  |             2.2 |
-| clk_out2_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2_SCS_TT_TEST_clk_wiz_0_0  |             2.2 |
-| clk_out2_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clk_out2_SCS_TT_TEST_clk_wiz_1_0  |             2.2 |
-| clk_out3_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3_SCS_TT_TEST_clk_wiz_0_0  |             2.2 |
-| clk_out3_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clk_out3_SCS_TT_TEST_clk_wiz_1_0  |             2.2 |
-| clk_out4_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4_SCS_TT_TEST_clk_wiz_0_0  |             2.2 |
-| clk_out5_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out5                          |             2.2 |
-| clk_out5_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out5_SCS_TT_TEST_clk_wiz_0_0  |             2.2 |
+| clk_out1_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out1_SCS_TT_TEST_clk_wiz_0_0  |             3.2 |
+| clk_out1_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clk_out1_SCS_TT_TEST_clk_wiz_1_0  |             3.2 |
+| clk_out2_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out2_SCS_TT_TEST_clk_wiz_0_0  |             3.2 |
+| clk_out2_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clk_out2_SCS_TT_TEST_clk_wiz_1_0  |             3.2 |
+| clk_out3_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out3_SCS_TT_TEST_clk_wiz_0_0  |             3.2 |
+| clk_out3_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clk_out3_SCS_TT_TEST_clk_wiz_1_0  |             3.2 |
+| clk_out4_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out4_SCS_TT_TEST_clk_wiz_0_0  |             3.2 |
+| clk_out5_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out5                          |             3.2 |
+| clk_out5_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clk_out5_SCS_TT_TEST_clk_wiz_0_0  |             3.2 |
 | clkfbout_SCS_TT_TEST_clk_wiz_0_0   | SCS_TT_TEST_i/clk_wiz_0/inst/clkfbout_SCS_TT_TEST_clk_wiz_0_0  |            50.0 |
-| clkfbout_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clkfbout_SCS_TT_TEST_clk_wiz_1_0  |             4.3 |
+| clkfbout_SCS_TT_TEST_clk_wiz_1_0_1 | SCS_TT_TEST_i/clk_wiz_1/inst/clkfbout_SCS_TT_TEST_clk_wiz_1_0  |             3.2 |
 +------------------------------------+----------------------------------------------------------------+-----------------+
 
 
@@ -163,24 +169,26 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| SCS_TT_TEST_wrapper      |     1.535 |
-|   SCS_TT_TEST_i          |     1.531 |
+| SCS_TT_TEST_wrapper      |     1.533 |
+|   SCS_TT_TEST_i          |     1.529 |
 |     DATA0                |     0.003 |
 |       U0                 |     0.003 |
 |     DATA1                |     0.003 |
 |       U0                 |     0.003 |
 |     DATA_UTIL            |     0.002 |
 |       U0                 |     0.002 |
-|     SCS_TT_wrapper_0     |     0.039 |
-|       U0                 |     0.039 |
-|     clk_wiz_0            |     0.110 |
-|       inst               |     0.110 |
-|     clk_wiz_1            |     0.110 |
-|       inst               |     0.110 |
+|     DEBUG0               |     0.003 |
+|       U0                 |     0.003 |
+|     SCS_TT_wrapper_0     |     0.048 |
+|       U0                 |     0.048 |
+|     clk_wiz_0            |     0.113 |
+|       inst               |     0.113 |
+|     clk_wiz_1            |     0.093 |
+|       inst               |     0.093 |
 |     processing_system7_0 |     1.257 |
 |       inst               |     1.257 |
 |     ps7_0_axi_periph     |     0.006 |
-|       s00_couplers       |     0.005 |
+|       s00_couplers       |     0.004 |
 |       xbar               |     0.001 |
 +--------------------------+-----------+
 

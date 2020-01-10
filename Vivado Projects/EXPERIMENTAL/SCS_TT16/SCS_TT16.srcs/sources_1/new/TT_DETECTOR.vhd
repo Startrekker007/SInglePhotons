@@ -62,7 +62,10 @@ entity TT_DETECTOR is
            TIME_OUT : in std_logic_vector(31 downto 0);
            DRDY : out std_logic;
            ttwait : out std_logic;
-           ttlistening : out std_logic);
+           ttlistening : out std_logic;
+           DEBUG0 : out std_logic_vector(31 downto 0);
+           DEBUG1 : out std_logic_vector(31 downto 0);
+           DEBUG2 : out std_logic_vector(15 downto 0));
 end TT_DETECTOR;
 
 architecture Behavioral of TT_DETECTOR is
@@ -70,15 +73,16 @@ procedure BINARY_DECODE(
     signal delinp : std_logic_vector(15 downto 0);
     signal valout : out std_logic_vector(7 downto 0)
 ) is
-variable count : integer := 0;
+variable count : unsigned(4 downto 0) := "00000";
 begin
-count := 0;
+count := "00000";
 for i in 0 to 15 loop
     if(delinp(i)='1') then
-        count:=count+1;
+        count:=count+"00001";
     end if;
 end loop;
-valout <= std_logic_vector(to_unsigned(count,valout'length));
+valout <= "000"&std_logic_vector(count);
+count:="00000";
 end BINARY_DECODE;
 component SCS_TT_CTR is port(
     SCLR : in std_logic;
@@ -192,18 +196,18 @@ begin
             kch1 <= ch1;
             kch2 <= ch2;
             kch3 <= ch3;
-            pch0 <= ch0;
-            pch1 <= ch1;
-            pch2 <= ch2;
-            pch3 <= ch3;
+            pch0 <= kch0;
+            pch1 <= kch1;
+            pch2 <= kch2;
+            pch3 <= kch3;
             kt0 <= t0;
-            pt0 <= t0;
+            pt0 <= kt0;
             PDELT <= DELT;
             PDEL0 <= DEL0;
             PDEL1 <= DEL1;
             PDEL2 <= DEL2;
             PDEL3 <= DEL3;
-            uctr <= unsigned(ctr_val)+x"00000001";
+            uctr <= unsigned(ctr_val);
             --Pipeline updates end
             if(waitftrig = '0' and listening = '0') then
                 waitftrig := '1';--Set waiting for T0 trigger
@@ -212,6 +216,7 @@ begin
             if(lt0 = '0' and pt0 = '1' and listening = '0') then
                 --Save delays, start timer, and set status flags
                 BINARY_DECODE(PDELT,T0DEL);
+                DEBUG2 <= PDELT;
                 ctr_rst <= '0';
                 waitftrig := '0';
                 listening := '1';
@@ -220,26 +225,30 @@ begin
                 --Check rising edges
                 if(lch0 = '0' and pch0 = '1' and var_trig_states(0) = '0') then
                     BINARY_DECODE(PDEL0,T1DEL);
-                    T1 <= std_logic_vector(unsigned(ctr_val));
+                    DEBUG0(15 downto 0) <= PDEL0;
+                    T1 <= std_logic_vector(uctr);
                     var_trig_states(0) := '1';
                 end if;
                 if(lch1 = '0' and pch1 = '1'and var_trig_states(1) = '0') then
                     BINARY_DECODE(PDEL1,T2DEL);
-                    T2 <= std_logic_vector(unsigned(ctr_val));
+                    DEBUG0(31 downto 16) <= PDEL1;
+                    T2 <= std_logic_vector(uctr);
                     var_trig_states(1) := '1';
                 end if;
                 if(lch2 = '0' and pch2 = '1'and var_trig_states(2) = '0') then
                     BINARY_DECODE(PDEL2,T3DEL);
-                    T3 <= std_logic_vector(unsigned(ctr_val));
+                    DEBUG1(15 downto 0) <= PDEL2;
+                    T3 <= std_logic_vector(uctr);
                     var_trig_states(2) := '1';
                 end if;
                 if(lch3 = '0' and pch3 = '1'and var_trig_states(3) = '0') then
                     BINARY_DECODE(PDEL3,T4DEL);
-                    T4 <= std_logic_vector(unsigned(ctr_val));
+                    DEBUG1(31 downto 16) <= PDEL3;
+                    T4 <= std_logic_vector(uctr);
                     var_trig_states(3) := '1';
                 end if;
                 --On timeout OR all channels detected
-                if(uctr>=utimeout) then
+                if(uctr>=(utimeout-x"00000001")) then
                     timedout <= '1';
                 end if;
                 if(var_trig_states = "1111") then

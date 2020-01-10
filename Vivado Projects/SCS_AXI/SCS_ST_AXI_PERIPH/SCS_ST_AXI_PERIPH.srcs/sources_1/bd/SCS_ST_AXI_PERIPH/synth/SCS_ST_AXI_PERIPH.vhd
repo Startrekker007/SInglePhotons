@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan  8 09:06:24 2020
+--Date        : Thu Jan  9 10:57:38 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_ST_AXI_PERIPH.bd
 --Design      : SCS_ST_AXI_PERIPH
@@ -16,7 +16,7 @@ entity SCS_ST_AXI_PERIPH is
     DRDY_DEBUG : out STD_LOGIC;
     IDATA : in STD_LOGIC;
     MCLK : in STD_LOGIC;
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
     ST_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     ST_DATA_arready : out STD_LOGIC;
     ST_DATA_arvalid : in STD_LOGIC;
@@ -127,7 +127,7 @@ architecture STRUCTURE of SCS_ST_AXI_PERIPH is
     DRDY : out STD_LOGIC;
     SDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
     EDELAY : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component SCS_ST_AXI_PERIPH_SCS_ST_0_0;
   signal CT_DATA_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
@@ -149,7 +149,7 @@ architecture STRUCTURE of SCS_ST_AXI_PERIPH is
   signal CT_DATA_1_WVALID : STD_LOGIC;
   signal IDATA_1 : STD_LOGIC;
   signal MCLK_1 : STD_LOGIC;
-  signal SCS_CLKS_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal SCS_CLKS_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal SCS_ST_0_DRDY : STD_LOGIC;
   signal SCS_ST_0_EDELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SCS_ST_0_SDELAY : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -236,7 +236,7 @@ begin
   DRDY_DEBUG <= SCS_ST_0_DRDY;
   IDATA_1 <= IDATA;
   MCLK_1 <= MCLK;
-  SCS_CLKS_1(7 downto 0) <= SCS_CLKS(7 downto 0);
+  SCS_CLKS_1(15 downto 0) <= SCS_CLKS(15 downto 0);
   ST_DATA_1_ARADDR(8 downto 0) <= ST_DATA_araddr(8 downto 0);
   ST_DATA_1_ARVALID <= ST_DATA_arvalid;
   ST_DATA_1_AWADDR(8 downto 0) <= ST_DATA_awaddr(8 downto 0);
@@ -271,7 +271,7 @@ SCS_ST_0: component SCS_ST_AXI_PERIPH_SCS_ST_0_0
       IDATA => IDATA_1,
       MCLK => MCLK_1,
       RESETN => axi_gpio_1_gpio_io_o(0),
-      SCS_CLKS(7 downto 0) => SCS_CLKS_1(7 downto 0),
+      SCS_CLKS(15 downto 0) => SCS_CLKS_1(15 downto 0),
       SDELAY(7 downto 0) => SCS_ST_0_SDELAY(7 downto 0),
       TIME_DATA(31 downto 0) => SCS_ST_0_TIME_DATA(31 downto 0)
     );

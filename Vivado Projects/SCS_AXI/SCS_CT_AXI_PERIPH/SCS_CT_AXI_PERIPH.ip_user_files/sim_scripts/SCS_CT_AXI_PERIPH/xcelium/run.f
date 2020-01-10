@@ -30,13 +30,13 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ip/SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0/src/ph_ctr/sim/ph_ctr.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/sim/SCS_CT_PH_CT_0_0.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/sim/SCS_CT_CT_CDELAY_0_0.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/sim/SCS_CT_CT_CDELAY_0_1.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/src/PH_CT.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/src/TT_CDELAY.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/sim/SCS_CT.vhd" \
-  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/4d79/src/SCS_CT_wrapper.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/sim/SCS_CT_PH_CT_0_0.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/sim/SCS_CT_CT_CDELAY_0_0.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/sim/SCS_CT_CT_CDELAY_0_1.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/src/PH_CT.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/src/CT_CDELAY.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/sim/SCS_CT.vhd" \
+  "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ipshared/8828/src/SCS_CT_wrapper.vhd" \
   "../../../../SCS_CT_AXI_PERIPH.srcs/sources_1/bd/SCS_CT_AXI_PERIPH/ip/SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0/sim/SCS_CT_AXI_PERIPH_SCS_CT_wrapper_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_lite_ipif_v3_0_4 \

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="SCS_TT_TEST" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1578447685"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1578447685"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1578447685"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1578447685"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1578612413"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1578612413"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1578612413"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1578612413"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\SCS_TT_TEST_processing_system7_0_0\SCS_TT_TEST_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -80,6 +80,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\SCS_TT_TEST_ps7_0_axi_periph_0\SCS_TT_TEST_ps7_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="1576721878" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -126,14 +127,20 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth\SCS_TT_TEST.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+      <File Name="ip\SCS_TT_TEST_axi_gpio_0_3\SCS_TT_TEST_axi_gpio_0_3.xci" Type="IP">
+        <Instance HierarchyPath="DEBUG0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="sim\SCS_TT_TEST.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+      <File Name="ip\SCS_TT_TEST_axi_gpio_0_4\SCS_TT_TEST_axi_gpio_0_4.xci" Type="IP">
+        <Instance HierarchyPath="DEBUG1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\SCS_TT_TEST_auto_pc_0\SCS_TT_TEST_auto_pc_0.xci" Type="IP">
@@ -142,6 +149,16 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\SCS_TT_TEST.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\SCS_TT_TEST.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="SCS_TT_TEST_ooc.xdc" Type="XDC">

@@ -238,7 +238,7 @@ begin
     resetn <= '1';
     wait for 5.7ns;
     t0 <= '1';
-    wait for 8.32ns;
+    wait for 16.67ns;
     ch0 <= '1';
     wait for 11.1ns;
     ch1 <= '1';

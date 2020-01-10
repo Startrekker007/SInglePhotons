@@ -41,6 +41,22 @@ end TT_CDELAY;
 architecture Behavioral of TT_CDELAY is
 signal idline : std_logic_vector(15 downto 0) := x"0000";
 signal ddata : std_logic;
+signal ps0 : std_logic := '0';
+signal ps1 : std_logic := '0';
+signal ps2 : std_logic := '0';
+signal ps3 : std_logic := '0';
+signal ps4 : std_logic := '0';
+signal ps5 : std_logic := '0';
+signal ps6 : std_logic := '0';
+signal ps7 : std_logic := '0';
+signal ps8 : std_logic := '0';
+signal ps9 : std_logic := '0';
+signal ps10 : std_logic := '0';
+signal ps11 : std_logic := '0';
+signal ps12 : std_logic := '0';
+signal ps13 : std_logic := '0';
+signal ps14 : std_logic := '0';
+signal ps15 : std_logic := '0';
 begin
 ddata <= idline(0);
 ODATA <= ddata;
@@ -48,98 +64,115 @@ dline <= idline;
 process(SCS_CLKS(0))
 begin
     if(rising_edge(SCS_CLKS(0))) then
-        idline(0) <= IDATA;
+        
+        ps0 <= IDATA;
+        idline(0) <= ps0;
     end if;
 end process;
 process(SCS_CLKS(1))
 begin
     if(rising_edge(SCS_CLKS(1))) then
-        idline(1) <= IDATA;
+        ps1 <= IDATA;
+        idline(1) <= ps1;
     end if;
 end process;
 process(SCS_CLKS(2))
 begin
     if(rising_edge(SCS_CLKS(2))) then
-        idline(2) <= IDATA;
+        ps2 <= IDATA;
+        idline(2) <= ps2;
     end if;
 end process;
 process(SCS_CLKS(3))
 begin
     if(rising_edge(SCS_CLKS(3))) then
-        idline(3) <= IDATA;
+        ps3 <= IDATA;
+        idline(3) <= ps3;
     end if;
 end process;
 process(SCS_CLKS(4))
 begin
     if(rising_edge(SCS_CLKS(4))) then
-        idline(4) <= IDATA;
+        ps4 <= IDATA;
+        idline(4) <= ps4;
     end if;
 end process;
 process(SCS_CLKS(5))
 begin
     if(rising_edge(SCS_CLKS(5))) then
-        idline(5) <= IDATA;
+        ps5 <= IDATA;
+        idline(5) <= ps5;
     end if;
 end process;
 process(SCS_CLKS(6))
 begin
     if(rising_edge(SCS_CLKS(6))) then
-        idline(6) <= IDATA;
+        ps6 <= IDATA;
+        idline(6) <= ps6;
     end if;
 end process;
 process(SCS_CLKS(7))
 begin
     if(rising_edge(SCS_CLKS(7))) then
-        idline(7) <= IDATA;
+        ps7 <= IDATA;
+        idline(7) <= ps7;
     end if;
 end process;
 ----------------------------------
 process(SCS_CLKS(0))
 begin
     if(falling_edge(SCS_CLKS(0))) then
-        idline(8) <= IDATA;
+        ps8 <= IDATA;
+        idline(8) <= ps8;
     end if;
 end process;
 process(SCS_CLKS(1))
 begin
     if(falling_edge(SCS_CLKS(1))) then
-        idline(9) <= IDATA;
+        ps9 <= IDATA;
+        idline(9) <= ps9;
     end if;
 end process;
 process(SCS_CLKS(2))
 begin
     if(falling_edge(SCS_CLKS(2))) then
-        idline(10) <= IDATA;
+        ps10 <= IDATA;
+        idline(10) <= ps10;
     end if;
 end process;
 process(SCS_CLKS(3))
 begin
     if(falling_edge(SCS_CLKS(3))) then
-        idline(11) <= IDATA;
+        ps11 <= IDATA;
+        idline(11) <= ps11;
     end if;
 end process;
 process(SCS_CLKS(4))
 begin
     if(falling_edge(SCS_CLKS(4))) then
-        idline(12) <= IDATA;
+        ps12 <= IDATA;
+        idline(12) <= ps12;
     end if;
 end process;
 process(SCS_CLKS(5))
 begin
     if(falling_edge(SCS_CLKS(5))) then
-        idline(13) <= IDATA;
+        ps13 <= IDATA;
+        idline(13) <= ps13;
     end if;
 end process;
 process(SCS_CLKS(6))
 begin
     if(falling_edge(SCS_CLKS(6))) then
-        idline(14) <= IDATA;
+        ps14 <= IDATA;
+        idline(14) <= ps14;
     end if;
 end process;
 process(SCS_CLKS(7))
 begin
     if(falling_edge(SCS_CLKS(7))) then
-        idline(15) <= IDATA;
+        ps15 <= IDATA;
+        idline(15) <= ps15;
     end if;
 end process;
 

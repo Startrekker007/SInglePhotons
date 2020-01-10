@@ -36,12 +36,12 @@ set_property ip_repo_paths {
   d:/SInglePhotons/HW_IP/DDS_COM_TEST
   d:/SInglePhotons/HW_IP/DD_AXI_PERIPH
   d:/SInglePhotons/HW_IP/DELAY8
-  d:/SInglePhotons/HW_IP/SCS_ST_AXI_PERIPH
-  d:/SInglePhotons/HW_IP/SCS_TT_AXI_PERIPH
-  d:/SInglePhotons/HW_IP/SCS_CT_AXI_PERIPH
-  d:/SInglePhotons/HW_IP/SCS_CT
-  d:/SInglePhotons/HW_IP/SCS_ST
-  d:/SInglePhotons/HW_IP/SCS_TT
+  d:/SInglePhotons/HW_IP/SCS_CT16
+  d:/SInglePhotons/HW_IP/SCS_CT16_AXI
+  d:/SInglePhotons/HW_IP/SCS_ST16
+  d:/SInglePhotons/HW_IP/SCS_ST16_AXI
+  d:/SInglePhotons/HW_IP/SCS_TT16
+  d:/SInglePhotons/HW_IP/SCS_TT16_AXI
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/TOP_OVERLAY/TOP_OVERLAY.cache/ip} [current_project]

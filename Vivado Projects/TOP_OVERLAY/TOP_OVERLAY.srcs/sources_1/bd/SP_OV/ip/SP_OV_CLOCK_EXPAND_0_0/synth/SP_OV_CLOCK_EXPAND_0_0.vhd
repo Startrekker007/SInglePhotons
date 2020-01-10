@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -55,8 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY SP_OV_CLOCK_EXPAND_0_0 IS
   PORT (
-    MMCM_I : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    SCS_CLKS : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    MMCM_I : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SCS_CLKS : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END SP_OV_CLOCK_EXPAND_0_0;
 
@@ -65,8 +65,8 @@ ARCHITECTURE SP_OV_CLOCK_EXPAND_0_0_arch OF SP_OV_CLOCK_EXPAND_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF SP_OV_CLOCK_EXPAND_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT CLOCK_EXPAND IS
     PORT (
-      MMCM_I : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      SCS_CLKS : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+      MMCM_I : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      SCS_CLKS : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
   END COMPONENT CLOCK_EXPAND;
   ATTRIBUTE X_CORE_INFO : STRING;

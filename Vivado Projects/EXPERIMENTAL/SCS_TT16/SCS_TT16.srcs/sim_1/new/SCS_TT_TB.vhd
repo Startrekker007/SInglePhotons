@@ -170,8 +170,8 @@ begin
 end process;
 clk8 : process
 begin
-    loop
     wait for 1ns;
+    loop
     SCS_CLKS(8) <= not SCS_CLKS(8);
     wait for 1ns;
     end loop;
@@ -236,9 +236,10 @@ main_sim : process
 begin
     wait for 5ns;
     resetn <= '1';
+    wait for 1us;
     wait for 5.7ns;
     t0 <= '1';
-    wait for 8.32ns;
+    wait for 16.67ns;
     ch0 <= '1';
     wait for 11.1ns;
     ch1 <= '1';

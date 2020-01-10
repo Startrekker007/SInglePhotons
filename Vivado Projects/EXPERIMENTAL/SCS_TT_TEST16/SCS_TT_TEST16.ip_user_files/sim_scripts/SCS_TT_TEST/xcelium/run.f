@@ -121,16 +121,16 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/SCS_TT_TEST/ip/SCS_TT_TEST_SCS_TT_wrapper_0_1/src/SCS_TT_CTR/sim/SCS_TT_CTR.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT_TT_CDELAY_0_0.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT_TT_CDELAY_0_1.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT_TT_CDELAY_1_0.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT_TT_CDELAY_2_0.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT_TT_CDELAY_2_1.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT_TT_DETECTOR_0_0.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/src/TT_CDELAY.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/src/TT_DETECTOR.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/sim/SCS_TT.vhd" \
-  "../../../bd/SCS_TT_TEST/ipshared/9c39/src/SCS_TT_wrapper.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT_TT_CDELAY_0_0.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT_TT_CDELAY_0_1.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT_TT_CDELAY_1_0.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT_TT_CDELAY_2_0.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT_TT_CDELAY_2_1.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT_TT_DETECTOR_0_0.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/src/TT_CDELAY.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/src/TT_DETECTOR.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/sim/SCS_TT.vhd" \
+  "../../../bd/SCS_TT_TEST/ipshared/2f37/src/SCS_TT_wrapper.vhd" \
   "../../../bd/SCS_TT_TEST/ip/SCS_TT_TEST_SCS_TT_wrapper_0_1/sim/SCS_TT_TEST_SCS_TT_wrapper_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
@@ -138,13 +138,17 @@
   "../../../bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_1_0/SCS_TT_TEST_clk_wiz_1_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/SCS_TT_TEST/sim/SCS_TT_TEST.vhd" \
+  "../../../bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/sim/SCS_TT_TEST_axi_gpio_0_3.vhd" \
+  "../../../bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/sim/SCS_TT_TEST_axi_gpio_0_4.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
   "../../../../SCS_TT_TEST16.srcs/sources_1/bd/SCS_TT_TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/SCS_TT_TEST/ip/SCS_TT_TEST_auto_pc_0/sim/SCS_TT_TEST_auto_pc_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/SCS_TT_TEST/sim/SCS_TT_TEST.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

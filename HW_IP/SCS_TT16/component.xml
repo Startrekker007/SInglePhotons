@@ -45,7 +45,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f984d65b</spirit:value>
+            <spirit:value>1ac1fd50</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -64,7 +64,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>d9680af2</spirit:value>
+            <spirit:value>24c6988e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -72,14 +72,14 @@
         <spirit:name>xilinx_testbench</spirit:name>
         <spirit:displayName>Test Bench</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
-        <spirit:modelName>SCS_TT_TB</spirit:modelName>
+        <spirit:modelName>CDELAY_TB</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bcb6eef0</spirit:value>
+            <spirit:value>92c93b63</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -145,6 +145,57 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DEBUG0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DEBUG1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DEBUG2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
@@ -505,7 +556,7 @@
       <spirit:file>
         <spirit:name>src/SCS_TT_wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b05416ac</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_1a68596f</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -595,7 +646,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_testbench_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/SCS_TT_TB.vhd</spirit:name>
+        <spirit:name>src/CDELAY_TB.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
@@ -630,20 +681,20 @@
       <xilinx:displayName>SCS_TT_wrapper_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-01-08T01:30:40Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2020-01-09T23:26:37Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c684043_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@262d862b_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5475e9a2_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4719c92c_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ee7c3a1_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d20110_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1766cda_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@158e5229_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66f48b8f_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e8e3684_ARCHIVE_LOCATION">d:/SInglePhotons/HW_IP/SCS_TT16</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="591ae6c0"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4a289dd6"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="09b7711a"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ae1a95bc"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="30fb2742"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="9be4e7c1"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

@@ -54,6 +54,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_TT_CTR || O
 # IP: bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_1_0/SCS_TT_TEST_clk_wiz_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_clk_wiz_1_0 || ORIG_REF_NAME==SCS_TT_TEST_clk_wiz_1_0} -quiet] -quiet
 
+# IP: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_axi_gpio_0_3 || ORIG_REF_NAME==SCS_TT_TEST_axi_gpio_0_3} -quiet] -quiet
+
+# IP: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_axi_gpio_0_4 || ORIG_REF_NAME==SCS_TT_TEST_axi_gpio_0_4} -quiet] -quiet
+
 # IP: bd/SCS_TT_TEST/ip/SCS_TT_TEST_auto_pc_0/SCS_TT_TEST_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_auto_pc_0 || ORIG_REF_NAME==SCS_TT_TEST_auto_pc_0} -quiet] -quiet
 
@@ -115,6 +121,22 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_clk_wiz_1_0 || ORIG_REF_NAME==SCS_TT_TEST_clk_wiz_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_clk_wiz_1_0/SCS_TT_TEST_clk_wiz_1_0_ooc.xdc
+
+# XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_axi_gpio_0_3 || ORIG_REF_NAME==SCS_TT_TEST_axi_gpio_0_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3_ooc.xdc
+
+# XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_3/SCS_TT_TEST_axi_gpio_0_3.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_axi_gpio_0_3 || ORIG_REF_NAME==SCS_TT_TEST_axi_gpio_0_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_axi_gpio_0_4 || ORIG_REF_NAME==SCS_TT_TEST_axi_gpio_0_4} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4_ooc.xdc
+
+# XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_axi_gpio_0_4/SCS_TT_TEST_axi_gpio_0_4.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SCS_TT_TEST_axi_gpio_0_4 || ORIG_REF_NAME==SCS_TT_TEST_axi_gpio_0_4} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/SCS_TT_TEST/ip/SCS_TT_TEST_auto_pc_0/SCS_TT_TEST_auto_pc_0_ooc.xdc
 

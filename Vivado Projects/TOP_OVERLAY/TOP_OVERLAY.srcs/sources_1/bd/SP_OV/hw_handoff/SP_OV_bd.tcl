@@ -189,6 +189,50 @@ proc create_root_design { parentCell } {
    CONFIG.PHASE {0.000} \
  ] $sys_clock
 
+  # Create instance: CASCADE_MMCM, and set properties
+  set CASCADE_MMCM [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 CASCADE_MMCM ]
+  set_property -dict [ list \
+   CONFIG.CLKIN1_JITTER_PS {21.74} \
+   CONFIG.CLKOUT1_JITTER {81.270} \
+   CONFIG.CLKOUT1_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT1_REQUESTED_PHASE {22.5} \
+   CONFIG.CLKOUT2_JITTER {81.270} \
+   CONFIG.CLKOUT2_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT2_REQUESTED_PHASE {45} \
+   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT3_JITTER {81.270} \
+   CONFIG.CLKOUT3_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT3_REQUESTED_PHASE {67.5} \
+   CONFIG.CLKOUT3_USED {true} \
+   CONFIG.CLKOUT4_JITTER {81.270} \
+   CONFIG.CLKOUT4_PHASE_ERROR {90.087} \
+   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT4_REQUESTED_PHASE {90} \
+   CONFIG.CLKOUT4_USED {false} \
+   CONFIG.JITTER_SEL {Min_O_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {HIGH} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {4.000} \
+   CONFIG.MMCM_CLKIN1_PERIOD {2.174} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
+   CONFIG.MMCM_CLKOUT0_PHASE {22.500} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT1_PHASE {45.000} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT2_PHASE {67.500} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT3_PHASE {90.000} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
+   CONFIG.NUM_OUT_CLKS {3} \
+   CONFIG.PRIM_IN_FREQ {460} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.USE_LOCKED {false} \
+ ] $CASCADE_MMCM
+
   # Create instance: CLOCK_EXPAND_0, and set properties
   set block_name CLOCK_EXPAND
   set block_cell_name CLOCK_EXPAND_0
@@ -206,20 +250,26 @@ proc create_root_design { parentCell } {
   # Create instance: DD_AXI_PERIPH_wrapper_0, and set properties
   set DD_AXI_PERIPH_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:DD_AXI_PERIPH_wrapper:1.0 DD_AXI_PERIPH_wrapper_0 ]
 
-  # Create instance: DELAY_CLK, and set properties
-  set DELAY_CLK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 DELAY_CLK ]
+  # Create instance: DELAYTIMER_CLK, and set properties
+  set DELAYTIMER_CLK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 DELAYTIMER_CLK ]
   set_property -dict [ list \
    CONFIG.CLKOUT1_JITTER {204.659} \
    CONFIG.CLKOUT1_PHASE_ERROR {297.890} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {310.000} \
+   CONFIG.CLKOUT2_JITTER {232.152} \
+   CONFIG.CLKOUT2_PHASE_ERROR {297.890} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {125.000} \
+   CONFIG.CLKOUT2_USED {true} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {50.375} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {3.250} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {8} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
+   CONFIG.NUM_OUT_CLKS {2} \
    CONFIG.PRIM_IN_FREQ {100.000} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_LOCKED {false} \
- ] $DELAY_CLK
+   CONFIG.USE_LOCKED {true} \
+ ] $DELAYTIMER_CLK
 
   # Create instance: ENABLER_0, and set properties
   set block_name ENABLER
@@ -263,28 +313,35 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT2_JITTER {210.749} \
    CONFIG.CLKOUT2_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT2_REQUESTED_PHASE {45} \
+   CONFIG.CLKOUT2_REQUESTED_PHASE {22.5} \
    CONFIG.CLKOUT2_USED {true} \
    CONFIG.CLKOUT3_JITTER {210.749} \
    CONFIG.CLKOUT3_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT3_REQUESTED_PHASE {90} \
+   CONFIG.CLKOUT3_REQUESTED_PHASE {45} \
    CONFIG.CLKOUT3_USED {true} \
    CONFIG.CLKOUT4_JITTER {210.749} \
    CONFIG.CLKOUT4_PHASE_ERROR {303.235} \
    CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT4_REQUESTED_PHASE {135} \
+   CONFIG.CLKOUT4_REQUESTED_PHASE {67.5} \
    CONFIG.CLKOUT4_USED {true} \
+   CONFIG.CLKOUT5_JITTER {210.749} \
+   CONFIG.CLKOUT5_PHASE_ERROR {303.235} \
+   CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT5_REQUESTED_PHASE {90} \
+   CONFIG.CLKOUT5_USED {true} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {46.000} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT1_PHASE {45.000} \
+   CONFIG.MMCM_CLKOUT1_PHASE {22.500} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT2_PHASE {90.000} \
+   CONFIG.MMCM_CLKOUT2_PHASE {45.000} \
    CONFIG.MMCM_CLKOUT3_DIVIDE {2} \
-   CONFIG.MMCM_CLKOUT3_PHASE {135.000} \
+   CONFIG.MMCM_CLKOUT3_PHASE {67.500} \
+   CONFIG.MMCM_CLKOUT4_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT4_PHASE {90.000} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
-   CONFIG.NUM_OUT_CLKS {4} \
+   CONFIG.NUM_OUT_CLKS {5} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_LOCKED {true} \
@@ -298,16 +355,6 @@ proc create_root_design { parentCell } {
 
   # Create instance: SCS_TT_AXI_PERIPH_wr_0, and set properties
   set SCS_TT_AXI_PERIPH_wr_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SCS_TT_AXI_PERIPH_wrapper:1.0 SCS_TT_AXI_PERIPH_wr_0 ]
-
-  # Create instance: TIMER_CLK, and set properties
-  set TIMER_CLK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 TIMER_CLK ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {125.247} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {8.000} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
- ] $TIMER_CLK
 
   # Create instance: TRIG_RST_SL, and set properties
   set TRIG_RST_SL [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 TRIG_RST_SL ]
@@ -1159,7 +1206,7 @@ proc create_root_design { parentCell } {
   # Create instance: xlconcat_1, and set properties
   set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
   set_property -dict [ list \
-   CONFIG.NUM_PORTS {4} \
+   CONFIG.NUM_PORTS {8} \
  ] $xlconcat_1
 
   # Create interface connections
@@ -1227,6 +1274,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DD_AXI_PERIPH_wrapper_0_DEBUG4 [get_bd_pins DD_AXI_PERIPH_wrapper_0/DEBUG4] [get_bd_pins util_vector_logic_6/Op2]
   connect_bd_net -net DD_AXI_PERIPH_wrapper_0_DEBUG5 [get_bd_pins DD_AXI_PERIPH_wrapper_0/DEBUG5] [get_bd_pins util_vector_logic_6/Op1]
   connect_bd_net -net DD_AXI_PERIPH_wrapper_0_ODATA5 [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA5] [get_bd_pins P_COUNTER_wrapper_0/ex_stop]
+  connect_bd_net -net DELAYTIMER_CLK_clk_out2 [get_bd_pins DELAYTIMER_CLK/clk_out2] [get_bd_pins P_COUNTER_wrapper_0/TCLK]
+  connect_bd_net -net DELAYTIMER_CLK_locked [get_bd_pins DELAYTIMER_CLK/locked] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net ENABLER_0_CH_O [get_bd_ports SIG_OUT] [get_bd_pins ENABLER_0/CH_O]
   connect_bd_net -net EX_STOP_EN_SL_Dout [get_bd_pins EX_STOP_EN_SL/Dout] [get_bd_pins P_COUNTER_wrapper_0/ex_stop_en]
   connect_bd_net -net E_TRIG_1 [get_bd_ports E_TRIG] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA5]
@@ -1235,21 +1284,23 @@ proc create_root_design { parentCell } {
   connect_bd_net -net REF_CLK_clk_out2 [get_bd_pins REF_CLK/clk_out2] [get_bd_pins xlconcat_1/In1]
   connect_bd_net -net REF_CLK_clk_out3 [get_bd_pins REF_CLK/clk_out3] [get_bd_pins xlconcat_1/In2]
   connect_bd_net -net REF_CLK_clk_out4 [get_bd_pins REF_CLK/clk_out4] [get_bd_pins xlconcat_1/In3]
-  connect_bd_net -net REF_CLK_locked [get_bd_pins TIMER_CLK/locked] [get_bd_pins util_vector_logic_0/Op1] [get_bd_pins util_vector_logic_1/Op2]
+  connect_bd_net -net REF_CLK_clk_out5 [get_bd_pins CASCADE_MMCM/clk_in1] [get_bd_pins REF_CLK/clk_out5] [get_bd_pins xlconcat_1/In4]
   connect_bd_net -net REF_CLK_locked1 [get_bd_pins REF_CLK/locked] [get_bd_pins util_vector_logic_1/Op1]
   connect_bd_net -net SCS_CT_AXI_PERIPH_wr_0_DRDY [get_bd_ports CTDB_DRDY] [get_bd_pins SCS_CT_AXI_PERIPH_wr_0/DRDY]
   connect_bd_net -net SCS_ST_AXI_PERIPH_wr_0_DRDY_DEBUG [get_bd_ports STDB_DRDY] [get_bd_pins SCS_ST_AXI_PERIPH_wr_0/DRDY_DEBUG]
   connect_bd_net -net SCS_TT_AXI_PERIPH_wr_0_DB_LISTENING [get_bd_ports TTDB_LISTENING] [get_bd_pins SCS_TT_AXI_PERIPH_wr_0/DB_LISTENING]
   connect_bd_net -net SCS_TT_AXI_PERIPH_wr_0_DB_WAITING [get_bd_ports TTDB_WAITING] [get_bd_pins SCS_TT_AXI_PERIPH_wr_0/DB_WAITING]
-  connect_bd_net -net TIMER_CLK_clk_out1 [get_bd_pins P_COUNTER_wrapper_0/TCLK] [get_bd_pins TIMER_CLK/clk_out1]
+  connect_bd_net -net TIMER_CLK_clk_out1 [get_bd_pins CASCADE_MMCM/clk_out1] [get_bd_pins xlconcat_1/In5]
+  connect_bd_net -net TIMER_CLK_clk_out2 [get_bd_pins CASCADE_MMCM/clk_out2] [get_bd_pins xlconcat_1/In6]
+  connect_bd_net -net TIMER_CLK_clk_out3 [get_bd_pins CASCADE_MMCM/clk_out3] [get_bd_pins xlconcat_1/In7]
   connect_bd_net -net TRIG_RST_SL_Dout [get_bd_pins P_COUNTER_wrapper_0/TRIG_RST] [get_bd_pins TRIG_RST_SL/Dout]
   connect_bd_net -net TRIG_T0_1 [get_bd_ports TRIG_T0] [get_bd_pins DD_AXI_PERIPH_wrapper_0/IDATA4]
   connect_bd_net -net TRIG_T0_2 [get_bd_pins DD_AXI_PERIPH_wrapper_0/ODATA4] [get_bd_pins P_COUNTER_wrapper_0/TRIG] [get_bd_pins SCS_TT_AXI_PERIPH_wr_0/T0]
   connect_bd_net -net T_UTIL_gpio2_io_o [get_bd_pins EX_STOP_EN_SL/Din] [get_bd_pins TRIG_RST_SL/Din] [get_bd_pins T_UTIL/gpio2_io_o]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins ENABLER_0/EN] [get_bd_pins T_UTIL/gpio_io_o]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins DD_AXI_PERIPH_wrapper_0/RCLK] [get_bd_pins DELAY_CLK/clk_out1] [get_bd_pins IDELAY_CTRL_WRAPPER_0/REF_CLK]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aclk] [get_bd_pins DD_AXI_PERIPH_wrapper_0/aclk] [get_bd_pins DELAY_CLK/clk_in1] [get_bd_pins P_COUNTER_wrapper_0/aclk] [get_bd_pins REF_CLK/clk_in1] [get_bd_pins SCS_CT_AXI_PERIPH_wr_0/aclk] [get_bd_pins SCS_ST_AXI_PERIPH_wr_0/aclk] [get_bd_pins SCS_TT_AXI_PERIPH_wr_0/aclk] [get_bd_pins TIMER_CLK/clk_in1] [get_bd_pins T_RDY_U/s_axi_aclk] [get_bd_pins T_UTIL/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/M20_ACLK] [get_bd_pins axi_interconnect_0/M21_ACLK] [get_bd_pins axi_interconnect_0/M22_ACLK] [get_bd_pins axi_interconnect_0/M23_ACLK] [get_bd_pins axi_interconnect_0/M24_ACLK] [get_bd_pins axi_interconnect_0/M25_ACLK] [get_bd_pins axi_interconnect_0/M26_ACLK] [get_bd_pins axi_interconnect_0/M27_ACLK] [get_bd_pins axi_interconnect_0/M28_ACLK] [get_bd_pins axi_interconnect_0/M29_ACLK] [get_bd_pins axi_interconnect_0/M30_ACLK] [get_bd_pins axi_interconnect_0/M31_ACLK] [get_bd_pins axi_interconnect_0/M32_ACLK] [get_bd_pins axi_interconnect_0/M33_ACLK] [get_bd_pins axi_interconnect_0/M34_ACLK] [get_bd_pins axi_interconnect_0/M35_ACLK] [get_bd_pins axi_interconnect_0/M36_ACLK] [get_bd_pins axi_interconnect_0/M37_ACLK] [get_bd_pins axi_interconnect_0/M38_ACLK] [get_bd_pins axi_interconnect_0/M39_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins DELAY_CLK/resetn] [get_bd_pins IDELAY_CTRL_WRAPPER_0/RESETn] [get_bd_pins REF_CLK/resetn] [get_bd_pins TIMER_CLK/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins DD_AXI_PERIPH_wrapper_0/RCLK] [get_bd_pins DELAYTIMER_CLK/clk_out1] [get_bd_pins IDELAY_CTRL_WRAPPER_0/REF_CLK]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aclk] [get_bd_pins DD_AXI_PERIPH_wrapper_0/aclk] [get_bd_pins DELAYTIMER_CLK/clk_in1] [get_bd_pins P_COUNTER_wrapper_0/aclk] [get_bd_pins REF_CLK/clk_in1] [get_bd_pins SCS_CT_AXI_PERIPH_wr_0/aclk] [get_bd_pins SCS_ST_AXI_PERIPH_wr_0/aclk] [get_bd_pins SCS_TT_AXI_PERIPH_wr_0/aclk] [get_bd_pins T_RDY_U/s_axi_aclk] [get_bd_pins T_UTIL/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/M20_ACLK] [get_bd_pins axi_interconnect_0/M21_ACLK] [get_bd_pins axi_interconnect_0/M22_ACLK] [get_bd_pins axi_interconnect_0/M23_ACLK] [get_bd_pins axi_interconnect_0/M24_ACLK] [get_bd_pins axi_interconnect_0/M25_ACLK] [get_bd_pins axi_interconnect_0/M26_ACLK] [get_bd_pins axi_interconnect_0/M27_ACLK] [get_bd_pins axi_interconnect_0/M28_ACLK] [get_bd_pins axi_interconnect_0/M29_ACLK] [get_bd_pins axi_interconnect_0/M30_ACLK] [get_bd_pins axi_interconnect_0/M31_ACLK] [get_bd_pins axi_interconnect_0/M32_ACLK] [get_bd_pins axi_interconnect_0/M33_ACLK] [get_bd_pins axi_interconnect_0/M34_ACLK] [get_bd_pins axi_interconnect_0/M35_ACLK] [get_bd_pins axi_interconnect_0/M36_ACLK] [get_bd_pins axi_interconnect_0/M37_ACLK] [get_bd_pins axi_interconnect_0/M38_ACLK] [get_bd_pins axi_interconnect_0/M39_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins CASCADE_MMCM/resetn] [get_bd_pins DELAYTIMER_CLK/resetn] [get_bd_pins IDELAY_CTRL_WRAPPER_0/RESETn] [get_bd_pins REF_CLK/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aresetn] [get_bd_pins DD_AXI_PERIPH_wrapper_0/aresetn] [get_bd_pins P_COUNTER_wrapper_0/aresetn] [get_bd_pins SCS_CT_AXI_PERIPH_wr_0/aresetn] [get_bd_pins SCS_ST_AXI_PERIPH_wr_0/aresetn] [get_bd_pins SCS_TT_AXI_PERIPH_wr_0/aresetn] [get_bd_pins T_RDY_U/s_axi_aresetn] [get_bd_pins T_UTIL/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/M13_ARESETN] [get_bd_pins axi_interconnect_0/M14_ARESETN] [get_bd_pins axi_interconnect_0/M15_ARESETN] [get_bd_pins axi_interconnect_0/M16_ARESETN] [get_bd_pins axi_interconnect_0/M17_ARESETN] [get_bd_pins axi_interconnect_0/M18_ARESETN] [get_bd_pins axi_interconnect_0/M19_ARESETN] [get_bd_pins axi_interconnect_0/M20_ARESETN] [get_bd_pins axi_interconnect_0/M21_ARESETN] [get_bd_pins axi_interconnect_0/M22_ARESETN] [get_bd_pins axi_interconnect_0/M23_ARESETN] [get_bd_pins axi_interconnect_0/M24_ARESETN] [get_bd_pins axi_interconnect_0/M25_ARESETN] [get_bd_pins axi_interconnect_0/M26_ARESETN] [get_bd_pins axi_interconnect_0/M27_ARESETN] [get_bd_pins axi_interconnect_0/M28_ARESETN] [get_bd_pins axi_interconnect_0/M29_ARESETN] [get_bd_pins axi_interconnect_0/M30_ARESETN] [get_bd_pins axi_interconnect_0/M31_ARESETN] [get_bd_pins axi_interconnect_0/M32_ARESETN] [get_bd_pins axi_interconnect_0/M33_ARESETN] [get_bd_pins axi_interconnect_0/M34_ARESETN] [get_bd_pins axi_interconnect_0/M35_ARESETN] [get_bd_pins axi_interconnect_0/M36_ARESETN] [get_bd_pins axi_interconnect_0/M37_ARESETN] [get_bd_pins axi_interconnect_0/M38_ARESETN] [get_bd_pins axi_interconnect_0/M39_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_ports PG_STABLE] [get_bd_pins util_vector_logic_0/Res]
   connect_bd_net -net util_vector_logic_1_Res [get_bd_ports CLK_STABLE] [get_bd_pins util_vector_logic_1/Res]

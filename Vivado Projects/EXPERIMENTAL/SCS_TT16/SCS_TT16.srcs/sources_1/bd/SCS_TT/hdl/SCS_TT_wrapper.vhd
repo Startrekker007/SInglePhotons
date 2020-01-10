@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan  8 14:23:29 2020
+--Date        : Fri Jan 10 12:25:49 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SCS_TT_wrapper.bd
 --Design      : SCS_TT_wrapper
@@ -17,6 +17,9 @@ entity SCS_TT_wrapper is
     CH1 : in STD_LOGIC;
     CH2 : in STD_LOGIC;
     CH3 : in STD_LOGIC;
+    DEBUG0 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG2 : out STD_LOGIC_VECTOR ( 15 downto 0 );
     DEL0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -62,7 +65,10 @@ architecture STRUCTURE of SCS_TT_wrapper is
     DEL1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DEL2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     DEL3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    SCS_CLKS : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    DEBUG0 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    DEBUG2 : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component SCS_TT;
 begin
@@ -72,6 +78,9 @@ SCS_TT_i: component SCS_TT
       CH1 => CH1,
       CH2 => CH2,
       CH3 => CH3,
+      DEBUG0(31 downto 0) => DEBUG0(31 downto 0),
+      DEBUG1(31 downto 0) => DEBUG1(31 downto 0),
+      DEBUG2(15 downto 0) => DEBUG2(15 downto 0),
       DEL0(7 downto 0) => DEL0(7 downto 0),
       DEL1(7 downto 0) => DEL1(7 downto 0),
       DEL2(7 downto 0) => DEL2(7 downto 0),

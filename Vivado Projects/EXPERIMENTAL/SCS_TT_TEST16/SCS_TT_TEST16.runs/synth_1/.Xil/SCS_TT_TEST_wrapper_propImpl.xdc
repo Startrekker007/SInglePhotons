@@ -272,7 +272,7 @@ set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.1
 current_instance
 current_instance SCS_TT_TEST_i/clk_wiz_1/inst
 set_property src_info {type:SCOPED_XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.02174
+set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.03225
 current_instance
 set_property src_info {type:XDC file:4 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y18 [get_ports T0]
@@ -284,7 +284,21 @@ set_property src_info {type:XDC file:4 line:4 export:INPUT save:INPUT read:READ}
 set_property PACKAGE_PIN T11 [get_ports T3]
 set_property src_info {type:XDC file:4 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T10 [get_ports T4]
-set_property src_info {type:XDC file:4 line:12 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:4 line:11 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G17 [get_ports WAITING]
-set_property src_info {type:XDC file:4 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:4 line:12 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN M15 [get_ports LISTENING]
+set_property src_info {type:XDC file:4 line:15 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE_TRUE [get_ports *T0*]
+set_property src_info {type:XDC file:4 line:16 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE_TRUE [get_ports *T1*]
+set_property src_info {type:XDC file:4 line:17 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE_TRUE [get_ports *T2*]
+set_property src_info {type:XDC file:4 line:18 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE_TRUE [get_ports *T3*]
+set_property src_info {type:XDC file:4 line:19 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE_TRUE [get_ports *T4*]
+set_property src_info {type:XDC file:4 line:32 export:INPUT save:INPUT read:READ} [current_design]
+create_pblock pblock_1
+add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list SCS_TT_TEST_i/SCS_TT_wrapper_0/U0/SCS_TT_i/CDELAY_T0 SCS_TT_TEST_i/SCS_TT_wrapper_0/U0/SCS_TT_i/TT_CDELAY_0 SCS_TT_TEST_i/SCS_TT_wrapper_0/U0/SCS_TT_i/TT_CDELAY_1 SCS_TT_TEST_i/SCS_TT_wrapper_0/U0/SCS_TT_i/TT_CDELAY_2 SCS_TT_TEST_i/SCS_TT_wrapper_0/U0/SCS_TT_i/TT_CDELAY_3]]
+resize_pblock [get_pblocks pblock_1] -add {SLICE_X80Y75:SLICE_X83Y85}

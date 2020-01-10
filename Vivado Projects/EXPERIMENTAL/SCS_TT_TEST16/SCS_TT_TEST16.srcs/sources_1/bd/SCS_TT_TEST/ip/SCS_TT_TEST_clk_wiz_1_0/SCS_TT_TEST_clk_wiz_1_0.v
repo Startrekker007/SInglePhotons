@@ -56,18 +56,18 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1___460.000_____22.500______50.0_______81.270_____90.087
-// clk_out2___460.000_____45.000______50.0_______81.270_____90.087
-// clk_out3___460.000_____67.500______50.0_______81.270_____90.087
+// clk_out1___310.000_____22.500______50.0_______85.994____103.565
+// clk_out2___310.000_____45.000______50.0_______85.994____103.565
+// clk_out3___310.000_____67.500______50.0_______85.994____103.565
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary_____________460____________0.010
+// __primary_________310.000____________0.010
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "SCS_TT_TEST_clk_wiz_1_0,clk_wiz_v6_0_3_0_0,{component_name=SCS_TT_TEST_clk_wiz_1_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=2.174,clkin2_period=10.0,use_power_down=false,use_reset=true,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "SCS_TT_TEST_clk_wiz_1_0,clk_wiz_v6_0_3_0_0,{component_name=SCS_TT_TEST_clk_wiz_1_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=3.226,clkin2_period=10.0,use_power_down=false,use_reset=true,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module SCS_TT_TEST_clk_wiz_1_0 
  (
