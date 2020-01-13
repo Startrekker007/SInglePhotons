@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 13 14:19:19 2020" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SDDR_TT_M" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" LEFT="7" NAME="D0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="D0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="D1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D2" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="D2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D3" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="D3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D4" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="D4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="SDDR_TT_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="OT1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="T1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="OT2" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="T2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="OT3" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="T3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="OT4" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="T4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T0" SIGIS="undef" SIGNAME="External_Ports_T0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T1" SIGIS="undef" SIGNAME="External_Ports_T1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T2" SIGIS="undef" SIGNAME="External_Ports_T2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T3" SIGIS="undef" SIGNAME="External_Ports_T3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="T4" SIGIS="undef" SIGNAME="External_Ports_T4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="listening" SIGIS="undef" SIGNAME="SDDR_TT_0_ttlisten">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="ttlisten"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="RESETN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="timeout" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_timeout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="TIME_OUT"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="timeouts" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_TIMEOUTS">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="TIMEOUTS"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="SDDR_TT_0_ttwait">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="ttwait"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="HS_CLK" SIGIS="undef" SIGNAME="External_Ports_HS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_div_in"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/SDDR_TT_0" HWVERSION="1.0" INSTANCE="SDDR_TT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SDDR_TT" VLNV="xilinx.com:module_ref:SDDR_TT:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_M_SDDR_TT_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DDR_T0" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_SLICER_0" PORT="O0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DDR_T1" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_SLICER_0" PORT="O1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DDR_T2" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_SLICER_0" PORT="O2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DDR_T3" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_SLICER_0" PORT="O3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="DDR_T4" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_SLICER_0" PORT="O4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="OT1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T2" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="OT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T3" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="OT3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="T4" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_T4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="OT4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D2" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D3" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D4" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_D4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="SDDR_TT_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DRDY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="TIMEOUTS" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_TT_0_TIMEOUTS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="timeouts"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ttwait" SIGIS="undef" SIGNAME="SDDR_TT_0_ttwait">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="waiting"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ttlisten" SIGIS="undef" SIGNAME="SDDR_TT_0_ttlisten">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="listening"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="TIME_OUT" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_timeout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="timeout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/TT_SLICER_0" HWVERSION="1.0" INSTANCE="TT_SLICER_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TT_SLICER" VLNV="xilinx.com:module_ref:TT_SLICER:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_M_TT_SLICER_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="19" NAME="I_DATA" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="O0" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="O1" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="O2" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="O3" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="O4" RIGHT="0" SIGIS="undef" SIGNAME="TT_SLICER_0_O4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="13" FULLNAME="/selectio_wiz_0" HWVERSION="5.1" INSTANCE="selectio_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="selectio_wiz" VLNV="xilinx.com:ip:selectio_wiz:5.1">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=selectio_wiz;v=v5_1;d=pg070-selectio-wiz.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="c_component_name" VALUE="SDDR_TT_M_selectio_wiz_0_0"/>
+        <PARAMETER NAME="C_INCLUDE_IDELAYCTRL" VALUE="1"/>
+        <PARAMETER NAME="C_INCLUDE_IDELAYCTRL_BUFG" VALUE="1"/>
+        <PARAMETER NAME="C_DEVICE_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_NOTES" VALUE="None"/>
+        <PARAMETER NAME="C_BUS_DIR" VALUE="INPUTS"/>
+        <PARAMETER NAME="C_BUS_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="C_BUS_IO_STD" VALUE="LVCMOS33"/>
+        <PARAMETER NAME="C_USE_SERIALIZATION" VALUE="true"/>
+        <PARAMETER NAME="C_SERIALIZATION_FACTOR" VALUE="4"/>
+        <PARAMETER NAME="C_USE_PHASE_DETECTOR" VALUE="false"/>
+        <PARAMETER NAME="C_ENABLE_BITSLIP" VALUE="false"/>
+        <PARAMETER NAME="C_ENABLE_TRAIN" VALUE="false"/>
+        <PARAMETER NAME="C_TRAIN_CONSTANT" VALUE="0"/>
+        <PARAMETER NAME="C_SYSTEM_DATA_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="C_BUS_IN_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="C_SELIO_BUS_IN_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="C_BUS_IN_TAP" VALUE="0"/>
+        <PARAMETER NAME="C_SELIO_BUS_IN_TAP" VALUE="0"/>
+        <PARAMETER NAME="C_BUS_TAP_RESET" VALUE="FROM_ZERO"/>
+        <PARAMETER NAME="C_BUS_TAP_WRAP" VALUE="STAY_AT_LIMIT"/>
+        <PARAMETER NAME="C_BUS_OUT_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="C_SELIO_BUS_OUT_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="C_BUS_OUT_TAP" VALUE="0"/>
+        <PARAMETER NAME="C_SELIO_BUS_OUT_TAP" VALUE="0"/>
+        <PARAMETER NAME="C_CLK_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="C_CLK_IO_STD" VALUE="LVCMOS18"/>
+        <PARAMETER NAME="C_SELIO_CLK_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="C_SELIO_CLK_IO_STD" VALUE="LVCMOS33"/>
+        <PARAMETER NAME="C_CLK_BUF" VALUE="BUFIO2"/>
+        <PARAMETER NAME="C_SELIO_CLK_BUF" VALUE="MMCM"/>
+        <PARAMETER NAME="C_ACTIVE_EDGE" VALUE="RISING"/>
+        <PARAMETER NAME="C_SELIO_ACTIVE_EDGE" VALUE="DDR"/>
+        <PARAMETER NAME="C_INTERFACE_TYPE" VALUE="NETWORKING"/>
+        <PARAMETER NAME="C_SELIO_INTERFACE_TYPE" VALUE="NETWORKING"/>
+        <PARAMETER NAME="C_DDR_ALIGNMENT" VALUE="C0"/>
+        <PARAMETER NAME="C_SELIO_DDR_ALIGNMENT" VALUE="SAME_EDGE_PIPELINED"/>
+        <PARAMETER NAME="C_SELIO_ODDR_ALIGNMENT" VALUE="SAME_EDGE"/>
+        <PARAMETER NAME="C_CLK_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="C_CLK_TAP" VALUE="0"/>
+        <PARAMETER NAME="C_CLK_TAP_reset" VALUE="FROM_ZERO"/>
+        <PARAMETER NAME="C_CLK_TAP_wrap" VALUE="STAY_AT_LIMIT"/>
+        <PARAMETER NAME="C_CLK_FWD" VALUE="false"/>
+        <PARAMETER NAME="C_USE_TEMPLATE" VALUE="Custom"/>
+        <PARAMETER NAME="C_DATA_RATE_STRING" VALUE="4"/>
+        <PARAMETER NAME="C_DEVICE" VALUE="2"/>
+        <PARAMETER NAME="C_IDDR_RST_TYPE" VALUE="ASYNC"/>
+        <PARAMETER NAME="C_SELIO_IDDR_RST_TYPE" VALUE="ASYNC"/>
+        <PARAMETER NAME="C_CLK_EN" VALUE="false"/>
+        <PARAMETER NAME="C_CLK_FWD_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="C_CLK_FWD_IO_STD" VALUE="LVCMOS33"/>
+        <PARAMETER NAME="C_CONFIG_CLK_FWD" VALUE="false"/>
+        <PARAMETER NAME="C_DDR_CLK_BUF" VALUE="BUFR"/>
+        <PARAMETER NAME="C_IDELAY_HIGH_PERF_MODE" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_M_selectio_wiz_0_0"/>
+        <PARAMETER NAME="NOTES" VALUE="None"/>
+        <PARAMETER NAME="USE_TEMPLATE" VALUE="Custom"/>
+        <PARAMETER NAME="BUS_DIR" VALUE="INPUTS"/>
+        <PARAMETER NAME="BUS_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="BUS_IO_STD" VALUE="LVCMOS33"/>
+        <PARAMETER NAME="USE_PHASE_DETECTOR" VALUE="false"/>
+        <PARAMETER NAME="SELIO_ACTIVE_EDGE" VALUE="DDR"/>
+        <PARAMETER NAME="USE_SERIALIZATION" VALUE="true"/>
+        <PARAMETER NAME="SERIALIZATION_FACTOR" VALUE="4"/>
+        <PARAMETER NAME="ENABLE_BITSLIP" VALUE="false"/>
+        <PARAMETER NAME="ENABLE_TRAIN" VALUE="false"/>
+        <PARAMETER NAME="TRAIN_CONSTANT" VALUE="0"/>
+        <PARAMETER NAME="SYSTEM_DATA_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="INTERFACE_TYPE" VALUE="NETWORKING"/>
+        <PARAMETER NAME="SELIO_INTERFACE_TYPE" VALUE="NETWORKING"/>
+        <PARAMETER NAME="BUS_IN_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="SELIO_BUS_IN_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="BUS_IN_TAP" VALUE="0"/>
+        <PARAMETER NAME="SELIO_BUS_IN_TAP" VALUE="0"/>
+        <PARAMETER NAME="BUS_TAP_RESET" VALUE="NOT_APP"/>
+        <PARAMETER NAME="BUS_TAP_WRAP" VALUE="NOT_APP"/>
+        <PARAMETER NAME="BUS_OUT_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="SELIO_BUS_OUT_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="BUS_OUT_TAP" VALUE="0"/>
+        <PARAMETER NAME="SELIO_BUS_OUT_TAP" VALUE="0"/>
+        <PARAMETER NAME="CLK_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="SELIO_CLK_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="CLK_IO_STD" VALUE="LVCMOS18"/>
+        <PARAMETER NAME="SELIO_CLK_IO_STD" VALUE="LVCMOS33"/>
+        <PARAMETER NAME="CLK_BUF" VALUE="BUFIO2"/>
+        <PARAMETER NAME="SELIO_CLK_BUF" VALUE="MMCM"/>
+        <PARAMETER NAME="ACTIVE_EDGE" VALUE="RISING"/>
+        <PARAMETER NAME="DDR_ALIGNMENT" VALUE="C0"/>
+        <PARAMETER NAME="SELIO_DDR_ALIGNMENT" VALUE="SAME_EDGE_PIPELINED"/>
+        <PARAMETER NAME="SELIO_ODDR_ALIGNMENT" VALUE="SAME_EDGE"/>
+        <PARAMETER NAME="CLK_DELAY" VALUE="NONE"/>
+        <PARAMETER NAME="CLK_TAP" VALUE="0"/>
+        <PARAMETER NAME="CLK_FWD" VALUE="false"/>
+        <PARAMETER NAME="CLK_FWD_SER" VALUE="false"/>
+        <PARAMETER NAME="IDDR_RST_TYPE" VALUE="ASYNC"/>
+        <PARAMETER NAME="SELIO_IDDR_RST_TYPE" VALUE="ASYNC"/>
+        <PARAMETER NAME="CLK_EN" VALUE="false"/>
+        <PARAMETER NAME="CONFIG_CLK_FWD" VALUE="false"/>
+        <PARAMETER NAME="CLK_FWD_SIG_TYPE" VALUE="SINGLE"/>
+        <PARAMETER NAME="CLK_FWD_IO_STD" VALUE="LVCMOS33"/>
+        <PARAMETER NAME="DDR_CLK_BUF" VALUE="BUFR"/>
+        <PARAMETER NAME="INCLUDE_IDELAYCTRL" VALUE="true"/>
+        <PARAMETER NAME="INCLUDE_IDELAYCTRL_BUFG" VALUE="true"/>
+        <PARAMETER NAME="IDELAY_HIGH_PERF_MODE" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="4" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk_in" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="19" NAME="data_in_to_device" RIGHT="0" SIGIS="data" SIGNAME="selectio_wiz_0_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TT_SLICER_0" PORT="I_DATA"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_M_util_vector_logic_0_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="io_reset"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/xlconcat_0" HWVERSION="2.1" INSTANCE="xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="5"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="5"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_M_xlconcat_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="T4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="4" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_from_pins"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="6" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x00"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_M_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="4" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="bitslip"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

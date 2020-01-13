@@ -1,6 +1,6 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 83d1178c95b241128f497fc9a6fedc64 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_10 -L c_reg_fd_v12_0_6 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_pipe_v3_0_6 -L xbip_dsp48_addsub_v3_0_6 -L xbip_addsub_v3_0_6 -L c_addsub_v12_0_13 -L c_gate_bit_v12_0_6 -L xbip_counter_v3_0_6 -L c_counter_binary_v12_0_13 -L xil_defaultlib -L xlslice_v1_0_2 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot test_tb_behav xil_defaultlib.test_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 83d1178c95b241128f497fc9a6fedc64 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_10 -L c_reg_fd_v12_0_6 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_pipe_v3_0_6 -L xbip_dsp48_addsub_v3_0_6 -L xbip_addsub_v3_0_6 -L c_addsub_v12_0_13 -L c_gate_bit_v12_0_6 -L xbip_counter_v3_0_6 -L c_counter_binary_v12_0_13 -L xil_defaultlib -L util_vector_logic_v2_0_1 -L xlconstant_v1_1_6 -L xlconcat_v2_1_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot test_tb_behav xil_defaultlib.test_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,9 +12,6 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package unisim.vcomponents
-Compiling package ieee.vital_timing
-Compiling package ieee.vital_primitives
-Compiling package unisim.vpkg
 Compiling package c_counter_binary_v12_0_13.c_counter_binary_v12_0_13_viv_co...
 Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
 Compiling package xbip_counter_v3_0_6.xbip_counter_v3_0_6_viv_comp
@@ -27,14 +24,6 @@ Compiling package c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv_comp
 Compiling package c_addsub_v12_0_13.c_addsub_v12_0_13_pkg
 Compiling package vl.vl_types
 Compiling module xil_defaultlib.glbl
-Compiling architecture iddr_v of entity unisim.IDDR [\IDDR(1,13)(1,4)\]
-Compiling architecture behavioral of entity xil_defaultlib.DDR_WRAPPER [ddr_wrapper_default]
-Compiling architecture behavioral of entity xil_defaultlib.SDDR_DLR [sddr_dlr_default]
-Compiling architecture test_sddr_dlr_0_0_arch of entity xil_defaultlib.TEST_SDDR_DLR_0_0 [test_sddr_dlr_0_0_default]
-Compiling architecture test_sddr_dlr_0_1_arch of entity xil_defaultlib.TEST_SDDR_DLR_0_1 [test_sddr_dlr_0_1_default]
-Compiling architecture test_sddr_dlr_1_0_arch of entity xil_defaultlib.TEST_SDDR_DLR_1_0 [test_sddr_dlr_1_0_default]
-Compiling architecture test_sddr_dlr_2_0_arch of entity xil_defaultlib.TEST_SDDR_DLR_2_0 [test_sddr_dlr_2_0_default]
-Compiling architecture test_sddr_dlr_3_0_arch of entity xil_defaultlib.TEST_SDDR_DLR_3_0 [test_sddr_dlr_3_0_default]
 Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=32...]
 Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
 Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
@@ -46,10 +35,20 @@ Compiling architecture synth of entity c_counter_binary_v12_0_13.c_counter_binar
 Compiling architecture xilinx of entity c_counter_binary_v12_0_13.c_counter_binary_v12_0_13 [\c_counter_binary_v12_0_13(c_xde...]
 Compiling architecture sddrtt_timer_arch of entity xil_defaultlib.sddrtt_timer [sddrtt_timer_default]
 Compiling architecture behavioral of entity xil_defaultlib.SDDR_TT [sddr_tt_default]
-Compiling architecture test_sddr_tt_0_0_arch of entity xil_defaultlib.TEST_SDDR_TT_0_0 [test_sddr_tt_0_0_default]
-Compiling module xlslice_v1_0_2.xlslice_v1_0_2_xlslice(DIN_WIDTH...
-Compiling module xil_defaultlib.TEST_xlslice_0_0
-Compiling architecture structure of entity xil_defaultlib.TEST [test_default]
-Compiling architecture structure of entity xil_defaultlib.TEST_wrapper [test_wrapper_default]
+Compiling architecture sddr_tt_m_sddr_tt_0_0_arch of entity xil_defaultlib.SDDR_TT_M_SDDR_TT_0_0 [sddr_tt_m_sddr_tt_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.TT_SLICER [tt_slicer_default]
+Compiling architecture sddr_tt_m_tt_slicer_0_0_arch of entity xil_defaultlib.SDDR_TT_M_TT_SLICER_0_0 [sddr_tt_m_tt_slicer_0_0_default]
+Compiling module unisims_ver.IBUF(IOSTANDARD="LVCMOS33")
+Compiling module unisims_ver.ISERDESE2(INTERFACE_TYPE="NETWOR...
+Compiling module xil_defaultlib.SDDR_TT_M_selectio_wiz_0_0_selec...
+Compiling module xil_defaultlib.SDDR_TT_M_selectio_wiz_0_0(SYS_W...
+Compiling module util_vector_logic_v2_0_1.util_vector_logic_v2_0_1_util_ve...
+Compiling module xil_defaultlib.SDDR_TT_M_util_vector_logic_0_0
+Compiling module xlconcat_v2_1_3.xlconcat_v2_1_3_xlconcat(dout_wi...
+Compiling module xil_defaultlib.SDDR_TT_M_xlconcat_0_0
+Compiling module xlconstant_v1_1_6.xlconstant_v1_1_6_xlconstant(CON...
+Compiling module xil_defaultlib.SDDR_TT_M_xlconstant_0_0
+Compiling architecture structure of entity xil_defaultlib.SDDR_TT_M [sddr_tt_m_default]
+Compiling architecture structure of entity xil_defaultlib.SDDR_TT_M_wrapper [sddr_tt_m_wrapper_default]
 Compiling architecture behavioral of entity xil_defaultlib.test_tb
 Built simulation snapshot test_tb_behav

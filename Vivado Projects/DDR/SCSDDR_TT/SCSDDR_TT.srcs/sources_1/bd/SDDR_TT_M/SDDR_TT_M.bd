@@ -1,0 +1,354 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x18820810879EC420",
+      "device": "xc7z020clg400-1",
+      "name": "SDDR_TT_M",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "SDDR_TT_0": ""
+    },
+    "ports": {
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D2": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D3": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D4": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "direction": "O"
+      },
+      "OT1": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "OT2": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "OT3": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "OT4": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "listening": {
+        "direction": "O"
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "timeout": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "timeouts": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "waiting": {
+        "direction": "O"
+      },
+      "MCLK": {
+        "direction": "I"
+      },
+      "T0": {
+        "type": "data",
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "T1": {
+        "type": "data",
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "T2": {
+        "type": "data",
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "T3": {
+        "type": "data",
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "T4": {
+        "type": "data",
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "SDDR_TT_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_TT:1.0",
+        "xci_name": "SDDR_TT_M_SDDR_TT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_TT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DDR_T0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DDR_T1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DDR_T2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DDR_T3": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DDR_T4": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "T1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T3": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T4": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D4": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "TIMEOUTS": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ttwait": {
+            "direction": "O"
+          },
+          "ttlisten": {
+            "direction": "O"
+          },
+          "TIME_OUT": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "SDDR_TT_0_D0": {
+        "ports": [
+          "SDDR_TT_0/D0",
+          "D0"
+        ]
+      },
+      "SDDR_TT_0_D1": {
+        "ports": [
+          "SDDR_TT_0/D1",
+          "D1"
+        ]
+      },
+      "SDDR_TT_0_D2": {
+        "ports": [
+          "SDDR_TT_0/D2",
+          "D2"
+        ]
+      },
+      "SDDR_TT_0_D3": {
+        "ports": [
+          "SDDR_TT_0/D3",
+          "D3"
+        ]
+      },
+      "SDDR_TT_0_D4": {
+        "ports": [
+          "SDDR_TT_0/D4",
+          "D4"
+        ]
+      },
+      "SDDR_TT_0_DRDY": {
+        "ports": [
+          "SDDR_TT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "SDDR_TT_0_T1": {
+        "ports": [
+          "SDDR_TT_0/T1",
+          "OT1"
+        ]
+      },
+      "SDDR_TT_0_T2": {
+        "ports": [
+          "SDDR_TT_0/T2",
+          "OT2"
+        ]
+      },
+      "SDDR_TT_0_T3": {
+        "ports": [
+          "SDDR_TT_0/T3",
+          "OT3"
+        ]
+      },
+      "SDDR_TT_0_T4": {
+        "ports": [
+          "SDDR_TT_0/T4",
+          "OT4"
+        ]
+      },
+      "SDDR_TT_0_TIMEOUTS": {
+        "ports": [
+          "SDDR_TT_0/TIMEOUTS",
+          "timeouts"
+        ]
+      },
+      "SDDR_TT_0_ttlisten": {
+        "ports": [
+          "SDDR_TT_0/ttlisten",
+          "listening"
+        ]
+      },
+      "SDDR_TT_0_ttwait": {
+        "ports": [
+          "SDDR_TT_0/ttwait",
+          "waiting"
+        ]
+      },
+      "resetn_1": {
+        "ports": [
+          "resetn",
+          "SDDR_TT_0/RESETN"
+        ]
+      },
+      "timeout_1": {
+        "ports": [
+          "timeout",
+          "SDDR_TT_0/TIME_OUT"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "SDDR_TT_0/MCLK"
+        ]
+      },
+      "T0_1": {
+        "ports": [
+          "T0",
+          "SDDR_TT_0/DDR_T0"
+        ]
+      },
+      "T1_1": {
+        "ports": [
+          "T1",
+          "SDDR_TT_0/DDR_T1"
+        ]
+      },
+      "T2_1": {
+        "ports": [
+          "T2",
+          "SDDR_TT_0/DDR_T2"
+        ]
+      },
+      "T3_1": {
+        "ports": [
+          "T3",
+          "SDDR_TT_0/DDR_T3"
+        ]
+      },
+      "T4_1": {
+        "ports": [
+          "T4",
+          "SDDR_TT_0/DDR_T4"
+        ]
+      }
+    }
+  }
+}

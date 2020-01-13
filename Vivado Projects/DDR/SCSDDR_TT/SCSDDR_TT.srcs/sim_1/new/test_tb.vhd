@@ -36,7 +36,7 @@ entity test_tb is
 end test_tb;
 
 architecture Behavioral of test_tb is
-component TEST_wrapper is port(
+component SDDR_TT_M_wrapper is port(
     D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     D2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -47,7 +47,8 @@ component TEST_wrapper is port(
     OT2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     OT3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     OT4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    SCS_CLKS : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    MCLK : in std_logic;
+    HS_CLK : in std_logic;
     T0 : in STD_LOGIC;
     T1 : in STD_LOGIC;
     T2 : in STD_LOGIC;
@@ -70,7 +71,8 @@ signal OT1 : std_logic_vector(31 downto 0);
 signal OT2 : std_logic_vector(31 downto 0);
 signal OT3 : std_logic_vector(31 downto 0);
 signal OT4 : std_logic_vector(31 downto 0);
-signal SCS_CLKS : std_logic_vector(1 downto 0) := "00";
+signal MCLK : std_logic := '0';
+signal HS_CLK : std_logic := '0';
 signal T0 : std_logic := '0';
 signal T1 : std_logic := '0';
 signal T2 : std_logic := '0';
@@ -78,11 +80,11 @@ signal T3 : std_logic := '0';
 signal T4 : std_logic := '0';
 signal listening : std_logic;
 signal resetn : std_logic := '0';
-signal timeout : std_logic_vector(31 downto 0) := x"FFFFFFFF";
+signal timeout : std_logic_vector(31 downto 0) := x"000000FF";
 signal timeouts : std_logic_vector(3 downto 0);
 signal waiting : std_logic;
 begin
-DUT : TEST_WRAPPER port map(
+DUT : SDDR_TT_M_wrapper port map(
  D0 => D0,
  D1 => D1,
  D2 => D2,
@@ -103,27 +105,16 @@ DUT : TEST_WRAPPER port map(
  timeout => timeout,
  timeouts => timeouts,
  waiting => waiting,
- scs_clks => scs_clks
+ MCLK => MCLK,
+ HS_CLK => HS_CLK
 );
-CLK0 : process
-begin
-    loop
-        SCS_CLKS(0) <= not SCS_CLKS(0);
-        wait for 1ns;
-    end loop;
-end process;
-CLK1 : process
-begin
-    wait for 0.5ns;
-    loop
-        SCS_CLKS(1) <= not SCS_CLKS(1);
-        wait for 1ns;
-    end loop;
-end process;
+HS_CLK <= not HS_CLK after 0.625ns;
+MCLK <= not MCLK after 1.25ns;
 MAIN : process
 begin
     wait for 10ns;
     resetn <= '1';
+    wait for 2us;
     wait for 21ns;
     T0 <= '1';
     wait for 12.3ns;
@@ -134,6 +125,19 @@ begin
     T3 <= '1';
     wait for 5.7ns;
     T4 <= '1';
+    wait for 2ns;
+    T0 <= '0';
+    T1 <= '0';
+    T2 <= '0';
+    T3 <= '0';
+    T4 <= '0';
+    wait for 10ns;
+    T0 <= '1';
+    wait for 5.6ns;
+    T1 <= '1';
+    wait for 4.2ns;
+    T2 <= '1';
+    wait;
     wait;
 end process;
 end Behavioral;

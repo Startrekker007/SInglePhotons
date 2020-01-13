@@ -1,0 +1,394 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB0638AEB0388C5B9",
+      "device": "xc7z020clg400-1",
+      "name": "TEST",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "selectio_wiz_0": "",
+      "selectio_wiz_1": "",
+      "util_vector_logic_0": "",
+      "SDDR_CT_0": ""
+    },
+    "ports": {
+      "T1": {
+        "direction": "I"
+      },
+      "T2": {
+        "direction": "I"
+      },
+      "HS_CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "TEST_HS_CLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "800000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "TEST_MCLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "RESETN": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "bitslip": {
+        "direction": "I"
+      },
+      "FSEL": {
+        "direction": "I"
+      },
+      "BIDIR": {
+        "direction": "I"
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "direction": "O"
+      },
+      "CTIME": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "WAITING": {
+        "direction": "O"
+      },
+      "ARMED": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "selectio_wiz_0": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "TEST_selectio_wiz_0_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "selectio_wiz_1": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "TEST_selectio_wiz_0_1",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TEST_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "SDDR_CT_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_CT:1.0",
+        "xci_name": "TEST_SDDR_CT_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "4"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "CTIME": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WAITING": {
+            "direction": "O"
+          },
+          "ARMED": {
+            "direction": "O"
+          },
+          "T1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "T2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "FSEL": {
+            "direction": "I"
+          },
+          "BIDIR": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "selectio_wiz_0_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_0/data_in_to_device",
+          "SDDR_CT_0/T1"
+        ]
+      },
+      "selectio_wiz_1_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_1/data_in_to_device",
+          "SDDR_CT_0/T2"
+        ]
+      },
+      "T1_1": {
+        "ports": [
+          "T1",
+          "selectio_wiz_0/data_in_from_pins"
+        ]
+      },
+      "T2_1": {
+        "ports": [
+          "T2",
+          "selectio_wiz_1/data_in_from_pins"
+        ]
+      },
+      "HS_CLK_1": {
+        "ports": [
+          "HS_CLK",
+          "selectio_wiz_0/clk_in",
+          "selectio_wiz_1/clk_in"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "selectio_wiz_1/clk_div_in",
+          "selectio_wiz_0/clk_div_in",
+          "SDDR_CT_0/MCLK"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "util_vector_logic_0/Op1",
+          "SDDR_CT_0/RESETN"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "selectio_wiz_1/io_reset",
+          "selectio_wiz_0/io_reset"
+        ]
+      },
+      "bitslip_1": {
+        "ports": [
+          "bitslip",
+          "selectio_wiz_1/bitslip",
+          "selectio_wiz_0/bitslip"
+        ]
+      },
+      "FSEL_1": {
+        "ports": [
+          "FSEL",
+          "SDDR_CT_0/FSEL"
+        ]
+      },
+      "BIDIR_1": {
+        "ports": [
+          "BIDIR",
+          "SDDR_CT_0/BIDIR"
+        ]
+      },
+      "SDDR_CT_0_D0": {
+        "ports": [
+          "SDDR_CT_0/D0",
+          "D0"
+        ]
+      },
+      "SDDR_CT_0_D1": {
+        "ports": [
+          "SDDR_CT_0/D1",
+          "D1"
+        ]
+      },
+      "SDDR_CT_0_DRDY": {
+        "ports": [
+          "SDDR_CT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "SDDR_CT_0_CTIME": {
+        "ports": [
+          "SDDR_CT_0/CTIME",
+          "CTIME"
+        ]
+      },
+      "SDDR_CT_0_WAITING": {
+        "ports": [
+          "SDDR_CT_0/WAITING",
+          "WAITING"
+        ]
+      },
+      "SDDR_CT_0_ARMED": {
+        "ports": [
+          "SDDR_CT_0/ARMED",
+          "ARMED"
+        ]
+      }
+    }
+  }
+}

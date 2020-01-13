@@ -1,0 +1,625 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xC7ACDB0EEADA2C10",
+      "device": "xc7z020clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "selectio_wiz_0": "",
+      "SDDR_TT_0": "",
+      "selectio_wiz_1": "",
+      "selectio_wiz_2": "",
+      "selectio_wiz_3": "",
+      "selectio_wiz_4": "",
+      "util_vector_logic_0": ""
+    },
+    "ports": {
+      "CLK_H": {
+        "direction": "I"
+      },
+      "MCLK": {
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "50000000",
+            "value_src": "ip_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "T0": {
+        "direction": "I"
+      },
+      "T1": {
+        "direction": "I"
+      },
+      "T2": {
+        "direction": "I"
+      },
+      "T3": {
+        "direction": "I"
+      },
+      "T4": {
+        "direction": "I"
+      },
+      "RESETN": {
+        "direction": "I"
+      },
+      "bitslip": {
+        "direction": "I"
+      },
+      "TIMEOUT": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "OT1": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "OT2": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "OT3": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "OT4": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D2": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D3": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D4": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "direction": "O"
+      },
+      "TIMEOUTS": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "ttwait": {
+        "direction": "O"
+      },
+      "ttlisten": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "selectio_wiz_0": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "design_1_selectio_wiz_0_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "SDDR_TT_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_TT:1.0",
+        "xci_name": "design_1_SDDR_TT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_TT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "DDR_T0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "DDR_T1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "DDR_T2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "DDR_T3": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "DDR_T4": {
+            "direction": "I",
+            "left": "3",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "T1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T3": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T4": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D4": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "TIMEOUTS": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ttwait": {
+            "direction": "O"
+          },
+          "ttlisten": {
+            "direction": "O"
+          },
+          "TIME_OUT": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "selectio_wiz_1": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "design_1_selectio_wiz_0_1",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "selectio_wiz_2": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "design_1_selectio_wiz_0_2",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "selectio_wiz_3": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "design_1_selectio_wiz_1_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "selectio_wiz_4": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "design_1_selectio_wiz_3_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "design_1_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "selectio_wiz_0_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_0/data_in_to_device",
+          "SDDR_TT_0/DDR_T0"
+        ]
+      },
+      "selectio_wiz_1_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_1/data_in_to_device",
+          "SDDR_TT_0/DDR_T1"
+        ]
+      },
+      "selectio_wiz_2_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_2/data_in_to_device",
+          "SDDR_TT_0/DDR_T2"
+        ]
+      },
+      "selectio_wiz_3_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_3/data_in_to_device",
+          "SDDR_TT_0/DDR_T3"
+        ]
+      },
+      "selectio_wiz_4_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_4/data_in_to_device",
+          "SDDR_TT_0/DDR_T4"
+        ]
+      },
+      "T0_1": {
+        "ports": [
+          "T0",
+          "selectio_wiz_0/data_in_from_pins"
+        ]
+      },
+      "T1_1": {
+        "ports": [
+          "T1",
+          "selectio_wiz_1/data_in_from_pins"
+        ]
+      },
+      "T2_1": {
+        "ports": [
+          "T2",
+          "selectio_wiz_2/data_in_from_pins"
+        ]
+      },
+      "T3_1": {
+        "ports": [
+          "T3",
+          "selectio_wiz_3/data_in_from_pins"
+        ]
+      },
+      "T4_1": {
+        "ports": [
+          "T4",
+          "selectio_wiz_4/data_in_from_pins"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "selectio_wiz_0/clk_div_in",
+          "selectio_wiz_1/clk_div_in",
+          "selectio_wiz_2/clk_div_in",
+          "selectio_wiz_3/clk_div_in",
+          "selectio_wiz_4/clk_div_in",
+          "SDDR_TT_0/MCLK"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "util_vector_logic_0/Op1",
+          "SDDR_TT_0/RESETN"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "selectio_wiz_0/io_reset",
+          "selectio_wiz_1/io_reset",
+          "selectio_wiz_2/io_reset",
+          "selectio_wiz_3/io_reset",
+          "selectio_wiz_4/io_reset"
+        ]
+      },
+      "CLK_H_1": {
+        "ports": [
+          "CLK_H",
+          "selectio_wiz_0/clk_in",
+          "selectio_wiz_1/clk_in",
+          "selectio_wiz_3/clk_in",
+          "selectio_wiz_4/clk_in",
+          "selectio_wiz_2/clk_in"
+        ]
+      },
+      "bitslip_1": {
+        "ports": [
+          "bitslip",
+          "selectio_wiz_2/bitslip",
+          "selectio_wiz_4/bitslip",
+          "selectio_wiz_3/bitslip",
+          "selectio_wiz_1/bitslip",
+          "selectio_wiz_0/bitslip"
+        ]
+      },
+      "TIMEOUT_1": {
+        "ports": [
+          "TIMEOUT",
+          "SDDR_TT_0/TIME_OUT"
+        ]
+      },
+      "SDDR_TT_0_T1": {
+        "ports": [
+          "SDDR_TT_0/T1",
+          "OT1"
+        ]
+      },
+      "SDDR_TT_0_T2": {
+        "ports": [
+          "SDDR_TT_0/T2",
+          "OT2"
+        ]
+      },
+      "SDDR_TT_0_T3": {
+        "ports": [
+          "SDDR_TT_0/T3",
+          "OT3"
+        ]
+      },
+      "SDDR_TT_0_T4": {
+        "ports": [
+          "SDDR_TT_0/T4",
+          "OT4"
+        ]
+      },
+      "SDDR_TT_0_D0": {
+        "ports": [
+          "SDDR_TT_0/D0",
+          "D0"
+        ]
+      },
+      "SDDR_TT_0_D1": {
+        "ports": [
+          "SDDR_TT_0/D1",
+          "D1"
+        ]
+      },
+      "SDDR_TT_0_D2": {
+        "ports": [
+          "SDDR_TT_0/D2",
+          "D2"
+        ]
+      },
+      "SDDR_TT_0_D3": {
+        "ports": [
+          "SDDR_TT_0/D3",
+          "D3"
+        ]
+      },
+      "SDDR_TT_0_D4": {
+        "ports": [
+          "SDDR_TT_0/D4",
+          "D4"
+        ]
+      },
+      "SDDR_TT_0_DRDY": {
+        "ports": [
+          "SDDR_TT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "SDDR_TT_0_TIMEOUTS": {
+        "ports": [
+          "SDDR_TT_0/TIMEOUTS",
+          "TIMEOUTS"
+        ]
+      },
+      "SDDR_TT_0_ttwait": {
+        "ports": [
+          "SDDR_TT_0/ttwait",
+          "ttwait"
+        ]
+      },
+      "SDDR_TT_0_ttlisten": {
+        "ports": [
+          "SDDR_TT_0/ttlisten",
+          "ttlisten"
+        ]
+      }
+    }
+  }
+}
