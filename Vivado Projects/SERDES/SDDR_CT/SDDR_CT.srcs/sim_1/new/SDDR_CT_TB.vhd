@@ -65,7 +65,7 @@ HS_CLK <= not HS_CLK after 0.625ns;
     begin
         -- EDIT Adapt initialization as needed
         BIDIR <= '0';
-        FSEL <= '0';
+        FSEL <= '1';
         RESETN <= '0';
         T1 <= '0';
         T2 <= '0';
@@ -76,9 +76,9 @@ HS_CLK <= not HS_CLK after 0.625ns;
         RESETN <= '1';
         wait for 2us;
         wait for 9.7ns;
-        T1 <= '1';
-        wait for 10.8ns;
         T2 <= '1';
+        wait for 10ns;
+        T1 <= '1';
         wait;
     end process;
 

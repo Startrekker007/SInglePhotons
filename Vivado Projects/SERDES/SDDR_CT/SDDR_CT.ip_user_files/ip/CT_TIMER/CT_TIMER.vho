@@ -55,7 +55,7 @@
 COMPONENT CT_TIMER
   PORT (
     CLK : IN STD_LOGIC;
-    SCLR : IN STD_LOGIC;
+    SINIT : IN STD_LOGIC;
     Q : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END COMPONENT;
@@ -68,7 +68,7 @@ END COMPONENT;
 your_instance_name : CT_TIMER
   PORT MAP (
     CLK => CLK,
-    SCLR => SCLR,
+    SINIT => SINIT,
     Q => Q
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
