@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 12:39:09 2020
+--Date        : Thu Jan 16 08:51:11 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target DESERIALIZER_B.bd
 --Design      : DESERIALIZER_B
@@ -55,10 +55,10 @@ entity DESERIALIZER_B is
     aresetn : in STD_LOGIC;
     resetn : in STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of DESERIALIZER_B : entity is "DESERIALIZER_B,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=DESERIALIZER_B,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=14,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
-  attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of DESERIALIZER_B : entity is "DESERIALIZER_B.hwdef";
+  attribute core_generation_info : string;
+  attribute core_generation_info of DESERIALIZER_B : entity is "DESERIALIZER_B,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=DESERIALIZER_B,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=14,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute hw_handoff : string;
+  attribute hw_handoff of DESERIALIZER_B : entity is "DESERIALIZER_B.hwdef";
 end DESERIALIZER_B;
 
 architecture STRUCTURE of DESERIALIZER_B is
@@ -186,56 +186,56 @@ architecture STRUCTURE of DESERIALIZER_B is
     ref_clk : in STD_LOGIC
   );
   end component DESERIALIZER_B_util_idelay_ctrl_0_0;
-  component DESERIALIZER_B_ISERDES_WRAPPER_0_0 is
+  component DESERIALIZER_B_ISERDES_B_0_0 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component DESERIALIZER_B_ISERDES_WRAPPER_0_0;
-  component DESERIALIZER_B_ISERDES_WRAPPER_0_1 is
+  end component DESERIALIZER_B_ISERDES_B_0_0;
+  component DESERIALIZER_B_ISERDES_B_0_1 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component DESERIALIZER_B_ISERDES_WRAPPER_0_1;
-  component DESERIALIZER_B_ISERDES_WRAPPER_1_0 is
+  end component DESERIALIZER_B_ISERDES_B_0_1;
+  component DESERIALIZER_B_ISERDES_B_0_2 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component DESERIALIZER_B_ISERDES_WRAPPER_1_0;
-  component DESERIALIZER_B_ISERDES_WRAPPER_2_0 is
+  end component DESERIALIZER_B_ISERDES_B_0_2;
+  component DESERIALIZER_B_ISERDES_B_1_0 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component DESERIALIZER_B_ISERDES_WRAPPER_2_0;
-  component DESERIALIZER_B_ISERDES_WRAPPER_3_0 is
+  end component DESERIALIZER_B_ISERDES_B_1_0;
+  component DESERIALIZER_B_ISERDES_B_3_0 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component DESERIALIZER_B_ISERDES_WRAPPER_3_0;
+  end component DESERIALIZER_B_ISERDES_B_3_0;
   signal BITSLIP_1 : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal DD_AXI_SLICE_0_D0 : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal DD_AXI_SLICE_0_D1 : STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -282,11 +282,11 @@ architecture STRUCTURE of DESERIALIZER_B is
   signal IDELAY_WRAPPER_3_ODATA : STD_LOGIC;
   signal IDELAY_WRAPPER_4_ODATA : STD_LOGIC;
   signal IDELAY_WRAPPER_5_ODATA : STD_LOGIC;
-  signal ISERDES_WRAPPER_0_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal ISERDES_WRAPPER_1_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal ISERDES_WRAPPER_2_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal ISERDES_WRAPPER_3_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal ISERDES_WRAPPER_4_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_B_0_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_B_1_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_B_2_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_B_3_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_B_4_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Net : STD_LOGIC;
   signal T0_1 : STD_LOGIC;
   signal T1_1 : STD_LOGIC;
@@ -298,38 +298,38 @@ architecture STRUCTURE of DESERIALIZER_B is
   signal resetn_1 : STD_LOGIC;
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_util_idelay_ctrl_0_rdy_UNCONNECTED : STD_LOGIC;
-  attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of HS_CLK : signal is "xilinx.com:signal:clock:1.0 CLK.HS_CLK CLK";
-  attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of HS_CLK : signal is "XIL_INTERFACENAME CLK.HS_CLK, CLK_DOMAIN DESERIALIZER_B_HS_CLK, FREQ_HZ 800000000, INSERT_VIP 0, PHASE 0.000";
-  attribute X_INTERFACE_INFO of IDELAY_RCLK : signal is "xilinx.com:signal:clock:1.0 CLK.IDELAY_RCLK CLK";
-  attribute X_INTERFACE_PARAMETER of IDELAY_RCLK : signal is "XIL_INTERFACENAME CLK.IDELAY_RCLK, CLK_DOMAIN DESERIALIZER_B_IDELAY_RCLK, FREQ_HZ 200000000, INSERT_VIP 0, PHASE 0.000";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_arready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS ARREADY";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_arvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS ARVALID";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_awready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS AWREADY";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_awvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS AWVALID";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_bready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS BREADY";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_bvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS BVALID";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_rready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RREADY";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_rvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RVALID";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_wready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WREADY";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_wvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WVALID";
-  attribute X_INTERFACE_INFO of MCLK : signal is "xilinx.com:signal:clock:1.0 CLK.MCLK CLK";
-  attribute X_INTERFACE_PARAMETER of MCLK : signal is "XIL_INTERFACENAME CLK.MCLK, CLK_DOMAIN DESERIALIZER_B_MCLK, FREQ_HZ 400000000, INSERT_VIP 0, PHASE 0.000";
-  attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 CLK.ACLK CLK";
-  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME CLK.ACLK, ASSOCIATED_RESET aresetn, CLK_DOMAIN DESERIALIZER_B_aclk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
-  attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 RST.ARESETN RST";
-  attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME RST.ARESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
-  attribute X_INTERFACE_INFO of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
-  attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_araddr : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS ARADDR";
-  attribute X_INTERFACE_PARAMETER of IDELAY_TAPS_araddr : signal is "XIL_INTERFACENAME IDELAY_TAPS, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 0, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 1, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_awaddr : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS AWADDR";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_bresp : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS BRESP";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_rdata : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RDATA";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_rresp : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RRESP";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_wdata : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WDATA";
-  attribute X_INTERFACE_INFO of IDELAY_TAPS_wstrb : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WSTRB";
+  attribute x_interface_info : string;
+  attribute x_interface_info of HS_CLK : signal is "xilinx.com:signal:clock:1.0 CLK.HS_CLK CLK";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of HS_CLK : signal is "XIL_INTERFACENAME CLK.HS_CLK, CLK_DOMAIN DESERIALIZER_B_HS_CLK, FREQ_HZ 800000000, INSERT_VIP 0, PHASE 0.000";
+  attribute x_interface_info of IDELAY_RCLK : signal is "xilinx.com:signal:clock:1.0 CLK.IDELAY_RCLK CLK";
+  attribute x_interface_parameter of IDELAY_RCLK : signal is "XIL_INTERFACENAME CLK.IDELAY_RCLK, CLK_DOMAIN DESERIALIZER_B_IDELAY_RCLK, FREQ_HZ 200000000, INSERT_VIP 0, PHASE 0.000";
+  attribute x_interface_info of IDELAY_TAPS_arready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS ARREADY";
+  attribute x_interface_info of IDELAY_TAPS_arvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS ARVALID";
+  attribute x_interface_info of IDELAY_TAPS_awready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS AWREADY";
+  attribute x_interface_info of IDELAY_TAPS_awvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS AWVALID";
+  attribute x_interface_info of IDELAY_TAPS_bready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS BREADY";
+  attribute x_interface_info of IDELAY_TAPS_bvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS BVALID";
+  attribute x_interface_info of IDELAY_TAPS_rready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RREADY";
+  attribute x_interface_info of IDELAY_TAPS_rvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RVALID";
+  attribute x_interface_info of IDELAY_TAPS_wready : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WREADY";
+  attribute x_interface_info of IDELAY_TAPS_wvalid : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WVALID";
+  attribute x_interface_info of MCLK : signal is "xilinx.com:signal:clock:1.0 CLK.MCLK CLK";
+  attribute x_interface_parameter of MCLK : signal is "XIL_INTERFACENAME CLK.MCLK, CLK_DOMAIN DESERIALIZER_B_MCLK, FREQ_HZ 400000000, INSERT_VIP 0, PHASE 0.000";
+  attribute x_interface_info of aclk : signal is "xilinx.com:signal:clock:1.0 CLK.ACLK CLK";
+  attribute x_interface_parameter of aclk : signal is "XIL_INTERFACENAME CLK.ACLK, ASSOCIATED_RESET aresetn, CLK_DOMAIN DESERIALIZER_B_aclk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
+  attribute x_interface_info of aresetn : signal is "xilinx.com:signal:reset:1.0 RST.ARESETN RST";
+  attribute x_interface_parameter of aresetn : signal is "XIL_INTERFACENAME RST.ARESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute x_interface_info of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
+  attribute x_interface_parameter of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute x_interface_info of IDELAY_TAPS_araddr : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS ARADDR";
+  attribute x_interface_parameter of IDELAY_TAPS_araddr : signal is "XIL_INTERFACENAME IDELAY_TAPS, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 0, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 1, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
+  attribute x_interface_info of IDELAY_TAPS_awaddr : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS AWADDR";
+  attribute x_interface_info of IDELAY_TAPS_bresp : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS BRESP";
+  attribute x_interface_info of IDELAY_TAPS_rdata : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RDATA";
+  attribute x_interface_info of IDELAY_TAPS_rresp : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS RRESP";
+  attribute x_interface_info of IDELAY_TAPS_wdata : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WDATA";
+  attribute x_interface_info of IDELAY_TAPS_wstrb : signal is "xilinx.com:interface:aximm:1.0 IDELAY_TAPS WSTRB";
 begin
   BITSLIP_1(4 downto 0) <= BITSLIP(4 downto 0);
   E_TRIG_1 <= E_TRIG;
@@ -353,11 +353,11 @@ begin
   IDELAY_TAPS_rvalid <= IDELAY_TAPS_1_RVALID;
   IDELAY_TAPS_wready <= IDELAY_TAPS_1_WREADY;
   Net <= MCLK;
-  OT0(3 downto 0) <= ISERDES_WRAPPER_0_DATA_OUT(3 downto 0);
-  OT1(3 downto 0) <= ISERDES_WRAPPER_1_DATA_OUT(3 downto 0);
-  OT2(3 downto 0) <= ISERDES_WRAPPER_2_DATA_OUT(3 downto 0);
-  OT3(3 downto 0) <= ISERDES_WRAPPER_3_DATA_OUT(3 downto 0);
-  OT4(3 downto 0) <= ISERDES_WRAPPER_4_DATA_OUT(3 downto 0);
+  OT0(3 downto 0) <= ISERDES_B_0_data_in_to_device(3 downto 0);
+  OT1(3 downto 0) <= ISERDES_B_1_data_in_to_device(3 downto 0);
+  OT2(3 downto 0) <= ISERDES_B_2_data_in_to_device(3 downto 0);
+  OT3(3 downto 0) <= ISERDES_B_3_data_in_to_device(3 downto 0);
+  OT4(3 downto 0) <= ISERDES_B_4_data_in_to_device(3 downto 0);
   RT0 <= IDELAY_WRAPPER_0_ODATA;
   RT1 <= IDELAY_WRAPPER_1_ODATA;
   RT2 <= IDELAY_WRAPPER_2_ODATA;
@@ -473,50 +473,50 @@ IDELAY_WRAPPER_5: component DESERIALIZER_B_IDELAY_WRAPPER_4_0
       TAP0(4 downto 0) => DD_AXI_SLICE_1_D4(4 downto 0),
       TAP1(4 downto 0) => DD_AXI_SLICE_1_D5(4 downto 0)
     );
-ISERDES_WRAPPER_0: component DESERIALIZER_B_ISERDES_WRAPPER_0_0
+ISERDES_B_0: component DESERIALIZER_B_ISERDES_B_0_0
      port map (
-      BITSLIP => DD_SPLITTER_0_D0,
-      DATA_IN => IDELAY_WRAPPER_0_ODATA,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_0_DATA_OUT(3 downto 0),
-      DIV_CLK => Net,
-      HS_CLK => HS_CLK_1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => DD_SPLITTER_0_D0,
+      clk_div_in => Net,
+      clk_in => HS_CLK_1,
+      data_in_from_pins(0) => IDELAY_WRAPPER_0_ODATA,
+      data_in_to_device(3 downto 0) => ISERDES_B_0_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
-ISERDES_WRAPPER_1: component DESERIALIZER_B_ISERDES_WRAPPER_0_1
+ISERDES_B_1: component DESERIALIZER_B_ISERDES_B_0_1
      port map (
-      BITSLIP => DD_SPLITTER_0_D1,
-      DATA_IN => IDELAY_WRAPPER_1_ODATA,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_1_DATA_OUT(3 downto 0),
-      DIV_CLK => Net,
-      HS_CLK => HS_CLK_1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => DD_SPLITTER_0_D1,
+      clk_div_in => Net,
+      clk_in => HS_CLK_1,
+      data_in_from_pins(0) => IDELAY_WRAPPER_1_ODATA,
+      data_in_to_device(3 downto 0) => ISERDES_B_1_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
-ISERDES_WRAPPER_2: component DESERIALIZER_B_ISERDES_WRAPPER_1_0
+ISERDES_B_2: component DESERIALIZER_B_ISERDES_B_0_2
      port map (
-      BITSLIP => DD_SPLITTER_0_D2,
-      DATA_IN => IDELAY_WRAPPER_2_ODATA,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_2_DATA_OUT(3 downto 0),
-      DIV_CLK => Net,
-      HS_CLK => HS_CLK_1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => DD_SPLITTER_0_D2,
+      clk_div_in => Net,
+      clk_in => HS_CLK_1,
+      data_in_from_pins(0) => IDELAY_WRAPPER_2_ODATA,
+      data_in_to_device(3 downto 0) => ISERDES_B_2_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
-ISERDES_WRAPPER_3: component DESERIALIZER_B_ISERDES_WRAPPER_2_0
+ISERDES_B_3: component DESERIALIZER_B_ISERDES_B_1_0
      port map (
-      BITSLIP => DD_SPLITTER_0_D3,
-      DATA_IN => IDELAY_WRAPPER_3_ODATA,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_3_DATA_OUT(3 downto 0),
-      DIV_CLK => Net,
-      HS_CLK => HS_CLK_1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => DD_SPLITTER_0_D3,
+      clk_div_in => Net,
+      clk_in => HS_CLK_1,
+      data_in_from_pins(0) => IDELAY_WRAPPER_3_ODATA,
+      data_in_to_device(3 downto 0) => ISERDES_B_3_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
-ISERDES_WRAPPER_4: component DESERIALIZER_B_ISERDES_WRAPPER_3_0
+ISERDES_B_4: component DESERIALIZER_B_ISERDES_B_3_0
      port map (
-      BITSLIP => DD_SPLITTER_0_D4,
-      DATA_IN => IDELAY_WRAPPER_4_ODATA,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_4_DATA_OUT(3 downto 0),
-      DIV_CLK => Net,
-      HS_CLK => HS_CLK_1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => DD_SPLITTER_0_D4,
+      clk_div_in => Net,
+      clk_in => HS_CLK_1,
+      data_in_from_pins(0) => IDELAY_WRAPPER_4_ODATA,
+      data_in_to_device(3 downto 0) => ISERDES_B_4_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
 util_idelay_ctrl_0: component DESERIALIZER_B_util_idelay_ctrl_0_0
      port map (

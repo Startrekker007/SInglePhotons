@@ -40,12 +40,13 @@ set_property PACKAGE_PIN Y18 [get_ports TRIG_T0]
 set_property IOSTANDARD LVCMOS33 [get_ports TRIG_T0]
 set_property IOSTANDARD LVCMOS33 [get_ports sys_clock]
 
-create_pblock pblock_SDDR_ST_0
-add_cells_to_pblock [get_pblocks pblock_SDDR_ST_0] [get_cells -quiet [list SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/SDDR_ST_0]]
-resize_pblock [get_pblocks pblock_SDDR_ST_0] -add {SLICE_X80Y75:SLICE_X89Y79}
+
+set_clock_latency -clock [get_clocks -of_objects [get_pins SP_OV_i/DESERIALIZER_CLOCK/inst/mmcm_adv_inst/CLKOUT1]] -rise 1.000 [get_pins -hierarchical -filter { NAME =~  "*SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/SDDR_CT_0/U0*" && REF_PIN_NAME =~  "*C*" }]
+
+
 create_pblock pblock_SDDR_CT_0
 add_cells_to_pblock [get_pblocks pblock_SDDR_CT_0] [get_cells -quiet [list SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/SDDR_CT_0]]
-resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {SLICE_X80Y80:SLICE_X89Y87}
-create_pblock pblock_SDDR_TT_0
-add_cells_to_pblock [get_pblocks pblock_SDDR_TT_0] [get_cells -quiet [list SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/SDDR_TT_0]]
-resize_pblock [get_pblocks pblock_SDDR_TT_0] -add {SLICE_X80Y88:SLICE_X89Y99}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {SLICE_X102Y82:SLICE_X107Y90}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {DSP48_X4Y34:DSP48_X4Y35}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {RAMB18_X5Y34:RAMB18_X5Y35}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {RAMB36_X5Y17:RAMB36_X5Y17}

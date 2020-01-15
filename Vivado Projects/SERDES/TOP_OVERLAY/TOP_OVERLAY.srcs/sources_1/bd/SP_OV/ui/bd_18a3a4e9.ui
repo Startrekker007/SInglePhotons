@@ -31,13 +31,13 @@ preplace inst DDS_AXI_PERIPH_wrapp_0 -pg 1 -lvl 3 -x 1280 -y 890 -defaultsOSRD
 preplace inst DELAYTIMER_CLK -pg 1 -lvl 2 -x 630 -y 2020 -defaultsOSRD
 preplace inst REF_CLK -pg 1 -lvl 2 -x 630 -y 2310 -defaultsOSRD
 preplace inst SDDR_AXI_ST_wrapper_0 -pg 1 -lvl 3 -x 1280 -y 2320 -defaultsOSRD
-preplace inst SDDR_CT_AXI_wrapper_0 -pg 1 -lvl 3 -x 1280 -y 120 -defaultsOSRD
 preplace inst SDDR_TT_AXI_wrapper_0 -pg 1 -lvl 3 -x 1280 -y 1520 -defaultsOSRD
 preplace inst DESERIALIZER_CLOCK -pg 1 -lvl 2 -x 630 -y 2180 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 2 -x 630 -y 1780 -defaultsOSRD
-preplace inst DESERIALIZER_B_wrapp_0 -pg 1 -lvl 3 -x 1280 -y 1890 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 5 -x 1950 -y 1740 -defaultsOSRD
 preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 630 -y 880 -defaultsOSRD
+preplace inst DESERIALIZER_B_wrapp_0 -pg 1 -lvl 3 -x 1280 -y 1890 -defaultsOSRD
+preplace inst SDDR_CT_AXI_wrapper_0 -pg 1 -lvl 3 -x 1280 -y 120 -defaultsOSRD
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 2540 440 0 960
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 2550 480
 preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 460 -10 970
@@ -82,38 +82,38 @@ preplace netloc DESERIALIZER_B_wrapp_0_OT4 1 2 2 1140 1700 1420
 preplace netloc DESERIALIZER_CLOCK_locked 1 2 3 NJ 2200 1550 1750 N
 preplace netloc DELAYTIMER_CLK_locked 1 2 3 780J 2080 1530 1710 N
 preplace netloc xlconcat_0_dout 1 5 1 2040 1740n
+preplace netloc axi_interconnect_0_M21_AXI 1 2 1 890 60n
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 810 600n
 preplace netloc processing_system7_0_DDR 1 1 5 470J 2100 NJ 2100 NJ 2100 NJ 2100 2040
 preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 2400 980J 2430 NJ 2430 NJ 2430 N
-preplace netloc axi_interconnect_0_M00_AXI 1 2 1 810 600n
-preplace netloc axi_interconnect_0_M01_AXI 1 2 1 850 620n
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 450 260n
-preplace netloc axi_interconnect_0_M02_AXI 1 2 1 790 280n
-preplace netloc axi_interconnect_0_M03_AXI 1 2 1 800 300n
-preplace netloc axi_interconnect_0_M04_AXI 1 2 1 820 320n
-preplace netloc axi_interconnect_0_M05_AXI 1 2 1 840 340n
-preplace netloc axi_interconnect_0_M06_AXI 1 2 1 860 360n
-preplace netloc axi_interconnect_0_M07_AXI 1 2 1 870 380n
-preplace netloc axi_interconnect_0_M08_AXI 1 2 1 880 400n
 preplace netloc axi_interconnect_0_M09_AXI 1 2 1 900 420n
 preplace netloc axi_interconnect_0_M10_AXI 1 2 1 920 780n
-preplace netloc axi_interconnect_0_M11_AXI 1 2 1 940 800n
 preplace netloc axi_interconnect_0_M12_AXI 1 2 1 980 820n
-preplace netloc axi_interconnect_0_M13_AXI 1 2 1 990 840n
-preplace netloc axi_interconnect_0_M14_AXI 1 2 1 1010 860n
-preplace netloc axi_interconnect_0_M15_AXI 1 2 1 1020 880n
-preplace netloc axi_interconnect_0_M16_AXI 1 2 1 1030 900n
+preplace netloc axi_interconnect_0_M08_AXI 1 2 1 880 400n
+preplace netloc axi_interconnect_0_M11_AXI 1 2 1 940 800n
+preplace netloc axi_interconnect_0_M07_AXI 1 2 1 870 380n
+preplace netloc axi_interconnect_0_M22_AXI 1 2 1 910 80n
 preplace netloc axi_interconnect_0_M17_AXI 1 2 1 1040 920n
-preplace netloc axi_interconnect_0_M18_AXI 1 2 1 1050 940n
+preplace netloc axi_interconnect_0_M06_AXI 1 2 1 860 360n
+preplace netloc axi_interconnect_0_M05_AXI 1 2 1 840 340n
+preplace netloc axi_interconnect_0_M13_AXI 1 2 1 990 840n
+preplace netloc axi_interconnect_0_M04_AXI 1 2 1 820 320n
+preplace netloc axi_interconnect_0_M02_AXI 1 2 1 790 280n
+preplace netloc axi_interconnect_0_M03_AXI 1 2 1 800 300n
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 450 260n
+preplace netloc axi_interconnect_0_M01_AXI 1 2 1 850 620n
+preplace netloc axi_interconnect_0_M14_AXI 1 2 1 1010 860n
 preplace netloc axi_interconnect_0_M19_AXI 1 2 1 940 980n
 preplace netloc axi_interconnect_0_M20_AXI 1 2 1 920 1000n
-preplace netloc axi_interconnect_0_M21_AXI 1 2 1 890 60n
-preplace netloc axi_interconnect_0_M22_AXI 1 2 1 910 80n
-preplace netloc axi_interconnect_0_M23_AXI 1 2 1 990 1060n
-preplace netloc axi_interconnect_0_M24_AXI 1 2 1 980 1080n
-preplace netloc axi_interconnect_0_M25_AXI 1 2 1 790 1100n
-preplace netloc axi_interconnect_0_M26_AXI 1 2 1 950 1120n
-preplace netloc axi_interconnect_0_M27_AXI 1 2 1 930 1140n
 preplace netloc axi_interconnect_0_M28_AXI 1 2 1 810 1160n
+preplace netloc axi_interconnect_0_M25_AXI 1 2 1 790 1100n
+preplace netloc axi_interconnect_0_M15_AXI 1 2 1 1020 880n
+preplace netloc axi_interconnect_0_M23_AXI 1 2 1 990 1060n
+preplace netloc axi_interconnect_0_M27_AXI 1 2 1 930 1140n
+preplace netloc axi_interconnect_0_M16_AXI 1 2 1 1030 900n
+preplace netloc axi_interconnect_0_M18_AXI 1 2 1 1050 940n
+preplace netloc axi_interconnect_0_M24_AXI 1 2 1 980 1080n
+preplace netloc axi_interconnect_0_M26_AXI 1 2 1 950 1120n
 levelinfo -pg 1 0 230 630 1280 1700 1950 2080
 pagesize -pg 1 -db -bbox -sgen -120 -170 2230 2750
 "

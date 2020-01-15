@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 15 09:37:58 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 16 10:35:46 2020" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SDDR_CT_AXI" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -29,89 +29,18 @@
         <CONNECTION INSTANCE="SDDR_CT_0" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="CT_DATA_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_araddr">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_araddr"/>
+        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="CT_META_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="CT_META_1" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="CT_DATA_arready" SIGIS="undef" SIGNAME="DATA_s_axi_arready">
+    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_arvalid" SIGIS="undef" SIGNAME="DATA_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="CT_DATA_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_awready" SIGIS="undef" SIGNAME="DATA_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_awvalid" SIGIS="undef" SIGNAME="DATA_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_bready" SIGIS="undef" SIGNAME="DATA_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="CT_DATA_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_bvalid" SIGIS="undef" SIGNAME="DATA_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="CT_DATA_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_rready" SIGIS="undef" SIGNAME="DATA_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="CT_DATA_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_rvalid" SIGIS="undef" SIGNAME="DATA_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="CT_DATA_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="CT_DATA_wready" SIGIS="undef" SIGNAME="DATA_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="CT_DATA_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CT_DATA_wvalid" SIGIS="undef" SIGNAME="DATA_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_wvalid"/>
+        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_aresetn"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="CT_UTIL_araddr" RIGHT="0" SIGIS="undef" SIGNAME="UTIL_s_axi_araddr">
@@ -199,16 +128,89 @@
         <CONNECTION INSTANCE="UTIL" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+    <PORT DIR="I" LEFT="8" NAME="CT_DATA_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_araddr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_araddr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+    <PORT DIR="O" NAME="CT_DATA_arready" SIGIS="undef" SIGNAME="DATA_s_axi_arready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_arvalid" SIGIS="undef" SIGNAME="DATA_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="CT_DATA_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_awready" SIGIS="undef" SIGNAME="DATA_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_awvalid" SIGIS="undef" SIGNAME="DATA_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_bready" SIGIS="undef" SIGNAME="DATA_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="CT_DATA_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_bvalid" SIGIS="undef" SIGNAME="DATA_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="CT_DATA_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_rready" SIGIS="undef" SIGNAME="DATA_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="CT_DATA_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_rvalid" SIGIS="undef" SIGNAME="DATA_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="CT_DATA_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CT_DATA_wready" SIGIS="undef" SIGNAME="DATA_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="CT_DATA_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CT_DATA_wvalid" SIGIS="undef" SIGNAME="DATA_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -355,6 +357,58 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/CT_META_0" HWVERSION="1.0" INSTANCE="CT_META_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CT_META" VLNV="xilinx.com:module_ref:CT_META:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="g_width" VALUE="32"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_CT_AXI_CT_META_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="IDATA" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_CT_0_CTIME">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_CT_0" PORT="CTIME"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="ODATA" RIGHT="0" SIGIS="undef" SIGNAME="CT_META_0_ODATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DATA" PORT="gpio_io_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/CT_META_1" HWVERSION="1.0" INSTANCE="CT_META_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CT_META" VLNV="xilinx.com:module_ref:CT_META:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="g_width" VALUE="16"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDDR_CT_AXI_CT_META_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="IDATA" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="ODATA" RIGHT="0" SIGIS="undef" SIGNAME="CT_META_1_ODATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DATA" PORT="gpio2_io_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="21" FULLNAME="/DATA" HWVERSION="2.0" INSTANCE="DATA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_gpio" VLNV="xilinx.com:ip:axi_gpio:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_gpio;v=v2_0;d=pg144-axi-gpio.pdf"/>
@@ -477,14 +531,14 @@
             <CONNECTION INSTANCE="SDDR_CT_AXI_imp" PORT="CT_DATA_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_CT_0_CTIME">
+        <PORT DIR="I" LEFT="31" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="CT_META_0_ODATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="SDDR_CT_0" PORT="CTIME"/>
+            <CONNECTION INSTANCE="CT_META_0" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+        <PORT DIR="I" LEFT="15" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="CT_META_1_ODATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+            <CONNECTION INSTANCE="CT_META_1" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -588,7 +642,7 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="CTIME" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_CT_0_CTIME">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DATA" PORT="gpio_io_i"/>
+            <CONNECTION INSTANCE="CT_META_0" PORT="IDATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="WAITING" SIGIS="undef" SIGNAME="SDDR_CT_0_WAITING">
@@ -875,7 +929,7 @@
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DATA" PORT="gpio2_io_i"/>
+            <CONNECTION INSTANCE="CT_META_1" PORT="IDATA"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

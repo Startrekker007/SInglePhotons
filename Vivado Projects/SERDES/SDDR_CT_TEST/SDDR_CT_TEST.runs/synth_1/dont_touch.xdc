@@ -33,12 +33,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_xlslice_0_
 # IP: bd/TEST/ip/TEST_xlslice_1_0/TEST_xlslice_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_xlslice_1_0 || ORIG_REF_NAME==TEST_xlslice_1_0} -quiet] -quiet
 
-# IP: bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_0 || ORIG_REF_NAME==TEST_selectio_wiz_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_1 || ORIG_REF_NAME==TEST_selectio_wiz_0_1} -quiet] -quiet
-
 # IP: bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_clk_wiz_0_0 || ORIG_REF_NAME==TEST_clk_wiz_0_0} -quiet] -quiet
 
@@ -56,6 +50,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_ps7_0_axi_
 
 # IP: bd/TEST/ip/TEST_rst_ps7_0_100M_0/TEST_rst_ps7_0_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_rst_ps7_0_100M_0 || ORIG_REF_NAME==TEST_rst_ps7_0_100M_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_ISERDES_B_0_0/TEST_ISERDES_B_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_ISERDES_B_0_0 || ORIG_REF_NAME==TEST_ISERDES_B_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_ISERDES_B_0_1/TEST_ISERDES_B_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_ISERDES_B_0_1 || ORIG_REF_NAME==TEST_ISERDES_B_0_1} -quiet] -quiet
 
 # IP: bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_auto_pc_0 || ORIG_REF_NAME==TEST_auto_pc_0} -quiet] -quiet
@@ -78,16 +78,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_1 || ORIG_REF_NAME==TEST_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_0 || ORIG_REF_NAME==TEST_selectio_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_1 || ORIG_REF_NAME==TEST_selectio_wiz_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_clk_wiz_0_0 || ORIG_REF_NAME==TEST_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet

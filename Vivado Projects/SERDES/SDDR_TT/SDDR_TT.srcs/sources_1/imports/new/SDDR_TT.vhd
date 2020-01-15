@@ -205,12 +205,15 @@ begin
             lddr3 <= (others => '1');
             pddr4 <= (others => '1');
             lddr4 <= (others => '1');
-            iwaiting := '1';
+            iwaiting := '0';
             ilistening := '0';
             status := x"0";
             uctr <= x"00000000";
             ctr_rst <= '1';
         else
+            if(iwaiting = '0' and ilistening = '0') then
+                iwaiting := '1';
+            end if;
             --Pipelined restart
             if(to_rst = '1') then
                 to_Rst <= '0';

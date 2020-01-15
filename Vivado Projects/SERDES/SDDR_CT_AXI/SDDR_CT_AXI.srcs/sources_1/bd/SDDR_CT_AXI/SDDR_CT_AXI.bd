@@ -13,7 +13,9 @@
       "DATA": "",
       "xlconcat_0": "",
       "UTIL": "",
-      "CTA_SPLIT_0": ""
+      "CTA_SPLIT_0": "",
+      "CT_META_0": "",
+      "CT_META_1": ""
     },
     "interface_ports": {
       "CT_DATA": {
@@ -424,6 +426,98 @@
             "direction": "O"
           }
         }
+      },
+      "CT_META_0": {
+        "vlnv": "xilinx.com:module_ref:CT_META:1.0",
+        "xci_name": "SDDR_CT_AXI_CT_META_0_0",
+        "parameters": {
+          "g_width": {
+            "value": "32"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CT_META",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IDATA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ODATA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_CT_AXI_aclk",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "CT_META_1": {
+        "vlnv": "xilinx.com:module_ref:CT_META:1.0",
+        "xci_name": "SDDR_CT_AXI_CT_META_0_1",
+        "parameters": {
+          "g_width": {
+            "value": "16"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CT_META",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IDATA": {
+            "direction": "I",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "16",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "ODATA": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_CT_AXI_aclk",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
       }
     },
     "interface_nets": {
@@ -451,18 +545,6 @@
         "ports": [
           "SDDR_CT_0/D1",
           "xlconcat_0/In1"
-        ]
-      },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "DATA/gpio2_io_i"
-        ]
-      },
-      "SDDR_CT_0_CTIME": {
-        "ports": [
-          "SDDR_CT_0/CTIME",
-          "DATA/gpio_io_i"
         ]
       },
       "UTIL_gpio_io_o": {
@@ -529,7 +611,9 @@
         "ports": [
           "aclk",
           "UTIL/s_axi_aclk",
-          "DATA/s_axi_aclk"
+          "DATA/s_axi_aclk",
+          "CT_META_0/MCLK",
+          "CT_META_1/MCLK"
         ]
       },
       "aresetn_1": {
@@ -537,6 +621,30 @@
           "aresetn",
           "UTIL/s_axi_aresetn",
           "DATA/s_axi_aresetn"
+        ]
+      },
+      "SDDR_CT_0_CTIME": {
+        "ports": [
+          "SDDR_CT_0/CTIME",
+          "CT_META_0/IDATA"
+        ]
+      },
+      "CT_META_0_ODATA": {
+        "ports": [
+          "CT_META_0/ODATA",
+          "DATA/gpio_io_i"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "CT_META_1/IDATA"
+        ]
+      },
+      "CT_META_1_ODATA": {
+        "ports": [
+          "CT_META_1/ODATA",
+          "DATA/gpio2_io_i"
         ]
       }
     },

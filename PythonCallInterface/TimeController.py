@@ -137,7 +137,7 @@ class TimeController:
         self.logger.info("Coincidence Time: "+str(time))
         return time
 
-    def run_time_tagger(self,timeout):
+    def start_time_tagger(self,timeout):
         """
         Activate the time tagger and continuously receive time data from the device
         Parameters
@@ -155,16 +155,29 @@ class TimeController:
             return 0
         self.logger.info("Running time tagger with timeout: " + str(timeout))
         self.websocket.sendall(("TT1"+str(timeout)).encode())
-        while 1:
-            while 1:
-                data = self.websocket.recv(1024).decode()
-                if(data[:2]=="TT"):
-                    break
-                else:
-                    self.logger.warning("Data not pertinent to time tagger received "+data)
-            timedata = json.loads(data[2:])
-            self.logger.info("Time tagger data: "+str(timedata))
 
+        while 1:
+            data = self.websocket.recv(1024).decode()
+            if(data[:2]=="TT"):
+                break
+            else:
+                self.logger.warning("Data not pertinent to time tagger received "+data)
+        timedata = json.loads(data[2:])
+        self.logger.info("Time tagger data: "+str(timedata))
+        return timedata
+    def poll_time_tagger(self):
+        while 1:
+            data = self.websocket.recv(1024).decode()
+
+            if(data[:2]=="TT"):
+                break
+            else:
+                self.logger.warning("Data not pertinent to time tagger received "+data)
+        jsdec = json.JSONDecoder()
+        timedata = jsdec.raw_decode(data[2:])
+        self.logger.debug("DATA -- " + str(timedata[0]))
+        self.logger.info("Time tagger data: "+str(timedata[0]))
+        return timedata[0]
     def stop_time_tagger(self):
         """
         Stops the time tagger, can be called asynchronously

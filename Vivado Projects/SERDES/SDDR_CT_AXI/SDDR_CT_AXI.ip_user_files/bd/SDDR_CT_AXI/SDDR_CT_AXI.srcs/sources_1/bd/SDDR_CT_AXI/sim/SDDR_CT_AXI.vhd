@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 09:37:57 2020
+--Date        : Thu Jan 16 10:35:46 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SDDR_CT_AXI.bd
 --Design      : SDDR_CT_AXI
@@ -56,7 +56,7 @@ entity SDDR_CT_AXI is
     aresetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of SDDR_CT_AXI : entity is "SDDR_CT_AXI,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SDDR_CT_AXI,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=5,numReposBlks=5,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of SDDR_CT_AXI : entity is "SDDR_CT_AXI,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=SDDR_CT_AXI,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of SDDR_CT_AXI : entity is "SDDR_CT_AXI.hwdef";
 end SDDR_CT_AXI;
@@ -143,6 +143,20 @@ architecture STRUCTURE of SDDR_CT_AXI is
     OUT2_2 : out STD_LOGIC
   );
   end component SDDR_CT_AXI_CTA_SPLIT_0_0;
+  component SDDR_CT_AXI_CT_META_0_0 is
+  port (
+    IDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ODATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    MCLK : in STD_LOGIC
+  );
+  end component SDDR_CT_AXI_CT_META_0_0;
+  component SDDR_CT_AXI_CT_META_0_1 is
+  port (
+    IDATA : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    ODATA : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    MCLK : in STD_LOGIC
+  );
+  end component SDDR_CT_AXI_CT_META_0_1;
   signal CTA_SPLIT_0_OUT0_0 : STD_LOGIC;
   signal CTA_SPLIT_0_OUT1_1 : STD_LOGIC;
   signal CTA_SPLIT_0_OUT2_2 : STD_LOGIC;
@@ -163,6 +177,8 @@ architecture STRUCTURE of SDDR_CT_AXI is
   signal CT_DATA_1_WREADY : STD_LOGIC;
   signal CT_DATA_1_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal CT_DATA_1_WVALID : STD_LOGIC;
+  signal CT_META_0_ODATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal CT_META_1_ODATA : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal CT_UTIL_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal CT_UTIL_1_ARREADY : STD_LOGIC;
   signal CT_UTIL_1_ARVALID : STD_LOGIC;
@@ -286,10 +302,22 @@ CTA_SPLIT_0: component SDDR_CT_AXI_CTA_SPLIT_0_0
       OUT1_1 => CTA_SPLIT_0_OUT1_1,
       OUT2_2 => CTA_SPLIT_0_OUT2_2
     );
+CT_META_0: component SDDR_CT_AXI_CT_META_0_0
+     port map (
+      IDATA(31 downto 0) => SDDR_CT_0_CTIME(31 downto 0),
+      MCLK => aclk_1,
+      ODATA(31 downto 0) => CT_META_0_ODATA(31 downto 0)
+    );
+CT_META_1: component SDDR_CT_AXI_CT_META_0_1
+     port map (
+      IDATA(15 downto 0) => xlconcat_0_dout(15 downto 0),
+      MCLK => aclk_1,
+      ODATA(15 downto 0) => CT_META_1_ODATA(15 downto 0)
+    );
 DATA: component SDDR_CT_AXI_axi_gpio_0_0
      port map (
-      gpio2_io_i(15 downto 0) => xlconcat_0_dout(15 downto 0),
-      gpio_io_i(31 downto 0) => SDDR_CT_0_CTIME(31 downto 0),
+      gpio2_io_i(15 downto 0) => CT_META_1_ODATA(15 downto 0),
+      gpio_io_i(31 downto 0) => CT_META_0_ODATA(31 downto 0),
       s_axi_aclk => aclk_1,
       s_axi_araddr(8 downto 0) => CT_DATA_1_ARADDR(8 downto 0),
       s_axi_aresetn => aresetn_1,

@@ -39,10 +39,7 @@ read_verilog -library xil_defaultlib {
   {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B_selectio_wiz.v}
   {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B.v}
 }
-read_vhdl -library xil_defaultlib {
-  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/imports/new/ISERDES_WRAPPER.vhd}
-  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd}
-}
+read_vhdl -library xil_defaultlib {{D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd}}
 add_files {{D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_0/TEST_axi_gpio_0_0_board.xdc}}]

@@ -48,9 +48,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_rst_ps7_0_
 # IP: bd/TEST/ip/TEST_axi_gpio_0_2/TEST_axi_gpio_0_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_2 || ORIG_REF_NAME==TEST_axi_gpio_0_2} -quiet] -quiet
 
-# IP: bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/TEST_ISERDES_WRAPPER_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_ISERDES_WRAPPER_0_0 || ORIG_REF_NAME==TEST_ISERDES_WRAPPER_0_0} -quiet] -quiet
-
 # IP: bd/TEST/ip/TEST_ISERDES_B_0_0/TEST_ISERDES_B_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_ISERDES_B_0_0 || ORIG_REF_NAME==TEST_ISERDES_B_0_0} -quiet] -quiet
 

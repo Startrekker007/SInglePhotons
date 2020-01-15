@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 09:37:57 2020
+--Date        : Thu Jan 16 10:35:46 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SDDR_CT_AXI_wrapper.bd
 --Design      : SDDR_CT_AXI_wrapper
@@ -65,23 +65,8 @@ architecture STRUCTURE of SDDR_CT_AXI_wrapper is
     T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
     T2 : in STD_LOGIC_VECTOR ( 3 downto 0 );
     MCLK : in STD_LOGIC;
-    CT_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    CT_DATA_arready : out STD_LOGIC;
-    CT_DATA_arvalid : in STD_LOGIC;
-    CT_DATA_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    CT_DATA_awready : out STD_LOGIC;
-    CT_DATA_awvalid : in STD_LOGIC;
-    CT_DATA_bready : in STD_LOGIC;
-    CT_DATA_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    CT_DATA_bvalid : out STD_LOGIC;
-    CT_DATA_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    CT_DATA_rready : in STD_LOGIC;
-    CT_DATA_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    CT_DATA_rvalid : out STD_LOGIC;
-    CT_DATA_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    CT_DATA_wready : out STD_LOGIC;
-    CT_DATA_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    CT_DATA_wvalid : in STD_LOGIC;
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
     CT_UTIL_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     CT_UTIL_arready : out STD_LOGIC;
     CT_UTIL_arvalid : in STD_LOGIC;
@@ -99,8 +84,23 @@ architecture STRUCTURE of SDDR_CT_AXI_wrapper is
     CT_UTIL_wready : out STD_LOGIC;
     CT_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     CT_UTIL_wvalid : in STD_LOGIC;
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC
+    CT_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    CT_DATA_arready : out STD_LOGIC;
+    CT_DATA_arvalid : in STD_LOGIC;
+    CT_DATA_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    CT_DATA_awready : out STD_LOGIC;
+    CT_DATA_awvalid : in STD_LOGIC;
+    CT_DATA_bready : in STD_LOGIC;
+    CT_DATA_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CT_DATA_bvalid : out STD_LOGIC;
+    CT_DATA_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    CT_DATA_rready : in STD_LOGIC;
+    CT_DATA_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CT_DATA_rvalid : out STD_LOGIC;
+    CT_DATA_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    CT_DATA_wready : out STD_LOGIC;
+    CT_DATA_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    CT_DATA_wvalid : in STD_LOGIC
   );
   end component SDDR_CT_AXI;
 begin

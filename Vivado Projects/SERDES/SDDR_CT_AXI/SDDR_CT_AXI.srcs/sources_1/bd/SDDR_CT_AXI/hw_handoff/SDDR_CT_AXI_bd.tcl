@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# CTA_SPLIT
+# CTA_SPLIT, CT_META, CT_META
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -193,6 +193,34 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: CT_META_0, and set properties
+  set block_name CT_META
+  set block_cell_name CT_META_0
+  if { [catch {set CT_META_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CT_META_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.g_width {32} \
+ ] $CT_META_0
+
+  # Create instance: CT_META_1, and set properties
+  set block_name CT_META
+  set block_cell_name CT_META_1
+  if { [catch {set CT_META_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $CT_META_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.g_width {16} \
+ ] $CT_META_1
+
   # Create instance: DATA, and set properties
   set DATA [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DATA ]
   set_property -dict [ list \
@@ -229,9 +257,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net CTA_SPLIT_0_OUT0_0 [get_bd_pins CTA_SPLIT_0/OUT0_0] [get_bd_pins SDDR_CT_0/RESETN]
   connect_bd_net -net CTA_SPLIT_0_OUT1_1 [get_bd_pins CTA_SPLIT_0/OUT1_1] [get_bd_pins SDDR_CT_0/FSEL]
   connect_bd_net -net CTA_SPLIT_0_OUT2_2 [get_bd_pins CTA_SPLIT_0/OUT2_2] [get_bd_pins SDDR_CT_0/BIDIR]
+  connect_bd_net -net CT_META_0_ODATA [get_bd_pins CT_META_0/ODATA] [get_bd_pins DATA/gpio_io_i]
+  connect_bd_net -net CT_META_1_ODATA [get_bd_pins CT_META_1/ODATA] [get_bd_pins DATA/gpio2_io_i]
   connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins SDDR_CT_0/MCLK]
   connect_bd_net -net SDDR_CT_0_ARMED [get_bd_ports ARMED] [get_bd_pins SDDR_CT_0/ARMED]
-  connect_bd_net -net SDDR_CT_0_CTIME [get_bd_pins DATA/gpio_io_i] [get_bd_pins SDDR_CT_0/CTIME]
+  connect_bd_net -net SDDR_CT_0_CTIME [get_bd_pins CT_META_0/IDATA] [get_bd_pins SDDR_CT_0/CTIME]
   connect_bd_net -net SDDR_CT_0_D0 [get_bd_pins SDDR_CT_0/D0] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net SDDR_CT_0_D1 [get_bd_pins SDDR_CT_0/D1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net SDDR_CT_0_DRDY [get_bd_pins SDDR_CT_0/DRDY] [get_bd_pins UTIL/gpio2_io_i]
@@ -239,9 +269,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins SDDR_CT_0/T1]
   connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins SDDR_CT_0/T2]
   connect_bd_net -net UTIL_gpio_io_o [get_bd_pins CTA_SPLIT_0/IN3_0] [get_bd_pins UTIL/gpio_io_o]
-  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk]
+  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins CT_META_0/MCLK] [get_bd_pins CT_META_1/MCLK] [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk]
   connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins DATA/gpio2_io_i] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins CT_META_1/IDATA] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
 

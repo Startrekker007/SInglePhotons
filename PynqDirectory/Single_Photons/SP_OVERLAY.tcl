@@ -131,16 +131,19 @@ set bCheckIPsPassed 1
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
-cri.nz:user:CT_AXI_PERIPH_wrapper:1.0\
 cri.nz:user:DDS_AXI_PERIPH_wrapper:1.0\
+xilinx.com:ip:clk_wiz:6.0\
+cri.nz:user:DESERIALIZER_B_wrapper:1.0\
 xilinx.com:ip:xlslice:1.0\
 cri.nz:user:P_COUNTER_wrapper:1.0\
-xilinx.com:ip:clk_wiz:6.0\
-cri.nz:user:ST_AXI_PERIPH_wrapper:1.0\
+cri.nz:user:SDDR_AXI_ST_wrapper:1.0\
+cri.nz:user:SDDR_CT_AXI_wrapper:1.0\
+cri.nz:user:SDDR_TT_AXI_wrapper:1.0\
 xilinx.com:ip:axi_gpio:2.0\
 xilinx.com:ip:processing_system7:5.5\
 xilinx.com:ip:proc_sys_reset:5.0\
-xilinx.com:ip:util_vector_logic:2.0\
+xilinx.com:ip:xlconcat:2.1\
+xilinx.com:ip:xlconstant:1.1\
 "
 
    set list_ips_missing ""
@@ -239,27 +242,71 @@ proc create_root_design { parentCell } {
   set CH1 [ create_bd_port -dir I CH1 ]
   set CH2 [ create_bd_port -dir I CH2 ]
   set CH3 [ create_bd_port -dir I CH3 ]
-  set CLK_STABLE [ create_bd_port -dir O -from 0 -to 0 CLK_STABLE ]
-  set CT_ARMED [ create_bd_port -dir O -from 0 -to 0 CT_ARMED ]
-  set CT_WAITING [ create_bd_port -dir O -from 0 -to 0 CT_WAITING ]
+  set CT_ARMED [ create_bd_port -dir O CT_ARMED ]
+  set CT_WAITING [ create_bd_port -dir O CT_WAITING ]
   set DEBUG [ create_bd_port -dir O -from 3 -to 0 DEBUG ]
   set E_TRIG [ create_bd_port -dir I E_TRIG ]
-  set PG_STABLE [ create_bd_port -dir O -from 0 -to 0 PG_STABLE ]
   set SIG_OUT [ create_bd_port -dir O -from 3 -to 0 SIG_OUT ]
   set ST_ARMED [ create_bd_port -dir O ST_ARMED ]
-  set ST_WAITING [ create_bd_port -dir O -from 0 -to 0 ST_WAITING ]
+  set ST_WAITING [ create_bd_port -dir O ST_WAITING ]
   set TRIG_T0 [ create_bd_port -dir I TRIG_T0 ]
+  set TT_LISTENING [ create_bd_port -dir O TT_LISTENING ]
+  set TT_WAITING [ create_bd_port -dir O TT_WAITING ]
   set sys_clock [ create_bd_port -dir I -type clk sys_clock ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {125000000} \
    CONFIG.PHASE {0.000} \
  ] $sys_clock
 
-  # Create instance: CT_AXI_PERIPH_wrapper_0, and set properties
-  set CT_AXI_PERIPH_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:CT_AXI_PERIPH_wrapper:1.0 CT_AXI_PERIPH_wrapper_0 ]
-
   # Create instance: DDS_AXI_PERIPH_wrapp_0, and set properties
   set DDS_AXI_PERIPH_wrapp_0 [ create_bd_cell -type ip -vlnv cri.nz:user:DDS_AXI_PERIPH_wrapper:1.0 DDS_AXI_PERIPH_wrapp_0 ]
+
+  # Create instance: DELAYTIMER_CLK, and set properties
+  set DELAYTIMER_CLK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 DELAYTIMER_CLK ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {106.947} \
+   CONFIG.CLKOUT1_PHASE_ERROR {91.100} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200} \
+   CONFIG.CLKOUT2_JITTER {116.571} \
+   CONFIG.CLKOUT2_PHASE_ERROR {91.100} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {125.000} \
+   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.JITTER_SEL {Min_O_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {HIGH} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {11.250} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {5.625} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {9} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.NUM_OUT_CLKS {2} \
+   CONFIG.PRIM_IN_FREQ {100.000} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.USE_LOCKED {true} \
+ ] $DELAYTIMER_CLK
+
+  # Create instance: DESERIALIZER_B_wrapp_0, and set properties
+  set DESERIALIZER_B_wrapp_0 [ create_bd_cell -type ip -vlnv cri.nz:user:DESERIALIZER_B_wrapper:1.0 DESERIALIZER_B_wrapp_0 ]
+
+  # Create instance: DESERIALIZER_CLOCK, and set properties
+  set DESERIALIZER_CLOCK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 DESERIALIZER_CLOCK ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {97.841} \
+   CONFIG.CLKOUT1_PHASE_ERROR {114.212} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {800.000} \
+   CONFIG.CLKOUT2_JITTER {111.164} \
+   CONFIG.CLKOUT2_PHASE_ERROR {114.212} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {400.000} \
+   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.JITTER_SEL {Min_O_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {HIGH} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {1.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
+   CONFIG.NUM_OUT_CLKS {2} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.USE_LOCKED {true} \
+ ] $DESERIALIZER_CLOCK
 
   # Create instance: ENABLER_0, and set properties
   set block_name ENABLER
@@ -286,45 +333,54 @@ proc create_root_design { parentCell } {
   # Create instance: REF_CLK, and set properties
   set REF_CLK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 REF_CLK ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {149.558} \
-   CONFIG.CLKOUT1_PHASE_ERROR {224.819} \
+   CONFIG.CLKOUT1_JITTER {197.656} \
+   CONFIG.CLKOUT1_PHASE_ERROR {294.244} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {460.000} \
-   CONFIG.CLKOUT2_DRIVES {BUFG} \
-   CONFIG.CLKOUT2_JITTER {237.312} \
-   CONFIG.CLKOUT2_PHASE_ERROR {249.865} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {100.000} \
+   CONFIG.CLKOUT2_JITTER {210.749} \
+   CONFIG.CLKOUT2_PHASE_ERROR {303.235} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT2_REQUESTED_PHASE {22.5} \
    CONFIG.CLKOUT2_USED {false} \
-   CONFIG.CLKOUT3_JITTER {237.312} \
-   CONFIG.CLKOUT3_PHASE_ERROR {249.865} \
+   CONFIG.CLKOUT3_JITTER {210.749} \
+   CONFIG.CLKOUT3_PHASE_ERROR {303.235} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT3_REQUESTED_PHASE {45} \
    CONFIG.CLKOUT3_USED {false} \
-   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.JITTER_SEL {Min_O_Jitter} \
-   CONFIG.MMCM_BANDWIDTH {HIGH} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {46.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.500} \
+   CONFIG.CLKOUT4_JITTER {210.749} \
+   CONFIG.CLKOUT4_PHASE_ERROR {303.235} \
+   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {460.000} \
+   CONFIG.CLKOUT4_REQUESTED_PHASE {67.5} \
+   CONFIG.CLKOUT4_USED {false} \
+   CONFIG.CLKOUT5_JITTER {210.749} \
+   CONFIG.CLKOUT5_PHASE_ERROR {303.235} \
+   CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {460} \
+   CONFIG.CLKOUT5_REQUESTED_PHASE {90} \
+   CONFIG.CLKOUT5_USED {false} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {48.875} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {2.125} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT1_PHASE {22.500} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT2_PHASE {45.000} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT3_PHASE {67.500} \
+   CONFIG.MMCM_CLKOUT4_DIVIDE {1} \
+   CONFIG.MMCM_CLKOUT4_PHASE {90.000} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
    CONFIG.NUM_OUT_CLKS {1} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_BOARD_FLOW {true} \
+   CONFIG.USE_LOCKED {true} \
  ] $REF_CLK
 
-  # Create instance: ST_AXI_PERIPH_wrapper_0, and set properties
-  set ST_AXI_PERIPH_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:ST_AXI_PERIPH_wrapper:1.0 ST_AXI_PERIPH_wrapper_0 ]
+  # Create instance: SDDR_AXI_ST_wrapper_0, and set properties
+  set SDDR_AXI_ST_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 SDDR_AXI_ST_wrapper_0 ]
 
-  # Create instance: TIMER_CLK, and set properties
-  set TIMER_CLK [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 TIMER_CLK ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {119.348} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125.000} \
-   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {8.000} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $TIMER_CLK
+  # Create instance: SDDR_CT_AXI_wrapper_0, and set properties
+  set SDDR_CT_AXI_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_CT_AXI_wrapper:1.0 SDDR_CT_AXI_wrapper_0 ]
+
+  # Create instance: SDDR_TT_AXI_wrapper_0, and set properties
+  set SDDR_TT_AXI_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_TT_AXI_wrapper:1.0 SDDR_TT_AXI_wrapper_0 ]
 
   # Create instance: TRIG_RST_SL, and set properties
   set TRIG_RST_SL [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 TRIG_RST_SL ]
@@ -356,7 +412,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {23} \
+   CONFIG.NUM_MI {29} \
  ] $axi_interconnect_0
 
   # Create instance: processing_system7_0, and set properties
@@ -888,7 +944,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_PCAP_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {5} \
    CONFIG.PCW_PCAP_PERIPHERAL_FREQMHZ {200} \
-   CONFIG.PCW_PERIPHERAL_BOARD_PRESET {None} \
+   CONFIG.PCW_PERIPHERAL_BOARD_PRESET {part0} \
    CONFIG.PCW_PLL_BYPASSMODE_ENABLE {0} \
    CONFIG.PCW_PRESET_BANK0_VOLTAGE {LVCMOS 3.3V} \
    CONFIG.PCW_PRESET_BANK1_VOLTAGE {LVCMOS 1.8V} \
@@ -1135,101 +1191,129 @@ proc create_root_design { parentCell } {
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
-  # Create instance: util_vector_logic_0, and set properties
-  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
   set_property -dict [ list \
-   CONFIG.C_SIZE {1} \
- ] $util_vector_logic_0
+   CONFIG.NUM_PORTS {4} \
+ ] $xlconcat_0
 
-  # Create instance: util_vector_logic_1, and set properties
-  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
-   CONFIG.C_SIZE {1} \
- ] $util_vector_logic_1
+   CONFIG.CONST_VAL {0} \
+   CONFIG.CONST_WIDTH {5} \
+ ] $xlconstant_0
 
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data] [get_bd_intf_pins axi_interconnect_0/M00_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data1] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data2] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data3] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util] [get_bd_intf_pins axi_interconnect_0/M04_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util1] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util2] [get_bd_intf_pins axi_interconnect_0/M06_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util3] [get_bd_intf_pins axi_interconnect_0/M07_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M08_AXI [get_bd_intf_pins ST_AXI_PERIPH_wrapper_0/data] [get_bd_intf_pins axi_interconnect_0/M08_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M09_AXI [get_bd_intf_pins ST_AXI_PERIPH_wrapper_0/rdy] [get_bd_intf_pins axi_interconnect_0/M09_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M10_AXI [get_bd_intf_pins CT_AXI_PERIPH_wrapper_0/data] [get_bd_intf_pins axi_interconnect_0/M10_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M11_AXI [get_bd_intf_pins CT_AXI_PERIPH_wrapper_0/rdy] [get_bd_intf_pins axi_interconnect_0/M11_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M12_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_0] [get_bd_intf_pins axi_interconnect_0/M12_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M13_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_1] [get_bd_intf_pins axi_interconnect_0/M13_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M14_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_2] [get_bd_intf_pins axi_interconnect_0/M14_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M15_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_3] [get_bd_intf_pins axi_interconnect_0/M15_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M16_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_0] [get_bd_intf_pins axi_interconnect_0/M16_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M17_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_1] [get_bd_intf_pins axi_interconnect_0/M17_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M18_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_2] [get_bd_intf_pins axi_interconnect_0/M18_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M19_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_3] [get_bd_intf_pins axi_interconnect_0/M19_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M20_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/util] [get_bd_intf_pins axi_interconnect_0/M20_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M21_AXI [get_bd_intf_pins T_UTIL/S_AXI] [get_bd_intf_pins axi_interconnect_0/M21_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M22_AXI [get_bd_intf_pins T_RDY_U/S_AXI] [get_bd_intf_pins axi_interconnect_0/M22_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins T_RDY_U/S_AXI] [get_bd_intf_pins axi_interconnect_0/M00_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins T_UTIL/S_AXI] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data1] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data2] [get_bd_intf_pins axi_interconnect_0/M04_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/data3] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util] [get_bd_intf_pins axi_interconnect_0/M06_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util1] [get_bd_intf_pins axi_interconnect_0/M07_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M08_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util2] [get_bd_intf_pins axi_interconnect_0/M08_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M09_AXI [get_bd_intf_pins P_COUNTER_wrapper_0/util3] [get_bd_intf_pins axi_interconnect_0/M09_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M10_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_0] [get_bd_intf_pins axi_interconnect_0/M10_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M11_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_1] [get_bd_intf_pins axi_interconnect_0/M11_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M12_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_2] [get_bd_intf_pins axi_interconnect_0/M12_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M13_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/aux_3] [get_bd_intf_pins axi_interconnect_0/M13_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M14_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_0] [get_bd_intf_pins axi_interconnect_0/M14_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M15_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_1] [get_bd_intf_pins axi_interconnect_0/M15_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M16_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_2] [get_bd_intf_pins axi_interconnect_0/M16_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M17_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/ph_3] [get_bd_intf_pins axi_interconnect_0/M17_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M18_AXI [get_bd_intf_pins DDS_AXI_PERIPH_wrapp_0/util] [get_bd_intf_pins axi_interconnect_0/M18_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M19_AXI [get_bd_intf_pins SDDR_AXI_ST_wrapper_0/ST_DATA] [get_bd_intf_pins axi_interconnect_0/M19_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M20_AXI [get_bd_intf_pins SDDR_AXI_ST_wrapper_0/ST_UTIL] [get_bd_intf_pins axi_interconnect_0/M20_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M21_AXI [get_bd_intf_pins SDDR_CT_AXI_wrapper_0/CT_DATA] [get_bd_intf_pins axi_interconnect_0/M21_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M22_AXI [get_bd_intf_pins SDDR_CT_AXI_wrapper_0/CT_UTIL] [get_bd_intf_pins axi_interconnect_0/M22_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M23_AXI [get_bd_intf_pins SDDR_TT_AXI_wrapper_0/TT_CONFIG] [get_bd_intf_pins axi_interconnect_0/M23_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M24_AXI [get_bd_intf_pins SDDR_TT_AXI_wrapper_0/TT_DATA0] [get_bd_intf_pins axi_interconnect_0/M24_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M25_AXI [get_bd_intf_pins SDDR_TT_AXI_wrapper_0/TT_DATA1] [get_bd_intf_pins axi_interconnect_0/M25_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M26_AXI [get_bd_intf_pins SDDR_TT_AXI_wrapper_0/TT_DELAY] [get_bd_intf_pins axi_interconnect_0/M26_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M27_AXI [get_bd_intf_pins SDDR_TT_AXI_wrapper_0/TT_UTIL] [get_bd_intf_pins axi_interconnect_0/M27_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M28_AXI [get_bd_intf_pins DESERIALIZER_B_wrapp_0/IDELAY_TAPS] [get_bd_intf_pins axi_interconnect_0/M28_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
 
   # Create port connections
-  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins CT_AXI_PERIPH_wrapper_0/CH1] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX1]
-  connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX2]
-  connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX3]
-  connect_bd_net -net CT_AXI_PERIPH_wrapper_0_ARMED [get_bd_ports CT_ARMED] [get_bd_pins CT_AXI_PERIPH_wrapper_0/ARMED]
-  connect_bd_net -net CT_AXI_PERIPH_wrapper_0_WAITING [get_bd_ports CT_WAITING] [get_bd_pins CT_AXI_PERIPH_wrapper_0/WAITING]
+  connect_bd_net -net CH0_1 [get_bd_ports CH0] [get_bd_pins DESERIALIZER_B_wrapp_0/T1]
+  connect_bd_net -net CH1_1 [get_bd_ports CH1] [get_bd_pins DESERIALIZER_B_wrapp_0/T2]
+  connect_bd_net -net CH2_1 [get_bd_ports CH2] [get_bd_pins DESERIALIZER_B_wrapp_0/T3]
+  connect_bd_net -net CH3_1 [get_bd_ports CH3] [get_bd_pins DESERIALIZER_B_wrapp_0/T4]
   connect_bd_net -net DDS_AXI_PERIPH_wrapp_0_CH_OUT [get_bd_pins DDS_AXI_PERIPH_wrapp_0/CH_OUT] [get_bd_pins ENABLER_0/CH_IN]
-  connect_bd_net -net DDS_AXI_PERIPH_wrapp_0_DEBUG [get_bd_ports DEBUG] [get_bd_pins DDS_AXI_PERIPH_wrapp_0/DEBUG]
-  connect_bd_net -net DDS_AXI_PERIPH_wrapp_0_DONE [get_bd_pins DDS_AXI_PERIPH_wrapp_0/DONE] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net DDS_AXI_PERIPH_wrapp_0_DONE [get_bd_pins DDS_AXI_PERIPH_wrapp_0/DONE] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net DELAYTIMER_CLK_clk_out1 [get_bd_pins DELAYTIMER_CLK/clk_out1] [get_bd_pins DESERIALIZER_B_wrapp_0/IDELAY_RCLK]
+  connect_bd_net -net DELAYTIMER_CLK_clk_out2 [get_bd_pins DELAYTIMER_CLK/clk_out2] [get_bd_pins P_COUNTER_wrapper_0/TCLK]
+  connect_bd_net -net DELAYTIMER_CLK_locked [get_bd_pins DELAYTIMER_CLK/locked] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_OT0 [get_bd_pins DESERIALIZER_B_wrapp_0/OT0] [get_bd_pins SDDR_TT_AXI_wrapper_0/T0]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_OT1 [get_bd_pins DESERIALIZER_B_wrapp_0/OT1] [get_bd_pins SDDR_AXI_ST_wrapper_0/T1] [get_bd_pins SDDR_CT_AXI_wrapper_0/T1] [get_bd_pins SDDR_TT_AXI_wrapper_0/T1]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_OT2 [get_bd_pins DESERIALIZER_B_wrapp_0/OT2] [get_bd_pins SDDR_CT_AXI_wrapper_0/T2] [get_bd_pins SDDR_TT_AXI_wrapper_0/T2]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_OT3 [get_bd_pins DESERIALIZER_B_wrapp_0/OT3] [get_bd_pins SDDR_TT_AXI_wrapper_0/T3]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_OT4 [get_bd_pins DESERIALIZER_B_wrapp_0/OT4] [get_bd_pins SDDR_TT_AXI_wrapper_0/T4]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_RT0 [get_bd_pins DESERIALIZER_B_wrapp_0/RT0] [get_bd_pins P_COUNTER_wrapper_0/TRIG]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_RT1 [get_bd_pins DESERIALIZER_B_wrapp_0/RT1] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_RT2 [get_bd_pins DESERIALIZER_B_wrapp_0/RT2] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX1]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_RT3 [get_bd_pins DESERIALIZER_B_wrapp_0/RT3] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX2]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_RT4 [get_bd_pins DESERIALIZER_B_wrapp_0/RT4] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX3]
+  connect_bd_net -net DESERIALIZER_B_wrapp_0_RXT [get_bd_pins DESERIALIZER_B_wrapp_0/RXT] [get_bd_pins P_COUNTER_wrapper_0/ex_stop]
+  connect_bd_net -net DESERIALIZER_CLOCK_clk_out1 [get_bd_pins DESERIALIZER_B_wrapp_0/HS_CLK] [get_bd_pins DESERIALIZER_CLOCK/clk_out1]
+  connect_bd_net -net DESERIALIZER_CLOCK_clk_out2 [get_bd_pins DESERIALIZER_B_wrapp_0/MCLK] [get_bd_pins DESERIALIZER_CLOCK/clk_out2] [get_bd_pins SDDR_AXI_ST_wrapper_0/MCLK] [get_bd_pins SDDR_CT_AXI_wrapper_0/MCLK] [get_bd_pins SDDR_TT_AXI_wrapper_0/MCLK]
+  connect_bd_net -net DESERIALIZER_CLOCK_locked [get_bd_pins DESERIALIZER_CLOCK/locked] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net ENABLER_0_CH_O [get_bd_ports SIG_OUT] [get_bd_pins ENABLER_0/CH_O]
   connect_bd_net -net EX_STOP_EN_SL_Dout [get_bd_pins EX_STOP_EN_SL/Dout] [get_bd_pins P_COUNTER_wrapper_0/ex_stop_en]
-  connect_bd_net -net E_TRIG_1 [get_bd_ports E_TRIG] [get_bd_pins P_COUNTER_wrapper_0/ex_stop]
-  connect_bd_net -net Net [get_bd_ports CH0] [get_bd_pins CT_AXI_PERIPH_wrapper_0/CH0] [get_bd_pins P_COUNTER_wrapper_0/P_SIG_EX] [get_bd_pins ST_AXI_PERIPH_wrapper_0/CH0]
+  connect_bd_net -net E_TRIG_1 [get_bd_ports E_TRIG] [get_bd_pins DESERIALIZER_B_wrapp_0/E_TRIG]
   connect_bd_net -net P_COUNTER_wrapper_0_EX_STOP_RDY [get_bd_pins P_COUNTER_wrapper_0/EX_STOP_RDY] [get_bd_pins T_RDY_U/gpio_io_i]
-  connect_bd_net -net REF_CLK_clk_out1 [get_bd_pins CT_AXI_PERIPH_wrapper_0/MCLK] [get_bd_pins DDS_AXI_PERIPH_wrapp_0/MCLK_464_063] [get_bd_pins P_COUNTER_wrapper_0/MCLK] [get_bd_pins REF_CLK/clk_out1] [get_bd_pins ST_AXI_PERIPH_wrapper_0/MCLK]
-  connect_bd_net -net REF_CLK_locked [get_bd_pins REF_CLK/locked] [get_bd_pins util_vector_logic_0/Op1] [get_bd_pins util_vector_logic_1/Op2]
-  connect_bd_net -net ST_AXI_PERIPH_wrapper_0_ARMED [get_bd_ports ST_ARMED] [get_bd_pins ST_AXI_PERIPH_wrapper_0/ARMED]
-  connect_bd_net -net ST_AXI_PERIPH_wrapper_0_WAITING [get_bd_ports ST_WAITING] [get_bd_pins ST_AXI_PERIPH_wrapper_0/WAITING]
-  connect_bd_net -net TIMER_CLK_clk_out1 [get_bd_pins P_COUNTER_wrapper_0/TCLK] [get_bd_pins TIMER_CLK/clk_out1]
-  connect_bd_net -net TIMER_CLK_locked [get_bd_pins TIMER_CLK/locked] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net REF_CLK_clk_out1 [get_bd_pins DDS_AXI_PERIPH_wrapp_0/MCLK_464_063] [get_bd_pins P_COUNTER_wrapper_0/MCLK] [get_bd_pins REF_CLK/clk_out1]
+  connect_bd_net -net REF_CLK_locked1 [get_bd_pins REF_CLK/locked] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net SDDR_AXI_ST_wrapper_0_armed [get_bd_ports ST_ARMED] [get_bd_pins SDDR_AXI_ST_wrapper_0/armed]
+  connect_bd_net -net SDDR_AXI_ST_wrapper_0_waiting [get_bd_ports ST_WAITING] [get_bd_pins SDDR_AXI_ST_wrapper_0/waiting]
+  connect_bd_net -net SDDR_CT_AXI_wrapper_0_ARMED [get_bd_ports CT_ARMED] [get_bd_pins SDDR_CT_AXI_wrapper_0/ARMED]
+  connect_bd_net -net SDDR_CT_AXI_wrapper_0_WAITING [get_bd_ports CT_WAITING] [get_bd_pins SDDR_CT_AXI_wrapper_0/WAITING]
+  connect_bd_net -net SDDR_TT_AXI_wrapper_0_listening [get_bd_ports TT_LISTENING] [get_bd_pins SDDR_TT_AXI_wrapper_0/listening]
+  connect_bd_net -net SDDR_TT_AXI_wrapper_0_waiting [get_bd_ports TT_WAITING] [get_bd_pins SDDR_TT_AXI_wrapper_0/waiting]
   connect_bd_net -net TRIG_RST_SL_Dout [get_bd_pins P_COUNTER_wrapper_0/TRIG_RST] [get_bd_pins TRIG_RST_SL/Dout]
-  connect_bd_net -net TRIG_T0_1 [get_bd_ports TRIG_T0] [get_bd_pins P_COUNTER_wrapper_0/TRIG]
+  connect_bd_net -net TRIG_T0_1 [get_bd_ports TRIG_T0] [get_bd_pins DESERIALIZER_B_wrapp_0/T0]
   connect_bd_net -net T_UTIL_gpio2_io_o [get_bd_pins EX_STOP_EN_SL/Din] [get_bd_pins TRIG_RST_SL/Din] [get_bd_pins T_UTIL/gpio2_io_o]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins ENABLER_0/EN] [get_bd_pins T_UTIL/gpio_io_o]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins CT_AXI_PERIPH_wrapper_0/aclk] [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aclk] [get_bd_pins P_COUNTER_wrapper_0/aclk] [get_bd_pins ST_AXI_PERIPH_wrapper_0/aclk] [get_bd_pins T_RDY_U/s_axi_aclk] [get_bd_pins T_UTIL/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/M20_ACLK] [get_bd_pins axi_interconnect_0/M21_ACLK] [get_bd_pins axi_interconnect_0/M22_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins REF_CLK/resetn] [get_bd_pins TIMER_CLK/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins CT_AXI_PERIPH_wrapper_0/aresetn] [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aresetn] [get_bd_pins P_COUNTER_wrapper_0/aresetn] [get_bd_pins ST_AXI_PERIPH_wrapper_0/aresetn] [get_bd_pins T_RDY_U/s_axi_aresetn] [get_bd_pins T_UTIL/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/M13_ARESETN] [get_bd_pins axi_interconnect_0/M14_ARESETN] [get_bd_pins axi_interconnect_0/M15_ARESETN] [get_bd_pins axi_interconnect_0/M16_ARESETN] [get_bd_pins axi_interconnect_0/M17_ARESETN] [get_bd_pins axi_interconnect_0/M18_ARESETN] [get_bd_pins axi_interconnect_0/M19_ARESETN] [get_bd_pins axi_interconnect_0/M20_ARESETN] [get_bd_pins axi_interconnect_0/M21_ARESETN] [get_bd_pins axi_interconnect_0/M22_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins REF_CLK/clk_in1] [get_bd_pins TIMER_CLK/clk_in1]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_ports PG_STABLE] [get_bd_pins util_vector_logic_0/Res]
-  connect_bd_net -net util_vector_logic_1_Res [get_bd_ports CLK_STABLE] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aclk] [get_bd_pins DELAYTIMER_CLK/clk_in1] [get_bd_pins DESERIALIZER_B_wrapp_0/aclk] [get_bd_pins DESERIALIZER_CLOCK/clk_in1] [get_bd_pins P_COUNTER_wrapper_0/aclk] [get_bd_pins REF_CLK/clk_in1] [get_bd_pins SDDR_AXI_ST_wrapper_0/aclk] [get_bd_pins SDDR_CT_AXI_wrapper_0/aclk] [get_bd_pins SDDR_TT_AXI_wrapper_0/aclk] [get_bd_pins T_RDY_U/s_axi_aclk] [get_bd_pins T_UTIL/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/M20_ACLK] [get_bd_pins axi_interconnect_0/M21_ACLK] [get_bd_pins axi_interconnect_0/M22_ACLK] [get_bd_pins axi_interconnect_0/M23_ACLK] [get_bd_pins axi_interconnect_0/M24_ACLK] [get_bd_pins axi_interconnect_0/M25_ACLK] [get_bd_pins axi_interconnect_0/M26_ACLK] [get_bd_pins axi_interconnect_0/M27_ACLK] [get_bd_pins axi_interconnect_0/M28_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins DELAYTIMER_CLK/resetn] [get_bd_pins DESERIALIZER_CLOCK/resetn] [get_bd_pins REF_CLK/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DDS_AXI_PERIPH_wrapp_0/aresetn] [get_bd_pins DESERIALIZER_B_wrapp_0/aresetn] [get_bd_pins DESERIALIZER_B_wrapp_0/resetn] [get_bd_pins P_COUNTER_wrapper_0/aresetn] [get_bd_pins SDDR_AXI_ST_wrapper_0/aresetn] [get_bd_pins SDDR_CT_AXI_wrapper_0/aresetn] [get_bd_pins SDDR_TT_AXI_wrapper_0/aresetn] [get_bd_pins T_RDY_U/s_axi_aresetn] [get_bd_pins T_UTIL/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/M13_ARESETN] [get_bd_pins axi_interconnect_0/M14_ARESETN] [get_bd_pins axi_interconnect_0/M15_ARESETN] [get_bd_pins axi_interconnect_0/M16_ARESETN] [get_bd_pins axi_interconnect_0/M17_ARESETN] [get_bd_pins axi_interconnect_0/M18_ARESETN] [get_bd_pins axi_interconnect_0/M19_ARESETN] [get_bd_pins axi_interconnect_0/M20_ARESETN] [get_bd_pins axi_interconnect_0/M21_ARESETN] [get_bd_pins axi_interconnect_0/M22_ARESETN] [get_bd_pins axi_interconnect_0/M23_ARESETN] [get_bd_pins axi_interconnect_0/M24_ARESETN] [get_bd_pins axi_interconnect_0/M25_ARESETN] [get_bd_pins axi_interconnect_0/M26_ARESETN] [get_bd_pins axi_interconnect_0/M27_ARESETN] [get_bd_pins axi_interconnect_0/M28_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net xlconcat_0_dout [get_bd_ports DEBUG] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins DESERIALIZER_B_wrapp_0/BITSLIP] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00010000 -offset 0x43CA0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs CT_AXI_PERIPH_wrapper_0/data/reg0] SEG_CT_AXI_PERIPH_wrapper_0_reg0
-  create_bd_addr_seg -range 0x00010000 -offset 0x43CB0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs CT_AXI_PERIPH_wrapper_0/rdy/reg0] SEG_CT_AXI_PERIPH_wrapper_0_reg02
-  create_bd_addr_seg -range 0x00010000 -offset 0x43CC0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_0/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg0
-  create_bd_addr_seg -range 0x00010000 -offset 0x43D00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_0/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg01
-  create_bd_addr_seg -range 0x00010000 -offset 0x43CD0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_1/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg02
-  create_bd_addr_seg -range 0x00010000 -offset 0x43D10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_1/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg03
-  create_bd_addr_seg -range 0x00010000 -offset 0x43CE0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_2/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg04
-  create_bd_addr_seg -range 0x00010000 -offset 0x43D20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_2/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg05
-  create_bd_addr_seg -range 0x00010000 -offset 0x43CF0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_3/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg06
-  create_bd_addr_seg -range 0x00010000 -offset 0x43D30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_3/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg07
-  create_bd_addr_seg -range 0x00010000 -offset 0x43D40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/util/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg08
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data/reg0] SEG_P_COUNTER_wrapper_0_reg0
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data1/reg0] SEG_P_COUNTER_wrapper_0_reg02
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data2/reg0] SEG_P_COUNTER_wrapper_0_reg04
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data3/reg0] SEG_P_COUNTER_wrapper_0_reg06
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util/reg0] SEG_P_COUNTER_wrapper_0_reg08
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util1/reg0] SEG_P_COUNTER_wrapper_0_reg010
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C60000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util2/reg0] SEG_P_COUNTER_wrapper_0_reg012
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C70000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util3/reg0] SEG_P_COUNTER_wrapper_0_reg014
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C80000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ST_AXI_PERIPH_wrapper_0/data/reg0] SEG_ST_AXI_PERIPH_wrapper_0_reg0
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C90000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ST_AXI_PERIPH_wrapper_0/rdy/reg0] SEG_ST_AXI_PERIPH_wrapper_0_reg02
-  create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs T_RDY_U/S_AXI/Reg] SEG_T_RDY_U_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs T_UTIL/S_AXI/Reg] SEG_axi_gpio_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_0/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_1/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg02
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_2/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg04
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/aux_3/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg06
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_0/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg08
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_1/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg010
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C60000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_2/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg012
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C70000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/ph_3/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg014
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C80000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DDS_AXI_PERIPH_wrapp_0/util/reg0] SEG_DDS_AXI_PERIPH_wrapp_0_reg016
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C90000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DESERIALIZER_B_wrapp_0/IDELAY_TAPS/reg0] SEG_DESERIALIZER_B_wrapp_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43CA0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data/reg0] SEG_P_COUNTER_wrapper_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43CB0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data1/reg0] SEG_P_COUNTER_wrapper_0_reg020
+  create_bd_addr_seg -range 0x00010000 -offset 0x43CC0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data2/reg0] SEG_P_COUNTER_wrapper_0_reg022
+  create_bd_addr_seg -range 0x00010000 -offset 0x43CD0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/data3/reg0] SEG_P_COUNTER_wrapper_0_reg024
+  create_bd_addr_seg -range 0x00010000 -offset 0x43CE0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util/reg0] SEG_P_COUNTER_wrapper_0_reg026
+  create_bd_addr_seg -range 0x00010000 -offset 0x43CF0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util1/reg0] SEG_P_COUNTER_wrapper_0_reg028
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util2/reg0] SEG_P_COUNTER_wrapper_0_reg030
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs P_COUNTER_wrapper_0/util3/reg0] SEG_P_COUNTER_wrapper_0_reg032
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_AXI_ST_wrapper_0/ST_DATA/reg0] SEG_SDDR_AXI_ST_wrapper_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_AXI_ST_wrapper_0/ST_UTIL/reg0] SEG_SDDR_AXI_ST_wrapper_0_reg035
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_CT_AXI_wrapper_0/CT_DATA/reg0] SEG_SDDR_CT_AXI_wrapper_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_CT_AXI_wrapper_0/CT_UTIL/reg0] SEG_SDDR_CT_AXI_wrapper_0_reg038
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D60000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_TT_AXI_wrapper_0/TT_CONFIG/reg0] SEG_SDDR_TT_AXI_wrapper_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D70000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_TT_AXI_wrapper_0/TT_DATA0/reg0] SEG_SDDR_TT_AXI_wrapper_0_reg041
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D80000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_TT_AXI_wrapper_0/TT_DATA1/reg0] SEG_SDDR_TT_AXI_wrapper_0_reg043
+  create_bd_addr_seg -range 0x00010000 -offset 0x43D90000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_TT_AXI_wrapper_0/TT_DELAY/reg0] SEG_SDDR_TT_AXI_wrapper_0_reg045
+  create_bd_addr_seg -range 0x00010000 -offset 0x43DA0000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_TT_AXI_wrapper_0/TT_UTIL/reg0] SEG_SDDR_TT_AXI_wrapper_0_reg047
+  create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs T_RDY_U/S_AXI/Reg] SEG_T_RDY_U_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs T_UTIL/S_AXI/Reg] SEG_T_UTIL_Reg
 
 
   # Restore current instance

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 15 12:39:10 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 16 08:51:12 2020" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="DESERIALIZER_B" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -47,20 +47,20 @@
     </PORT>
     <PORT CLKFREQUENCY="800000000" DIR="I" NAME="HS_CLK" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_0" PORT="HS_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_1" PORT="HS_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_2" PORT="HS_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_3" PORT="HS_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_4" PORT="HS_CLK"/>
+        <CONNECTION INSTANCE="ISERDES_B_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_1" PORT="clk_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_2" PORT="clk_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_3" PORT="clk_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_4" PORT="clk_in"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="400000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_0" PORT="DIV_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_1" PORT="DIV_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_2" PORT="DIV_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_3" PORT="DIV_CLK"/>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_4" PORT="DIV_CLK"/>
+        <CONNECTION INSTANCE="ISERDES_B_0" PORT="clk_div_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_1" PORT="clk_div_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_2" PORT="clk_div_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_3" PORT="clk_div_in"/>
+        <CONNECTION INSTANCE="ISERDES_B_4" PORT="clk_div_in"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="4" NAME="BITSLIP" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_BITSLIP">
@@ -73,29 +73,29 @@
         <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="OT0" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_0_DATA_OUT">
+    <PORT DIR="O" LEFT="3" NAME="OT0" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_0_data_in_to_device">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_0" PORT="DATA_OUT"/>
+        <CONNECTION INSTANCE="ISERDES_B_0" PORT="data_in_to_device"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="OT1" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_1_DATA_OUT">
+    <PORT DIR="O" LEFT="3" NAME="OT1" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_1_data_in_to_device">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_1" PORT="DATA_OUT"/>
+        <CONNECTION INSTANCE="ISERDES_B_1" PORT="data_in_to_device"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="OT2" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_2_DATA_OUT">
+    <PORT DIR="O" LEFT="3" NAME="OT2" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_2_data_in_to_device">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_2" PORT="DATA_OUT"/>
+        <CONNECTION INSTANCE="ISERDES_B_2" PORT="data_in_to_device"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="OT3" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_3_DATA_OUT">
+    <PORT DIR="O" LEFT="3" NAME="OT3" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_3_data_in_to_device">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_3" PORT="DATA_OUT"/>
+        <CONNECTION INSTANCE="ISERDES_B_3" PORT="data_in_to_device"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="OT4" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_4_DATA_OUT">
+    <PORT DIR="O" LEFT="3" NAME="OT4" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_4_data_in_to_device">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ISERDES_WRAPPER_4" PORT="DATA_OUT"/>
+        <CONNECTION INSTANCE="ISERDES_B_4" PORT="data_in_to_device"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="RT0" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_0_ODATA">
@@ -387,27 +387,27 @@
         </PORT>
         <PORT DIR="O" NAME="D0" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_0" PORT="BITSLIP"/>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="bitslip"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="D1" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_1" PORT="BITSLIP"/>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="bitslip"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="D2" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_2" PORT="BITSLIP"/>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="bitslip"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="D3" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D3">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_3" PORT="BITSLIP"/>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="bitslip"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="D4" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D4">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_4" PORT="BITSLIP"/>
+            <CONNECTION INSTANCE="ISERDES_B_4" PORT="bitslip"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -636,7 +636,7 @@
         <PORT DIR="O" NAME="ODATA" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_0_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="RT0"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_0" PORT="DATA_IN"/>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="data_in_from_pins"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="REF_CLK" SIGIS="clk" SIGNAME="External_Ports_IDELAY_RCLK">
@@ -672,7 +672,7 @@
         <PORT DIR="O" NAME="ODATA" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_1_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="RT1"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_1" PORT="DATA_IN"/>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="data_in_from_pins"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="REF_CLK" SIGIS="clk" SIGNAME="External_Ports_IDELAY_RCLK">
@@ -708,7 +708,7 @@
         <PORT DIR="O" NAME="ODATA" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_2_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="RT2"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_2" PORT="DATA_IN"/>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="data_in_from_pins"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="REF_CLK" SIGIS="clk" SIGNAME="External_Ports_IDELAY_RCLK">
@@ -744,7 +744,7 @@
         <PORT DIR="O" NAME="ODATA" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_3_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="RT3"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_3" PORT="DATA_IN"/>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="data_in_from_pins"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="REF_CLK" SIGIS="clk" SIGNAME="External_Ports_IDELAY_RCLK">
@@ -780,7 +780,7 @@
         <PORT DIR="O" NAME="ODATA" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_4_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="RT4"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_4" PORT="DATA_IN"/>
+            <CONNECTION INSTANCE="ISERDES_B_4" PORT="data_in_from_pins"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="REF_CLK" SIGIS="clk" SIGNAME="External_Ports_IDELAY_RCLK">
@@ -826,39 +826,41 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/ISERDES_WRAPPER_0" HWVERSION="1.0" INSTANCE="ISERDES_WRAPPER_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_WRAPPER" VLNV="xilinx.com:module_ref:ISERDES_WRAPPER:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_0" HWVERSION="1.0" INSTANCE="ISERDES_B_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_WRAPPER_0_0"/>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_B_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="800000000" DIR="I" NAME="HS_CLK" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="400000000" DIR="I" NAME="DIV_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_0_ODATA">
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_0_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="IDELAY_WRAPPER_0" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_0_DATA_OUT">
+        <PORT DIR="O" LEFT="3" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_0_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="OT0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BITSLIP" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D0">
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DD_SPLITTER_0" PORT="D0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_HS_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
           </CONNECTIONS>
@@ -866,39 +868,41 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/ISERDES_WRAPPER_1" HWVERSION="1.0" INSTANCE="ISERDES_WRAPPER_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_WRAPPER" VLNV="xilinx.com:module_ref:ISERDES_WRAPPER:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_1" HWVERSION="1.0" INSTANCE="ISERDES_B_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_WRAPPER_0_1"/>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_B_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="800000000" DIR="I" NAME="HS_CLK" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="400000000" DIR="I" NAME="DIV_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_1_ODATA">
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_1_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="IDELAY_WRAPPER_1" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_1_DATA_OUT">
+        <PORT DIR="O" LEFT="3" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_1_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="OT1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BITSLIP" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D1">
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DD_SPLITTER_0" PORT="D1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_HS_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
           </CONNECTIONS>
@@ -906,39 +910,41 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/ISERDES_WRAPPER_2" HWVERSION="1.0" INSTANCE="ISERDES_WRAPPER_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_WRAPPER" VLNV="xilinx.com:module_ref:ISERDES_WRAPPER:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_2" HWVERSION="1.0" INSTANCE="ISERDES_B_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_WRAPPER_1_0"/>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_B_0_2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="800000000" DIR="I" NAME="HS_CLK" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="400000000" DIR="I" NAME="DIV_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_2_ODATA">
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_2_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="IDELAY_WRAPPER_2" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_2_DATA_OUT">
+        <PORT DIR="O" LEFT="3" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_2_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="OT2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BITSLIP" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D2">
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D2">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DD_SPLITTER_0" PORT="D2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_HS_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
           </CONNECTIONS>
@@ -946,39 +952,41 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/ISERDES_WRAPPER_3" HWVERSION="1.0" INSTANCE="ISERDES_WRAPPER_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_WRAPPER" VLNV="xilinx.com:module_ref:ISERDES_WRAPPER:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_3" HWVERSION="1.0" INSTANCE="ISERDES_B_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_WRAPPER_2_0"/>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_B_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="800000000" DIR="I" NAME="HS_CLK" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="400000000" DIR="I" NAME="DIV_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_3_ODATA">
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_3_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="IDELAY_WRAPPER_3" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_3_DATA_OUT">
+        <PORT DIR="O" LEFT="3" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_3_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="OT3"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BITSLIP" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D3">
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D3">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DD_SPLITTER_0" PORT="D3"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_HS_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
           </CONNECTIONS>
@@ -986,39 +994,41 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/ISERDES_WRAPPER_4" HWVERSION="1.0" INSTANCE="ISERDES_WRAPPER_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_WRAPPER" VLNV="xilinx.com:module_ref:ISERDES_WRAPPER:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_4" HWVERSION="1.0" INSTANCE="ISERDES_B_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_WRAPPER_3_0"/>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="DESERIALIZER_B_ISERDES_B_3_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="800000000" DIR="I" NAME="HS_CLK" SIGIS="clk" SIGNAME="External_Ports_HS_CLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="400000000" DIR="I" NAME="DIV_CLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_4_ODATA">
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="IDELAY_WRAPPER_4_ODATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="IDELAY_WRAPPER_4" PORT="ODATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_WRAPPER_4_DATA_OUT">
+        <PORT DIR="O" LEFT="3" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_4_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="OT4"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="BITSLIP" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D4">
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="DD_SPLITTER_0_D4">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DD_SPLITTER_0" PORT="D4"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_HS_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="HS_CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_MCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
           </CONNECTIONS>
@@ -1066,11 +1076,11 @@
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_idelay_ctrl_0" PORT="rst"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_0" PORT="RESET"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_1" PORT="RESET"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_2" PORT="RESET"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_3" PORT="RESET"/>
-            <CONNECTION INSTANCE="ISERDES_WRAPPER_4" PORT="RESET"/>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_4" PORT="io_reset"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

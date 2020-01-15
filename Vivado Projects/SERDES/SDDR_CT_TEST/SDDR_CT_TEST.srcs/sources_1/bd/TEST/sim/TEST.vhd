@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 15:47:58 2020
+--Date        : Thu Jan 16 09:14:30 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TEST.bd
 --Design      : TEST
@@ -1302,28 +1302,28 @@ architecture STRUCTURE of TEST is
     BIDIR : in STD_LOGIC
   );
   end component TEST_SDDR_CT_0_0;
-  component TEST_ISERDES_WRAPPER_0_0 is
+  component TEST_ISERDES_B_0_0 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component TEST_ISERDES_WRAPPER_0_0;
-  component TEST_ISERDES_WRAPPER_1_0 is
+  end component TEST_ISERDES_B_0_0;
+  component TEST_ISERDES_B_0_1 is
   port (
-    HS_CLK : in STD_LOGIC;
-    DIV_CLK : in STD_LOGIC;
-    DATA_IN : in STD_LOGIC;
-    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    BITSLIP : in STD_LOGIC;
-    RESET : in STD_LOGIC
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
   );
-  end component TEST_ISERDES_WRAPPER_1_0;
-  signal ISERDES_WRAPPER_0_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal ISERDES_WRAPPER_2_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
+  end component TEST_ISERDES_B_0_1;
+  signal ISERDES_B_0_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_B_1_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Net : STD_LOGIC;
   signal SDDR_CT_0_ARMED : STD_LOGIC;
   signal SDDR_CT_0_CTIME : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1501,23 +1501,23 @@ DATA: component TEST_axi_gpio_0_0
       s_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M00_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => ps7_0_axi_periph_M00_AXI_WVALID(0)
     );
-ISERDES_WRAPPER_1: component TEST_ISERDES_WRAPPER_0_0
+ISERDES_B_0: component TEST_ISERDES_B_0_0
      port map (
-      BITSLIP => xlconstant_0_dout(0),
-      DATA_IN => T2_1,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_0_DATA_OUT(3 downto 0),
-      DIV_CLK => clk_wiz_0_clk_out2,
-      HS_CLK => clk_wiz_0_clk_out1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => xlconstant_0_dout(0),
+      clk_div_in => clk_wiz_0_clk_out2,
+      clk_in => clk_wiz_0_clk_out1,
+      data_in_from_pins(0) => T2_1,
+      data_in_to_device(3 downto 0) => ISERDES_B_0_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
-ISERDES_WRAPPER_2: component TEST_ISERDES_WRAPPER_1_0
+ISERDES_B_1: component TEST_ISERDES_B_0_1
      port map (
-      BITSLIP => xlconstant_0_dout(0),
-      DATA_IN => T1_1,
-      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_2_DATA_OUT(3 downto 0),
-      DIV_CLK => clk_wiz_0_clk_out2,
-      HS_CLK => clk_wiz_0_clk_out1,
-      RESET => util_vector_logic_0_Res(0)
+      bitslip(0) => xlconstant_0_dout(0),
+      clk_div_in => clk_wiz_0_clk_out2,
+      clk_in => clk_wiz_0_clk_out1,
+      data_in_from_pins(0) => T1_1,
+      data_in_to_device(3 downto 0) => ISERDES_B_1_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
     );
 SDDR_CT_0: component TEST_SDDR_CT_0_0
      port map (
@@ -1530,8 +1530,8 @@ SDDR_CT_0: component TEST_SDDR_CT_0_0
       FSEL => xlslice_1_Dout(0),
       MCLK => clk_wiz_0_clk_out2,
       RESETN => xlslice_0_Dout(0),
-      T1(3 downto 0) => ISERDES_WRAPPER_2_DATA_OUT(3 downto 0),
-      T2(3 downto 0) => ISERDES_WRAPPER_0_DATA_OUT(3 downto 0),
+      T1(3 downto 0) => ISERDES_B_1_data_in_to_device(3 downto 0),
+      T2(3 downto 0) => ISERDES_B_0_data_in_to_device(3 downto 0),
       WAITING => SDDR_CT_0_WAITING
     );
 UTIL: component TEST_axi_gpio_0_1

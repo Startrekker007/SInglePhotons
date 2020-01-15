@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DD_AXI_SLICE, DD_AXI_SLICE, DD_SPLITTER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, ISERDES_WRAPPER, ISERDES_WRAPPER, ISERDES_WRAPPER, ISERDES_WRAPPER, ISERDES_WRAPPER
+# DD_AXI_SLICE, DD_AXI_SLICE, DD_SPLITTER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, ISERDES_B, ISERDES_B, ISERDES_B, ISERDES_B, ISERDES_B
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -312,57 +312,57 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: ISERDES_WRAPPER_0, and set properties
-  set block_name ISERDES_WRAPPER
-  set block_cell_name ISERDES_WRAPPER_0
-  if { [catch {set ISERDES_WRAPPER_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ISERDES_B_0, and set properties
+  set block_name ISERDES_B
+  set block_cell_name ISERDES_B_0
+  if { [catch {set ISERDES_B_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ISERDES_WRAPPER_0 eq "" } {
+   } elseif { $ISERDES_B_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: ISERDES_WRAPPER_1, and set properties
-  set block_name ISERDES_WRAPPER
-  set block_cell_name ISERDES_WRAPPER_1
-  if { [catch {set ISERDES_WRAPPER_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ISERDES_B_1, and set properties
+  set block_name ISERDES_B
+  set block_cell_name ISERDES_B_1
+  if { [catch {set ISERDES_B_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ISERDES_WRAPPER_1 eq "" } {
+   } elseif { $ISERDES_B_1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: ISERDES_WRAPPER_2, and set properties
-  set block_name ISERDES_WRAPPER
-  set block_cell_name ISERDES_WRAPPER_2
-  if { [catch {set ISERDES_WRAPPER_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ISERDES_B_2, and set properties
+  set block_name ISERDES_B
+  set block_cell_name ISERDES_B_2
+  if { [catch {set ISERDES_B_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ISERDES_WRAPPER_2 eq "" } {
+   } elseif { $ISERDES_B_2 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: ISERDES_WRAPPER_3, and set properties
-  set block_name ISERDES_WRAPPER
-  set block_cell_name ISERDES_WRAPPER_3
-  if { [catch {set ISERDES_WRAPPER_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ISERDES_B_3, and set properties
+  set block_name ISERDES_B
+  set block_cell_name ISERDES_B_3
+  if { [catch {set ISERDES_B_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ISERDES_WRAPPER_3 eq "" } {
+   } elseif { $ISERDES_B_3 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: ISERDES_WRAPPER_4, and set properties
-  set block_name ISERDES_WRAPPER
-  set block_cell_name ISERDES_WRAPPER_4
-  if { [catch {set ISERDES_WRAPPER_4 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ISERDES_B_4, and set properties
+  set block_name ISERDES_B
+  set block_cell_name ISERDES_B_4
+  if { [catch {set ISERDES_B_4 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ISERDES_WRAPPER_4 eq "" } {
+   } elseif { $ISERDES_B_4 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -395,28 +395,28 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DD_AXI_SLICE_1_D3 [get_bd_pins DD_AXI_SLICE_1/D3] [get_bd_pins IDELAY_WRAPPER_4/TAP1]
   connect_bd_net -net DD_AXI_SLICE_1_D4 [get_bd_pins DD_AXI_SLICE_1/D4] [get_bd_pins IDELAY_WRAPPER_5/TAP0]
   connect_bd_net -net DD_AXI_SLICE_1_D5 [get_bd_pins DD_AXI_SLICE_1/D5] [get_bd_pins IDELAY_WRAPPER_5/TAP1]
-  connect_bd_net -net DD_SPLITTER_0_D0 [get_bd_pins DD_SPLITTER_0/D0] [get_bd_pins ISERDES_WRAPPER_0/BITSLIP]
-  connect_bd_net -net DD_SPLITTER_0_D1 [get_bd_pins DD_SPLITTER_0/D1] [get_bd_pins ISERDES_WRAPPER_1/BITSLIP]
-  connect_bd_net -net DD_SPLITTER_0_D2 [get_bd_pins DD_SPLITTER_0/D2] [get_bd_pins ISERDES_WRAPPER_2/BITSLIP]
-  connect_bd_net -net DD_SPLITTER_0_D3 [get_bd_pins DD_SPLITTER_0/D3] [get_bd_pins ISERDES_WRAPPER_3/BITSLIP]
-  connect_bd_net -net DD_SPLITTER_0_D4 [get_bd_pins DD_SPLITTER_0/D4] [get_bd_pins ISERDES_WRAPPER_4/BITSLIP]
+  connect_bd_net -net DD_SPLITTER_0_D0 [get_bd_pins DD_SPLITTER_0/D0] [get_bd_pins ISERDES_B_0/bitslip]
+  connect_bd_net -net DD_SPLITTER_0_D1 [get_bd_pins DD_SPLITTER_0/D1] [get_bd_pins ISERDES_B_1/bitslip]
+  connect_bd_net -net DD_SPLITTER_0_D2 [get_bd_pins DD_SPLITTER_0/D2] [get_bd_pins ISERDES_B_2/bitslip]
+  connect_bd_net -net DD_SPLITTER_0_D3 [get_bd_pins DD_SPLITTER_0/D3] [get_bd_pins ISERDES_B_3/bitslip]
+  connect_bd_net -net DD_SPLITTER_0_D4 [get_bd_pins DD_SPLITTER_0/D4] [get_bd_pins ISERDES_B_4/bitslip]
   connect_bd_net -net DELAYS_gpio2_io_o [get_bd_pins DD_AXI_SLICE_1/IDATA] [get_bd_pins DELAYS/gpio2_io_o]
   connect_bd_net -net DELAYS_gpio_io_o [get_bd_pins DD_AXI_SLICE_0/IDATA] [get_bd_pins DELAYS/gpio_io_o]
   connect_bd_net -net E_TRIG_1 [get_bd_ports E_TRIG] [get_bd_pins IDELAY_WRAPPER_5/IDATA]
-  connect_bd_net -net HS_CLK_1 [get_bd_ports HS_CLK] [get_bd_pins ISERDES_WRAPPER_0/HS_CLK] [get_bd_pins ISERDES_WRAPPER_1/HS_CLK] [get_bd_pins ISERDES_WRAPPER_2/HS_CLK] [get_bd_pins ISERDES_WRAPPER_3/HS_CLK] [get_bd_pins ISERDES_WRAPPER_4/HS_CLK]
+  connect_bd_net -net HS_CLK_1 [get_bd_ports HS_CLK] [get_bd_pins ISERDES_B_0/clk_in] [get_bd_pins ISERDES_B_1/clk_in] [get_bd_pins ISERDES_B_2/clk_in] [get_bd_pins ISERDES_B_3/clk_in] [get_bd_pins ISERDES_B_4/clk_in]
   connect_bd_net -net IDELAY_RCLK_1 [get_bd_ports IDELAY_RCLK] [get_bd_pins IDELAY_WRAPPER_0/REF_CLK] [get_bd_pins IDELAY_WRAPPER_1/REF_CLK] [get_bd_pins IDELAY_WRAPPER_2/REF_CLK] [get_bd_pins IDELAY_WRAPPER_3/REF_CLK] [get_bd_pins IDELAY_WRAPPER_4/REF_CLK] [get_bd_pins IDELAY_WRAPPER_5/REF_CLK] [get_bd_pins util_idelay_ctrl_0/ref_clk]
-  connect_bd_net -net IDELAY_WRAPPER_0_ODATA [get_bd_ports RT0] [get_bd_pins IDELAY_WRAPPER_0/ODATA] [get_bd_pins ISERDES_WRAPPER_0/DATA_IN]
-  connect_bd_net -net IDELAY_WRAPPER_1_ODATA [get_bd_ports RT1] [get_bd_pins IDELAY_WRAPPER_1/ODATA] [get_bd_pins ISERDES_WRAPPER_1/DATA_IN]
-  connect_bd_net -net IDELAY_WRAPPER_2_ODATA [get_bd_ports RT2] [get_bd_pins IDELAY_WRAPPER_2/ODATA] [get_bd_pins ISERDES_WRAPPER_2/DATA_IN]
-  connect_bd_net -net IDELAY_WRAPPER_3_ODATA [get_bd_ports RT3] [get_bd_pins IDELAY_WRAPPER_3/ODATA] [get_bd_pins ISERDES_WRAPPER_3/DATA_IN]
-  connect_bd_net -net IDELAY_WRAPPER_4_ODATA [get_bd_ports RT4] [get_bd_pins IDELAY_WRAPPER_4/ODATA] [get_bd_pins ISERDES_WRAPPER_4/DATA_IN]
+  connect_bd_net -net IDELAY_WRAPPER_0_ODATA [get_bd_ports RT0] [get_bd_pins IDELAY_WRAPPER_0/ODATA] [get_bd_pins ISERDES_B_0/data_in_from_pins]
+  connect_bd_net -net IDELAY_WRAPPER_1_ODATA [get_bd_ports RT1] [get_bd_pins IDELAY_WRAPPER_1/ODATA] [get_bd_pins ISERDES_B_1/data_in_from_pins]
+  connect_bd_net -net IDELAY_WRAPPER_2_ODATA [get_bd_ports RT2] [get_bd_pins IDELAY_WRAPPER_2/ODATA] [get_bd_pins ISERDES_B_2/data_in_from_pins]
+  connect_bd_net -net IDELAY_WRAPPER_3_ODATA [get_bd_ports RT3] [get_bd_pins IDELAY_WRAPPER_3/ODATA] [get_bd_pins ISERDES_B_3/data_in_from_pins]
+  connect_bd_net -net IDELAY_WRAPPER_4_ODATA [get_bd_ports RT4] [get_bd_pins IDELAY_WRAPPER_4/ODATA] [get_bd_pins ISERDES_B_4/data_in_from_pins]
   connect_bd_net -net IDELAY_WRAPPER_5_ODATA [get_bd_ports RXT] [get_bd_pins IDELAY_WRAPPER_5/ODATA]
-  connect_bd_net -net ISERDES_WRAPPER_0_DATA_OUT [get_bd_ports OT0] [get_bd_pins ISERDES_WRAPPER_0/DATA_OUT]
-  connect_bd_net -net ISERDES_WRAPPER_1_DATA_OUT [get_bd_ports OT1] [get_bd_pins ISERDES_WRAPPER_1/DATA_OUT]
-  connect_bd_net -net ISERDES_WRAPPER_2_DATA_OUT [get_bd_ports OT2] [get_bd_pins ISERDES_WRAPPER_2/DATA_OUT]
-  connect_bd_net -net ISERDES_WRAPPER_3_DATA_OUT [get_bd_ports OT3] [get_bd_pins ISERDES_WRAPPER_3/DATA_OUT]
-  connect_bd_net -net ISERDES_WRAPPER_4_DATA_OUT [get_bd_ports OT4] [get_bd_pins ISERDES_WRAPPER_4/DATA_OUT]
-  connect_bd_net -net Net [get_bd_ports MCLK] [get_bd_pins ISERDES_WRAPPER_0/DIV_CLK] [get_bd_pins ISERDES_WRAPPER_1/DIV_CLK] [get_bd_pins ISERDES_WRAPPER_2/DIV_CLK] [get_bd_pins ISERDES_WRAPPER_3/DIV_CLK] [get_bd_pins ISERDES_WRAPPER_4/DIV_CLK]
+  connect_bd_net -net ISERDES_B_0_data_in_to_device [get_bd_ports OT0] [get_bd_pins ISERDES_B_0/data_in_to_device]
+  connect_bd_net -net ISERDES_B_1_data_in_to_device [get_bd_ports OT1] [get_bd_pins ISERDES_B_1/data_in_to_device]
+  connect_bd_net -net ISERDES_B_2_data_in_to_device [get_bd_ports OT2] [get_bd_pins ISERDES_B_2/data_in_to_device]
+  connect_bd_net -net ISERDES_B_3_data_in_to_device [get_bd_ports OT3] [get_bd_pins ISERDES_B_3/data_in_to_device]
+  connect_bd_net -net ISERDES_B_4_data_in_to_device [get_bd_ports OT4] [get_bd_pins ISERDES_B_4/data_in_to_device]
+  connect_bd_net -net Net [get_bd_ports MCLK] [get_bd_pins ISERDES_B_0/clk_div_in] [get_bd_pins ISERDES_B_1/clk_div_in] [get_bd_pins ISERDES_B_2/clk_div_in] [get_bd_pins ISERDES_B_3/clk_div_in] [get_bd_pins ISERDES_B_4/clk_div_in]
   connect_bd_net -net T0_1 [get_bd_ports T0] [get_bd_pins IDELAY_WRAPPER_0/IDATA]
   connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins IDELAY_WRAPPER_1/IDATA]
   connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins IDELAY_WRAPPER_2/IDATA]
@@ -425,7 +425,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins DELAYS/s_axi_aclk]
   connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins DELAYS/s_axi_aresetn]
   connect_bd_net -net resetn_1 [get_bd_ports resetn] [get_bd_pins util_vector_logic_0/Op1]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins ISERDES_WRAPPER_0/RESET] [get_bd_pins ISERDES_WRAPPER_1/RESET] [get_bd_pins ISERDES_WRAPPER_2/RESET] [get_bd_pins ISERDES_WRAPPER_3/RESET] [get_bd_pins ISERDES_WRAPPER_4/RESET] [get_bd_pins util_idelay_ctrl_0/rst] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins ISERDES_B_0/io_reset] [get_bd_pins ISERDES_B_1/io_reset] [get_bd_pins ISERDES_B_2/io_reset] [get_bd_pins ISERDES_B_3/io_reset] [get_bd_pins ISERDES_B_4/io_reset] [get_bd_pins util_idelay_ctrl_0/rst] [get_bd_pins util_vector_logic_0/Res]
 
   # Create address segments
 

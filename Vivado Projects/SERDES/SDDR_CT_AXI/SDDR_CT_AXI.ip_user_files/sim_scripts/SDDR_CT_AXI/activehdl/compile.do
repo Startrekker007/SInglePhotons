@@ -95,6 +95,8 @@ vcom -work xil_defaultlib -93 \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_axi_gpio_0_1/sim/SDDR_CT_AXI_axi_gpio_0_1.vhd" \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_CTA_SPLIT_0_0/sim/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd" \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/sim/SDDR_CT_AXI.vhd" \
+"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_CT_META_0_0/sim/SDDR_CT_AXI_CT_META_0_0.vhd" \
+"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_CT_META_0_1/sim/SDDR_CT_AXI_CT_META_0_1.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

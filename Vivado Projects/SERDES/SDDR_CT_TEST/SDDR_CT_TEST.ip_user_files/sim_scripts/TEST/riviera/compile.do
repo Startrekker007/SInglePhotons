@@ -206,8 +206,8 @@ vcom -work proc_sys_reset_v5_0_13 -93 \
 vcom -work xil_defaultlib -93 \
 "../../../bd/TEST/ip/TEST_rst_ps7_0_100M_0/sim/TEST_rst_ps7_0_100M_0.vhd" \
 "../../../bd/TEST/sim/TEST.vhd" \
-"../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/sim/TEST_ISERDES_WRAPPER_0_0.vhd" \
-"../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_1_0/sim/TEST_ISERDES_WRAPPER_1_0.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_B_0_0/sim/TEST_ISERDES_B_0_0.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_B_0_1/sim/TEST_ISERDES_B_0_1.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

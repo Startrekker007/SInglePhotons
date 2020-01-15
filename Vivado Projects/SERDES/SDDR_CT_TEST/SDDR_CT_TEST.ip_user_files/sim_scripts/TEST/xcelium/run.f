@@ -139,8 +139,8 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/TEST/ip/TEST_rst_ps7_0_100M_0/sim/TEST_rst_ps7_0_100M_0.vhd" \
   "../../../bd/TEST/sim/TEST.vhd" \
-  "../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/sim/TEST_ISERDES_WRAPPER_0_0.vhd" \
-  "../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_1_0/sim/TEST_ISERDES_WRAPPER_1_0.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_B_0_0/sim/TEST_ISERDES_B_0_0.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_B_0_1/sim/TEST_ISERDES_B_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
   "../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

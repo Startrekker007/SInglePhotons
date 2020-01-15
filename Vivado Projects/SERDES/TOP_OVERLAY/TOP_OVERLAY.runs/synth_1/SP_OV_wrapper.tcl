@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
+set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -157,7 +158,7 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_0/DESERIALIZER_B_axi_gpio_0_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_0/DESERIALIZER_B_axi_gpio_0_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_0/DESERIALIZER_B_axi_gpio_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_auto_pc_1/SP_OV_auto_pc_1_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/SERDES/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_auto_pc_0/SP_OV_auto_pc_0_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{D:/SInglePhotons/Vivado Projects/SERDES/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/SP_OV_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -21,11 +21,11 @@
       "DD_AXI_SLICE_1": "",
       "DELAYS": "",
       "util_idelay_ctrl_0": "",
-      "ISERDES_WRAPPER_0": "",
-      "ISERDES_WRAPPER_1": "",
-      "ISERDES_WRAPPER_2": "",
-      "ISERDES_WRAPPER_3": "",
-      "ISERDES_WRAPPER_4": ""
+      "ISERDES_B_0": "",
+      "ISERDES_B_1": "",
+      "ISERDES_B_2": "",
+      "ISERDES_B_3": "",
+      "ISERDES_B_4": ""
     },
     "interface_ports": {
       "IDELAY_TAPS": {
@@ -776,51 +776,25 @@
         "vlnv": "xilinx.com:ip:util_idelay_ctrl:1.0",
         "xci_name": "DESERIALIZER_B_util_idelay_ctrl_0_0"
       },
-      "ISERDES_WRAPPER_0": {
-        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
-        "xci_name": "DESERIALIZER_B_ISERDES_WRAPPER_0_0",
+      "ISERDES_B_0": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "DESERIALIZER_B_ISERDES_B_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ISERDES_WRAPPER",
+          "ref_name": "ISERDES_B",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "HS_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_HS_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "800000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "DIV_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_MCLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "400000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "RESET": {
+          "io_reset": {
             "type": "rst",
             "direction": "I"
           },
-          "DATA_IN": {
-            "direction": "I"
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "DATA_OUT": {
+          "data_in_to_device": {
             "direction": "O",
             "left": "3",
             "right": "0",
@@ -831,56 +805,66 @@
               }
             }
           },
-          "BITSLIP": {
-            "direction": "I"
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           }
         }
       },
-      "ISERDES_WRAPPER_1": {
-        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
-        "xci_name": "DESERIALIZER_B_ISERDES_WRAPPER_0_1",
+      "ISERDES_B_1": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "DESERIALIZER_B_ISERDES_B_0_1",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ISERDES_WRAPPER",
+          "ref_name": "ISERDES_B",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "HS_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_HS_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "800000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "DIV_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_MCLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "400000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "RESET": {
+          "io_reset": {
             "type": "rst",
             "direction": "I"
           },
-          "DATA_IN": {
-            "direction": "I"
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "DATA_OUT": {
+          "data_in_to_device": {
             "direction": "O",
             "left": "3",
             "right": "0",
@@ -891,56 +875,66 @@
               }
             }
           },
-          "BITSLIP": {
-            "direction": "I"
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           }
         }
       },
-      "ISERDES_WRAPPER_2": {
-        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
-        "xci_name": "DESERIALIZER_B_ISERDES_WRAPPER_1_0",
+      "ISERDES_B_2": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "DESERIALIZER_B_ISERDES_B_0_2",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ISERDES_WRAPPER",
+          "ref_name": "ISERDES_B",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "HS_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_HS_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "800000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "DIV_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_MCLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "400000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "RESET": {
+          "io_reset": {
             "type": "rst",
             "direction": "I"
           },
-          "DATA_IN": {
-            "direction": "I"
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "DATA_OUT": {
+          "data_in_to_device": {
             "direction": "O",
             "left": "3",
             "right": "0",
@@ -951,56 +945,66 @@
               }
             }
           },
-          "BITSLIP": {
-            "direction": "I"
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           }
         }
       },
-      "ISERDES_WRAPPER_3": {
-        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
-        "xci_name": "DESERIALIZER_B_ISERDES_WRAPPER_2_0",
+      "ISERDES_B_3": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "DESERIALIZER_B_ISERDES_B_1_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ISERDES_WRAPPER",
+          "ref_name": "ISERDES_B",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "HS_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_HS_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "800000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "DIV_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_MCLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "400000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "RESET": {
+          "io_reset": {
             "type": "rst",
             "direction": "I"
           },
-          "DATA_IN": {
-            "direction": "I"
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "DATA_OUT": {
+          "data_in_to_device": {
             "direction": "O",
             "left": "3",
             "right": "0",
@@ -1011,56 +1015,66 @@
               }
             }
           },
-          "BITSLIP": {
-            "direction": "I"
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           }
         }
       },
-      "ISERDES_WRAPPER_4": {
-        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
-        "xci_name": "DESERIALIZER_B_ISERDES_WRAPPER_3_0",
+      "ISERDES_B_4": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "DESERIALIZER_B_ISERDES_B_3_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ISERDES_WRAPPER",
+          "ref_name": "ISERDES_B",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "HS_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_HS_CLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "800000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "DIV_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "DESERIALIZER_B_MCLK",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "400000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "RESET": {
+          "io_reset": {
             "type": "rst",
             "direction": "I"
           },
-          "DATA_IN": {
-            "direction": "I"
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "DATA_OUT": {
+          "data_in_to_device": {
             "direction": "O",
             "left": "3",
             "right": "0",
@@ -1071,8 +1085,44 @@
               }
             }
           },
-          "BITSLIP": {
-            "direction": "I"
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "DESERIALIZER_B_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
           }
         }
       }
@@ -1090,35 +1140,35 @@
         "ports": [
           "IDELAY_WRAPPER_0/ODATA",
           "RT0",
-          "ISERDES_WRAPPER_0/DATA_IN"
+          "ISERDES_B_0/data_in_from_pins"
         ]
       },
       "IDELAY_WRAPPER_1_ODATA": {
         "ports": [
           "IDELAY_WRAPPER_1/ODATA",
           "RT1",
-          "ISERDES_WRAPPER_1/DATA_IN"
+          "ISERDES_B_1/data_in_from_pins"
         ]
       },
       "IDELAY_WRAPPER_2_ODATA": {
         "ports": [
           "IDELAY_WRAPPER_2/ODATA",
           "RT2",
-          "ISERDES_WRAPPER_2/DATA_IN"
+          "ISERDES_B_2/data_in_from_pins"
         ]
       },
       "IDELAY_WRAPPER_3_ODATA": {
         "ports": [
           "IDELAY_WRAPPER_3/ODATA",
           "RT3",
-          "ISERDES_WRAPPER_3/DATA_IN"
+          "ISERDES_B_3/data_in_from_pins"
         ]
       },
       "IDELAY_WRAPPER_4_ODATA": {
         "ports": [
           "IDELAY_WRAPPER_4/ODATA",
           "RT4",
-          "ISERDES_WRAPPER_4/DATA_IN"
+          "ISERDES_B_4/data_in_from_pins"
         ]
       },
       "T0_1": {
@@ -1185,11 +1235,11 @@
         "ports": [
           "util_vector_logic_0/Res",
           "util_idelay_ctrl_0/rst",
-          "ISERDES_WRAPPER_0/RESET",
-          "ISERDES_WRAPPER_1/RESET",
-          "ISERDES_WRAPPER_2/RESET",
-          "ISERDES_WRAPPER_3/RESET",
-          "ISERDES_WRAPPER_4/RESET"
+          "ISERDES_B_0/io_reset",
+          "ISERDES_B_1/io_reset",
+          "ISERDES_B_2/io_reset",
+          "ISERDES_B_3/io_reset",
+          "ISERDES_B_4/io_reset"
         ]
       },
       "DD_AXI_SLICE_0_D0": {
@@ -1297,80 +1347,80 @@
       "DD_SPLITTER_0_D0": {
         "ports": [
           "DD_SPLITTER_0/D0",
-          "ISERDES_WRAPPER_0/BITSLIP"
+          "ISERDES_B_0/bitslip"
         ]
       },
       "DD_SPLITTER_0_D1": {
         "ports": [
           "DD_SPLITTER_0/D1",
-          "ISERDES_WRAPPER_1/BITSLIP"
+          "ISERDES_B_1/bitslip"
         ]
       },
       "DD_SPLITTER_0_D2": {
         "ports": [
           "DD_SPLITTER_0/D2",
-          "ISERDES_WRAPPER_2/BITSLIP"
+          "ISERDES_B_2/bitslip"
         ]
       },
       "DD_SPLITTER_0_D3": {
         "ports": [
           "DD_SPLITTER_0/D3",
-          "ISERDES_WRAPPER_3/BITSLIP"
+          "ISERDES_B_3/bitslip"
         ]
       },
       "DD_SPLITTER_0_D4": {
         "ports": [
           "DD_SPLITTER_0/D4",
-          "ISERDES_WRAPPER_4/BITSLIP"
+          "ISERDES_B_4/bitslip"
         ]
       },
       "HS_CLK_1": {
         "ports": [
           "HS_CLK",
-          "ISERDES_WRAPPER_0/HS_CLK",
-          "ISERDES_WRAPPER_1/HS_CLK",
-          "ISERDES_WRAPPER_2/HS_CLK",
-          "ISERDES_WRAPPER_3/HS_CLK",
-          "ISERDES_WRAPPER_4/HS_CLK"
+          "ISERDES_B_0/clk_in",
+          "ISERDES_B_1/clk_in",
+          "ISERDES_B_2/clk_in",
+          "ISERDES_B_3/clk_in",
+          "ISERDES_B_4/clk_in"
         ]
       },
       "Net": {
         "ports": [
           "MCLK",
-          "ISERDES_WRAPPER_0/DIV_CLK",
-          "ISERDES_WRAPPER_1/DIV_CLK",
-          "ISERDES_WRAPPER_2/DIV_CLK",
-          "ISERDES_WRAPPER_3/DIV_CLK",
-          "ISERDES_WRAPPER_4/DIV_CLK"
+          "ISERDES_B_0/clk_div_in",
+          "ISERDES_B_1/clk_div_in",
+          "ISERDES_B_2/clk_div_in",
+          "ISERDES_B_3/clk_div_in",
+          "ISERDES_B_4/clk_div_in"
         ]
       },
-      "ISERDES_WRAPPER_0_DATA_OUT": {
+      "ISERDES_B_0_data_in_to_device": {
         "ports": [
-          "ISERDES_WRAPPER_0/DATA_OUT",
+          "ISERDES_B_0/data_in_to_device",
           "OT0"
         ]
       },
-      "ISERDES_WRAPPER_1_DATA_OUT": {
+      "ISERDES_B_1_data_in_to_device": {
         "ports": [
-          "ISERDES_WRAPPER_1/DATA_OUT",
+          "ISERDES_B_1/data_in_to_device",
           "OT1"
         ]
       },
-      "ISERDES_WRAPPER_2_DATA_OUT": {
+      "ISERDES_B_2_data_in_to_device": {
         "ports": [
-          "ISERDES_WRAPPER_2/DATA_OUT",
+          "ISERDES_B_2/data_in_to_device",
           "OT2"
         ]
       },
-      "ISERDES_WRAPPER_3_DATA_OUT": {
+      "ISERDES_B_3_data_in_to_device": {
         "ports": [
-          "ISERDES_WRAPPER_3/DATA_OUT",
+          "ISERDES_B_3/data_in_to_device",
           "OT3"
         ]
       },
-      "ISERDES_WRAPPER_4_DATA_OUT": {
+      "ISERDES_B_4_data_in_to_device": {
         "ports": [
-          "ISERDES_WRAPPER_4/DATA_OUT",
+          "ISERDES_B_4/data_in_to_device",
           "OT4"
         ]
       }

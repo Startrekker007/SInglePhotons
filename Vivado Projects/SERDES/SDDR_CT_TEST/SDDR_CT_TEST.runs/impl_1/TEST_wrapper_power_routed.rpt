@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Jan 14 11:52:15 2020
+| Date             : Thu Jan 16 09:18:44 2020
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file TEST_wrapper_power_routed.rpt -pb TEST_wrapper_power_summary_routed.pb -rpx TEST_wrapper_power_routed.rpx
 | Design           : TEST_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.522        |
+| Total On-Chip Power (W)  | 1.521        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.381        |
@@ -52,15 +52,15 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.018 |        7 |       --- |             --- |
-| Slice Logic             |     0.002 |     2553 |       --- |             --- |
+| Clocks                  |     0.017 |        7 |       --- |             --- |
+| Slice Logic             |     0.002 |     2555 |       --- |             --- |
 |   LUT as Logic          |     0.002 |      748 |     53200 |            1.41 |
 |   CARRY4                |    <0.001 |       34 |     13300 |            0.26 |
 |   Register              |    <0.001 |     1294 |    106400 |            1.22 |
+|   Others                |    <0.001 |      237 |       --- |             --- |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   F7/F8 Muxes           |    <0.001 |        1 |     53200 |           <0.01 |
-|   Others                |     0.000 |      235 |       --- |             --- |
-| Signals                 |     0.004 |     1930 |       --- |             --- |
+| Signals                 |     0.004 |     1932 |       --- |             --- |
 | MMCM                    |     0.099 |        1 |         4 |           25.00 |
 | I/O                     |     0.002 |        4 |       125 |            3.20 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.041 |       0.028 |      0.014 |
+| Vccint    |       1.000 |     0.041 |       0.027 |      0.014 |
 | Vccaux    |       1.800 |     0.068 |       0.054 |      0.015 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -159,6 +159,10 @@ Table of Contents
 |   TEST_i                 |     1.380 |
 |     DATA                 |     0.003 |
 |       U0                 |     0.003 |
+|     ISERDES_B_0          |     0.002 |
+|       U0                 |     0.002 |
+|     ISERDES_B_1          |     0.002 |
+|       U0                 |     0.002 |
 |     SDDR_CT_0            |     0.009 |
 |       U0                 |     0.009 |
 |     clk_wiz_0            |     0.101 |
@@ -167,10 +171,6 @@ Table of Contents
 |       inst               |     1.256 |
 |     ps7_0_axi_periph     |     0.006 |
 |       s00_couplers       |     0.005 |
-|     selectio_wiz_0       |     0.002 |
-|       inst               |     0.002 |
-|     selectio_wiz_1       |     0.002 |
-|       inst               |     0.002 |
 +--------------------------+-----------+
 
 
