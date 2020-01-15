@@ -11,3 +11,5 @@ set_property BEL C5FF [get_cells {TEST_i/SDDR_ST_0/U0/pT1_reg[2]}]
 set_property LOC SLICE_X109Y83 [get_cells {TEST_i/SDDR_ST_0/U0/pT1_reg[2]}]
 set_property BEL CFF [get_cells {TEST_i/SDDR_ST_0/U0/pT1_reg[3]}]
 set_property LOC SLICE_X109Y83 [get_cells {TEST_i/SDDR_ST_0/U0/pT1_reg[3]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports T1]

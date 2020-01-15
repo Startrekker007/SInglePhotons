@@ -94,10 +94,6 @@
   "../../../bd/TEST/ip/TEST_xlslice_0_0/sim/TEST_xlslice_0_0.v" \
   "../../../bd/TEST/ip/TEST_xlslice_0_1/sim/TEST_xlslice_0_1.v" \
   "../../../bd/TEST/ip/TEST_xlslice_1_0/sim/TEST_xlslice_1_0.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_selectio_wiz.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.v" \
   "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v" \
   "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v" \
 -endlib
@@ -142,15 +138,15 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/TEST/ip/TEST_rst_ps7_0_100M_0/sim/TEST_rst_ps7_0_100M_0.vhd" \
+  "../../../bd/TEST/sim/TEST.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/sim/TEST_ISERDES_WRAPPER_0_0.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_1_0/sim/TEST_ISERDES_WRAPPER_1_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/TEST/ip/TEST_auto_pc_0/sim/TEST_auto_pc_0.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/TEST/sim/TEST.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

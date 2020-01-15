@@ -1,10 +1,4 @@
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_selectio_wiz.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
   "../../../bd/TEST/ip/TEST_SDDR_CT_0_0/sim/TEST_SDDR_CT_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/util_vector_logic_v2_0_1 \
@@ -15,6 +9,8 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/TEST/sim/TEST.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/sim/TEST_ISERDES_WRAPPER_0_0.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_1/sim/TEST_ISERDES_WRAPPER_0_1.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

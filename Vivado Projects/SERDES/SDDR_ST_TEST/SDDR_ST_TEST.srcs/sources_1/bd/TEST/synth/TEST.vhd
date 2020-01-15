@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Jan 14 15:48:47 2020
+--Date        : Wed Jan 15 16:46:37 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TEST.bd
 --Design      : TEST
@@ -1329,10 +1329,10 @@ entity TEST is
     T1 : in STD_LOGIC;
     status : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of TEST : entity is "TEST,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TEST,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=19,numReposBlks=14,numNonXlnxBlks=1,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_ps7_cnt=1,synth_mode=Global}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of TEST : entity is "TEST.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of TEST : entity is "TEST,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TEST,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=19,numReposBlks=14,numNonXlnxBlks=1,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_ps7_cnt=1,synth_mode=Global}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of TEST : entity is "TEST.hwdef";
 end TEST;
 
 architecture STRUCTURE of TEST is
@@ -1452,16 +1452,6 @@ architecture STRUCTURE of TEST is
     clk_out2 : out STD_LOGIC
   );
   end component TEST_clk_wiz_0_0;
-  component TEST_selectio_wiz_0_0 is
-  port (
-    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
-    clk_in : in STD_LOGIC;
-    clk_div_in : in STD_LOGIC;
-    io_reset : in STD_LOGIC;
-    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
-    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component TEST_selectio_wiz_0_0;
   component TEST_xlconstant_0_0 is
   port (
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
@@ -1552,6 +1542,17 @@ architecture STRUCTURE of TEST is
     DEBUG1 : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component TEST_SDDR_ST_0_0;
+  component TEST_ISERDES_B_0_0 is
+  port (
+    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
+    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
+    clk_in : in STD_LOGIC;
+    clk_div_in : in STD_LOGIC;
+    io_reset : in STD_LOGIC
+  );
+  end component TEST_ISERDES_B_0_0;
+  signal ISERDES_B_0_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal SDDR_ST_0_CTIME : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal SDDR_ST_0_D0 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SDDR_ST_0_D1 : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -1677,7 +1678,6 @@ architecture STRUCTURE of TEST is
   signal ps7_0_axi_periph_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M02_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal selectio_wiz_0_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -1688,35 +1688,35 @@ architecture STRUCTURE of TEST is
   signal NLW_rst_ps7_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  attribute x_interface_info : string;
-  attribute x_interface_info of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
-  attribute x_interface_info of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
-  attribute x_interface_info of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
-  attribute x_interface_info of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
-  attribute x_interface_info of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
-  attribute x_interface_info of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
-  attribute x_interface_info of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
-  attribute x_interface_info of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
-  attribute x_interface_info of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
-  attribute x_interface_info of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
-  attribute x_interface_info of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
-  attribute x_interface_info of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
-  attribute x_interface_info of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
-  attribute x_interface_info of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute x_interface_info of T1 : signal is "xilinx.com:signal:data:1.0 DATA.T1 DATA";
-  attribute x_interface_parameter of T1 : signal is "XIL_INTERFACENAME DATA.T1, LAYERED_METADATA undef";
-  attribute x_interface_info of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
-  attribute x_interface_parameter of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
-  attribute x_interface_info of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
-  attribute x_interface_info of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
-  attribute x_interface_info of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
-  attribute x_interface_info of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
-  attribute x_interface_info of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
-  attribute x_interface_info of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute x_interface_info of status : signal is "xilinx.com:signal:data:1.0 DATA.STATUS DATA";
-  attribute x_interface_parameter of status : signal is "XIL_INTERFACENAME DATA.STATUS, LAYERED_METADATA undef, PortWidth 2";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
+  attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
+  attribute X_INTERFACE_INFO of DDR_ck_p : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_P";
+  attribute X_INTERFACE_INFO of DDR_cke : signal is "xilinx.com:interface:ddrx:1.0 DDR CKE";
+  attribute X_INTERFACE_INFO of DDR_cs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CS_N";
+  attribute X_INTERFACE_INFO of DDR_odt : signal is "xilinx.com:interface:ddrx:1.0 DDR ODT";
+  attribute X_INTERFACE_INFO of DDR_ras_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RAS_N";
+  attribute X_INTERFACE_INFO of DDR_reset_n : signal is "xilinx.com:interface:ddrx:1.0 DDR RESET_N";
+  attribute X_INTERFACE_INFO of DDR_we_n : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
+  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrn : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of FIXED_IO_ddr_vrn : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
+  attribute X_INTERFACE_INFO of FIXED_IO_ddr_vrp : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of T1 : signal is "xilinx.com:signal:data:1.0 DATA.T1 DATA";
+  attribute X_INTERFACE_PARAMETER of T1 : signal is "XIL_INTERFACENAME DATA.T1, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
+  attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
+  attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
+  attribute X_INTERFACE_INFO of DDR_dm : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
+  attribute X_INTERFACE_INFO of DDR_dq : signal is "xilinx.com:interface:ddrx:1.0 DDR DQ";
+  attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
+  attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
+  attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute X_INTERFACE_INFO of status : signal is "xilinx.com:signal:data:1.0 DATA.STATUS DATA";
+  attribute X_INTERFACE_PARAMETER of status : signal is "XIL_INTERFACENAME DATA.STATUS, LAYERED_METADATA undef, PortWidth 2";
 begin
   T1_1 <= T1;
   status(1 downto 0) <= xlconcat_1_dout(1 downto 0);
@@ -1768,6 +1768,15 @@ DEBUG: component TEST_axi_gpio_0_2
       s_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M02_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => ps7_0_axi_periph_M02_AXI_WVALID
     );
+ISERDES_B_0: component TEST_ISERDES_B_0_0
+     port map (
+      bitslip(0) => xlconstant_0_dout(0),
+      clk_div_in => clk_wiz_0_clk_out2,
+      clk_in => clk_wiz_0_clk_out1,
+      data_in_from_pins(0) => T1_1,
+      data_in_to_device(3 downto 0) => ISERDES_B_0_data_in_to_device(3 downto 0),
+      io_reset => util_vector_logic_0_Res(0)
+    );
 SDDR_ST_0: component TEST_SDDR_ST_0_0
      port map (
       CTIME(31 downto 0) => SDDR_ST_0_CTIME(31 downto 0),
@@ -1778,7 +1787,7 @@ SDDR_ST_0: component TEST_SDDR_ST_0_0
       DRDY => SDDR_ST_0_DRDY,
       MCLK => clk_wiz_0_clk_out2,
       RESETN => axi_gpio_0_gpio_io_o(0),
-      T1(3 downto 0) => selectio_wiz_0_data_in_to_device(3 downto 0),
+      T1(3 downto 0) => ISERDES_B_0_data_in_to_device(3 downto 0),
       armed => SDDR_ST_0_armed,
       waiting => SDDR_ST_0_waiting
     );
@@ -1995,15 +2004,6 @@ rst_ps7_0_100M: component TEST_rst_ps7_0_100M_0
       peripheral_aresetn(0) => rst_ps7_0_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
-    );
-selectio_wiz_0: component TEST_selectio_wiz_0_0
-     port map (
-      bitslip(0) => xlconstant_0_dout(0),
-      clk_div_in => clk_wiz_0_clk_out2,
-      clk_in => clk_wiz_0_clk_out1,
-      data_in_from_pins(0) => T1_1,
-      data_in_to_device(3 downto 0) => selectio_wiz_0_data_in_to_device(3 downto 0),
-      io_reset => util_vector_logic_0_Res(0)
     );
 util_vector_logic_0: component TEST_util_vector_logic_0_0
      port map (

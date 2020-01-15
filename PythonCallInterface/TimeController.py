@@ -114,10 +114,9 @@ class TimeController:
         self.logger.info("IRETime: "+str(time))
         return time
 
-    def run_coincidence_timer(self):
+    def run_coincidence_timer(self,lineselect):
         """
         Run the two channel pulse coincidence timer
-        TODO: Need to implement the ability to choose which line is the start trigger
         Returns
         -------
         :class:`float`
@@ -127,7 +126,7 @@ class TimeController:
             self.logger.error("Not connected")
             return 0
         self.logger.info("Running two channel coincidence timer")
-        self.websocket.sendall("CT".encode())
+        self.websocket.sendall(("CT"+str(int(lineselect))).encode())
         while 1:
             data = self.websocket.recv(1024).decode()
             if(data[:2]=="CT"):
@@ -205,14 +204,17 @@ class TimeController:
         data = "PG"+json.dumps(pgsettings)
         self.websocket.sendall(data.encode())
 
-    def set_input_delay(self,channel,tap,stage):
+    def set_input_delay(self,channel,tap0,tap1):
         """
         Set the input delays of each input (including T0/TRIG and ETRIG)
         Parameters
         ----------
-        channel
-        tap
-        stage
+        channel : :class:`int`
+            Channel to adjust delay of (0-5)
+        tap0 : :class:`int`
+            Delay line tap of first stage
+        tap1 : :class:`int`
+            Delay line tap of second stage
 
         Returns
         -------
@@ -222,10 +224,12 @@ class TimeController:
             self.logger.error("Not connected")
             return 0
 
-        delayconfig = "iDD"+json.dumps([channel,tap,stage])
+        delayconfig = "iDD"+json.dumps([channel,tap0,tap1])
         self.logger.info("Setting delay with config "+delayconfig)
         self.websocket.sendall(delayconfig.encode())
-
+    def restart(self):
+        self.logger.warning("RECONFIGURING PROGRAMMABLE LOGIC")
+        self.websocket.sendall("XX".encode(CounterMode.MANUAL_TRIGGER))
 
 class CounterMode(IntEnum):
     MANUAL_TRIGGER = 0
@@ -238,3 +242,8 @@ class SigGenMode(IntEnum):
     PULSE_WIDTH_MODE = 1
     ENABLED = 1
     DISABLED = 0
+
+class LineSelectMode(IntEnum):
+    L1FIRST = 0
+    L2FIRST = 1
+    DONTCARE = 2

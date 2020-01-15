@@ -1,7 +1,7 @@
 from TimeController import *
 from time import sleep
 TC = TimeController("169.254.0.2",6050)
-sleep(0.2)
+sleep(1)
 TC.set_signal_generator(0,SigGenMode.ENABLED,1000.0,SigGenMode.DUTY_CYCLE_MODE,0.5,0)
 sleep(0.2)
 TC.set_signal_generator(1,SigGenMode.ENABLED,1000.0,SigGenMode.DUTY_CYCLE_MODE,0.5,0.000000)
@@ -10,10 +10,16 @@ TC.set_signal_generator(2,SigGenMode.ENABLED,1000.0,SigGenMode.DUTY_CYCLE_MODE,0
 sleep(0.2)
 TC.set_signal_generator(3,SigGenMode.ENABLED,1000.0,SigGenMode.DUTY_CYCLE_MODE,0.5,0.00000001)
 sleep(0.5)
-TC.run_coincidence_timer()
-sleep(0.5)
-TC.run_iretimer()
-sleep(0.5)
-TC.set_signal_generator(1,SigGenMode.ENABLED,1000.0,SigGenMode.DUTY_CYCLE_MODE,0.5,0.000001)
-sleep(0.5)
-TC.run_time_tagger(0.5)
+# while(1):
+#     TC.restart()
+#     sleep(1)
+TC.run_pulse_counter(1.0,CounterMode.MANUAL_TRIGGER)
+# TC.run_coincidence_timer(LineSelectMode.L1FIRST)
+# sleep(0.5)
+while(1):
+    TC.run_iretimer()
+    sleep(0.5)
+# sleep(0.5)
+# TC.set_signal_generator(1,SigGenMode.ENABLED,1000.0,SigGenMode.DUTY_CYCLE_MODE,0.5,0.000001)
+# sleep(0.5)
+# TC.run_time_tagger(0.5)

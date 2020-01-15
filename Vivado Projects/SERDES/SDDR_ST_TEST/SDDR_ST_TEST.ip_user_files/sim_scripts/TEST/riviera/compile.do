@@ -151,8 +151,6 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_ST_TEST.srcs/sources_
 "../../../bd/TEST/ip/TEST_xlconcat_1_0/sim/TEST_xlconcat_1_0.v" \
 "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v" \
 "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
 
 vlog -work xlconstant_v1_1_6  -v2k5 "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
@@ -199,15 +197,14 @@ vcom -work proc_sys_reset_v5_0_13 -93 \
 vcom -work xil_defaultlib -93 \
 "../../../bd/TEST/ip/TEST_rst_ps7_0_100M_0/sim/TEST_rst_ps7_0_100M_0.vhd" \
 "../../../bd/TEST/ip/TEST_axi_gpio_0_2/sim/TEST_axi_gpio_0_2.vhd" \
+"../../../bd/TEST/sim/TEST.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_B_0_0/sim/TEST_ISERDES_B_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/TEST/ip/TEST_auto_pc_0/sim/TEST_auto_pc_0.v" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/TEST/sim/TEST.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

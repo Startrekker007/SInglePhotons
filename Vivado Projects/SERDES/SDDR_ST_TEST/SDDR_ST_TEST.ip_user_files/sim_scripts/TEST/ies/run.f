@@ -86,8 +86,6 @@
   "../../../bd/TEST/ip/TEST_xlconcat_1_0/sim/TEST_xlconcat_1_0.v" \
   "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v" \
   "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
-  "../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
 -endlib
 -makelib ies_lib/xlconstant_v1_1_6 \
   "../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
@@ -134,15 +132,14 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/TEST/ip/TEST_rst_ps7_0_100M_0/sim/TEST_rst_ps7_0_100M_0.vhd" \
   "../../../bd/TEST/ip/TEST_axi_gpio_0_2/sim/TEST_axi_gpio_0_2.vhd" \
+  "../../../bd/TEST/sim/TEST.vhd" \
+  "../../../bd/TEST/ip/TEST_ISERDES_B_0_0/sim/TEST_ISERDES_B_0_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/TEST/ip/TEST_auto_pc_0/sim/TEST_auto_pc_0.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/TEST/sim/TEST.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

@@ -12,20 +12,31 @@ source TEST_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'DIV_CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'HS_CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'DIV_CLK': ASSOCIATED_BUSIF bus parameter is missing.
+WARNING: [IP_Flow 19-3153] Bus Interface 'HS_CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 301.789 ; gain = 0.000
 Command: synth_design -top TEST_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22644 
+INFO: Helper process launched with PID 21596 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 749.535 ; gain = 178.688
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 753.629 ; gain = 179.355
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TEST_wrapper' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd:42]
 INFO: [Synth 8-3491] module 'TEST' declared at 'D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1306' bound to instance 'TEST_i' of component 'TEST' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd:71]
 INFO: [Synth 8-638] synthesizing module 'TEST' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1338]
-INFO: [Synth 8-3491] module 'TEST_axi_gpio_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_0/synth/TEST_axi_gpio_0_0.vhd:59' bound to instance 'DATA' of component 'TEST_axi_gpio_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1723]
+INFO: [Synth 8-3491] module 'TEST_axi_gpio_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_0/synth/TEST_axi_gpio_0_0.vhd:59' bound to instance 'DATA' of component 'TEST_axi_gpio_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1734]
 INFO: [Synth 8-638] synthesizing module 'TEST_axi_gpio_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_0/synth/TEST_axi_gpio_0_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -585,7 +596,7 @@ WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (6#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (7#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'TEST_axi_gpio_0_0' (8#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_0/synth/TEST_axi_gpio_0_0.vhd:85]
-INFO: [Synth 8-3491] module 'TEST_axi_gpio_0_2' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_2/synth/TEST_axi_gpio_0_2.vhd:59' bound to instance 'DEBUG' of component 'TEST_axi_gpio_0_2' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1747]
+INFO: [Synth 8-3491] module 'TEST_axi_gpio_0_2' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_2/synth/TEST_axi_gpio_0_2.vhd:59' bound to instance 'DEBUG' of component 'TEST_axi_gpio_0_2' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1758]
 INFO: [Synth 8-638] synthesizing module 'TEST_axi_gpio_0_2' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_2/synth/TEST_axi_gpio_0_2.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -680,7 +691,85 @@ WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (8#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (8#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
 INFO: [Synth 8-256] done synthesizing module 'TEST_axi_gpio_0_2' (9#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_2/synth/TEST_axi_gpio_0_2.vhd:85]
-INFO: [Synth 8-3491] module 'TEST_SDDR_ST_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/synth/TEST_SDDR_ST_0_0.vhd:56' bound to instance 'SDDR_ST_0' of component 'TEST_SDDR_ST_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1771]
+INFO: [Synth 8-3491] module 'TEST_ISERDES_B_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_B_0_0/synth/TEST_ISERDES_B_0_0.vhd:56' bound to instance 'ISERDES_B_0' of component 'TEST_ISERDES_B_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1782]
+INFO: [Synth 8-638] synthesizing module 'TEST_ISERDES_B_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_B_0_0/synth/TEST_ISERDES_B_0_0.vhd:67]
+	Parameter SYS_W bound to: 1 - type: integer 
+	Parameter DEV_W bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'ISERDES_B' declared at 'D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B.v:58' bound to instance 'U0' of component 'ISERDES_B' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_B_0_0/synth/TEST_ISERDES_B_0_0.vhd:97]
+INFO: [Synth 8-6157] synthesizing module 'ISERDES_B' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B.v:58]
+	Parameter SYS_W bound to: 1 - type: integer 
+	Parameter DEV_W bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ISERDES_B_selectio_wiz' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B_selectio_wiz.v:56]
+	Parameter SYS_W bound to: 1 - type: integer 
+	Parameter DEV_W bound to: 4 - type: integer 
+	Parameter num_serial_bits bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: LVCMOS33 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (10#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:38491]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 4 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter INIT_Q3 bound to: 1'b0 
+	Parameter INIT_Q4 bound to: 1'b0 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: BOTH - type: string 
+	Parameter IS_CLKB_INVERTED bound to: 1'b0 
+	Parameter IS_CLKDIVP_INVERTED bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_OCLKB_INVERTED bound to: 1'b0 
+	Parameter IS_OCLK_INVERTED bound to: 1'b0 
+	Parameter NUM_CE bound to: 2 - type: integer 
+	Parameter OFB_USED bound to: FALSE - type: string 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_Q1 bound to: 1'b0 
+	Parameter SRVAL_Q2 bound to: 1'b0 
+	Parameter SRVAL_Q3 bound to: 1'b0 
+	Parameter SRVAL_Q4 bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (11#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:38491]
+INFO: [Synth 8-6155] done synthesizing module 'ISERDES_B_selectio_wiz' (12#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B_selectio_wiz.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'ISERDES_B' (13#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/new/ISERDES_B.v:58]
+INFO: [Synth 8-256] done synthesizing module 'TEST_ISERDES_B_0_0' (14#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_B_0_0/synth/TEST_ISERDES_B_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'TEST_ISERDES_WRAPPER_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/synth/TEST_ISERDES_WRAPPER_0_0.vhd:56' bound to instance 'ISERDES_WRAPPER_0' of component 'TEST_ISERDES_WRAPPER_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1791]
+INFO: [Synth 8-638] synthesizing module 'TEST_ISERDES_WRAPPER_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/synth/TEST_ISERDES_WRAPPER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'ISERDES_WRAPPER' declared at 'D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/imports/new/ISERDES_WRAPPER.vhd:34' bound to instance 'U0' of component 'ISERDES_WRAPPER' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/synth/TEST_ISERDES_WRAPPER_0_0.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'ISERDES_WRAPPER' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/imports/new/ISERDES_WRAPPER.vhd:43]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 4 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter INIT_Q3 bound to: 1'b0 
+	Parameter INIT_Q4 bound to: 1'b0 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: BOTH - type: string 
+	Parameter IS_CLKB_INVERTED bound to: 1'b0 
+	Parameter IS_CLKDIVP_INVERTED bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_OCLKB_INVERTED bound to: 1'b0 
+	Parameter IS_OCLK_INVERTED bound to: 1'b0 
+	Parameter NUM_CE bound to: 2 - type: integer 
+	Parameter OFB_USED bound to: FALSE - type: string 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_Q1 bound to: 1'b0 
+	Parameter SRVAL_Q2 bound to: 1'b0 
+	Parameter SRVAL_Q3 bound to: 1'b0 
+	Parameter SRVAL_Q4 bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'ISERDES_WRAPPER' (15#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/imports/new/ISERDES_WRAPPER.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'TEST_ISERDES_WRAPPER_0_0' (16#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/synth/TEST_ISERDES_WRAPPER_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'TEST_SDDR_ST_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/synth/TEST_SDDR_ST_0_0.vhd:56' bound to instance 'SDDR_ST_0' of component 'TEST_SDDR_ST_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1800]
 INFO: [Synth 8-638] synthesizing module 'TEST_SDDR_ST_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/synth/TEST_SDDR_ST_0_0.vhd:72]
 	Parameter SIG_WIDTH bound to: 4 - type: integer 
 INFO: [Synth 8-3491] module 'SDDR_ST' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/09ce/src/SDDR_ST.vhd:34' bound to instance 'U0' of component 'SDDR_ST' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/synth/TEST_SDDR_ST_0_0.vhd:104]
@@ -711,12 +800,12 @@ INFO: [Synth 8-638] synthesizing module 'ST_TIMER' [d:/SInglePhotons/Vivado Proj
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 1 - type: integer 
 INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_13' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/src/ST_TIMER/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2147' bound to instance 'U0' of component 'c_counter_binary_v12_0_13' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/src/ST_TIMER/synth/ST_TIMER.vhd:124]
-INFO: [Synth 8-256] done synthesizing module 'ST_TIMER' (17#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/src/ST_TIMER/synth/ST_TIMER.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'ST_TIMER' (24#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/src/ST_TIMER/synth/ST_TIMER.vhd:67]
 WARNING: [Synth 8-6014] Unused sequential element p2T1_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/09ce/src/SDDR_ST.vhd:172]
 WARNING: [Synth 8-6014] Unused sequential element l2T1_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/09ce/src/SDDR_ST.vhd:173]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_ST' (18#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/09ce/src/SDDR_ST.vhd:51]
-INFO: [Synth 8-256] done synthesizing module 'TEST_SDDR_ST_0_0' (19#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/synth/TEST_SDDR_ST_0_0.vhd:72]
-INFO: [Synth 8-3491] module 'TEST_axi_gpio_0_1' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/synth/TEST_axi_gpio_0_1.vhd:59' bound to instance 'UTIL' of component 'TEST_axi_gpio_0_1' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1785]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_ST' (25#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/09ce/src/SDDR_ST.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'TEST_SDDR_ST_0_0' (26#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_ST_0_0/synth/TEST_SDDR_ST_0_0.vhd:72]
+INFO: [Synth 8-3491] module 'TEST_axi_gpio_0_1' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/synth/TEST_axi_gpio_0_1.vhd:59' bound to instance 'UTIL' of component 'TEST_axi_gpio_0_1' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1814]
 INFO: [Synth 8-638] synthesizing module 'TEST_axi_gpio_0_1' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/synth/TEST_axi_gpio_0_1.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -781,23 +870,23 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized2' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized2' (19#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized2' (26#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:690]
 WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].GPIO2_DBus_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:719]
 WARNING: [Synth 8-6014] Unused sequential element Dual.gpio_Data_In_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:882]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized1' (19#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized3' (19#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'TEST_axi_gpio_0_1' (20#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/synth/TEST_axi_gpio_0_1.vhd:85]
-INFO: [Synth 8-3491] module 'TEST_clk_wiz_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v:71' bound to instance 'clk_wiz_0' of component 'TEST_clk_wiz_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1809]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized1' (26#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized3' (26#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'TEST_axi_gpio_0_1' (27#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/synth/TEST_axi_gpio_0_1.vhd:85]
+INFO: [Synth 8-3491] module 'TEST_clk_wiz_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v:71' bound to instance 'clk_wiz_0' of component 'TEST_clk_wiz_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1838]
 INFO: [Synth 8-6157] synthesizing module 'TEST_clk_wiz_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v:71]
 INFO: [Synth 8-6157] synthesizing module 'TEST_clk_wiz_0_0_clk_wiz' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v:69]
-INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6157] synthesizing module 'IBUF__parameterized0' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUF' (21#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF__parameterized0' (27#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
 	Parameter BANDWIDTH bound to: HIGH - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: float 
@@ -847,12 +936,12 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/s
 	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
 	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (22#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (28#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (23#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_clk_wiz_0_0_clk_wiz' (24#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_clk_wiz_0_0' (25#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v:71]
-INFO: [Synth 8-3491] module 'TEST_processing_system7_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/synth/TEST_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'TEST_processing_system7_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1816]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (29#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_clk_wiz_0_0_clk_wiz' (30#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_clk_wiz_0_0' (31#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v:71]
+INFO: [Synth 8-3491] module 'TEST_processing_system7_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/synth/TEST_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'TEST_processing_system7_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1845]
 INFO: [Synth 8-6157] synthesizing module 'TEST_processing_system7_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/synth/TEST_processing_system7_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
@@ -914,19 +1003,19 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
-INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (26#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (32#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'PS7' (27#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (28#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (33#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (34#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/synth/TEST_processing_system7_0_0.v:323]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_processing_system7_0_0' (29#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/synth/TEST_processing_system7_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_processing_system7_0_0' (35#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/synth/TEST_processing_system7_0_0.v:60]
 INFO: [Synth 8-638] synthesizing module 'TEST_ps7_0_axi_periph_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:737]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_8CT0AT' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:57]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_8CT0AT' (30#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_8CT0AT' (36#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:57]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_10D92UR' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:158]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_10D92UR' (31#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_10D92UR' (37#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:158]
 INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_1YVMTM0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:259]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1YVMTM0' (32#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:259]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1YVMTM0' (38#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:259]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1O4RLRK' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:383]
 INFO: [Synth 8-3491] module 'TEST_auto_pc_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/synth/TEST_auto_pc_0.v:58' bound to instance 'auto_pc' of component 'TEST_auto_pc_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:566]
 INFO: [Synth 8-6157] synthesizing module 'TEST_auto_pc_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/synth/TEST_auto_pc_0.v:58]
@@ -974,20 +1063,20 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' (33#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' (39#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' (34#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd_translator' (35#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' (40#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd_translator' (41#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE_WAIT bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' (36#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_aw_channel' (37#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' (42#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_aw_channel' (43#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter LP_RESP_OKAY bound to: 2'b00 
@@ -1008,7 +1097,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo' (38#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo' (44#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 2 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
@@ -1017,8 +1106,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' (38#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' (39#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' (44#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' (45#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -1030,8 +1119,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
 WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
 WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm' (40#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' (41#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' (47#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
@@ -1049,7 +1138,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1' (41#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1' (47#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 13 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
@@ -1058,8 +1147,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' (41#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' (42#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' (47#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' (48#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -1175,22 +1264,22 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_regist
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice' (43#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice' (49#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' (43#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' (49#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' (43#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' (49#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' (43#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' (49#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -1283,7 +1372,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (44#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (50#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -1376,8 +1465,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (45#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (51#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
@@ -1494,22 +1583,22 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_regist
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -1602,7 +1691,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -1695,13 +1784,13 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' (46#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s' (47#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (48#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_auto_pc_0' (49#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/synth/TEST_auto_pc_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1O4RLRK' (50#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:383]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s' (53#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (54#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_auto_pc_0' (55#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/synth/TEST_auto_pc_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1O4RLRK' (56#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:383]
 INFO: [Synth 8-3491] module 'TEST_xbar_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xbar_0/synth/TEST_xbar_0.v:59' bound to instance 'xbar' of component 'TEST_xbar_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1224]
 INFO: [Synth 8-6157] synthesizing module 'TEST_xbar_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xbar_0/synth/TEST_xbar_0.v:59]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
@@ -1829,8 +1918,8 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_s
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_carry_and' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
 	Parameter C_FAMILY bound to: rtl - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (51#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (57#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (58#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_VALUE bound to: 30'b010000010010000100000000000000 
@@ -1838,7 +1927,7 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_s
 	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (58#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_VALUE bound to: 30'b010000010010001000000000000000 
@@ -1846,8 +1935,8 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_s
 	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' (52#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_decoder' (53#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' (58#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_decoder' (59#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -1863,7 +1952,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' [d:
 	Parameter P_AXI4 bound to: 0 - type: integer 
 	Parameter P_AXI3 bound to: 1 - type: integer 
 	Parameter P_AXILITE bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' (54#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_decerr_slave' (60#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_NUM_S bound to: 1 - type: integer 
@@ -1872,51 +1961,51 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd
 	Parameter C_GRANT_ENC bound to: 1 - type: integer 
 	Parameter C_ARB_PRIORITY bound to: 0 - type: integer 
 	Parameter P_PRIO_MASK bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd' (55#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_addr_arbiter_sasd' (61#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_splitter' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 	Parameter C_NUM_M bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter' (56#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter' (62#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_splitter__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 	Parameter C_NUM_M bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter__parameterized0' (56#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_splitter__parameterized0' (62#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (57#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (63#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 1 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 1 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (57#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (63#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (57#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (63#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized7' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized7' (57#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized7' (63#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (57#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (63#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_aw_trans_seq_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2056]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_ar_trans_seq_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2067]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_w_beat_cnt_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2078]
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_r_beat_cnt_i_reg was removed.  [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:2091]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' (58#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' (59#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_xbar_0' (60#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xbar_0/synth/TEST_xbar_0.v:59]
-INFO: [Synth 8-256] done synthesizing module 'TEST_ps7_0_axi_periph_0' (61#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:737]
-INFO: [Synth 8-3491] module 'TEST_rst_ps7_0_100M_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/synth/TEST_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'TEST_rst_ps7_0_100M_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1986]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' (64#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' (65#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_xbar_0' (66#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xbar_0/synth/TEST_xbar_0.v:59]
+INFO: [Synth 8-256] done synthesizing module 'TEST_ps7_0_axi_periph_0' (67#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:737]
+INFO: [Synth 8-3491] module 'TEST_rst_ps7_0_100M_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/synth/TEST_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'TEST_rst_ps7_0_100M_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2015]
 INFO: [Synth 8-638] synthesizing module 'TEST_rst_ps7_0_100M_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/synth/TEST_rst_ps7_0_100M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -1966,7 +2055,7 @@ INFO: [Synth 8-638] synthesizing module 'lpf' [d:/SInglePhotons/Vivado Projects/
 INFO: [Synth 8-3491] module 'SRL16' declared at 'C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684' bound to instance 'POR_SRL_I' of component 'SRL16' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
 INFO: [Synth 8-6157] synthesizing module 'SRL16' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684]
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'SRL16' (62#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (68#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77684]
 INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized3' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
@@ -1980,66 +2069,23 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized3' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized3' (62#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'lpf' (63#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized3' (68#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (69#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
 INFO: [Synth 8-638] synthesizing module 'sequence_psr' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
 INFO: [Synth 8-638] synthesizing module 'upcnt_n' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
 	Parameter C_SIZE bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (64#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
-INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (65#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
-INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (66#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
-INFO: [Synth 8-256] done synthesizing module 'TEST_rst_ps7_0_100M_0' (67#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/synth/TEST_rst_ps7_0_100M_0.vhd:74]
-INFO: [Synth 8-3491] module 'TEST_selectio_wiz_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v:58' bound to instance 'selectio_wiz_0' of component 'TEST_selectio_wiz_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1999]
-INFO: [Synth 8-6157] synthesizing module 'TEST_selectio_wiz_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v:58]
-	Parameter SYS_W bound to: 1 - type: integer 
-	Parameter DEV_W bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'TEST_selectio_wiz_0_0_selectio_wiz' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v:56]
-	Parameter SYS_W bound to: 1 - type: integer 
-	Parameter DEV_W bound to: 4 - type: integer 
-	Parameter num_serial_bits bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'IBUF__parameterized0' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
-	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
-	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
-	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
-	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
-	Parameter IOSTANDARD bound to: LVCMOS33 - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUF__parameterized0' (67#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
-INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:38491]
-	Parameter DATA_RATE bound to: DDR - type: string 
-	Parameter DATA_WIDTH bound to: 4 - type: integer 
-	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
-	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
-	Parameter INIT_Q1 bound to: 1'b0 
-	Parameter INIT_Q2 bound to: 1'b0 
-	Parameter INIT_Q3 bound to: 1'b0 
-	Parameter INIT_Q4 bound to: 1'b0 
-	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
-	Parameter IOBDELAY bound to: NONE - type: string 
-	Parameter IS_CLKB_INVERTED bound to: 1'b0 
-	Parameter IS_CLKDIVP_INVERTED bound to: 1'b0 
-	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
-	Parameter IS_CLK_INVERTED bound to: 1'b0 
-	Parameter IS_D_INVERTED bound to: 1'b0 
-	Parameter IS_OCLKB_INVERTED bound to: 1'b0 
-	Parameter IS_OCLK_INVERTED bound to: 1'b0 
-	Parameter NUM_CE bound to: 2 - type: integer 
-	Parameter OFB_USED bound to: FALSE - type: string 
-	Parameter SERDES_MODE bound to: MASTER - type: string 
-	Parameter SRVAL_Q1 bound to: 1'b0 
-	Parameter SRVAL_Q2 bound to: 1'b0 
-	Parameter SRVAL_Q3 bound to: 1'b0 
-	Parameter SRVAL_Q4 bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (68#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:38491]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_selectio_wiz_0_0_selectio_wiz' (69#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_selectio_wiz_0_0' (70#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v:58]
-INFO: [Synth 8-3491] module 'TEST_util_vector_logic_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_util_vector_logic_0_0/synth/TEST_util_vector_logic_0_0.v:57' bound to instance 'util_vector_logic_0' of component 'TEST_util_vector_logic_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2008]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (70#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (71#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (72#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'TEST_rst_ps7_0_100M_0' (73#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/synth/TEST_rst_ps7_0_100M_0.vhd:74]
+INFO: [Synth 8-3491] module 'TEST_util_vector_logic_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_util_vector_logic_0_0/synth/TEST_util_vector_logic_0_0.v:57' bound to instance 'util_vector_logic_0' of component 'TEST_util_vector_logic_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2028]
 INFO: [Synth 8-6157] synthesizing module 'TEST_util_vector_logic_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_util_vector_logic_0_0/synth/TEST_util_vector_logic_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
 	Parameter C_OPERATION bound to: not - type: string 
 	Parameter C_SIZE bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (71#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_util_vector_logic_0_0' (72#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_util_vector_logic_0_0/synth/TEST_util_vector_logic_0_0.v:57]
-INFO: [Synth 8-3491] module 'TEST_xlconcat_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_0_0/synth/TEST_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'TEST_xlconcat_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2013]
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (74#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_util_vector_logic_0_0' (75#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_util_vector_logic_0_0/synth/TEST_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-3491] module 'TEST_xlconcat_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_0_0/synth/TEST_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'TEST_xlconcat_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2033]
 INFO: [Synth 8-6157] synthesizing module 'TEST_xlconcat_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_0_0/synth/TEST_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 8 - type: integer 
@@ -2076,9 +2122,9 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [d:/SInglePh
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 16 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (73#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_xlconcat_0_0' (74#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_0_0/synth/TEST_xlconcat_0_0.v:58]
-INFO: [Synth 8-3491] module 'TEST_xlconcat_1_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_1_0/synth/TEST_xlconcat_1_0.v:58' bound to instance 'xlconcat_1' of component 'TEST_xlconcat_1_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2019]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (76#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_xlconcat_0_0' (77#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_0_0/synth/TEST_xlconcat_0_0.v:58]
+INFO: [Synth 8-3491] module 'TEST_xlconcat_1_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_1_0/synth/TEST_xlconcat_1_0.v:58' bound to instance 'xlconcat_1' of component 'TEST_xlconcat_1_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2039]
 INFO: [Synth 8-6157] synthesizing module 'TEST_xlconcat_1_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_1_0/synth/TEST_xlconcat_1_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -2115,17 +2161,17 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 2 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (74#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_xlconcat_1_0' (75#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_1_0/synth/TEST_xlconcat_1_0.v:58]
-INFO: [Synth 8-3491] module 'TEST_xlconstant_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconstant_0_0/synth/TEST_xlconstant_0_0.v:57' bound to instance 'xlconstant_0' of component 'TEST_xlconstant_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2025]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (77#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_xlconcat_1_0' (78#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconcat_1_0/synth/TEST_xlconcat_1_0.v:58]
+INFO: [Synth 8-3491] module 'TEST_xlconstant_0_0' declared at 'd:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconstant_0_0/synth/TEST_xlconstant_0_0.v:57' bound to instance 'xlconstant_0' of component 'TEST_xlconstant_0_0' [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:2045]
 INFO: [Synth 8-6157] synthesizing module 'TEST_xlconstant_0_0' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconstant_0_0/synth/TEST_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 0 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (76#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'TEST_xlconstant_0_0' (77#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconstant_0_0/synth/TEST_xlconstant_0_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'TEST' (78#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1338]
-INFO: [Synth 8-256] done synthesizing module 'TEST_wrapper' (79#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd:42]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (79#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'TEST_xlconstant_0_0' (80#1) [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_xlconstant_0_0/synth/TEST_xlconstant_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'TEST' (81#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd:1338]
+INFO: [Synth 8-256] done synthesizing module 'TEST_wrapper' (82#1) [D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd:42]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In2[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In3[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In4[0]
@@ -2228,7 +2274,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_axi_crossbar has unconnected port s_axi_awsize[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 937.676 ; gain = 366.828
+Finished RTL Elaboration : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 942.047 ; gain = 367.773
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2241,12 +2287,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 955.203 ; gain = 384.355
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 959.852 ; gain = 385.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 955.203 ; gain = 384.355
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 959.852 ; gain = 385.578
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 426 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 427 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -2266,8 +2312,6 @@ Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_T
 Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc] for cell 'TEST_i/clk_wiz_0/inst'
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TEST_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TEST_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.xdc] for cell 'TEST_i/selectio_wiz_0/inst'
-Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.xdc] for cell 'TEST_i/selectio_wiz_0/inst'
 Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1_board.xdc] for cell 'TEST_i/UTIL/U0'
 Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1_board.xdc] for cell 'TEST_i/UTIL/U0'
 Parsing XDC File [d:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1.xdc] for cell 'TEST_i/UTIL/U0'
@@ -2291,33 +2335,32 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TEST_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1064.293 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1068.934 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 361 instances were transformed.
   FDR => FDRE: 360 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1064.293 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1068.934 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1064.293 ; gain = 493.445
+Finished Constraint Validation : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1068.934 ; gain = 494.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1064.293 ; gain = 493.445
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1068.934 ; gain = 494.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for TEST_i/processing_system7_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 58).
-Applied set_property DONT_TOUCH = true for TEST_i/DATA/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 61).
-Applied set_property DONT_TOUCH = true for TEST_i/clk_wiz_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 69).
-Applied set_property DONT_TOUCH = true for TEST_i/selectio_wiz_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 79).
-Applied set_property DONT_TOUCH = true for TEST_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 82).
-Applied set_property DONT_TOUCH = true for TEST_i/rst_ps7_0_100M/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 90).
-Applied set_property DONT_TOUCH = true for TEST_i/DEBUG/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 96).
+Applied set_property DONT_TOUCH = true for TEST_i/processing_system7_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 61).
+Applied set_property DONT_TOUCH = true for TEST_i/DATA/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 64).
+Applied set_property DONT_TOUCH = true for TEST_i/clk_wiz_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 72).
+Applied set_property DONT_TOUCH = true for TEST_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 80).
+Applied set_property DONT_TOUCH = true for TEST_i/rst_ps7_0_100M/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 88).
+Applied set_property DONT_TOUCH = true for TEST_i/DEBUG/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/dont_touch.xdc}, line 94).
 Applied set_property DONT_TOUCH = true for TEST_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/processing_system7_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/SDDR_ST_0. (constraint file  auto generated constraint, line ).
@@ -2326,7 +2369,6 @@ Applied set_property DONT_TOUCH = true for TEST_i/DATA. (constraint file  auto g
 Applied set_property DONT_TOUCH = true for TEST_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/xlconcat_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for TEST_i/selectio_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/UTIL. (constraint file  auto generated constraint, line ).
@@ -2334,9 +2376,11 @@ Applied set_property DONT_TOUCH = true for TEST_i/ps7_0_axi_periph/xbar. (constr
 Applied set_property DONT_TOUCH = true for TEST_i/ps7_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/rst_ps7_0_100M. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/DEBUG. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for TEST_i/ISERDES_WRAPPER_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for TEST_i/ISERDES_B_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for TEST_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1064.293 ; gain = 493.445
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1068.934 ; gain = 494.660
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
@@ -2363,7 +2407,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1064.293 ; gain = 493.445
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1068.934 ; gain = 494.660
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2620,7 +2664,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (TEST_i/UT
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (TEST_i/UTIL/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (TEST_i/UTIL/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1064.293 ; gain = 493.445
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1068.934 ; gain = 494.660
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2634,13 +2678,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'TEST_i/clk_wiz_0/inst/clk_in1' to pin 'TEST_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 1119.738 ; gain = 548.891
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 1124.211 ; gain = 549.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1152.922 ; gain = 582.074
+Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1157.363 ; gain = 583.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2652,7 +2696,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 1161.594 ; gain = 590.746
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 1164.598 ; gain = 590.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2676,116 +2720,17 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
+ERROR: [Synth 8-5535] port <T1> has illegal connections. It is illegal to have a port connected to an input buffer and other components. The following are the port connections :
+Input Buffer:
+	Port I of instance \U0/inst/pins[0].ibuf_inst (IBUF) in module <TEST_ISERDES_B_0_0>
+Other Components:
+	Port DDLY of instance \U0/ISERDESE2_inst (ISERDESE2) in module TEST_ISERDES_WRAPPER_0_0
 
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+-----------+------+
-|      |Cell       |Count |
-+------+-----------+------+
-|1     |BIBUF      |   130|
-|2     |BUFG       |     4|
-|3     |CARRY4     |    18|
-|4     |ISERDESE2  |     1|
-|5     |LUT1       |   153|
-|6     |LUT2       |    70|
-|7     |LUT3       |   323|
-|8     |LUT4       |   145|
-|9     |LUT5       |   201|
-|10    |LUT6       |   212|
-|11    |MMCME2_ADV |     1|
-|12    |MUXCY      |    31|
-|13    |PS7        |     1|
-|14    |SRL16      |     1|
-|15    |SRL16E     |    18|
-|16    |SRLC32E    |    47|
-|17    |XORCY      |    32|
-|18    |FDR        |   236|
-|19    |FDRE       |  1176|
-|20    |FDSE       |    90|
-|21    |IBUF       |     2|
-|22    |OBUF       |     2|
-+------+-----------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1164.391 ; gain = 593.543
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 232 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:01:06 . Memory (MB): peak = 1164.391 ; gain = 484.453
-Synthesis Optimization Complete : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 1164.391 ; gain = 593.543
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 320 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TEST_i/clk_wiz_0/inst/clkin1_ibufg 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1183.391 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 245 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 8 instances
-  FDR => FDRE: 236 instances
-  SRL16 => SRL16E: 1 instances
-
+ERROR: [Synth 8-2918] Failing due to illegal port connections
+ERROR: synthesis optimization failed, fatal insert_io failure.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:01:06 . Memory (MB): peak = 1168.391 ; gain = 485.035
 INFO: [Common 17-83] Releasing license: Synthesis
-598 Infos, 171 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 1183.391 ; gain = 881.883
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1183.391 ; gain = 0.000
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/TEST_wrapper.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file TEST_wrapper_utilization_synth.rpt -pb TEST_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 14 15:50:33 2020...
+609 Infos, 174 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 15 16:45:26 2020...

@@ -7,12 +7,6 @@ vlib modelsim_lib/msim/util_vector_logic_v2_0_1
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 vmap util_vector_logic_v2_0_1 modelsim_lib/msim/util_vector_logic_v2_0_1
 
-vlog -work xil_defaultlib -64 -incr \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.v" \
-
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/TEST/ip/TEST_SDDR_CT_0_0/sim/TEST_SDDR_CT_0_0.vhd" \
 
@@ -24,6 +18,8 @@ vlog -work xil_defaultlib -64 -incr \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/TEST/sim/TEST.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/sim/TEST_ISERDES_WRAPPER_0_0.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_1/sim/TEST_ISERDES_WRAPPER_0_1.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

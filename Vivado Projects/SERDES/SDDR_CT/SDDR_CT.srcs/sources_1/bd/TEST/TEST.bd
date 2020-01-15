@@ -9,10 +9,10 @@
       "validated": "true"
     },
     "design_tree": {
-      "selectio_wiz_0": "",
-      "selectio_wiz_1": "",
       "util_vector_logic_0": "",
-      "SDDR_CT_0": ""
+      "SDDR_CT_0": "",
+      "ISERDES_WRAPPER_0": "",
+      "ISERDES_WRAPPER_1": ""
     },
     "ports": {
       "T1": {
@@ -112,66 +112,6 @@
       }
     },
     "components": {
-      "selectio_wiz_0": {
-        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
-        "xci_name": "TEST_selectio_wiz_0_0",
-        "parameters": {
-          "BUS_IO_STD": {
-            "value": "LVCMOS33"
-          },
-          "CLK_FWD_IO_STD": {
-            "value": "LVCMOS33"
-          },
-          "SELIO_ACTIVE_EDGE": {
-            "value": "DDR"
-          },
-          "SELIO_CLK_BUF": {
-            "value": "MMCM"
-          },
-          "SELIO_CLK_IO_STD": {
-            "value": "LVCMOS33"
-          },
-          "SELIO_INTERFACE_TYPE": {
-            "value": "NETWORKING"
-          },
-          "SERIALIZATION_FACTOR": {
-            "value": "4"
-          },
-          "USE_SERIALIZATION": {
-            "value": "true"
-          }
-        }
-      },
-      "selectio_wiz_1": {
-        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
-        "xci_name": "TEST_selectio_wiz_0_1",
-        "parameters": {
-          "BUS_IO_STD": {
-            "value": "LVCMOS33"
-          },
-          "CLK_FWD_IO_STD": {
-            "value": "LVCMOS33"
-          },
-          "SELIO_ACTIVE_EDGE": {
-            "value": "DDR"
-          },
-          "SELIO_CLK_BUF": {
-            "value": "MMCM"
-          },
-          "SELIO_CLK_IO_STD": {
-            "value": "LVCMOS33"
-          },
-          "SELIO_INTERFACE_TYPE": {
-            "value": "NETWORKING"
-          },
-          "SERIALIZATION_FACTOR": {
-            "value": "4"
-          },
-          "USE_SERIALIZATION": {
-            "value": "true"
-          }
-        }
-      },
       "util_vector_logic_0": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
         "xci_name": "TEST_util_vector_logic_0_0",
@@ -252,29 +192,135 @@
           "T1": {
             "direction": "I",
             "left": "3",
-            "right": "0",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": "undef",
-                "value_src": "default_prop"
-              }
-            }
+            "right": "0"
           },
           "T2": {
             "direction": "I",
             "left": "3",
-            "right": "0",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": "undef",
-                "value_src": "default_prop"
-              }
-            }
+            "right": "0"
           },
           "FSEL": {
             "direction": "I"
           },
           "BIDIR": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_WRAPPER_0": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
+        "xci_name": "TEST_ISERDES_WRAPPER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DIV_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BITSLIP": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_WRAPPER_1": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
+        "xci_name": "TEST_ISERDES_WRAPPER_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DIV_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BITSLIP": {
             "direction": "I"
           }
         }
@@ -284,28 +330,28 @@
       "T1_1": {
         "ports": [
           "T1",
-          "selectio_wiz_0/data_in_from_pins"
+          "ISERDES_WRAPPER_0/DATA_IN"
         ]
       },
       "T2_1": {
         "ports": [
           "T2",
-          "selectio_wiz_1/data_in_from_pins"
+          "ISERDES_WRAPPER_1/DATA_IN"
         ]
       },
       "HS_CLK_1": {
         "ports": [
           "HS_CLK",
-          "selectio_wiz_0/clk_in",
-          "selectio_wiz_1/clk_in"
+          "ISERDES_WRAPPER_0/HS_CLK",
+          "ISERDES_WRAPPER_1/HS_CLK"
         ]
       },
       "MCLK_1": {
         "ports": [
           "MCLK",
-          "selectio_wiz_1/clk_div_in",
-          "selectio_wiz_0/clk_div_in",
-          "SDDR_CT_0/MCLK"
+          "SDDR_CT_0/MCLK",
+          "ISERDES_WRAPPER_0/DIV_CLK",
+          "ISERDES_WRAPPER_1/DIV_CLK"
         ]
       },
       "RESETN_1": {
@@ -318,15 +364,15 @@
       "util_vector_logic_0_Res": {
         "ports": [
           "util_vector_logic_0/Res",
-          "selectio_wiz_1/io_reset",
-          "selectio_wiz_0/io_reset"
+          "ISERDES_WRAPPER_0/RESET",
+          "ISERDES_WRAPPER_1/RESET"
         ]
       },
       "bitslip_1": {
         "ports": [
           "bitslip",
-          "selectio_wiz_1/bitslip",
-          "selectio_wiz_0/bitslip"
+          "ISERDES_WRAPPER_0/BITSLIP",
+          "ISERDES_WRAPPER_1/BITSLIP"
         ]
       },
       "SDDR_CT_0_D0": {
@@ -365,12 +411,6 @@
           "SDDR_CT_0/FSEL"
         ]
       },
-      "selectio_wiz_1_data_in_to_device": {
-        "ports": [
-          "selectio_wiz_1/data_in_to_device",
-          "SDDR_CT_0/T2"
-        ]
-      },
       "SDDR_CT_0_ARMED": {
         "ports": [
           "SDDR_CT_0/ARMED",
@@ -383,10 +423,16 @@
           "DRDY"
         ]
       },
-      "selectio_wiz_0_data_in_to_device": {
+      "ISERDES_WRAPPER_0_DATA_OUT": {
         "ports": [
-          "selectio_wiz_0/data_in_to_device",
+          "ISERDES_WRAPPER_0/DATA_OUT",
           "SDDR_CT_0/T1"
+        ]
+      },
+      "ISERDES_WRAPPER_1_DATA_OUT": {
+        "ports": [
+          "ISERDES_WRAPPER_1/DATA_OUT",
+          "SDDR_CT_0/T2"
         ]
       }
     }

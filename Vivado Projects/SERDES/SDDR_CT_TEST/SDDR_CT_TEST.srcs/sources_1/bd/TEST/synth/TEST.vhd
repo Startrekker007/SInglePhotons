@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Jan 14 11:45:14 2020
+--Date        : Wed Jan 15 15:47:57 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target TEST.bd
 --Design      : TEST
@@ -1103,7 +1103,7 @@ entity TEST is
     WAITING : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of TEST : entity is "TEST,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TEST,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=16,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of TEST : entity is "TEST,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=TEST,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=16,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of TEST : entity is "TEST.hwdef";
 end TEST;
@@ -1253,26 +1253,6 @@ architecture STRUCTURE of TEST is
     Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component TEST_xlslice_1_0;
-  component TEST_selectio_wiz_0_0 is
-  port (
-    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
-    clk_in : in STD_LOGIC;
-    clk_div_in : in STD_LOGIC;
-    io_reset : in STD_LOGIC;
-    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
-    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component TEST_selectio_wiz_0_0;
-  component TEST_selectio_wiz_0_1 is
-  port (
-    data_in_from_pins : in STD_LOGIC_VECTOR ( 0 to 0 );
-    clk_in : in STD_LOGIC;
-    clk_div_in : in STD_LOGIC;
-    io_reset : in STD_LOGIC;
-    bitslip : in STD_LOGIC_VECTOR ( 0 to 0 );
-    data_in_to_device : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component TEST_selectio_wiz_0_1;
   component TEST_clk_wiz_0_0 is
   port (
     resetn : in STD_LOGIC;
@@ -1322,6 +1302,28 @@ architecture STRUCTURE of TEST is
     BIDIR : in STD_LOGIC
   );
   end component TEST_SDDR_CT_0_0;
+  component TEST_ISERDES_WRAPPER_0_0 is
+  port (
+    HS_CLK : in STD_LOGIC;
+    DIV_CLK : in STD_LOGIC;
+    DATA_IN : in STD_LOGIC;
+    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    BITSLIP : in STD_LOGIC;
+    RESET : in STD_LOGIC
+  );
+  end component TEST_ISERDES_WRAPPER_0_0;
+  component TEST_ISERDES_WRAPPER_1_0 is
+  port (
+    HS_CLK : in STD_LOGIC;
+    DIV_CLK : in STD_LOGIC;
+    DATA_IN : in STD_LOGIC;
+    DATA_OUT : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    BITSLIP : in STD_LOGIC;
+    RESET : in STD_LOGIC
+  );
+  end component TEST_ISERDES_WRAPPER_1_0;
+  signal ISERDES_WRAPPER_0_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal ISERDES_WRAPPER_2_DATA_OUT : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Net : STD_LOGIC;
   signal SDDR_CT_0_ARMED : STD_LOGIC;
   signal SDDR_CT_0_CTIME : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1429,8 +1431,6 @@ architecture STRUCTURE of TEST is
   signal ps7_0_axi_periph_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal selectio_wiz_0_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal selectio_wiz_1_data_in_to_device : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1501,6 +1501,24 @@ DATA: component TEST_axi_gpio_0_0
       s_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M00_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => ps7_0_axi_periph_M00_AXI_WVALID(0)
     );
+ISERDES_WRAPPER_1: component TEST_ISERDES_WRAPPER_0_0
+     port map (
+      BITSLIP => xlconstant_0_dout(0),
+      DATA_IN => T2_1,
+      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_0_DATA_OUT(3 downto 0),
+      DIV_CLK => clk_wiz_0_clk_out2,
+      HS_CLK => clk_wiz_0_clk_out1,
+      RESET => util_vector_logic_0_Res(0)
+    );
+ISERDES_WRAPPER_2: component TEST_ISERDES_WRAPPER_1_0
+     port map (
+      BITSLIP => xlconstant_0_dout(0),
+      DATA_IN => T1_1,
+      DATA_OUT(3 downto 0) => ISERDES_WRAPPER_2_DATA_OUT(3 downto 0),
+      DIV_CLK => clk_wiz_0_clk_out2,
+      HS_CLK => clk_wiz_0_clk_out1,
+      RESET => util_vector_logic_0_Res(0)
+    );
 SDDR_CT_0: component TEST_SDDR_CT_0_0
      port map (
       ARMED => SDDR_CT_0_ARMED,
@@ -1512,8 +1530,8 @@ SDDR_CT_0: component TEST_SDDR_CT_0_0
       FSEL => xlslice_1_Dout(0),
       MCLK => clk_wiz_0_clk_out2,
       RESETN => xlslice_0_Dout(0),
-      T1(3 downto 0) => selectio_wiz_0_data_in_to_device(3 downto 0),
-      T2(3 downto 0) => selectio_wiz_1_data_in_to_device(3 downto 0),
+      T1(3 downto 0) => ISERDES_WRAPPER_2_DATA_OUT(3 downto 0),
+      T2(3 downto 0) => ISERDES_WRAPPER_0_DATA_OUT(3 downto 0),
       WAITING => SDDR_CT_0_WAITING
     );
 UTIL: component TEST_axi_gpio_0_1
@@ -1710,24 +1728,6 @@ rst_ps7_0_100M: component TEST_rst_ps7_0_100M_0
       peripheral_aresetn(0) => rst_ps7_0_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
-    );
-selectio_wiz_0: component TEST_selectio_wiz_0_0
-     port map (
-      bitslip(0) => xlconstant_0_dout(0),
-      clk_div_in => clk_wiz_0_clk_out2,
-      clk_in => clk_wiz_0_clk_out1,
-      data_in_from_pins(0) => T1_1,
-      data_in_to_device(3 downto 0) => selectio_wiz_0_data_in_to_device(3 downto 0),
-      io_reset => util_vector_logic_0_Res(0)
-    );
-selectio_wiz_1: component TEST_selectio_wiz_0_1
-     port map (
-      bitslip(0) => xlconstant_0_dout(0),
-      clk_div_in => clk_wiz_0_clk_out2,
-      clk_in => clk_wiz_0_clk_out1,
-      data_in_from_pins(0) => T2_1,
-      data_in_to_device(3 downto 0) => selectio_wiz_1_data_in_to_device(3 downto 0),
-      io_reset => util_vector_logic_0_Res(0)
     );
 util_vector_logic_0: component TEST_util_vector_logic_0_0
      port map (

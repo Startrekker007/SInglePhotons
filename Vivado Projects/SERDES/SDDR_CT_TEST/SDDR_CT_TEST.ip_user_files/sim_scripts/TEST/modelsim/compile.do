@@ -161,10 +161,6 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../../SDDR_CT_TEST.srcs/sourc
 "../../../bd/TEST/ip/TEST_xlslice_0_0/sim/TEST_xlslice_0_0.v" \
 "../../../bd/TEST/ip/TEST_xlslice_0_1/sim/TEST_xlslice_0_1.v" \
 "../../../bd/TEST/ip/TEST_xlslice_1_0/sim/TEST_xlslice_1_0.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.v" \
 "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v" \
 "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v" \
 
@@ -209,15 +205,15 @@ vcom -work proc_sys_reset_v5_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/TEST/ip/TEST_rst_ps7_0_100M_0/sim/TEST_rst_ps7_0_100M_0.vhd" \
+"../../../bd/TEST/sim/TEST.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_0_0/sim/TEST_ISERDES_WRAPPER_0_0.vhd" \
+"../../../bd/TEST/ip/TEST_ISERDES_WRAPPER_1_0/sim/TEST_ISERDES_WRAPPER_1_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_CT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/TEST/ip/TEST_auto_pc_0/sim/TEST_auto_pc_0.v" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/TEST/sim/TEST.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

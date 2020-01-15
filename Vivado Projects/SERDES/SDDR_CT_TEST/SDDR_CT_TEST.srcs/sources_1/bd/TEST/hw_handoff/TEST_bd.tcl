@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source TEST_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# ISERDES_WRAPPER, ISERDES_WRAPPER
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -175,6 +182,36 @@ proc create_root_design { parentCell } {
    CONFIG.C_GPIO2_WIDTH {16} \
    CONFIG.C_IS_DUAL {1} \
  ] $DATA
+
+  # Create instance: ISERDES_WRAPPER_1, and set properties
+  set block_name ISERDES_WRAPPER
+  set block_cell_name ISERDES_WRAPPER_1
+  if { [catch {set ISERDES_WRAPPER_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ISERDES_WRAPPER_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] [get_bd_pins /ISERDES_WRAPPER_1/RESET]
+
+  # Create instance: ISERDES_WRAPPER_2, and set properties
+  set block_name ISERDES_WRAPPER
+  set block_cell_name ISERDES_WRAPPER_2
+  if { [catch {set ISERDES_WRAPPER_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ISERDES_WRAPPER_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] [get_bd_pins /ISERDES_WRAPPER_2/RESET]
 
   # Create instance: SDDR_CT_0, and set properties
   set SDDR_CT_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_CT:1.0 SDDR_CT_0 ]
@@ -994,32 +1031,6 @@ proc create_root_design { parentCell } {
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
-  # Create instance: selectio_wiz_0, and set properties
-  set selectio_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:selectio_wiz:5.1 selectio_wiz_0 ]
-  set_property -dict [ list \
-   CONFIG.BUS_IO_STD {LVCMOS33} \
-   CONFIG.CLK_FWD_IO_STD {LVCMOS33} \
-   CONFIG.SELIO_ACTIVE_EDGE {DDR} \
-   CONFIG.SELIO_CLK_BUF {MMCM} \
-   CONFIG.SELIO_CLK_IO_STD {LVCMOS33} \
-   CONFIG.SELIO_INTERFACE_TYPE {NETWORKING} \
-   CONFIG.SERIALIZATION_FACTOR {4} \
-   CONFIG.USE_SERIALIZATION {true} \
- ] $selectio_wiz_0
-
-  # Create instance: selectio_wiz_1, and set properties
-  set selectio_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:selectio_wiz:5.1 selectio_wiz_1 ]
-  set_property -dict [ list \
-   CONFIG.BUS_IO_STD {LVCMOS33} \
-   CONFIG.CLK_FWD_IO_STD {LVCMOS33} \
-   CONFIG.SELIO_ACTIVE_EDGE {DDR} \
-   CONFIG.SELIO_CLK_BUF {MMCM} \
-   CONFIG.SELIO_CLK_IO_STD {LVCMOS33} \
-   CONFIG.SELIO_INTERFACE_TYPE {NETWORKING} \
-   CONFIG.SERIALIZATION_FACTOR {4} \
-   CONFIG.USE_SERIALIZATION {true} \
- ] $selectio_wiz_1
-
   # Create instance: util_vector_logic_0, and set properties
   set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
   set_property -dict [ list \
@@ -1071,6 +1082,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins UTIL/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
 
   # Create port connections
+  connect_bd_net -net ISERDES_WRAPPER_0_DATA_OUT [get_bd_pins ISERDES_WRAPPER_1/DATA_OUT] [get_bd_pins SDDR_CT_0/T2]
+  connect_bd_net -net ISERDES_WRAPPER_2_DATA_OUT [get_bd_pins ISERDES_WRAPPER_2/DATA_OUT] [get_bd_pins SDDR_CT_0/T1]
   connect_bd_net -net Net [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net SDDR_CT_0_ARMED [get_bd_ports ARMED] [get_bd_pins SDDR_CT_0/ARMED]
   connect_bd_net -net SDDR_CT_0_CTIME [get_bd_pins DATA/gpio_io_i] [get_bd_pins SDDR_CT_0/CTIME]
@@ -1078,18 +1091,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net SDDR_CT_0_D1 [get_bd_pins SDDR_CT_0/D1] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net SDDR_CT_0_DRDY [get_bd_pins SDDR_CT_0/DRDY] [get_bd_pins UTIL/gpio2_io_i]
   connect_bd_net -net SDDR_CT_0_WAITING [get_bd_ports WAITING] [get_bd_pins SDDR_CT_0/WAITING]
-  connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins selectio_wiz_0/data_in_from_pins]
-  connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins selectio_wiz_1/data_in_from_pins]
+  connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins ISERDES_WRAPPER_2/DATA_IN]
+  connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins ISERDES_WRAPPER_1/DATA_IN]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins UTIL/gpio_io_o] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins selectio_wiz_0/clk_in] [get_bd_pins selectio_wiz_1/clk_in]
-  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins SDDR_CT_0/MCLK] [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins selectio_wiz_0/clk_div_in] [get_bd_pins selectio_wiz_1/clk_div_in]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins ISERDES_WRAPPER_1/HS_CLK] [get_bd_pins ISERDES_WRAPPER_2/HS_CLK] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins ISERDES_WRAPPER_1/DIV_CLK] [get_bd_pins ISERDES_WRAPPER_2/DIV_CLK] [get_bd_pins SDDR_CT_0/MCLK] [get_bd_pins clk_wiz_0/clk_out2]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net selectio_wiz_0_data_in_to_device [get_bd_pins SDDR_CT_0/T1] [get_bd_pins selectio_wiz_0/data_in_to_device]
-  connect_bd_net -net selectio_wiz_1_data_in_to_device [get_bd_pins SDDR_CT_0/T2] [get_bd_pins selectio_wiz_1/data_in_to_device]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins selectio_wiz_0/io_reset] [get_bd_pins selectio_wiz_1/io_reset] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins ISERDES_WRAPPER_1/RESET] [get_bd_pins ISERDES_WRAPPER_2/RESET] [get_bd_pins util_vector_logic_0/Res]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins DATA/gpio2_io_i] [get_bd_pins xlconcat_0/dout]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins selectio_wiz_0/bitslip] [get_bd_pins selectio_wiz_1/bitslip] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins ISERDES_WRAPPER_1/BITSLIP] [get_bd_pins ISERDES_WRAPPER_2/BITSLIP] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins SDDR_CT_0/RESETN] [get_bd_pins xlslice_0/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins SDDR_CT_0/FSEL] [get_bd_pins xlslice_1/Dout]
   connect_bd_net -net xlslice_2_Dout [get_bd_pins SDDR_CT_0/BIDIR] [get_bd_pins xlslice_2/Dout]
