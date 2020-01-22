@@ -67,7 +67,8 @@ vcom -work c_counter_binary_v12_0_13 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_SDDR_CT_0_0/src/CT_TIMER/sim/CT_TIMER.vhd" \
-"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ipshared/35ff/src/SDDR_CT.vhd" \
+"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ipshared/c9c6/src/SDDR_CT.vhd" \
+"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ipshared/c9c6/src/ISERDES_WRAPPER.vhd" \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_SDDR_CT_0_0/sim/SDDR_CT_AXI_SDDR_CT_0_0.vhd" \
 
 vcom -work axi_lite_ipif_v3_0_4 -64 -93 \
@@ -94,9 +95,9 @@ vlog -work xil_defaultlib -64 \
 vcom -work xil_defaultlib -64 -93 \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_axi_gpio_0_1/sim/SDDR_CT_AXI_axi_gpio_0_1.vhd" \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_CTA_SPLIT_0_0/sim/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd" \
-"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/sim/SDDR_CT_AXI.vhd" \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_CT_META_0_0/sim/SDDR_CT_AXI_CT_META_0_0.vhd" \
 "../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/ip/SDDR_CT_AXI_CT_META_0_1/sim/SDDR_CT_AXI_CT_META_0_1.vhd" \
+"../../../../SDDR_CT_AXI.srcs/sources_1/bd/SDDR_CT_AXI/sim/SDDR_CT_AXI.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

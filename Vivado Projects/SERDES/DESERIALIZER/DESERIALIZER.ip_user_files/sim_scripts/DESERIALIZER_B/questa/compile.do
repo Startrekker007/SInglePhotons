@@ -7,7 +7,6 @@ vlib questa_lib/msim/axi_lite_ipif_v3_0_4
 vlib questa_lib/msim/lib_cdc_v1_0_2
 vlib questa_lib/msim/interrupt_control_v3_1_4
 vlib questa_lib/msim/axi_gpio_v2_0_21
-vlib questa_lib/msim/util_idelay_ctrl_v1_0_1
 
 vmap xil_defaultlib questa_lib/msim/xil_defaultlib
 vmap util_vector_logic_v2_0_1 questa_lib/msim/util_vector_logic_v2_0_1
@@ -15,7 +14,6 @@ vmap axi_lite_ipif_v3_0_4 questa_lib/msim/axi_lite_ipif_v3_0_4
 vmap lib_cdc_v1_0_2 questa_lib/msim/lib_cdc_v1_0_2
 vmap interrupt_control_v3_1_4 questa_lib/msim/interrupt_control_v3_1_4
 vmap axi_gpio_v2_0_21 questa_lib/msim/axi_gpio_v2_0_21
-vmap util_idelay_ctrl_v1_0_1 questa_lib/msim/util_idelay_ctrl_v1_0_1
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_IDELAY_WRAPPER_0_0/sim/DESERIALIZER_B_IDELAY_WRAPPER_0_0.vhd" \
@@ -50,20 +48,14 @@ vcom -work axi_gpio_v2_0_21 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_axi_gpio_0_0/sim/DESERIALIZER_B_axi_gpio_0_0.vhd" \
-
-vlog -work util_idelay_ctrl_v1_0_1 -64 \
-"../../../../DESERIALIZER.srcs/sources_1/bd/DESERIALIZER_B/ipshared/823d/hdl/util_idelay_ctrl_v1_0_vl_rfs.v" \
-
-vlog -work xil_defaultlib -64 \
-"../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_util_idelay_ctrl_0_0/sim/DESERIALIZER_B_util_idelay_ctrl_0_0.v" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/DESERIALIZER_B/sim/DESERIALIZER_B.vhd" \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_0_0/sim/DESERIALIZER_B_ISERDES_B_0_0.vhd" \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_0_1/sim/DESERIALIZER_B_ISERDES_B_0_1.vhd" \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_0_2/sim/DESERIALIZER_B_ISERDES_B_0_2.vhd" \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_1_0/sim/DESERIALIZER_B_ISERDES_B_1_0.vhd" \
 "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_3_0/sim/DESERIALIZER_B_ISERDES_B_3_0.vhd" \
+"../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_DELAY_CTL_0_0/sim/DESERIALIZER_B_DELAY_CTL_0_0.vhd" \
+"../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_axi_gpio_0_1/sim/DESERIALIZER_B_axi_gpio_0_1.vhd" \
+"../../../bd/DESERIALIZER_B/sim/DESERIALIZER_B.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

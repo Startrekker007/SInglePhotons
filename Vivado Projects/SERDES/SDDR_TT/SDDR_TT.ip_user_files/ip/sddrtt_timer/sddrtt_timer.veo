@@ -55,9 +55,9 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 sddrtt_timer your_instance_name (
-  .CLK(CLK),    // input wire CLK
-  .SCLR(SCLR),  // input wire SCLR
-  .Q(Q)        // output wire [31 : 0] Q
+  .CLK(CLK),      // input wire CLK
+  .SINIT(SINIT),  // input wire SINIT
+  .Q(Q)          // output wire [31 : 0] Q
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

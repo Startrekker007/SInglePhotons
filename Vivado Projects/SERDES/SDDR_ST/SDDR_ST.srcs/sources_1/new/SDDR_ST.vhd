@@ -85,7 +85,7 @@ function is_int_re(
     DDR : std_logic_vector(SIG_WIDTH-1 downto 0);
     LDDR : std_logic_vector( SIG_WIDTH-1 downto 0)
 ) return boolean is
-variable part_concat_ddr : std_logic_vector(SIG_WIDTH downto 0) := "11111";
+variable part_concat_ddr : std_logic_vector(SIG_WIDTH downto 0) := (others => '1');
 variable detected : std_logic := '0';
 variable findex : integer := 0;
 begin
@@ -109,7 +109,7 @@ function int_re_sep(
     DDR : std_logic_vector(SIG_WIDTH-1 downto 0);
     LDDR : std_logic_vector( SIG_WIDTH-1 downto 0)
 ) return std_logic_vector is
-variable part_concat_ddr : std_logic_vector(SIG_WIDTH downto 0) := "11111";
+variable part_concat_ddr : std_logic_vector(SIG_WIDTH downto 0) := (others => '1');
 variable detected : std_logic := '0';
 variable findex : integer := 0;
 begin

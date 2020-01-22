@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../CLOCK_FWD.srcs/sources_1/bd/test/ipshared/c923" \
+"../../../../CLOCK_FWD.ip_user_files/bd/test/ip/test_clk_wiz_0_0/test_clk_wiz_0_0_clk_wiz.v" \
+"../../../../CLOCK_FWD.ip_user_files/bd/test/ip/test_clk_wiz_0_0/test_clk_wiz_0_0.v" \
+"../../../../CLOCK_FWD.ip_user_files/bd/test/ip/test_selectio_wiz_0_0/test_selectio_wiz_0_0_selectio_wiz.v" \
+"../../../../CLOCK_FWD.ip_user_files/bd/test/ip/test_selectio_wiz_0_0/test_selectio_wiz_0_0.v" \
+"../../../../CLOCK_FWD.ip_user_files/bd/test/ip/test_xlconstant_0_0/sim/test_xlconstant_0_0.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

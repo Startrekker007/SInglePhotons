@@ -186,7 +186,7 @@ begin
                     dd_1 := get_finetime(pT2,lT2);
                     b_d1 <= dd_1;
                     if(jwait = "1") then
-                        if(unsigned(dd_1)<unsigned(dd_0)) then
+                        if(unsigned(dd_1)<=unsigned(dd_0)) then
                             iarmed := '0';
                             iwait := '0';
                             SD <= '1';
@@ -203,7 +203,7 @@ begin
                     dd_1 := get_finetime(pT1,lT1);
                     b_d1 <= dd_1;
                     if(jwait = "1") then
-                        if(unsigned(dd_1)<unsigned(dd_0)) then
+                        if(unsigned(dd_1)<=unsigned(dd_0)) then
                             iarmed := '0';
                             iwait := '0';
                             SD <= '1';

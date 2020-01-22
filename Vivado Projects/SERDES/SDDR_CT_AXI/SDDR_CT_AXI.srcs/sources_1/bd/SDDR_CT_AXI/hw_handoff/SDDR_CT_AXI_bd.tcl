@@ -173,8 +173,8 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {400000000} \
  ] $MCLK
-  set T1 [ create_bd_port -dir I -from 3 -to 0 T1 ]
-  set T2 [ create_bd_port -dir I -from 3 -to 0 T2 ]
+  set T1 [ create_bd_port -dir I -from 7 -to 0 T1 ]
+  set T2 [ create_bd_port -dir I -from 7 -to 0 T2 ]
   set WAITING [ create_bd_port -dir O WAITING ]
   set aclk [ create_bd_port -dir I -type clk aclk ]
   set_property -dict [ list \
@@ -233,7 +233,7 @@ proc create_root_design { parentCell } {
   # Create instance: SDDR_CT_0, and set properties
   set SDDR_CT_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_CT:1.0 SDDR_CT_0 ]
   set_property -dict [ list \
-   CONFIG.SIG_WIDTH {4} \
+   CONFIG.SIG_WIDTH {8} \
  ] $SDDR_CT_0
 
   # Create instance: UTIL, and set properties

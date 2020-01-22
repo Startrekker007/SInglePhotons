@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x35A11DB446F244DC",
+      "boundary_crc": "0xB4BC1F84348872AF",
       "device": "xc7z020clg400-1",
       "name": "SDDR_TT_AXI",
       "synth_flow_mode": "None",
@@ -9,13 +9,13 @@
       "validated": "true"
     },
     "design_tree": {
-      "SDDR_TT_0": "",
       "DATA0": "",
       "DATA1": "",
       "DELAY": "",
       "xlconcat_0": "",
       "TT_CONFIG": "",
-      "UTIL": ""
+      "UTIL": "",
+      "SDDR_TT_0": ""
     },
     "interface_ports": {
       "TT_CONFIG": {
@@ -652,27 +652,27 @@
     "ports": {
       "T0": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "T1": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "T2": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "T3": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "T4": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "waiting": {
@@ -743,10 +743,6 @@
       }
     },
     "components": {
-      "SDDR_TT_0": {
-        "vlnv": "cri.nz:user:SDDR_TT:1.0",
-        "xci_name": "SDDR_TT_AXI_SDDR_TT_0_0"
-      },
       "DATA0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "SDDR_TT_AXI_axi_gpio_0_0",
@@ -842,9 +838,30 @@
             "value": "1"
           }
         }
+      },
+      "SDDR_TT_0": {
+        "vlnv": "cri.nz:user:SDDR_TT:1.0",
+        "xci_name": "SDDR_TT_AXI_SDDR_TT_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "8"
+          }
+        }
       }
     },
     "interface_nets": {
+      "TT_CONFIG_1": {
+        "interface_ports": [
+          "TT_CONFIG",
+          "TT_CONFIG/S_AXI"
+        ]
+      },
+      "TT_UTIL_1": {
+        "interface_ports": [
+          "TT_UTIL",
+          "UTIL/S_AXI"
+        ]
+      },
       "TT_DATA0_1": {
         "interface_ports": [
           "TT_DATA0",
@@ -861,18 +878,6 @@
         "interface_ports": [
           "TT_DELAY",
           "DELAY/S_AXI"
-        ]
-      },
-      "TT_CONFIG_1": {
-        "interface_ports": [
-          "TT_CONFIG",
-          "TT_CONFIG/S_AXI"
-        ]
-      },
-      "TT_UTIL_1": {
-        "interface_ports": [
-          "TT_UTIL",
-          "UTIL/S_AXI"
         ]
       }
     },

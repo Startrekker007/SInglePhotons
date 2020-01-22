@@ -59,7 +59,7 @@ USE c_counter_binary_v12_0_13.c_counter_binary_v12_0_13;
 ENTITY sddrtt_timer IS
   PORT (
     CLK : IN STD_LOGIC;
-    SCLR : IN STD_LOGIC;
+    SINIT : IN STD_LOGIC;
     Q : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END sddrtt_timer;
@@ -109,8 +109,8 @@ ARCHITECTURE sddrtt_timer_arch OF sddrtt_timer IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF Q: SIGNAL IS "xilinx.com:signal:data:1.0 q_intf DATA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF SCLR: SIGNAL IS "xilinx.com:signal:reset:1.0 sclr_intf RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF SINIT: SIGNAL IS "XIL_INTERFACENAME sinit_intf, LAYERED_METADATA undef";
+  ATTRIBUTE X_INTERFACE_INFO OF SINIT: SIGNAL IS "xilinx.com:signal:data:1.0 sinit_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF q_intf:thresh0_intf:l_intf:load_intf:up_intf:sinit_intf:sset_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 10000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
 BEGIN
@@ -121,7 +121,7 @@ BEGIN
       C_XDEVICEFAMILY => "zynq",
       C_WIDTH => 32,
       C_HAS_CE => 0,
-      C_HAS_SCLR => 1,
+      C_HAS_SCLR => 0,
       C_RESTRICT_COUNT => 0,
       C_COUNT_TO => "1",
       C_COUNT_BY => "1",
@@ -134,17 +134,17 @@ BEGIN
       C_LATENCY => 1,
       C_FB_LATENCY => 0,
       C_AINIT_VAL => "0",
-      C_SINIT_VAL => "0",
+      C_SINIT_VAL => "1",
       C_SCLR_OVERRIDES_SSET => 1,
       C_HAS_SSET => 0,
-      C_HAS_SINIT => 0
+      C_HAS_SINIT => 1
     )
     PORT MAP (
       CLK => CLK,
       CE => '1',
-      SCLR => SCLR,
+      SCLR => '0',
       SSET => '0',
-      SINIT => '0',
+      SINIT => SINIT,
       UP => '1',
       LOAD => '0',
       L => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),

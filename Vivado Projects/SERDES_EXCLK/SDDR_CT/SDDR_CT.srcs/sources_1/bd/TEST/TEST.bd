@@ -1,0 +1,450 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB0638AEB0388C5B9",
+      "device": "xc7z020clg400-1",
+      "name": "TEST",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "util_vector_logic_0": "",
+      "ISERDES_B_0": "",
+      "ISERDES_B_1": "",
+      "SDDR_CT_0": ""
+    },
+    "ports": {
+      "T1": {
+        "direction": "I"
+      },
+      "T2": {
+        "direction": "I"
+      },
+      "HS_CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "TEST_HS_CLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "800000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "TEST_MCLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "RESETN": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "bitslip": {
+        "direction": "I"
+      },
+      "FSEL": {
+        "direction": "I"
+      },
+      "BIDIR": {
+        "direction": "I"
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "direction": "O"
+      },
+      "CTIME": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "WAITING": {
+        "direction": "O"
+      },
+      "ARMED": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TEST_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ISERDES_B_0": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "TEST_ISERDES_B_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_B",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "data_in_to_device": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "ISERDES_B_1": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "TEST_ISERDES_B_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_B",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "data_in_to_device": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_HS_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "800000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_div_in": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "SDDR_CT_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_CT:1.0",
+        "xci_name": "TEST_SDDR_CT_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "8"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "TEST_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "CTIME": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WAITING": {
+            "direction": "O"
+          },
+          "ARMED": {
+            "direction": "O"
+          },
+          "T1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "FSEL": {
+            "direction": "I"
+          },
+          "BIDIR": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "T1_1": {
+        "ports": [
+          "T1",
+          "ISERDES_B_0/data_in_from_pins"
+        ]
+      },
+      "T2_1": {
+        "ports": [
+          "T2",
+          "ISERDES_B_1/data_in_from_pins"
+        ]
+      },
+      "HS_CLK_1": {
+        "ports": [
+          "HS_CLK",
+          "ISERDES_B_0/clk_in",
+          "ISERDES_B_1/clk_in"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "ISERDES_B_0/clk_div_in",
+          "ISERDES_B_1/clk_div_in",
+          "SDDR_CT_0/MCLK"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "util_vector_logic_0/Op1",
+          "SDDR_CT_0/RESETN"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "ISERDES_B_0/io_reset",
+          "ISERDES_B_1/io_reset"
+        ]
+      },
+      "bitslip_1": {
+        "ports": [
+          "bitslip",
+          "ISERDES_B_0/bitslip",
+          "ISERDES_B_1/bitslip"
+        ]
+      },
+      "SDDR_CT_0_D0": {
+        "ports": [
+          "SDDR_CT_0/D0",
+          "D0"
+        ]
+      },
+      "BIDIR_1": {
+        "ports": [
+          "BIDIR",
+          "SDDR_CT_0/BIDIR"
+        ]
+      },
+      "SDDR_CT_0_CTIME": {
+        "ports": [
+          "SDDR_CT_0/CTIME",
+          "CTIME"
+        ]
+      },
+      "SDDR_CT_0_WAITING": {
+        "ports": [
+          "SDDR_CT_0/WAITING",
+          "WAITING"
+        ]
+      },
+      "SDDR_CT_0_D1": {
+        "ports": [
+          "SDDR_CT_0/D1",
+          "D1"
+        ]
+      },
+      "FSEL_1": {
+        "ports": [
+          "FSEL",
+          "SDDR_CT_0/FSEL"
+        ]
+      },
+      "SDDR_CT_0_ARMED": {
+        "ports": [
+          "SDDR_CT_0/ARMED",
+          "ARMED"
+        ]
+      },
+      "SDDR_CT_0_DRDY": {
+        "ports": [
+          "SDDR_CT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "ISERDES_B_0_data_in_to_device": {
+        "ports": [
+          "ISERDES_B_0/data_in_to_device",
+          "SDDR_CT_0/T1"
+        ]
+      },
+      "ISERDES_B_1_data_in_to_device": {
+        "ports": [
+          "ISERDES_B_1/data_in_to_device",
+          "SDDR_CT_0/T2"
+        ]
+      }
+    }
+  }
+}

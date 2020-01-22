@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DD_AXI_SLICE, DD_AXI_SLICE, DD_SPLITTER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, ISERDES_B, ISERDES_B, ISERDES_B, ISERDES_B, ISERDES_B
+# DD_AXI_SLICE, DD_AXI_SLICE, DD_SPLITTER, DELAY_CTL, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, IDELAY_WRAPPER, ISERDES_B, ISERDES_B, ISERDES_B, ISERDES_B, ISERDES_B
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -162,6 +162,8 @@ proc create_root_design { parentCell } {
 
 
   # Create interface ports
+  set IDELAY_DEBUG [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_tlm:1.0 IDELAY_DEBUG ]
+
   set IDELAY_TAPS [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_tlm:1.0 IDELAY_TAPS ]
 
 
@@ -180,17 +182,21 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {400000000} \
  ] $MCLK
-  set OT0 [ create_bd_port -dir O -from 3 -to 0 OT0 ]
-  set OT1 [ create_bd_port -dir O -from 3 -to 0 OT1 ]
-  set OT2 [ create_bd_port -dir O -from 3 -to 0 OT2 ]
-  set OT3 [ create_bd_port -dir O -from 3 -to 0 OT3 ]
-  set OT4 [ create_bd_port -dir O -from 3 -to 0 OT4 ]
+  set OT0 [ create_bd_port -dir O -from 7 -to 0 OT0 ]
+  set OT1 [ create_bd_port -dir O -from 7 -to 0 OT1 ]
+  set OT2 [ create_bd_port -dir O -from 7 -to 0 OT2 ]
+  set OT3 [ create_bd_port -dir O -from 7 -to 0 OT3 ]
+  set OT4 [ create_bd_port -dir O -from 7 -to 0 OT4 ]
   set RT0 [ create_bd_port -dir O RT0 ]
   set RT1 [ create_bd_port -dir O RT1 ]
   set RT2 [ create_bd_port -dir O RT2 ]
   set RT3 [ create_bd_port -dir O RT3 ]
   set RT4 [ create_bd_port -dir O RT4 ]
   set RXT [ create_bd_port -dir O RXT ]
+  set SET_CLK [ create_bd_port -dir I -type clk SET_CLK ]
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {460000000} \
+ ] $SET_CLK
   set T0 [ create_bd_port -dir I T0 ]
   set T1 [ create_bd_port -dir I T1 ]
   set T2 [ create_bd_port -dir I T2 ]
@@ -245,6 +251,29 @@ proc create_root_design { parentCell } {
    CONFIG.C_GPIO_WIDTH {30} \
    CONFIG.C_IS_DUAL {1} \
  ] $DELAYS
+
+  # Create instance: DELAY_CTL_0, and set properties
+  set block_name DELAY_CTL
+  set block_cell_name DELAY_CTL_0
+  if { [catch {set DELAY_CTL_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DELAY_CTL_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: IDELAY_DEBUG, and set properties
+  set IDELAY_DEBUG [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 IDELAY_DEBUG ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {0} \
+   CONFIG.C_ALL_INPUTS_2 {0} \
+   CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_ALL_OUTPUTS_2 {1} \
+   CONFIG.C_GPIO2_WIDTH {1} \
+   CONFIG.C_GPIO_WIDTH {1} \
+   CONFIG.C_IS_DUAL {1} \
+ ] $IDELAY_DEBUG
 
   # Create instance: IDELAY_WRAPPER_0, and set properties
   set block_name IDELAY_WRAPPER
@@ -367,9 +396,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: util_idelay_ctrl_0, and set properties
-  set util_idelay_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_idelay_ctrl:1.0 util_idelay_ctrl_0 ]
-
   # Create instance: util_vector_logic_0, and set properties
   set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
   set_property -dict [ list \
@@ -379,6 +405,7 @@ proc create_root_design { parentCell } {
  ] $util_vector_logic_0
 
   # Create interface connections
+  connect_bd_intf_net -intf_net IDELAY_DEBUG_1 [get_bd_intf_ports IDELAY_DEBUG] [get_bd_intf_pins IDELAY_DEBUG/S_AXI]
   connect_bd_intf_net -intf_net IDELAY_TAPS_1 [get_bd_intf_ports IDELAY_TAPS] [get_bd_intf_pins DELAYS/S_AXI]
 
   # Create port connections
@@ -404,7 +431,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DELAYS_gpio_io_o [get_bd_pins DD_AXI_SLICE_0/IDATA] [get_bd_pins DELAYS/gpio_io_o]
   connect_bd_net -net E_TRIG_1 [get_bd_ports E_TRIG] [get_bd_pins IDELAY_WRAPPER_5/IDATA]
   connect_bd_net -net HS_CLK_1 [get_bd_ports HS_CLK] [get_bd_pins ISERDES_B_0/clk_in] [get_bd_pins ISERDES_B_1/clk_in] [get_bd_pins ISERDES_B_2/clk_in] [get_bd_pins ISERDES_B_3/clk_in] [get_bd_pins ISERDES_B_4/clk_in]
-  connect_bd_net -net IDELAY_RCLK_1 [get_bd_ports IDELAY_RCLK] [get_bd_pins IDELAY_WRAPPER_0/REF_CLK] [get_bd_pins IDELAY_WRAPPER_1/REF_CLK] [get_bd_pins IDELAY_WRAPPER_2/REF_CLK] [get_bd_pins IDELAY_WRAPPER_3/REF_CLK] [get_bd_pins IDELAY_WRAPPER_4/REF_CLK] [get_bd_pins IDELAY_WRAPPER_5/REF_CLK] [get_bd_pins util_idelay_ctrl_0/ref_clk]
+  connect_bd_net -net IDELAY_RCLK_1 [get_bd_ports IDELAY_RCLK] [get_bd_pins DELAY_CTL_0/ref_clk]
   connect_bd_net -net IDELAY_WRAPPER_0_ODATA [get_bd_ports RT0] [get_bd_pins IDELAY_WRAPPER_0/ODATA] [get_bd_pins ISERDES_B_0/data_in_from_pins]
   connect_bd_net -net IDELAY_WRAPPER_1_ODATA [get_bd_ports RT1] [get_bd_pins IDELAY_WRAPPER_1/ODATA] [get_bd_pins ISERDES_B_1/data_in_from_pins]
   connect_bd_net -net IDELAY_WRAPPER_2_ODATA [get_bd_ports RT2] [get_bd_pins IDELAY_WRAPPER_2/ODATA] [get_bd_pins ISERDES_B_2/data_in_from_pins]
@@ -417,15 +444,17 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ISERDES_B_3_data_in_to_device [get_bd_ports OT3] [get_bd_pins ISERDES_B_3/data_in_to_device]
   connect_bd_net -net ISERDES_B_4_data_in_to_device [get_bd_ports OT4] [get_bd_pins ISERDES_B_4/data_in_to_device]
   connect_bd_net -net Net [get_bd_ports MCLK] [get_bd_pins ISERDES_B_0/clk_div_in] [get_bd_pins ISERDES_B_1/clk_div_in] [get_bd_pins ISERDES_B_2/clk_div_in] [get_bd_pins ISERDES_B_3/clk_div_in] [get_bd_pins ISERDES_B_4/clk_div_in]
+  connect_bd_net -net Net1 [get_bd_pins IDELAY_DEBUG/gpio2_io_o] [get_bd_pins IDELAY_WRAPPER_0/LD] [get_bd_pins IDELAY_WRAPPER_1/LD] [get_bd_pins IDELAY_WRAPPER_2/LD] [get_bd_pins IDELAY_WRAPPER_3/LD] [get_bd_pins IDELAY_WRAPPER_4/LD] [get_bd_pins IDELAY_WRAPPER_5/LD]
+  connect_bd_net -net Net2 [get_bd_ports SET_CLK] [get_bd_pins IDELAY_WRAPPER_0/REF_CLK] [get_bd_pins IDELAY_WRAPPER_1/REF_CLK] [get_bd_pins IDELAY_WRAPPER_2/REF_CLK] [get_bd_pins IDELAY_WRAPPER_3/REF_CLK] [get_bd_pins IDELAY_WRAPPER_4/REF_CLK] [get_bd_pins IDELAY_WRAPPER_5/REF_CLK]
   connect_bd_net -net T0_1 [get_bd_ports T0] [get_bd_pins IDELAY_WRAPPER_0/IDATA]
   connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins IDELAY_WRAPPER_1/IDATA]
   connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins IDELAY_WRAPPER_2/IDATA]
   connect_bd_net -net T3_1 [get_bd_ports T3] [get_bd_pins IDELAY_WRAPPER_3/IDATA]
   connect_bd_net -net T4_1 [get_bd_ports T4] [get_bd_pins IDELAY_WRAPPER_4/IDATA]
-  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins DELAYS/s_axi_aclk]
-  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins DELAYS/s_axi_aresetn]
-  connect_bd_net -net resetn_1 [get_bd_ports resetn] [get_bd_pins util_vector_logic_0/Op1]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins ISERDES_B_0/io_reset] [get_bd_pins ISERDES_B_1/io_reset] [get_bd_pins ISERDES_B_2/io_reset] [get_bd_pins ISERDES_B_3/io_reset] [get_bd_pins ISERDES_B_4/io_reset] [get_bd_pins util_idelay_ctrl_0/rst] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins DELAYS/s_axi_aclk] [get_bd_pins IDELAY_DEBUG/s_axi_aclk]
+  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins DELAYS/s_axi_aresetn] [get_bd_pins IDELAY_DEBUG/s_axi_aresetn]
+  connect_bd_net -net resetn_1 [get_bd_pins DELAY_CTL_0/rstn] [get_bd_pins IDELAY_DEBUG/gpio_io_o] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins ISERDES_B_0/io_reset] [get_bd_pins ISERDES_B_1/io_reset] [get_bd_pins ISERDES_B_2/io_reset] [get_bd_pins ISERDES_B_3/io_reset] [get_bd_pins ISERDES_B_4/io_reset] [get_bd_pins util_vector_logic_0/Res]
 
   # Create address segments
 

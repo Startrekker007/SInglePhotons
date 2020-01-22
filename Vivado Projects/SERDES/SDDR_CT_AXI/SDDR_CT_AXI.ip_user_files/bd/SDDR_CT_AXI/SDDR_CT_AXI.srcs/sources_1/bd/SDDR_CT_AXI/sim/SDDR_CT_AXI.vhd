@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Jan 16 10:35:46 2020
+--Date        : Tue Jan 21 12:27:08 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SDDR_CT_AXI.bd
 --Design      : SDDR_CT_AXI
@@ -49,8 +49,8 @@ entity SDDR_CT_AXI is
     CT_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     CT_UTIL_wvalid : in STD_LOGIC;
     MCLK : in STD_LOGIC;
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T2 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     WAITING : out STD_LOGIC;
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC
@@ -62,22 +62,6 @@ entity SDDR_CT_AXI is
 end SDDR_CT_AXI;
 
 architecture STRUCTURE of SDDR_CT_AXI is
-  component SDDR_CT_AXI_SDDR_CT_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    RESETN : in STD_LOGIC;
-    D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DRDY : out STD_LOGIC;
-    CTIME : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    WAITING : out STD_LOGIC;
-    ARMED : out STD_LOGIC;
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T2 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    FSEL : in STD_LOGIC;
-    BIDIR : in STD_LOGIC
-  );
-  end component SDDR_CT_AXI_SDDR_CT_0_0;
   component SDDR_CT_AXI_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -157,6 +141,22 @@ architecture STRUCTURE of SDDR_CT_AXI is
     MCLK : in STD_LOGIC
   );
   end component SDDR_CT_AXI_CT_META_0_1;
+  component SDDR_CT_AXI_SDDR_CT_0_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    RESETN : in STD_LOGIC;
+    D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DRDY : out STD_LOGIC;
+    CTIME : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    WAITING : out STD_LOGIC;
+    ARMED : out STD_LOGIC;
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    FSEL : in STD_LOGIC;
+    BIDIR : in STD_LOGIC
+  );
+  end component SDDR_CT_AXI_SDDR_CT_0_0;
   signal CTA_SPLIT_0_OUT0_0 : STD_LOGIC;
   signal CTA_SPLIT_0_OUT1_1 : STD_LOGIC;
   signal CTA_SPLIT_0_OUT2_2 : STD_LOGIC;
@@ -203,8 +203,8 @@ architecture STRUCTURE of SDDR_CT_AXI is
   signal SDDR_CT_0_D1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SDDR_CT_0_DRDY : STD_LOGIC;
   signal SDDR_CT_0_WAITING : STD_LOGIC;
-  signal T1_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal T2_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal T1_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal T2_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal UTIL_gpio_io_o : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal aclk_1 : STD_LOGIC;
   signal aresetn_1 : STD_LOGIC;
@@ -290,8 +290,8 @@ begin
   CT_UTIL_rvalid <= CT_UTIL_1_RVALID;
   CT_UTIL_wready <= CT_UTIL_1_WREADY;
   MCLK_1 <= MCLK;
-  T1_1(3 downto 0) <= T1(3 downto 0);
-  T2_1(3 downto 0) <= T2(3 downto 0);
+  T1_1(7 downto 0) <= T1(7 downto 0);
+  T2_1(7 downto 0) <= T2(7 downto 0);
   WAITING <= SDDR_CT_0_WAITING;
   aclk_1 <= aclk;
   aresetn_1 <= aresetn;
@@ -349,8 +349,8 @@ SDDR_CT_0: component SDDR_CT_AXI_SDDR_CT_0_0
       FSEL => CTA_SPLIT_0_OUT1_1,
       MCLK => MCLK_1,
       RESETN => CTA_SPLIT_0_OUT0_0,
-      T1(3 downto 0) => T1_1(3 downto 0),
-      T2(3 downto 0) => T2_1(3 downto 0),
+      T1(7 downto 0) => T1_1(7 downto 0),
+      T2(7 downto 0) => T2_1(7 downto 0),
       WAITING => SDDR_CT_0_WAITING
     );
 UTIL: component SDDR_CT_AXI_axi_gpio_0_1

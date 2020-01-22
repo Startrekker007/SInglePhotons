@@ -319,3 +319,18 @@ set_property src_info {type:XDC file:5 line:37 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN Y19 [get_ports E_TRIG]
 set_property src_info {type:XDC file:5 line:39 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y18 [get_ports TRIG_T0]
+set_property src_info {type:XDC file:5 line:47 export:INPUT save:INPUT read:READ} [current_design]
+create_pblock pblock_SDDR_CT_0
+add_cells_to_pblock [get_pblocks pblock_SDDR_CT_0] [get_cells -quiet [list SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/SDDR_CT_0]]
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {SLICE_X102Y82:SLICE_X107Y90}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {DSP48_X4Y34:DSP48_X4Y35}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {RAMB18_X5Y34:RAMB18_X5Y35}
+resize_pblock [get_pblocks pblock_SDDR_CT_0] -add {RAMB36_X5Y17:RAMB36_X5Y17}
+set_property src_info {type:XDC file:5 line:54 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U18 [get_ports TEST_OUT0]
+set_property src_info {type:XDC file:5 line:59 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U19 [get_ports TEST_OUT1]
+set_property src_info {type:XDC file:5 line:60 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W18 [get_ports TEST_OUT2]
+set_property src_info {type:XDC file:5 line:61 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W19 [get_ports TEST_OUT3]

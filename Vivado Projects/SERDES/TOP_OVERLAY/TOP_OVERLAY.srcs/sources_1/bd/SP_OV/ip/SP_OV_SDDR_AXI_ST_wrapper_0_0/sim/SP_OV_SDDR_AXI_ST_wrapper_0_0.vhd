@@ -90,7 +90,7 @@ ENTITY SP_OV_SDDR_AXI_ST_wrapper_0_0 IS
     ST_UTIL_wready : OUT STD_LOGIC;
     ST_UTIL_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     ST_UTIL_wvalid : IN STD_LOGIC;
-    T1 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    T1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     aclk : IN STD_LOGIC;
     aresetn : IN STD_LOGIC;
     armed : OUT STD_LOGIC;
@@ -138,7 +138,7 @@ ARCHITECTURE SP_OV_SDDR_AXI_ST_wrapper_0_0_arch OF SP_OV_SDDR_AXI_ST_wrapper_0_0
       ST_UTIL_wready : OUT STD_LOGIC;
       ST_UTIL_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       ST_UTIL_wvalid : IN STD_LOGIC;
-      T1 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      T1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       aclk : IN STD_LOGIC;
       aresetn : IN STD_LOGIC;
       armed : OUT STD_LOGIC;

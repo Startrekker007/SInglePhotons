@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 09:45:15 2020
+--Date        : Tue Jan 21 10:13:51 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SDDR_AXI_ST_wrapper.bd
 --Design      : SDDR_AXI_ST_wrapper
@@ -48,7 +48,7 @@ entity SDDR_AXI_ST_wrapper is
     ST_UTIL_wready : out STD_LOGIC;
     ST_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     ST_UTIL_wvalid : in STD_LOGIC;
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     armed : out STD_LOGIC;
@@ -59,8 +59,12 @@ end SDDR_AXI_ST_wrapper;
 architecture STRUCTURE of SDDR_AXI_ST_wrapper is
   component SDDR_AXI_ST is
   port (
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     MCLK : in STD_LOGIC;
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    waiting : out STD_LOGIC;
+    armed : out STD_LOGIC;
     ST_DATA_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     ST_DATA_arready : out STD_LOGIC;
     ST_DATA_arvalid : in STD_LOGIC;
@@ -94,11 +98,7 @@ architecture STRUCTURE of SDDR_AXI_ST_wrapper is
     ST_UTIL_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     ST_UTIL_wready : out STD_LOGIC;
     ST_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    ST_UTIL_wvalid : in STD_LOGIC;
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
-    waiting : out STD_LOGIC;
-    armed : out STD_LOGIC
+    ST_UTIL_wvalid : in STD_LOGIC
   );
   end component SDDR_AXI_ST;
 begin
@@ -139,7 +139,7 @@ SDDR_AXI_ST_i: component SDDR_AXI_ST
       ST_UTIL_wready => ST_UTIL_wready,
       ST_UTIL_wstrb(3 downto 0) => ST_UTIL_wstrb(3 downto 0),
       ST_UTIL_wvalid => ST_UTIL_wvalid,
-      T1(3 downto 0) => T1(3 downto 0),
+      T1(7 downto 0) => T1(7 downto 0),
       aclk => aclk,
       aresetn => aresetn,
       armed => armed,

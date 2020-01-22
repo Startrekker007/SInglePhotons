@@ -172,11 +172,11 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {400000000} \
  ] $MCLK
-  set T0 [ create_bd_port -dir I -from 3 -to 0 T0 ]
-  set T1 [ create_bd_port -dir I -from 3 -to 0 T1 ]
-  set T2 [ create_bd_port -dir I -from 3 -to 0 T2 ]
-  set T3 [ create_bd_port -dir I -from 3 -to 0 T3 ]
-  set T4 [ create_bd_port -dir I -from 3 -to 0 T4 ]
+  set T0 [ create_bd_port -dir I -from 7 -to 0 T0 ]
+  set T1 [ create_bd_port -dir I -from 7 -to 0 T1 ]
+  set T2 [ create_bd_port -dir I -from 7 -to 0 T2 ]
+  set T3 [ create_bd_port -dir I -from 7 -to 0 T3 ]
+  set T4 [ create_bd_port -dir I -from 7 -to 0 T4 ]
   set aclk [ create_bd_port -dir I -type clk aclk ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {100000000} \
@@ -212,6 +212,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: SDDR_TT_0, and set properties
   set SDDR_TT_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_TT:1.0 SDDR_TT_0 ]
+  set_property -dict [ list \
+   CONFIG.SIG_WIDTH {8} \
+ ] $SDDR_TT_0
 
   # Create instance: TT_CONFIG, and set properties
   set TT_CONFIG [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 TT_CONFIG ]

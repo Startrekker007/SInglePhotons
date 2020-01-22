@@ -10,5 +10,6 @@ create_clock -name IDELAY_RCLK -period 5 [get_ports IDELAY_RCLK]
 create_clock -name HS_CLK -period 1.250 [get_ports HS_CLK]
 create_clock -name MCLK -period 2.500 [get_ports MCLK]
 create_clock -name aclk -period 10 [get_ports aclk]
+create_clock -name SET_CLK -period 2.174 [get_ports SET_CLK]
 
 ################################################################################

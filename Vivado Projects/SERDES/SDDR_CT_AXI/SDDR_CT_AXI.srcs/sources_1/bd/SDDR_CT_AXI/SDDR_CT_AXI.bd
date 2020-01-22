@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xFCD1BBB4BBF902A",
+      "boundary_crc": "0x5236A2CCD006AFA4",
       "device": "xc7z020clg400-1",
       "name": "SDDR_CT_AXI",
       "synth_flow_mode": "None",
@@ -9,13 +9,13 @@
       "validated": "true"
     },
     "design_tree": {
-      "SDDR_CT_0": "",
       "DATA": "",
       "xlconcat_0": "",
       "UTIL": "",
       "CTA_SPLIT_0": "",
       "CT_META_0": "",
-      "CT_META_1": ""
+      "CT_META_1": "",
+      "SDDR_CT_0": ""
     },
     "interface_ports": {
       "CT_DATA": {
@@ -280,12 +280,12 @@
       },
       "T1": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "T2": {
         "direction": "I",
-        "left": "3",
+        "left": "7",
         "right": "0"
       },
       "MCLK": {
@@ -350,15 +350,6 @@
       }
     },
     "components": {
-      "SDDR_CT_0": {
-        "vlnv": "cri.nz:user:SDDR_CT:1.0",
-        "xci_name": "SDDR_CT_AXI_SDDR_CT_0_0",
-        "parameters": {
-          "SIG_WIDTH": {
-            "value": "4"
-          }
-        }
-      },
       "DATA": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "SDDR_CT_AXI_axi_gpio_0_0",
@@ -518,19 +509,28 @@
             }
           }
         }
+      },
+      "SDDR_CT_0": {
+        "vlnv": "cri.nz:user:SDDR_CT:1.0",
+        "xci_name": "SDDR_CT_AXI_SDDR_CT_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "8"
+          }
+        }
       }
     },
     "interface_nets": {
-      "CT_UTIL_1": {
-        "interface_ports": [
-          "CT_UTIL",
-          "UTIL/S_AXI"
-        ]
-      },
       "CT_DATA_1": {
         "interface_ports": [
           "CT_DATA",
           "DATA/S_AXI"
+        ]
+      },
+      "CT_UTIL_1": {
+        "interface_ports": [
+          "CT_UTIL",
+          "UTIL/S_AXI"
         ]
       }
     },

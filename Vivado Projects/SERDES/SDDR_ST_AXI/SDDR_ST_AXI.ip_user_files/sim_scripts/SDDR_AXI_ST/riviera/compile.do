@@ -67,7 +67,7 @@ vcom -work c_counter_binary_v12_0_13 -93 \
 
 vcom -work xil_defaultlib -93 \
 "../../../bd/SDDR_AXI_ST/ip/SDDR_AXI_ST_SDDR_ST_0_0/src/ST_TIMER/sim/ST_TIMER.vhd" \
-"../../../bd/SDDR_AXI_ST/ipshared/09ce/src/SDDR_ST.vhd" \
+"../../../bd/SDDR_AXI_ST/ipshared/3064/src/SDDR_ST.vhd" \
 "../../../bd/SDDR_AXI_ST/ip/SDDR_AXI_ST_SDDR_ST_0_0/sim/SDDR_AXI_ST_SDDR_ST_0_0.vhd" \
 
 vcom -work axi_lite_ipif_v3_0_4 -93 \

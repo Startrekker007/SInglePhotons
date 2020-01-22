@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 09:21:36 2020
+--Date        : Tue Jan 21 10:59:41 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SDDR_TT_AXI.bd
 --Design      : SDDR_TT_AXI
@@ -14,11 +14,11 @@ use UNISIM.VCOMPONENTS.ALL;
 entity SDDR_TT_AXI is
   port (
     MCLK : in STD_LOGIC;
-    T0 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T2 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T3 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T4 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T4 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     TT_CONFIG_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     TT_CONFIG_arready : out STD_LOGIC;
     TT_CONFIG_arvalid : in STD_LOGIC;
@@ -116,31 +116,6 @@ entity SDDR_TT_AXI is
 end SDDR_TT_AXI;
 
 architecture STRUCTURE of SDDR_TT_AXI is
-  component SDDR_TT_AXI_SDDR_TT_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    RESETN : in STD_LOGIC;
-    DDR_T0 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_T2 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_T3 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_T4 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    T1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    D2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    D3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    D4 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DRDY : out STD_LOGIC;
-    TIMEOUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    ttwait : out STD_LOGIC;
-    ttlisten : out STD_LOGIC;
-    TIME_OUT : in STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component SDDR_TT_AXI_SDDR_TT_0_0;
   component SDDR_TT_AXI_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -275,6 +250,31 @@ architecture STRUCTURE of SDDR_TT_AXI is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SDDR_TT_AXI_axi_gpio_0_3;
+  component SDDR_TT_AXI_SDDR_TT_0_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    RESETN : in STD_LOGIC;
+    DDR_T0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    DDR_T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    DDR_T2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    DDR_T3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    DDR_T4 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    T1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    T4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    D2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    D3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    D4 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DRDY : out STD_LOGIC;
+    TIMEOUTS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    ttwait : out STD_LOGIC;
+    ttlisten : out STD_LOGIC;
+    TIME_OUT : in STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component SDDR_TT_AXI_SDDR_TT_0_0;
   signal MCLK_1 : STD_LOGIC;
   signal SDDR_TT_0_D0 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SDDR_TT_0_D1 : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -289,11 +289,11 @@ architecture STRUCTURE of SDDR_TT_AXI is
   signal SDDR_TT_0_TIMEOUTS : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal SDDR_TT_0_ttlisten : STD_LOGIC;
   signal SDDR_TT_0_ttwait : STD_LOGIC;
-  signal T0_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal T1_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal T2_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal T3_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal T4_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal T0_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal T1_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal T2_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal T3_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal T4_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal TT_CONFIG_1_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal TT_CONFIG_1_ARREADY : STD_LOGIC;
   signal TT_CONFIG_1_ARVALID : STD_LOGIC;
@@ -484,11 +484,11 @@ architecture STRUCTURE of SDDR_TT_AXI is
   attribute X_INTERFACE_INFO of TT_UTIL_wstrb : signal is "xilinx.com:interface:aximm:1.0 TT_UTIL WSTRB";
 begin
   MCLK_1 <= MCLK;
-  T0_1(3 downto 0) <= T0(3 downto 0);
-  T1_1(3 downto 0) <= T1(3 downto 0);
-  T2_1(3 downto 0) <= T2(3 downto 0);
-  T3_1(3 downto 0) <= T3(3 downto 0);
-  T4_1(3 downto 0) <= T4(3 downto 0);
+  T0_1(7 downto 0) <= T0(7 downto 0);
+  T1_1(7 downto 0) <= T1(7 downto 0);
+  T2_1(7 downto 0) <= T2(7 downto 0);
+  T3_1(7 downto 0) <= T3(7 downto 0);
+  T4_1(7 downto 0) <= T4(7 downto 0);
   TT_CONFIG_1_ARADDR(8 downto 0) <= TT_CONFIG_araddr(8 downto 0);
   TT_CONFIG_1_ARVALID <= TT_CONFIG_arvalid;
   TT_CONFIG_1_AWADDR(8 downto 0) <= TT_CONFIG_awaddr(8 downto 0);
@@ -657,11 +657,11 @@ SDDR_TT_0: component SDDR_TT_AXI_SDDR_TT_0_0
       D2(7 downto 0) => SDDR_TT_0_D2(7 downto 0),
       D3(7 downto 0) => SDDR_TT_0_D3(7 downto 0),
       D4(7 downto 0) => SDDR_TT_0_D4(7 downto 0),
-      DDR_T0(3 downto 0) => T0_1(3 downto 0),
-      DDR_T1(3 downto 0) => T1_1(3 downto 0),
-      DDR_T2(3 downto 0) => T2_1(3 downto 0),
-      DDR_T3(3 downto 0) => T3_1(3 downto 0),
-      DDR_T4(3 downto 0) => T4_1(3 downto 0),
+      DDR_T0(7 downto 0) => T0_1(7 downto 0),
+      DDR_T1(7 downto 0) => T1_1(7 downto 0),
+      DDR_T2(7 downto 0) => T2_1(7 downto 0),
+      DDR_T3(7 downto 0) => T3_1(7 downto 0),
+      DDR_T4(7 downto 0) => T4_1(7 downto 0),
       DRDY => SDDR_TT_0_DRDY,
       MCLK => MCLK_1,
       RESETN => TT_CONFIG_gpio2_io_o(0),

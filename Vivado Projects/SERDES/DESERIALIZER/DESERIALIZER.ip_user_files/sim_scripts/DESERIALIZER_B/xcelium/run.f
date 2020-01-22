@@ -31,20 +31,14 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_axi_gpio_0_0/sim/DESERIALIZER_B_axi_gpio_0_0.vhd" \
--endlib
--makelib xcelium_lib/util_idelay_ctrl_v1_0_1 \
-  "../../../../DESERIALIZER.srcs/sources_1/bd/DESERIALIZER_B/ipshared/823d/hdl/util_idelay_ctrl_v1_0_vl_rfs.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_util_idelay_ctrl_0_0/sim/DESERIALIZER_B_util_idelay_ctrl_0_0.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/DESERIALIZER_B/sim/DESERIALIZER_B.vhd" \
   "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_0_0/sim/DESERIALIZER_B_ISERDES_B_0_0.vhd" \
   "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_0_1/sim/DESERIALIZER_B_ISERDES_B_0_1.vhd" \
   "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_0_2/sim/DESERIALIZER_B_ISERDES_B_0_2.vhd" \
   "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_1_0/sim/DESERIALIZER_B_ISERDES_B_1_0.vhd" \
   "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_ISERDES_B_3_0/sim/DESERIALIZER_B_ISERDES_B_3_0.vhd" \
+  "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_DELAY_CTL_0_0/sim/DESERIALIZER_B_DELAY_CTL_0_0.vhd" \
+  "../../../bd/DESERIALIZER_B/ip/DESERIALIZER_B_axi_gpio_0_1/sim/DESERIALIZER_B_axi_gpio_0_1.vhd" \
+  "../../../bd/DESERIALIZER_B/sim/DESERIALIZER_B.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

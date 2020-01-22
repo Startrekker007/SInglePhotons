@@ -267,8 +267,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_
 # IP: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_0/DESERIALIZER_B_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_axi_gpio_0_0 || ORIG_REF_NAME==DESERIALIZER_B_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_util_idelay_ctrl_0_0/DESERIALIZER_B_util_idelay_ctrl_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_util_idelay_ctrl_0_0 || ORIG_REF_NAME==DESERIALIZER_B_util_idelay_ctrl_0_0} -quiet] -quiet
+# IP: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_1/DESERIALIZER_B_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_axi_gpio_0_1 || ORIG_REF_NAME==DESERIALIZER_B_axi_gpio_0_1} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_xlconstant_0_0/SP_OV_xlconstant_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_xlconstant_0_0 || ORIG_REF_NAME==SP_OV_xlconstant_0_0} -quiet] -quiet
@@ -281,6 +281,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_xbar_1 ||
 
 # IP: bd/SP_OV/ip/SP_OV_axi_interconnect_0_1/SP_OV_axi_interconnect_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_axi_interconnect_0_1 || ORIG_REF_NAME==SP_OV_axi_interconnect_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_xlconstant_1_0/SP_OV_xlconstant_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_xlconstant_1_0 || ORIG_REF_NAME==SP_OV_xlconstant_1_0} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_tier2_xbar_0_0/SP_OV_tier2_xbar_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_tier2_xbar_0_0 || ORIG_REF_NAME==SP_OV_tier2_xbar_0_0} -quiet] -quiet
@@ -575,6 +578,14 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_0/DESERIALIZER_B_axi_gpio_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_axi_gpio_0_0 || ORIG_REF_NAME==DESERIALIZER_B_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_1/DESERIALIZER_B_axi_gpio_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_axi_gpio_0_1 || ORIG_REF_NAME==DESERIALIZER_B_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_1/DESERIALIZER_B_axi_gpio_0_1_ooc.xdc
+
+# XDC: bd/SP_OV/ip/SP_OV_DESERIALIZER_B_wrapp_0_0/src/DESERIALIZER_B_axi_gpio_0_1/DESERIALIZER_B_axi_gpio_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==DESERIALIZER_B_axi_gpio_0_1 || ORIG_REF_NAME==DESERIALIZER_B_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/SP_OV/ip/SP_OV_auto_pc_0/SP_OV_auto_pc_0_ooc.xdc
 

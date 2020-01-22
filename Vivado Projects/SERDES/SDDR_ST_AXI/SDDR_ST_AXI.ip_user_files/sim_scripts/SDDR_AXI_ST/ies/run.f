@@ -30,7 +30,7 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/SDDR_AXI_ST/ip/SDDR_AXI_ST_SDDR_ST_0_0/src/ST_TIMER/sim/ST_TIMER.vhd" \
-  "../../../bd/SDDR_AXI_ST/ipshared/09ce/src/SDDR_ST.vhd" \
+  "../../../bd/SDDR_AXI_ST/ipshared/3064/src/SDDR_ST.vhd" \
   "../../../bd/SDDR_AXI_ST/ip/SDDR_AXI_ST_SDDR_ST_0_0/sim/SDDR_AXI_ST_SDDR_ST_0_0.vhd" \
 -endlib
 -makelib ies_lib/axi_lite_ipif_v3_0_4 \

@@ -2,8 +2,10 @@ import socket
 from multiprocessing import Process,Lock
 import json
 from enum import IntEnum
+from time import sleep
 HOST = '169.254.0.2'
 PORT = 6050
+DELAY_TAP_RESOLUTION = 78e-12
 import logging
 class TimeController:
     def __init__(self,host,port):
@@ -19,7 +21,7 @@ class TimeController:
         HOST = host
         PORT = port
         self.logger = logging.getLogger(__name__)
-        logging.basicConfig(level=logging.DEBUG,format='%(asctime)s [%(levelname)7s] %(module)s -- %(message)s')
+
         try:
             self.websocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             self.websocket.connect((HOST,PORT))
@@ -135,7 +137,7 @@ class TimeController:
                 self.logger.warning("Data not pertinent to coincidence timer received " + data)
         time = data[2:]
         self.logger.info("Coincidence Time: "+str(time))
-        return time
+        return float(time)
 
     def start_time_tagger(self,timeout):
         """
@@ -217,17 +219,15 @@ class TimeController:
         data = "PG"+json.dumps(pgsettings)
         self.websocket.sendall(data.encode())
 
-    def set_input_delay(self,channel,tap0,tap1):
+    def set_input_delay(self,channel,time):
         """
         Set the input delays of each input (including T0/TRIG and ETRIG)
         Parameters
         ----------
         channel : :class:`int`
             Channel to adjust delay of (0-5)
-        tap0 : :class:`int`
-            Delay line tap of first stage
-        tap1 : :class:`int`
-            Delay line tap of second stage
+        time : :class:`float`
+            Time in seconds
 
         Returns
         -------
@@ -236,10 +236,16 @@ class TimeController:
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
-
-        delayconfig = "iDD"+json.dumps([channel,tap0,tap1])
+        delaytaps = int(time/DELAY_TAP_RESOLUTION)
+        tap0 = delaytaps & 0b11111
+        if(delaytaps >31):
+            tap1 = (delaytaps-31)&0b11111
+        else:
+            tap1 = 0
+        delayconfig = "iDD"+json.dumps([int(channel),tap0,tap1])
         self.logger.info("Setting delay with config "+delayconfig)
         self.websocket.sendall(delayconfig.encode())
+        sleep(0.1)
     def restart(self):
         self.logger.warning("RECONFIGURING PROGRAMMABLE LOGIC")
         self.websocket.sendall("XX".encode(CounterMode.MANUAL_TRIGGER))
@@ -260,3 +266,10 @@ class LineSelectMode(IntEnum):
     L1FIRST = 0
     L2FIRST = 1
     DONTCARE = 2
+class CHANNEL_SELECT(IntEnum):
+    CH1 = 0
+    CH2 = 1
+    CH3 = 2
+    CH4 = 3
+    T0 = 4
+    E_TRIG = 5

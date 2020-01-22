@@ -77,7 +77,7 @@ HS_CLK <= not HS_CLK after 0.625ns;
         wait for 2us;
         wait for 9.7ns;
         T2 <= '1';
-        wait for 10ns;
+        wait for 0.7ns;
         T1 <= '1';
         wait;
     end process;

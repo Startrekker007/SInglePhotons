@@ -1,0 +1,135 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 2440 -y 2030 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 2440 -y 2050 -defaultsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x -10 -y 20 -defaultsOSRD
+preplace port CH0 -pg 1 -lvl 0 -x -10 -y 1730 -defaultsOSRD
+preplace port CH1 -pg 1 -lvl 0 -x -10 -y 1750 -defaultsOSRD
+preplace port CH2 -pg 1 -lvl 0 -x -10 -y 1770 -defaultsOSRD
+preplace port CH3 -pg 1 -lvl 0 -x -10 -y 1790 -defaultsOSRD
+preplace port TRIG_T0 -pg 1 -lvl 0 -x -10 -y 1710 -defaultsOSRD
+preplace port E_TRIG -pg 1 -lvl 0 -x -10 -y 1670 -defaultsOSRD
+preplace port ST_ARMED -pg 1 -lvl 6 -x 2440 -y 2150 -defaultsOSRD
+preplace port ST_WAITING -pg 1 -lvl 6 -x 2440 -y 2170 -defaultsOSRD
+preplace port CT_ARMED -pg 1 -lvl 6 -x 2440 -y 1870 -defaultsOSRD
+preplace port CT_WAITING -pg 1 -lvl 6 -x 2440 -y 1890 -defaultsOSRD
+preplace port TT_LISTENING -pg 1 -lvl 6 -x 2440 -y 1040 -defaultsOSRD
+preplace port TT_WAITING -pg 1 -lvl 6 -x 2440 -y 1060 -defaultsOSRD
+preplace port HS_IN -pg 1 -lvl 0 -x -10 -y 1870 -defaultsOSRD
+preplace portBus SIG_OUT -pg 1 -lvl 6 -x 2440 -y 1960 -defaultsOSRD
+preplace portBus DEBUG -pg 1 -lvl 6 -x 2440 -y 1270 -defaultsOSRD
+preplace portBus TEST_O -pg 1 -lvl 6 -x 2440 -y 2550 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 260 -y 2080 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 260 -y 1870 -defaultsOSRD
+preplace inst ENABLER_0 -pg 1 -lvl 5 -x 2230 -y 1960 -defaultsOSRD
+preplace inst T_UTIL -pg 1 -lvl 3 -x 1430 -y 2340 -defaultsOSRD
+preplace inst TRIG_RST_SL -pg 1 -lvl 2 -x 720 -y 1770 -defaultsOSRD
+preplace inst EX_STOP_EN_SL -pg 1 -lvl 2 -x 720 -y 1670 -defaultsOSRD
+preplace inst T_RDY_U -pg 1 -lvl 3 -x 1430 -y 1720 -defaultsOSRD
+preplace inst P_COUNTER_wrapper_0 -pg 1 -lvl 3 -x 1430 -y 260 -defaultsOSRD
+preplace inst DDS_AXI_PERIPH_wrapp_0 -pg 1 -lvl 3 -x 1430 -y 720 -defaultsOSRD
+preplace inst DELAYTIMER_CLK -pg 1 -lvl 2 -x 720 -y 1550 -defaultsOSRD
+preplace inst REF_CLK -pg 1 -lvl 2 -x 720 -y 1420 -defaultsOSRD
+preplace inst DESERIALIZER_CLOCK -pg 1 -lvl 3 -x 1430 -y 2500 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -x 720 -y 1890 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 5 -x 2230 -y 1270 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 720 -y 690 -defaultsOSRD
+preplace inst selectio_wiz_0 -pg 1 -lvl 5 -x 2230 -y 2550 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 4 -x 1870 -y 2690 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 4 -x 1870 -y 2560 -defaultsOSRD
+preplace inst SDDR_AXI_ST_wrapper_0 -pg 1 -lvl 3 -x 1430 -y 2160 -defaultsOSRD
+preplace inst SDDR_CT_AXI_wrapper_0 -pg 1 -lvl 3 -x 1430 -y 1900 -defaultsOSRD
+preplace inst SDDR_TT_AXI_wrapper_0 -pg 1 -lvl 3 -x 1430 -y 1050 -defaultsOSRD
+preplace inst DESERIALIZER_B_wrapp_0 -pg 1 -lvl 3 -x 1430 -y 1480 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 50 1710 490 2040 1110
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 60 1720 550 2130 870 2690 N
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 540 2010 1150
+preplace netloc REF_CLK_clk_out1 1 2 1 950 230n
+preplace netloc DDS_AXI_PERIPH_wrapp_0_DONE 1 3 2 N 750 2020
+preplace netloc DDS_AXI_PERIPH_wrapp_0_CH_OUT 1 3 2 N 690 2040
+preplace netloc ENABLER_0_CH_O 1 5 1 NJ 1960
+preplace netloc axi_gpio_0_gpio_io_o 1 3 2 1710 1970 N
+preplace netloc T_UTIL_gpio2_io_o 1 1 3 570 2020 880J 2570 1570
+preplace netloc TRIG_RST_SL_Dout 1 2 1 1010J 370n
+preplace netloc EX_STOP_EN_SL_Dout 1 2 1 1050J 450n
+preplace netloc P_COUNTER_wrapper_0_EX_STOP_RDY 1 3 1 1690 260n
+preplace netloc REF_CLK_locked1 1 2 3 1020J 1260 N 1260 N
+preplace netloc DELAYTIMER_CLK_clk_out2 1 2 1 960 330n
+preplace netloc SDDR_AXI_ST_wrapper_0_armed 1 3 3 NJ 2150 N 2150 NJ
+preplace netloc SDDR_AXI_ST_wrapper_0_waiting 1 3 3 NJ 2170 N 2170 NJ
+preplace netloc SDDR_CT_AXI_wrapper_0_ARMED 1 3 3 NJ 1890 2020 1870 NJ
+preplace netloc SDDR_CT_AXI_wrapper_0_WAITING 1 3 3 NJ 1910 2030 1890 NJ
+preplace netloc SDDR_TT_AXI_wrapper_0_listening 1 3 3 NJ 1040 N 1040 NJ
+preplace netloc SDDR_TT_AXI_wrapper_0_waiting 1 3 3 NJ 1060 N 1060 NJ
+preplace netloc DESERIALIZER_CLOCK_clk_out2 1 2 2 1200 2040 1660
+preplace netloc DESERIALIZER_B_wrapp_0_OT1 1 2 2 1230 2430 1650
+preplace netloc DESERIALIZER_B_wrapp_0_OT2 1 2 2 1240 2020 1600
+preplace netloc DESERIALIZER_CLOCK_locked 1 3 2 1700 1280 N
+preplace netloc DELAYTIMER_CLK_locked 1 2 3 1070J 1240 N 1240 N
+preplace netloc xlconcat_0_dout 1 5 1 NJ 1270
+preplace netloc DESERIALIZER_B_wrapp_0_OT0 1 2 2 1250 1280 1570
+preplace netloc DESERIALIZER_B_wrapp_0_OT3 1 2 2 1260 1230 1590
+preplace netloc DESERIALIZER_B_wrapp_0_OT4 1 2 2 1270 1250 1580
+preplace netloc DESERIALIZER_B_wrapp_0_RT0 1 2 2 1270 510 1640
+preplace netloc DESERIALIZER_B_wrapp_0_RXT 1 2 2 1220 1300 1610
+preplace netloc DESERIALIZER_B_wrapp_0_RT1 1 2 2 1270 10 1670
+preplace netloc DESERIALIZER_B_wrapp_0_RT2 1 2 2 1220 0 1680
+preplace netloc DESERIALIZER_B_wrapp_0_RT3 1 2 2 1210 1270 1630
+preplace netloc DESERIALIZER_B_wrapp_0_RT4 1 2 2 1160 1290 1620
+preplace netloc xlconstant_0_dout 1 2 1 1100J 1380n
+preplace netloc DELAYTIMER_CLK_clk_out1 1 2 1 1080 1440n
+preplace netloc TRIG_T0_1 1 0 3 30J 1970 460J 2000 1180J
+preplace netloc CH0_1 1 0 3 NJ 1730 560J 1830 1130J
+preplace netloc CH1_1 1 0 3 NJ 1750 520J 1950 1170J
+preplace netloc CH2_1 1 0 3 20J 1760 500J 1960 1120J
+preplace netloc CH3_1 1 0 3 10J 1740 510J 1970 1190J
+preplace netloc E_TRIG_1 1 0 3 NJ 1670 530J 1980 1140J
+preplace netloc HS_IN_1 1 0 3 40J 1770 470J 1990 1160
+preplace netloc selectio_wiz_0_data_out_to_pins 1 5 1 N 2550
+preplace netloc DESERIALIZER_CLOCK_clk_out1 1 3 2 N 2490 2030
+preplace netloc util_vector_logic_0_Res 1 4 1 2030 2570n
+preplace netloc xlconstant_1_dout 1 4 1 2030 2550n
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 2030 NJ 2030 NJ 2030 N 2030 NJ
+preplace netloc axi_interconnect_0_M24_AXI 1 2 1 1070 890n
+preplace netloc axi_interconnect_0_M23_AXI 1 2 1 1080 870n
+preplace netloc axi_interconnect_0_M17_AXI 1 2 1 N 750
+preplace netloc axi_interconnect_0_M15_AXI 1 2 1 N 710
+preplace netloc axi_interconnect_0_M05_AXI 1 2 1 900 130n
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 480 70n
+preplace netloc axi_interconnect_0_M01_AXI 1 2 1 1030 430n
+preplace netloc axi_interconnect_0_M08_AXI 1 2 1 930 190n
+preplace netloc axi_interconnect_0_M25_AXI 1 2 1 1060 910n
+preplace netloc axi_interconnect_0_M04_AXI 1 2 1 890 110n
+preplace netloc axi_interconnect_0_M12_AXI 1 2 1 N 650
+preplace netloc axi_interconnect_0_M06_AXI 1 2 1 910 150n
+preplace netloc axi_interconnect_0_M20_AXI 1 2 1 1000 810n
+preplace netloc axi_interconnect_0_M07_AXI 1 2 1 920 170n
+preplace netloc axi_interconnect_0_M26_AXI 1 2 1 1020 930n
+preplace netloc axi_interconnect_0_M10_AXI 1 2 1 N 610
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 1090 410n
+preplace netloc axi_interconnect_0_M09_AXI 1 2 1 940 210n
+preplace netloc axi_interconnect_0_M02_AXI 1 2 1 870 70n
+preplace netloc axi_interconnect_0_M03_AXI 1 2 1 880 90n
+preplace netloc axi_interconnect_0_M14_AXI 1 2 1 N 690
+preplace netloc axi_interconnect_0_M22_AXI 1 2 1 990 850n
+preplace netloc axi_interconnect_0_M13_AXI 1 2 1 N 670
+preplace netloc axi_interconnect_0_M11_AXI 1 2 1 N 630
+preplace netloc axi_interconnect_0_M27_AXI 1 2 1 980 950n
+preplace netloc axi_interconnect_0_M18_AXI 1 2 1 N 770
+preplace netloc axi_interconnect_0_M16_AXI 1 2 1 N 730
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 2050 NJ 2050 NJ 2050 N 2050 NJ
+preplace netloc axi_interconnect_0_M19_AXI 1 2 1 870 790n
+preplace netloc axi_interconnect_0_M21_AXI 1 2 1 1040 830n
+preplace netloc axi_interconnect_0_M28_AXI 1 2 1 970 970n
+levelinfo -pg 1 -10 260 720 1430 1870 2230 2440
+pagesize -pg 1 -db -bbox -sgen -130 -20 2590 2760
+"
+}
+{
+   "da_axi4_cnt":"32",
+   "da_board_cnt":"4",
+   "da_clkrst_cnt":"44",
+   "da_ps7_cnt":"1"
+}

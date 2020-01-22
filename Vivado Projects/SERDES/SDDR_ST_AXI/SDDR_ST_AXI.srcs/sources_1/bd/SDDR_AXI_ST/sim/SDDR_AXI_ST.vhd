@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 15 09:45:15 2020
+--Date        : Tue Jan 21 10:13:51 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target SDDR_AXI_ST.bd
 --Design      : SDDR_AXI_ST
@@ -48,7 +48,7 @@ entity SDDR_AXI_ST is
     ST_UTIL_wready : out STD_LOGIC;
     ST_UTIL_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     ST_UTIL_wvalid : in STD_LOGIC;
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     armed : out STD_LOGIC;
@@ -61,21 +61,6 @@ entity SDDR_AXI_ST is
 end SDDR_AXI_ST;
 
 architecture STRUCTURE of SDDR_AXI_ST is
-  component SDDR_AXI_ST_SDDR_ST_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    RESETN : in STD_LOGIC;
-    T1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    DRDY : out STD_LOGIC;
-    CTIME : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    waiting : out STD_LOGIC;
-    armed : out STD_LOGIC;
-    DEBUG0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    DEBUG1 : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component SDDR_AXI_ST_SDDR_ST_0_0;
   component SDDR_AXI_ST_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -133,6 +118,21 @@ architecture STRUCTURE of SDDR_AXI_ST is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component SDDR_AXI_ST_axi_gpio_0_1;
+  component SDDR_AXI_ST_SDDR_ST_0_0 is
+  port (
+    MCLK : in STD_LOGIC;
+    RESETN : in STD_LOGIC;
+    T1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    D0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    D1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DRDY : out STD_LOGIC;
+    CTIME : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    waiting : out STD_LOGIC;
+    armed : out STD_LOGIC;
+    DEBUG0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    DEBUG1 : out STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component SDDR_AXI_ST_SDDR_ST_0_0;
   signal MCLK_1 : STD_LOGIC;
   signal SDDR_ST_0_CTIME : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal SDDR_ST_0_D0 : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -174,13 +174,13 @@ architecture STRUCTURE of SDDR_AXI_ST is
   signal ST_UTIL_1_WREADY : STD_LOGIC;
   signal ST_UTIL_1_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ST_UTIL_1_WVALID : STD_LOGIC;
-  signal T1_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal T1_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal UTIL_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal aclk_1 : STD_LOGIC;
   signal aresetn_1 : STD_LOGIC;
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal NLW_SDDR_ST_0_DEBUG0_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_SDDR_ST_0_DEBUG1_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_SDDR_ST_0_DEBUG0_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_SDDR_ST_0_DEBUG1_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of MCLK : signal is "xilinx.com:signal:clock:1.0 CLK.MCLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -261,7 +261,7 @@ begin
   ST_UTIL_rresp(1 downto 0) <= ST_UTIL_1_RRESP(1 downto 0);
   ST_UTIL_rvalid <= ST_UTIL_1_RVALID;
   ST_UTIL_wready <= ST_UTIL_1_WREADY;
-  T1_1(3 downto 0) <= T1(3 downto 0);
+  T1_1(7 downto 0) <= T1(7 downto 0);
   aclk_1 <= aclk;
   aresetn_1 <= aresetn;
   armed <= SDDR_ST_0_armed;
@@ -295,12 +295,12 @@ SDDR_ST_0: component SDDR_AXI_ST_SDDR_ST_0_0
       CTIME(31 downto 0) => SDDR_ST_0_CTIME(31 downto 0),
       D0(7 downto 0) => SDDR_ST_0_D0(7 downto 0),
       D1(7 downto 0) => SDDR_ST_0_D1(7 downto 0),
-      DEBUG0(3 downto 0) => NLW_SDDR_ST_0_DEBUG0_UNCONNECTED(3 downto 0),
-      DEBUG1(3 downto 0) => NLW_SDDR_ST_0_DEBUG1_UNCONNECTED(3 downto 0),
+      DEBUG0(7 downto 0) => NLW_SDDR_ST_0_DEBUG0_UNCONNECTED(7 downto 0),
+      DEBUG1(7 downto 0) => NLW_SDDR_ST_0_DEBUG1_UNCONNECTED(7 downto 0),
       DRDY => SDDR_ST_0_DRDY,
       MCLK => MCLK_1,
       RESETN => UTIL_gpio_io_o(0),
-      T1(3 downto 0) => T1_1(3 downto 0),
+      T1(7 downto 0) => T1_1(7 downto 0),
       armed => SDDR_ST_0_armed,
       waiting => SDDR_ST_0_waiting
     );

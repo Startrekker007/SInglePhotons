@@ -36,7 +36,8 @@ entity IDELAY_WRAPPER is
             TAP1 : in std_logic_vector(4 downto 0);
             IDATA : in std_logic;
             ODATA : out std_logic;
-            REF_CLK : in std_logic);
+            REF_CLK : in std_logic;
+            LD : in std_logic);
 end IDELAY_WRAPPER;
 
 architecture Behavioral of IDELAY_WRAPPER is
@@ -53,7 +54,7 @@ IDELAYE2i_inst : IDELAYE2
       IDELAY_TYPE => "VAR_LOAD",           -- FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
       IDELAY_VALUE => 0,                -- Input delay tap setting (0-31)
       PIPE_SEL => "FALSE",              -- Select pipelined mode, FALSE, TRUE
-      REFCLK_FREQUENCY => 200.0,        -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
+      REFCLK_FREQUENCY => 210.0,        -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
       SIGNAL_PATTERN => "DATA"          -- DATA, CLOCK input signal
    )
    port map (
@@ -65,7 +66,7 @@ IDELAYE2i_inst : IDELAYE2
       DATAIN => '0',           -- 1-bit input: Internal delay data input
       IDATAIN => IDATA,         -- 1-bit input: Data input from the I/O
       INC => '0',                 -- 1-bit input: Increment / Decrement tap delay input
-      LD => '1',                   -- 1-bit input: Load IDELAY_VALUE input
+      LD => LD,                   -- 1-bit input: Load IDELAY_VALUE input
       LDPIPEEN => '0',       -- 1-bit input: Enable PIPELINE register to load data input
       REGRST => '0'            -- 1-bit input: Active-high reset tap-delay input
    );
@@ -77,7 +78,7 @@ IDELAYE2o_inst : IDELAYE2
       IDELAY_TYPE => "VAR_LOAD",           -- FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
       IDELAY_VALUE => 0,                -- Input delay tap setting (0-31)
       PIPE_SEL => "FALSE",              -- Select pipelined mode, FALSE, TRUE
-      REFCLK_FREQUENCY => 200.0,        -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
+      REFCLK_FREQUENCY => 210.0,        -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
       SIGNAL_PATTERN => "DATA"          -- DATA, CLOCK input signal
    )
    port map (
@@ -89,7 +90,7 @@ IDELAYE2o_inst : IDELAYE2
       DATAIN => DATA_INT,           -- 1-bit input: Internal delay data input
       IDATAIN => '0',         -- 1-bit input: Data input from the I/O
       INC => '0',                 -- 1-bit input: Increment / Decrement tap delay input
-      LD => '1',                   -- 1-bit input: Load IDELAY_VALUE input
+      LD => LD,                   -- 1-bit input: Load IDELAY_VALUE input
       LDPIPEEN => '0',       -- 1-bit input: Enable PIPELINE register to load data input
       REGRST => '0'            -- 1-bit input: Active-high reset tap-delay input
    );

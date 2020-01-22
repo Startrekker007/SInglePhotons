@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 15 09:21:37 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jan 21 10:59:42 2020" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="SDDR_TT_AXI" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="3" NAME="T0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T0">
+    <PORT DIR="I" LEFT="7" NAME="T0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T0"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
+    <PORT DIR="I" LEFT="7" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T1"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="T2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T2">
+    <PORT DIR="I" LEFT="7" NAME="T2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T2">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T2"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="T3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T3">
+    <PORT DIR="I" LEFT="7" NAME="T3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T3">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T3"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="T4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T4">
+    <PORT DIR="I" LEFT="7" NAME="T4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T4">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_TT_0" PORT="DDR_T4"/>
       </CONNECTIONS>
@@ -39,174 +39,27 @@
         <CONNECTION INSTANCE="SDDR_TT_0" PORT="ttlisten"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="8" NAME="TT_CONFIG_araddr" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_araddr">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_araddr"/>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="DATA1" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="DATA0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_aclk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="TT_CONFIG_arready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_arready">
+    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_arready"/>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="DATA1" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="DATA0" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_aresetn"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="TT_CONFIG_arvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_arvalid">
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="TT_CONFIG_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_CONFIG_awready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_CONFIG_awvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_CONFIG_bready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="TT_CONFIG_bresp" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_CONFIG_bvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="TT_CONFIG_rdata" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_CONFIG_rready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="TT_CONFIG_rresp" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_CONFIG_rvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="TT_CONFIG_wdata" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_CONFIG_wready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="TT_CONFIG_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_CONFIG_wvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="TT_DELAY_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_araddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_araddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_DELAY_arready" SIGIS="undef" SIGNAME="DELAY_s_axi_arready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_arready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_DELAY_arvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_arvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_arvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="8" NAME="TT_DELAY_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_awaddr">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_awaddr"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_DELAY_awready" SIGIS="undef" SIGNAME="DELAY_s_axi_awready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_awready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_DELAY_awvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_awvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_awvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_DELAY_bready" SIGIS="undef" SIGNAME="DELAY_s_axi_bready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_bready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="TT_DELAY_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_bresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_bresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_DELAY_bvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_bvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_bvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="31" NAME="TT_DELAY_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_rdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_DELAY_rready" SIGIS="undef" SIGNAME="DELAY_s_axi_rready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="1" NAME="TT_DELAY_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_rresp">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rresp"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_DELAY_rvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_rvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="31" NAME="TT_DELAY_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_wdata">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wdata"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="TT_DELAY_wready" SIGIS="undef" SIGNAME="DELAY_s_axi_wready">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wready"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="3" NAME="TT_DELAY_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_wstrb">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wstrb"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="TT_DELAY_wvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_wvalid">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wvalid"/>
+        <CONNECTION INSTANCE="SDDR_TT_0" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="TT_DATA0_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DATA0_s_axi_araddr">
@@ -379,6 +232,176 @@
         <CONNECTION INSTANCE="DATA1" PORT="s_axi_wvalid"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" LEFT="8" NAME="TT_DELAY_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_DELAY_arready" SIGIS="undef" SIGNAME="DELAY_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_DELAY_arvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="TT_DELAY_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_DELAY_awready" SIGIS="undef" SIGNAME="DELAY_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_DELAY_awvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_DELAY_bready" SIGIS="undef" SIGNAME="DELAY_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="TT_DELAY_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_DELAY_bvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="TT_DELAY_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_DELAY_rready" SIGIS="undef" SIGNAME="DELAY_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="TT_DELAY_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_DELAY_rvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="TT_DELAY_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_DELAY_wready" SIGIS="undef" SIGNAME="DELAY_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="TT_DELAY_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DELAY_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_DELAY_wvalid" SIGIS="undef" SIGNAME="DELAY_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DELAY" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="TT_CONFIG_araddr" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_araddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_araddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_CONFIG_arready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_arready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_arready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_CONFIG_arvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_arvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_arvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="8" NAME="TT_CONFIG_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_awaddr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_awaddr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_CONFIG_awready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_awready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_awready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_CONFIG_awvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_awvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_awvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_CONFIG_bready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_bready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_bready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="TT_CONFIG_bresp" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_bresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_bresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_CONFIG_bvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_bvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_bvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="TT_CONFIG_rdata" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_CONFIG_rready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="TT_CONFIG_rresp" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rresp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rresp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_CONFIG_rvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_rvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_rvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="31" NAME="TT_CONFIG_wdata" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="TT_CONFIG_wready" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="TT_CONFIG_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wstrb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wstrb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="TT_CONFIG_wvalid" SIGIS="undef" SIGNAME="TT_CONFIG_s_axi_wvalid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_wvalid"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" LEFT="8" NAME="TT_UTIL_araddr" RIGHT="0" SIGIS="undef" SIGNAME="UTIL_s_axi_araddr">
       <CONNECTIONS>
         <CONNECTION INSTANCE="UTIL" PORT="s_axi_araddr"/>
@@ -462,29 +485,6 @@
     <PORT DIR="I" NAME="TT_UTIL_wvalid" SIGIS="undef" SIGNAME="UTIL_s_axi_wvalid">
       <CONNECTIONS>
         <CONNECTION INSTANCE="UTIL" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="DATA1" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="DATA0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_aclk"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DELAY" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="DATA1" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="DATA0" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="TT_CONFIG" PORT="s_axi_aresetn"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="SDDR_TT_0" PORT="MCLK"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1360,6 +1360,7 @@
     <MODULE COREREVISION="2" FULLNAME="/SDDR_TT_0" HWVERSION="1.0" INSTANCE="SDDR_TT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SDDR_TT" VLNV="cri.nz:user:SDDR_TT:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
+        <PARAMETER NAME="SIG_WIDTH" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="SDDR_TT_AXI_SDDR_TT_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -1374,27 +1375,27 @@
             <CONNECTION INSTANCE="TT_CONFIG" PORT="gpio2_io_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="DDR_T0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T0">
+        <PORT DIR="I" LEFT="7" NAME="DDR_T0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="T0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="DDR_T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
+        <PORT DIR="I" LEFT="7" NAME="DDR_T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="T1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="DDR_T2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T2">
+        <PORT DIR="I" LEFT="7" NAME="DDR_T2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T2">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="T2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="DDR_T3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T3">
+        <PORT DIR="I" LEFT="7" NAME="DDR_T3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T3">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="T3"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="DDR_T4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T4">
+        <PORT DIR="I" LEFT="7" NAME="DDR_T4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T4">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="T4"/>
           </CONNECTIONS>

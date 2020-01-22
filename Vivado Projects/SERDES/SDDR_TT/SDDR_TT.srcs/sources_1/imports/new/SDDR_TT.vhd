@@ -33,7 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity SDDR_TT is
     generic (
-        SIG_WIDTH : positive := 4
+        SIG_WIDTH : positive
     );
     Port ( MCLK : in STD_LOGIC;
            RESETN : in STD_LOGIC;
@@ -146,7 +146,7 @@ begin
 end reset_timeouts;
 
 component sddrtt_timer is port(
-    SCLR : in std_logic;
+    SINIT : in std_logic;
     CLK :  in std_logic;
     q : out std_logic_vector(31 downto 0)
 );
@@ -182,7 +182,7 @@ signal pD4 : std_logic_vector(7 downto 0) := x"00";
 begin
 timer : sddrtt_timer port map(
     q => ctr_val,
-    sclr => ctr_rst,
+    SINIT => ctr_rst,
     clk => mclk
 );
 ttwait <= waiting;
@@ -192,6 +192,7 @@ process(MCLK)
 variable iwaiting : std_logic := '1';
 variable ilistening :std_logic := '0';
 variable status : std_logic_vector(3 downto 0) := "0000";
+variable just_started : std_logic := '0';
 begin
     if(rising_edge(MCLK)) then
         if(resetn = '0') then
@@ -208,6 +209,7 @@ begin
             iwaiting := '0';
             ilistening := '0';
             status := x"0";
+            just_started := '0';
             uctr <= x"00000000";
             ctr_rst <= '1';
         else
@@ -225,7 +227,7 @@ begin
                 D0 <= pD0;
                 status := x"0";
                 drdyi <= not drdyi;
-                
+                just_started := '0';
             end if;
             --Pipeline restart end
 
@@ -243,27 +245,45 @@ begin
                     iwaiting := '0';
                     ilistening := '1';
                     ctr_rst <= '0';
+                    just_started := '1';
                 end if;
             end if;
             if(ilistening = '1') then
                 if(status(0) = '0' and is_rising_edge(pddr1,lddr1)) then
                     pD1 <= get_finetime(pddr1,lddr1);
+                    if(just_started = '1') then
+                    pT1 <= std_logic_vector(uctr-1);
+                    else
                     pT1 <= std_logic_vector(uctr);
+                    end if;
+                    
                     status(0) := '1';
                 end if;
                 if(status(1) = '0' and is_rising_edge(pddr2,lddr2)) then
                     pD2 <= get_finetime(pddr2,lddr2);
+                    if(just_started = '1') then
+                    pT2 <= std_logic_vector(uctr-1);
+                    else
                     pT2 <= std_logic_vector(uctr);
+                    end if;
                     status(1) := '1';
                 end if;
                 if(status(2) = '0' and is_rising_edge(pddr3,lddr3)) then
                     pD3 <= get_finetime(pddr3,lddr3);
+                    if(just_started = '1') then
+                    pT3 <= std_logic_vector(uctr-1);
+                    else
                     pT3 <= std_logic_vector(uctr);
+                    end if;
                     status(2) := '1';
                 end if;
                 if(status(3) = '0' and is_rising_edge(pddr4,lddr4)) then
                     pD4 <= get_finetime(pddr4,lddr4);
+                    if(just_started = '1') then
+                    pT4 <= std_logic_vector(uctr-1);
+                    else
                     pT4 <= std_logic_vector(uctr);
+                    end if;
                     status(3) := '1';
                 end if;
                 if(status = x"F") then
@@ -278,6 +298,7 @@ begin
             lddr2 <= pddr2;
             lddr3 <= pddr3;
             lddr4 <= pddr4;
+            just_started := '0';
         end if;
         waiting <= iwaiting;
         listening <= ilistening;

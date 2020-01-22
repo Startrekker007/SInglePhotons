@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 15 09:45:16 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jan 21 10:13:52 2020" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SDDR_AXI_ST" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="3" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
+    <PORT DIR="I" LEFT="7" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_ST_0" PORT="T1"/>
       </CONNECTIONS>
@@ -12,6 +12,28 @@
     <PORT CLKFREQUENCY="400000000" DIR="I" NAME="MCLK" SIGIS="clk" SIGNAME="External_Ports_MCLK">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SDDR_ST_0" PORT="MCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_aclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="DATA" PORT="s_axi_aresetn"/>
+        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="SDDR_ST_0_waiting">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="waiting"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="armed" SIGIS="undef" SIGNAME="SDDR_ST_0_armed">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="armed"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="8" NAME="ST_DATA_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DATA_s_axi_araddr">
@@ -182,28 +204,6 @@
     <PORT DIR="I" NAME="ST_UTIL_wvalid" SIGIS="undef" SIGNAME="UTIL_s_axi_wvalid">
       <CONNECTIONS>
         <CONNECTION INSTANCE="UTIL" PORT="s_axi_wvalid"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_aclk">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_aclk"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="DATA" PORT="s_axi_aresetn"/>
-        <CONNECTION INSTANCE="UTIL" PORT="s_axi_aresetn"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="SDDR_ST_0_waiting">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="SDDR_ST_0" PORT="waiting"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="armed" SIGIS="undef" SIGNAME="SDDR_ST_0_armed">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="SDDR_ST_0" PORT="armed"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -521,7 +521,7 @@
     <MODULE COREREVISION="2" FULLNAME="/SDDR_ST_0" HWVERSION="1.0" INSTANCE="SDDR_ST_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SDDR_ST" VLNV="cri.nz:user:SDDR_ST:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="SIG_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SIG_WIDTH" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="SDDR_AXI_ST_SDDR_ST_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -536,7 +536,7 @@
             <CONNECTION INSTANCE="UTIL" PORT="gpio_io_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
+        <PORT DIR="I" LEFT="7" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_T1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="T1"/>
           </CONNECTIONS>
@@ -571,8 +571,8 @@
             <CONNECTION INSTANCE="External_Ports" PORT="armed"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="DEBUG0" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="3" NAME="DEBUG1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="DEBUG0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="DEBUG1" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

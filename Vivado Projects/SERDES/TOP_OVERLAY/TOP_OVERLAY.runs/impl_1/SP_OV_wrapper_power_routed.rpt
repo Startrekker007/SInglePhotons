@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Jan 16 11:11:30 2020
+| Date             : Wed Jan 22 12:19:18 2020
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file SP_OV_wrapper_power_routed.rpt -pb SP_OV_wrapper_power_summary_routed.pb -rpx SP_OV_wrapper_power_routed.rpx
 | Design           : SP_OV_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.978        |
+| Total On-Chip Power (W)  | 1.998        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.826        |
+| Dynamic (W)              | 1.845        |
 | Device Static (W)        | 0.153        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 62.2         |
-| Junction Temperature (C) | 47.8         |
+| Max Ambient (C)          | 62.0         |
+| Junction Temperature (C) | 48.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,22 +52,22 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.097 |       14 |       --- |             --- |
-| Slice Logic             |     0.045 |    16227 |       --- |             --- |
-|   Others                |     0.023 |      793 |       --- |             --- |
-|   LUT as Logic          |     0.013 |     4494 |     53200 |            8.45 |
-|   CARRY4                |     0.005 |      382 |     13300 |            2.87 |
-|   Register              |     0.004 |     9612 |    106400 |            9.03 |
+| Clocks                  |     0.094 |       14 |       --- |             --- |
+| Slice Logic             |     0.045 |    16549 |       --- |             --- |
+|   Others                |     0.023 |      794 |       --- |             --- |
+|   LUT as Logic          |     0.013 |     4680 |     53200 |            8.80 |
+|   CARRY4                |     0.004 |      392 |     13300 |            2.95 |
+|   Register              |     0.004 |     9705 |    106400 |            9.12 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
 |   F7/F8 Muxes           |    <0.001 |        5 |     53200 |           <0.01 |
-| Signals                 |     0.032 |    12633 |       --- |             --- |
+| Signals                 |     0.032 |    12858 |       --- |             --- |
 | Block RAM               |     0.017 |        2 |       140 |            1.43 |
-| MMCM                    |     0.352 |        3 |         4 |           75.00 |
+| MMCM                    |     0.355 |        3 |         4 |           75.00 |
 | DSPs                    |    <0.001 |        4 |       220 |            1.82 |
-| I/O                     |     0.026 |       20 |       125 |           16.00 |
+| I/O                     |     0.047 |       24 |       125 |           19.20 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
 | Static Power            |     0.153 |          |           |                 |
-| Total                   |     1.978 |          |           |                 |
+| Total                   |     1.998 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.189 |       0.172 |      0.017 |
-| Vccaux    |       1.800 |     0.235 |       0.219 |      0.016 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vccint    |       1.000 |     0.185 |       0.167 |      0.017 |
+| Vccaux    |       1.800 |     0.237 |       0.221 |      0.016 |
+| Vcco33    |       3.300 |     0.008 |       0.007 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,14 +142,14 @@ Table of Contents
 +------------------------------+------------------------------------------------------------+-----------------+
 | clk_fpga_0                   | SP_OV_i/processing_system7_0/inst/FCLK_CLK0                |            10.0 |
 | clk_fpga_0                   | SP_OV_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]   |            10.0 |
-| clk_out1_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAYTIMER_CLK/inst/clk_out1_SP_OV_clk_wiz_0_1     |             5.0 |
+| clk_out1_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAYTIMER_CLK/inst/clk_out1_SP_OV_clk_wiz_0_1     |             4.8 |
 | clk_out1_SP_OV_clk_wiz_0_2_1 | SP_OV_i/DESERIALIZER_CLOCK/inst/clk_out1_SP_OV_clk_wiz_0_2 |             1.3 |
 | clk_out1_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clk_out1_SP_OV_clk_wiz_1_1            |             2.2 |
 | clk_out2_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAYTIMER_CLK/inst/clk_out2_SP_OV_clk_wiz_0_1     |             8.0 |
-| clk_out2_SP_OV_clk_wiz_0_2_1 | SP_OV_i/DESERIALIZER_CLOCK/inst/clk_out2_SP_OV_clk_wiz_0_2 |             2.5 |
-| clkfbout_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAYTIMER_CLK/inst/clkfbout_SP_OV_clk_wiz_0_1     |            10.0 |
+| clk_out2_SP_OV_clk_wiz_0_2_1 | SP_OV_i/DESERIALIZER_CLOCK/inst/clk_out2_SP_OV_clk_wiz_0_2 |             5.0 |
+| clkfbout_SP_OV_clk_wiz_0_1   | SP_OV_i/DELAYTIMER_CLK/inst/clkfbout_SP_OV_clk_wiz_0_1     |            50.0 |
 | clkfbout_SP_OV_clk_wiz_0_2_1 | SP_OV_i/DESERIALIZER_CLOCK/inst/clkfbout_SP_OV_clk_wiz_0_2 |            10.0 |
-| clkfbout_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clkfbout_SP_OV_clk_wiz_1_1            |            50.0 |
+| clkfbout_SP_OV_clk_wiz_1_1_1 | SP_OV_i/REF_CLK/inst/clkfbout_SP_OV_clk_wiz_1_1            |            10.0 |
 +------------------------------+------------------------------------------------------------+-----------------+
 
 
@@ -162,34 +162,35 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| SP_OV_wrapper              |     1.826 |
-|   SP_OV_i                  |     1.823 |
-|     DDS_AXI_PERIPH_wrapp_0 |     0.087 |
-|       U0                   |     0.087 |
-|     DELAYTIMER_CLK         |     0.133 |
-|       inst                 |     0.133 |
-|     DESERIALIZER_B_wrapp_0 |     0.057 |
-|       U0                   |     0.057 |
+| SP_OV_wrapper              |     1.845 |
+|   SP_OV_i                  |     1.821 |
+|     DDS_AXI_PERIPH_wrapp_0 |     0.089 |
+|       U0                   |     0.089 |
+|     DELAYTIMER_CLK         |     0.123 |
+|       inst                 |     0.123 |
+|     DESERIALIZER_B_wrapp_0 |     0.056 |
+|       U0                   |     0.056 |
 |     DESERIALIZER_CLOCK     |     0.100 |
 |       inst                 |     0.100 |
-|     P_COUNTER_wrapper_0    |     0.016 |
-|       U0                   |     0.016 |
-|     REF_CLK                |     0.122 |
-|       inst                 |     0.122 |
-|     SDDR_AXI_ST_wrapper_0  |     0.006 |
-|       U0                   |     0.006 |
-|     SDDR_CT_AXI_wrapper_0  |     0.008 |
-|       U0                   |     0.008 |
-|     SDDR_TT_AXI_wrapper_0  |     0.025 |
-|       U0                   |     0.025 |
-|     axi_interconnect_0     |     0.009 |
+|     P_COUNTER_wrapper_0    |     0.017 |
+|       U0                   |     0.017 |
+|     REF_CLK                |     0.135 |
+|       inst                 |     0.135 |
+|     SDDR_AXI_ST_wrapper_0  |     0.005 |
+|       U0                   |     0.005 |
+|     SDDR_CT_AXI_wrapper_0  |     0.005 |
+|       U0                   |     0.005 |
+|     SDDR_TT_AXI_wrapper_0  |     0.022 |
+|       U0                   |     0.022 |
+|     axi_interconnect_0     |     0.010 |
 |       s00_couplers         |     0.004 |
 |       tier2_xbar_0         |     0.001 |
 |       tier2_xbar_1         |     0.001 |
 |       tier2_xbar_2         |     0.001 |
 |       tier2_xbar_3         |     0.001 |
-|     processing_system7_0   |     1.258 |
-|       inst                 |     1.258 |
+|       xbar                 |     0.001 |
+|     processing_system7_0   |     1.259 |
+|       inst                 |     1.259 |
 +----------------------------+-----------+
 
 

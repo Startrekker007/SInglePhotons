@@ -1,0 +1,46 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Jan 16 09:17:28 2020
+| Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_drc -file TEST_wrapper_drc_opted.rpt -pb TEST_wrapper_drc_opted.pb -rpx TEST_wrapper_drc_opted.rpx
+| Design       : TEST_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 2
++----------+----------+--------------------------------------------------+------------+
+| Rule     | Severity | Description                                      | Violations |
++----------+----------+--------------------------------------------------+------------+
+| REQP-107 | Warning  | enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O | 2          |
++----------+----------+--------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+REQP-107#1 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+TEST_i/ISERDES_B_0/U0/inst/pins[0].iserdese2_master: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#2 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+TEST_i/ISERDES_B_1/U0/inst/pins[0].iserdese2_master: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+
