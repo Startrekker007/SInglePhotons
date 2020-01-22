@@ -159,6 +159,7 @@ class TimeController:
         self.websocket.sendall(("TT1"+str(timeout)).encode())
 
         while 1:
+            self.logger.debug("Waiting for data...")
             data = self.websocket.recv(1024).decode()
             if(data[:2]=="TT"):
                 break

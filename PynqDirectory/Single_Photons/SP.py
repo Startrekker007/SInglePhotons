@@ -10,9 +10,11 @@ from typing import List
 import _thread
 TIMER_CLK = 125e6 #Window Timer clock
 DDS_REF_CLK = 460e6 #DDS Ref clock
-DET_REF_CLK = 400e6 #Detector ref clock
-PHASE_SHIFTS = 4
-FTIME = 1/(PHASE_SHIFTS*DET_REF_CLK)#Shifted Clock Sampling resolution
+DESERIALIZATION_CLOCK = 800e6 #ISERDES high speed clock
+SERIALIZATION_FACTOR = 8
+DET_REF_CLK = (DESERIALIZATION_CLOCK/SERIALIZATION_FACTOR)*2#Detector ref clock
+
+FTIME = 1/(SERIALIZATION_FACTOR*DET_REF_CLK)#Calculating fine time from serialization factor
 axi_base_addr = 0x43c00000 #peripheral base
 axi_range = 0x10000
 ch1_data = 0x0 #Axi gpio ch1 data address
@@ -150,6 +152,9 @@ class SP_TOOLS:
         self.TT_UTIL = MMIO(axi_base_addr + (axi_offset * axi_range), axi_range)
         plog.info("TT_UTIL: "+hex(axi_base_addr + (axi_offset * axi_range)))
         axi_offset+=1
+        self.IDELAY_DEBUG = MMIO(axi_base_addr + (axi_offset * axi_range), axi_range)
+        plog.info("IDELAY_DEBUG: " + hex(axi_base_addr + (axi_offset * axi_range)))
+        axi_offset+=1
         plog.debug("AXI_RANGE -- "+hex(axi_range))
         #Channel enable controller
         #The enable controller is a tristate controlled buffer which when disabling the output places the channels into
@@ -157,9 +162,19 @@ class SP_TOOLS:
         self.T_UTIL.write(ch1_dir,0x0)
         self.T_UTIL.write(ch1_data,0xF)#SEt all channels to high impedance
         self.pg_ch_stat = 0xF
+        sleep(0.05)
+        self.IDELAY_DEBUG.write(0x0,0x1)
         #self.PG_UTIL.write(ch2_data,0x0)
-
-    ####------------------PHOTON COUNTER---------------------------------------------------####
+        sleep(0.1)
+        self.IDELAY_DEBUG.write(0x0,0x1)
+        #Initial delay valus
+        self.DDs = []
+        self.DDs.append(0)
+        self.DDs.append(0)
+        self.DDs.append(0)
+        self.DDs.append(0)
+        self.DDs.append(0)
+        self.DDs.append(0)
     def restart(self):
         self.__init__()
     def pc_set_window(self,window,channels):#Channels is 4 bit integer, window is in seconds
@@ -628,14 +643,30 @@ class SP_TOOLS:
          tap1 : :class:`int`
             Delay line cascaded tap (0-31)
         """
-        concattaps = tap0 | tap1 << 5
-        if(channel >2):
-            self.DELAY_TAPS.write(0x0,self.DELAY_TAPS.read(0x0) | (0b1111111111 << (channel*10)))
-            self.DELAY_TAPS.write(0x0,self.DELAY_TAPS.read(0x0) | (concattaps << (channel*10)))
-        else:
-            self.DELAY_TAPS.write(0x8, self.DELAY_TAPS.read(0x8) | (0b1111111111 << ((channel-3) * 10)))
-            self.DELAY_TAPS.write(0x8, self.DELAY_TAPS.read(0x8) | (concattaps << ((channel-3) * 10)))
+
+        concattaps = tap0 | (tap1 << 5)
+        self.DDs[channel] = concattaps
+        allconcat0 = self.DDs[4] | (self.DDs[0] << 10) | (self.DDs[1] << 20)
+        allconcat1 = self.DDs[2] | (self.DDs[3] << 10) | (self.DDs[5] << 20)
+        self.DELAY_TAPS.write(0x0,allconcat0)
+        self.DELAY_TAPS.write(0x8, allconcat1)
+        # if(channel <=2):
+        #     dp0 = self.DELAY_TAPS.read(0x0) | (0b1111111111 << (channel*10))
+        #     dp1 = dp0 & (concattaps << (channel*10))
+        #     self.DELAY_TAPS.write(0x0,dp1)
+        # else:
+        #     dp0 = self.DELAY_TAPS.read(0x8) | (0b1111111111 << ((channel-3) * 10))
+        #     dp1 = dp0 & (concattaps << ((channel-3) * 10))
+        #     self.DELAY_TAPS.write(0x8, dp1)
         plog.info("Setting input delay on channel "+str(channel)+" dline taps T0:"+str(tap0)+" T1:"+str(tap1))
+        self.IDELAY_DEBUG.write(0x8,0b1)
+        sleep(0.1)
+        self.IDELAY_DEBUG.write(0x8,0b0)
+        # plog.debug("DP0: "+bin(dp0))
+        # plog.debug("DP1: " + bin(dp1))
+        self.IDELAY_DEBUG.write(0x0,0x1)
+        sleep(0.05)
+        plog.debug("OBS0: "+bin(self.IDELAY_DEBUG.read(0x0)))
 
     def uencode(self,val,length):
         """[DEPRECIATED] Calculates the number of binary ones in an integer of specified length

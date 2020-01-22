@@ -3,6 +3,7 @@ from TimeController import *
 from time import sleep
 import logging
 log = logging.getLogger(__name__)
+
 class TC_TESTER:
     def __init__(self):
         log.info("Loading DDG")
@@ -44,6 +45,13 @@ class TC_TESTER:
         return passfail
 
     def test_CT(self):
+        """
+        Runs a test script on the coincidence timing submodule of the time controller. Runs multiple iterations of logarithmically_10 increasing delays on channel B with respect to A
+        Returns
+        -------
+        passfail : :class:`int`
+            Whether the test has passed or failed (1 or 0)
+        """
         ITERATIONS = 50
         EXP = -10
         CUR_COEF = 10
@@ -76,6 +84,9 @@ class TC_TESTER:
         else:
             log.critical("COINCIDENCE TDC TESTING FAILED")
         return passfail
+
+    def test_TT(self):
+
 
 
 

@@ -159,6 +159,7 @@ class TimeController:
         self.websocket.sendall(("TT1"+str(timeout)).encode())
 
         while 1:
+            self.logger.debug("Waiting for data...")
             data = self.websocket.recv(1024).decode()
             if(data[:2]=="TT"):
                 break
@@ -237,18 +238,19 @@ class TimeController:
             self.logger.error("Not connected")
             return 0
         delaytaps = int(time/DELAY_TAP_RESOLUTION)
-        tap0 = delaytaps & 0b11111
         if(delaytaps >31):
+            tap0 = 31
             tap1 = (delaytaps-31)&0b11111
         else:
+            tap0 = delaytaps
             tap1 = 0
         delayconfig = "iDD"+json.dumps([int(channel),tap0,tap1])
         self.logger.info("Setting delay with config "+delayconfig)
         self.websocket.sendall(delayconfig.encode())
-        sleep(0.1)
+        sleep(0.3)
     def restart(self):
         self.logger.warning("RECONFIGURING PROGRAMMABLE LOGIC")
-        self.websocket.sendall("XX".encode(CounterMode.MANUAL_TRIGGER))
+        self.websocket.sendall("XX".encode())
 
 class CounterMode(IntEnum):
     MANUAL_TRIGGER = 0
