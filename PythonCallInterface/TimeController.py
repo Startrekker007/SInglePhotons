@@ -8,7 +8,7 @@ PORT = 6050
 DELAY_TAP_RESOLUTION = 78e-12
 import logging
 class TimeController:
-    def __init__(self,host,port):
+    def __init__(self,host,port,mode):
         """
 
         Parameters
@@ -23,9 +23,10 @@ class TimeController:
         self.logger = logging.getLogger(__name__)
 
         try:
+            self.MODE = mode
             self.websocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             self.websocket.connect((HOST,PORT))
-            self.websocket.sendall("START".encode())
+            self.websocket.sendall(("START"+str(mode)).encode())
             data = self.websocket.recv(1024).decode()
             if(data=="DONE"):
                 self.logger.info("Connection succeeded")
@@ -36,7 +37,7 @@ class TimeController:
             self.logger.error("Connection failed: "+str(e.args))
             self.connected=0
 
-    def reconnect(self,host,port):
+    def reconnect(self,host,port,mode):
         """
         Reconnect to the device
         Parameters
@@ -50,9 +51,10 @@ class TimeController:
         HOST = host
         PORT = port
         try:
+            self.MODE = mode
             self.websocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             self.websocket.connect((HOST,PORT))
-            self.websocket.sendall("START".encode())
+            self.websocket.sendall(("START"+str(mode)).encode())
             data = self.websocket.recv(1024).decode()
             if(data=="DONE"):
                 self.logger.info("Connection succeeded")
@@ -81,6 +83,9 @@ class TimeController:
         if(self.connected==0):
             self.logger.error("Not connected")
             return 0
+        if(self.MODE!=0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
         self.logger.info("Running pulse counter. Mode: "+str(int(mode))+" Window: "+str(window))
         self.websocket.sendall(("PC"+str(int(mode))+str(window)).encode())
         while 1:
@@ -104,6 +109,9 @@ class TimeController:
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
         self.logger.info("Running single line inter rising edge timer")
         self.websocket.sendall("ST".encode())
         while 1:
@@ -114,7 +122,7 @@ class TimeController:
                 self.logger.warning("Data not pertinent to IRETimer received "+data)
         time = data[2:]
         self.logger.info("IRETime: "+str(time))
-        return time
+        return float(time)
 
     def run_coincidence_timer(self,lineselect):
         """
@@ -126,6 +134,9 @@ class TimeController:
         """
         if (self.connected == 0):
             self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
             return 0
         self.logger.info("Running two channel coincidence timer")
         self.websocket.sendall(("CT"+str(int(lineselect))).encode())
@@ -155,6 +166,9 @@ class TimeController:
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
         self.logger.info("Running time tagger with timeout: " + str(timeout))
         self.websocket.sendall(("TT1"+str(timeout)).encode())
 
@@ -169,6 +183,9 @@ class TimeController:
         self.logger.info("Time tagger data: "+str(timedata))
         return timedata
     def poll_time_tagger(self):
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
         while 1:
             data = self.websocket.recv(1024).decode()
 
@@ -188,6 +205,9 @@ class TimeController:
         """
         if (self.connected == 0):
             self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
             return 0
         self.logger.info("Stopping time tagger")
         self.websocket.sendall("TT0".encode())
@@ -215,6 +235,9 @@ class TimeController:
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
         self.logger.info("Configuring channel "+str(channel) + " with settings EN:"+str(int(enabled))+" FREQ: "+str(frequency)+"pwmode: "+str(int(pwmode))+" dcpw: "+str(dc)+" delay: "+str(delay))
         pgsettings = {"ch": channel, "enable":int(enabled), "frequency":frequency,"dc":dc,"del":delay,"dcm":int(pwmode)}
         data = "PG"+json.dumps(pgsettings)
@@ -237,6 +260,9 @@ class TimeController:
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
         delaytaps = int(time/DELAY_TAP_RESOLUTION)
         if(delaytaps >31):
             tap0 = 31
@@ -248,7 +274,78 @@ class TimeController:
         self.logger.info("Setting delay with config "+delayconfig)
         self.websocket.sendall(delayconfig.encode())
         sleep(0.3)
+    def HRST_start(self):
+        """
+        Starts the high resolution single channel inter rising edge timer
+
+        """
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 1):
+            self.logger.error("Cannot be used in default mode")
+            return 0
+        self.websocket.sendall("ST".encode())
+    def HRST_set_delay(self,delays):
+        """
+        Manually set the delays of the high resolution single channel inter rising edge timer
+        Parameters
+        ----------
+        delays : :class:`list` of `int`
+            The delays for each channel
+
+        """
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 1):
+            self.logger.error("Cannot be used in default mode")
+            return 0
+        data = json.dumps(delays)
+        self.websocket.sendall(("DD"+data).encode())
+    def HRST_stop(self):
+        """
+        Stops the high resolution inter rising edge timer
+
+        """
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 1):
+            self.logger.error("Cannot be used in default mode")
+            return 0
+        self.websocket.sendall("STOP".encode())
+    def HRST_poll(self):
+        """
+        Poll the last acquired data from the high resolution inter rising edge timer
+        Returns
+        -------
+        timedata : :class:`float`
+            Time in seconds between the two rising edges
+        """
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 1):
+            self.logger.error("Cannot be used in default mode")
+            return 0
+        while 1:
+            data = self.websocket.recv(1024).decode()
+
+            if (data[:2] == "ST"):
+                break
+            else:
+                self.logger.warning("Data not pertinent to ST received " + data)
+        jsdec = json.JSONDecoder()
+        timedata = jsdec.raw_decode(data[2:])
+        self.logger.debug("DATA -- " + str(timedata[0]))
+        self.logger.info("Single channel inter-rising-edge time: " + str(timedata[0]))
+        return timedata[0]
     def restart(self):
+        """
+        Resets the programmable logic, can be reconfigured afterwards into high resolution mode or default mode
+
+        """
         self.logger.warning("RECONFIGURING PROGRAMMABLE LOGIC")
         self.websocket.sendall("XX".encode())
 
@@ -275,3 +372,6 @@ class CHANNEL_SELECT(IntEnum):
     CH4 = 3
     T0 = 4
     E_TRIG = 5
+class TimeControllerMode(IntEnum):
+    DEFAULT_MODE = 0
+    HIGH_RESOLUTION = 1

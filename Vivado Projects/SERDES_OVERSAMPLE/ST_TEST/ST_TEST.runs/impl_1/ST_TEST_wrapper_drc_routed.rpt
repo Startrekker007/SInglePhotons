@@ -1,0 +1,56 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Jan 30 09:36:47 2020
+| Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_drc -file ST_TEST_wrapper_drc_routed.rpt -pb ST_TEST_wrapper_drc_routed.pb -rpx ST_TEST_wrapper_drc_routed.rpx
+| Design       : ST_TEST_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 4
++-----------+----------+-----------------+------------+
+| Rule      | Severity | Description     | Violations |
++-----------+----------+-----------------+------------+
+| REQP-1580 | Warning  | Phase alignment | 4          |
++-----------+----------+-----------------+------------+
+
+2. REPORT DETAILS
+-----------------
+REQP-1580#1 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 ST_TEST_i/selectio_wiz_0/inst/pins[0].iserdese2_master. This can result in corrupted data. The ST_TEST_i/selectio_wiz_0/inst/pins[0].iserdese2_master/CLK / ST_TEST_i/selectio_wiz_0/inst/pins[0].iserdese2_master/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#2 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 ST_TEST_i/selectio_wiz_1/inst/pins[0].iserdese2_master. This can result in corrupted data. The ST_TEST_i/selectio_wiz_1/inst/pins[0].iserdese2_master/CLK / ST_TEST_i/selectio_wiz_1/inst/pins[0].iserdese2_master/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#3 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 ST_TEST_i/selectio_wiz_2/inst/pins[0].iserdese2_master. This can result in corrupted data. The ST_TEST_i/selectio_wiz_2/inst/pins[0].iserdese2_master/CLK / ST_TEST_i/selectio_wiz_2/inst/pins[0].iserdese2_master/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#4 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 ST_TEST_i/selectio_wiz_3/inst/pins[0].iserdese2_master. This can result in corrupted data. The ST_TEST_i/selectio_wiz_3/inst/pins[0].iserdese2_master/CLK / ST_TEST_i/selectio_wiz_3/inst/pins[0].iserdese2_master/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+

@@ -1,0 +1,389 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 31 13:36:50 2020
+# Process ID: 13068
+# Current directory: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13100 D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.xpr
+# Log file: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/vivado.log
+# Journal file: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.xpr}
+INFO: [Project 1-313] Project file moved from 'D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_TEST' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'TEST.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+TEST_SDDR_ST_0_0
+
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 896.652 ; gain = 231.984
+update_compile_order -fileset sources_1
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DATA
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_1
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:util_vector_logic:2.0 - util_vector_logic_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - UTIL
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DEBUG
+Adding component instance block -- cri.nz:user:SDDR_ST:1.0 - SDDR_ST_0
+Adding component instance block -- xilinx.com:module_ref:ISERDES_B:1.0 - ISERDES_B_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /SDDR_ST_0/MCLK(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /ISERDES_B_0/clk_div_in(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /ISERDES_B_0/clk_in(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /UTIL/gpio_io_o(undef) and /SDDR_ST_0/RESETN(rst)
+Successfully read diagram <TEST> from BD file <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd>
+open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1120.668 ; gain = 0.000
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_intf_nets ps7_0_axi_periph_M02_AXI] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_nets axi_gpio_0_gpio_io_o] [get_bd_nets SDDR_ST_0_DRDY] [get_bd_nets SDDR_ST_0_DEBUG0] [get_bd_nets SDDR_ST_0_DEBUG1] [get_bd_nets SDDR_ST_0_CTIME] [get_bd_nets xlconcat_0_dout] [get_bd_cells UTIL] [get_bd_cells DEBUG] [get_bd_cells DATA]
+delete_bd_objs [get_bd_nets SDDR_ST_0_armed] [get_bd_nets SDDR_ST_0_waiting] [get_bd_nets xlconcat_1_dout] [get_bd_nets ISERDES_B_0_data_in_to_device] [get_bd_nets SDDR_ST_0_D0] [get_bd_nets SDDR_ST_0_D1] [get_bd_cells xlconcat_1] [get_bd_cells SDDR_ST_0] [get_bd_cells xlconcat_0]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ui/bd_d48753f2.ui> 
+update_module_reference TEST_ISERDES_B_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd'
+INFO: [IP_Flow 19-3420] Updated TEST_ISERDES_B_0_0 to use current project options
+WARNING: [IP_Flow 19-4706] Upgraded port 'data_in_to_device' width 8 differs from original width 4
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'TEST_ISERDES_B_0_0'. These changes may impact your design.
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /ISERDES_B_0_upgraded_ipi/clk_in(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /ISERDES_B_0_upgraded_ipi/clk_div_in(undef)
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'TEST_ISERDES_B_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/SDDR_ST D:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI'.
+startgroup
+create_bd_cell -type ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 SDDR_AXI_ST_wrapper_0
+endgroup
+set_property location {3 1099 399} [get_bd_cells SDDR_AXI_ST_wrapper_0]
+connect_bd_net [get_bd_pins ISERDES_B_0/data_in_to_device] [get_bd_pins SDDR_AXI_ST_wrapper_0/T1]
+regenerate_bd_layout
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins SDDR_AXI_ST_wrapper_0/ST_DATA]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins SDDR_AXI_ST_wrapper_0/ST_UTIL]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {2}] [get_bd_cells ps7_0_axi_periph]
+endgroup
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/MCLK] [get_bd_pins clk_wiz_0/clk_out2]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /SDDR_AXI_ST_wrapper_0/MCLK(undef)
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/aresetn] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+set_property location {4.5 1620 605} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/armed] [get_bd_pins xlconcat_0/In0]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/waiting] [get_bd_pins xlconcat_0/In1]
+connect_bd_net [get_bd_ports status] [get_bd_pins xlconcat_0/dout]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ui/bd_d48753f2.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+CRITICAL WARNING: [BD 41-1356] Slave segment </SDDR_AXI_ST_wrapper_0/ST_DATA/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </SDDR_AXI_ST_wrapper_0/ST_UTIL/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1356] Slave segment </SDDR_AXI_ST_wrapper_0/ST_DATA/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </SDDR_AXI_ST_wrapper_0/ST_UTIL/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-927] Following properties on pin /SDDR_AXI_ST_wrapper_0/aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=TEST_processing_system7_0_0_FCLK_CLK0 
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/sim/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ISERDES_B_0 .
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_axi_gpio_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_axi_gpio_0_1 to use current project options
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_AXI_ST_wrapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_mmu .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.hwdef
+generate_target: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1519.340 ; gain = 182.535
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+assign_bd_address
+Slave segment </SDDR_AXI_ST_wrapper_0/ST_DATA/reg0> is being mapped into address space </processing_system7_0/Data> at <0x43C0_0000 [ 64K ]>
+Slave segment </SDDR_AXI_ST_wrapper_0/ST_UTIL/reg0> is being mapped into address space </processing_system7_0/Data> at <0x43C1_0000 [ 64K ]>
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+WARNING: [BD 41-927] Following properties on pin /SDDR_AXI_ST_wrapper_0/aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=TEST_processing_system7_0_0_FCLK_CLK0 
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/sim/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ISERDES_B_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_AXI_ST_wrapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Fri Jan 31 13:44:04 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Netlist 29-17] Analyzing 43 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc] for cell 'TEST_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc] for cell 'TEST_i/processing_system7_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_board.xdc] for cell 'TEST_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_board.xdc] for cell 'TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc] for cell 'TEST_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2228.344 ; gain = 555.617
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc] for cell 'TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/TEST_rst_ps7_0_100M_0_board.xdc] for cell 'TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/TEST_rst_ps7_0_100M_0_board.xdc] for cell 'TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/TEST_rst_ps7_0_100M_0.xdc] for cell 'TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_rst_ps7_0_100M_0/TEST_rst_ps7_0_100M_0.xdc] for cell 'TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_0/SDDR_AXI_ST_axi_gpio_0_0_board.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_0/SDDR_AXI_ST_axi_gpio_0_0_board.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_0/SDDR_AXI_ST_axi_gpio_0_0.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_0/SDDR_AXI_ST_axi_gpio_0_0.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_1/SDDR_AXI_ST_axi_gpio_0_1_board.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_1/SDDR_AXI_ST_axi_gpio_0_1_board.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_1/SDDR_AXI_ST_axi_gpio_0_1.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_axi_gpio_0_1/SDDR_AXI_ST_axi_gpio_0_1.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_fifo_generator_0_0/SDDR_AXI_ST_fifo_generator_0_0.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/fifo_generator_0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_AXI_ST_wrapper_0_0/src/SDDR_AXI_ST_fifo_generator_0_0/SDDR_AXI_ST_fifo_generator_0_0.xdc] for cell 'TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/fifo_generator_0/U0'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc]
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[0]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[0]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[1]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[1]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[2]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[2]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[3]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-180] No cells matched 'TEST_i/SDDR_ST_0/U0/pT1_reg[3]'. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2228.344 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:28 ; elapsed = 00:00:26 . Memory (MB): peak = 2250.262 ; gain = 690.371
+refresh_design
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'refresh_design' was cancelled
+set_property needs_refresh false [get_runs synth_1]
+set_property needs_refresh false [get_runs impl_1]
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Fri Jan 31 13:48:42 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/runme.log
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+# write_bd_tcl "D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/TEST_wrapper.bit} D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.bit
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}
+set_property  ip_repo_paths  d:/SInglePhotons/HW_IP/SDDR_ST [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/SDDR_ST D:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI'.
+report_ip_status -name ip_status 
+upgrade_ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 [get_ips  TEST_SDDR_AXI_ST_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd'
+INFO: [IP_Flow 19-3420] Updated TEST_SDDR_AXI_ST_wrapper_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /SDDR_AXI_ST_wrapper_0_upgraded_ipi/MCLK(undef)
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ui/bd_d48753f2.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips TEST_SDDR_AXI_ST_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+WARNING: [BD 41-927] Following properties on pin /SDDR_AXI_ST_wrapper_0/aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=TEST_processing_system7_0_0_FCLK_CLK0 
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/sim/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ISERDES_B_0 .
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_axi_gpio_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_axi_gpio_0_1 to use current project options
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_AXI_ST_wrapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.hwdef
+generate_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2708.852 ; gain = 238.133
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Fri Jan 31 14:06:42 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/runme.log
+[Fri Jan 31 14:06:42 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/runme.log
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+# write_bd_tcl "D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/TEST_wrapper.bit} D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.bit
+set_property  ip_repo_paths  d:/SInglePhotons/HW_IP/SDDR_ST [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/SDDR_ST D:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI'.
+upgrade_ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 [get_ips  TEST_SDDR_AXI_ST_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd'
+INFO: [IP_Flow 19-3420] Updated TEST_SDDR_AXI_ST_wrapper_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /SDDR_AXI_ST_wrapper_0_upgraded_ipi/MCLK(undef)
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips TEST_SDDR_AXI_ST_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+WARNING: [BD 41-927] Following properties on pin /SDDR_AXI_ST_wrapper_0/aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=TEST_processing_system7_0_0_FCLK_CLK0 
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/sim/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ISERDES_B_0 .
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_axi_gpio_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_axi_gpio_0_1 to use current project options
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_AXI_ST_wrapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.hwdef
+generate_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2708.852 ; gain = 0.000
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Fri Jan 31 14:42:23 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/runme.log
+[Fri Jan 31 14:42:23 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/runme.log
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+# write_bd_tcl "D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/TEST_wrapper.bit} D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.bit
+startgroup
+set_property -dict [list CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200} CONFIG.MMCM_CLKOUT1_DIVIDE {4} CONFIG.CLKOUT2_JITTER {126.455}] [get_bd_cells clk_wiz_0]
+endgroup
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+WARNING: [BD 41-927] Following properties on pin /SDDR_AXI_ST_wrapper_0/aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=TEST_processing_system7_0_0_FCLK_CLK0 
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.srcs\sources_1\bd\TEST\TEST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/sim/TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hdl/TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ISERDES_B_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_AXI_ST_wrapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/hw_handoff/TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/synth/TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Fri Jan 31 16:26:05 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/synth_1/runme.log
+[Fri Jan 31 16:26:05 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/runme.log
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+# write_bd_tcl "D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.runs/impl_1/TEST_wrapper.bit} D:/SInglePhotons/PynqDirectory/Module_Upgrade_Test/SDDR_FIFO/ST/TEST_wrapper.bit
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Feb  3 09:37:51 2020...

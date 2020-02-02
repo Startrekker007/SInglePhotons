@@ -1,0 +1,1207 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x654D527E8FD4D2DE",
+      "device": "xc7z020clg400-1",
+      "name": "ST_OS",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "SDDR_ST_0": "",
+      "SHUFFLYBOI_0": "",
+      "swapper_0": "",
+      "swapper_1": "",
+      "data_splitter_0": "",
+      "xlconstant_0": "",
+      "swapper_2": "",
+      "swapper_3": "",
+      "OS_ISERDES_0": "",
+      "OS_ISERDES_1": "",
+      "OS_ISERDES_2": "",
+      "OS_ISERDES_3": "",
+      "clock_splitter_0": "",
+      "CLOCK_DELAY_0": "",
+      "xlconcat_0": ""
+    },
+    "ports": {
+      "ioreset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      },
+      "clk0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk90": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk90",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "drdy": {
+        "direction": "O"
+      },
+      "waiting": {
+        "direction": "O"
+      },
+      "armed": {
+        "direction": "O"
+      },
+      "CTIME": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "DEBUG0": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      },
+      "DEBUG1": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      },
+      "clk45": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk45",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk135": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk135",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk22_5": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk1",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk112_5": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk91",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk157_5": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk136",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk67_5": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ST_OS_clk46",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "400000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "DATA_IN": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "SDDR_ST_0": {
+        "vlnv": "cri.nz:user:SDDR_ST:1.0",
+        "xci_name": "ST_OS_SDDR_ST_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "SHUFFLYBOI_0": {
+        "vlnv": "xilinx.com:module_ref:SHUFFLYBOI:1.0",
+        "xci_name": "ST_OS_SHUFFLYBOI_0_0",
+        "parameters": {
+          "factor": {
+            "value": "4"
+          },
+          "input_width": {
+            "value": "4"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SHUFFLYBOI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IS0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "IS1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "IS2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "IS3": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "swapper_0": {
+        "vlnv": "xilinx.com:module_ref:swapper:1.0",
+        "xci_name": "ST_OS_swapper_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "swapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ISI": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ISO": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "swapper_1": {
+        "vlnv": "xilinx.com:module_ref:swapper:1.0",
+        "xci_name": "ST_OS_swapper_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "swapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ISI": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ISO": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "data_splitter_0": {
+        "vlnv": "xilinx.com:module_ref:data_splitter:1.0",
+        "xci_name": "ST_OS_data_splitter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "data_splitter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DATA_IN": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "OUT0": {
+            "direction": "O"
+          },
+          "OUT1": {
+            "direction": "O"
+          },
+          "OUT2": {
+            "direction": "O"
+          },
+          "OUT3": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "ST_OS_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "4"
+          }
+        }
+      },
+      "swapper_2": {
+        "vlnv": "xilinx.com:module_ref:swapper:1.0",
+        "xci_name": "ST_OS_swapper_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "swapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ISI": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ISO": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "swapper_3": {
+        "vlnv": "xilinx.com:module_ref:swapper:1.0",
+        "xci_name": "ST_OS_swapper_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "swapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ISI": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ISO": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "OS_ISERDES_0": {
+        "vlnv": "xilinx.com:module_ref:OS_ISERDES:1.0",
+        "xci_name": "ST_OS_OS_ISERDES_0_0",
+        "parameters": {
+          "idelay_group": {
+            "value": "TEMP"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "OS_ISERDES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "CLK0": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK90": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk90",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "delay_tap": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "OS_ISERDES_1": {
+        "vlnv": "xilinx.com:module_ref:OS_ISERDES:1.0",
+        "xci_name": "ST_OS_OS_ISERDES_0_1",
+        "parameters": {
+          "idelay_group": {
+            "value": "TEMP"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "OS_ISERDES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "CLK0": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk1",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK90": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk91",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "delay_tap": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "OS_ISERDES_2": {
+        "vlnv": "xilinx.com:module_ref:OS_ISERDES:1.0",
+        "xci_name": "ST_OS_OS_ISERDES_0_2",
+        "parameters": {
+          "idelay_group": {
+            "value": "TEMP"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "OS_ISERDES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "CLK0": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk45",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK90": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk135",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "delay_tap": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "OS_ISERDES_3": {
+        "vlnv": "xilinx.com:module_ref:OS_ISERDES:1.0",
+        "xci_name": "ST_OS_OS_ISERDES_1_0",
+        "parameters": {
+          "idelay_group": {
+            "value": "TEMP"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "OS_ISERDES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "CLK0": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk46",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK90": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk136",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "delay_tap": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "clock_splitter_0": {
+        "vlnv": "xilinx.com:module_ref:clock_splitter:1.0",
+        "xci_name": "ST_OS_clock_splitter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clock_splitter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clocks_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "CLK0": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK1": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk90",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK2": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk1",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK3": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk91",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK4": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk45",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK5": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk135",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK6": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk46",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "CLK7": {
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "ST_OS_clk136",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "CLOCK_DELAY_0": {
+        "vlnv": "xilinx.com:module_ref:CLOCK_DELAY:1.0",
+        "xci_name": "ST_OS_CLOCK_DELAY_0_0",
+        "parameters": {
+          "delay_group": {
+            "value": "TEST"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CLOCK_DELAY",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clks_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "400000000:400000000:400000000:400000000:400000000:400000000:400000000:400000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.000:0.000:0.000:0.000:0.000:0.000:0.000:0.000",
+                "value_src": "ip_prop"
+              },
+              "PortType": {
+                "value": "clk",
+                "value_src": "ip_prop"
+              },
+              "PortWidth": {
+                "value": "8",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "clks_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "ST_OS_xlconcat_0_0",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "8"
+          }
+        }
+      }
+    },
+    "nets": {
+      "resetn_1": {
+        "ports": [
+          "resetn",
+          "SDDR_ST_0/RESETN"
+        ]
+      },
+      "ioreset_1": {
+        "ports": [
+          "ioreset",
+          "OS_ISERDES_0/io_reset",
+          "OS_ISERDES_1/io_reset",
+          "OS_ISERDES_2/io_reset",
+          "OS_ISERDES_3/io_reset"
+        ]
+      },
+      "clk0_1": {
+        "ports": [
+          "clk0",
+          "SDDR_ST_0/MCLK",
+          "xlconcat_0/In0"
+        ]
+      },
+      "SDDR_ST_0_D0": {
+        "ports": [
+          "SDDR_ST_0/D0",
+          "D0"
+        ]
+      },
+      "SDDR_ST_0_D1": {
+        "ports": [
+          "SDDR_ST_0/D1",
+          "D1"
+        ]
+      },
+      "SDDR_ST_0_DRDY": {
+        "ports": [
+          "SDDR_ST_0/DRDY",
+          "drdy"
+        ]
+      },
+      "SDDR_ST_0_waiting": {
+        "ports": [
+          "SDDR_ST_0/waiting",
+          "waiting"
+        ]
+      },
+      "SDDR_ST_0_armed": {
+        "ports": [
+          "SDDR_ST_0/armed",
+          "armed"
+        ]
+      },
+      "SDDR_ST_0_CTIME": {
+        "ports": [
+          "SDDR_ST_0/CTIME",
+          "CTIME"
+        ]
+      },
+      "SDDR_ST_0_DEBUG0": {
+        "ports": [
+          "SDDR_ST_0/DEBUG0",
+          "DEBUG0"
+        ]
+      },
+      "SDDR_ST_0_DEBUG1": {
+        "ports": [
+          "SDDR_ST_0/DEBUG1",
+          "DEBUG1"
+        ]
+      },
+      "SHUFFLYBOI_0_DATA_OUT": {
+        "ports": [
+          "SHUFFLYBOI_0/DATA_OUT",
+          "SDDR_ST_0/T1"
+        ]
+      },
+      "OS_ISERDES_0_data_out": {
+        "ports": [
+          "OS_ISERDES_0/data_out",
+          "swapper_0/ISI"
+        ]
+      },
+      "swapper_0_ISO": {
+        "ports": [
+          "swapper_0/ISO",
+          "SHUFFLYBOI_0/IS0"
+        ]
+      },
+      "OS_ISERDES_1_data_out": {
+        "ports": [
+          "OS_ISERDES_1/data_out",
+          "swapper_1/ISI"
+        ]
+      },
+      "swapper_1_ISO": {
+        "ports": [
+          "swapper_1/ISO",
+          "SHUFFLYBOI_0/IS1"
+        ]
+      },
+      "DATA_IN_1": {
+        "ports": [
+          "DATA_IN",
+          "data_splitter_0/DATA_IN"
+        ]
+      },
+      "data_splitter_0_OUT0": {
+        "ports": [
+          "data_splitter_0/OUT0",
+          "OS_ISERDES_0/DATA_IN"
+        ]
+      },
+      "data_splitter_0_OUT1": {
+        "ports": [
+          "data_splitter_0/OUT1",
+          "OS_ISERDES_1/DATA_IN"
+        ]
+      },
+      "data_splitter_0_OUT2": {
+        "ports": [
+          "data_splitter_0/OUT2",
+          "OS_ISERDES_2/DATA_IN"
+        ]
+      },
+      "data_splitter_0_OUT3": {
+        "ports": [
+          "data_splitter_0/OUT3",
+          "OS_ISERDES_3/DATA_IN"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "xlconstant_0/dout",
+          "OS_ISERDES_0/delay_tap",
+          "OS_ISERDES_1/delay_tap",
+          "OS_ISERDES_2/delay_tap",
+          "OS_ISERDES_3/delay_tap"
+        ]
+      },
+      "OS_ISERDES_2_data_out": {
+        "ports": [
+          "OS_ISERDES_2/data_out",
+          "swapper_2/ISI"
+        ]
+      },
+      "OS_ISERDES_3_data_out": {
+        "ports": [
+          "OS_ISERDES_3/data_out",
+          "swapper_3/ISI"
+        ]
+      },
+      "swapper_3_ISO": {
+        "ports": [
+          "swapper_3/ISO",
+          "SHUFFLYBOI_0/IS3"
+        ]
+      },
+      "swapper_2_ISO": {
+        "ports": [
+          "swapper_2/ISO",
+          "SHUFFLYBOI_0/IS2"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "CLOCK_DELAY_0/clks_in"
+        ]
+      },
+      "CLOCK_DELAY_0_clks_out": {
+        "ports": [
+          "CLOCK_DELAY_0/clks_out",
+          "clock_splitter_0/clocks_in"
+        ]
+      },
+      "clk90_1": {
+        "ports": [
+          "clk90",
+          "xlconcat_0/In1"
+        ]
+      },
+      "clk22_5_1": {
+        "ports": [
+          "clk22_5",
+          "xlconcat_0/In2"
+        ]
+      },
+      "clk112_5_1": {
+        "ports": [
+          "clk112_5",
+          "xlconcat_0/In3"
+        ]
+      },
+      "clk45_1": {
+        "ports": [
+          "clk45",
+          "xlconcat_0/In4"
+        ]
+      },
+      "clk135_1": {
+        "ports": [
+          "clk135",
+          "xlconcat_0/In5"
+        ]
+      },
+      "clk67_5_1": {
+        "ports": [
+          "clk67_5",
+          "xlconcat_0/In6"
+        ]
+      },
+      "clk157_5_1": {
+        "ports": [
+          "clk157_5",
+          "xlconcat_0/In7"
+        ]
+      },
+      "clock_splitter_0_CLK0": {
+        "ports": [
+          "clock_splitter_0/CLK0",
+          "OS_ISERDES_0/CLK0"
+        ]
+      },
+      "clock_splitter_0_CLK1": {
+        "ports": [
+          "clock_splitter_0/CLK1",
+          "OS_ISERDES_0/CLK90"
+        ]
+      },
+      "clock_splitter_0_CLK2": {
+        "ports": [
+          "clock_splitter_0/CLK2",
+          "OS_ISERDES_1/CLK0"
+        ]
+      },
+      "clock_splitter_0_CLK3": {
+        "ports": [
+          "clock_splitter_0/CLK3",
+          "OS_ISERDES_1/CLK90"
+        ]
+      },
+      "clock_splitter_0_CLK4": {
+        "ports": [
+          "clock_splitter_0/CLK4",
+          "OS_ISERDES_2/CLK0"
+        ]
+      },
+      "clock_splitter_0_CLK5": {
+        "ports": [
+          "clock_splitter_0/CLK5",
+          "OS_ISERDES_2/CLK90"
+        ]
+      },
+      "clock_splitter_0_CLK6": {
+        "ports": [
+          "clock_splitter_0/CLK6",
+          "OS_ISERDES_3/CLK0"
+        ]
+      },
+      "clock_splitter_0_CLK7": {
+        "ports": [
+          "clock_splitter_0/CLK7",
+          "OS_ISERDES_3/CLK90"
+        ]
+      }
+    }
+  }
+}

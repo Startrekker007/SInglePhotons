@@ -1,0 +1,345 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB0638AEB0388C5B9",
+      "device": "xc7z020clg400-1",
+      "name": "TEST",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "util_vector_logic_0": "",
+      "ISERDES_WRAPPER_0": "",
+      "ISERDES_WRAPPER_1": "",
+      "SDDR_CT_0": ""
+    },
+    "ports": {
+      "T1": {
+        "direction": "I"
+      },
+      "T2": {
+        "direction": "I"
+      },
+      "HS_CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "800000000"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "400000000"
+          }
+        }
+      },
+      "RESETN": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "bitslip": {
+        "direction": "I"
+      },
+      "FSEL": {
+        "direction": "I"
+      },
+      "BIDIR": {
+        "direction": "I"
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "direction": "O"
+      },
+      "CTIME": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "WAITING": {
+        "direction": "O"
+      },
+      "ARMED": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TEST_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ISERDES_WRAPPER_0": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
+        "xci_name": "TEST_ISERDES_WRAPPER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DIV_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BITSLIP": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_WRAPPER_1": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_WRAPPER:1.0",
+        "xci_name": "TEST_ISERDES_WRAPPER_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_WRAPPER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "HS_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "DIV_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BITSLIP": {
+            "direction": "I"
+          }
+        }
+      },
+      "SDDR_CT_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_CT:1.0",
+        "xci_name": "TEST_SDDR_CT_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "4"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "CTIME": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WAITING": {
+            "direction": "O"
+          },
+          "ARMED": {
+            "direction": "O"
+          },
+          "T1": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "FSEL": {
+            "direction": "I"
+          },
+          "BIDIR": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "T1_1": {
+        "ports": [
+          "T1",
+          "ISERDES_WRAPPER_0/DATA_IN"
+        ]
+      },
+      "T2_1": {
+        "ports": [
+          "T2",
+          "ISERDES_WRAPPER_1/DATA_IN"
+        ]
+      },
+      "HS_CLK_1": {
+        "ports": [
+          "HS_CLK",
+          "ISERDES_WRAPPER_0/HS_CLK",
+          "ISERDES_WRAPPER_1/HS_CLK"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "ISERDES_WRAPPER_0/DIV_CLK",
+          "ISERDES_WRAPPER_1/DIV_CLK",
+          "SDDR_CT_0/MCLK"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "util_vector_logic_0/Op1",
+          "SDDR_CT_0/RESETN"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "ISERDES_WRAPPER_0/RESET",
+          "ISERDES_WRAPPER_1/RESET"
+        ]
+      },
+      "bitslip_1": {
+        "ports": [
+          "bitslip",
+          "ISERDES_WRAPPER_0/BITSLIP",
+          "ISERDES_WRAPPER_1/BITSLIP"
+        ]
+      },
+      "SDDR_CT_0_D0": {
+        "ports": [
+          "SDDR_CT_0/D0",
+          "D0"
+        ]
+      },
+      "BIDIR_1": {
+        "ports": [
+          "BIDIR",
+          "SDDR_CT_0/BIDIR"
+        ]
+      },
+      "SDDR_CT_0_CTIME": {
+        "ports": [
+          "SDDR_CT_0/CTIME",
+          "CTIME"
+        ]
+      },
+      "SDDR_CT_0_WAITING": {
+        "ports": [
+          "SDDR_CT_0/WAITING",
+          "WAITING"
+        ]
+      },
+      "SDDR_CT_0_D1": {
+        "ports": [
+          "SDDR_CT_0/D1",
+          "D1"
+        ]
+      },
+      "FSEL_1": {
+        "ports": [
+          "FSEL",
+          "SDDR_CT_0/FSEL"
+        ]
+      },
+      "SDDR_CT_0_ARMED": {
+        "ports": [
+          "SDDR_CT_0/ARMED",
+          "ARMED"
+        ]
+      },
+      "SDDR_CT_0_DRDY": {
+        "ports": [
+          "SDDR_CT_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "ISERDES_WRAPPER_0_DATA_OUT": {
+        "ports": [
+          "ISERDES_WRAPPER_0/DATA_OUT",
+          "SDDR_CT_0/T1"
+        ]
+      },
+      "ISERDES_WRAPPER_1_DATA_OUT": {
+        "ports": [
+          "ISERDES_WRAPPER_1/DATA_OUT",
+          "SDDR_CT_0/T2"
+        ]
+      }
+    }
+  }
+}

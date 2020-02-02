@@ -1,0 +1,1280 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jan 28 12:50:31 2020
+# Process ID: 22848
+# Current directory: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8020 D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.xpr
+# Log file: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/vivado.log
+# Journal file: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.xpr}
+INFO: [Project 1-313] Project file moved from 'D:/SInglePhotons/Vivado Projects/SERDES_OVERSAMPLE/REAL_OVERSAMPLE' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [filemgmt 56-1] IP Repository Path: Directory not found as 'D:/HW_IP/SDDR_ST'; using path 'D:/SInglePhotons/HW_IP/SDDR_ST' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 864.926 ; gain = 194.156
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+Adding component instance block -- cri.nz:user:SDDR_ST:1.0 - SDDR_ST_0
+Adding component instance block -- xilinx.com:module_ref:swapper:1.0 - swapper_0
+Adding component instance block -- xilinx.com:module_ref:swapper:1.0 - swapper_1
+Adding component instance block -- xilinx.com:module_ref:SHUFFLYBOI:1.0 - SHUFFLYBOI_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:module_ref:DATA_SPLITTER:1.0 - DATA_SPLITTER_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_1
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DATA
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - UTIL
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DEBUG
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DELAY0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DELAY1
+Adding component instance block -- xilinx.com:module_ref:OS_ISERDES:1.0 - OS_ISERDES_0
+Adding component instance block -- xilinx.com:module_ref:OS_ISERDES:1.0 - OS_ISERDES_1
+Adding component instance block -- xilinx.com:module_ref:IDELAY_CTL:1.0 - IDELAY_CTL_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /SDDR_ST_0/MCLK(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /OS_ISERDES_0/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /OS_ISERDES_0/CLK90(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out3(clk) and /OS_ISERDES_1/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out4(clk) and /OS_ISERDES_1/CLK90(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /UTIL/gpio_io_o(undef) and /SDDR_ST_0/RESETN(rst)
+Successfully read diagram <ST_TEST> from BD file <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd>
+open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 965.563 ; gain = 85.613
+validate_bd_design -force
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/SHUFFLYBOI_0/IS2
+/SHUFFLYBOI_0/IS3
+
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property -dict [list CONFIG.CONST_WIDTH {4} CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_0]
+startgroup
+connect_bd_net [get_bd_pins SHUFFLYBOI_0/IS3] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins SHUFFLYBOI_0/IS2]
+endgroup
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+[Tue Jan 28 12:52:39 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 12:52:39 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Jan 28 12:57:27 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+# write_bd_tcl "Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper.bit} Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.bit
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+# write_bd_tcl "Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper.bit} Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.bit
+update_module_reference {ST_TEST_OS_ISERDES_0_0 ST_TEST_OS_ISERDES_0_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'io_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd'
+INFO: [IP_Flow 19-3420] Updated ST_TEST_OS_ISERDES_0_0 to use current project options
+WARNING: [IP_Flow 19-4699] Upgrade has removed interface 'io_reset'
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'io_resetn' (xilinx.com:signal:reset:1.0)
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'ST_TEST_OS_ISERDES_0_0'.
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'io_reset'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'io_resetn'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'ST_TEST_OS_ISERDES_0_0'. These changes may impact your design.
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /OS_ISERDES_0_upgraded_ipi/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /OS_ISERDES_0_upgraded_ipi/CLK90(undef)
+CRITICAL WARNING: [BD 41-1167] The pin 'io_reset' is not found on the upgraded version of the cell '/OS_ISERDES_0'. Its connection to the net 'processing_system7_0_FCLK_RESET0_N' has been removed.
+INFO: [IP_Flow 19-3420] Updated ST_TEST_OS_ISERDES_0_1 to use current project options
+WARNING: [IP_Flow 19-4699] Upgrade has removed interface 'io_reset'
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'io_resetn' (xilinx.com:signal:reset:1.0)
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'ST_TEST_OS_ISERDES_0_1'.
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'io_reset'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'io_resetn'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'ST_TEST_OS_ISERDES_0_1'. These changes may impact your design.
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out3(clk) and /OS_ISERDES_1_upgraded_ipi/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out4(clk) and /OS_ISERDES_1_upgraded_ipi/CLK90(undef)
+CRITICAL WARNING: [BD 41-1167] The pin 'io_reset' is not found on the upgraded version of the cell '/OS_ISERDES_1'. Its connection to the net 'processing_system7_0_FCLK_RESET0_N' has been removed.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'ST_TEST_OS_ISERDES_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'ST_TEST_OS_ISERDES_0_1' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+update_module_reference: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1235.504 ; gain = 2.086
+connect_bd_net [get_bd_pins OS_ISERDES_1/io_resetn] [get_bd_pins OS_ISERDES_0/io_resetn]
+connect_bd_net [get_bd_pins OS_ISERDES_1/io_resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Jan 28 13:03:52 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 13:03:52 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+# write_bd_tcl "Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper.bit} Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.bit
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.502 . Memory (MB): peak = 2102.750 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.503 . Memory (MB): peak = 2102.750 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2102.750 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2240.113 ; gain = 946.633
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc:56]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2426.277 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2426.277 ; gain = 12.813
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+update_module_reference {ST_TEST_OS_ISERDES_0_0 ST_TEST_OS_ISERDES_0_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'io_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd'
+INFO: [IP_Flow 19-3420] Updated ST_TEST_OS_ISERDES_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /OS_ISERDES_0_upgraded_ipi/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /OS_ISERDES_0_upgraded_ipi/CLK90(undef)
+INFO: [IP_Flow 19-3420] Updated ST_TEST_OS_ISERDES_0_1 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out3(clk) and /OS_ISERDES_1_upgraded_ipi/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out4(clk) and /OS_ISERDES_1_upgraded_ipi/CLK90(undef)
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [Common 17-365] Interrupt caught but 'launch_runs' cannot be canceled. Please wait for command to finish.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1171] User-interrupt detected : Generation halted successfully for IP Integrator design D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd
+INFO: [Common 17-681] Processing pending cancel.
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+INFO: [BD 41-1662] The design 'ST_TEST.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 13:18:43 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 13:18:43 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+update_module_reference {ST_TEST_OS_ISERDES_0_0 ST_TEST_OS_ISERDES_0_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 'io_resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'io_resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd'
+INFO: [IP_Flow 19-3420] Updated ST_TEST_OS_ISERDES_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out1(clk) and /OS_ISERDES_0_upgraded_ipi/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out2(clk) and /OS_ISERDES_0_upgraded_ipi/CLK90(undef)
+INFO: [IP_Flow 19-3420] Updated ST_TEST_OS_ISERDES_0_1 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out3(clk) and /OS_ISERDES_1_upgraded_ipi/CLK0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_out4(clk) and /OS_ISERDES_1_upgraded_ipi/CLK90(undef)
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+update_module_reference: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 2794.410 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(8) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 13:23:42 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 13:23:42 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:19 . Memory (MB): peak = 2794.410 ; gain = 0.000
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+delete_bd_objs [get_bd_cells xlconstant_0]
+copy_bd_objs /  [get_bd_cells {OS_ISERDES_1}]
+copy_bd_objs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2794.410 ; gain = 0.000
+copy_bd_objs /  [get_bd_cells {OS_ISERDES_2}]
+copy_bd_objs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2794.410 ; gain = 0.000
+set_property location {4 1320 1173} [get_bd_cells OS_ISERDES_3]
+set_property location {4 1323 913} [get_bd_cells OS_ISERDES_2]
+set_property location {4 1331 1078} [get_bd_cells OS_ISERDES_3]
+connect_bd_net [get_bd_pins OS_ISERDES_2/data_out] [get_bd_pins SHUFFLYBOI_0/IS2]
+connect_bd_net [get_bd_pins OS_ISERDES_3/data_out] [get_bd_pins SHUFFLYBOI_0/IS3]
+connect_bd_net [get_bd_pins OS_ISERDES_2/DATA_IN] [get_bd_pins DATA_SPLITTER_0/OUT2]
+connect_bd_net [get_bd_pins OS_ISERDES_3/DATA_IN] [get_bd_pins DATA_SPLITTER_0/OUT3]
+copy_bd_objs /  [get_bd_cells {clk_wiz_0}]
+set_property location {3 933 1247} [get_bd_cells clk_wiz_2]
+startgroup
+set_property -dict [list CONFIG.CLKOUT3_REQUESTED_PHASE {22.5} CONFIG.CLKOUT4_REQUESTED_PHASE {112.5} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {32.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} CONFIG.MMCM_CLKOUT1_DIVIDE {4} CONFIG.MMCM_CLKOUT2_DIVIDE {4} CONFIG.MMCM_CLKOUT2_PHASE {22.500} CONFIG.MMCM_CLKOUT3_DIVIDE {4} CONFIG.MMCM_CLKOUT3_PHASE {112.500} CONFIG.CLKOUT1_JITTER {233.189} CONFIG.CLKOUT1_PHASE_ERROR {265.359} CONFIG.CLKOUT2_JITTER {233.189} CONFIG.CLKOUT2_PHASE_ERROR {265.359} CONFIG.CLKOUT3_JITTER {233.189} CONFIG.CLKOUT3_PHASE_ERROR {265.359} CONFIG.CLKOUT4_JITTER {233.189} CONFIG.CLKOUT4_PHASE_ERROR {265.359}] [get_bd_cells clk_wiz_0]
+endgroup
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_PHASE {45} CONFIG.CLKOUT2_REQUESTED_PHASE {135} CONFIG.CLKOUT3_REQUESTED_PHASE {67.5} CONFIG.CLKOUT4_REQUESTED_PHASE {157.5} CONFIG.USE_LOCKED {true} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {32.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} CONFIG.MMCM_CLKOUT0_PHASE {45.000} CONFIG.MMCM_CLKOUT1_DIVIDE {4} CONFIG.MMCM_CLKOUT1_PHASE {135.000} CONFIG.MMCM_CLKOUT2_DIVIDE {4} CONFIG.MMCM_CLKOUT2_PHASE {67.500} CONFIG.MMCM_CLKOUT3_DIVIDE {4} CONFIG.MMCM_CLKOUT3_PHASE {157.500} CONFIG.CLKOUT1_JITTER {233.189} CONFIG.CLKOUT1_PHASE_ERROR {265.359} CONFIG.CLKOUT2_JITTER {233.189} CONFIG.CLKOUT2_PHASE_ERROR {265.359} CONFIG.CLKOUT3_JITTER {233.189} CONFIG.CLKOUT3_PHASE_ERROR {265.359} CONFIG.CLKOUT4_JITTER {233.189} CONFIG.CLKOUT4_PHASE_ERROR {265.359}] [get_bd_cells clk_wiz_2]
+startgroup
+set_property -dict [list CONFIG.USE_LOCKED {true}] [get_bd_cells clk_wiz_0]
+endgroup
+connect_bd_net [get_bd_pins clk_wiz_2/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out1] [get_bd_pins OS_ISERDES_2/CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_out1(clk) and /OS_ISERDES_2/CLK0(undef)
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out2] [get_bd_pins OS_ISERDES_2/CLK90]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_out2(clk) and /OS_ISERDES_2/CLK90(undef)
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out3] [get_bd_pins OS_ISERDES_3/CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_out3(clk) and /OS_ISERDES_3/CLK0(undef)
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out4] [get_bd_pins OS_ISERDES_3/CLK90]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_out4(clk) and /OS_ISERDES_3/CLK90(undef)
+connect_bd_net [get_bd_pins OS_ISERDES_3/io_resetn] [get_bd_pins OS_ISERDES_2/io_resetn]
+connect_bd_net [get_bd_pins OS_ISERDES_2/io_resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+connect_bd_net [get_bd_pins DELAY1/gpio_io_o] [get_bd_pins OS_ISERDES_2/delay_tap]
+WARNING: [BD 41-1306] The connection to interface pin /DELAY1/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+connect_bd_net [get_bd_pins DELAY1/gpio2_io_o] [get_bd_pins OS_ISERDES_3/delay_tap]
+WARNING: [BD 41-1306] The connection to interface pin /DELAY1/gpio2_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+delete_bd_objs [get_bd_nets OS_ISERDES_2_data_out] [get_bd_nets OS_ISERDES_3_data_out]
+copy_bd_objs /  [get_bd_cells {swapper_1 swapper_0}]
+copy_bd_objs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:25 . Memory (MB): peak = 2794.410 ; gain = 0.000
+set_property location {5 1831 809} [get_bd_cells swapper_2]
+connect_bd_net [get_bd_pins OS_ISERDES_2/data_out] [get_bd_pins swapper_2/ISI]
+connect_bd_net [get_bd_pins swapper_2/ISO] [get_bd_pins SHUFFLYBOI_0/IS2]
+connect_bd_net [get_bd_pins swapper_3/ISO] [get_bd_pins SHUFFLYBOI_0/IS3]
+connect_bd_net [get_bd_pins swapper_3/ISI] [get_bd_pins OS_ISERDES_3/data_out]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+startgroup
+set_property -dict [list CONFIG.factor {4}] [get_bd_cells SHUFFLYBOI_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.SIG_WIDTH {16}] [get_bd_cells SDDR_ST_0]
+endgroup
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/clk_wiz_2/clk_in1
+
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd 
+ERROR: [Common 17-39] 'generate_target' failed due to earlier errors.
+disconnect_bd_net /sys_clk_1 [get_bd_pins clk_wiz_0/clk_in1]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_0
+endgroup
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+set_property -dict [list CONFIG.C_BUF_TYPE {BUFG}] [get_bd_cells util_ds_buf_0]
+connect_bd_net [get_bd_ports sys_clk] [get_bd_pins util_ds_buf_0/BUFG_I]
+connect_bd_net [get_bd_pins util_ds_buf_0/BUFG_O] [get_bd_pins clk_wiz_0/clk_in1]
+connect_bd_net [get_bd_pins util_ds_buf_0/BUFG_O] [get_bd_pins clk_wiz_2/clk_in1]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+generate_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2794.410 ; gain = 0.000
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 13:52:32 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 13:52:32 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_1
+endgroup
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+delete_bd_objs [get_bd_cells util_ds_buf_1]
+close [ open {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/new/BIG_BUFF.vhd} w ]
+add_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/new/BIG_BUFF.vhd}}
+update_compile_order -fileset sources_1
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+delete_bd_objs [get_bd_cells util_ds_buf_0]
+delete_bd_objs [get_bd_nets sys_clk_1]
+save_bd_design
+WARNING: [BD 41-597] NET <util_ds_buf_0_BUFG_O> has no source
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+create_bd_cell -type module -reference BIG_BUFF BIG_BUFF_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+connect_bd_net [get_bd_pins BIG_BUFF_0/misc] [get_bd_pins clk_wiz_1/clk_in1]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /BIG_BUFF_0/misc(undef) and /clk_wiz_1/clk_in1(clk)
+connect_bd_net [get_bd_pins BIG_BUFF_0/serdes_distribution] [get_bd_pins clk_wiz_0/clk_in1]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_in1(clk) and /BIG_BUFF_0/serdes_distribution(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_in1(clk) and /BIG_BUFF_0/serdes_distribution(undef)
+connect_bd_net [get_bd_ports sys_clk] [get_bd_pins BIG_BUFF_0/sys_clk_in]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /sys_clk(clk) and /BIG_BUFF_0/sys_clk_in(undef)
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block BIG_BUFF_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 14:01:01 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 14:01:01 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:37 . Memory (MB): peak = 2794.410 ; gain = 0.000
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+# write_bd_tcl "Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper.bit} Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.bit
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.512 . Memory (MB): peak = 2903.992 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.513 . Memory (MB): peak = 2903.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2903.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+update_module_reference ST_TEST_BIG_BUFF_0_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd'
+INFO: [IP_Flow 19-3420] Updated ST_TEST_BIG_BUFF_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /sys_clk(clk) and /BIG_BUFF_0_upgraded_ipi/sys_clk_in(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_in1(clk) and /BIG_BUFF_0_upgraded_ipi/serdes_distribution(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_in1(clk) and /BIG_BUFF_0_upgraded_ipi/serdes_distribution(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_1/clk_in1(clk) and /BIG_BUFF_0_upgraded_ipi/misc(undef)
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block BIG_BUFF_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 14:16:59 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 14:16:59 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 3125.418 ; gain = 3.977
+update_module_reference ST_TEST_BIG_BUFF_0_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd'
+INFO: [IP_Flow 19-3420] Updated ST_TEST_BIG_BUFF_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /sys_clk(clk) and /BIG_BUFF_0_upgraded_ipi/sys_clk_in(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/clk_in1(clk) and /BIG_BUFF_0_upgraded_ipi/serdes_distribution(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_2/clk_in1(clk) and /BIG_BUFF_0_upgraded_ipi/serdes_distribution(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_1/clk_in1(clk) and /BIG_BUFF_0_upgraded_ipi/misc(undef)
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+update_module_reference: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3243.148 ; gain = 17.832
+current_design synth_1
+generate_target all [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block BIG_BUFF_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:36 . Memory (MB): peak = 3449.293 ; gain = 4.750
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+create_clock -period 8.000 -name sys_clk_buffered -waveform {0.000 4.000} [get_pins ST_TEST_i/BIG_BUFF_0/U0/SD_BUFH_inst/O]
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+set_clock_latency -clock [get_clocks sys_clk_buffered] 1.0 [get_pins [list ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1 ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKIN1 ]]
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 14:27:40 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 14:27:40 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+current_design impl_1
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.514 . Memory (MB): peak = 3719.063 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.514 . Memory (MB): peak = 3719.063 ; gain = 0.000
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 3719.063 ; gain = 0.000
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+delete_bd_objs [get_bd_nets sys_clk_1] [get_bd_nets BIG_BUFF_0_misc] [get_bd_cells BIG_BUFF_0]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins clk_wiz_1/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ui/bd_419cc2d0.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [BD 41-1348] Reset pin /IDELAY_CTL_0/resetn (associated clock /IDELAY_CTL_0/ref_clk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_1/clk_out1.
+WARNING: [BD 41-927] Following properties on pin /IDELAY_CTL_0/ref_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_1_clk_out1 
+Wrote  : <D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.srcs\sources_1\bd\ST_TEST\ST_TEST.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio_io_i'(32) to net 'SDDR_ST_0_DEBUG0'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/DEBUG/gpio2_io_i'(32) to net 'SDDR_ST_0_DEBUG1'(16) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/sim/ST_TEST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hdl/ST_TEST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SHUFFLYBOI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block IDELAY_CTL_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DEBUG .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DELAY1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block OS_ISERDES_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block swapper_3 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_auto_pc_0/ST_TEST_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/hw_handoff/ST_TEST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/synth/ST_TEST.hwdef
+generate_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 4268.980 ; gain = 0.000
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 14:42:05 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 14:42:05 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:21 . Memory (MB): peak = 4268.980 ; gain = 0.000
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+# write_bd_tcl "Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl" -force
+INFO: [BD 5-148] Tcl file written out <Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.tcl>.
+
+# file copy -force {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper.bit} Y:/Module_Upgrade_Test/SDOS/ST/TEST_wrapper.bit
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.524 . Memory (MB): peak = 4268.980 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.524 . Memory (MB): peak = 4268.980 ; gain = 0.000
+refresh_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 4268.980 ; gain = 0.000
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+current_design synth_1
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+WARNING: [Vivado 12-508] No pins matched 'ST_TEST_i/BIG_BUFF_0/U0/SD_BUFH_inst/O'. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:16]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_pins ST_TEST_i/BIG_BUFF_0/U0/SD_BUFH_inst/O]'. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:16]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'sys_clk_buffered'. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_latency:No valid object(s) found for '-clock [get_clocks sys_clk_buffered]'. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 4268.980 ; gain = 0.000
+create_clock -period 5.000 -name clk0 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk45' completely overrides clock 'clk22.5'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Previous: [unsaved constraint] create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+create_clock -period 5.000 -name clk67.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT2]
+create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1]
+create_clock -period 5.000 -name clk112.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+create_clock -period 5.000 -name clk135 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk135' completely overrides clock 'clk90'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk135 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1]
+Previous: [unsaved constraint] create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+create_clock -period 5.000 -name clk157.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT3]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-2] Deriving generated clocks
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk0' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_0_0'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk0 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -multiply_by 2 -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk22.5' completely overrides clock 'clk_out3_ST_TEST_clk_wiz_0_0'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Previous: [unsaved constraint] create_generated_clock -name clk_out3_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.313 -2.188 -4.688} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk45' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_1_0'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_1_0 -source [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.000 -3.387 -6.774} -add -master_clock ST_TEST_i/clk_wiz_1/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk90' completely overrides clock 'clk_out2_ST_TEST_clk_wiz_0_0'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1]
+Previous: [unsaved constraint] create_generated_clock -name clk_out2_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.250 -1.250 -3.750} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk112.5' completely overrides clock 'clk_out4_ST_TEST_clk_wiz_0_0'.
+New: [unsaved constraint] create_clock -period 5.000 -name clk112.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+Previous: [unsaved constraint] create_generated_clock -name clk_out4_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.563 -0.937 -3.438} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+save_constraints
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41507] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41511] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41508] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41512] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41509] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+set_clock_groups -name SERDES_CLOCKS -asynchronous -group [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]]
+WARNING: [Vivado 12-5846] Redefining clock group SERDES_CLOCKS
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-2] Deriving generated clocks
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk0' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk0 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41507]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -multiply_by 2 -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk22.5' completely overrides clock 'clk_out3_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41508]
+Previous: [unsaved constraint] create_generated_clock -name clk_out3_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.313 -2.188 -4.688} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk45' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_1_0'.
+New: create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41509]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_1_0 -source [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.000 -3.387 -6.774} -add -master_clock ST_TEST_i/clk_wiz_1/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk90' completely overrides clock 'clk_out2_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41511]
+Previous: [unsaved constraint] create_generated_clock -name clk_out2_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.250 -1.250 -3.750} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk112.5' completely overrides clock 'clk_out4_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk112.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:41512]
+Previous: [unsaved constraint] create_generated_clock -name clk_out4_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.563 -0.937 -3.438} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 15:00:49 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 15:00:49 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+current_design impl_1
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.549 . Memory (MB): peak = 4268.980 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.549 . Memory (MB): peak = 4268.980 ; gain = 0.000
+refresh_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 4268.980 ; gain = 0.000
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Vivado 12-508] No pins matched 'get_pins -hierarchical -filter { NAME =~  "*ISERDESE2_inst*" && REF_PIN_NAME =~  "*OCLK*" && REF_PIN_NAME =~  "CLK" && NAME =~  "*CLKB*" }'.
+set_clock_latency -clock [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]] -rise -fall 3.0 [get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "CLK" || REF_PIN_NAME =~  "*CLKB*" && NAME =~  "*ISERDESE2_inst/*" }]
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 15:11:59 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 15:11:59 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.518 . Memory (MB): peak = 4268.980 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.518 . Memory (MB): peak = 4268.980 ; gain = 0.000
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 4268.980 ; gain = 0.000
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+current_design synth_1
+refresh_design
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk0' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk0 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -multiply_by 2 -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk22.5' completely overrides clock 'clk_out3_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18]
+Previous: [unsaved constraint] create_generated_clock -name clk_out3_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.313 -2.188 -4.688} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk45' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_1_0'.
+New: create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_1_0 -source [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.000 -3.387 -6.774} -add -master_clock ST_TEST_i/clk_wiz_1/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk90' completely overrides clock 'clk_out2_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21]
+Previous: [unsaved constraint] create_generated_clock -name clk_out2_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.250 -1.250 -3.750} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk112.5' completely overrides clock 'clk_out4_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk112.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22]
+Previous: [unsaved constraint] create_generated_clock -name clk_out4_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.563 -0.937 -3.438} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 4490.930 ; gain = 221.949
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_0/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_1/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_2/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_3/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+set_min_delay -from [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]] -to [get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "*CLKB*" || REF_PIN_NAME =~  "CLK" && NAME =~  "*ISERDESE2_inst/*" }] 2.0
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_0/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_1/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_2/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_3/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths.
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+WARNING: [Vivado 12-508] No pins matched 'get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "*CLKB*" && REF_PIN_NAME =~  "CLK" && NAME =~  "*ISERDESE2_inst/*" }'.
+set_max_delay -from [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]] -to [get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "*CLKB*" || REF_PIN_NAME =~  "CLK" && NAME =~  "*ISERDESE2_inst/*" }] 3.0
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Timing 38-2] Deriving generated clocks
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk0' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk0 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -multiply_by 2 -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk22.5' completely overrides clock 'clk_out3_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18]
+Previous: [unsaved constraint] create_generated_clock -name clk_out3_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.313 -2.188 -4.688} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk45' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_1_0'.
+New: create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_1_0 -source [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.000 -3.387 -6.774} -add -master_clock ST_TEST_i/clk_wiz_1/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk90' completely overrides clock 'clk_out2_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21]
+Previous: [unsaved constraint] create_generated_clock -name clk_out2_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.250 -1.250 -3.750} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk112.5' completely overrides clock 'clk_out4_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 5.000 -name clk112.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22]
+Previous: [unsaved constraint] create_generated_clock -name clk_out4_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.563 -0.937 -3.438} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jan 28 15:29:49 2020] Launched synth_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/synth_1/runme.log
+[Tue Jan 28 15:29:49 2020] Launched impl_1...
+Run output will be captured here: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/runme.log

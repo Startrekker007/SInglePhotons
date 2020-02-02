@@ -1,0 +1,170 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x60456EF9AD1A9E7D",
+      "device": "xc7z020clg400-1",
+      "name": "REAL_OS",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "OS_ISERDES_0": "",
+      "OS_ISERDES_1": ""
+    },
+    "ports": {
+      "CLK0": {
+        "direction": "I"
+      },
+      "CLK90": {
+        "direction": "I"
+      },
+      "DATA_IN": {
+        "direction": "I"
+      },
+      "RESETN": {
+        "direction": "I"
+      },
+      "DATA_OUTDDR": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DATA_OUTSDR": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "OS_ISERDES_0": {
+        "vlnv": "xilinx.com:module_ref:OS_ISERDES:1.0",
+        "xci_name": "REAL_OS_OS_ISERDES_0_0",
+        "parameters": {
+          "mode": {
+            "value": "DDR"
+          },
+          "o_width": {
+            "value": "8"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "OS_ISERDES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "CLK0": {
+            "direction": "I"
+          },
+          "CLK1": {
+            "direction": "I"
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "OS_ISERDES_1": {
+        "vlnv": "xilinx.com:module_ref:OS_ISERDES:1.0",
+        "xci_name": "REAL_OS_OS_ISERDES_0_1",
+        "parameters": {
+          "mode": {
+            "value": "SDR"
+          },
+          "o_width": {
+            "value": "4"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "OS_ISERDES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "CLK0": {
+            "direction": "I"
+          },
+          "CLK1": {
+            "direction": "I"
+          },
+          "DATA_IN": {
+            "direction": "I"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CLK0_1": {
+        "ports": [
+          "CLK0",
+          "OS_ISERDES_0/CLK0",
+          "OS_ISERDES_1/CLK0"
+        ]
+      },
+      "CLK90_1": {
+        "ports": [
+          "CLK90",
+          "OS_ISERDES_0/CLK1",
+          "OS_ISERDES_1/CLK1"
+        ]
+      },
+      "DATA_IN_1": {
+        "ports": [
+          "DATA_IN",
+          "OS_ISERDES_0/DATA_IN",
+          "OS_ISERDES_1/DATA_IN"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "OS_ISERDES_0/RESETN",
+          "OS_ISERDES_1/RESETN"
+        ]
+      },
+      "OS_ISERDES_0_DATA_OUT": {
+        "ports": [
+          "OS_ISERDES_0/DATA_OUT",
+          "DATA_OUTDDR"
+        ]
+      },
+      "OS_ISERDES_1_DATA_OUT": {
+        "ports": [
+          "OS_ISERDES_1/DATA_OUT",
+          "DATA_OUTSDR"
+        ]
+      }
+    }
+  }
+}

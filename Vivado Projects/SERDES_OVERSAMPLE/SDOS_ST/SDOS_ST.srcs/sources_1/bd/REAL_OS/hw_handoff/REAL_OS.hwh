@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 23 11:14:13 2020" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="REAL_OS" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="External_Ports_CLK0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_0" PORT="CLK0"/>
+        <CONNECTION INSTANCE="OS_ISERDES_1" PORT="CLK0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CLK90" SIGIS="undef" SIGNAME="External_Ports_CLK90">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_0" PORT="CLK1"/>
+        <CONNECTION INSTANCE="OS_ISERDES_1" PORT="CLK1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="External_Ports_DATA_IN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_0" PORT="DATA_IN"/>
+        <CONNECTION INSTANCE="OS_ISERDES_1" PORT="DATA_IN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="RESETN" SIGIS="undef" SIGNAME="External_Ports_RESETN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_0" PORT="RESETN"/>
+        <CONNECTION INSTANCE="OS_ISERDES_1" PORT="RESETN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DATA_OUTDDR" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_0_DATA_OUT">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_0" PORT="DATA_OUT"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DATA_OUTSDR" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_1_DATA_OUT">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_1" PORT="DATA_OUT"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/OS_ISERDES_0" HWVERSION="1.0" INSTANCE="OS_ISERDES_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OS_ISERDES" VLNV="xilinx.com:module_ref:OS_ISERDES:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="mode" VALUE="DDR"/>
+        <PARAMETER NAME="o_width" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="REAL_OS_OS_ISERDES_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="External_Ports_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK1" SIGIS="undef" SIGNAME="External_Ports_CLK90">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK90"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="External_Ports_DATA_IN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_0_DATA_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_OUTDDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_RESETN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESETN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/OS_ISERDES_1" HWVERSION="1.0" INSTANCE="OS_ISERDES_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OS_ISERDES" VLNV="xilinx.com:module_ref:OS_ISERDES:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="mode" VALUE="SDR"/>
+        <PARAMETER NAME="o_width" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="REAL_OS_OS_ISERDES_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="External_Ports_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK1" SIGIS="undef" SIGNAME="External_Ports_CLK90">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK90"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="External_Ports_DATA_IN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_1_DATA_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_OUTSDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_RESETN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESETN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

@@ -1,0 +1,47 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Jan 31 16:30:00 2020
+| Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_drc -file TEST_wrapper_drc_routed.rpt -pb TEST_wrapper_drc_routed.pb -rpx TEST_wrapper_drc_routed.rpx
+| Design       : TEST_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 2
++-----------+----------+--------------------------------------------------+------------+
+| Rule      | Severity | Description                                      | Violations |
++-----------+----------+--------------------------------------------------+------------+
+| REQP-107  | Warning  | enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O | 1          |
+| RTSTAT-10 | Warning  | No routable loads                                | 1          |
++-----------+----------+--------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+REQP-107#1 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+TEST_i/ISERDES_B_0/U0/inst/pins[0].iserdese2_master: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+2 net(s) have no routable loads. The problem bus(es) and/or net(s) are TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/fifo_generator_0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, TEST_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/fifo_generator_0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i.
+Related violations: <none>
+
+

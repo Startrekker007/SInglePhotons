@@ -1,0 +1,527 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB02CD22E1442784D",
+      "device": "xc7z020clg400-1",
+      "name": "FIFO",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "SDDR_ST_0": "",
+      "xlconcat_0": "",
+      "util_vector_logic_1": "",
+      "selectio_wiz_0": "",
+      "util_vector_logic_2": "",
+      "util_vector_logic_0": "",
+      "capacity_controller_0": "",
+      "util_vector_logic_3": "",
+      "DATA_SPLITTER_0": "",
+      "fifo_generator_0": "",
+      "FIFO_R_CT_0": ""
+    },
+    "ports": {
+      "RESETN": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "IORESET": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "CLK_DIV": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "200000000"
+          }
+        }
+      },
+      "HS_CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "800000000"
+          }
+        }
+      },
+      "DATA_IN": {
+        "type": "data",
+        "direction": "I"
+      },
+      "BITSLIP": {
+        "direction": "I"
+      },
+      "waiting": {
+        "direction": "O"
+      },
+      "armed": {
+        "direction": "O"
+      },
+      "FULL": {
+        "direction": "O"
+      },
+      "EMPTY": {
+        "direction": "O"
+      },
+      "COARSE": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "PRE_TIME": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "POST_TIME": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "READY": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "READ_EN": {
+        "direction": "I"
+      },
+      "WRITE_COUNTS": {
+        "direction": "O",
+        "left": "10",
+        "right": "0"
+      },
+      "DATA_PORT_RESETN": {
+        "type": "rst",
+        "direction": "I"
+      }
+    },
+    "components": {
+      "SDDR_ST_0": {
+        "vlnv": "cri.nz:user:SDDR_ST:1.0",
+        "xci_name": "FIFO_SDDR_ST_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "FIFO_xlconcat_0_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "32"
+          },
+          "IN1_WIDTH": {
+            "value": "8"
+          },
+          "IN2_WIDTH": {
+            "value": "8"
+          },
+          "NUM_PORTS": {
+            "value": "3"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "FIFO_util_vector_logic_1_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "selectio_wiz_0": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "FIFO_selectio_wiz_0_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "8"
+          },
+          "SYSTEM_DATA_WIDTH": {
+            "value": "1"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "FIFO_util_vector_logic_2_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "FIFO_util_vector_logic_0_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "capacity_controller_0": {
+        "vlnv": "xilinx.com:module_ref:capacity_controller:1.0",
+        "xci_name": "FIFO_capacity_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "capacity_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "full": {
+            "direction": "I"
+          },
+          "empty": {
+            "direction": "I"
+          },
+          "run": {
+            "direction": "O"
+          }
+        }
+      },
+      "util_vector_logic_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "FIFO_util_vector_logic_3_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "DATA_SPLITTER_0": {
+        "vlnv": "xilinx.com:module_ref:DATA_SPLITTER:1.0",
+        "xci_name": "FIFO_DATA_SPLITTER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DATA_SPLITTER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DATA_IN": {
+            "direction": "I",
+            "left": "47",
+            "right": "0"
+          },
+          "COARSE": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "FPRE": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "FPOST": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "fifo_generator_0": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "xci_name": "FIFO_fifo_generator_0_1",
+        "parameters": {
+          "Data_Count": {
+            "value": "true"
+          },
+          "Data_Count_Width": {
+            "value": "11"
+          },
+          "Fifo_Implementation": {
+            "value": "Common_Clock_Block_RAM"
+          },
+          "Input_Data_Width": {
+            "value": "48"
+          },
+          "Input_Depth": {
+            "value": "2048"
+          },
+          "Output_Data_Width": {
+            "value": "48"
+          },
+          "Reset_Pin": {
+            "value": "true"
+          },
+          "Reset_Type": {
+            "value": "Synchronous_Reset"
+          },
+          "Use_Dout_Reset": {
+            "value": "true"
+          },
+          "Valid_Flag": {
+            "value": "true"
+          },
+          "Write_Acknowledge_Flag": {
+            "value": "true"
+          }
+        }
+      },
+      "FIFO_R_CT_0": {
+        "vlnv": "xilinx.com:module_ref:FIFO_R_CT:1.0",
+        "xci_name": "FIFO_FIFO_R_CT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "FIFO_R_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "REQ": {
+            "direction": "I"
+          },
+          "valid": {
+            "direction": "O"
+          },
+          "read_en": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "SDDR_ST_0_CTIME": {
+        "ports": [
+          "SDDR_ST_0/CTIME",
+          "xlconcat_0/In0"
+        ]
+      },
+      "SDDR_ST_0_D0": {
+        "ports": [
+          "SDDR_ST_0/D0",
+          "xlconcat_0/In1"
+        ]
+      },
+      "SDDR_ST_0_D1": {
+        "ports": [
+          "SDDR_ST_0/D1",
+          "xlconcat_0/In2"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "SDDR_ST_0/RESETN"
+        ]
+      },
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "util_vector_logic_1/Op1",
+          "capacity_controller_0/resetn",
+          "util_vector_logic_3/Op1"
+        ]
+      },
+      "selectio_wiz_0_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_0/data_in_to_device",
+          "SDDR_ST_0/T1"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "CLK_DIV",
+          "selectio_wiz_0/clk_div_in",
+          "SDDR_ST_0/MCLK",
+          "capacity_controller_0/MCLK",
+          "fifo_generator_0/clk",
+          "FIFO_R_CT_0/MCLK"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "IORESET",
+          "selectio_wiz_0/io_reset"
+        ]
+      },
+      "HS_CLK_1": {
+        "ports": [
+          "HS_CLK",
+          "selectio_wiz_0/clk_in"
+        ]
+      },
+      "DATA_IN_1": {
+        "ports": [
+          "DATA_IN",
+          "selectio_wiz_0/data_in_from_pins"
+        ]
+      },
+      "BITSLIP_1": {
+        "ports": [
+          "BITSLIP",
+          "selectio_wiz_0/bitslip"
+        ]
+      },
+      "SDDR_ST_0_waiting": {
+        "ports": [
+          "SDDR_ST_0/waiting",
+          "waiting"
+        ]
+      },
+      "SDDR_ST_0_armed": {
+        "ports": [
+          "SDDR_ST_0/armed",
+          "armed"
+        ]
+      },
+      "fifo_generator_0_full": {
+        "ports": [
+          "fifo_generator_0/full",
+          "FULL",
+          "capacity_controller_0/full"
+        ]
+      },
+      "fifo_generator_0_empty": {
+        "ports": [
+          "fifo_generator_0/empty",
+          "EMPTY",
+          "capacity_controller_0/empty"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "util_vector_logic_1/Op2"
+        ]
+      },
+      "util_vector_logic_2_Res": {
+        "ports": [
+          "util_vector_logic_2/Res",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "capacity_controller_0_run": {
+        "ports": [
+          "capacity_controller_0/run",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "DATA_SPLITTER_0_COARSE": {
+        "ports": [
+          "DATA_SPLITTER_0/COARSE",
+          "COARSE"
+        ]
+      },
+      "DATA_SPLITTER_0_FPRE": {
+        "ports": [
+          "DATA_SPLITTER_0/FPRE",
+          "PRE_TIME"
+        ]
+      },
+      "DATA_SPLITTER_0_FPOST": {
+        "ports": [
+          "DATA_SPLITTER_0/FPOST",
+          "POST_TIME"
+        ]
+      },
+      "SDDR_ST_0_DRDY": {
+        "ports": [
+          "SDDR_ST_0/DRDY",
+          "util_vector_logic_2/Op1",
+          "fifo_generator_0/wr_en"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "fifo_generator_0/din"
+        ]
+      },
+      "fifo_generator_0_dout": {
+        "ports": [
+          "fifo_generator_0/dout",
+          "DATA_SPLITTER_0/DATA_IN"
+        ]
+      },
+      "fifo_generator_0_data_count": {
+        "ports": [
+          "fifo_generator_0/data_count",
+          "WRITE_COUNTS"
+        ]
+      },
+      "FIFO_R_CT_0_read_en": {
+        "ports": [
+          "FIFO_R_CT_0/read_en",
+          "fifo_generator_0/rd_en"
+        ]
+      },
+      "util_vector_logic_3_Res": {
+        "ports": [
+          "util_vector_logic_3/Res",
+          "fifo_generator_0/srst"
+        ]
+      },
+      "READ_EN_1": {
+        "ports": [
+          "READ_EN",
+          "FIFO_R_CT_0/REQ"
+        ]
+      },
+      "DATA_PORT_RESETN_1": {
+        "ports": [
+          "DATA_PORT_RESETN",
+          "FIFO_R_CT_0/resetn"
+        ]
+      },
+      "FIFO_R_CT_0_valid": {
+        "ports": [
+          "FIFO_R_CT_0/valid",
+          "READY"
+        ]
+      }
+    }
+  }
+}

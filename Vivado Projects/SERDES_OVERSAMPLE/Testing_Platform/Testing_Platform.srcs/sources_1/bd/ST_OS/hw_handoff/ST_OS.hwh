@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 29 12:30:59 2020" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="ST_OS" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="ioreset" SIGIS="rst" SIGNAME="External_Ports_ioreset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="OS_ISERDES_0" PORT="io_reset"/>
+        <CONNECTION INSTANCE="OS_ISERDES_1" PORT="io_reset"/>
+        <CONNECTION INSTANCE="OS_ISERDES_2" PORT="io_reset"/>
+        <CONNECTION INSTANCE="OS_ISERDES_3" PORT="io_reset"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="RESETN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk0" SIGIS="clk" SIGNAME="External_Ports_clk0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="MCLK"/>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk90" SIGIS="clk" SIGNAME="External_Ports_clk90">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="D0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="D1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="drdy" SIGIS="undef" SIGNAME="SDDR_ST_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="SDDR_ST_0_waiting">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="waiting"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="armed" SIGIS="undef" SIGNAME="SDDR_ST_0_armed">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="armed"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="CTIME" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_CTIME">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="CTIME"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="15" NAME="DEBUG0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="DEBUG0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="15" NAME="DEBUG1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="DEBUG1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk45" SIGIS="clk" SIGNAME="External_Ports_clk45">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk135" SIGIS="clk" SIGNAME="External_Ports_clk135">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In5"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk22_5" SIGIS="clk" SIGNAME="External_Ports_clk22_5">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk112_5" SIGIS="clk" SIGNAME="External_Ports_clk112_5">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk157_5" SIGIS="clk" SIGNAME="External_Ports_clk157_5">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In7"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="400000000" DIR="I" NAME="clk67_5" SIGIS="clk" SIGNAME="External_Ports_clk67_5">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xlconcat_0" PORT="In6"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="DATA_IN" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_DATA_IN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="data_splitter_0" PORT="DATA_IN"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/CLOCK_DELAY_0" HWVERSION="1.0" INSTANCE="CLOCK_DELAY_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CLOCK_DELAY" VLNV="xilinx.com:module_ref:CLOCK_DELAY:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="delay0" VALUE="0"/>
+        <PARAMETER NAME="delay1" VALUE="0"/>
+        <PARAMETER NAME="delay2" VALUE="0"/>
+        <PARAMETER NAME="delay3" VALUE="0"/>
+        <PARAMETER NAME="delay4" VALUE="0"/>
+        <PARAMETER NAME="delay5" VALUE="0"/>
+        <PARAMETER NAME="delay6" VALUE="0"/>
+        <PARAMETER NAME="delay7" VALUE="0"/>
+        <PARAMETER NAME="delay_group" VALUE="TEST"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_CLOCK_DELAY_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="clks_in" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="clks_out" RIGHT="0" SIGIS="undef" SIGNAME="CLOCK_DELAY_0_clks_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="clocks_in"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/OS_ISERDES_0" HWVERSION="1.0" INSTANCE="OS_ISERDES_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OS_ISERDES" VLNV="xilinx.com:module_ref:OS_ISERDES:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="idelay_group" VALUE="TEMP"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_OS_ISERDES_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="data_splitter_0_OUT0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="data_splitter_0" PORT="OUT0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="clock_splitter_0_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK90" SIGIS="undef" SIGNAME="clock_splitter_0_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="External_Ports_ioreset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ioreset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="delay_tap" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_0" PORT="ISI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/OS_ISERDES_1" HWVERSION="1.0" INSTANCE="OS_ISERDES_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OS_ISERDES" VLNV="xilinx.com:module_ref:OS_ISERDES:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="idelay_group" VALUE="TEMP"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_OS_ISERDES_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="data_splitter_0_OUT1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="data_splitter_0" PORT="OUT1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="clock_splitter_0_CLK2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK90" SIGIS="undef" SIGNAME="clock_splitter_0_CLK3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="External_Ports_ioreset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ioreset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="delay_tap" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_1_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_1" PORT="ISI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/OS_ISERDES_2" HWVERSION="1.0" INSTANCE="OS_ISERDES_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OS_ISERDES" VLNV="xilinx.com:module_ref:OS_ISERDES:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="idelay_group" VALUE="TEMP"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_OS_ISERDES_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="data_splitter_0_OUT2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="data_splitter_0" PORT="OUT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="clock_splitter_0_CLK4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK90" SIGIS="undef" SIGNAME="clock_splitter_0_CLK5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="External_Ports_ioreset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ioreset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="delay_tap" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_2_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_2" PORT="ISI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/OS_ISERDES_3" HWVERSION="1.0" INSTANCE="OS_ISERDES_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="OS_ISERDES" VLNV="xilinx.com:module_ref:OS_ISERDES:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="idelay_group" VALUE="TEMP"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_OS_ISERDES_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="DATA_IN" SIGIS="undef" SIGNAME="data_splitter_0_OUT3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="data_splitter_0" PORT="OUT3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK0" SIGIS="undef" SIGNAME="clock_splitter_0_CLK6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CLK90" SIGIS="undef" SIGNAME="clock_splitter_0_CLK7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_splitter_0" PORT="CLK7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="External_Ports_ioreset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ioreset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="delay_tap" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_3_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_3" PORT="ISI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SDDR_ST_0" HWVERSION="1.0" INSTANCE="SDDR_ST_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SDDR_ST" VLNV="cri.nz:user:SDDR_ST:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SIG_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_SDDR_ST_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_clk0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="SHUFFLYBOI_0_DATA_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SHUFFLYBOI_0" PORT="DATA_OUT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="SDDR_ST_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="drdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="CTIME" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_CTIME">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CTIME"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="SDDR_ST_0_waiting">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="waiting"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="armed" SIGIS="undef" SIGNAME="SDDR_ST_0_armed">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="armed"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="DEBUG0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="DEBUG1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SHUFFLYBOI_0" HWVERSION="1.0" INSTANCE="SHUFFLYBOI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SHUFFLYBOI" VLNV="xilinx.com:module_ref:SHUFFLYBOI:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="factor" VALUE="4"/>
+        <PARAMETER NAME="input_width" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_SHUFFLYBOI_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="IS0" RIGHT="0" SIGIS="undef" SIGNAME="swapper_0_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_0" PORT="ISO"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="IS1" RIGHT="0" SIGIS="undef" SIGNAME="swapper_1_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_1" PORT="ISO"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="IS2" RIGHT="0" SIGIS="undef" SIGNAME="swapper_2_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_2" PORT="ISO"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="IS3" RIGHT="0" SIGIS="undef" SIGNAME="swapper_3_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="swapper_3" PORT="ISO"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="SHUFFLYBOI_0_DATA_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SDDR_ST_0" PORT="T1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/clock_splitter_0" HWVERSION="1.0" INSTANCE="clock_splitter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clock_splitter" VLNV="xilinx.com:module_ref:clock_splitter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_clock_splitter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="clocks_in" RIGHT="0" SIGIS="undef" SIGNAME="CLOCK_DELAY_0_clks_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CLOCK_DELAY_0" PORT="clks_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK0" SIGIS="undef" SIGNAME="clock_splitter_0_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_0" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK1" SIGIS="undef" SIGNAME="clock_splitter_0_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_0" PORT="CLK90"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK2" SIGIS="undef" SIGNAME="clock_splitter_0_CLK2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_1" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK3" SIGIS="undef" SIGNAME="clock_splitter_0_CLK3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_1" PORT="CLK90"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK4" SIGIS="undef" SIGNAME="clock_splitter_0_CLK4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_2" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK5" SIGIS="undef" SIGNAME="clock_splitter_0_CLK5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_2" PORT="CLK90"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK6" SIGIS="undef" SIGNAME="clock_splitter_0_CLK6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_3" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="CLK7" SIGIS="undef" SIGNAME="clock_splitter_0_CLK7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_3" PORT="CLK90"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/data_splitter_0" HWVERSION="1.0" INSTANCE="data_splitter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="data_splitter" VLNV="xilinx.com:module_ref:data_splitter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_data_splitter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="DATA_IN" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_DATA_IN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="OUT0" SIGIS="undef" SIGNAME="data_splitter_0_OUT0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_0" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="OUT1" SIGIS="undef" SIGNAME="data_splitter_0_OUT1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_1" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="OUT2" SIGIS="undef" SIGNAME="data_splitter_0_OUT2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_2" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="OUT3" SIGIS="undef" SIGNAME="data_splitter_0_OUT3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_3" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/swapper_0" HWVERSION="1.0" INSTANCE="swapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="swapper" VLNV="xilinx.com:module_ref:swapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_swapper_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="ISI" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_0" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="ISO" RIGHT="0" SIGIS="undef" SIGNAME="swapper_0_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SHUFFLYBOI_0" PORT="IS0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/swapper_1" HWVERSION="1.0" INSTANCE="swapper_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="swapper" VLNV="xilinx.com:module_ref:swapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_swapper_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="ISI" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_1_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_1" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="ISO" RIGHT="0" SIGIS="undef" SIGNAME="swapper_1_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SHUFFLYBOI_0" PORT="IS1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/swapper_2" HWVERSION="1.0" INSTANCE="swapper_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="swapper" VLNV="xilinx.com:module_ref:swapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_swapper_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="ISI" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_2_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_2" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="ISO" RIGHT="0" SIGIS="undef" SIGNAME="swapper_2_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SHUFFLYBOI_0" PORT="IS2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/swapper_3" HWVERSION="1.0" INSTANCE="swapper_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="swapper" VLNV="xilinx.com:module_ref:swapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_swapper_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="ISI" RIGHT="0" SIGIS="undef" SIGNAME="OS_ISERDES_3_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_3" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="ISO" RIGHT="0" SIGIS="undef" SIGNAME="swapper_3_ISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SHUFFLYBOI_0" PORT="IS3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/xlconcat_0" HWVERSION="2.1" INSTANCE="xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="8"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_xlconcat_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk90">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk90"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk22_5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk22_5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk112_5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk112_5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk45">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk45"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk135">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk135"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk67_5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk67_5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In7" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_clk157_5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk157_5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CLOCK_DELAY_0" PORT="clks_in"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="6" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
+        <PARAMETER NAME="Component_Name" VALUE="ST_OS_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="3" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="OS_ISERDES_0" PORT="delay_tap"/>
+            <CONNECTION INSTANCE="OS_ISERDES_1" PORT="delay_tap"/>
+            <CONNECTION INSTANCE="OS_ISERDES_2" PORT="delay_tap"/>
+            <CONNECTION INSTANCE="OS_ISERDES_3" PORT="delay_tap"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

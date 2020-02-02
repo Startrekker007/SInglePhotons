@@ -1,0 +1,797 @@
+
+*** Running vivado
+    with args -log ST_TEST_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ST_TEST_wrapper.tcl -notrace
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source ST_TEST_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/ip} 
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 312.738 ; gain = 11.477
+Command: link_design -top ST_TEST_wrapper -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Netlist 29-17] Analyzing 45 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1268.281 ; gain = 557.324
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_0/ST_TEST_clk_wiz_0_0.xdc] for cell 'ST_TEST_i/clk_wiz_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0_board.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_1_0/ST_TEST_clk_wiz_1_0.xdc] for cell 'ST_TEST_i/clk_wiz_1/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0_board.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_0/ST_TEST_axi_gpio_0_0.xdc] for cell 'ST_TEST_i/DATA/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1_board.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_1/ST_TEST_axi_gpio_0_1.xdc] for cell 'ST_TEST_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2_board.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_2/ST_TEST_axi_gpio_0_2.xdc] for cell 'ST_TEST_i/DEBUG/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_processing_system7_0_0/ST_TEST_processing_system7_0_0.xdc] for cell 'ST_TEST_i/processing_system7_0/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0_board.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_rst_ps7_0_100M_0/ST_TEST_rst_ps7_0_100M_0.xdc] for cell 'ST_TEST_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3_board.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_3/ST_TEST_axi_gpio_0_3.xdc] for cell 'ST_TEST_i/DELAY0/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4_board.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_4/ST_TEST_axi_gpio_0_4.xdc] for cell 'ST_TEST_i/DELAY1/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1_board.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+INFO: [Timing 38-2] Deriving generated clocks [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc:57]
+WARNING: [Vivado 12-2489] -input_jitter contains time 0.066660 which will be rounded to 0.067 to ensure it is an integer multiple of 1 picosecond [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc:57]
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_clk_wiz_0_1/ST_TEST_clk_wiz_0_1.xdc] for cell 'ST_TEST_i/clk_wiz_2/inst'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_5/ST_TEST_axi_gpio_0_5_board.xdc] for cell 'ST_TEST_i/IOUTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_5/ST_TEST_axi_gpio_0_5_board.xdc] for cell 'ST_TEST_i/IOUTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_5/ST_TEST_axi_gpio_0_5.xdc] for cell 'ST_TEST_i/IOUTIL/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ip/ST_TEST_axi_gpio_0_5/ST_TEST_axi_gpio_0_5.xdc] for cell 'ST_TEST_i/IOUTIL/U0'
+Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk0' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 6.667 -name clk0 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.000 -1.667 -3.333} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk22.5' completely overrides clock 'clk_out3_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 6.667 -name clk22.5 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18]
+Previous: [unsaved constraint] create_generated_clock -name clk_out3_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.417 -1.250 -2.917} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk45' completely overrides clock 'clk_out1_ST_TEST_clk_wiz_0_1_1'.
+New: create_clock -period 6.667 -name clk45 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19]
+Previous: [unsaved constraint] create_generated_clock -name clk_out1_ST_TEST_clk_wiz_0_1_1 -source [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {0.833 0.833 0.833} -add -master_clock ST_TEST_i/clk_wiz_2/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk67.5' completely overrides clock 'clk_out3_ST_TEST_clk_wiz_0_1_1'.
+New: create_clock -period 6.667 -name clk67.5 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:20]
+Previous: [unsaved constraint] create_generated_clock -name clk_out3_ST_TEST_clk_wiz_0_1_1 -source [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.250 1.250 1.250} -add -master_clock ST_TEST_i/clk_wiz_2/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk90' completely overrides clock 'clk_out2_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 6.667 -name clk90 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21]
+Previous: [unsaved constraint] create_generated_clock -name clk_out2_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {1.667 0.000 -1.667} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk112.5' completely overrides clock 'clk_out4_ST_TEST_clk_wiz_0_0'.
+New: create_clock -period 6.667 -name clk112.5 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22]
+Previous: [unsaved constraint] create_generated_clock -name clk_out4_ST_TEST_clk_wiz_0_0 -source [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {2.083 0.417 -1.250} -add -master_clock ST_TEST_i/clk_wiz_0/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk135' completely overrides clock 'clk_out2_ST_TEST_clk_wiz_0_1_1'.
+New: create_clock -period 6.667 -name clk135 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:23]
+Previous: [unsaved constraint] create_generated_clock -name clk_out2_ST_TEST_clk_wiz_0_1_1 -source [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {2.500 2.500 2.500} -add -master_clock ST_TEST_i/clk_wiz_2/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk157.5' completely overrides clock 'clk_out4_ST_TEST_clk_wiz_0_1_1'.
+New: create_clock -period 6.667 -name clk157.5 -waveform {0.000 3.334} [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3], [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:24]
+Previous: [unsaved constraint] create_generated_clock -name clk_out4_ST_TEST_clk_wiz_0_1_1 -source [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKIN1] -edges {1 2 3} -edge_shift {2.917 2.917 2.917} -add -master_clock ST_TEST_i/clk_wiz_2/inst/clk_in1 [get_pins ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_0/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:27]
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_1/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:27]
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_2/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:27]
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+CRITICAL WARNING: [Constraints 18-514] set_min_delay: Path segmentation by forcing 'ST_TEST_i/OS_ISERDES_3/U0/ISERDESE2_inst/CLK' to be timing endpoint. There will be no setup timing paths to this pin unless set_max_delay is used to constrain the paths. [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:27]
+Resolution: Use valid endpoint to avoid path segmentation such as the data pin of a register.
+Finished Parsing XDC File [D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1275.227 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+14 Infos, 2 Warnings, 12 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1275.227 ; gain = 962.488
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.696 . Memory (MB): peak = 1275.227 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:23] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:20] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:24] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Ending Cache Timing Information Task | Checksum: 1d74f4e9b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.184 . Memory (MB): peak = 1286.180 ; gain = 10.953
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 4 inverter(s) to 203 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1d6c8679e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.279 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 4 cells and removed 71 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1ef59e0bb
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.316 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 4 cells and removed 12 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 158de5233
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.791 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 337 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 158de5233
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.852 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 158de5233
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.909 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 158de5233
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.947 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               4  |              71  |                                              0  |
+|  Constant propagation         |               4  |              12  |                                              0  |
+|  Sweep                        |               0  |             337  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1428.344 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1a3c698d7
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1428.344 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1a3c698d7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1428.344 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1a3c698d7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1428.344 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1428.344 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1a3c698d7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+31 Infos, 10 Warnings, 12 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1428.344 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file ST_TEST_wrapper_drc_opted.rpt -pb ST_TEST_wrapper_drc_opted.pb -rpx ST_TEST_wrapper_drc_opted.rpx
+Command: report_drc -file ST_TEST_wrapper_drc_opted.rpt -pb ST_TEST_wrapper_drc_opted.pb -rpx ST_TEST_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1428.344 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: ed298a7a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1428.344 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1428.344 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:23] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:20] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:24] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 197b37ec4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1428.344 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 26041a13f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 26041a13f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1431.699 ; gain = 3.355
+Phase 1 Placer Initialization | Checksum: 26041a13f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 2a7ce096a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1431.699 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           5  |  00:00:00  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 23627aae4
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1431.699 ; gain = 3.355
+Phase 2.2 Global Placement Core | Checksum: 1eaaee5fd
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1431.699 ; gain = 3.355
+Phase 2 Global Placement | Checksum: 1eaaee5fd
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1e3403be5
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 200cfcc6e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1c98b00f4
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 185480cd2
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 1bc30a59a
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 150331166
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1d6463627
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 17a093249
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 2178af329
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1431.699 ; gain = 3.355
+Phase 3 Detail Placement | Checksum: 2178af329
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1431.699 ; gain = 3.355
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:23] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:20] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:24] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 19d6e5715
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 19d6e5715
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1442.797 ; gain = 14.453
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-10.808. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 177156397
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+Phase 4.1 Post Commit Optimization | Checksum: 177156397
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 177156397
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 177156397
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1442.797 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 21ca8d0a9
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 21ca8d0a9
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+Ending Placer Task | Checksum: 14b215c9c
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1442.797 ; gain = 14.453
+INFO: [Common 17-83] Releasing license: Implementation
+61 Infos, 26 Warnings, 12 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1442.797 ; gain = 14.453
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1442.797 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.292 . Memory (MB): peak = 1456.043 ; gain = 13.246
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file ST_TEST_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1456.043 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file ST_TEST_wrapper_utilization_placed.rpt -pb ST_TEST_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file ST_TEST_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1456.043 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 59d21fab ConstDB: 0 ShapeSum: f14f3cf1 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 10c15c7cb
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 1564.973 ; gain = 108.930
+Post Restoration Checksum: NetGraph: 24ec660f NumContArr: e72961bc Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 10c15c7cb
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 1597.242 ; gain = 141.199
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 10c15c7cb
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 1604.742 ; gain = 148.699
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 10c15c7cb
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 1604.742 ; gain = 148.699
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 233d40ffb
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 1630.434 ; gain = 174.391
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.376 | TNS=-149.521| WHS=-4.445 | THS=-458.546|
+
+Phase 2 Router Initialization | Checksum: 1d752852a
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:23 . Memory (MB): peak = 1630.434 ; gain = 174.391
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0781299 %
+  Global Horizontal Routing Utilization  = 0.0392157 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 3115
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 3115
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 215c673e6
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1655.559 ; gain = 199.516
+INFO: [Route 35-580] Design has 177 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|               clk_fpga_0 |                  clk22.5 |                                                     ST_TEST_i/OS_ISERDES_1/U0/IDELAYE2_inst/CNTVALUEIN[3]|
+|               clk_fpga_0 |                  clk22.5 |                                                     ST_TEST_i/OS_ISERDES_1/U0/IDELAYE2_inst/CNTVALUEIN[4]|
+|               clk_fpga_0 |                  clk22.5 |                                                     ST_TEST_i/OS_ISERDES_1/U0/IDELAYE2_inst/CNTVALUEIN[0]|
+|               clk_fpga_0 |                     clk0 |                                                     ST_TEST_i/OS_ISERDES_0/U0/IDELAYE2_inst/CNTVALUEIN[4]|
+|               clk_fpga_0 |                     clk0 |                                                     ST_TEST_i/OS_ISERDES_0/U0/IDELAYE2_inst/CNTVALUEIN[3]|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 417
+ Number of Nodes with overlaps = 133
+ Number of Nodes with overlaps = 48
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.376 | TNS=-268.541| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1f13333b7
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:31 . Memory (MB): peak = 1655.559 ; gain = 199.516
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.376 | TNS=-252.556| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1108bc8a2
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.376 | TNS=-252.177| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 1fabbf110
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+Phase 4 Rip-up And Reroute | Checksum: 1fabbf110
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 2a7b7bc8f
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.376 | TNS=-248.292| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1ccf3c694
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1ccf3c694
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+Phase 5 Delay and Skew Optimization | Checksum: 1ccf3c694
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 111fa18f8
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1655.559 ; gain = 199.516
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.376 | TNS=-249.031| WHS=-8.764 | THS=-462.739|
+
+
+Phase 6.1.2 Lut RouteThru Assignment for hold
+Phase 6.1.2 Lut RouteThru Assignment for hold | Checksum: 17db92c77
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+Phase 6.1 Hold Fix Iter | Checksum: 17db92c77
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+WARNING: [Route 35-468] The router encountered 27 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+	ST_TEST_i/OS_ISERDES_3/U0/IDELAYE2_inst/CNTVALUEIN[4]
+	ST_TEST_i/OS_ISERDES_3/U0/IDELAYE2_inst/CNTVALUEIN[3]
+	ST_TEST_i/OS_ISERDES_3/U0/IDELAYE2_inst/CNTVALUEIN[2]
+	ST_TEST_i/OS_ISERDES_3/U0/IDELAYE2_inst/CNTVALUEIN[1]
+	ST_TEST_i/OS_ISERDES_3/U0/IDELAYE2_inst/CNTVALUEIN[0]
+	ST_TEST_i/OS_ISERDES_2/U0/IDELAYE2_inst/CNTVALUEIN[4]
+	ST_TEST_i/OS_ISERDES_2/U0/IDELAYE2_inst/CNTVALUEIN[3]
+	ST_TEST_i/OS_ISERDES_2/U0/IDELAYE2_inst/CNTVALUEIN[2]
+	ST_TEST_i/OS_ISERDES_2/U0/IDELAYE2_inst/CNTVALUEIN[1]
+	ST_TEST_i/OS_ISERDES_2/U0/IDELAYE2_inst/CNTVALUEIN[0]
+	.. and 17 more pins.
+
+Phase 6 Post Hold Fix | Checksum: 1b8dbebd4
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.9796 %
+  Global Horizontal Routing Utilization  = 0.992309 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 49.5495%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 82.8829%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 55.8824%, No Congested Regions.
+West Dir 2x2 Area, Max Cong = 90.0735%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X18Y148 -> INT_R_X19Y149
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 1 Aspect Ratio: 1 Sparse Ratio: 1
+
+Phase 7 Route finalize | Checksum: 1830d70ad
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1830d70ad
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 12949dc1f
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: e74250fe
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-9.495 | TNS=-1017.992| WHS=-8.764 | THS=-17.410|
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: e74250fe
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:02:08 . Memory (MB): peak = 2251.891 ; gain = 795.848
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+81 Infos, 28 Warnings, 12 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:02:50 ; elapsed = 00:02:10 . Memory (MB): peak = 2251.891 ; gain = 795.848
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2251.891 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.380 . Memory (MB): peak = 2251.891 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file ST_TEST_wrapper_drc_routed.rpt -pb ST_TEST_wrapper_drc_routed.pb -rpx ST_TEST_wrapper_drc_routed.rpx
+Command: report_drc -file ST_TEST_wrapper_drc_routed.rpt -pb ST_TEST_wrapper_drc_routed.pb -rpx ST_TEST_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file ST_TEST_wrapper_methodology_drc_routed.rpt -pb ST_TEST_wrapper_methodology_drc_routed.pb -rpx ST_TEST_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file ST_TEST_wrapper_methodology_drc_routed.rpt -pb ST_TEST_wrapper_methodology_drc_routed.pb -rpx ST_TEST_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:23] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:20] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:24] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.runs/impl_1/ST_TEST_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file ST_TEST_wrapper_power_routed.rpt -pb ST_TEST_wrapper_power_summary_routed.pb -rpx ST_TEST_wrapper_power_routed.rpx
+Command: report_power -file ST_TEST_wrapper_power_routed.rpt -pb ST_TEST_wrapper_power_summary_routed.pb -rpx ST_TEST_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:17] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:21] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:18] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:22] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT0 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:19] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT1 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:23] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT2 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:20] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKOUT3 [See D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/constrs_1/new/PYNQ-Z1.xdc:24] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+93 Infos, 44 Warnings, 12 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file ST_TEST_wrapper_route_status.rpt -pb ST_TEST_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file ST_TEST_wrapper_timing_summary_routed.rpt -pb ST_TEST_wrapper_timing_summary_routed.pb -rpx ST_TEST_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file ST_TEST_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file ST_TEST_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file ST_TEST_wrapper_bus_skew_routed.rpt -pb ST_TEST_wrapper_bus_skew_routed.pb -rpx ST_TEST_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force ST_TEST_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./ST_TEST_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+112 Infos, 44 Warnings, 13 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2251.891 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 29 14:55:54 2020...

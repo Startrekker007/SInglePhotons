@@ -1,0 +1,261 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x51CECEDF70F33617",
+      "device": "xc7z020clg400-1",
+      "name": "TEST",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "selectio_wiz_0": "",
+      "util_vector_logic_0": "",
+      "SDDR_ST_0": ""
+    },
+    "ports": {
+      "HS_CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "800000000"
+          }
+        }
+      },
+      "MCLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "400000000"
+          }
+        }
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "bitslip": {
+        "direction": "I"
+      },
+      "T1": {
+        "type": "data",
+        "direction": "I"
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "type": "data",
+        "direction": "O"
+      },
+      "CTIME": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "waiting": {
+        "direction": "O"
+      },
+      "armed": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "selectio_wiz_0": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "TEST_selectio_wiz_0_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_BUF": {
+            "value": "MMCM"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVCMOS33"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "USE_SERIALIZATION": {
+            "value": "true"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "TEST_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "SDDR_ST_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_ST:1.0",
+        "xci_name": "TEST_SDDR_ST_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "8"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_ST",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "T1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "CTIME": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "waiting": {
+            "direction": "O"
+          },
+          "armed": {
+            "direction": "O"
+          },
+          "DEBUG0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DEBUG1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "selectio_wiz_0_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_0/data_in_to_device",
+          "SDDR_ST_0/T1"
+        ]
+      },
+      "HS_CLK_1": {
+        "ports": [
+          "HS_CLK",
+          "selectio_wiz_0/clk_in"
+        ]
+      },
+      "MCLK_1": {
+        "ports": [
+          "MCLK",
+          "selectio_wiz_0/clk_div_in",
+          "SDDR_ST_0/MCLK"
+        ]
+      },
+      "resetn_1": {
+        "ports": [
+          "resetn",
+          "util_vector_logic_0/Op1",
+          "SDDR_ST_0/RESETN"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "selectio_wiz_0/io_reset"
+        ]
+      },
+      "bitslip_1": {
+        "ports": [
+          "bitslip",
+          "selectio_wiz_0/bitslip"
+        ]
+      },
+      "T1_1": {
+        "ports": [
+          "T1",
+          "selectio_wiz_0/data_in_from_pins"
+        ]
+      },
+      "SDDR_ST_0_D0": {
+        "ports": [
+          "SDDR_ST_0/D0",
+          "D0"
+        ]
+      },
+      "SDDR_ST_0_D1": {
+        "ports": [
+          "SDDR_ST_0/D1",
+          "D1"
+        ]
+      },
+      "SDDR_ST_0_DRDY": {
+        "ports": [
+          "SDDR_ST_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "SDDR_ST_0_CTIME": {
+        "ports": [
+          "SDDR_ST_0/CTIME",
+          "CTIME"
+        ]
+      },
+      "SDDR_ST_0_waiting": {
+        "ports": [
+          "SDDR_ST_0/waiting",
+          "waiting"
+        ]
+      },
+      "SDDR_ST_0_armed": {
+        "ports": [
+          "SDDR_ST_0/armed",
+          "armed"
+        ]
+      }
+    }
+  }
+}

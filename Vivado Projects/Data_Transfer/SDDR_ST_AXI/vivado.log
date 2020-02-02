@@ -1,0 +1,344 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 31 13:18:34 2020
+# Process ID: 13036
+# Current directory: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1816 D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.xpr
+# Log file: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/vivado.log
+# Journal file: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.xpr}
+INFO: [Project 1-313] Project file moved from 'D:/SInglePhotons/Vivado Projects/SERDES/SDDR_ST_AXI' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'SDDR_AXI_ST.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+SDDR_AXI_ST_SDDR_ST_0_0
+
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 811.922 ; gain = 145.988
+update_compile_order -fileset sources_1
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - DATA
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - UTIL
+Adding component instance block -- cri.nz:user:SDDR_ST:1.0 - SDDR_ST_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /UTIL/gpio_io_o(undef) and /SDDR_ST_0/RESETN(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MCLK(clk) and /SDDR_ST_0/MCLK(undef)
+Successfully read diagram <SDDR_AXI_ST> from BD file <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd>
+report_ip_status -name ip_status 
+upgrade_ip -vlnv cri.nz:user:SDDR_ST:1.0 [get_ips  SDDR_AXI_ST_SDDR_ST_0_0] -log ip_upgrade.log
+Upgrading 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd'
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_SDDR_ST_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MCLK(clk) and /SDDR_ST_0_upgraded_ipi/MCLK(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /UTIL/gpio_io_o(undef) and /SDDR_ST_0_upgraded_ipi/RESETN(rst)
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips SDDR_AXI_ST_SDDR_ST_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}]
+CRITICAL WARNING: [BD 41-1356] Slave segment </DATA/S_AXI/Reg> is not mapped into </ST_DATA>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </UTIL/S_AXI/Reg> is not mapped into </ST_UTIL>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </DATA/S_AXI/Reg> is not mapped into </ST_DATA>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </UTIL/S_AXI/Reg> is not mapped into </ST_UTIL>. Please use Address Editor to either map or exclude it.
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/synth/SDDR_AXI_ST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/sim/SDDR_AXI_ST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hdl/SDDR_AXI_ST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hw_handoff/SDDR_AXI_ST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hw_handoff/SDDR_AXI_ST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/synth/SDDR_AXI_ST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+add_files -norecurse -scan_for_includes {{D:/SInglePhotons/Vivado Projects/Data_Transfer/Test_Platform/Test_Platform.srcs/sources_1/new/capacity_controller.vhd} {D:/SInglePhotons/Vivado Projects/Data_Transfer/Test_Platform/Test_Platform.srcs/sources_1/new/FIFO_R_CT.vhd} {D:/SInglePhotons/Vivado Projects/Data_Transfer/Test_Platform/Test_Platform.srcs/sources_1/new/DATA_SPLITTER.vhd}}
+import_files -norecurse {{D:/SInglePhotons/Vivado Projects/Data_Transfer/Test_Platform/Test_Platform.srcs/sources_1/new/capacity_controller.vhd} {D:/SInglePhotons/Vivado Projects/Data_Transfer/Test_Platform/Test_Platform.srcs/sources_1/new/FIFO_R_CT.vhd} {D:/SInglePhotons/Vivado Projects/Data_Transfer/Test_Platform/Test_Platform.srcs/sources_1/new/DATA_SPLITTER.vhd}}
+update_compile_order -fileset sources_1
+startgroup
+delete_bd_objs [get_bd_nets SDDR_ST_0_DRDY]
+delete_bd_objs [get_bd_nets SDDR_ST_0_CTIME]
+endgroup
+startgroup
+delete_bd_objs [get_bd_nets T1_1]
+delete_bd_objs [get_bd_nets SDDR_ST_0_D0]
+delete_bd_objs [get_bd_nets SDDR_ST_0_D1]
+delete_bd_objs [get_bd_nets MCLK_1]
+delete_bd_objs [get_bd_nets UTIL_gpio_io_o]
+delete_bd_objs [get_bd_nets SDDR_ST_0_waiting]
+delete_bd_objs [get_bd_nets SDDR_ST_0_armed]
+endgroup
+delete_bd_objs [get_bd_nets xlconcat_0_dout] [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_ports T1] [get_bd_pins SDDR_ST_0/T1]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0
+endgroup
+set_property -dict [list CONFIG.C_SIZE {1}] [get_bd_cells util_vector_logic_0]
+set_property location {1 216 497} [get_bd_cells util_vector_logic_0]
+connect_bd_net [get_bd_pins UTIL/gpio_io_o] [get_bd_pins util_vector_logic_0/Op1]
+WARNING: [BD 41-1306] The connection to interface pin /UTIL/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+connect_bd_net [get_bd_pins util_vector_logic_0/Op2] [get_bd_pins SDDR_ST_0/DRDY]
+connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins SDDR_ST_0/RESETN]
+delete_bd_objs [get_bd_nets util_vector_logic_0_Res]
+delete_bd_objs [get_bd_nets SDDR_ST_0_DRDY]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1
+endgroup
+set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells util_vector_logic_1]
+connect_bd_net [get_bd_pins SDDR_ST_0/DRDY] [get_bd_pins util_vector_logic_1/Op1]
+connect_bd_net [get_bd_pins util_vector_logic_1/Res] [get_bd_pins util_vector_logic_0/Op2]
+connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins SDDR_ST_0/RESETN]
+connect_bd_net [get_bd_ports MCLK] [get_bd_pins SDDR_ST_0/MCLK]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MCLK(clk) and /SDDR_ST_0/MCLK(undef)
+connect_bd_net [get_bd_ports waiting] [get_bd_pins SDDR_ST_0/waiting]
+connect_bd_net [get_bd_ports armed] [get_bd_pins SDDR_ST_0/armed]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 fifo_generator_0
+INFO: [xilinx.com:ip:fifo_generator:13.2-5968] /fifo_generator_0Executing the post_config_ip from bd
+endgroup
+set_property -dict [list CONFIG.Input_Data_Width {48} CONFIG.Input_Depth {2048} CONFIG.Output_Data_Width {48} CONFIG.Output_Depth {2048} CONFIG.Valid_Flag {true} CONFIG.Write_Acknowledge_Flag {true} CONFIG.Data_Count {true} CONFIG.Data_Count_Width {11} CONFIG.Write_Data_Count_Width {11} CONFIG.Read_Data_Count_Width {11} CONFIG.Full_Threshold_Assert_Value {2046} CONFIG.Full_Threshold_Negate_Value {2045}] [get_bd_cells fifo_generator_0]
+INFO: [xilinx.com:ip:fifo_generator:13.2-5968] /fifo_generator_0Executing the post_config_ip from bd
+create_bd_cell -type module -reference capacity_controller capacity_controller_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2
+endgroup
+set_property -dict [list CONFIG.C_SIZE {1}] [get_bd_cells util_vector_logic_2]
+delete_bd_objs [get_bd_nets util_vector_logic_0_Res]
+connect_bd_net [get_bd_pins util_vector_logic_2/Op2] [get_bd_pins util_vector_logic_0/Res]
+connect_bd_net [get_bd_pins util_vector_logic_2/Op1] [get_bd_pins capacity_controller_0/run]
+connect_bd_net [get_bd_pins util_vector_logic_2/Res] [get_bd_pins SDDR_ST_0/RESETN]
+connect_bd_net [get_bd_ports MCLK] [get_bd_pins capacity_controller_0/MCLK]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MCLK(clk) and /capacity_controller_0/MCLK(undef)
+connect_bd_net [get_bd_pins capacity_controller_0/full] [get_bd_pins fifo_generator_0/full]
+WARNING: [BD 41-1306] The connection to interface pin /fifo_generator_0/full is being overridden by the user. This pin will not be connected as a part of interface connection FIFO_WRITE
+connect_bd_net [get_bd_pins capacity_controller_0/empty] [get_bd_pins fifo_generator_0/empty]
+WARNING: [BD 41-1306] The connection to interface pin /fifo_generator_0/empty is being overridden by the user. This pin will not be connected as a part of interface connection FIFO_READ
+connect_bd_net [get_bd_pins capacity_controller_0/resetn] [get_bd_pins UTIL/gpio_io_o]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /UTIL/gpio_io_o(undef) and /capacity_controller_0/resetn(rst)
+create_bd_cell -type module -reference FIFO_R_CT FIFO_R_CT_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'resetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'resetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+connect_bd_net [get_bd_pins FIFO_R_CT_0/valid] [get_bd_pins UTIL/gpio2_io_i]
+WARNING: [BD 41-1306] The connection to interface pin /UTIL/gpio2_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+connect_bd_net [get_bd_pins FIFO_R_CT_0/read_en] [get_bd_pins fifo_generator_0/rd_en]
+WARNING: [BD 41-1306] The connection to interface pin /fifo_generator_0/rd_en is being overridden by the user. This pin will not be connected as a part of interface connection FIFO_READ
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {2}] [get_bd_cells UTIL]
+endgroup
+disconnect_bd_net /UTIL_gpio_io_o [get_bd_pins UTIL/gpio_io_o]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+set_property -dict [list CONFIG.DIN_WIDTH {2} CONFIG.DIN_TO {0} CONFIG.DIN_FROM {0}] [get_bd_cells xlslice_0]
+connect_bd_net [get_bd_pins xlslice_0/Din] [get_bd_pins UTIL/gpio_io_o]
+WARNING: [BD 41-1306] The connection to interface pin /UTIL/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+set_property location {2 541 156} [get_bd_cells xlslice_1]
+set_property -dict [list CONFIG.DIN_TO {1} CONFIG.DIN_FROM {1} CONFIG.DIN_FROM {1} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_1]
+connect_bd_net [get_bd_pins xlslice_1/Din] [get_bd_pins UTIL/gpio_io_o]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins capacity_controller_0/resetn]
+connect_bd_net [get_bd_pins xlslice_1/Dout] [get_bd_pins FIFO_R_CT_0/REQ]
+connect_bd_net [get_bd_ports MCLK] [get_bd_pins FIFO_R_CT_0/MCLK]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MCLK(clk) and /FIFO_R_CT_0/MCLK(undef)
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {3}] [get_bd_cells UTIL]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DIN_WIDTH {3} CONFIG.DIN_TO {0} CONFIG.DIN_FROM {0}] [get_bd_cells xlslice_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DIN_WIDTH {3} CONFIG.DIN_TO {1} CONFIG.DIN_FROM {1}] [get_bd_cells xlslice_1]
+endgroup
+copy_bd_objs /  [get_bd_cells {xlslice_1}]
+set_property -dict [list CONFIG.DIN_TO {2} CONFIG.DIN_FROM {2} CONFIG.DIN_FROM {2} CONFIG.DOUT_WIDTH {1}] [get_bd_cells xlslice_2]
+connect_bd_net [get_bd_pins xlslice_2/Din] [get_bd_pins UTIL/gpio_io_o]
+connect_bd_net [get_bd_pins xlslice_2/Dout] [get_bd_pins FIFO_R_CT_0/resetn]
+connect_bd_net [get_bd_pins SDDR_ST_0/DRDY] [get_bd_pins fifo_generator_0/wr_en]
+WARNING: [BD 41-1306] The connection to interface pin /fifo_generator_0/wr_en is being overridden by the user. This pin will not be connected as a part of interface connection FIFO_WRITE
+create_bd_cell -type module -reference DATA_SPLITTER DATA_SPLITTER_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+set_property location {3 1016 788} [get_bd_cells DATA_SPLITTER_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+set_property -dict [list CONFIG.IN2_WIDTH.VALUE_SRC USER CONFIG.IN1_WIDTH.VALUE_SRC USER CONFIG.IN0_WIDTH.VALUE_SRC USER] [get_bd_cells xlconcat_0]
+set_property -dict [list CONFIG.NUM_PORTS {3} CONFIG.IN0_WIDTH {32} CONFIG.IN1_WIDTH {8} CONFIG.IN2_WIDTH {81}] [get_bd_cells xlconcat_0]
+set_property -dict [list CONFIG.IN2_WIDTH {8}] [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins fifo_generator_0/din]
+WARNING: [BD 41-1306] The connection to interface pin /fifo_generator_0/din is being overridden by the user. This pin will not be connected as a part of interface connection FIFO_WRITE
+connect_bd_net [get_bd_pins xlconcat_0/In0] [get_bd_pins SDDR_ST_0/CTIME]
+connect_bd_net [get_bd_pins xlconcat_0/In1] [get_bd_pins SDDR_ST_0/D0]
+connect_bd_net [get_bd_pins xlconcat_0/In2] [get_bd_pins SDDR_ST_0/D1]
+connect_bd_net [get_bd_pins DATA_SPLITTER_0/DATA_IN] [get_bd_pins fifo_generator_0/dout]
+WARNING: [BD 41-1306] The connection to interface pin /fifo_generator_0/dout is being overridden by the user. This pin will not be connected as a part of interface connection FIFO_READ
+connect_bd_net [get_bd_pins DATA_SPLITTER_0/COARSE] [get_bd_pins DATA/gpio_io_i]
+WARNING: [BD 41-1306] The connection to interface pin /DATA/gpio_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+update_module_reference SDDR_AXI_ST_DATA_SPLITTER_0_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+Upgrading 'D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd'
+INFO: [IP_Flow 19-3420] Updated SDDR_AXI_ST_DATA_SPLITTER_0_0 to use current project options
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'FPOST'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'FPRE'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'FINE_TIMES'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'SDDR_AXI_ST_DATA_SPLITTER_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'SDDR_AXI_ST_DATA_SPLITTER_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/ui/bd_fd439d0e.ui> 
+connect_bd_net [get_bd_pins DATA_SPLITTER_0/FINE_TIMES] [get_bd_pins DATA/gpio2_io_i]
+WARNING: [BD 41-1306] The connection to interface pin /DATA/gpio2_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/ui/bd_fd439d0e.ui> 
+update_compile_order -fileset sources_1
+connect_bd_net [get_bd_ports MCLK] [get_bd_pins fifo_generator_0/clk]
+connect_bd_net [get_bd_pins fifo_generator_0/srst] [get_bd_pins xlslice_0/Dout]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/ui/bd_fd439d0e.ui> 
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/ui/bd_fd439d0e.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}]
+CRITICAL WARNING: [BD 41-1356] Slave segment </DATA/S_AXI/Reg> is not mapped into </ST_DATA>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </UTIL/S_AXI/Reg> is not mapped into </ST_UTIL>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </DATA/S_AXI/Reg> is not mapped into </ST_DATA>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </UTIL/S_AXI/Reg> is not mapped into </ST_UTIL>. Please use Address Editor to either map or exclude it.
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/synth/SDDR_AXI_ST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/sim/SDDR_AXI_ST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hdl/SDDR_AXI_ST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fifo_generator_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block capacity_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block FIFO_R_CT_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hw_handoff/SDDR_AXI_ST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hw_handoff/SDDR_AXI_ST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/synth/SDDR_AXI_ST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+ipx::package_project -root_dir D:/SInglePhotons/HW_IP/_Data_transference -vendor cri.nz -library user -taxonomy /UserIP -import_files -set_current false
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ST_DATA' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ST_UTIL' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'ST_DATA'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'aresetn'.
+WARNING: [IP_Flow 19-991] Unrecognized or unsupported file 'sim/SDDR_AXI_ST.protoinst' found in file group 'Simulation'.
+Resolution: Remove the file from the specified file group.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::unload_core d:/SInglePhotons/HW_IP/_Data_transference/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory D:/SInglePhotons/HW_IP/_Data_transference d:/SInglePhotons/HW_IP/_Data_transference/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1271.379 ; gain = 74.102
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 1322.523 ; gain = 125.246
+update_compile_order -fileset sources_1
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+INFO: [filemgmt 56-326] User Interrupt. Could not getCurrentGraph()
+INFO: [filemgmt 56-326] User Interrupt. Could not getCurrentGraph()
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/_Data_transference d:/SInglePhotons/HW_IP/SDDR_ST_AXI d:/SInglePhotons/HW_IP/SDDR_ST} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'cri.nz:user:SDDR_AXI_ST_wrapper:1.0'. The one found in IP location 'd:/SInglePhotons/HW_IP/_Data_transference' will take precedence over the same IP in location d:/SInglePhotons/HW_IP/SDDR_ST_AXI
+startgroup
+set_property -dict [list CONFIG.C_GPIO2_WIDTH {3}] [get_bd_cells UTIL]
+endgroup
+delete_bd_objs [get_bd_nets FIFO_R_CT_0_valid]
+copy_bd_objs /  [get_bd_cells {xlslice_0 xlslice_1 xlslice_2}]
+set_property location {2 430 574} [get_bd_cells xlslice_3]
+set_property location {2 494 684} [get_bd_cells xlslice_4]
+set_property location {2 501 796} [get_bd_cells xlslice_5]
+connect_bd_net [get_bd_pins UTIL/gpio2_io_i] [get_bd_pins xlslice_3/Din]
+WARNING: [BD 41-1306] The connection to interface pin /UTIL/gpio2_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+connect_bd_net [get_bd_pins UTIL/gpio2_io_i] [get_bd_pins xlslice_4/Din]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins UTIL/gpio2_io_i] [get_bd_pins xlslice_4/Din]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins UTIL/gpio2_io_i] [get_bd_pins xlslice_3/Din]'
+delete_bd_objs [get_bd_cells xlslice_3] [get_bd_cells xlslice_4] [get_bd_cells xlslice_5]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1
+endgroup
+set_property -dict [list CONFIG.NUM_PORTS {3}] [get_bd_cells xlconcat_1]
+connect_bd_net [get_bd_pins xlconcat_1/dout] [get_bd_pins UTIL/gpio2_io_i]
+WARNING: [BD 41-1306] The connection to interface pin /UTIL/gpio2_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+connect_bd_net [get_bd_pins xlconcat_1/In0] [get_bd_pins FIFO_R_CT_0/valid]
+connect_bd_net [get_bd_pins xlconcat_1/In1] [get_bd_pins fifo_generator_0/empty]
+connect_bd_net [get_bd_pins xlconcat_1/In2] [get_bd_pins fifo_generator_0/full]
+save_bd_design
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+Wrote  : <D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/ui/bd_fd439d0e.ui> 
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}]
+CRITICAL WARNING: [BD 41-1356] Slave segment </DATA/S_AXI/Reg> is not mapped into </ST_DATA>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </UTIL/S_AXI/Reg> is not mapped into </ST_UTIL>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </DATA/S_AXI/Reg> is not mapped into </ST_DATA>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </UTIL/S_AXI/Reg> is not mapped into </ST_UTIL>. Please use Address Editor to either map or exclude it.
+Wrote  : <D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_AXI\SDDR_ST_AXI.srcs\sources_1\bd\SDDR_AXI_ST\SDDR_AXI_ST.bd> 
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/synth/SDDR_AXI_ST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/sim/SDDR_AXI_ST.vhd
+VHDL Output written to : D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hdl/SDDR_AXI_ST_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block SDDR_ST_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block UTIL .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DATA_SPLITTER_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block fifo_generator_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block capacity_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block FIFO_R_CT_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_1 .
+Exporting to file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hw_handoff/SDDR_AXI_ST.hwh
+Generated Block Design Tcl file D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/hw_handoff/SDDR_AXI_ST_bd.tcl
+Generated Hardware Definition File D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/synth/SDDR_AXI_ST.hwdef
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.srcs/sources_1/bd/SDDR_AXI_ST/SDDR_AXI_ST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_AXI/SDDR_ST_AXI.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet

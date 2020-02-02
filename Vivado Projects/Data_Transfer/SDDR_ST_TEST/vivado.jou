@@ -1,0 +1,101 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 31 13:36:50 2020
+# Process ID: 13068
+# Current directory: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13100 D:\SInglePhotons\Vivado Projects\Data_Transfer\SDDR_ST_TEST\SDDR_ST_TEST.xpr
+# Log file: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/vivado.log
+# Journal file: D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.xpr}
+update_compile_order -fileset sources_1
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_intf_nets ps7_0_axi_periph_M02_AXI] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_nets axi_gpio_0_gpio_io_o] [get_bd_nets SDDR_ST_0_DRDY] [get_bd_nets SDDR_ST_0_DEBUG0] [get_bd_nets SDDR_ST_0_DEBUG1] [get_bd_nets SDDR_ST_0_CTIME] [get_bd_nets xlconcat_0_dout] [get_bd_cells UTIL] [get_bd_cells DEBUG] [get_bd_cells DATA]
+delete_bd_objs [get_bd_nets SDDR_ST_0_armed] [get_bd_nets SDDR_ST_0_waiting] [get_bd_nets xlconcat_1_dout] [get_bd_nets ISERDES_B_0_data_in_to_device] [get_bd_nets SDDR_ST_0_D0] [get_bd_nets SDDR_ST_0_D1] [get_bd_cells xlconcat_1] [get_bd_cells SDDR_ST_0] [get_bd_cells xlconcat_0]
+save_bd_design
+update_module_reference TEST_ISERDES_B_0_0
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/SDDR_ST D:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 SDDR_AXI_ST_wrapper_0
+endgroup
+set_property location {3 1099 399} [get_bd_cells SDDR_AXI_ST_wrapper_0]
+connect_bd_net [get_bd_pins ISERDES_B_0/data_in_to_device] [get_bd_pins SDDR_AXI_ST_wrapper_0/T1]
+regenerate_bd_layout
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins SDDR_AXI_ST_wrapper_0/ST_DATA]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins SDDR_AXI_ST_wrapper_0/ST_UTIL]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {2}] [get_bd_cells ps7_0_axi_periph]
+endgroup
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/MCLK] [get_bd_pins clk_wiz_0/clk_out2]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/aresetn] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+set_property location {4.5 1620 605} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/armed] [get_bd_pins xlconcat_0/In0]
+connect_bd_net [get_bd_pins SDDR_AXI_ST_wrapper_0/waiting] [get_bd_pins xlconcat_0/In1]
+connect_bd_net [get_bd_ports status] [get_bd_pins xlconcat_0/dout]
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+assign_bd_address
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+refresh_design
+set_property needs_refresh false [get_runs synth_1]
+set_property needs_refresh false [get_runs impl_1]
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}
+set_property  ip_repo_paths  d:/SInglePhotons/HW_IP/SDDR_ST [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/SDDR_ST D:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI} [current_project]
+update_ip_catalog
+report_ip_status -name ip_status 
+upgrade_ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 [get_ips  TEST_SDDR_AXI_ST_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips TEST_SDDR_AXI_ST_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+set_property  ip_repo_paths  d:/SInglePhotons/HW_IP/SDDR_ST [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {d:/SInglePhotons/HW_IP/SDDR_ST D:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI} [current_project]
+update_ip_catalog
+upgrade_ip -vlnv cri.nz:user:SDDR_AXI_ST_wrapper:1.0 [get_ips  TEST_SDDR_AXI_ST_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips TEST_SDDR_AXI_ST_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+startgroup
+set_property -dict [list CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200} CONFIG.MMCM_CLKOUT1_DIVIDE {4} CONFIG.CLKOUT2_JITTER {126.455}] [get_bd_cells clk_wiz_0]
+endgroup
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/transferoverlay.tcl}
+open_bd_design {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_ST_TEST/SDDR_ST_TEST.srcs/sources_1/bd/TEST/TEST.bd}

@@ -1,4 +1,5 @@
 from SP import *
+from ST import *
 import socket
 import _thread
 from multiprocessing import Process,Lock
@@ -6,7 +7,8 @@ import json
 from time import sleep
 HOST = ''
 PORT = 6050#Port to listen on
-SPT = None
+SPT = None #Main Time Controller Tools object
+HRTools = None #High resolution single channel inter rising edge timer tool object
 conn = None
 strt = 0#Has the main control loop started
 #Process handles
@@ -14,7 +16,7 @@ TTP = None
 CTProc = None
 STProc = None
 COProc= None
-
+HRSTProc = None
 
 def sendToHost(data,l):
     """Send the specified string data to the client connected to the socket
@@ -29,7 +31,7 @@ def sendToHost(data,l):
     """
     l.acquire()
     conn.sendall(data.encode())
-    print(data)
+    #print(data)
     l.release()
 def counter(window,mode,lock):
     """Starts and operates the pulse counter and sends counts to client connected to socket
@@ -75,7 +77,7 @@ def ST_MOD(lock):
 
 
     """
-    print("Arming single channel inter_rising edge timer")
+    #print("Arming single channel inter_rising edge timer")
     t=SPT.st_arm_and_wait()
     sendToHost(("ST"+str(t)),lock)
 
@@ -171,7 +173,29 @@ def DD_IDELAY(channel,tap0,tap1):
 
     """
     SPT.DD_idelay(channel,tap0,tap1)
+def HRST_start(lock):
+    """
+    Start the high resolution inter rising edge timer
+    Parameters
+    ----------
+    lock : :class:`multiprocessing.lock`
+        Thread lock
 
+    """
+    while(1):
+        time = HRTools.proc()
+        sendToHost("ST"+str(time),lock)
+        sleep(0.1)
+def HRST_change_delay(delays):
+    """
+    Change the input delays manually on the high resolution inter rising edge timer
+    Parameters
+    ----------
+    delays : :class:`list` of `int`
+        Delays for each replicated channel
+
+    """
+    HRTools.set_delays(delays)
 def run():
     while(1):
         try:
@@ -182,10 +206,12 @@ def run():
                 s.listen(1)
                 global conn
                 global SPT
+                global HRTools
                 global TTP
                 global STProc
                 global CTProc
                 global COProc
+                global HRSTProc
                 conn, addr = s.accept()#Accept an incoming client connection
 
                 with conn:
@@ -196,10 +222,14 @@ def run():
                         data = (conn.recv(1024)).decode()
                         print(data)
                         if not data: break
-                        if(data=="START"):#If the start signal from the client is recieved
+                        if(data=="START0"):#If the start signal from the client is recieved for default tools
                             SPT = SP_TOOLS()
                             sendToHost("DONE",lock)
                             strt = 1
+                        if(data=="START1"):
+                            HRTools = ST()
+                            sendToHost("DONE",lock)
+                            strt=2
                         if(strt == 1):
                             print(data)
                             if(data[:2]=="PC"):#If the first two characters are PC, then start the pulse counter
@@ -249,7 +279,24 @@ def run():
                                     STProc.terminate()
                                 if (not(TTP is None)):  # If the child process already exists then kill it and start it again
                                     TTP.terminate()
-                                SPT.restart()
+                                strt = 0
+                        if(strt==2):
+                            if (data == "ST"):  # High resolution inter rising edge timer
+                                if (isinstance(HRSTProc, Process)):
+                                    HRSTProc.terminate()
+                                HRSTProc = Process(target=HRST_start, args=(lock, ))
+                                HRSTProc.start()
+                            if(data[:2] == "DD"):
+                                dels = json.loads(data[2:])
+                                HRST_change_delay(dels)
+                            if(data[:2]=="STOP"):
+                                if (not (HRSTProc is None)):
+                                    HRSTProc.terminate()
+                            if(data=="XX"):
+                                if(not(HRSTProc is None)):
+                                    HRSTProc.terminate()
+                                strt=0
+
 
 
 

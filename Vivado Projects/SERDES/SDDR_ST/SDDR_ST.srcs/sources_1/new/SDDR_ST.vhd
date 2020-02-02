@@ -219,6 +219,8 @@ begin
                     iwaiting := '0';
                     b_D1 <= x"00";
                     b_CTIME <= x"00000000";
+                                DEBUG0 <= pT1;
+            DEBUG1 <= lT1;
                 else
                     if(is_rising_edge(pT1,lT1)) then
                         pipelined_detector0 <= '1';
@@ -229,13 +231,14 @@ begin
                 if(is_rising_edge(pT1,lT1)) then
                     pipelined_detector1 <= '1';
                     pipelined_f1 <= get_finetime(pt1,lt1);
+                                DEBUG0 <= pT1;
+            DEBUG1 <= lT1;
                 end if;
             end if;
             lT1 <= pT1;
             armed <= iarmed;
             waiting <= iwaiting;
-            DEBUG0 <= pT1;
-            DEBUG1 <= lT1;
+
             p2t1 <= pt1;
             l2t1 <= lt1;
         end if;

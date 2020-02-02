@@ -1,0 +1,221 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jan 28 12:50:31 2020
+# Process ID: 22848
+# Current directory: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8020 D:\SInglePhotons\Vivado Projects\REAL_OVERSAMPLE\REAL_OVERSAMPLE.xpr
+# Log file: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/vivado.log
+# Journal file: D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.xpr}
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+validate_bd_design -force
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property -dict [list CONFIG.CONST_WIDTH {4} CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_0]
+startgroup
+connect_bd_net [get_bd_pins SHUFFLYBOI_0/IS3] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins SHUFFLYBOI_0/IS2]
+endgroup
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+update_module_reference {ST_TEST_OS_ISERDES_0_0 ST_TEST_OS_ISERDES_0_1}
+connect_bd_net [get_bd_pins OS_ISERDES_1/io_resetn] [get_bd_pins OS_ISERDES_0/io_resetn]
+connect_bd_net [get_bd_pins OS_ISERDES_1/io_resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+open_run impl_1
+close_design
+open_run synth_1 -name synth_1
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+update_module_reference {ST_TEST_OS_ISERDES_0_0 ST_TEST_OS_ISERDES_0_1}
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+update_module_reference {ST_TEST_OS_ISERDES_0_0 ST_TEST_OS_ISERDES_0_1}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+delete_bd_objs [get_bd_cells xlconstant_0]
+copy_bd_objs /  [get_bd_cells {OS_ISERDES_1}]
+copy_bd_objs /  [get_bd_cells {OS_ISERDES_2}]
+set_property location {4 1320 1173} [get_bd_cells OS_ISERDES_3]
+set_property location {4 1323 913} [get_bd_cells OS_ISERDES_2]
+set_property location {4 1331 1078} [get_bd_cells OS_ISERDES_3]
+connect_bd_net [get_bd_pins OS_ISERDES_2/data_out] [get_bd_pins SHUFFLYBOI_0/IS2]
+connect_bd_net [get_bd_pins OS_ISERDES_3/data_out] [get_bd_pins SHUFFLYBOI_0/IS3]
+connect_bd_net [get_bd_pins OS_ISERDES_2/DATA_IN] [get_bd_pins DATA_SPLITTER_0/OUT2]
+connect_bd_net [get_bd_pins OS_ISERDES_3/DATA_IN] [get_bd_pins DATA_SPLITTER_0/OUT3]
+copy_bd_objs /  [get_bd_cells {clk_wiz_0}]
+set_property location {3 933 1247} [get_bd_cells clk_wiz_2]
+startgroup
+set_property -dict [list CONFIG.CLKOUT3_REQUESTED_PHASE {22.5} CONFIG.CLKOUT4_REQUESTED_PHASE {112.5} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {32.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} CONFIG.MMCM_CLKOUT1_DIVIDE {4} CONFIG.MMCM_CLKOUT2_DIVIDE {4} CONFIG.MMCM_CLKOUT2_PHASE {22.500} CONFIG.MMCM_CLKOUT3_DIVIDE {4} CONFIG.MMCM_CLKOUT3_PHASE {112.500} CONFIG.CLKOUT1_JITTER {233.189} CONFIG.CLKOUT1_PHASE_ERROR {265.359} CONFIG.CLKOUT2_JITTER {233.189} CONFIG.CLKOUT2_PHASE_ERROR {265.359} CONFIG.CLKOUT3_JITTER {233.189} CONFIG.CLKOUT3_PHASE_ERROR {265.359} CONFIG.CLKOUT4_JITTER {233.189} CONFIG.CLKOUT4_PHASE_ERROR {265.359}] [get_bd_cells clk_wiz_0]
+endgroup
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_PHASE {45} CONFIG.CLKOUT2_REQUESTED_PHASE {135} CONFIG.CLKOUT3_REQUESTED_PHASE {67.5} CONFIG.CLKOUT4_REQUESTED_PHASE {157.5} CONFIG.USE_LOCKED {true} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {32.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} CONFIG.MMCM_CLKOUT0_PHASE {45.000} CONFIG.MMCM_CLKOUT1_DIVIDE {4} CONFIG.MMCM_CLKOUT1_PHASE {135.000} CONFIG.MMCM_CLKOUT2_DIVIDE {4} CONFIG.MMCM_CLKOUT2_PHASE {67.500} CONFIG.MMCM_CLKOUT3_DIVIDE {4} CONFIG.MMCM_CLKOUT3_PHASE {157.500} CONFIG.CLKOUT1_JITTER {233.189} CONFIG.CLKOUT1_PHASE_ERROR {265.359} CONFIG.CLKOUT2_JITTER {233.189} CONFIG.CLKOUT2_PHASE_ERROR {265.359} CONFIG.CLKOUT3_JITTER {233.189} CONFIG.CLKOUT3_PHASE_ERROR {265.359} CONFIG.CLKOUT4_JITTER {233.189} CONFIG.CLKOUT4_PHASE_ERROR {265.359}] [get_bd_cells clk_wiz_2]
+startgroup
+set_property -dict [list CONFIG.USE_LOCKED {true}] [get_bd_cells clk_wiz_0]
+endgroup
+connect_bd_net [get_bd_pins clk_wiz_2/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out1] [get_bd_pins OS_ISERDES_2/CLK0]
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out2] [get_bd_pins OS_ISERDES_2/CLK90]
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out3] [get_bd_pins OS_ISERDES_3/CLK0]
+connect_bd_net [get_bd_pins clk_wiz_2/clk_out4] [get_bd_pins OS_ISERDES_3/CLK90]
+connect_bd_net [get_bd_pins OS_ISERDES_3/io_resetn] [get_bd_pins OS_ISERDES_2/io_resetn]
+connect_bd_net [get_bd_pins OS_ISERDES_2/io_resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+connect_bd_net [get_bd_pins DELAY1/gpio_io_o] [get_bd_pins OS_ISERDES_2/delay_tap]
+connect_bd_net [get_bd_pins DELAY1/gpio2_io_o] [get_bd_pins OS_ISERDES_3/delay_tap]
+save_bd_design
+delete_bd_objs [get_bd_nets OS_ISERDES_2_data_out] [get_bd_nets OS_ISERDES_3_data_out]
+copy_bd_objs /  [get_bd_cells {swapper_1 swapper_0}]
+set_property location {5 1831 809} [get_bd_cells swapper_2]
+connect_bd_net [get_bd_pins OS_ISERDES_2/data_out] [get_bd_pins swapper_2/ISI]
+connect_bd_net [get_bd_pins swapper_2/ISO] [get_bd_pins SHUFFLYBOI_0/IS2]
+connect_bd_net [get_bd_pins swapper_3/ISO] [get_bd_pins SHUFFLYBOI_0/IS3]
+connect_bd_net [get_bd_pins swapper_3/ISI] [get_bd_pins OS_ISERDES_3/data_out]
+save_bd_design
+regenerate_bd_layout
+save_bd_design
+startgroup
+set_property -dict [list CONFIG.factor {4}] [get_bd_cells SHUFFLYBOI_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.SIG_WIDTH {16}] [get_bd_cells SDDR_ST_0]
+endgroup
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+disconnect_bd_net /sys_clk_1 [get_bd_pins clk_wiz_0/clk_in1]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_0
+endgroup
+set_property -dict [list CONFIG.C_BUF_TYPE {BUFG}] [get_bd_cells util_ds_buf_0]
+connect_bd_net [get_bd_ports sys_clk] [get_bd_pins util_ds_buf_0/BUFG_I]
+connect_bd_net [get_bd_pins util_ds_buf_0/BUFG_O] [get_bd_pins clk_wiz_0/clk_in1]
+connect_bd_net [get_bd_pins util_ds_buf_0/BUFG_O] [get_bd_pins clk_wiz_2/clk_in1]
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_1
+endgroup
+delete_bd_objs [get_bd_cells util_ds_buf_1]
+close [ open {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/new/BIG_BUFF.vhd} w ]
+add_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/new/BIG_BUFF.vhd}}
+update_compile_order -fileset sources_1
+save_bd_design
+delete_bd_objs [get_bd_cells util_ds_buf_0]
+delete_bd_objs [get_bd_nets sys_clk_1]
+save_bd_design
+create_bd_cell -type module -reference BIG_BUFF BIG_BUFF_0
+connect_bd_net [get_bd_pins BIG_BUFF_0/misc] [get_bd_pins clk_wiz_1/clk_in1]
+connect_bd_net [get_bd_pins BIG_BUFF_0/serdes_distribution] [get_bd_pins clk_wiz_0/clk_in1]
+connect_bd_net [get_bd_ports sys_clk] [get_bd_pins BIG_BUFF_0/sys_clk_in]
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+open_run impl_1
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+update_module_reference ST_TEST_BIG_BUFF_0_0
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+update_module_reference ST_TEST_BIG_BUFF_0_0
+current_design synth_1
+generate_target all [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+refresh_design
+create_clock -period 8.000 -name sys_clk_buffered -waveform {0.000 4.000} [get_pins ST_TEST_i/BIG_BUFF_0/U0/SD_BUFH_inst/O]
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+set_clock_latency -clock [get_clocks sys_clk_buffered] 1.0 [get_pins [list ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1 ST_TEST_i/clk_wiz_2/inst/mmcm_adv_inst/CLKIN1 ]]
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+current_design impl_1
+refresh_design
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+delete_bd_objs [get_bd_nets sys_clk_1] [get_bd_nets BIG_BUFF_0_misc] [get_bd_cells BIG_BUFF_0]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins clk_wiz_1/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+save_bd_design
+generate_target all [get_files  {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}]
+export_ip_user_files -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}}] -directory {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/sim_scripts} -ip_user_files_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files} -ipstatic_source_dir {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/modelsim} {questa=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/questa} {riviera=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/riviera} {activehdl=D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+source {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/transferoverlay.tcl}
+refresh_design
+current_design synth_1
+refresh_design
+create_clock -period 5.000 -name clk0 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0]
+create_clock -period 5.000 -name clk22.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+open_bd_design {D:/SInglePhotons/Vivado Projects/REAL_OVERSAMPLE/REAL_OVERSAMPLE.srcs/sources_1/bd/ST_TEST/ST_TEST.bd}
+create_clock -period 5.000 -name clk45 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT2]
+create_clock -period 5.000 -name clk67.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT2]
+create_clock -period 5.000 -name clk90 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1]
+create_clock -period 5.000 -name clk112.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT3]
+create_clock -period 5.000 -name clk135 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1]
+create_clock -period 5.000 -name clk157.5 -waveform {0.000 2.500} [get_pins ST_TEST_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT3]
+save_constraints
+set_clock_groups -name SERDES_CLOCKS -asynchronous -group [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]]
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+current_design impl_1
+refresh_design
+set_clock_latency -clock [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]] -rise -fall 3.0 [get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "CLK" || REF_PIN_NAME =~  "*CLKB*" && NAME =~  "*ISERDESE2_inst/*" }]
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+refresh_design
+current_design synth_1
+refresh_design
+set_min_delay -from [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]] -to [get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "*CLKB*" || REF_PIN_NAME =~  "CLK" && NAME =~  "*ISERDESE2_inst/*" }] 2.0
+set_max_delay -from [get_clocks [list clk0 clk22.5 clk45 clk67.5 clk90 clk112.5 clk135 clk157.5 ]] -to [get_pins -hierarchical -filter { REF_PIN_NAME =~  "*OCLK*" || REF_PIN_NAME =~  "*CLKB*" || REF_PIN_NAME =~  "CLK" && NAME =~  "*ISERDESE2_inst/*" }] 3.0
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1

@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 27 08:43:35 2020" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="SDOS_ST" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="ARMED" SIGIS="undef" SIGNAME="SDDR_ST_0_armed">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="armed"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="BITSLIP" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_BITSLIP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="BT_SPLIT_0" PORT="DI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="800000000" DIR="I" NAME="CLK0" SIGIS="clk" SIGNAME="External_Ports_CLK0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_0" PORT="clk_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="500000000" DIR="I" NAME="CLK1" SIGIS="clk" SIGNAME="External_Ports_CLK1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_1" PORT="clk_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="800000000" DIR="I" NAME="CLK2" SIGIS="clk" SIGNAME="External_Ports_CLK2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_2" PORT="clk_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="500000000" DIR="I" NAME="CLK3" SIGIS="clk" SIGNAME="External_Ports_CLK3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_3" PORT="clk_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="CTIME" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_CTIME">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="CTIME"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="D0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="D1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="D1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DATA_D0" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_0_data_in_to_device">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_0" PORT="data_in_to_device"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DATA_D1" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_1_data_in_to_device">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_1" PORT="data_in_to_device"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="DATA_OUT" RIGHT="0" SIGIS="data" SIGNAME="ST_REDIR_0_DATA_OUT">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ST_REDIR_0" PORT="DATA_OUT"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="SDDR_ST_0_DRDY">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="DRDY"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_RESETN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="RESETN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="WAITING" SIGIS="undef" SIGNAME="SDDR_ST_0_waiting">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="waiting"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ioresetn" SIGIS="rst" SIGNAME="External_Ports_ioresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="DATA_IN" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_DATA_IN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="BT_SPLIT_1" PORT="DI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DEBUG0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="DEBUG0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="DEBUG1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="DEBUG1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="200000000" DIR="I" NAME="CLKD0" SIGIS="clk" SIGNAME="External_Ports_CLKD0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_0" PORT="clk_div_in"/>
+        <CONNECTION INSTANCE="SDDR_ST_0" PORT="MCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="200000000" DIR="I" NAME="CLKD1" SIGIS="clk" SIGNAME="External_Ports_CLKD1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_1" PORT="clk_div_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="200000000" DIR="I" NAME="CLKD2" SIGIS="clk" SIGNAME="External_Ports_CLKD2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_2" PORT="clk_div_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="200000000" DIR="I" NAME="CLKD3" SIGIS="clk" SIGNAME="External_Ports_CLKD3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ISERDES_B_3" PORT="clk_div_in"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/BT_SPLIT_0" HWVERSION="1.0" INSTANCE="BT_SPLIT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BT_SPLIT" VLNV="xilinx.com:module_ref:BT_SPLIT:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_BT_SPLIT_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="DI" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_BITSLIP">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="BITSLIP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D0" SIGIS="undef" SIGNAME="BT_SPLIT_0_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="bitslip"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D1" SIGIS="undef" SIGNAME="BT_SPLIT_0_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="bitslip"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D2" SIGIS="undef" SIGNAME="BT_SPLIT_0_D2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="bitslip"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D3" SIGIS="undef" SIGNAME="BT_SPLIT_0_D3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="bitslip"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/BT_SPLIT_1" HWVERSION="1.0" INSTANCE="BT_SPLIT_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BT_SPLIT" VLNV="xilinx.com:module_ref:BT_SPLIT:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_BT_SPLIT_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="DI" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_DATA_IN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D0" SIGIS="undef" SIGNAME="BT_SPLIT_1_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="data_in_from_pins"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D1" SIGIS="undef" SIGNAME="BT_SPLIT_1_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="data_in_from_pins"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D2" SIGIS="undef" SIGNAME="BT_SPLIT_1_D2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="data_in_from_pins"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="D3" SIGIS="undef" SIGNAME="BT_SPLIT_1_D3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="data_in_from_pins"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_0" HWVERSION="1.0" INSTANCE="ISERDES_B_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_ISERDES_B_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_1_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_1" PORT="D0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_0_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_D0"/>
+            <CONNECTION INSTANCE="ST_REDIR_0" PORT="IS0"/>
+            <CONNECTION INSTANCE="SDDR_ST_0" PORT="T1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_0_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_0" PORT="D0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_CLKD0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLKD0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_1" HWVERSION="1.0" INSTANCE="ISERDES_B_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_ISERDES_B_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_1_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_1" PORT="D1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_1_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_D1"/>
+            <CONNECTION INSTANCE="ST_REDIR_0" PORT="IS1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_0_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_0" PORT="D1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_CLKD1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLKD1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_2" HWVERSION="1.0" INSTANCE="ISERDES_B_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_ISERDES_B_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_1_D2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_1" PORT="D2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_2_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ST_REDIR_0" PORT="IS2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_0_D2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_0" PORT="D2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_CLK2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_CLKD2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLKD2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ISERDES_B_3" HWVERSION="1.0" INSTANCE="ISERDES_B_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ISERDES_B" VLNV="xilinx.com:module_ref:ISERDES_B:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SYS_W" VALUE="1"/>
+        <PARAMETER NAME="DEV_W" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_ISERDES_B_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="data_in_from_pins" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_1_D3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_1" PORT="D3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_in_to_device" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_3_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ST_REDIR_0" PORT="IS3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="BT_SPLIT_0_D3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BT_SPLIT_0" PORT="D3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_CLK3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_CLKD3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLKD3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SDDR_ST_0" HWVERSION="1.0" INSTANCE="SDDR_ST_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SDDR_ST" VLNV="xilinx.com:module_ref:SDDR_ST:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SIG_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_SDDR_ST_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="MCLK" SIGIS="undef" SIGNAME="External_Ports_CLKD0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLKD0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESETN" SIGIS="rst" SIGNAME="External_Ports_RESETN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESETN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="T1" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_0_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="D1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_D1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="DRDY" SIGIS="undef" SIGNAME="SDDR_ST_0_DRDY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DRDY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="CTIME" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_CTIME">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CTIME"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="waiting" SIGIS="undef" SIGNAME="SDDR_ST_0_waiting">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="WAITING"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="armed" SIGIS="undef" SIGNAME="SDDR_ST_0_armed">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ARMED"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DEBUG0" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DEBUG1" RIGHT="0" SIGIS="undef" SIGNAME="SDDR_ST_0_DEBUG1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DEBUG1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ST_REDIR_0" HWVERSION="1.0" INSTANCE="ST_REDIR_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ST_REDIR" VLNV="xilinx.com:module_ref:ST_REDIR:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_ST_REDIR_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="IS0" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_0_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="IS1" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_1_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="IS2" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_2_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="IS3" RIGHT="0" SIGIS="undef" SIGNAME="ISERDES_B_3_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="DATA_OUT" RIGHT="0" SIGIS="undef" SIGNAME="ST_REDIR_0_DATA_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DATA_OUT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="PCLK" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="SDOS_ST_util_vector_logic_0_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_ioresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ioresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ISERDES_B_0" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_1" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_2" PORT="io_reset"/>
+            <CONNECTION INSTANCE="ISERDES_B_3" PORT="io_reset"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

@@ -1,0 +1,558 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x342CEB5AAE9E0A7F",
+      "device": "xc7z020clg400-1",
+      "name": "OVERSAMPLE_TEST",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "BT_SPLIT_0": "",
+      "ST_REDIR_0": "",
+      "ISERDES_B_0": "",
+      "ISERDES_B_1": "",
+      "ISERDES_B_2": "",
+      "ISERDES_B_3": "",
+      "SDDR_ST_0": ""
+    },
+    "ports": {
+      "RESETN": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "DATA_IN": {
+        "direction": "I"
+      },
+      "DATA_OUT": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "CLK0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "800000000"
+          }
+        }
+      },
+      "CLK1": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "500000000"
+          }
+        }
+      },
+      "D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DRDY": {
+        "direction": "O"
+      },
+      "CTIME": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "WAITING": {
+        "direction": "O"
+      },
+      "ARMED": {
+        "direction": "O"
+      },
+      "ioresetn": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "BITSLIP": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "DATA_D0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "DATA_D1": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "CLK_DIV": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "200000000"
+          }
+        }
+      },
+      "CLK2": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "800000000"
+          }
+        }
+      },
+      "CLK3": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "500000000"
+          }
+        }
+      }
+    },
+    "components": {
+      "BT_SPLIT_0": {
+        "vlnv": "xilinx.com:module_ref:BT_SPLIT:1.0",
+        "xci_name": "OVERSAMPLE_TEST_BT_SPLIT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BT_SPLIT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DI": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "D0": {
+            "direction": "O"
+          },
+          "D1": {
+            "direction": "O"
+          },
+          "D2": {
+            "direction": "O"
+          },
+          "D3": {
+            "direction": "O"
+          }
+        }
+      },
+      "ST_REDIR_0": {
+        "vlnv": "xilinx.com:module_ref:ST_REDIR:1.0",
+        "xci_name": "OVERSAMPLE_TEST_ST_REDIR_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ST_REDIR",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "IS0": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "IS1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "IS2": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "IS3": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "PCLK": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_B_0": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "OVERSAMPLE_TEST_ISERDES_B_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_B",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "data_in_to_device": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I"
+          },
+          "clk_div_in": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_B_1": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "OVERSAMPLE_TEST_ISERDES_B_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_B",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "data_in_to_device": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I"
+          },
+          "clk_div_in": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_B_2": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "OVERSAMPLE_TEST_ISERDES_B_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_B",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "data_in_to_device": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I"
+          },
+          "clk_div_in": {
+            "direction": "I"
+          }
+        }
+      },
+      "ISERDES_B_3": {
+        "vlnv": "xilinx.com:module_ref:ISERDES_B:1.0",
+        "xci_name": "OVERSAMPLE_TEST_ISERDES_B_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ISERDES_B",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "io_reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in_from_pins": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "data_in_to_device": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bitslip": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clk_in": {
+            "direction": "I"
+          },
+          "clk_div_in": {
+            "direction": "I"
+          }
+        }
+      },
+      "SDDR_ST_0": {
+        "vlnv": "xilinx.com:module_ref:SDDR_ST:1.0",
+        "xci_name": "OVERSAMPLE_TEST_SDDR_ST_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "32"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SDDR_ST",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I"
+          },
+          "T1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "D1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "DRDY": {
+            "direction": "O"
+          },
+          "CTIME": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "waiting": {
+            "direction": "O"
+          },
+          "armed": {
+            "direction": "O"
+          },
+          "DEBUG0": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DEBUG1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "RESETN_1": {
+        "ports": [
+          "RESETN",
+          "SDDR_ST_0/RESETN"
+        ]
+      },
+      "CLK0_1": {
+        "ports": [
+          "CLK0",
+          "ISERDES_B_0/clk_in"
+        ]
+      },
+      "SDDR_ST_0_D0": {
+        "ports": [
+          "SDDR_ST_0/D0",
+          "D0"
+        ]
+      },
+      "SDDR_ST_0_D1": {
+        "ports": [
+          "SDDR_ST_0/D1",
+          "D1"
+        ]
+      },
+      "SDDR_ST_0_DRDY": {
+        "ports": [
+          "SDDR_ST_0/DRDY",
+          "DRDY"
+        ]
+      },
+      "SDDR_ST_0_CTIME": {
+        "ports": [
+          "SDDR_ST_0/CTIME",
+          "CTIME"
+        ]
+      },
+      "SDDR_ST_0_waiting": {
+        "ports": [
+          "SDDR_ST_0/waiting",
+          "WAITING"
+        ]
+      },
+      "SDDR_ST_0_armed": {
+        "ports": [
+          "SDDR_ST_0/armed",
+          "ARMED"
+        ]
+      },
+      "CLK1_1": {
+        "ports": [
+          "CLK1",
+          "ISERDES_B_1/clk_in"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "ioresetn",
+          "ISERDES_B_0/io_reset",
+          "ISERDES_B_1/io_reset",
+          "ISERDES_B_2/io_reset",
+          "ISERDES_B_3/io_reset"
+        ]
+      },
+      "DATA_IN_1": {
+        "ports": [
+          "DATA_IN",
+          "ISERDES_B_0/data_in_from_pins",
+          "ISERDES_B_1/data_in_from_pins",
+          "ISERDES_B_2/data_in_from_pins",
+          "ISERDES_B_3/data_in_from_pins"
+        ]
+      },
+      "ISERDES_B_0_data_in_to_device": {
+        "ports": [
+          "ISERDES_B_0/data_in_to_device",
+          "DATA_D0",
+          "ST_REDIR_0/IS0"
+        ]
+      },
+      "ISERDES_B_1_data_in_to_device": {
+        "ports": [
+          "ISERDES_B_1/data_in_to_device",
+          "DATA_D1",
+          "ST_REDIR_0/IS1"
+        ]
+      },
+      "ST_REDIR_0_DATA_OUT": {
+        "ports": [
+          "ST_REDIR_0/DATA_OUT",
+          "DATA_OUT",
+          "SDDR_ST_0/T1"
+        ]
+      },
+      "CLK_DIV_1": {
+        "ports": [
+          "CLK_DIV",
+          "ST_REDIR_0/PCLK",
+          "ISERDES_B_0/clk_div_in",
+          "ISERDES_B_1/clk_div_in",
+          "ISERDES_B_2/clk_div_in",
+          "ISERDES_B_3/clk_div_in",
+          "SDDR_ST_0/MCLK"
+        ]
+      },
+      "CLK2_1": {
+        "ports": [
+          "CLK2",
+          "ISERDES_B_2/clk_in"
+        ]
+      },
+      "CLK3_1": {
+        "ports": [
+          "CLK3",
+          "ISERDES_B_3/clk_in"
+        ]
+      },
+      "BITSLIP_1": {
+        "ports": [
+          "BITSLIP",
+          "BT_SPLIT_0/DI"
+        ]
+      },
+      "BT_SPLIT_0_D0": {
+        "ports": [
+          "BT_SPLIT_0/D0",
+          "ISERDES_B_0/bitslip"
+        ]
+      },
+      "BT_SPLIT_0_D1": {
+        "ports": [
+          "BT_SPLIT_0/D1",
+          "ISERDES_B_1/bitslip"
+        ]
+      },
+      "BT_SPLIT_0_D2": {
+        "ports": [
+          "BT_SPLIT_0/D2",
+          "ISERDES_B_2/bitslip"
+        ]
+      },
+      "BT_SPLIT_0_D3": {
+        "ports": [
+          "BT_SPLIT_0/D3",
+          "ISERDES_B_3/bitslip"
+        ]
+      },
+      "ISERDES_B_2_data_in_to_device": {
+        "ports": [
+          "ISERDES_B_2/data_in_to_device",
+          "ST_REDIR_0/IS2"
+        ]
+      },
+      "ISERDES_B_3_data_in_to_device": {
+        "ports": [
+          "ISERDES_B_3/data_in_to_device",
+          "ST_REDIR_0/IS3"
+        ]
+      }
+    }
+  }
+}
