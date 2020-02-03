@@ -80,10 +80,10 @@ set rc [catch {
   d:/SInglePhotons/HW_IP/SDDR_CT
   d:/SInglePhotons/HW_IP/SDDR_ST
   d:/SInglePhotons/HW_IP/SDDR_TT
-  d:/SInglePhotons/HW_IP/SDDR_TT_AXI
   d:/SInglePhotons/HW_IP/SDDR_DESERIALIZER
   d:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI
-  D:/SInglePhotons/HW_IP/_Data_transference/SDDR_CT_AXI
+  d:/SInglePhotons/HW_IP/_Data_transference/SDDR_CT_AXI
+  D:/SInglePhotons/HW_IP/_Data_transference/SDDR_TT_AXI
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.cache/ip}} [current_project]

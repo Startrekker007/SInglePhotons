@@ -220,66 +220,72 @@ class TimeController:
                 self.logger.debug(recdict)
                 return self.iretimer_conv_to_time(recdict)
     def start_time_tagger(self,timeout):
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
+        cycles = int(timeout*TDC_REF_CLK)
+        self.logger.info("Starting time tagger")
+        self.websocket.sendall(("TTS"+str(cycles)).encode())
+    def acquire_time_tagger_data(self):
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
+        self.websocket.sendall("TTA".encode())
+        sdata = ""
+        while True:
+            dat = self.websocket.recv(8172).decode()
+
+            if(dat[-3:]=="TTX"):
+                self.logger.debug("HALTING READ")
+                sdata = sdata+dat[:-3]
+                break
+            else:
+                sdata=sdata+dat
+        data = json.loads(sdata)
+        time_data = self.time_tagger_conv_to_time(data)
+        return time_data
+
+    def time_tagger_conv_to_time(self, data):
+        outputdata = {"T1": [], "T2": [], "T3": [], "T4": [], "TM": []}
+        iterabledata = data["DAT"]
+        for i in range(data["LEN"]):
+            deconcat = self.time_tagger_break_data(iterabledata[i])
+            outputdata["T1"].append(deconcat[0] / TDC_REF_CLK + (deconcat[4] - deconcat[5]) * TDC_FTIME)
+            outputdata["T2"].append(deconcat[1] / TDC_REF_CLK + (deconcat[4] - deconcat[6]) * TDC_FTIME)
+            outputdata["T3"].append(deconcat[2] / TDC_REF_CLK + (deconcat[4] - deconcat[7]) * TDC_FTIME)
+            outputdata["T4"].append(deconcat[3] / TDC_REF_CLK + (deconcat[4] - deconcat[8]) * TDC_FTIME)
+            outputdata["TM"].append(deconcat[9])
+        return outputdata
+
+    def time_tagger_break_data(self, data):
         """
-        Activate the time tagger and continuously receive time data from the device
+        Breaks up the raw binary data points sent into each numerical quantity
         Parameters
         ----------
-        timeout : :class:`float`
-            Maximum time for the time tagger to wait for channels to trigger
+        data
 
         Returns
         -------
-        :class:`dict` of `int`
-            A dictionary of the tagged time for each channel including the time out state.
-        """
-        if (self.connected == 0):
-            self.logger.error("Not connected")
-            return 0
-        if (self.MODE != 0):
-            self.logger.error("Cannot be used in high resolution mode")
-            return 0
-        self.logger.info("Running time tagger with timeout: " + str(timeout))
-        self.websocket.sendall(("TT1"+str(timeout)).encode())
-
-        while 1:
-            self.logger.debug("Waiting for data...")
-            data = self.websocket.recv(1024).decode()
-            if(data[:2]=="TT"):
-                break
-            else:
-                self.logger.warning("Data not pertinent to time tagger received "+data)
-        timedata = json.loads(data[2:])
-        self.logger.info("Time tagger data: "+str(timedata))
-        return timedata
-    def poll_time_tagger(self):
-        if (self.MODE != 0):
-            self.logger.error("Cannot be used in high resolution mode")
-            return 0
-        while 1:
-            data = self.websocket.recv(1024).decode()
-
-            if(data[:2]=="TT"):
-                break
-            else:
-                self.logger.warning("Data not pertinent to time tagger received "+data)
-        jsdec = json.JSONDecoder()
-        timedata = jsdec.raw_decode(data[2:])
-        self.logger.debug("DATA -- " + str(timedata[0]))
-        self.logger.info("Time tagger data: "+str(timedata[0]))
-        return timedata[0]
-    def stop_time_tagger(self):
-        """
-        Stops the time tagger, can be called asynchronously
 
         """
-        if (self.connected == 0):
-            self.logger.error("Not connected")
-            return 0
-        if (self.MODE != 0):
-            self.logger.error("Cannot be used in high resolution mode")
-            return 0
-        self.logger.info("Stopping time tagger")
-        self.websocket.sendall("TT0".encode())
+        T1 = (data & 0x00000000000000000000000000000000000FFFFFFFF)
+        T2 = (data & 0x000000000000000000000000000FFFFFFFF00000000) >> 32
+        T3 = (data & 0x0000000000000000000FFFFFFFF0000000000000000) >> 64
+        T4 = (data & 0x00000000000ffffffff000000000000000000000000) >> 96
+        D1_4 = (data & 0x000ffffffff00000000000000000000000000000000) >> 128
+        D0 = (data & 0x0FF0000000000000000000000000000000000000000) >> 160
+        TMO = (data & 0xF000000000000000000000000000000000000000000) >> 168
+        D1 = D1_4 & 0xFF
+        D2 = D1_4 & 0xFF00
+        D3 = D1_4 & 0xFF0000
+        D4 = D1_4 & 0xFF000000
+        return [T1, T2, T3, T4, D0, D1, D2 >> 8, D3 >> 16, D4 >> 24, TMO]
 
     def set_signal_generator(self,channel,enabled,frequency,pwmode,dc,delay):
         """

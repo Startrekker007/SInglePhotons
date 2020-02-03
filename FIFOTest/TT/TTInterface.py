@@ -28,9 +28,9 @@ class TT:
                 break
             else:
                 sdata=sdata+dat
-        f = open("TEST.txt",mode="w+")
-        f.write(sdata)
-        f.close()
+        #f = open("TEST.txt",mode="w+")
+        #f.write(sdata)
+        #f.close()
         data = json.loads(sdata)
         # data["LEN"] = up["LEN"]
         # data["DAT"]=data["DAT"]+up["DAT"]

@@ -297,14 +297,32 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_DAT
 # IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/SDDR_TT_AXI_axi_gpio_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_1} -quiet] -quiet
 
-# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_0/SDDR_TT_AXI_xlconcat_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlconcat_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlconcat_0_0} -quiet] -quiet
-
 # IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/SDDR_TT_AXI_axi_gpio_0_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_2 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_2} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/SDDR_TT_AXI_axi_gpio_0_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_3 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_3} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_fifo_generator_0_0/SDDR_TT_AXI_fifo_generator_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_fifo_generator_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_fifo_generator_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_1_0/SDDR_TT_AXI_xlconcat_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlconcat_1_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlconcat_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_util_vector_logic_0_0/SDDR_TT_AXI_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_util_vector_logic_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_0_0/SDDR_TT_AXI_xlslice_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlslice_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_0_1/SDDR_TT_AXI_xlslice_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlslice_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_xlslice_0_1} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_1_0/SDDR_TT_AXI_xlslice_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlslice_1_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlslice_1_0} -quiet] -quiet
+
+# IP: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_1/SDDR_TT_AXI_xlconcat_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlconcat_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_xlconcat_0_1} -quiet] -quiet
 
 # IP: bd/SP_OV/ip/SP_OV_clk_wiz_0_2/SP_OV_clk_wiz_0_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SP_OV_clk_wiz_0_2 || ORIG_REF_NAME==SP_OV_clk_wiz_0_2} -quiet] -quiet
@@ -576,8 +594,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/SDDR_CT_AXI_fifo_generator_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_CT_AXI_fifo_generator_0_0 || ORIG_REF_NAME==SDDR_CT_AXI_fifo_generator_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_ooc.xdc
-
 # XDC: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
@@ -617,6 +633,11 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/SDDR_TT_AXI_axi_gpio_0_3.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_3 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_fifo_generator_0_0/SDDR_TT_AXI_fifo_generator_0_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_fifo_generator_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_fifo_generator_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_ooc.xdc
 
 # XDC: bd/SP_OV/ip/SP_OV_clk_wiz_0_2/SP_OV_clk_wiz_0_2_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SP_OV_clk_wiz_0_2 || ORIG_REF_NAME==SP_OV_clk_wiz_0_2} -quiet] {/inst } ]/inst ] -quiet] -quiet

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Jan 22 12:07:37 2020
+--Date        : Tue Feb  4 11:08:38 2020
 --Host        : CISS32101 running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target DESERIALIZER_B.bd
 --Design      : DESERIALIZER_B

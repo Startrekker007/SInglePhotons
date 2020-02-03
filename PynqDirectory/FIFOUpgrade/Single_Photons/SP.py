@@ -144,6 +144,10 @@ class SP_TOOLS:
         axi_offset+=1
         #43d6
         ##Initialize time tagger
+        self.TT_FIFO_BUFFER = []
+        for i in range(FIFO_DEPTH):
+            self.TT_FIFO_BUFFER.append(0)
+        self.TT_loaded_count = 0
         self.TT_CONFIG = MMIO(axi_base_addr + (axi_offset*axi_range),axi_range)
         self.TT_CONFIG.write(ch2_data, 0x0)
         plog.info("TT_CONFIG: "+hex(axi_base_addr + (axi_offset * axi_range)))
@@ -547,7 +551,7 @@ class SP_TOOLS:
         self.PG_AUX[channel].write(ch1_data,pwv)#Write the new duty cycle counter value to the hardware
         self.PG_UTIL.write(ch2_data,0x1)#Re-enable signal generator
         #Calculate what the new duty cycle of the signal is in 0-1 rather than pulse width and save that as the host setting
-        tlim = REF_CLK/self.chfreqs[channel]
+        tlim = DDS_REF_CLK/self.chfreqs[channel]
         self.chdcs[channel]=pwv/tlim
     def pg_set_delay(self,channel,delay):#Delay in seconds
         """Sets the delay of the specified channel
@@ -624,81 +628,64 @@ class SP_TOOLS:
 
         """
         return int(delay*DDS_REF_CLK)
-    def TT_wait_for_rdy(self):
-        """Wait until time tagger tags each channel or times out (Hangs the thread)
-
-
-
-        """
-        #Wait for a transition on the data readyline
-        if(self.TT_UTIL.read(ch2_data))==0:
-            while(self.TT_UTIL.read(ch2_data))==0:
+    #TIME TAGGER FUNCTIONS-----------------------------------------------
+    def tt_start(self,timeout):
+        self.tt_set_timeout(timeout)
+        self.tt_set_mreset(1)
+    def tt_stop(self):
+        self.tt_set_mreset(0)
+    def tt_flush_buffer(self):
+        for i in range(FIFO_DEPTH):
+            self.TT_FIFO_BUFFER[i]=0
+        self.TT_loaded_count=0
+    def tt_proc(self):
+        self.tt_read2048()
+        data = {"MOD":"TT","LEN":self.TT_loaded_count,"DAT":self.TT_FIFO_BUFFER}
+        return data
+    def tt_read2048(self):
+        if(self.tt_read_empty()==1):
+            return
+        for i in range(FIFO_DEPTH):
+            if(self.tt_read_empty()==1):
+                self.TT_loaded_count=i
+                return
+            self.tt_set_dreset(1)
+            self.tt_set_req(1)
+            while(self.tt_read_drdy()==0):
                 pass
-        else:
-            while (self.TT_UTIL.read(ch2_data)) == 1:
-                pass
-    def TT_set_timeout(self,timeval):
-        """Set the time out of the time tagger
+            self.TT_FIFO_BUFFER[i]=((self.tt_read_coarse() | self.tt_read_fine() << 128 | self.tt_read_timeouts() << 168))
+            self.tt_set_req(0)
+            self.tt_set_dreset(0)
+        self.TT_loaded_count=FIFO_DEPTH
+    def tt_read_coarse(self):
+        d0 = self.TT_DATA0.read(0x0)
+        d1 = self.TT_DATA0.read(0x8)<<32
+        d2 = self.TT_DATA1.read(0x0)<<64
+        d3 = self.TT_DATA1.read(0x8)<<96
+        return d0 | d1 | d2 | d3
+    def tt_read_fine(self):
+        return self.TT_DELAY_DATA.read(0x0) | (self.TT_DELAY_DATA.read(0x8)&0xFF)<<32
 
-        Parameters
-        ----------
-        timeval : :class:`float`
-            Time out in seconds
-
-
-        """
-        tcount = timeval*DET_REF_CLK#Calculate time out counter value
-        self.TT_CONFIG.write(ch1_data,int(tcount))#Write the new counter value to the time tagger
-    def TT_activate(self,time):
-        """Sets the time out of the time tagger and pulls the time tagger out of reset, activating it
-
-        Parameters
-        ----------
-        time : :class:`float`
-            Time out in seconds
-
-
-
-        """
-        self.TT_set_timeout(time)
-        self.TT_CONFIG.write(ch2_data,0x1)
-    def TT_proc(self):
-        """Time tagger sampling process, waits until time tagger has data ready, then calculates time intervals for each channel from T0 and includes fine times and returns a time interval for each channel and which channels timed out.
-
-        Returns
-        -------
-        :class:`dict`
-            A dictionary containing time intervals ('T1'...'T4') and boolean time outs ('T1s'...'T4s')
-
-        """
-        self.TT_wait_for_rdy()#Wait until the time tagger has finished tagging or has timed out
-        ftt0 = self.TT_DELAY_DATA.read(ch2_data)
-        stimet0 = (ftt0) * FTIME #Calculate the fine time offset of the t0 signal
-        plog.debug("T0FT: "+bin(ftt0))
-        dels = self.TT_DELAY_DATA.read(ch1_data)#Fine times for channels 0-3 (Each is concatenated in binary)
-        #Calculating the fine time offsets for each channel
-        stimet1 = ((dels&0xFF))*FTIME
-        stimet2 = ((dels&0xFF00)>>8)*FTIME
-        stimet3 = ((dels&0xFF0000) >> 16)*FTIME
-        stimet4 = ((dels&0xFF000000)>>24)*FTIME
-        plog.debug("T1FT: "+bin((dels&0xFF)))
-        #Include fine time offsets with the coarse times
-        cttime1 = self.TT_DATA0.read(ch1_data)
-        ctime1 = cttime1/DET_REF_CLK - stimet1 + stimet0
-        ctime2 = self.TT_DATA0.read(ch2_data)/DET_REF_CLK - stimet2 + stimet0
-        ctime3 = self.TT_DATA1.read(ch1_data)/DET_REF_CLK - stimet3 + stimet0
-        ctime4 = self.TT_DATA1.read(ch2_data)/DET_REF_CLK - stimet4 + stimet0
-        plog.debug("T1CT: "+str(cttime1))
-        timeouts = (self.TT_UTIL.read(ch1_data))#Read time outs
-        #Store all information in dictionary and return it
-        outdict = {"T1": ctime1, "T2": ctime2, "T3": ctime3, "T4": ctime4, "T1s": timeouts&0b1, "T2s": (timeouts&0b10)>>1,"T3s": (timeouts&0b100)>>2,"T4s": (timeouts&0b1000)>>3}
-        return outdict
-    def TT_reset(self):
-        """Puts time tagger into reset, stopping it
-
-
-        """
-        self.TT_CONFIG.write(ch2_data,0x0)
+    def tt_read_drdy(self):
+        return (self.TT_UTIL.read(0x8) & 0b100)>>2
+    def tt_read_empty(self):
+        return (self.TT_UTIL.read(0x8) & 0b1)
+    def tt_read_full(self):
+        return (self.TT_UTIL.read(0x8) & 0b10)>>1
+    def tt_set_mreset(self,val):
+        lastval = self.TT_CONFIG.read(0x8) & 0b110
+        self.TT_CONFIG.write(0x8,lastval | (val&0b1))
+    def tt_set_req(self,val):
+        lastval = self.TT_CONFIG.read(0x8) & 0b101
+        self.TT_CONFIG.write(0x8, lastval | ((val<<1) & 0b10))
+    def tt_set_dreset(self,val):
+        lastval = self.TT_CONFIG.read(0x8) & 0b011
+        self.TT_CONFIG.write(0x8, lastval | ((val<<2) & 0b100))
+    def tt_set_timeout(self,val):
+        self.TT_CONFIG.write(0x0,val&0xFFFFFFFF)
+    def tt_read_timeouts(self):
+        return self.TT_UTIL.read(0x0)
+    #TIME_TAGGER_END-----------------------------------------------------
 
     def DD_idelay(self,channel,tap0,tap1):
         """Sets the input delay of the specified channel by configuring the delay line taps and the number of delay line stages to include

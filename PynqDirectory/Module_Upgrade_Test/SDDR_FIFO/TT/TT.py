@@ -61,12 +61,12 @@ class TT:
         self.loaded_count=FIFO_DEPTH
     def read_coarse(self):
         d0 = self.DATA0.read(0x0)
-        d1 = self.DATA0.read(0x0)<<32
-        d2 = self.DATA0.read(0x0)<<64
-        d3 = self.DATA0.read(0x0)<<96
+        d1 = self.DATA0.read(0x8)<<32
+        d2 = self.DATA1.read(0x0)<<64
+        d3 = self.DATA1.read(0x8)<<96
         return d0 | d1 | d2 | d3
     def read_fine(self):
-        return self.DELAY.read(0x0) | self.DELAY.read(0x8)<<32
+        return self.DELAY.read(0x0) | (self.DELAY.read(0x8)&0xFF)<<32
 
     def read_drdy(self):
         return (self.UTIL.read(0x8) & 0b100)>>2

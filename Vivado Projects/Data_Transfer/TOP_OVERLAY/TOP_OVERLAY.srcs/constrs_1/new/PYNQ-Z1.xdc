@@ -59,3 +59,12 @@ set_property IOSTANDARD LVCMOS33 [get_ports TEST_OUT3]
 set_property PACKAGE_PIN U19 [get_ports TEST_OUT1]
 set_property PACKAGE_PIN W18 [get_ports TEST_OUT2]
 set_property PACKAGE_PIN W19 [get_ports TEST_OUT3]
+
+create_pblock TIME_TAGGER
+add_cells_to_pblock [get_pblocks TIME_TAGGER] [get_cells -quiet [list SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/SDDR_TT_0]]
+resize_pblock [get_pblocks TIME_TAGGER] -add {SLICE_X94Y82:SLICE_X101Y99}
+resize_pblock [get_pblocks TIME_TAGGER] -add {DSP48_X3Y34:DSP48_X3Y39}
+
+create_clock -period 1.250 -name DHS_CLK -waveform {0.000 0.625} [get_pins SP_OV_i/DESERIALIZER_CLOCK/inst/clkout1_buf/O]
+create_clock -period 5.000 -name DDIV_CLK -waveform {0.000 2.500} [get_pins SP_OV_i/DESERIALIZER_CLOCK/inst/clkout2_buf/O]
+set_input_delay -clock [get_clocks DHS_CLK] 5.000 [get_ports {CH0 CH1 CH2 CH3}]

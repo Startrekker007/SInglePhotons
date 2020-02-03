@@ -334,3 +334,8 @@ set_property src_info {type:XDC file:5 line:60 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN W18 [get_ports TEST_OUT2]
 set_property src_info {type:XDC file:5 line:61 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W19 [get_ports TEST_OUT3]
+set_property src_info {type:XDC file:5 line:63 export:INPUT save:INPUT read:READ} [current_design]
+create_pblock TIME_TAGGER
+add_cells_to_pblock [get_pblocks TIME_TAGGER] [get_cells -quiet [list SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/SDDR_TT_0]]
+resize_pblock [get_pblocks TIME_TAGGER] -add {SLICE_X94Y82:SLICE_X101Y99}
+resize_pblock [get_pblocks TIME_TAGGER] -add {DSP48_X3Y34:DSP48_X3Y39}

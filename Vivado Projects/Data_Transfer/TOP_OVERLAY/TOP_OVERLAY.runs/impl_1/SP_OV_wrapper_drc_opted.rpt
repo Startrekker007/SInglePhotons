@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Feb  3 11:59:24 2020
+| Date         : Tue Feb  4 11:16:53 2020
 | Host         : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_drc -file SP_OV_wrapper_drc_opted.rpt -pb SP_OV_wrapper_drc_opted.pb -rpx SP_OV_wrapper_drc_opted.rpx
 | Design       : SP_OV_wrapper
@@ -24,11 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 17
+             Violations found: 23
 +-------------+----------+-----------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                     | Violations |
 +-------------+----------+-----------------------------------------------------------------+------------+
 | PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations     | 8          |
+| REQP-88     | Warning  | IDELAY_TYPE_not_VAR_LOAD                                        | 6          |
 | REQP-107    | Warning  | enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O                | 5          |
 | AVAL-5      | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 4          |
 +-------------+----------+-----------------------------------------------------------------+------------+
@@ -81,6 +82,36 @@ PLHOLDVIO-2#8 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH_i_1__2 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[10], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[11], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[12], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[13], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[14], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[15], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[17], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[18], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[19], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[1], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[20], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[21], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[22], SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/DIG_TIMER_3/U0/BRUH/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[23] (the first 15 of 32 listed)
+Related violations: <none>
+
+REQP-88#1 Warning
+IDELAY_TYPE_not_VAR_LOAD  
+SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_WRAPPER_0/U0/IDELAYE2n_inst: With IDELAY_TYPE not VAR_LOAD or VAR_LOAD_PIPE any signals on input pins CNTVALUEIN 0 thru 4 are not used and will be ignored.
+Related violations: <none>
+
+REQP-88#2 Warning
+IDELAY_TYPE_not_VAR_LOAD  
+SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_WRAPPER_1/U0/IDELAYE2n_inst: With IDELAY_TYPE not VAR_LOAD or VAR_LOAD_PIPE any signals on input pins CNTVALUEIN 0 thru 4 are not used and will be ignored.
+Related violations: <none>
+
+REQP-88#3 Warning
+IDELAY_TYPE_not_VAR_LOAD  
+SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_WRAPPER_2/U0/IDELAYE2n_inst: With IDELAY_TYPE not VAR_LOAD or VAR_LOAD_PIPE any signals on input pins CNTVALUEIN 0 thru 4 are not used and will be ignored.
+Related violations: <none>
+
+REQP-88#4 Warning
+IDELAY_TYPE_not_VAR_LOAD  
+SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_WRAPPER_3/U0/IDELAYE2n_inst: With IDELAY_TYPE not VAR_LOAD or VAR_LOAD_PIPE any signals on input pins CNTVALUEIN 0 thru 4 are not used and will be ignored.
+Related violations: <none>
+
+REQP-88#5 Warning
+IDELAY_TYPE_not_VAR_LOAD  
+SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_WRAPPER_4/U0/IDELAYE2n_inst: With IDELAY_TYPE not VAR_LOAD or VAR_LOAD_PIPE any signals on input pins CNTVALUEIN 0 thru 4 are not used and will be ignored.
+Related violations: <none>
+
+REQP-88#6 Warning
+IDELAY_TYPE_not_VAR_LOAD  
+SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_WRAPPER_5/U0/IDELAYE2n_inst: With IDELAY_TYPE not VAR_LOAD or VAR_LOAD_PIPE any signals on input pins CNTVALUEIN 0 thru 4 are not used and will be ignored.
 Related violations: <none>
 
 REQP-107#1 Warning

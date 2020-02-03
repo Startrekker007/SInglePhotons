@@ -97,7 +97,10 @@ def CT_MOD(lock,lineselect,ctl):
     ----------
     lock : :class:`multiprocessing.Lock`
         Thread lock to ensure this thread can acquire Io resources without contention with other threads
-
+    lineselect : :class:`int`
+        Which line to choose as the start signal (0: CH1, 1:CH2, 3:Whichever first)
+    ctl : :class:`int`
+        What to do with the coincidence timer (start, acquire data or stop [0,1,2])
 
     """
     if(ctl==0):
@@ -153,24 +156,32 @@ def PG_MOD(params):
             SPT.pg_set_pw(channel,dc)
         SPT.pg_set_delay(channel, delay)#Set the delay of the channel
     print("DOne")
-def TT_MOD(time,lock):
+def TT_MOD(time,lock,mode):
     """Operates the time tagger and sends time information to the connected client
 
     Parameters
     ----------
-    time : :class:`float`
-        The time out in seconds of the time tagger
+    time : :class:`int`
+        The time out in ref clock cycles of the time tagger
     lock : :class:`multiprocessing.Lock`
         Thread lock to ensure this thread can acquire Io resources without contention with other threads
-
+    mode : :class:`int`
+        What to do with the time tagger( start, acquire data or stop it[0,1,2])
 
     """
+    if(mode==0):#Start time tagger
+        SPT.tt_start(time)
+        logger.info("Starting time tagger")
+    elif mode == 1:
+        data=SPT.tt_proc()
+        sendToHost(json.dumps(data)+"TTX",lock)
+        logger.info("Sent data to host")
+    elif mode == 2:
+        SPT.tt_stop()
+        logger.info("Stopped time tagger")
+    else:
+        logger.warning("Unknown command")
 
-    print("starting time tagger")
-    SPT.TT_activate(time)#Activate and load time tagger with time out
-    while(1):
-        tvals = SPT.TT_proc()#Execute time tagging process
-        sendToHost("TT"+json.dumps(tvals),lock)
 
 def DD_IDELAY(channel,tap0,tap1):
     """Operates the input delay hardware module
@@ -281,18 +292,14 @@ def run():
                             if(data[:2]=="PG"):#Signal generator
                                 PG_MOD(json.loads(data[2:]))#Deserialize the incoming data and call the pulse generator function
                             if(data[:2]=="TT"):#Time tagger
+                                if(data[:3]=="TTS"):
+                                    TT_MOD(int(data[3:]),lock,0)
+                                elif(data[:3]=="TTA"):
+                                    TT_MOD(0,lock,1)
+                                elif(data[:3]=="TTX"):
+                                    TT_MOD(0,lock,2)
 
-                                if(data[2]=="0"):#If the first argument is zero, then stop the time tagger and kill its child process
-                                    if(isinstance(TTP,Process)):
-                                        print("Stopping time tagger")
-                                        SPT.TT_reset()
-                                        TTP.terminate()
-                                else:
-                                    if(isinstance(TTP,Process)):#If the child process already exists then kill it and start it again
-                                        TTP.terminate()
-                                    time = float(data[3:])
-                                    TTP=Process(target=TT_MOD,args=(time,lock))
-                                    TTP.start()
+
 
                             if(data[:3]=="iDD"):#Input delay configuration
                                 vals = json.loads(data[3:])#Deserialize the incoming delay configuration

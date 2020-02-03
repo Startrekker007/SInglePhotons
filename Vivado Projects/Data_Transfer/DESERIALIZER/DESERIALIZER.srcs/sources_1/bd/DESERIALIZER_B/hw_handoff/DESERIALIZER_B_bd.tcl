@@ -296,7 +296,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.fixed_delay {31} \
+ ] $IDELAY_WRAPPER_1
+
   # Create instance: IDELAY_WRAPPER_2, and set properties
   set block_name IDELAY_WRAPPER
   set block_cell_name IDELAY_WRAPPER_2
@@ -307,7 +310,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.fixed_delay {31} \
+ ] $IDELAY_WRAPPER_2
+
   # Create instance: IDELAY_WRAPPER_3, and set properties
   set block_name IDELAY_WRAPPER
   set block_cell_name IDELAY_WRAPPER_3
@@ -318,7 +324,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.fixed_delay {31} \
+ ] $IDELAY_WRAPPER_3
+
   # Create instance: IDELAY_WRAPPER_4, and set properties
   set block_name IDELAY_WRAPPER
   set block_cell_name IDELAY_WRAPPER_4
@@ -329,7 +338,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.fixed_delay {31} \
+ ] $IDELAY_WRAPPER_4
+
   # Create instance: IDELAY_WRAPPER_5, and set properties
   set block_name IDELAY_WRAPPER
   set block_cell_name IDELAY_WRAPPER_5
