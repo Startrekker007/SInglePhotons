@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.runs/impl_1'
+HD_PWD='D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

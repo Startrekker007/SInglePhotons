@@ -77,8 +77,8 @@ ENTITY SDDR_CT_AXI_axi_gpio_0_1 IS
     s_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s_axi_rvalid : OUT STD_LOGIC;
     s_axi_rready : IN STD_LOGIC;
-    gpio_io_o : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-    gpio2_io_i : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
+    gpio_io_o : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+    gpio2_io_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0)
   );
 END SDDR_CT_AXI_axi_gpio_0_1;
 
@@ -124,12 +124,12 @@ ARCHITECTURE SDDR_CT_AXI_axi_gpio_0_1_arch OF SDDR_CT_AXI_axi_gpio_0_1 IS
       s_axi_rvalid : OUT STD_LOGIC;
       s_axi_rready : IN STD_LOGIC;
       ip2intc_irpt : OUT STD_LOGIC;
-      gpio_io_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-      gpio_io_o : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-      gpio_io_t : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-      gpio2_io_i : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      gpio2_io_o : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      gpio2_io_t : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+      gpio_io_i : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+      gpio_io_o : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+      gpio_io_t : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+      gpio2_io_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+      gpio2_io_o : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+      gpio2_io_t : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
     );
   END COMPONENT axi_gpio;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -137,7 +137,7 @@ ARCHITECTURE SDDR_CT_AXI_axi_gpio_0_1_arch OF SDDR_CT_AXI_axi_gpio_0_1 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF SDDR_CT_AXI_axi_gpio_0_1_arch : ARCHITECTURE IS "SDDR_CT_AXI_axi_gpio_0_1,axi_gpio,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF SDDR_CT_AXI_axi_gpio_0_1_arch: ARCHITECTURE IS "SDDR_CT_AXI_axi_gpio_0_1,axi_gpio,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_gpio,x_ipVersion=2.0,x_ipCoreRevision=21,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXI_ADDR_WIDTH=9,C_S_AXI_DATA_WIDTH=32,C_GPIO_WIDTH=3,C_GPIO2_WIDTH=1,C_ALL_INPUTS=0,C_ALL_INPUTS_2=1,C_ALL_OUTPUTS=1,C_ALL_OUTPUTS_2=0,C_INTERRUPT_PRESENT=0,C_DOUT_DEFAULT=0x00000000,C_TRI_DEFAULT=0xFFFFFFFF,C_IS_DUAL=1,C_DOUT_DEFAULT_2=0x00000000,C_TRI_DEFAULT_2=0xFFFFFFFF}";
+  ATTRIBUTE CORE_GENERATION_INFO OF SDDR_CT_AXI_axi_gpio_0_1_arch: ARCHITECTURE IS "SDDR_CT_AXI_axi_gpio_0_1,axi_gpio,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_gpio,x_ipVersion=2.0,x_ipCoreRevision=21,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXI_ADDR_WIDTH=9,C_S_AXI_DATA_WIDTH=32,C_GPIO_WIDTH=5,C_GPIO2_WIDTH=3,C_ALL_INPUTS=0,C_ALL_INPUTS_2=1,C_ALL_OUTPUTS=1,C_ALL_OUTPUTS_2=0,C_INTERRUPT_PRESENT=0,C_DOUT_DEFAULT=0x00000000,C_TRI_DEFAULT=0xFFFFFFFF,C_IS_DUAL=1,C_DOUT_DEFAULT_2=0x00000000,C_TRI_DEFAULT_2=0xFFFFFFFF}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF gpio2_io_i: SIGNAL IS "XIL_INTERFACENAME GPIO2, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE";
@@ -173,8 +173,8 @@ BEGIN
       C_FAMILY => "zynq",
       C_S_AXI_ADDR_WIDTH => 9,
       C_S_AXI_DATA_WIDTH => 32,
-      C_GPIO_WIDTH => 3,
-      C_GPIO2_WIDTH => 1,
+      C_GPIO_WIDTH => 5,
+      C_GPIO2_WIDTH => 3,
       C_ALL_INPUTS => 0,
       C_ALL_INPUTS_2 => 1,
       C_ALL_OUTPUTS => 1,
@@ -206,7 +206,7 @@ BEGIN
       s_axi_rresp => s_axi_rresp,
       s_axi_rvalid => s_axi_rvalid,
       s_axi_rready => s_axi_rready,
-      gpio_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 3)),
+      gpio_io_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 5)),
       gpio_io_o => gpio_io_o,
       gpio2_io_i => gpio2_io_i
     );

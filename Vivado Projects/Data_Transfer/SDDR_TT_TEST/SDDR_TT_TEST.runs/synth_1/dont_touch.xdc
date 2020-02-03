@@ -9,51 +9,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST || ORIG_RE
 # IP: bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_processing_system7_0_0 || ORIG_REF_NAME==TEST_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/TEST/ip/TEST_axi_gpio_0_0/TEST_axi_gpio_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_0 || ORIG_REF_NAME==TEST_axi_gpio_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/TEST_SDDR_TT_M_wrapper_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_SDDR_TT_M_wrapper_0_0 || ORIG_REF_NAME==TEST_SDDR_TT_M_wrapper_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/sddrtt_timer.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==sddrtt_timer || ORIG_REF_NAME==sddrtt_timer} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_0/SDDR_TT_M_selectio_wiz_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_0_0 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_1/SDDR_TT_M_selectio_wiz_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_0_1 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_0_1} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_2/SDDR_TT_M_selectio_wiz_0_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_0_2 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_0_2} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_2_0/SDDR_TT_M_selectio_wiz_2_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_2_0 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_2_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_3_0/SDDR_TT_M_selectio_wiz_3_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_3_0 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_3_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_util_vector_logic_0_0/SDDR_TT_M_util_vector_logic_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_util_vector_logic_0_0 || ORIG_REF_NAME==SDDR_TT_M_util_vector_logic_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_xlconstant_0_0/SDDR_TT_M_xlconstant_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_M_xlconstant_0_0 || ORIG_REF_NAME==SDDR_TT_M_xlconstant_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_xlconcat_0_0/TEST_xlconcat_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_xlconcat_0_0 || ORIG_REF_NAME==TEST_xlconcat_0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_1 || ORIG_REF_NAME==TEST_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_CTIME0_0/TEST_CTIME0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_CTIME0_0 || ORIG_REF_NAME==TEST_CTIME0_0} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_axi_gpio_0_2/TEST_axi_gpio_0_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_2 || ORIG_REF_NAME==TEST_axi_gpio_0_2} -quiet] -quiet
-
-# IP: bd/TEST/ip/TEST_UTIL0_0/TEST_UTIL0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_UTIL0_0 || ORIG_REF_NAME==TEST_UTIL0_0} -quiet] -quiet
-
 # IP: bd/TEST/ip/TEST_xbar_0/TEST_xbar_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_xbar_0 || ORIG_REF_NAME==TEST_xbar_0} -quiet] -quiet
 
@@ -66,78 +21,77 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_rst_ps7_0_
 # IP: bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_clk_wiz_0_0 || ORIG_REF_NAME==TEST_clk_wiz_0_0} -quiet] -quiet
 
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/TEST_SDDR_TT_AXI_wrapper_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_SDDR_TT_AXI_wrapper_0_0 || ORIG_REF_NAME==TEST_SDDR_TT_AXI_wrapper_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/SDDR_TT_AXI_SDDR_TT_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_SDDR_TT_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_SDDR_TT_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/sddrtt_timer.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==sddrtt_timer || ORIG_REF_NAME==sddrtt_timer} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/SDDR_TT_AXI_DATA0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_DATA0_0 || ORIG_REF_NAME==SDDR_TT_AXI_DATA0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/SDDR_TT_AXI_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/SDDR_TT_AXI_axi_gpio_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_2 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/SDDR_TT_AXI_axi_gpio_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_3 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_3} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_fifo_generator_0_0/SDDR_TT_AXI_fifo_generator_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_fifo_generator_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_fifo_generator_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_1_0/SDDR_TT_AXI_xlconcat_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlconcat_1_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlconcat_1_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_util_vector_logic_0_0/SDDR_TT_AXI_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_util_vector_logic_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_0_0/SDDR_TT_AXI_xlslice_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlslice_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_0_1/SDDR_TT_AXI_xlslice_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlslice_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_xlslice_0_1} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_1_0/SDDR_TT_AXI_xlslice_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlslice_1_0 || ORIG_REF_NAME==SDDR_TT_AXI_xlslice_1_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_1/SDDR_TT_AXI_xlconcat_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_xlconcat_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_xlconcat_0_1} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_0 || ORIG_REF_NAME==TEST_selectio_wiz_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_xlconstant_0_0/TEST_xlconstant_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_xlconstant_0_0 || ORIG_REF_NAME==TEST_xlconstant_0_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_1 || ORIG_REF_NAME==TEST_selectio_wiz_0_1} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_selectio_wiz_1_0/TEST_selectio_wiz_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_1_0 || ORIG_REF_NAME==TEST_selectio_wiz_1_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_selectio_wiz_2_0/TEST_selectio_wiz_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_2_0 || ORIG_REF_NAME==TEST_selectio_wiz_2_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_selectio_wiz_3_0/TEST_selectio_wiz_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_3_0 || ORIG_REF_NAME==TEST_selectio_wiz_3_0} -quiet] -quiet
+
+# IP: bd/TEST/ip/TEST_util_vector_logic_0_0/TEST_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_util_vector_logic_0_0 || ORIG_REF_NAME==TEST_util_vector_logic_0_0} -quiet] -quiet
+
 # IP: bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==TEST_auto_pc_0 || ORIG_REF_NAME==TEST_auto_pc_0} -quiet] -quiet
 
 # XDC: bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_processing_system7_0_0 || ORIG_REF_NAME==TEST_processing_system7_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_0/TEST_axi_gpio_0_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_0 || ORIG_REF_NAME==TEST_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_0/TEST_axi_gpio_0_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_0/TEST_axi_gpio_0_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_0 || ORIG_REF_NAME==TEST_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_0/SDDR_TT_M_selectio_wiz_0_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_0/SDDR_TT_M_selectio_wiz_0_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_0_0 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_1/SDDR_TT_M_selectio_wiz_0_1_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_1/SDDR_TT_M_selectio_wiz_0_1.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_0_1 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_2/SDDR_TT_M_selectio_wiz_0_2_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_2/SDDR_TT_M_selectio_wiz_0_2.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_0_2 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_0_2} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_2_0/SDDR_TT_M_selectio_wiz_2_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_2_0/SDDR_TT_M_selectio_wiz_2_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_2_0 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_2_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_3_0/SDDR_TT_M_selectio_wiz_3_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_3_0/SDDR_TT_M_selectio_wiz_3_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_M_selectio_wiz_3_0 || ORIG_REF_NAME==SDDR_TT_M_selectio_wiz_3_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_1 || ORIG_REF_NAME==TEST_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_1/TEST_axi_gpio_0_1.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_1 || ORIG_REF_NAME==TEST_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_CTIME0_0/TEST_CTIME0_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_CTIME0_0 || ORIG_REF_NAME==TEST_CTIME0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_CTIME0_0/TEST_CTIME0_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_CTIME0_0/TEST_CTIME0_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_CTIME0_0 || ORIG_REF_NAME==TEST_CTIME0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_2/TEST_axi_gpio_0_2_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_2 || ORIG_REF_NAME==TEST_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_2/TEST_axi_gpio_0_2_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_axi_gpio_0_2/TEST_axi_gpio_0_2.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_axi_gpio_0_2 || ORIG_REF_NAME==TEST_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_UTIL0_0/TEST_UTIL0_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_UTIL0_0 || ORIG_REF_NAME==TEST_UTIL0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/TEST/ip/TEST_UTIL0_0/TEST_UTIL0_0_ooc.xdc
-
-# XDC: bd/TEST/ip/TEST_UTIL0_0/TEST_UTIL0_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_UTIL0_0 || ORIG_REF_NAME==TEST_UTIL0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/TEST/ip/TEST_rst_ps7_0_100M_0/TEST_rst_ps7_0_100M_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_rst_ps7_0_100M_0 || ORIG_REF_NAME==TEST_rst_ps7_0_100M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
@@ -152,6 +106,76 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_clk_wiz_0_0 || ORIG_REF_NAME==TEST_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/SDDR_TT_AXI_DATA0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_DATA0_0 || ORIG_REF_NAME==SDDR_TT_AXI_DATA0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/SDDR_TT_AXI_DATA0_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/SDDR_TT_AXI_DATA0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_DATA0_0 || ORIG_REF_NAME==SDDR_TT_AXI_DATA0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/SDDR_TT_AXI_axi_gpio_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/SDDR_TT_AXI_axi_gpio_0_1_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/SDDR_TT_AXI_axi_gpio_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_1 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/SDDR_TT_AXI_axi_gpio_0_2_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_2 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/SDDR_TT_AXI_axi_gpio_0_2_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/SDDR_TT_AXI_axi_gpio_0_2.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_2 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/SDDR_TT_AXI_axi_gpio_0_3_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_3 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/SDDR_TT_AXI_axi_gpio_0_3_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/SDDR_TT_AXI_axi_gpio_0_3.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_axi_gpio_0_3 || ORIG_REF_NAME==SDDR_TT_AXI_axi_gpio_0_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_fifo_generator_0_0/SDDR_TT_AXI_fifo_generator_0_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SDDR_TT_AXI_fifo_generator_0_0 || ORIG_REF_NAME==SDDR_TT_AXI_fifo_generator_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_0 || ORIG_REF_NAME==TEST_selectio_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_0_1 || ORIG_REF_NAME==TEST_selectio_wiz_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_1_0/TEST_selectio_wiz_1_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_1_0/TEST_selectio_wiz_1_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_1_0 || ORIG_REF_NAME==TEST_selectio_wiz_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_2_0/TEST_selectio_wiz_2_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_2_0/TEST_selectio_wiz_2_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_2_0 || ORIG_REF_NAME==TEST_selectio_wiz_2_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_3_0/TEST_selectio_wiz_3_0_ooc.xdc
+
+# XDC: bd/TEST/ip/TEST_selectio_wiz_3_0/TEST_selectio_wiz_3_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==TEST_selectio_wiz_3_0 || ORIG_REF_NAME==TEST_selectio_wiz_3_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: bd/TEST/ip/TEST_auto_pc_0/TEST_auto_pc_0_ooc.xdc
 

@@ -12,10 +12,20 @@
       "DATA0": "",
       "DATA1": "",
       "DELAY": "",
-      "xlconcat_0": "",
       "TT_CONFIG": "",
       "UTIL": "",
-      "SDDR_TT_0": ""
+      "SDDR_TT_0": "",
+      "fifo_generator_0": "",
+      "xlconcat_1": "",
+      "util_vector_logic_0": "",
+      "tt_capacity_controll_0": "",
+      "write_clocker_0": "",
+      "TT_FIFO_R_CT_0": "",
+      "TT_FIFO_SPLIT_0": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "xlslice_2": "",
+      "xlconcat_0": ""
     },
     "interface_ports": {
       "TT_CONFIG": {
@@ -791,15 +801,6 @@
           }
         }
       },
-      "xlconcat_0": {
-        "vlnv": "xilinx.com:ip:xlconcat:2.1",
-        "xci_name": "SDDR_TT_AXI_xlconcat_0_0",
-        "parameters": {
-          "NUM_PORTS": {
-            "value": "4"
-          }
-        }
-      },
       "TT_CONFIG": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "SDDR_TT_AXI_axi_gpio_0_2",
@@ -811,7 +812,7 @@
             "value": "1"
           },
           "C_GPIO2_WIDTH": {
-            "value": "1"
+            "value": "3"
           },
           "C_IS_DUAL": {
             "value": "1"
@@ -829,7 +830,7 @@
             "value": "1"
           },
           "C_GPIO2_WIDTH": {
-            "value": "1"
+            "value": "3"
           },
           "C_GPIO_WIDTH": {
             "value": "4"
@@ -845,6 +846,336 @@
         "parameters": {
           "SIG_WIDTH": {
             "value": "8"
+          }
+        }
+      },
+      "fifo_generator_0": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "xci_name": "SDDR_TT_AXI_fifo_generator_0_0",
+        "parameters": {
+          "Data_Count": {
+            "value": "true"
+          },
+          "Data_Count_Width": {
+            "value": "11"
+          },
+          "Input_Data_Width": {
+            "value": "172"
+          },
+          "Input_Depth": {
+            "value": "2048"
+          },
+          "Output_Data_Width": {
+            "value": "172"
+          },
+          "Valid_Flag": {
+            "value": "true"
+          },
+          "Write_Acknowledge_Flag": {
+            "value": "true"
+          }
+        }
+      },
+      "xlconcat_1": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "SDDR_TT_AXI_xlconcat_1_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "32"
+          },
+          "IN1_WIDTH": {
+            "value": "32"
+          },
+          "IN2_WIDTH": {
+            "value": "32"
+          },
+          "IN3_WIDTH": {
+            "value": "32"
+          },
+          "IN4_WIDTH": {
+            "value": "8"
+          },
+          "IN5_WIDTH": {
+            "value": "8"
+          },
+          "IN6_WIDTH": {
+            "value": "8"
+          },
+          "IN7_WIDTH": {
+            "value": "8"
+          },
+          "IN8_WIDTH": {
+            "value": "8"
+          },
+          "IN9_WIDTH": {
+            "value": "4"
+          },
+          "NUM_PORTS": {
+            "value": "10"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "SDDR_TT_AXI_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "tt_capacity_controll_0": {
+        "vlnv": "xilinx.com:module_ref:tt_capacity_controller:1.0",
+        "xci_name": "SDDR_TT_AXI_tt_capacity_controll_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "tt_capacity_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_TT_AXI_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "full": {
+            "direction": "I"
+          },
+          "empty": {
+            "direction": "I"
+          },
+          "run": {
+            "direction": "O"
+          }
+        }
+      },
+      "write_clocker_0": {
+        "vlnv": "xilinx.com:module_ref:write_clocker:1.0",
+        "xci_name": "SDDR_TT_AXI_write_clocker_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "write_clocker",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "DRDY": {
+            "direction": "I"
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_TT_AXI_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "wr_en": {
+            "direction": "O"
+          },
+          "enable": {
+            "direction": "I"
+          }
+        }
+      },
+      "TT_FIFO_R_CT_0": {
+        "vlnv": "xilinx.com:module_ref:TT_FIFO_R_CT:1.0",
+        "xci_name": "SDDR_TT_AXI_TT_FIFO_R_CT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_FIFO_R_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_TT_AXI_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "REQ": {
+            "direction": "I"
+          },
+          "valid": {
+            "direction": "O"
+          },
+          "read_en": {
+            "direction": "O"
+          }
+        }
+      },
+      "TT_FIFO_SPLIT_0": {
+        "vlnv": "xilinx.com:module_ref:TT_FIFO_SPLIT:1.0",
+        "xci_name": "SDDR_TT_AXI_TT_FIFO_SPLIT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "TT_FIFO_SPLIT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DATA_IN": {
+            "direction": "I",
+            "left": "171",
+            "right": "0"
+          },
+          "T1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T3": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "T4": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "D1_4": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "D0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "TIMEOUTS": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "SDDR_TT_AXI_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "3"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "SDDR_TT_AXI_xlslice_0_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "3"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "SDDR_TT_AXI_xlslice_1_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "2"
+          },
+          "DIN_TO": {
+            "value": "2"
+          },
+          "DIN_WIDTH": {
+            "value": "3"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "SDDR_TT_AXI_xlconcat_0_1",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "3"
           }
         }
       }
@@ -912,66 +1243,6 @@
           "SDDR_TT_0/DDR_T4"
         ]
       },
-      "SDDR_TT_0_T1": {
-        "ports": [
-          "SDDR_TT_0/T1",
-          "DATA0/gpio_io_i"
-        ]
-      },
-      "SDDR_TT_0_T2": {
-        "ports": [
-          "SDDR_TT_0/T2",
-          "DATA0/gpio2_io_i"
-        ]
-      },
-      "SDDR_TT_0_T3": {
-        "ports": [
-          "SDDR_TT_0/T3",
-          "DATA1/gpio_io_i"
-        ]
-      },
-      "SDDR_TT_0_T4": {
-        "ports": [
-          "SDDR_TT_0/T4",
-          "DATA1/gpio2_io_i"
-        ]
-      },
-      "SDDR_TT_0_D1": {
-        "ports": [
-          "SDDR_TT_0/D1",
-          "xlconcat_0/In0"
-        ]
-      },
-      "SDDR_TT_0_D2": {
-        "ports": [
-          "SDDR_TT_0/D2",
-          "xlconcat_0/In1"
-        ]
-      },
-      "SDDR_TT_0_D3": {
-        "ports": [
-          "SDDR_TT_0/D3",
-          "xlconcat_0/In2"
-        ]
-      },
-      "SDDR_TT_0_D4": {
-        "ports": [
-          "SDDR_TT_0/D4",
-          "xlconcat_0/In3"
-        ]
-      },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "DELAY/gpio_io_i"
-        ]
-      },
-      "SDDR_TT_0_D0": {
-        "ports": [
-          "SDDR_TT_0/D0",
-          "DELAY/gpio2_io_i"
-        ]
-      },
       "TT_CONFIG_gpio_io_o": {
         "ports": [
           "TT_CONFIG/gpio_io_o",
@@ -980,32 +1251,10 @@
       },
       "TT_CONFIG_gpio2_io_o": {
         "ports": [
-          "TT_CONFIG/gpio2_io_o",
-          "SDDR_TT_0/RESETN"
-        ]
-      },
-      "SDDR_TT_0_DRDY": {
-        "ports": [
-          "SDDR_TT_0/DRDY",
-          "UTIL/gpio2_io_i"
-        ]
-      },
-      "SDDR_TT_0_TIMEOUTS": {
-        "ports": [
-          "SDDR_TT_0/TIMEOUTS",
-          "UTIL/gpio_io_i"
-        ]
-      },
-      "SDDR_TT_0_ttlisten": {
-        "ports": [
-          "SDDR_TT_0/ttlisten",
-          "listening"
-        ]
-      },
-      "SDDR_TT_0_ttwait": {
-        "ports": [
-          "SDDR_TT_0/ttwait",
-          "waiting"
+          "xlslice_0/Dout",
+          "SDDR_TT_0/RESETN",
+          "write_clocker_0/resetn",
+          "tt_capacity_controll_0/resetn"
         ]
       },
       "aclk_1": {
@@ -1025,13 +1274,220 @@
           "UTIL/s_axi_aresetn",
           "DATA1/s_axi_aresetn",
           "DATA0/s_axi_aresetn",
-          "TT_CONFIG/s_axi_aresetn"
+          "TT_CONFIG/s_axi_aresetn",
+          "util_vector_logic_0/Op1"
         ]
       },
       "MCLK_1": {
         "ports": [
           "MCLK",
-          "SDDR_TT_0/MCLK"
+          "SDDR_TT_0/MCLK",
+          "fifo_generator_0/clk",
+          "write_clocker_0/MCLK",
+          "tt_capacity_controll_0/MCLK",
+          "TT_FIFO_R_CT_0/MCLK"
+        ]
+      },
+      "xlconcat_1_dout": {
+        "ports": [
+          "xlconcat_1/dout",
+          "fifo_generator_0/din"
+        ]
+      },
+      "SDDR_TT_0_T1": {
+        "ports": [
+          "SDDR_TT_0/T1",
+          "xlconcat_1/In0"
+        ]
+      },
+      "SDDR_TT_0_T2": {
+        "ports": [
+          "SDDR_TT_0/T2",
+          "xlconcat_1/In1"
+        ]
+      },
+      "SDDR_TT_0_T3": {
+        "ports": [
+          "SDDR_TT_0/T3",
+          "xlconcat_1/In2"
+        ]
+      },
+      "SDDR_TT_0_T4": {
+        "ports": [
+          "SDDR_TT_0/T4",
+          "xlconcat_1/In3"
+        ]
+      },
+      "SDDR_TT_0_D0": {
+        "ports": [
+          "SDDR_TT_0/D0",
+          "xlconcat_1/In8"
+        ]
+      },
+      "SDDR_TT_0_D1": {
+        "ports": [
+          "SDDR_TT_0/D1",
+          "xlconcat_1/In4"
+        ]
+      },
+      "SDDR_TT_0_D2": {
+        "ports": [
+          "SDDR_TT_0/D2",
+          "xlconcat_1/In5"
+        ]
+      },
+      "SDDR_TT_0_D3": {
+        "ports": [
+          "SDDR_TT_0/D3",
+          "xlconcat_1/In6"
+        ]
+      },
+      "SDDR_TT_0_D4": {
+        "ports": [
+          "SDDR_TT_0/D4",
+          "xlconcat_1/In7"
+        ]
+      },
+      "fifo_generator_0_dout": {
+        "ports": [
+          "fifo_generator_0/dout",
+          "TT_FIFO_SPLIT_0/DATA_IN"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_D1_4": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/D1_4",
+          "DELAY/gpio_io_i"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_D0": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/D0",
+          "DELAY/gpio2_io_i"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_T1": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/T1",
+          "DATA0/gpio_io_i"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_T2": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/T2",
+          "DATA0/gpio2_io_i"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_T3": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/T3",
+          "DATA1/gpio_io_i"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_T4": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/T4",
+          "DATA1/gpio2_io_i"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "fifo_generator_0/srst"
+        ]
+      },
+      "SDDR_TT_0_DRDY": {
+        "ports": [
+          "SDDR_TT_0/DRDY",
+          "write_clocker_0/DRDY"
+        ]
+      },
+      "tt_capacity_controll_0_run": {
+        "ports": [
+          "tt_capacity_controll_0/run",
+          "write_clocker_0/enable"
+        ]
+      },
+      "write_clocker_0_wr_en": {
+        "ports": [
+          "write_clocker_0/wr_en",
+          "fifo_generator_0/wr_en"
+        ]
+      },
+      "fifo_generator_0_full": {
+        "ports": [
+          "fifo_generator_0/full",
+          "tt_capacity_controll_0/full",
+          "xlconcat_0/In1"
+        ]
+      },
+      "fifo_generator_0_empty": {
+        "ports": [
+          "fifo_generator_0/empty",
+          "tt_capacity_controll_0/empty",
+          "xlconcat_0/In0"
+        ]
+      },
+      "TT_FIFO_SPLIT_0_TIMEOUTS": {
+        "ports": [
+          "TT_FIFO_SPLIT_0/TIMEOUTS",
+          "UTIL/gpio_io_i"
+        ]
+      },
+      "TT_FIFO_R_CT_0_read_en": {
+        "ports": [
+          "TT_FIFO_R_CT_0/read_en",
+          "fifo_generator_0/rd_en"
+        ]
+      },
+      "TT_CONFIG_gpio2_io_o1": {
+        "ports": [
+          "TT_CONFIG/gpio2_io_o",
+          "xlslice_0/Din",
+          "xlslice_2/Din",
+          "xlslice_1/Din"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "TT_FIFO_R_CT_0/resetn"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "TT_FIFO_R_CT_0/REQ"
+        ]
+      },
+      "SDDR_TT_0_TIMEOUTS": {
+        "ports": [
+          "SDDR_TT_0/TIMEOUTS",
+          "xlconcat_1/In9"
+        ]
+      },
+      "SDDR_TT_0_ttwait": {
+        "ports": [
+          "SDDR_TT_0/ttwait",
+          "waiting"
+        ]
+      },
+      "SDDR_TT_0_ttlisten": {
+        "ports": [
+          "SDDR_TT_0/ttlisten",
+          "listening"
+        ]
+      },
+      "TT_FIFO_R_CT_0_valid": {
+        "ports": [
+          "TT_FIFO_R_CT_0/valid",
+          "xlconcat_0/In2"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "UTIL/gpio2_io_i"
         ]
       }
     },

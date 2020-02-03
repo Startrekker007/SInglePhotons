@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/SInglePhotons/Vivado Projects/DDR/SDDR_TT_TEST/SDDR_TT_TEST.runs/synth_1'
+HD_PWD='D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_TT_TEST/SDDR_TT_TEST.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

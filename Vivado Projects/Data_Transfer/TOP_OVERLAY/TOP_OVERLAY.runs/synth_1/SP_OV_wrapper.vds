@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Feb  3 09:37:05 2020
-# Process ID: 14796
+# Start of session at: Mon Feb  3 11:52:19 2020
+# Process ID: 16376
 # Current directory: D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1
 # Command line: vivado.exe -log SP_OV_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SP_OV_wrapper.tcl
 # Log file: D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/SP_OV_wrapper.vds
@@ -17,14 +17,13 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/DDS_CO
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/SInglePhotons/HW_IP/DELAY8'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_CT'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_CT_AXI'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_TT'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_TT_AXI'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_DESERIALIZER'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_CT_AXI'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 290.563 ; gain = 0.000
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/COUNTER_AXI'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/DDS_AXI_PERIPH'.
@@ -32,22 +31,22 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/DDS_CO
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/SInglePhotons/HW_IP/DELAY8'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_CT'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_CT_AXI'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_ST'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_TT'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_TT_AXI'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/SDDR_DESERIALIZER'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI'.
-add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:44 . Memory (MB): peak = 327.344 ; gain = 36.781
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/SInglePhotons/HW_IP/_Data_transference/SDDR_CT_AXI'.
+add_files: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 328.234 ; gain = 36.125
 Command: synth_design -top SP_OV_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8716 
+INFO: Helper process launched with PID 7792 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 784.152 ; gain = 179.316
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:29 . Memory (MB): peak = 785.961 ; gain = 180.156
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'SP_OV_wrapper' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/hdl/SP_OV_wrapper.vhd:59]
 INFO: [Synth 8-3491] module 'SP_OV' declared at 'D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:8625' bound to instance 'SP_OV_i' of component 'SP_OV' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/hdl/SP_OV_wrapper.vhd:105]
@@ -2906,28 +2905,16 @@ INFO: [Synth 8-256] done synthesizing module 'SDDR_AXI_ST' (202#1) [d:/SInglePho
 INFO: [Synth 8-256] done synthesizing module 'SDDR_AXI_ST_wrapper' (203#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/a7da/src/SDDR_AXI_ST_wrapper.vhd:59]
 INFO: [Synth 8-256] done synthesizing module 'SP_OV_SDDR_AXI_ST_wrapper_0_0' (204#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_AXI_ST_wrapper_0_0/synth/SP_OV_SDDR_AXI_ST_wrapper_0_0.vhd:101]
 INFO: [Synth 8-638] synthesizing module 'SP_OV_SDDR_CT_AXI_wrapper_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/synth/SP_OV_SDDR_CT_AXI_wrapper_0_0.vhd:102]
-INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_wrapper' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_wrapper.vhd:60]
-INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI.vhd:64]
-INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_CTA_SPLIT_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd:65]
-INFO: [Synth 8-638] synthesizing module 'CTA_SPLIT' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CTA_SPLIT.vhd:41]
-INFO: [Synth 8-256] done synthesizing module 'CTA_SPLIT' (205#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CTA_SPLIT.vhd:41]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_CTA_SPLIT_0_0' (206#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd:65]
-INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_CT_META_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_CT_META_0_0.vhd:64]
-	Parameter g_width bound to: 32 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'CT_META' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:43]
-	Parameter g_width bound to: 32 - type: integer 
-WARNING: [Synth 8-614] signal 'IDATA' is read in the process but is not in the sensitivity list [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:46]
-WARNING: [Synth 8-614] signal 'pdata' is read in the process but is not in the sensitivity list [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:46]
-INFO: [Synth 8-256] done synthesizing module 'CT_META' (207#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_CT_META_0_0' (208#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_CT_META_0_0.vhd:64]
-INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_CT_META_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_CT_META_0_1.vhd:64]
-	Parameter g_width bound to: 16 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'CT_META__parameterized1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:43]
-	Parameter g_width bound to: 16 - type: integer 
-WARNING: [Synth 8-614] signal 'IDATA' is read in the process but is not in the sensitivity list [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:46]
-WARNING: [Synth 8-614] signal 'pdata' is read in the process but is not in the sensitivity list [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:46]
-INFO: [Synth 8-256] done synthesizing module 'CT_META__parameterized1' (208#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/CT_META.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_CT_META_0_1' (209#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_CT_META_0_1.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_wrapper' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_wrapper.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_CTA_SPLIT_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'CTA_SPLIT' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/CTA_SPLIT.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'CTA_SPLIT' (205#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/CTA_SPLIT.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_CTA_SPLIT_0_0' (206#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_CT_FIFO_R_CT_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_CT_FIFO_R_CT_0_0.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'CT_FIFO_R_CT' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/ct_fifo_r_ct.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'CT_FIFO_R_CT' (207#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/ct_fifo_r_ct.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_CT_FIFO_R_CT_0_0' (208#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_CT_FIFO_R_CT_0_0.vhd:66]
 INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_axi_gpio_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_0/synth/SDDR_CT_AXI_axi_gpio_0_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -2944,7 +2931,7 @@ INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_axi_gpio_0_0' [d:/SInglePho
 	Parameter C_IS_DUAL bound to: 1 - type: integer 
 	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
 	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_axi_gpio_0_0' (210#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_0/synth/SDDR_CT_AXI_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_axi_gpio_0_0' (209#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_0/synth/SDDR_CT_AXI_axi_gpio_0_0.vhd:85]
 INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_SDDR_CT_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_SDDR_CT_0_0/synth/SDDR_CT_AXI_SDDR_CT_0_0.vhd:73]
 	Parameter SIG_WIDTH bound to: 8 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'SDDR_CT' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/ipshared/c9c6/src/SDDR_CT.vhd:52]
@@ -2972,15 +2959,15 @@ INFO: [Synth 8-638] synthesizing module 'CT_TIMER' [d:/SInglePhotons/Vivado Proj
 	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'CT_TIMER' (211#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_SDDR_CT_0_0/src/CT_TIMER/synth/CT_TIMER.vhd:67]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT' (212#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/ipshared/c9c6/src/SDDR_CT.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_SDDR_CT_0_0' (213#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_SDDR_CT_0_0/synth/SDDR_CT_AXI_SDDR_CT_0_0.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'CT_TIMER' (210#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_SDDR_CT_0_0/src/CT_TIMER/synth/CT_TIMER.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT' (211#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/ipshared/c9c6/src/SDDR_CT.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_SDDR_CT_0_0' (212#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_SDDR_CT_0_0/synth/SDDR_CT_AXI_SDDR_CT_0_0.vhd:73]
 INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_axi_gpio_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/synth/SDDR_CT_AXI_axi_gpio_0_1.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_GPIO_WIDTH bound to: 3 - type: integer 
-	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 5 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 3 - type: integer 
 	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
 	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
 	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
@@ -2995,8 +2982,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_gpio__parameterized18' [d:/SInglePh
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_GPIO_WIDTH bound to: 3 - type: integer 
-	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 5 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 3 - type: integer 
 	Parameter C_ALL_INPUTS bound to: 0 - type: integer 
 	Parameter C_ALL_INPUTS_2 bound to: 1 - type: integer 
 	Parameter C_ALL_OUTPUTS bound to: 1 - type: integer 
@@ -3010,9 +2997,9 @@ INFO: [Synth 8-638] synthesizing module 'axi_gpio__parameterized18' [d:/SInglePh
 INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized8' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 	Parameter C_DW bound to: 32 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
-	Parameter C_GPIO_WIDTH bound to: 3 - type: integer 
-	Parameter C_GPIO2_WIDTH bound to: 1 - type: integer 
-	Parameter C_MAX_GPIO_WIDTH bound to: 3 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 5 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 3 - type: integer 
+	Parameter C_MAX_GPIO_WIDTH bound to: 5 - type: integer 
 	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
 	Parameter C_DOUT_DEFAULT bound to: 0 - type: integer 
 	Parameter C_TRI_DEFAULT bound to: -1 - type: integer 
@@ -3025,50 +3012,286 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized8' [d:/SInglePh
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized8' (213#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized18' (213#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_axi_gpio_0_1' (214#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/synth/SDDR_CT_AXI_axi_gpio_0_1.vhd:85]
-INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_xlconcat_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_0_0/synth/SDDR_CT_AXI_xlconcat_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized3' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-	Parameter IN0_WIDTH bound to: 8 - type: integer 
-	Parameter IN1_WIDTH bound to: 8 - type: integer 
-	Parameter IN2_WIDTH bound to: 1 - type: integer 
-	Parameter IN3_WIDTH bound to: 1 - type: integer 
-	Parameter IN4_WIDTH bound to: 1 - type: integer 
-	Parameter IN5_WIDTH bound to: 1 - type: integer 
-	Parameter IN6_WIDTH bound to: 1 - type: integer 
-	Parameter IN7_WIDTH bound to: 1 - type: integer 
-	Parameter IN8_WIDTH bound to: 1 - type: integer 
-	Parameter IN9_WIDTH bound to: 1 - type: integer 
-	Parameter IN10_WIDTH bound to: 1 - type: integer 
-	Parameter IN11_WIDTH bound to: 1 - type: integer 
-	Parameter IN12_WIDTH bound to: 1 - type: integer 
-	Parameter IN13_WIDTH bound to: 1 - type: integer 
-	Parameter IN14_WIDTH bound to: 1 - type: integer 
-	Parameter IN15_WIDTH bound to: 1 - type: integer 
-	Parameter IN16_WIDTH bound to: 1 - type: integer 
-	Parameter IN17_WIDTH bound to: 1 - type: integer 
-	Parameter IN18_WIDTH bound to: 1 - type: integer 
-	Parameter IN19_WIDTH bound to: 1 - type: integer 
-	Parameter IN20_WIDTH bound to: 1 - type: integer 
-	Parameter IN21_WIDTH bound to: 1 - type: integer 
-	Parameter IN22_WIDTH bound to: 1 - type: integer 
-	Parameter IN23_WIDTH bound to: 1 - type: integer 
-	Parameter IN24_WIDTH bound to: 1 - type: integer 
-	Parameter IN25_WIDTH bound to: 1 - type: integer 
-	Parameter IN26_WIDTH bound to: 1 - type: integer 
-	Parameter IN27_WIDTH bound to: 1 - type: integer 
-	Parameter IN28_WIDTH bound to: 1 - type: integer 
-	Parameter IN29_WIDTH bound to: 1 - type: integer 
-	Parameter IN30_WIDTH bound to: 1 - type: integer 
-	Parameter IN31_WIDTH bound to: 1 - type: integer 
-	Parameter dout_width bound to: 16 - type: integer 
-	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized3' (214#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_xlconcat_0_0' (215#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_0_0/synth/SDDR_CT_AXI_xlconcat_0_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI' (216#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI.vhd:64]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_wrapper' (217#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_wrapper.vhd:60]
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_SDDR_CT_AXI_wrapper_0_0' (218#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/synth/SP_OV_SDDR_CT_AXI_wrapper_0_0.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized5' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 5 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized5' (212#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized8' (212#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized18' (212#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_axi_gpio_0_1' (213#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/synth/SDDR_CT_AXI_axi_gpio_0_1.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_ct_capacity_controll_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_ct_capacity_controll_0_0.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'ct_capacity_controller' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/CT_CAPACITY_CONTROLLER.vhd:42]
+WARNING: [Synth 8-614] signal 'resetn' is read in the process but is not in the sensitivity list [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/CT_CAPACITY_CONTROLLER.vhd:48]
+WARNING: [Synth 8-614] signal 'next_state' is read in the process but is not in the sensitivity list [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/CT_CAPACITY_CONTROLLER.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'ct_capacity_controller' (214#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/CT_CAPACITY_CONTROLLER.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_ct_capacity_controll_0_0' (215#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_ct_capacity_controll_0_0.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'SDDR_CT_AXI_fifo_generator_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/synth/SDDR_CT_AXI_fifo_generator_0_0.vhd:75]
+	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
+	Parameter C_DATA_COUNT_WIDTH bound to: 11 - type: integer 
+	Parameter C_DEFAULT_VALUE bound to: BlankString - type: string 
+	Parameter C_DIN_WIDTH bound to: 48 - type: integer 
+	Parameter C_DOUT_RST_VAL bound to: 0 - type: string 
+	Parameter C_DOUT_WIDTH bound to: 48 - type: integer 
+	Parameter C_ENABLE_RLOCS bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_FULL_FLAGS_RST_VAL bound to: 0 - type: integer 
+	Parameter C_HAS_ALMOST_EMPTY bound to: 0 - type: integer 
+	Parameter C_HAS_ALMOST_FULL bound to: 0 - type: integer 
+	Parameter C_HAS_BACKUP bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNT bound to: 1 - type: integer 
+	Parameter C_HAS_INT_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_MEMINIT_FILE bound to: 0 - type: integer 
+	Parameter C_HAS_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_RD_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_RD_RST bound to: 0 - type: integer 
+	Parameter C_HAS_RST bound to: 0 - type: integer 
+	Parameter C_HAS_SRST bound to: 1 - type: integer 
+	Parameter C_HAS_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_VALID bound to: 1 - type: integer 
+	Parameter C_HAS_WR_ACK bound to: 1 - type: integer 
+	Parameter C_HAS_WR_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_WR_RST bound to: 0 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE bound to: 0 - type: integer 
+	Parameter C_INIT_WR_PNTR_VAL bound to: 0 - type: integer 
+	Parameter C_MEMORY_TYPE bound to: 1 - type: integer 
+	Parameter C_MIF_FILE_NAME bound to: BlankString - type: string 
+	Parameter C_OPTIMIZATION_MODE bound to: 0 - type: integer 
+	Parameter C_OVERFLOW_LOW bound to: 0 - type: integer 
+	Parameter C_PRELOAD_LATENCY bound to: 1 - type: integer 
+	Parameter C_PRELOAD_REGS bound to: 0 - type: integer 
+	Parameter C_PRIM_FIFO_TYPE bound to: 2kx18 - type: string 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL bound to: 2 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_NEGATE_VAL bound to: 3 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL bound to: 2046 - type: integer 
+	Parameter C_PROG_FULL_THRESH_NEGATE_VAL bound to: 2045 - type: integer 
+	Parameter C_PROG_FULL_TYPE bound to: 0 - type: integer 
+	Parameter C_RD_DATA_COUNT_WIDTH bound to: 11 - type: integer 
+	Parameter C_RD_DEPTH bound to: 2048 - type: integer 
+	Parameter C_RD_FREQ bound to: 1 - type: integer 
+	Parameter C_RD_PNTR_WIDTH bound to: 11 - type: integer 
+	Parameter C_UNDERFLOW_LOW bound to: 0 - type: integer 
+	Parameter C_USE_DOUT_RST bound to: 1 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_USE_EMBEDDED_REG bound to: 0 - type: integer 
+	Parameter C_USE_PIPELINE_REG bound to: 0 - type: integer 
+	Parameter C_POWER_SAVING_MODE bound to: 0 - type: integer 
+	Parameter C_USE_FIFO16_FLAGS bound to: 0 - type: integer 
+	Parameter C_USE_FWFT_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_VALID_LOW bound to: 0 - type: integer 
+	Parameter C_WR_ACK_LOW bound to: 0 - type: integer 
+	Parameter C_WR_DATA_COUNT_WIDTH bound to: 11 - type: integer 
+	Parameter C_WR_DEPTH bound to: 2048 - type: integer 
+	Parameter C_WR_FREQ bound to: 1 - type: integer 
+	Parameter C_WR_PNTR_WIDTH bound to: 11 - type: integer 
+	Parameter C_WR_RESPONSE_LATENCY bound to: 1 - type: integer 
+	Parameter C_MSGON_VAL bound to: 1 - type: integer 
+	Parameter C_ENABLE_RST_SYNC bound to: 1 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE bound to: 0 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 2 - type: integer 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_WR_CHANNEL bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_RD_CHANNEL bound to: 1 - type: integer 
+	Parameter C_HAS_SLAVE_CE bound to: 0 - type: integer 
+	Parameter C_HAS_MASTER_CE bound to: 0 - type: integer 
+	Parameter C_ADD_NGC_CONSTRAINT bound to: 0 - type: integer 
+	Parameter C_USE_COMMON_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_USE_COMMON_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_USE_DEFAULT_SETTINGS bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_LEN_WIDTH bound to: 8 - type: integer 
+	Parameter C_AXI_LOCK_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_AWUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_WUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_BUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_ARUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_RUSER bound to: 0 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TDATA bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TID bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TDEST bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TUSER bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TREADY bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TSTRB bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TKEEP bound to: 0 - type: integer 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXIS_TSTRB_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TKEEP_WIDTH bound to: 1 - type: integer 
+	Parameter C_WACH_TYPE bound to: 0 - type: integer 
+	Parameter C_WDCH_TYPE bound to: 0 - type: integer 
+	Parameter C_WRCH_TYPE bound to: 0 - type: integer 
+	Parameter C_RACH_TYPE bound to: 0 - type: integer 
+	Parameter C_RDCH_TYPE bound to: 0 - type: integer 
+	Parameter C_AXIS_TYPE bound to: 0 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WACH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WDCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WRCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_RACH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_RDCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_AXIS bound to: 1 - type: integer 
+	Parameter C_APPLICATION_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PRIM_FIFO_TYPE_WACH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_WDCH bound to: 1kx36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_WRCH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_RACH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_RDCH bound to: 1kx36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_AXIS bound to: 1kx18 - type: string 
+	Parameter C_USE_ECC_WACH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_WDCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_WRCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_RACH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_RDCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_AXIS bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_DIN_WIDTH_WACH bound to: 1 - type: integer 
+	Parameter C_DIN_WIDTH_WDCH bound to: 64 - type: integer 
+	Parameter C_DIN_WIDTH_WRCH bound to: 2 - type: integer 
+	Parameter C_DIN_WIDTH_RACH bound to: 32 - type: integer 
+	Parameter C_DIN_WIDTH_RDCH bound to: 64 - type: integer 
+	Parameter C_DIN_WIDTH_AXIS bound to: 1 - type: integer 
+	Parameter C_WR_DEPTH_WACH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_WDCH bound to: 1024 - type: integer 
+	Parameter C_WR_DEPTH_WRCH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_RACH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_RDCH bound to: 1024 - type: integer 
+	Parameter C_WR_DEPTH_AXIS bound to: 1024 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WACH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WDCH bound to: 10 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WRCH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_RACH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_RDCH bound to: 10 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_AXIS bound to: 10 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WACH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WDCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WRCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_RACH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_RDCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_AXIS bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WACH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WDCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WRCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_RACH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_RDCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WACH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WDCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WRCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_RACH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_RDCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_AXIS bound to: 1023 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WACH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WDCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WRCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_RACH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_RDCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_AXIS bound to: 1022 - type: integer 
+	Parameter C_REG_SLICE_MODE_WACH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_WDCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_WRCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_fifo_generator_0_0' (216#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/synth/SDDR_CT_AXI_fifo_generator_0_0.vhd:75]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_util_vector_logic_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_0_0/synth/SDDR_CT_AXI_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_util_vector_logic_0_0' (217#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_0_0/synth/SDDR_CT_AXI_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_util_vector_logic_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_0_1/synth/SDDR_CT_AXI_util_vector_logic_0_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_util_vector_logic_0_1' (218#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_0_1/synth/SDDR_CT_AXI_util_vector_logic_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_util_vector_logic_2_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_2_0/synth/SDDR_CT_AXI_util_vector_logic_2_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_util_vector_logic_2_0' (219#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_2_0/synth/SDDR_CT_AXI_util_vector_logic_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_util_vector_logic_3_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_3_0/synth/SDDR_CT_AXI_util_vector_logic_3_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_util_vector_logic_3_0' (220#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_3_0/synth/SDDR_CT_AXI_util_vector_logic_3_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_xlconcat_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_0_1/synth/SDDR_CT_AXI_xlconcat_0_1.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_xlconcat_0_1' (221#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_0_1/synth/SDDR_CT_AXI_xlconcat_0_1.v:58]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_xlconcat_1_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_1_1/synth/SDDR_CT_AXI_xlconcat_1_1.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_xlconcat_1_1' (222#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_1_1/synth/SDDR_CT_AXI_xlconcat_1_1.v:58]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_xlslice_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlslice_0_0/synth/SDDR_CT_AXI_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 48 - type: integer 
+	Parameter DIN_FROM bound to: 31 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' (222#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_xlslice_0_0' (223#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlslice_0_0/synth/SDDR_CT_AXI_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'SDDR_CT_AXI_xlslice_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlslice_0_1/synth/SDDR_CT_AXI_xlslice_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 48 - type: integer 
+	Parameter DIN_FROM bound to: 47 - type: integer 
+	Parameter DIN_TO bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' (223#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_CT_AXI_xlslice_0_1' (224#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlslice_0_1/synth/SDDR_CT_AXI_xlslice_0_1.v:57]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI' (225#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI.vhd:64]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_CT_AXI_wrapper' (226#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_wrapper.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_SDDR_CT_AXI_wrapper_0_0' (227#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/synth/SP_OV_SDDR_CT_AXI_wrapper_0_0.vhd:102]
 INFO: [Synth 8-638] synthesizing module 'SP_OV_SDDR_TT_AXI_wrapper_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/synth/SP_OV_SDDR_TT_AXI_wrapper_0_0.vhd:156]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_wrapper' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c379/src/SDDR_TT_AXI_wrapper.vhd:114]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c379/src/SDDR_TT_AXI.vhd:118]
@@ -3122,9 +3345,9 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized9' [d:/SInglePh
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized9' (218#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized20' (218#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_0' (219#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/synth/SDDR_TT_AXI_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized9' (227#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized20' (227#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_0' (228#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/synth/SDDR_TT_AXI_axi_gpio_0_0.vhd:85]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_DATA0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/synth/SDDR_TT_AXI_DATA0_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -3141,7 +3364,7 @@ INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_DATA0_0' [d:/SInglePhotons/
 	Parameter C_IS_DUAL bound to: 1 - type: integer 
 	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
 	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_DATA0_0' (220#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/synth/SDDR_TT_AXI_DATA0_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_DATA0_0' (229#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/synth/SDDR_TT_AXI_DATA0_0.vhd:85]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_axi_gpio_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/synth/SDDR_TT_AXI_axi_gpio_0_1.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -3192,7 +3415,7 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized10' [d:/SIngleP
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
-INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized5' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized6' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
 	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
@@ -3247,10 +3470,10 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized5' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized5' (220#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized10' (220#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized22' (220#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_1' (221#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/synth/SDDR_TT_AXI_axi_gpio_0_1.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized6' (229#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized10' (229#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized22' (229#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_1' (230#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/synth/SDDR_TT_AXI_axi_gpio_0_1.vhd:85]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_SDDR_TT_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/synth/SDDR_TT_AXI_SDDR_TT_0_0.vhd:82]
 	Parameter SIG_WIDTH bound to: 8 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd:61]
@@ -3278,11 +3501,11 @@ INFO: [Synth 8-638] synthesizing module 'sddrtt_timer' [d:/SInglePhotons/Vivado 
 	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sddrtt_timer' (222#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/synth/sddrtt_timer.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'sddrtt_timer' (231#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/synth/sddrtt_timer.vhd:67]
 INFO: [Synth 8-4471] merging register 'waiting_reg' into 'iwaiting_reg' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd:188]
 INFO: [Synth 8-4471] merging register 'listening_reg' into 'ilistening_reg' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd:189]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT' (223#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_SDDR_TT_0_0' (224#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/synth/SDDR_TT_AXI_SDDR_TT_0_0.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT' (232#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_SDDR_TT_0_0' (233#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/synth/SDDR_TT_AXI_SDDR_TT_0_0.vhd:82]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_axi_gpio_0_2' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/synth/SDDR_TT_AXI_axi_gpio_0_2.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -3333,9 +3556,9 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized11' [d:/SIngleP
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized11' (224#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized24' (224#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_2' (225#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/synth/SDDR_TT_AXI_axi_gpio_0_2.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized11' (233#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized24' (233#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_2' (234#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/synth/SDDR_TT_AXI_axi_gpio_0_2.vhd:85]
 INFO: [Synth 8-638] synthesizing module 'SDDR_TT_AXI_axi_gpio_0_3' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/synth/SDDR_TT_AXI_axi_gpio_0_3.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -3386,11 +3609,11 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized12' [d:/SIngleP
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized12' (225#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized26' (225#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_3' (226#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/synth/SDDR_TT_AXI_axi_gpio_0_3.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized12' (234#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized26' (234#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_axi_gpio_0_3' (235#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/synth/SDDR_TT_AXI_axi_gpio_0_3.vhd:85]
 INFO: [Synth 8-6157] synthesizing module 'SDDR_TT_AXI_xlconcat_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_0/synth/SDDR_TT_AXI_xlconcat_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized4' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized3' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 8 - type: integer 
 	Parameter IN1_WIDTH bound to: 8 - type: integer 
 	Parameter IN2_WIDTH bound to: 8 - type: integer 
@@ -3425,18 +3648,18 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 32 - type: integer 
 	Parameter NUM_PORTS bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized4' (226#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'SDDR_TT_AXI_xlconcat_0_0' (227#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_0/synth/SDDR_TT_AXI_xlconcat_0_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI' (228#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c379/src/SDDR_TT_AXI.vhd:118]
-INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_wrapper' (229#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c379/src/SDDR_TT_AXI_wrapper.vhd:114]
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_SDDR_TT_AXI_wrapper_0_0' (230#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/synth/SP_OV_SDDR_TT_AXI_wrapper_0_0.vhd:156]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized3' (235#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/src/DDS_AXI_PERIPH_DDS_COM_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'SDDR_TT_AXI_xlconcat_0_0' (236#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_0/synth/SDDR_TT_AXI_xlconcat_0_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI' (237#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c379/src/SDDR_TT_AXI.vhd:118]
+INFO: [Synth 8-256] done synthesizing module 'SDDR_TT_AXI_wrapper' (238#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c379/src/SDDR_TT_AXI_wrapper.vhd:114]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_SDDR_TT_AXI_wrapper_0_0' (239#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/synth/SP_OV_SDDR_TT_AXI_wrapper_0_0.vhd:156]
 INFO: [Synth 8-6157] synthesizing module 'SP_OV_xlslice_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_xlslice_0_0/synth/SP_OV_xlslice_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 2 - type: integer 
 	Parameter DIN_FROM bound to: 0 - type: integer 
 	Parameter DIN_TO bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' (230#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'SP_OV_xlslice_0_0' (231#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_xlslice_0_0/synth/SP_OV_xlslice_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' (239#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_DDS_AXI_PERIPH_wrapp_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'SP_OV_xlslice_0_0' (240#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_xlslice_0_0/synth/SP_OV_xlslice_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'SP_OV_axi_gpio_0_1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_1/synth/SP_OV_axi_gpio_0_1.vhd:84]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -3487,9 +3710,9 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized13' [d:/SIngleP
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:443]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized13' (231#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized28' (231#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_axi_gpio_0_1' (232#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_1/synth/SP_OV_axi_gpio_0_1.vhd:84]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized13' (240#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized28' (240#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_axi_gpio_0_1' (241#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_1/synth/SP_OV_axi_gpio_0_1.vhd:84]
 INFO: [Synth 8-638] synthesizing module 'SP_OV_axi_gpio_0_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_0/synth/SP_OV_axi_gpio_0_0.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -3540,7 +3763,7 @@ INFO: [Synth 8-638] synthesizing module 'GPIO_Core__parameterized14' [d:/SIngleP
 	Parameter C_TRI_DEFAULT_2 bound to: -1 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:835]
-INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized6' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized7' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
 	Parameter C_SINGLE_BIT bound to: 0 - type: integer 
@@ -3559,79 +3782,79 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized6' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized6' (232#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized14' (232#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
-INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized30' (232#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_axi_gpio_0_0' (233#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_0/synth/SP_OV_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized7' (241#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized14' (241#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized30' (241#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_P_COUNTER_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1351]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_axi_gpio_0_0' (242#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_axi_gpio_0_0/synth/SP_OV_axi_gpio_0_0.vhd:85]
 INFO: [Synth 8-638] synthesizing module 'SP_OV_axi_interconnect_0_1' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:4421]
 INFO: [Synth 8-638] synthesizing module 'i00_couplers_imp_L02O5B' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'i00_couplers_imp_L02O5B' (234#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'i00_couplers_imp_L02O5B' (243#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:61]
 INFO: [Synth 8-638] synthesizing module 'i01_couplers_imp_1V86E6V' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:172]
-INFO: [Synth 8-256] done synthesizing module 'i01_couplers_imp_1V86E6V' (235#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'i01_couplers_imp_1V86E6V' (244#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:172]
 INFO: [Synth 8-638] synthesizing module 'i02_couplers_imp_1R1MDKE' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:283]
-INFO: [Synth 8-256] done synthesizing module 'i02_couplers_imp_1R1MDKE' (236#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:283]
+INFO: [Synth 8-256] done synthesizing module 'i02_couplers_imp_1R1MDKE' (245#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:283]
 INFO: [Synth 8-638] synthesizing module 'i03_couplers_imp_P6Y9XI' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:394]
-INFO: [Synth 8-256] done synthesizing module 'i03_couplers_imp_P6Y9XI' (237#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:394]
+INFO: [Synth 8-256] done synthesizing module 'i03_couplers_imp_P6Y9XI' (246#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:394]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_FQLT9S' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:501]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_FQLT9S' (238#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:501]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_FQLT9S' (247#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:501]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_ZV58RC' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:602]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_ZV58RC' (239#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:602]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_ZV58RC' (248#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:602]
 INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_140V5CX' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:703]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_140V5CX' (240#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:703]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_140V5CX' (249#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:703]
 INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_BL6SJT' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:804]
-INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_BL6SJT' (241#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:804]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_BL6SJT' (250#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:804]
 INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_1DLOKR7' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:905]
-INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1DLOKR7' (242#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:905]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1DLOKR7' (251#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:905]
 INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_34BP4R' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1006]
-INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_34BP4R' (243#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1006]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_34BP4R' (252#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1006]
 INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_7ACHHE' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1107]
-INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_7ACHHE' (244#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1107]
+INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_7ACHHE' (253#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1107]
 INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_19FCWH6' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1208]
-INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_19FCWH6' (245#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1208]
+INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_19FCWH6' (254#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1208]
 INFO: [Synth 8-638] synthesizing module 'm08_couplers_imp_1WL43XZ' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1309]
-INFO: [Synth 8-256] done synthesizing module 'm08_couplers_imp_1WL43XZ' (246#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1309]
+INFO: [Synth 8-256] done synthesizing module 'm08_couplers_imp_1WL43XZ' (255#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1309]
 INFO: [Synth 8-638] synthesizing module 'm09_couplers_imp_LV223J' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1410]
-INFO: [Synth 8-256] done synthesizing module 'm09_couplers_imp_LV223J' (247#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1410]
+INFO: [Synth 8-256] done synthesizing module 'm09_couplers_imp_LV223J' (256#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1410]
 INFO: [Synth 8-638] synthesizing module 'm10_couplers_imp_15UHYW1' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1511]
-INFO: [Synth 8-256] done synthesizing module 'm10_couplers_imp_15UHYW1' (248#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1511]
+INFO: [Synth 8-256] done synthesizing module 'm10_couplers_imp_15UHYW1' (257#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1511]
 INFO: [Synth 8-638] synthesizing module 'm11_couplers_imp_D347PL' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1612]
-INFO: [Synth 8-256] done synthesizing module 'm11_couplers_imp_D347PL' (249#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1612]
+INFO: [Synth 8-256] done synthesizing module 'm11_couplers_imp_D347PL' (258#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1612]
 INFO: [Synth 8-638] synthesizing module 'm12_couplers_imp_HAPJLC' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1713]
-INFO: [Synth 8-256] done synthesizing module 'm12_couplers_imp_HAPJLC' (250#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1713]
+INFO: [Synth 8-256] done synthesizing module 'm12_couplers_imp_HAPJLC' (259#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1713]
 INFO: [Synth 8-638] synthesizing module 'm13_couplers_imp_11N7IXK' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1814]
-INFO: [Synth 8-256] done synthesizing module 'm13_couplers_imp_11N7IXK' (251#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1814]
+INFO: [Synth 8-256] done synthesizing module 'm13_couplers_imp_11N7IXK' (260#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1814]
 INFO: [Synth 8-638] synthesizing module 'm14_couplers_imp_7YGE4I' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1915]
-INFO: [Synth 8-256] done synthesizing module 'm14_couplers_imp_7YGE4I' (252#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1915]
+INFO: [Synth 8-256] done synthesizing module 'm14_couplers_imp_7YGE4I' (261#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:1915]
 INFO: [Synth 8-638] synthesizing module 'm15_couplers_imp_19VI99M' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2016]
-INFO: [Synth 8-256] done synthesizing module 'm15_couplers_imp_19VI99M' (253#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2016]
+INFO: [Synth 8-256] done synthesizing module 'm15_couplers_imp_19VI99M' (262#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2016]
 INFO: [Synth 8-638] synthesizing module 'm16_couplers_imp_1DZNMDV' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2117]
-INFO: [Synth 8-256] done synthesizing module 'm16_couplers_imp_1DZNMDV' (254#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2117]
+INFO: [Synth 8-256] done synthesizing module 'm16_couplers_imp_1DZNMDV' (263#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2117]
 INFO: [Synth 8-638] synthesizing module 'm17_couplers_imp_3U054R' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2218]
-INFO: [Synth 8-256] done synthesizing module 'm17_couplers_imp_3U054R' (255#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2218]
+INFO: [Synth 8-256] done synthesizing module 'm17_couplers_imp_3U054R' (264#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2218]
 INFO: [Synth 8-638] synthesizing module 'm18_couplers_imp_OSFNFQ' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2319]
-INFO: [Synth 8-256] done synthesizing module 'm18_couplers_imp_OSFNFQ' (256#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2319]
+INFO: [Synth 8-256] done synthesizing module 'm18_couplers_imp_OSFNFQ' (265#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2319]
 INFO: [Synth 8-638] synthesizing module 'm19_couplers_imp_1QBVDZI' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2420]
-INFO: [Synth 8-256] done synthesizing module 'm19_couplers_imp_1QBVDZI' (257#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2420]
+INFO: [Synth 8-256] done synthesizing module 'm19_couplers_imp_1QBVDZI' (266#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2420]
 INFO: [Synth 8-638] synthesizing module 'm20_couplers_imp_1H0U1OZ' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2521]
-INFO: [Synth 8-256] done synthesizing module 'm20_couplers_imp_1H0U1OZ' (258#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2521]
+INFO: [Synth 8-256] done synthesizing module 'm20_couplers_imp_1H0U1OZ' (267#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2521]
 INFO: [Synth 8-638] synthesizing module 'm21_couplers_imp_1WRQPN' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2622]
-INFO: [Synth 8-256] done synthesizing module 'm21_couplers_imp_1WRQPN' (259#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2622]
+INFO: [Synth 8-256] done synthesizing module 'm21_couplers_imp_1WRQPN' (268#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2622]
 INFO: [Synth 8-638] synthesizing module 'm22_couplers_imp_6JZA82' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2723]
-INFO: [Synth 8-256] done synthesizing module 'm22_couplers_imp_6JZA82' (260#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2723]
+INFO: [Synth 8-256] done synthesizing module 'm22_couplers_imp_6JZA82' (269#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2723]
 INFO: [Synth 8-638] synthesizing module 'm23_couplers_imp_1CDY3CA' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2824]
-INFO: [Synth 8-256] done synthesizing module 'm23_couplers_imp_1CDY3CA' (261#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2824]
+INFO: [Synth 8-256] done synthesizing module 'm23_couplers_imp_1CDY3CA' (270#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2824]
 INFO: [Synth 8-638] synthesizing module 'm24_couplers_imp_ETCOS0' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2925]
-INFO: [Synth 8-256] done synthesizing module 'm24_couplers_imp_ETCOS0' (262#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2925]
+INFO: [Synth 8-256] done synthesizing module 'm24_couplers_imp_ETCOS0' (271#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:2925]
 INFO: [Synth 8-638] synthesizing module 'm25_couplers_imp_130MCUW' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3026]
-INFO: [Synth 8-256] done synthesizing module 'm25_couplers_imp_130MCUW' (263#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3026]
+INFO: [Synth 8-256] done synthesizing module 'm25_couplers_imp_130MCUW' (272#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3026]
 INFO: [Synth 8-638] synthesizing module 'm26_couplers_imp_17T3VTT' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3127]
-INFO: [Synth 8-256] done synthesizing module 'm26_couplers_imp_17T3VTT' (264#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3127]
+INFO: [Synth 8-256] done synthesizing module 'm26_couplers_imp_17T3VTT' (273#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3127]
 INFO: [Synth 8-638] synthesizing module 'm27_couplers_imp_A0JKLL' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3228]
-INFO: [Synth 8-256] done synthesizing module 'm27_couplers_imp_A0JKLL' (265#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3228]
+INFO: [Synth 8-256] done synthesizing module 'm27_couplers_imp_A0JKLL' (274#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3228]
 INFO: [Synth 8-638] synthesizing module 'm28_couplers_imp_V8DLZO' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3329]
-INFO: [Synth 8-256] done synthesizing module 'm28_couplers_imp_V8DLZO' (266#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3329]
+INFO: [Synth 8-256] done synthesizing module 'm28_couplers_imp_V8DLZO' (275#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3329]
 INFO: [Synth 8-638] synthesizing module 'm29_couplers_imp_1JVX4E4' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3430]
-INFO: [Synth 8-256] done synthesizing module 'm29_couplers_imp_1JVX4E4' (267#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3430]
+INFO: [Synth 8-256] done synthesizing module 'm29_couplers_imp_1JVX4E4' (276#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3430]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UQQ1LN' [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3554]
 INFO: [Synth 8-6157] synthesizing module 'SP_OV_auto_pc_0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_auto_pc_0/synth/SP_OV_auto_pc_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
@@ -3678,20 +3901,20 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' (268#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_incr_cmd' (277#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' (269#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd_translator' (270#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wrap_cmd' (278#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_cmd_translator' (279#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE_WAIT bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' (271#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_aw_channel' (272#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_wr_cmd_fsm' (280#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_aw_channel' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter LP_RESP_OKAY bound to: 2'b00 
@@ -3712,7 +3935,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo' (273#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo' (282#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 2 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
@@ -3721,8 +3944,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' (273#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' (274#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized0' (282#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_b_channel' (283#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -3732,8 +3955,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm' (275#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' (276#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm' (284#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_ar_channel' (285#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
@@ -3751,7 +3974,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1' (276#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1' (285#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 13 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
@@ -3760,8 +3983,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_19_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' (276#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' (277#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2' (285#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s_r_channel' (286#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -3877,23 +4100,24 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_regist
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice' (278#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice' (287#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' (278#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized0' (287#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' (278#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized1' (287#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' (278#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized2' (287#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -3985,8 +4209,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (279#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (288#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -4078,10 +4301,9 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (280#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (289#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice' (290#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -4192,27 +4414,21 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axi_registe
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized3' (290#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized4' (290#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized5' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axic_register_slice__parameterized6' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:488]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -4304,9 +4520,6 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -4398,14 +4611,8 @@ INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instan
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_19_axi_register_slice__parameterized0' (281#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:2716]
 WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_19_axi_register_slice' has 93 connections declared, but only 92 given [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_b2s' (282#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_19_axi_protocol_converter' (283#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
-INFO: [Synth 8-6155] done synthesizing module 'SP_OV_auto_pc_0' (284#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_auto_pc_0/synth/SP_OV_auto_pc_0.v:58]
-INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UQQ1LN' (285#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3554]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UQQ1LN' (294#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:3554]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
 	Parameter C_NUM_MASTER_SLOTS bound to: 8 - type: integer 
@@ -5218,7 +5425,7 @@ INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UQQ1LN' (285#1) [
 	Parameter C_RATIO bound to: 5 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 3 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_axi_interconnect_0_1' (300#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:4421]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_axi_interconnect_0_1' (309#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:4421]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -5324,7 +5531,7 @@ INFO: [Synth 8-638] synthesizing module 'lpf' [d:/SInglePhotons/Vivado Projects/
 	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
 	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized7' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized8' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
 	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
@@ -5337,21 +5544,21 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized7' [d:/SInglePho
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized7' (305#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'lpf' (306#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized8' (314#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (315#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
 INFO: [Synth 8-638] synthesizing module 'sequence_psr' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
 INFO: [Synth 8-638] synthesizing module 'upcnt_n' [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
 	Parameter C_SIZE bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (307#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
-INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (308#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
-INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (309#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_rst_ps7_0_100M_0' (310#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_rst_ps7_0_100M_0/synth/SP_OV_rst_ps7_0_100M_0.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (316#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (317#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (318#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_rst_ps7_0_100M_0' (319#1) [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_rst_ps7_0_100M_0/synth/SP_OV_rst_ps7_0_100M_0.vhd:74]
 	Parameter CONST_VAL bound to: 0 - type: integer 
 	Parameter CONST_WIDTH bound to: 5 - type: integer 
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'SP_OV' (315#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:8674]
-INFO: [Synth 8-256] done synthesizing module 'SP_OV_wrapper' (316#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/hdl/SP_OV_wrapper.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV' (324#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/synth/SP_OV.vhd:8674]
+INFO: [Synth 8-256] done synthesizing module 'SP_OV_wrapper' (325#1) [D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/hdl/SP_OV_wrapper.vhd:59]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In4[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In5[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In6[0]
@@ -5380,11 +5587,11 @@ WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In2
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In29[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In30[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In31[0]
-WARNING: [Synth 8-3331] design cdc_sync__parameterized7 has unconnected port prmry_aclk
-WARNING: [Synth 8-3331] design cdc_sync__parameterized7 has unconnected port prmry_resetn
-WARNING: [Synth 8-3331] design cdc_sync__parameterized7 has unconnected port prmry_vect_in[1]
-WARNING: [Synth 8-3331] design cdc_sync__parameterized7 has unconnected port prmry_vect_in[0]
-WARNING: [Synth 8-3331] design cdc_sync__parameterized7 has unconnected port scndry_resetn
+WARNING: [Synth 8-3331] design cdc_sync__parameterized8 has unconnected port prmry_aclk
+WARNING: [Synth 8-3331] design cdc_sync__parameterized8 has unconnected port prmry_resetn
+WARNING: [Synth 8-3331] design cdc_sync__parameterized8 has unconnected port prmry_vect_in[1]
+WARNING: [Synth 8-3331] design cdc_sync__parameterized8 has unconnected port prmry_vect_in[0]
+WARNING: [Synth 8-3331] design cdc_sync__parameterized8 has unconnected port scndry_resetn
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
@@ -5454,7 +5661,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[7]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:14 ; elapsed = 00:02:42 . Memory (MB): peak = 1220.520 ; gain = 615.684
+Finished RTL Elaboration : Time (s): cpu = 00:01:46 ; elapsed = 00:02:23 . Memory (MB): peak = 1220.168 ; gain = 614.363
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -5467,13 +5674,13 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:16 ; elapsed = 00:02:45 . Memory (MB): peak = 1220.520 ; gain = 615.684
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:48 ; elapsed = 00:02:25 . Memory (MB): peak = 1220.168 ; gain = 614.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:16 ; elapsed = 00:02:45 . Memory (MB): peak = 1220.520 ; gain = 615.684
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:48 ; elapsed = 00:02:25 . Memory (MB): peak = 1220.168 ; gain = 614.363
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 7597 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+INFO: [Netlist 29-17] Analyzing 7648 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -5592,6 +5799,8 @@ Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP
 Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/SDDR_CT_AXI_axi_gpio_0_1_board.xdc] for cell 'SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/UTIL/U0'
 Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/SDDR_CT_AXI_axi_gpio_0_1.xdc] for cell 'SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/UTIL/U0'
 Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/SDDR_CT_AXI_axi_gpio_0_1.xdc] for cell 'SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/UTIL/U0'
+Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/SDDR_CT_AXI_fifo_generator_0_0.xdc] for cell 'SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/fifo_generator_0/U0'
+Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/SDDR_CT_AXI_fifo_generator_0_0.xdc] for cell 'SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/fifo_generator_0/U0'
 Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_board.xdc] for cell 'SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA0/U0'
 Finished Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_board.xdc] for cell 'SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA0/U0'
 Parsing XDC File [d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0.xdc] for cell 'SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA0/U0'
@@ -5637,62 +5846,63 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/SP_OV_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1277.605 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1278.039 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 6601 instances were transformed.
-  FDR => FDRE: 6600 instances
+  A total of 6625 instances were transformed.
+  FDR => FDRE: 6624 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.857 . Memory (MB): peak = 1277.605 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.652 . Memory (MB): peak = 1278.039 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:53 ; elapsed = 00:03:27 . Memory (MB): peak = 1277.605 ; gain = 672.770
+Finished Constraint Validation : Time (s): cpu = 00:02:16 ; elapsed = 00:03:05 . Memory (MB): peak = 1278.039 ; gain = 672.234
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:53 ; elapsed = 00:03:27 . Memory (MB): peak = 1277.605 ; gain = 672.770
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:16 ; elapsed = 00:03:05 . Memory (MB): peak = 1278.039 ; gain = 672.234
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for SP_OV_i/processing_system7_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 331).
-Applied set_property DONT_TOUCH = true for SP_OV_i/rst_ps7_0_100M/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 334).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 342).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 350).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 358).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 366).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 374).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 382).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 390).
-Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 398).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 410).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 418).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 426).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 434).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 442).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 450).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 458).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 466).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 474).
-Applied set_property DONT_TOUCH = true for SP_OV_i/T_UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 482).
-Applied set_property DONT_TOUCH = true for SP_OV_i/T_RDY_U/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 490).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DELAYTIMER_CLK/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 498).
-Applied set_property DONT_TOUCH = true for SP_OV_i/REF_CLK/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 506).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/DATA/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 516).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 524).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/fifo_generator_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 532).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/DATA/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 537).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 545).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 555).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 563).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DELAY/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 571).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/TT_CONFIG/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 579).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 587).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DESERIALIZER_CLOCK/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 595).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/DELAYS/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 605).
-Applied set_property DONT_TOUCH = true for SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_DEBUG/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 613).
+Applied set_property DONT_TOUCH = true for SP_OV_i/processing_system7_0/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 355).
+Applied set_property DONT_TOUCH = true for SP_OV_i/rst_ps7_0_100M/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 358).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 366).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 374).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 382).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_data3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 390).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 398).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 406).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 414).
+Applied set_property DONT_TOUCH = true for SP_OV_i/P_COUNTER_wrapper_0/U0/P_COUNTER_i/axi_gpio_util3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 422).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 434).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 442).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 450).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/phase_3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 458).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 466).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 474).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_2/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 482).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/aux_3/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 490).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/util/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 498).
+Applied set_property DONT_TOUCH = true for SP_OV_i/T_UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 506).
+Applied set_property DONT_TOUCH = true for SP_OV_i/T_RDY_U/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 514).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DELAYTIMER_CLK/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 522).
+Applied set_property DONT_TOUCH = true for SP_OV_i/REF_CLK/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 530).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/DATA/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 540).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 548).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_AXI_ST_wrapper_0/U0/SDDR_AXI_ST_i/fifo_generator_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 556).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/DATA/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 561).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 569).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/fifo_generator_0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 577).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA0/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 582).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DATA1/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 590).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/DELAY/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 598).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/TT_CONFIG/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 606).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/UTIL/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 614).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DESERIALIZER_CLOCK/inst. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 622).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/DELAYS/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 632).
+Applied set_property DONT_TOUCH = true for SP_OV_i/DESERIALIZER_B_wrapp_0/U0/DESERIALIZER_B_i/IDELAY_DEBUG/U0. (constraint file  {D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/dont_touch.xdc}, line 640).
 Applied set_property DONT_TOUCH = true for SP_OV_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/processing_system7_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/rst_ps7_0_100M. (constraint file  auto generated constraint, line ).
@@ -5785,8 +5995,16 @@ Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0. (const
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/SDDR_CT_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/SDDR_CT_0/U0/TIMER_OF_SAURON. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/DATA. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/UTIL. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/fifo_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/util_vector_logic_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/util_vector_logic_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/util_vector_logic_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/xlconcat_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_CT_AXI_wrapper_0/U0/SDDR_CT_AXI_i/xlslice_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/SDDR_TT_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/SDDR_TT_AXI_wrapper_0/U0/SDDR_TT_AXI_i/SDDR_TT_0/U0/timer. (constraint file  auto generated constraint, line ).
@@ -5812,7 +6030,7 @@ Applied set_property DONT_TOUCH = true for SP_OV_i/axi_interconnect_0/tier2_xbar
 Applied set_property DONT_TOUCH = true for SP_OV_i/axi_interconnect_0/tier2_xbar_3. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SP_OV_i/axi_interconnect_0/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:55 ; elapsed = 00:03:29 . Memory (MB): peak = 1277.605 ; gain = 672.770
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:17 ; elapsed = 00:03:06 . Memory (MB): peak = 1278.039 ; gain = 672.234
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-7031] Trying to map ROM "sin_cos_lut" into Block RAM due to explicit "ram_style" or "rom_style" specification
 INFO: [Synth 8-7031] Trying to map ROM "sin_cos_lut" into Block RAM due to explicit "ram_style" or "rom_style" specification
@@ -5841,7 +6059,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:06 ; elapsed = 00:03:43 . Memory (MB): peak = 1277.605 ; gain = 672.770
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:28 ; elapsed = 00:03:18 . Memory (MB): peak = 1278.039 ; gain = 672.234
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6182,7 +6400,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (SP_OV_i/T
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (SP_OV_i/SDDR_AXI_ST_wrapper_0/\U0/SDDR_AXI_ST_i/SDDR_ST_0 /\U0/b_D0_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (SP_OV_i/SDDR_AXI_ST_wrapper_0/\U0/SDDR_AXI_ST_i/SDDR_ST_0 /\U0/D0_reg[7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:38 ; elapsed = 00:04:16 . Memory (MB): peak = 1277.605 ; gain = 672.770
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:02 ; elapsed = 00:03:55 . Memory (MB): peak = 1278.039 ; gain = 672.234
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6837] The timing for the instance SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/DDS_COM_wrapper_0/U0/DDS_COM_i/dds_compiler_0/U0/i_synth/i_0/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_block_rom.i_pipe_1.pre_asyn_sin_RAM_op_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance SP_OV_i/DDS_AXI_PERIPH_wrapp_0/U0/DDS_AXI_PERIPH_i/DDS_COM_wrapper_0/U0/DDS_COM_i/dds_compiler_1/U0/i_synth/i_0/i_dds/I_SINCOS.i_std_rom.i_rom/i_rtl.i_double_table.i_block_rom.i_pipe_1.pre_asyn_sin_RAM_op_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
@@ -6206,13 +6424,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'SP_OV_i/SDDR_CT_AXI_wrapp
 info: SDC option 'set_clock_latency -clock' ignored 1 time(s)
 INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:52 ; elapsed = 00:04:30 . Memory (MB): peak = 1366.250 ; gain = 761.414
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:17 ; elapsed = 00:04:11 . Memory (MB): peak = 1368.016 ; gain = 762.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:56 ; elapsed = 00:04:34 . Memory (MB): peak = 1405.414 ; gain = 800.578
+Finished Timing Optimization : Time (s): cpu = 00:03:21 ; elapsed = 00:04:15 . Memory (MB): peak = 1407.496 ; gain = 801.691
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6224,7 +6442,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:07 ; elapsed = 00:04:46 . Memory (MB): peak = 1427.273 ; gain = 822.438
+Finished Technology Mapping : Time (s): cpu = 00:03:32 ; elapsed = 00:04:28 . Memory (MB): peak = 1430.535 ; gain = 824.730
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6249,7 +6467,7 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:10 ; elapsed = 00:04:49 . Memory (MB): peak = 1433.031 ; gain = 828.195
+Finished IO Insertion : Time (s): cpu = 00:03:36 ; elapsed = 00:04:31 . Memory (MB): peak = 1435.340 ; gain = 829.535
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -6262,7 +6480,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:10 ; elapsed = 00:04:49 . Memory (MB): peak = 1433.031 ; gain = 828.195
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:36 ; elapsed = 00:04:32 . Memory (MB): peak = 1435.340 ; gain = 829.535
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6274,25 +6492,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:13 ; elapsed = 00:04:52 . Memory (MB): peak = 1433.031 ; gain = 828.195
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:39 ; elapsed = 00:04:35 . Memory (MB): peak = 1435.340 ; gain = 829.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:13 ; elapsed = 00:04:52 . Memory (MB): peak = 1433.031 ; gain = 828.195
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:39 ; elapsed = 00:04:35 . Memory (MB): peak = 1435.340 ; gain = 829.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:14 ; elapsed = 00:04:52 . Memory (MB): peak = 1434.605 ; gain = 829.770
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:39 ; elapsed = 00:04:36 . Memory (MB): peak = 1436.910 ; gain = 831.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:14 ; elapsed = 00:04:53 . Memory (MB): peak = 1434.605 ; gain = 829.770
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:39 ; elapsed = 00:04:36 . Memory (MB): peak = 1436.910 ; gain = 831.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -6310,43 +6528,43 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BIBUF      |   130|
 |2     |BUFG       |     9|
-|3     |CARRY4     |   303|
+|3     |CARRY4     |   306|
 |4     |DSP48E1    |     4|
 |5     |IDELAYCTRL |     1|
 |6     |IDELAYE2   |     6|
 |7     |IDELAYE2_1 |     6|
 |8     |ISERDESE2  |     5|
-|9     |LUT1       |   483|
-|10    |LUT2       |   693|
-|11    |LUT3       |   875|
-|12    |LUT4       |  1148|
+|9     |LUT1       |   491|
+|10    |LUT2       |   716|
+|11    |LUT3       |   884|
+|12    |LUT4       |  1175|
 |13    |LUT5       |  1612|
-|14    |LUT6       |  1432|
+|14    |LUT6       |  1449|
 |15    |MMCME2_ADV |     3|
-|16    |MUXCY      |   489|
-|17    |MUXF7      |     5|
+|16    |MUXCY      |   513|
+|17    |MUXF7      |     4|
 |18    |PS7        |     1|
 |19    |RAMB18E1_1 |     4|
-|20    |RAMB36E1   |     3|
+|20    |RAMB36E1   |     6|
 |21    |SRL16      |     1|
 |22    |SRL16E     |    18|
 |23    |SRLC32E    |    47|
 |24    |XORCY      |   480|
-|25    |FDR        |  1632|
-|26    |FDRE       |  8556|
-|27    |FDSE       |  1256|
+|25    |FDR        |  1640|
+|26    |FDRE       |  8632|
+|27    |FDSE       |  1264|
 |28    |IBUF       |    14|
 |29    |OBUF       |    14|
 |30    |OBUFT      |     4|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:14 ; elapsed = 00:04:53 . Memory (MB): peak = 1434.605 ; gain = 829.770
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:39 ; elapsed = 00:04:36 . Memory (MB): peak = 1436.910 ; gain = 831.105
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1123 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:26 ; elapsed = 00:04:16 . Memory (MB): peak = 1434.605 ; gain = 772.684
-Synthesis Optimization Complete : Time (s): cpu = 00:04:14 ; elapsed = 00:04:53 . Memory (MB): peak = 1434.605 ; gain = 829.770
+Synthesis finished with 0 errors, 0 critical warnings and 1169 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:04:00 . Memory (MB): peak = 1436.910 ; gain = 773.234
+Synthesis Optimization Complete : Time (s): cpu = 00:03:40 ; elapsed = 00:04:36 . Memory (MB): peak = 1436.910 ; gain = 831.105
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 2941 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 2978 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. SP_OV_i/DELAYTIMER_CLK/inst/clkin1_ibufg 
@@ -6366,20 +6584,21 @@ Resolution: The tool has removed redundant IBUF. To resolve this warning, check 
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. SP_OV_i/REF_CLK/inst/clkin1_ibufg 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1461.129 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1463.379 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1761 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 128 instances
-  FDR => FDRE: 1632 instances
+  A total of 1777 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 136 instances
+  FDR => FDRE: 1640 instances
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-1247 Infos, 247 Warnings, 0 Critical Warnings and 0 Errors encountered.
+1251 Infos, 245 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:29 ; elapsed = 00:05:16 . Memory (MB): peak = 1461.129 ; gain = 1133.785
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1461.129 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:55 ; elapsed = 00:05:06 . Memory (MB): peak = 1463.379 ; gain = 1135.145
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1463.379 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.runs/synth_1/SP_OV_wrapper.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1463.379 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file SP_OV_wrapper_utilization_synth.rpt -pb SP_OV_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Feb  3 09:43:30 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Feb  3 11:57:48 2020...

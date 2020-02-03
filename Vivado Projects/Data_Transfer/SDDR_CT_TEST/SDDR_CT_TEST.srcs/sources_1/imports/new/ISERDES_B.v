@@ -59,7 +59,7 @@ module ISERDES_B
    // width of the data for the system
  #(parameter SYS_W = 1,
    // width of the data for the device
-   parameter DEV_W = 4)
+   parameter DEV_W = 8)
  (
   // From the system into the device
   input  [SYS_W-1:0] data_in_from_pins,

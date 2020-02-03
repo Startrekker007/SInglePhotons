@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Mon Jan 13 14:00:44 2020
+| Date             : Mon Feb  3 13:31:26 2020
 | Host             : CISS32101 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file TEST_wrapper_power_routed.rpt -pb TEST_wrapper_power_summary_routed.pb -rpx TEST_wrapper_power_routed.rpx
 | Design           : TEST_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.534        |
+| Total On-Chip Power (W)  | 1.542        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.394        |
-| Device Static (W)        | 0.141        |
+| Dynamic (W)              | 1.400        |
+| Device Static (W)        | 0.142        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 67.3         |
-| Junction Temperature (C) | 42.7         |
+| Max Ambient (C)          | 67.2         |
+| Junction Temperature (C) | 42.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.023 |        7 |       --- |             --- |
-| Slice Logic             |     0.003 |     4516 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1135 |     53200 |            2.13 |
-|   Register              |    <0.001 |     2768 |    106400 |            2.60 |
-|   CARRY4                |    <0.001 |       38 |     13300 |            0.29 |
+| Clocks                  |     0.025 |        7 |       --- |             --- |
+| Slice Logic             |     0.003 |     4887 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1313 |     53200 |            2.47 |
+|   Register              |    <0.001 |     2876 |    106400 |            2.70 |
+|   CARRY4                |    <0.001 |       54 |     13300 |            0.41 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
-|   F7/F8 Muxes           |    <0.001 |        1 |     53200 |           <0.01 |
-|   Others                |     0.000 |      271 |       --- |             --- |
-| Signals                 |     0.007 |     3566 |       --- |             --- |
-| MMCM                    |     0.099 |        1 |         4 |           25.00 |
-| I/O                     |     0.005 |        7 |       125 |            5.60 |
+|   Others                |     0.000 |      326 |       --- |             --- |
+| Signals                 |     0.007 |     3997 |       --- |             --- |
+| Block RAM               |     0.008 |       10 |       140 |            7.14 |
+| MMCM                    |     0.098 |        1 |         4 |           25.00 |
+| I/O                     |     0.003 |        7 |       125 |            5.60 |
 | PS7                     |     1.256 |        1 |       --- |             --- |
-| Static Power            |     0.141 |          |           |                 |
-| Total                   |     1.534 |          |           |                 |
+| Static Power            |     0.142 |          |           |                 |
+| Total                   |     1.542 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,16 +75,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.052 |       0.038 |      0.014 |
-| Vccaux    |       1.800 |     0.068 |       0.054 |      0.015 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vccint    |       1.000 |     0.061 |       0.047 |      0.014 |
+| Vccaux    |       1.800 |     0.068 |       0.053 |      0.015 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -141,7 +141,7 @@ Table of Contents
 | clk_fpga_0                | TEST_i/processing_system7_0/inst/FCLK_CLK0              |            10.0 |
 | clk_fpga_0                | TEST_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
 | clk_out1_TEST_clk_wiz_0_0 | TEST_i/clk_wiz_0/inst/clk_out1_TEST_clk_wiz_0_0         |             1.3 |
-| clk_out2_TEST_clk_wiz_0_0 | TEST_i/clk_wiz_0/inst/clk_out2_TEST_clk_wiz_0_0         |             2.5 |
+| clk_out2_TEST_clk_wiz_0_0 | TEST_i/clk_wiz_0/inst/clk_out2_TEST_clk_wiz_0_0         |             5.0 |
 | clkfbout_TEST_clk_wiz_0_0 | TEST_i/clk_wiz_0/inst/clkfbout_TEST_clk_wiz_0_0         |            10.0 |
 +---------------------------+---------------------------------------------------------+-----------------+
 
@@ -152,26 +152,30 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------------+-----------+
-| Name                     | Power (W) |
-+--------------------------+-----------+
-| TEST_wrapper             |     1.394 |
-|   TEST_i                 |     1.391 |
-|     CTIME0               |     0.003 |
-|       U0                 |     0.003 |
-|     CTIME1               |     0.003 |
-|       U0                 |     0.003 |
-|     DELAY                |     0.002 |
-|       U0                 |     0.002 |
-|     SDDR_TT_M_wrapper_0  |     0.018 |
-|       U0                 |     0.018 |
-|     clk_wiz_0            |     0.101 |
-|       inst               |     0.101 |
-|     processing_system7_0 |     1.257 |
-|       inst               |     1.257 |
-|     ps7_0_axi_periph     |     0.006 |
-|       s00_couplers       |     0.005 |
-|       xbar               |     0.001 |
-+--------------------------+-----------+
++---------------------------+-----------+
+| Name                      | Power (W) |
++---------------------------+-----------+
+| TEST_wrapper              |     1.400 |
+|   TEST_i                  |     1.399 |
+|     SDDR_TT_AXI_wrapper_0 |     0.030 |
+|       U0                  |     0.030 |
+|     clk_wiz_0             |     0.100 |
+|       inst                |     0.100 |
+|     processing_system7_0  |     1.257 |
+|       inst                |     1.257 |
+|     ps7_0_axi_periph      |     0.006 |
+|       s00_couplers        |     0.005 |
+|       xbar                |     0.001 |
+|     selectio_wiz_0        |     0.001 |
+|       inst                |     0.001 |
+|     selectio_wiz_1        |     0.001 |
+|       inst                |     0.001 |
+|     selectio_wiz_2        |     0.001 |
+|       inst                |     0.001 |
+|     selectio_wiz_3        |     0.001 |
+|       inst                |     0.001 |
+|     selectio_wiz_4        |     0.001 |
+|       inst                |     0.001 |
++---------------------------+-----------+
 
 

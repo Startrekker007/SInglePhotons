@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY TEST_ISERDES_B_0_0 IS
   PORT (
     data_in_from_pins : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    data_in_to_device : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    data_in_to_device : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     bitslip : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     clk_in : IN STD_LOGIC;
     clk_div_in : IN STD_LOGIC;
@@ -74,7 +74,7 @@ ARCHITECTURE TEST_ISERDES_B_0_0_arch OF TEST_ISERDES_B_0_0 IS
     );
     PORT (
       data_in_from_pins : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      data_in_to_device : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      data_in_to_device : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       bitslip : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       clk_in : IN STD_LOGIC;
       clk_div_in : IN STD_LOGIC;
@@ -91,7 +91,7 @@ BEGIN
   U0 : ISERDES_B
     GENERIC MAP (
       SYS_W => 1,
-      DEV_W => 4
+      DEV_W => 8
     )
     PORT MAP (
       data_in_from_pins => data_in_from_pins,

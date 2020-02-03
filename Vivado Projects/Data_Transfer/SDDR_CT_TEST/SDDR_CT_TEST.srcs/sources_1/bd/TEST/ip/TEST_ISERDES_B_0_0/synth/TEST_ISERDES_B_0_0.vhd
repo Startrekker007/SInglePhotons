@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY TEST_ISERDES_B_0_0 IS
   PORT (
     data_in_from_pins : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    data_in_to_device : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    data_in_to_device : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     bitslip : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     clk_in : IN STD_LOGIC;
     clk_div_in : IN STD_LOGIC;
@@ -74,7 +74,7 @@ ARCHITECTURE TEST_ISERDES_B_0_0_arch OF TEST_ISERDES_B_0_0 IS
     );
     PORT (
       data_in_from_pins : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      data_in_to_device : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      data_in_to_device : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       bitslip : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       clk_in : IN STD_LOGIC;
       clk_div_in : IN STD_LOGIC;
@@ -86,7 +86,7 @@ ARCHITECTURE TEST_ISERDES_B_0_0_arch OF TEST_ISERDES_B_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF TEST_ISERDES_B_0_0_arch : ARCHITECTURE IS "TEST_ISERDES_B_0_0,ISERDES_B,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF TEST_ISERDES_B_0_0_arch: ARCHITECTURE IS "TEST_ISERDES_B_0_0,ISERDES_B,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ISERDES_B,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,SYS_W=1,DEV_W=4}";
+  ATTRIBUTE CORE_GENERATION_INFO OF TEST_ISERDES_B_0_0_arch: ARCHITECTURE IS "TEST_ISERDES_B_0_0,ISERDES_B,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ISERDES_B,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,SYS_W=1,DEV_W=8}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF TEST_ISERDES_B_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -97,7 +97,7 @@ BEGIN
   U0 : ISERDES_B
     GENERIC MAP (
       SYS_W => 1,
-      DEV_W => 4
+      DEV_W => 8
     )
     PORT MAP (
       data_in_from_pins => data_in_from_pins,

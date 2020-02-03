@@ -1,6 +1,6 @@
-set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DDR/SDDR_TT_TEST/SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc} rfile:../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:TEST_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/DDR/SDDR_TT_TEST/SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc} rfile:../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:TEST_i/clk_wiz_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/DDR/SDDR_TT_TEST/SDDR_TT_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../SDDR_TT_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc id:3} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_TT_TEST/SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc} rfile:../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0/TEST_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:TEST_i/processing_system7_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{d:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_TT_TEST/SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc} rfile:../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.xdc id:2 order:EARLY scoped_inst:TEST_i/clk_wiz_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_TT_TEST/SDDR_TT_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc} rfile:../../../SDDR_TT_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc id:3} [current_design]
 current_instance TEST_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3
@@ -325,10 +325,11 @@ set_property src_info {type:XDC file:3 line:36 export:INPUT save:INPUT read:READ
 set_property DONT_TOUCH true [get_cells TEST_i/SDDR_TT_M_wrapper_0/U0/SDDR_TT_M_i/SDDR_DLR_4/U0/WR1/DDR_boi/Q1_reg]
 set_property src_info {type:XDC file:3 line:45 export:INPUT save:INPUT read:READ} [current_design]
 create_pblock pblock_2
-add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list TEST_i/SDDR_TT_M_wrapper_0/U0/SDDR_TT_M_i/SDDR_TT_0]]
 resize_pblock [get_pblocks pblock_2] -add {SLICE_X84Y75:SLICE_X93Y99}
 resize_pblock [get_pblocks pblock_2] -add {RAMB18_X4Y30:RAMB18_X4Y39}
 resize_pblock [get_pblocks pblock_2] -add {RAMB36_X4Y15:RAMB36_X4Y19}
+set_property src_info {type:XDC file:3 line:46 export:INPUT save:INPUT read:READ} [current_design]
+add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list TEST_i/SDDR_TT_M_wrapper_0/U0/SDDR_TT_M_i/SDDR_TT_0]]
 set_property src_info {type:XDC file:3 line:50 export:INPUT save:INPUT read:READ} [current_design]
 create_pblock pblock_1
 resize_pblock [get_pblocks pblock_1] -add {SLICE_X94Y85:SLICE_X97Y86}

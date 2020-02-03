@@ -344,19 +344,29 @@ vcom -work xil_defaultlib -93 \
 "../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/ipshared/c9c6/src/ISERDES_WRAPPER.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_SDDR_CT_0_0/sim/SDDR_CT_AXI_SDDR_CT_0_0.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_0/sim/SDDR_CT_AXI_axi_gpio_0_0.vhd" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/sim/SDDR_CT_AXI_axi_gpio_0_1.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/ec67/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/8c62/hdl" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ipshared/c923" "+incdir+../../../../TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_0_0/sim/SDDR_CT_AXI_xlconcat_0_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/sim/SDDR_CT_AXI_fifo_generator_0_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_0_1/sim/SDDR_CT_AXI_xlconcat_0_1.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_0_0/sim/SDDR_CT_AXI_util_vector_logic_0_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_0_1/sim/SDDR_CT_AXI_util_vector_logic_0_1.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_2_0/sim/SDDR_CT_AXI_util_vector_logic_2_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_util_vector_logic_3_0/sim/SDDR_CT_AXI_util_vector_logic_3_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlconcat_1_1/sim/SDDR_CT_AXI_xlconcat_1_1.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlslice_0_0/sim/SDDR_CT_AXI_xlslice_0_0.v" \
+"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_xlslice_0_1/sim/SDDR_CT_AXI_xlslice_0_1.v" \
 
 vcom -work xil_defaultlib -93 \
-"../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/sim/SDDR_CT_AXI_axi_gpio_0_1.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/sim/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/sim/SDDR_CT_AXI_CT_META_0_0.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/sim/SDDR_CT_AXI_CT_META_0_1.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/src/CTA_SPLIT.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/src/CT_META.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/sim/SDDR_CT_AXI.vhd" \
-"../../../bd/SP_OV/ipshared/c3aa/src/SDDR_CT_AXI_wrapper.vhd" \
+"../../../bd/SP_OV/ipshared/902a/sim/SDDR_CT_AXI_CTA_SPLIT_0_0.vhd" \
+"../../../bd/SP_OV/ipshared/902a/sim/SDDR_CT_AXI_CT_FIFO_R_CT_0_0.vhd" \
+"../../../bd/SP_OV/ipshared/902a/sim/SDDR_CT_AXI_ct_capacity_controll_0_0.vhd" \
+"../../../bd/SP_OV/ipshared/902a/src/CTA_SPLIT.vhd" \
+"../../../bd/SP_OV/ipshared/902a/src/ct_fifo_r_ct.vhd" \
+"../../../bd/SP_OV/ipshared/902a/src/CT_CAPACITY_CONTROLLER.vhd" \
+"../../../bd/SP_OV/ipshared/902a/sim/SDDR_CT_AXI.vhd" \
+"../../../bd/SP_OV/ipshared/902a/src/SDDR_CT_AXI_wrapper.vhd" \
+"../../../bd/SP_OV/ipshared/902a/src/CT_META.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/sim/SP_OV_SDDR_CT_AXI_wrapper_0_0.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/sim/sddrtt_timer.vhd" \
 "../../../bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd" \

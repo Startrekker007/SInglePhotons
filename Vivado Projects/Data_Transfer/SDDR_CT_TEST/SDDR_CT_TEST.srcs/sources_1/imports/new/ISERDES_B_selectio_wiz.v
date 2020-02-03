@@ -57,7 +57,7 @@ module ISERDES_B_selectio_wiz
    // width of the data for the system
  #(parameter SYS_W = 1,
    // width of the data for the device
-   parameter DEV_W = 4)
+   parameter DEV_W = 8)
  (
   // From the system into the device
   input  [SYS_W-1:0] data_in_from_pins,
@@ -113,7 +113,7 @@ module ISERDES_B_selectio_wiz
      ISERDESE2
        # (
          .DATA_RATE         ("DDR"),
-         .DATA_WIDTH        (4),
+         .DATA_WIDTH        (8),
          .INTERFACE_TYPE    ("NETWORKING"), 
          .DYN_CLKDIV_INV_EN ("FALSE"),
          .DYN_CLK_INV_EN    ("FALSE"),

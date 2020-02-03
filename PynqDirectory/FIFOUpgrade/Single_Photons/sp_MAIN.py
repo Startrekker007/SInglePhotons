@@ -5,6 +5,9 @@ import _thread
 from multiprocessing import Process,Lock
 import json
 from time import sleep
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG,format='%(asctime)s [%(levelname)7s] %(module)s -- %(message)s')
 HOST = ''
 PORT = 6050#Port to listen on
 SPT = None #Main Time Controller Tools object
@@ -87,7 +90,7 @@ def ST_MOD(lock,mode):
         SPT.st_stop()
 
 
-def CT_MOD(lock,lineselect):
+def CT_MOD(lock,lineselect,ctl):
     """Operates the two channel coincidence timer and sends time data back to the connected client
 
     Parameters
@@ -97,10 +100,16 @@ def CT_MOD(lock,lineselect):
 
 
     """
-    print("Arming coincidence timer")
-    t = SPT.ct_arm_and_wait(lineselect)
-    sendToHost(("CT"+str(t)),lock)
-    print("ended")
+    if(ctl==0):
+        SPT.ct_start(lineselect)
+        logger.info("Started coincidence timer")
+    elif(ctl==1):
+        data=SPT.ct_proc()
+        sendToHost(json.dumps(data), lock)
+        logger.info("Acquired coincidence timer data")
+    elif(ctl==2):
+        SPT.ct_stop()
+        logger.info("Stopped coincidence timer")
 def PG_MOD(params):
     """Operates the signal generator on the fabric
 
@@ -262,11 +271,13 @@ def run():
                                     # STProc.start()
                                     ST_MOD(lock, 2)
                             if(data[:2] == "CT"):#Coincidence timer
-                                if(isinstance(CTProc,Process)):
-                                    CTProc.terminate()
-                                mode = data[2]
-                                CTProc=Process(target=CT_MOD,args=(lock,mode, ))
-                                CTProc.start()
+                                if(data[:3]=="CTS"):
+                                    mode=int(data[3])
+                                    CT_MOD(lock,mode,0)
+                                elif(data[:3]=="CTA"):
+                                    CT_MOD(lock,0,1)
+                                elif(data[:3]=="CTX"):
+                                    CT_MOD(lock,0,2)
                             if(data[:2]=="PG"):#Signal generator
                                 PG_MOD(json.loads(data[2:]))#Deserialize the incoming data and call the pulse generator function
                             if(data[:2]=="TT"):#Time tagger

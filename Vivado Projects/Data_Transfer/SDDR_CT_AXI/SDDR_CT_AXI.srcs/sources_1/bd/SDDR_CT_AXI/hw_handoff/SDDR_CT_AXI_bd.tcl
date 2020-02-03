@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# CTA_SPLIT, CT_META, CT_META
+# CTA_SPLIT, CT_FIFO_R_CT, ct_capacity_controller
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -193,34 +193,17 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: CT_META_0, and set properties
-  set block_name CT_META
-  set block_cell_name CT_META_0
-  if { [catch {set CT_META_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: CT_FIFO_R_CT_0, and set properties
+  set block_name CT_FIFO_R_CT
+  set block_cell_name CT_FIFO_R_CT_0
+  if { [catch {set CT_FIFO_R_CT_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $CT_META_0 eq "" } {
+   } elseif { $CT_FIFO_R_CT_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-    set_property -dict [ list \
-   CONFIG.g_width {32} \
- ] $CT_META_0
-
-  # Create instance: CT_META_1, and set properties
-  set block_name CT_META
-  set block_cell_name CT_META_1
-  if { [catch {set CT_META_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $CT_META_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.g_width {16} \
- ] $CT_META_1
-
+  
   # Create instance: DATA, and set properties
   set DATA [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DATA ]
   set_property -dict [ list \
@@ -241,37 +224,136 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS_2 {1} \
    CONFIG.C_ALL_OUTPUTS {1} \
-   CONFIG.C_GPIO2_WIDTH {1} \
-   CONFIG.C_GPIO_WIDTH {3} \
+   CONFIG.C_GPIO2_WIDTH {3} \
+   CONFIG.C_GPIO_WIDTH {5} \
    CONFIG.C_IS_DUAL {1} \
  ] $UTIL
 
+  # Create instance: ct_capacity_controll_0, and set properties
+  set block_name ct_capacity_controller
+  set block_cell_name ct_capacity_controll_0
+  if { [catch {set ct_capacity_controll_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ct_capacity_controll_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: fifo_generator_0, and set properties
+  set fifo_generator_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 fifo_generator_0 ]
+  set_property -dict [ list \
+   CONFIG.Data_Count {true} \
+   CONFIG.Data_Count_Width {11} \
+   CONFIG.Full_Threshold_Assert_Value {2046} \
+   CONFIG.Full_Threshold_Negate_Value {2045} \
+   CONFIG.Input_Data_Width {48} \
+   CONFIG.Input_Depth {2048} \
+   CONFIG.Output_Data_Width {48} \
+   CONFIG.Output_Depth {2048} \
+   CONFIG.Read_Data_Count_Width {11} \
+   CONFIG.Valid_Flag {true} \
+   CONFIG.Write_Acknowledge_Flag {true} \
+   CONFIG.Write_Data_Count_Width {11} \
+ ] $fifo_generator_0
+
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_3
+
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  set_property -dict [ list \
+   CONFIG.IN0_WIDTH {32} \
+   CONFIG.IN1_WIDTH {8} \
+   CONFIG.IN2_WIDTH {8} \
+   CONFIG.NUM_PORTS {3} \
+ ] $xlconcat_0
+
+  # Create instance: xlconcat_1, and set properties
+  set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
+  set_property -dict [ list \
+   CONFIG.NUM_PORTS {3} \
+ ] $xlconcat_1
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {31} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {48} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $xlslice_0
+
+  # Create instance: xlslice_1, and set properties
+  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {47} \
+   CONFIG.DIN_TO {32} \
+   CONFIG.DIN_WIDTH {48} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_1
 
   # Create interface connections
   connect_bd_intf_net -intf_net CT_DATA_1 [get_bd_intf_ports CT_DATA] [get_bd_intf_pins DATA/S_AXI]
   connect_bd_intf_net -intf_net CT_UTIL_1 [get_bd_intf_ports CT_UTIL] [get_bd_intf_pins UTIL/S_AXI]
 
   # Create port connections
-  connect_bd_net -net CTA_SPLIT_0_OUT0_0 [get_bd_pins CTA_SPLIT_0/OUT0_0] [get_bd_pins SDDR_CT_0/RESETN]
+  connect_bd_net -net CTA_SPLIT_0_OUT0_0 [get_bd_pins CTA_SPLIT_0/OUT0_0] [get_bd_pins ct_capacity_controll_0/resetn] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net CTA_SPLIT_0_OUT1_1 [get_bd_pins CTA_SPLIT_0/OUT1_1] [get_bd_pins SDDR_CT_0/FSEL]
   connect_bd_net -net CTA_SPLIT_0_OUT2_2 [get_bd_pins CTA_SPLIT_0/OUT2_2] [get_bd_pins SDDR_CT_0/BIDIR]
-  connect_bd_net -net CT_META_0_ODATA [get_bd_pins CT_META_0/ODATA] [get_bd_pins DATA/gpio_io_i]
-  connect_bd_net -net CT_META_1_ODATA [get_bd_pins CT_META_1/ODATA] [get_bd_pins DATA/gpio2_io_i]
-  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins SDDR_CT_0/MCLK]
+  connect_bd_net -net CTA_SPLIT_0_OUT3_3 [get_bd_pins CTA_SPLIT_0/OUT3_3] [get_bd_pins CT_FIFO_R_CT_0/resetn]
+  connect_bd_net -net CTA_SPLIT_0_OUT4_4 [get_bd_pins CTA_SPLIT_0/OUT4_4] [get_bd_pins CT_FIFO_R_CT_0/REQ]
+  connect_bd_net -net CT_FIFO_R_CT_0_read_en [get_bd_pins CT_FIFO_R_CT_0/read_en] [get_bd_pins fifo_generator_0/rd_en]
+  connect_bd_net -net CT_FIFO_R_CT_0_valid [get_bd_pins CT_FIFO_R_CT_0/valid] [get_bd_pins xlconcat_1/In0]
+  connect_bd_net -net MCLK_1 [get_bd_ports MCLK] [get_bd_pins CT_FIFO_R_CT_0/MCLK] [get_bd_pins SDDR_CT_0/MCLK] [get_bd_pins ct_capacity_controll_0/MCLK] [get_bd_pins fifo_generator_0/clk]
+  connect_bd_net -net Net [get_bd_pins fifo_generator_0/dout] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
   connect_bd_net -net SDDR_CT_0_ARMED [get_bd_ports ARMED] [get_bd_pins SDDR_CT_0/ARMED]
-  connect_bd_net -net SDDR_CT_0_CTIME [get_bd_pins CT_META_0/IDATA] [get_bd_pins SDDR_CT_0/CTIME]
-  connect_bd_net -net SDDR_CT_0_D0 [get_bd_pins SDDR_CT_0/D0] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net SDDR_CT_0_D1 [get_bd_pins SDDR_CT_0/D1] [get_bd_pins xlconcat_0/In1]
-  connect_bd_net -net SDDR_CT_0_DRDY [get_bd_pins SDDR_CT_0/DRDY] [get_bd_pins UTIL/gpio2_io_i]
+  connect_bd_net -net SDDR_CT_0_CTIME [get_bd_pins SDDR_CT_0/CTIME] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net SDDR_CT_0_D0 [get_bd_pins SDDR_CT_0/D0] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net SDDR_CT_0_D1 [get_bd_pins SDDR_CT_0/D1] [get_bd_pins xlconcat_0/In2]
+  connect_bd_net -net SDDR_CT_0_DRDY [get_bd_pins SDDR_CT_0/DRDY] [get_bd_pins fifo_generator_0/wr_en] [get_bd_pins util_vector_logic_2/Op1]
   connect_bd_net -net SDDR_CT_0_WAITING [get_bd_ports WAITING] [get_bd_pins SDDR_CT_0/WAITING]
   connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins SDDR_CT_0/T1]
   connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins SDDR_CT_0/T2]
-  connect_bd_net -net UTIL_gpio_io_o [get_bd_pins CTA_SPLIT_0/IN3_0] [get_bd_pins UTIL/gpio_io_o]
-  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins CT_META_0/MCLK] [get_bd_pins CT_META_1/MCLK] [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk]
-  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins CT_META_1/IDATA] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net UTIL_gpio_io_o [get_bd_pins CTA_SPLIT_0/IN4_0] [get_bd_pins UTIL/gpio_io_o]
+  connect_bd_net -net aclk_1 [get_bd_ports aclk] [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk]
+  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net ct_capacity_controll_0_run [get_bd_pins ct_capacity_controll_0/run] [get_bd_pins util_vector_logic_1/Op2]
+  connect_bd_net -net fifo_generator_0_empty [get_bd_pins ct_capacity_controll_0/empty] [get_bd_pins fifo_generator_0/empty] [get_bd_pins xlconcat_1/In1]
+  connect_bd_net -net fifo_generator_0_full [get_bd_pins ct_capacity_controll_0/full] [get_bd_pins fifo_generator_0/full] [get_bd_pins xlconcat_1/In2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins SDDR_CT_0/RESETN] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins util_vector_logic_0/Op2] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_1/Op1] [get_bd_pins util_vector_logic_2/Res]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins fifo_generator_0/srst] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins fifo_generator_0/din] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins UTIL/gpio2_io_i] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins DATA/gpio_io_i] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins DATA/gpio2_io_i] [get_bd_pins xlslice_1/Dout]
 
   # Create address segments
 

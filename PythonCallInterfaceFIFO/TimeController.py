@@ -182,32 +182,43 @@ class TimeController:
             return 0
         self.logger.info("Stopping single line inter rising edge timer")
         self.websocket.sendall("STX".encode())
-    def run_coincidence_timer(self,lineselect):
-        """
-        Run the two channel pulse coincidence timer
-        Returns
-        -------
-        :class:`float`
-            Time between detections
-        """
+
+    def start_coincidence_timer(self,lineselect):
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
         if (self.MODE != 0):
             self.logger.error("Cannot be used in high resolution mode")
             return 0
-        self.logger.info("Running two channel coincidence timer")
-        self.websocket.sendall(("CT"+str(int(lineselect))).encode())
-        while 1:
-            data = self.websocket.recv(1024).decode()
-            if(data[:2]=="CT"):
-                break
-            else:
-                self.logger.warning("Data not pertinent to coincidence timer received " + data)
-        time = data[2:]
-        self.logger.info("Coincidence Time: "+str(time))
-        return float(time)
+        self.logger.info("Starting two channel coincidence timer")
+        self.websocket.sendall(("CTS"+str(lineselect)).encode())
+    def stop_coincidence_timer(self):
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
+        self.logger.info("Stopping two channel coincidence timer")
+        self.websocket.sendall("CTX".encode())
+    def acquire_coincidence_timer_data(self):
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
+        self.logger.info("Acquiring data from coincidence timer")
 
+        while(1):
+            self.websocket.sendall("CTA".encode())
+            data=self.websocket.recv(32768).decode()
+            recdict = json.loads(data)
+            if(recdict["MOD"])!="CT":
+                self.logger.warning("Data not pertinent to two channel coincidence timer received")
+            else:
+                self.logger.debug(recdict)
+                return self.iretimer_conv_to_time(recdict)
     def start_time_tagger(self,timeout):
         """
         Activate the time tagger and continuously receive time data from the device

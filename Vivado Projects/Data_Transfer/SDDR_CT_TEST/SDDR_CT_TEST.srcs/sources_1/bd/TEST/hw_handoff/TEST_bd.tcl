@@ -174,15 +174,6 @@ proc create_root_design { parentCell } {
   set T2 [ create_bd_port -dir I -type data T2 ]
   set WAITING [ create_bd_port -dir O WAITING ]
 
-  # Create instance: DATA, and set properties
-  set DATA [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DATA ]
-  set_property -dict [ list \
-   CONFIG.C_ALL_INPUTS {1} \
-   CONFIG.C_ALL_INPUTS_2 {1} \
-   CONFIG.C_GPIO2_WIDTH {16} \
-   CONFIG.C_IS_DUAL {1} \
- ] $DATA
-
   # Create instance: ISERDES_B_0, and set properties
   set block_name ISERDES_B
   set block_cell_name ISERDES_B_0
@@ -205,22 +196,8 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: SDDR_CT_0, and set properties
-  set SDDR_CT_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_CT:1.0 SDDR_CT_0 ]
-  set_property -dict [ list \
-   CONFIG.SIG_WIDTH {4} \
- ] $SDDR_CT_0
-
-  # Create instance: UTIL, and set properties
-  set UTIL [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 UTIL ]
-  set_property -dict [ list \
-   CONFIG.C_ALL_INPUTS {0} \
-   CONFIG.C_ALL_INPUTS_2 {1} \
-   CONFIG.C_ALL_OUTPUTS {1} \
-   CONFIG.C_GPIO2_WIDTH {1} \
-   CONFIG.C_GPIO_WIDTH {3} \
-   CONFIG.C_IS_DUAL {1} \
- ] $UTIL
+  # Create instance: SDDR_CT_AXI_wrapper_0, and set properties
+  set SDDR_CT_AXI_wrapper_0 [ create_bd_cell -type ip -vlnv cri.nz:user:SDDR_CT_AXI_wrapper:1.0 SDDR_CT_AXI_wrapper_0 ]
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -228,13 +205,13 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT1_JITTER {97.841} \
    CONFIG.CLKOUT1_PHASE_ERROR {114.212} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {800} \
-   CONFIG.CLKOUT2_JITTER {111.164} \
+   CONFIG.CLKOUT2_JITTER {126.455} \
    CONFIG.CLKOUT2_PHASE_ERROR {114.212} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {400} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200} \
    CONFIG.CLKOUT2_USED {true} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {1.000} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {2} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {4} \
    CONFIG.NUM_OUT_CLKS {2} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
@@ -1031,75 +1008,37 @@ proc create_root_design { parentCell } {
    CONFIG.LOGO_FILE {data/sym_notgate.png} \
  ] $util_vector_logic_0
 
-  # Create instance: xlconcat_0, and set properties
-  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
-
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
    CONFIG.CONST_VAL {0} \
  ] $xlconstant_0
 
-  # Create instance: xlslice_0, and set properties
-  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {0} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {3} \
- ] $xlslice_0
-
-  # Create instance: xlslice_1, and set properties
-  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {1} \
-   CONFIG.DIN_TO {1} \
-   CONFIG.DIN_WIDTH {3} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_1
-
-  # Create instance: xlslice_2, and set properties
-  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {2} \
-   CONFIG.DIN_TO {2} \
-   CONFIG.DIN_WIDTH {3} \
-   CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_2
-
   # Create interface connections
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins DATA/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins UTIL/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins SDDR_CT_AXI_wrapper_0/CT_DATA] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins SDDR_CT_AXI_wrapper_0/CT_UTIL] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
 
   # Create port connections
-  connect_bd_net -net ISERDES_B_0_data_in_to_device [get_bd_pins ISERDES_B_0/data_in_to_device] [get_bd_pins SDDR_CT_0/T2]
-  connect_bd_net -net ISERDES_B_1_data_in_to_device [get_bd_pins ISERDES_B_1/data_in_to_device] [get_bd_pins SDDR_CT_0/T1]
+  connect_bd_net -net ISERDES_B_0_data_in_to_device [get_bd_pins ISERDES_B_0/data_in_to_device] [get_bd_pins SDDR_CT_AXI_wrapper_0/T1]
+  connect_bd_net -net ISERDES_B_1_data_in_to_device [get_bd_pins ISERDES_B_1/data_in_to_device] [get_bd_pins SDDR_CT_AXI_wrapper_0/T2]
   connect_bd_net -net Net [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in] [get_bd_pins util_vector_logic_0/Op1]
-  connect_bd_net -net SDDR_CT_0_ARMED [get_bd_ports ARMED] [get_bd_pins SDDR_CT_0/ARMED]
-  connect_bd_net -net SDDR_CT_0_CTIME [get_bd_pins DATA/gpio_io_i] [get_bd_pins SDDR_CT_0/CTIME]
-  connect_bd_net -net SDDR_CT_0_D0 [get_bd_pins SDDR_CT_0/D0] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net SDDR_CT_0_D1 [get_bd_pins SDDR_CT_0/D1] [get_bd_pins xlconcat_0/In1]
-  connect_bd_net -net SDDR_CT_0_DRDY [get_bd_pins SDDR_CT_0/DRDY] [get_bd_pins UTIL/gpio2_io_i]
-  connect_bd_net -net SDDR_CT_0_WAITING [get_bd_ports WAITING] [get_bd_pins SDDR_CT_0/WAITING]
+  connect_bd_net -net SDDR_CT_AXI_wrapper_0_ARMED [get_bd_ports ARMED] [get_bd_pins SDDR_CT_AXI_wrapper_0/ARMED]
+  connect_bd_net -net SDDR_CT_AXI_wrapper_0_WAITING [get_bd_ports WAITING] [get_bd_pins SDDR_CT_AXI_wrapper_0/WAITING]
   connect_bd_net -net T1_1 [get_bd_ports T1] [get_bd_pins ISERDES_B_1/data_in_from_pins]
   connect_bd_net -net T2_1 [get_bd_ports T2] [get_bd_pins ISERDES_B_0/data_in_from_pins]
-  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins UTIL/gpio_io_o] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins ISERDES_B_0/clk_in] [get_bd_pins ISERDES_B_1/clk_in] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins ISERDES_B_0/clk_div_in] [get_bd_pins ISERDES_B_1/clk_div_in] [get_bd_pins SDDR_CT_0/MCLK] [get_bd_pins clk_wiz_0/clk_out2]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DATA/s_axi_aclk] [get_bd_pins UTIL/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DATA/s_axi_aresetn] [get_bd_pins UTIL/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins ISERDES_B_0/clk_div_in] [get_bd_pins ISERDES_B_1/clk_div_in] [get_bd_pins SDDR_CT_AXI_wrapper_0/MCLK] [get_bd_pins clk_wiz_0/clk_out2]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins SDDR_CT_AXI_wrapper_0/aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins SDDR_CT_AXI_wrapper_0/aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_pins ISERDES_B_0/io_reset] [get_bd_pins ISERDES_B_1/io_reset] [get_bd_pins util_vector_logic_0/Res]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins DATA/gpio2_io_i] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins ISERDES_B_0/bitslip] [get_bd_pins ISERDES_B_1/bitslip] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins SDDR_CT_0/RESETN] [get_bd_pins xlslice_0/Dout]
-  connect_bd_net -net xlslice_1_Dout [get_bd_pins SDDR_CT_0/FSEL] [get_bd_pins xlslice_1/Dout]
-  connect_bd_net -net xlslice_2_Dout [get_bd_pins SDDR_CT_0/BIDIR] [get_bd_pins xlslice_2/Dout]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs DATA/S_AXI/Reg] SEG_DATA_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x41210000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs UTIL/S_AXI/Reg] SEG_axi_gpio_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_CT_AXI_wrapper_0/CT_DATA/reg0] SEG_SDDR_CT_AXI_wrapper_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs SDDR_CT_AXI_wrapper_0/CT_UTIL/reg0] SEG_SDDR_CT_AXI_wrapper_0_reg02
 
 
   # Restore current instance

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb  3 09:35:15 2020" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb  3 11:50:08 2020" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="SP_OV" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -95,6 +95,36 @@
         <CONNECTION INSTANCE="DESERIALIZER_B_wrapp_0" PORT="RT4"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_MIO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="MIO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="processing_system7_0_PS_SRSTB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_SRSTB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="processing_system7_0_PS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="processing_system7_0_PS_PORB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_PORB"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CAS_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_CAS_n"/>
@@ -168,36 +198,6 @@
     <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_p" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_DQS">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_DQS"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_MIO">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="MIO"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRN">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRP">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRP"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="processing_system7_0_PS_SRSTB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_SRSTB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="processing_system7_0_PS_CLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_CLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="processing_system7_0_PS_PORB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_PORB"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -2366,8 +2366,8 @@
         <PORT DIR="O" LEFT="7" NAME="OT1" RIGHT="0" SIGIS="undef" SIGNAME="DESERIALIZER_B_wrapp_0_OT1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SDDR_TT_AXI_wrapper_0" PORT="T1"/>
-            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="T1"/>
             <CONNECTION INSTANCE="SDDR_AXI_ST_wrapper_0" PORT="T1"/>
+            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="T1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="OT2" RIGHT="0" SIGIS="undef" SIGNAME="DESERIALIZER_B_wrapp_0_OT2">
@@ -3161,9 +3161,9 @@
         <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="DESERIALIZER_CLOCK_clk_out2">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SDDR_TT_AXI_wrapper_0" PORT="MCLK"/>
-            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="MCLK"/>
             <CONNECTION INSTANCE="DESERIALIZER_B_wrapp_0" PORT="MCLK"/>
             <CONNECTION INSTANCE="SDDR_AXI_ST_wrapper_0" PORT="MCLK"/>
+            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="MCLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="DESERIALIZER_CLOCK_locked">
@@ -7820,6 +7820,93 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M17_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M17_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M17_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M17_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M17_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M17_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M17_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M17_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M17_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M17_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M17_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M17_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M17_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M17_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M17_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M17_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M17_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M17_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M17_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M18_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_util_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="util_awaddr"/>
@@ -8864,455 +8951,178 @@
             <CONNECTION INSTANCE="DESERIALIZER_B_wrapp_0" PORT="IDELAY_DEBUG_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awid">
+        <PORT DIR="O" LEFT="31" NAME="M15_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awaddr">
+        <PORT DIR="O" NAME="M15_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M15_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWADDR"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awlen">
+        <PORT DIR="I" LEFT="0" NAME="M15_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWLEN"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S00_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awsize">
+        <PORT DIR="O" LEFT="31" NAME="M15_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWSIZE"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S00_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awburst">
+        <PORT DIR="O" LEFT="3" NAME="M15_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWBURST"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S00_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awlock">
+        <PORT DIR="O" LEFT="0" NAME="M15_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWLOCK"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awcache">
+        <PORT DIR="I" LEFT="0" NAME="M15_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWCACHE"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S00_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awprot">
+        <PORT DIR="I" LEFT="1" NAME="M15_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWPROT"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_awqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awqos">
+        <PORT DIR="I" LEFT="0" NAME="M15_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWQOS"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_awvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M15_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWVALID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S00_AXI_awready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awready">
+        <PORT DIR="O" LEFT="31" NAME="M15_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWREADY"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="S00_AXI_wid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wid">
+        <PORT DIR="O" NAME="M15_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M15_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wdata">
+        <PORT DIR="I" LEFT="0" NAME="M15_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WDATA"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wstrb">
+        <PORT DIR="I" LEFT="31" NAME="M15_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WSTRB"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_wlast" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wlast">
+        <PORT DIR="I" LEFT="1" NAME="M15_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WLAST"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_wvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wvalid">
+        <PORT DIR="I" LEFT="0" NAME="M15_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WVALID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S00_AXI_wready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wready">
+        <PORT DIR="O" LEFT="0" NAME="M15_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WREADY"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="11" NAME="S00_AXI_bid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bid">
+        <PORT DIR="O" LEFT="31" NAME="M16_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bresp">
+        <PORT DIR="O" NAME="M16_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M16_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BRESP"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S00_AXI_bvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M16_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BVALID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_bready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bready">
+        <PORT DIR="O" LEFT="31" NAME="M16_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BREADY"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="S00_AXI_arid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arid">
+        <PORT DIR="O" LEFT="3" NAME="M16_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="S00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_araddr">
+        <PORT DIR="O" LEFT="0" NAME="M16_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARADDR"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arlen">
+        <PORT DIR="I" LEFT="0" NAME="M16_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARLEN"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arsize">
+        <PORT DIR="I" LEFT="1" NAME="M16_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARSIZE"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S00_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arburst">
+        <PORT DIR="I" LEFT="0" NAME="M16_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARBURST"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S00_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arlock">
+        <PORT DIR="O" LEFT="0" NAME="M16_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARLOCK"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arcache">
+        <PORT DIR="O" LEFT="31" NAME="M16_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARCACHE"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arprot">
+        <PORT DIR="O" NAME="M16_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M16_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARPROT"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arqos">
+        <PORT DIR="I" LEFT="0" NAME="M16_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARQOS"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_arvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arvalid">
+        <PORT DIR="I" LEFT="31" NAME="M16_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARVALID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S00_AXI_arready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arready">
+        <PORT DIR="I" LEFT="1" NAME="M16_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARREADY"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="11" NAME="S00_AXI_rid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rid">
+        <PORT DIR="I" LEFT="0" NAME="M16_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RID"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="S00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rdata">
+        <PORT DIR="O" LEFT="0" NAME="M16_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S00_AXI_rlast" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RLAST"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S00_AXI_rvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S00_AXI_rready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data1_awaddr">
@@ -9576,267 +9386,6 @@
             <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data3_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M06_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M06_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M06_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M06_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M06_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M06_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M06_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M06_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M06_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M06_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M07_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M07_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M07_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M07_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M07_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M07_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M07_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M07_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M07_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M07_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M08_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M08_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M08_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M08_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M08_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M08_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M08_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M08_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M08_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M08_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M08_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M08_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M08_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M08_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M08_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M08_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M08_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M08_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M08_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M09_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util3_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util3_awaddr"/>
@@ -9922,354 +9471,6 @@
         <PORT DIR="O" LEFT="0" NAME="M09_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util3_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util3_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M10_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M10_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M10_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M10_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M10_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M10_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M10_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M10_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M10_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M10_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M10_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M10_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M10_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M10_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M10_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M10_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M10_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M10_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M10_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M11_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M11_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M11_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M11_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M11_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M11_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M11_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M11_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M11_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M11_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M11_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M11_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M11_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M11_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M11_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M11_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M11_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M11_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M11_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M12_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M12_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M12_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M12_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M12_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M12_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M12_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M12_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M12_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M12_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M12_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M12_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M12_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M12_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M12_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M12_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M12_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M12_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M12_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M13_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M13_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M13_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M13_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M13_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M13_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M13_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M13_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M13_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M13_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M13_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M13_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M13_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M13_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M13_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M13_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M13_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M13_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M13_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M14_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_0_awaddr">
@@ -10359,265 +9560,1064 @@
             <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_0_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M15_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M13_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_awaddr"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M15_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_awvalid">
+        <PORT DIR="O" NAME="M13_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M13_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_awvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_awready">
+        <PORT DIR="I" LEFT="0" NAME="M13_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_awready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M15_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M13_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wdata"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M15_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M13_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wstrb"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M13_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_wready">
+        <PORT DIR="I" LEFT="0" NAME="M13_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_wready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M15_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M13_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_bresp"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M13_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_bvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_bready">
+        <PORT DIR="O" LEFT="0" NAME="M13_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_bready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M15_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M13_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_araddr"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M15_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_arvalid">
+        <PORT DIR="O" NAME="M13_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M13_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_arvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_arready">
+        <PORT DIR="I" LEFT="0" NAME="M13_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_arready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M15_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M13_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rdata"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M15_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M13_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rresp"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M13_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_1_rready">
+        <PORT DIR="O" LEFT="0" NAME="M13_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_3_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_1_rready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_3_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M16_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M12_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_awaddr"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M16_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M16_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_awvalid">
+        <PORT DIR="O" NAME="M12_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M12_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_awvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M16_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_awready">
+        <PORT DIR="I" LEFT="0" NAME="M12_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_awready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M16_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M12_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wdata"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M16_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M12_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wstrb"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M16_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M12_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M16_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_wready">
+        <PORT DIR="I" LEFT="0" NAME="M12_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_wready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M16_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M12_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_bresp"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M16_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M12_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_bvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M16_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_bready">
+        <PORT DIR="O" LEFT="0" NAME="M12_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_bready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M16_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M12_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_araddr"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M16_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M16_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_arvalid">
+        <PORT DIR="O" NAME="M12_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M12_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_arvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M16_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_arready">
+        <PORT DIR="I" LEFT="0" NAME="M12_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_arready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M16_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M12_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rdata"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M16_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M12_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rresp"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M16_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M12_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M16_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_2_rready">
+        <PORT DIR="O" LEFT="0" NAME="M12_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_2_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_2_rready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_2_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M17_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M11_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_awaddr"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M17_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M17_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_awvalid">
+        <PORT DIR="O" NAME="M11_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M11_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_awvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M17_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_awready">
+        <PORT DIR="I" LEFT="0" NAME="M11_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_awready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M17_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M11_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wdata"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M17_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M11_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wstrb"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M17_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M11_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M17_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_wready">
+        <PORT DIR="I" LEFT="0" NAME="M11_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_wready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M17_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M11_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_bresp"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M17_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M11_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_bvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M17_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_bready">
+        <PORT DIR="O" LEFT="0" NAME="M11_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_bready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M17_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M11_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_araddr"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M17_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M17_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_arvalid">
+        <PORT DIR="O" NAME="M11_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M11_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_arvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M17_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_arready">
+        <PORT DIR="I" LEFT="0" NAME="M11_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_arready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M17_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M11_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rdata"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M17_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M11_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rresp"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M17_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M11_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rvalid"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M17_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_ph_3_rready">
+        <PORT DIR="O" LEFT="0" NAME="M11_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_1_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="ph_3_rready"/>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_1_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M10_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M10_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M10_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M10_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M10_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M10_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M10_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M10_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M10_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M10_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M10_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M10_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M10_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M10_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M10_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M10_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M10_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M10_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M10_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="DDS_AXI_PERIPH_wrapp_0_aux_0_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DDS_AXI_PERIPH_wrapp_0" PORT="aux_0_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_data_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="data_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="T_UTIL_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_UTIL" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="T_RDY_U_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="T_RDY_U" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="S00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWLEN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S00_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWSIZE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S00_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWBURST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S00_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awlock">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWLOCK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWCACHE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S00_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWPROT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_awqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awqos">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWQOS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_awvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_awready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_AWREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="S00_AXI_wid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="S00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WSTRB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_wlast" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_wvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_wready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_WREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="S00_AXI_bid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="S00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_bvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_bready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_BREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="S00_AXI_arid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="S00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARLEN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARSIZE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S00_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARBURST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S00_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arlock">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARLOCK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARCACHE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARPROT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arqos">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARQOS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_arvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_arready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="S00_AXI_rid" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="S00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="S00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_rlast" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_rvalid" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_rready" SIGIS="undef" SIGNAME="axi_interconnect_0_S00_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M08_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M08_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M08_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M08_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M08_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M08_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M08_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M08_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M08_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M08_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M08_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M08_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M08_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M08_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M08_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M08_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M08_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M08_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M08_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util2_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util2_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M07_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M07_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M07_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M07_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M07_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M07_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M07_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M07_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M07_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M07_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util1_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util1_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M06_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M06_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M06_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M06_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M06_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M06_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M06_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M06_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M06_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M06_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="P_COUNTER_wrapper_0_util_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="P_COUNTER_wrapper_0" PORT="util_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -12539,10 +12539,10 @@
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M28_ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="SDDR_TT_AXI_wrapper_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="aclk"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M29_ACLK"/>
             <CONNECTION INSTANCE="DESERIALIZER_B_wrapp_0" PORT="aclk"/>
             <CONNECTION INSTANCE="SDDR_AXI_ST_wrapper_0" PORT="aclk"/>
+            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -12903,10 +12903,10 @@
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M28_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="SDDR_TT_AXI_wrapper_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M29_ARESETN"/>
             <CONNECTION INSTANCE="DESERIALIZER_B_wrapp_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="SDDR_AXI_ST_wrapper_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="SDDR_CT_AXI_wrapper_0" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

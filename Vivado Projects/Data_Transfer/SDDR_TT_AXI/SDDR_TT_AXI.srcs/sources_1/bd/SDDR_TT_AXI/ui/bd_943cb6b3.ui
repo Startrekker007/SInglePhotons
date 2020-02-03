@@ -2,59 +2,88 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port TT_CONFIG -pg 1 -lvl 0 -x -10 -y 680 -defaultsOSRD
-preplace port TT_DATA0 -pg 1 -lvl 0 -x -10 -y 70 -defaultsOSRD
-preplace port TT_DATA1 -pg 1 -lvl 0 -x -10 -y 250 -defaultsOSRD
-preplace port TT_DELAY -pg 1 -lvl 0 -x -10 -y 450 -defaultsOSRD
-preplace port TT_UTIL -pg 1 -lvl 0 -x -10 -y 610 -defaultsOSRD
-preplace port waiting -pg 1 -lvl 4 -x 1060 -y 1120 -defaultsOSRD
-preplace port listening -pg 1 -lvl 4 -x 1060 -y 1100 -defaultsOSRD
-preplace port aclk -pg 1 -lvl 0 -x -10 -y 700 -defaultsOSRD
-preplace port aresetn -pg 1 -lvl 0 -x -10 -y 720 -defaultsOSRD
-preplace port MCLK -pg 1 -lvl 0 -x -10 -y 910 -defaultsOSRD
-preplace portBus T0 -pg 1 -lvl 0 -x -10 -y 950 -defaultsOSRD
-preplace portBus T1 -pg 1 -lvl 0 -x -10 -y 970 -defaultsOSRD
-preplace portBus T2 -pg 1 -lvl 0 -x -10 -y 990 -defaultsOSRD
-preplace portBus T3 -pg 1 -lvl 0 -x -10 -y 1010 -defaultsOSRD
-preplace portBus T4 -pg 1 -lvl 0 -x -10 -y 1030 -defaultsOSRD
-preplace inst DATA0 -pg 1 -lvl 3 -x 820 -y 90 -defaultsOSRD
-preplace inst DATA1 -pg 1 -lvl 3 -x 820 -y 270 -defaultsOSRD
-preplace inst DELAY -pg 1 -lvl 3 -x 820 -y 470 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 3 -x 820 -y 990 -defaultsOSRD
-preplace inst TT_CONFIG -pg 1 -lvl 1 -x 170 -y 700 -defaultsOSRD
-preplace inst UTIL -pg 1 -lvl 3 -x 820 -y 630 -defaultsOSRD
-preplace inst SDDR_TT_0 -pg 1 -lvl 2 -x 460 -y 980 -defaultsOSRD
-preplace netloc T0_1 1 0 2 NJ 950 NJ
-preplace netloc T1_1 1 0 2 NJ 970 NJ
-preplace netloc T2_1 1 0 2 NJ 990 NJ
-preplace netloc T3_1 1 0 2 NJ 1010 NJ
-preplace netloc T4_1 1 0 2 NJ 1030 NJ
-preplace netloc SDDR_TT_0_T1 1 2 2 N 860 980
-preplace netloc SDDR_TT_0_T2 1 2 2 N 880 1030
-preplace netloc SDDR_TT_0_T3 1 2 2 600 890 1020
-preplace netloc SDDR_TT_0_T4 1 2 2 620 900 1010
-preplace netloc SDDR_TT_0_D1 1 2 1 N 960
-preplace netloc SDDR_TT_0_D2 1 2 1 N 980
-preplace netloc SDDR_TT_0_D3 1 2 1 N 1000
-preplace netloc SDDR_TT_0_D4 1 2 1 N 1020
-preplace netloc xlconcat_0_dout 1 3 1 1000 460n
-preplace netloc SDDR_TT_0_D0 1 2 2 610J 870 960
-preplace netloc TT_CONFIG_gpio_io_o 1 1 1 320 690n
-preplace netloc TT_CONFIG_gpio2_io_o 1 1 1 310 730n
-preplace netloc SDDR_TT_0_DRDY 1 2 2 620J 1080 970
-preplace netloc SDDR_TT_0_TIMEOUTS 1 2 2 610J 1090 990
-preplace netloc SDDR_TT_0_ttlisten 1 2 2 NJ 1100 NJ
-preplace netloc SDDR_TT_0_ttwait 1 2 2 600J 1120 NJ
-preplace netloc aclk_1 1 0 3 10 590 NJ 590 600
-preplace netloc aresetn_1 1 0 3 20 600 NJ 600 620
-preplace netloc MCLK_1 1 0 2 NJ 910 NJ
-preplace netloc TT_DATA0_1 1 0 3 NJ 70 NJ 70 NJ
-preplace netloc TT_DATA1_1 1 0 3 NJ 250 NJ 250 NJ
-preplace netloc TT_DELAY_1 1 0 3 NJ 450 NJ 450 NJ
-preplace netloc TT_CONFIG_1 1 0 1 NJ 680
-preplace netloc TT_UTIL_1 1 0 3 NJ 610 NJ 610 NJ
-levelinfo -pg 1 -10 170 460 820 1060
-pagesize -pg 1 -db -bbox -sgen -140 0 1170 1160
+preplace port TT_CONFIG -pg 1 -lvl 0 -x 0 -y 1270 -defaultsOSRD
+preplace port TT_DATA0 -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port TT_DATA1 -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
+preplace port TT_DELAY -pg 1 -lvl 0 -x 0 -y 610 -defaultsOSRD
+preplace port TT_UTIL -pg 1 -lvl 0 -x 0 -y 770 -defaultsOSRD
+preplace port waiting -pg 1 -lvl 7 -x 1970 -y 1170 -defaultsOSRD
+preplace port listening -pg 1 -lvl 7 -x 1970 -y 1150 -defaultsOSRD
+preplace port aclk -pg 1 -lvl 0 -x 0 -y 1290 -defaultsOSRD
+preplace port aresetn -pg 1 -lvl 0 -x 0 -y 1310 -defaultsOSRD
+preplace port MCLK -pg 1 -lvl 0 -x 0 -y 970 -defaultsOSRD
+preplace portBus T0 -pg 1 -lvl 0 -x 0 -y 1010 -defaultsOSRD
+preplace portBus T1 -pg 1 -lvl 0 -x 0 -y 1030 -defaultsOSRD
+preplace portBus T2 -pg 1 -lvl 0 -x 0 -y 1050 -defaultsOSRD
+preplace portBus T3 -pg 1 -lvl 0 -x 0 -y 1070 -defaultsOSRD
+preplace portBus T4 -pg 1 -lvl 0 -x 0 -y 1090 -defaultsOSRD
+preplace inst DATA0 -pg 1 -lvl 4 -x 1080 -y 90 -defaultsOSRD
+preplace inst DATA1 -pg 1 -lvl 4 -x 1080 -y 250 -defaultsOSRD
+preplace inst DELAY -pg 1 -lvl 4 -x 1080 -y 630 -defaultsOSRD
+preplace inst TT_CONFIG -pg 1 -lvl 1 -x 180 -y 1290 -defaultsOSRD
+preplace inst UTIL -pg 1 -lvl 4 -x 1080 -y 790 -defaultsOSRD
+preplace inst SDDR_TT_0 -pg 1 -lvl 3 -x 720 -y 1040 -defaultsOSRD
+preplace inst fifo_generator_0 -pg 1 -lvl 5 -x 1470 -y 1430 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 4 -x 1080 -y 1010 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 1 -x 180 -y 1580 -defaultsOSRD
+preplace inst tt_capacity_controll_0 -pg 1 -lvl 3 -x 720 -y 1450 -defaultsOSRD
+preplace inst write_clocker_0 -pg 1 -lvl 4 -x 1080 -y 1470 -defaultsOSRD
+preplace inst TT_FIFO_R_CT_0 -pg 1 -lvl 3 -x 720 -y 1300 -defaultsOSRD
+preplace inst TT_FIFO_SPLIT_0 -pg 1 -lvl 4 -x 1080 -y 440 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 2 -x 430 -y 1520 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 2 -x 430 -y 1320 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 2 -x 430 -y 1420 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 4 -x 1080 -y 1270 -defaultsOSRD
+preplace netloc T0_1 1 0 3 NJ 1010 NJ 1010 NJ
+preplace netloc T1_1 1 0 3 NJ 1030 NJ 1030 NJ
+preplace netloc T2_1 1 0 3 NJ 1050 NJ 1050 NJ
+preplace netloc T3_1 1 0 3 NJ 1070 NJ 1070 NJ
+preplace netloc T4_1 1 0 3 NJ 1090 NJ 1090 NJ
+preplace netloc TT_CONFIG_gpio_io_o 1 1 2 330J 1260 550
+preplace netloc TT_CONFIG_gpio2_io_o 1 2 2 560 1550 900J
+preplace netloc aclk_1 1 0 4 20 790 NJ 790 NJ 790 860
+preplace netloc aresetn_1 1 0 4 30 810 NJ 810 NJ 810 870
+preplace netloc MCLK_1 1 0 5 NJ 970 NJ 970 540 1570 890 1580 1270J
+preplace netloc xlconcat_1_dout 1 4 1 1280 1010n
+preplace netloc SDDR_TT_0_T1 1 3 1 N 920
+preplace netloc SDDR_TT_0_T2 1 3 1 N 940
+preplace netloc SDDR_TT_0_T3 1 3 1 N 960
+preplace netloc SDDR_TT_0_T4 1 3 1 N 980
+preplace netloc SDDR_TT_0_D0 1 3 1 860 1000n
+preplace netloc SDDR_TT_0_D1 1 3 1 870 1000n
+preplace netloc SDDR_TT_0_D2 1 3 1 880 1020n
+preplace netloc SDDR_TT_0_D3 1 3 1 890 1040n
+preplace netloc SDDR_TT_0_D4 1 3 1 910 1060n
+preplace netloc fifo_generator_0_dout 1 3 2 920 1560 1260J
+preplace netloc TT_FIFO_SPLIT_0_D1_4 1 4 1 1260 460n
+preplace netloc TT_FIFO_SPLIT_0_D0 1 4 1 1250 480n
+preplace netloc TT_FIFO_SPLIT_0_T1 1 4 1 1280 80n
+preplace netloc TT_FIFO_SPLIT_0_T2 1 4 1 1260 120n
+preplace netloc TT_FIFO_SPLIT_0_T3 1 4 1 1250 240n
+preplace netloc TT_FIFO_SPLIT_0_T4 1 4 1 1240 280n
+preplace netloc util_vector_logic_0_Res 1 1 4 NJ 1580 NJ 1580 860J 1590 1280J
+preplace netloc SDDR_TT_0_DRDY 1 3 1 870 1100n
+preplace netloc tt_capacity_controll_0_run 1 3 1 860 1450n
+preplace netloc write_clocker_0_wr_en 1 4 1 1230 1400n
+preplace netloc fifo_generator_0_full 1 2 3 570 1540 880 1360 NJ
+preplace netloc fifo_generator_0_empty 1 2 3 580 1560 910 1570 1250J
+preplace netloc TT_FIFO_SPLIT_0_TIMEOUTS 1 4 1 1240 500n
+preplace netloc TT_FIFO_R_CT_0_read_en 1 3 2 860 1350 1240J
+preplace netloc TT_CONFIG_gpio2_io_o1 1 1 1 330 1320n
+preplace netloc xlslice_1_Dout 1 2 1 N 1320
+preplace netloc xlslice_2_Dout 1 2 1 530 1300n
+preplace netloc SDDR_TT_0_TIMEOUTS 1 3 1 890 1100n
+preplace netloc SDDR_TT_0_ttwait 1 3 4 890J 1170 NJ 1170 NJ 1170 N
+preplace netloc SDDR_TT_0_ttlisten 1 3 4 NJ 1160 NJ 1160 NJ 1160 1830
+preplace netloc TT_FIFO_R_CT_0_valid 1 3 1 N 1290
+preplace netloc xlconcat_0_dout 1 4 1 1240 820n
+preplace netloc TT_CONFIG_1 1 0 1 NJ 1270
+preplace netloc TT_UTIL_1 1 0 4 NJ 770 NJ 770 NJ 770 NJ
+preplace netloc TT_DATA0_1 1 0 4 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc TT_DATA1_1 1 0 4 NJ 230 NJ 230 NJ 230 NJ
+preplace netloc TT_DELAY_1 1 0 4 NJ 610 NJ 610 NJ 610 NJ
+levelinfo -pg 1 0 180 430 720 1080 1470 1810 1970
+pagesize -pg 1 -db -bbox -sgen -130 0 2080 1640
 "
 }
 0

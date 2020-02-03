@@ -131,6 +131,10 @@ class SP_TOOLS:
         plog.info("STUTIL -- "+hex(axi_base_addr + (axi_offset * axi_range)))
         axi_offset+=1
         ##Initialize interchannel coincidence timer
+        self.CT_FIFO_BUFFER = []
+        self.CT_loaded_count = 0
+        for i in range(FIFO_DEPTH):
+            self.CT_FIFO_BUFFER.append(0)
         self.CT_DATA = MMIO(axi_base_addr + axi_offset*axi_range,axi_range)
         plog.info("CTDAT -- "+hex(axi_base_addr + (axi_offset * axi_range)))
         axi_offset+=1
@@ -382,40 +386,63 @@ class SP_TOOLS:
 
     ####----------------------------------------------------------------------------------####
     ####------------------Two channel photon coincidence timer----------------------------####
-    def ct_arm_and_wait(self,mode):
-        """Arm two channel rising edge coincidence timer and hang until time data is ready (On channel 0 and 1)
-
-        Parameters
-        ----------
-        mode : :class:`int`
-            Defines which channel to listen for start rising edge or either (0,1 or 2)
-
-        Returns
-        -------
-        :class:`float`
-            Time between rising edges (in seconds)
-
-        """
-        print("Starting CT")
-        #Set which channel the hardware is listening to for the start pulse and take the submodule out of reset enabling it
-        if(mode == int(LineSelectMode.DONTCARE)):
-            self.CT_UTIL.write(0x0,self.CT_UTIL.read(0x0)|0b100)
+    def ct_start(self,mode):
+        if(mode!= 2):
+            self.ct_set_fsel(mode)
+            self.ct_set_bidir(0)
         else:
-            self.CT_UTIL.write(0x0, self.CT_UTIL.read(0x0) & 0b001)
-            self.CT_UTIL.write(0x0,self.CT_UTIL.read(0x0) | (int(mode) << 1))
-        self.CT_UTIL.write(0x0,self.CT_UTIL.read(0x0) | 0b1)
-        #Wait for the coincidence time to be ready (waits until the second pulse)
-        while(self.CT_UTIL.read(ch2_data))==0:
-            pass
-        #Read coarse time
-        sleep(0.1)
-        coarse_time = self.CT_DATA.read(ch1_data)/DET_REF_CLK
-        finetimeconcat = self.CT_DATA.read(ch2_data)#Read fine times
-        #Include fine time offsets with the coarse time
-        ftime0 = finetimeconcat & 0xFF
-        ftime1 = (finetimeconcat & 0xFF00) >> 8
-        self.CT_UTIL.write(ch1_data,self.CT_UTIL.read(0x0) &0b110)#Disable coincidence timer by placing it in reset
-        return coarse_time + (ftime0-ftime1)*FTIME
+            self.ct_set_bidir(1)
+        self.ct_set_mreset(1)
+    def ct_stop(self):
+        self.ct_set_mreset(0)
+    def ct_flush_buffer(self):
+        for i in range(FIFO_DEPTH):
+            self.CT_FIFO_BUFFER[i]=0
+        self.loaded_count=0
+    def ct_proc(self):
+        self.ct_read2048()
+        return {"MOD":"CT","LEN":self.loaded_count,"DAT":self.CT_FIFO_BUFFER}
+    def ct_read2048(self):
+        if(self.ct_read_empty()==1):
+            return
+        for i in range(FIFO_DEPTH):
+            if(self.ct_read_empty()==1):
+                self.loaded_count=i
+                return
+            self.ct_set_dreset(1)
+            self.ct_set_req(1)
+            while(self.ct_read_drdy()==0):
+                pass
+            self.CT_FIFO_BUFFER[i]=self.ct_read_coarse() | self.ct_read_fine() << 32
+            #print(self.loaded_data[i]&0xFFFFFFFF)
+            self.ct_set_req(0)
+            self.ct_set_dreset(0)
+        self.loaded_count=FIFO_DEPTH
+    def ct_read_coarse(self):
+        return self.CT_DATA.read(0x0)
+    def ct_read_fine(self):
+        return self.CT_DATA.read(0x8)
+    def ct_set_fsel(self,val):
+        lastval = self.CT_UTIL.read(0x0) & 0b11101
+        self.CT_UTIL.write(0x0,lastval | ((val<<1)&0b10))
+    def ct_set_bidir(self,val):
+        lastval = self.CT_UTIL.read(0x0) & 0b11011
+        self.CT_UTIL.write(0x0,lastval | ((val<<2)&0b100))
+    def ct_read_drdy(self):
+        return self.CT_UTIL.read(0x8) & 0b1
+    def ct_read_empty(self):
+        return (self.CT_UTIL.read(0x8) & 0b10)>>1
+    def ct_read_full(self):
+        return (self.CT_UTIL.read(0x8) & 0b100)>>1
+    def ct_set_mreset(self,val):
+        lastval = self.CT_UTIL.read(0x0) & 0b11110
+        self.CT_UTIL.write(0x0,lastval | (val&0b1))
+    def ct_set_req(self,val):
+        lastval = self.CT_UTIL.read(0x0) & 0b01111
+        self.CT_UTIL.write(0x0, lastval | ((val<<4) & 0b10000))
+    def ct_set_dreset(self,val):
+        lastval = self.CT_UTIL.read(0x0) & 0b10111
+        self.CT_UTIL.write(0x0, lastval | ((val<<3) & 0b1000))
     ####---------------------Signal generator---------------------------------------------####
 
     def pg_disable(self):

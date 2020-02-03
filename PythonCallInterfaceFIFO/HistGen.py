@@ -20,7 +20,7 @@ histplot.setRange(QtCore.QRectF(0, 0, 1000e-9, 1000))
 histplot.setLabel('bottom', 'Interval', units='s')
 histplot.setLabel('left', 'Counts', units='')
 SPT = TimeController("169.254.0.1",6050,0)
-SPT.start_iretimer()
+SPT.start_coincidence_timer(0)
 y,x = np.histogram(data[:curIndex],bins=np.linspace(0,1000e-9,1000))
 temp = histplot.plot(x, y, stepMode=True, fillLevel=0, fillOutline=True, brush=(0,0,255,150))
 def updatePlot():
@@ -33,11 +33,11 @@ def acquireData():
     global data,curIndex,size,SPT
     while True:
         if(curIndex>=size):
-            SPT.stop_ire_timer()
+            SPT.stop_coincidence_timer()
             logger.info("Data acquisition complete")
             break
         logger.info("Acquiring data...")
-        times = SPT.acquire_iretimer_data()
+        times = SPT.acquire_coincidence_timer_data()
 
         if(curIndex+len(times) > size):
             data[curIndex:size] = times[0:(size-curIndex)]

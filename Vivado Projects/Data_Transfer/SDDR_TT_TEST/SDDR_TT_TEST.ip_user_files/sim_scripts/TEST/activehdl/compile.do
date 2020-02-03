@@ -7,10 +7,13 @@ vlib activehdl/xpm
 vlib activehdl/axi_infrastructure_v1_1_0
 vlib activehdl/axi_vip_v1_1_5
 vlib activehdl/processing_system7_vip_v1_0_7
-vlib activehdl/axi_lite_ipif_v3_0_4
+vlib activehdl/generic_baseblocks_v2_1_0
+vlib activehdl/axi_register_slice_v2_1_19
+vlib activehdl/fifo_generator_v13_2_4
+vlib activehdl/axi_data_fifo_v2_1_18
+vlib activehdl/axi_crossbar_v2_1_20
 vlib activehdl/lib_cdc_v1_0_2
-vlib activehdl/interrupt_control_v3_1_4
-vlib activehdl/axi_gpio_v2_0_21
+vlib activehdl/proc_sys_reset_v5_0_13
 vlib activehdl/xbip_utils_v3_0_10
 vlib activehdl/c_reg_fd_v12_0_6
 vlib activehdl/xbip_dsp48_wrapper_v3_0_4
@@ -21,15 +24,13 @@ vlib activehdl/c_addsub_v12_0_13
 vlib activehdl/c_gate_bit_v12_0_6
 vlib activehdl/xbip_counter_v3_0_6
 vlib activehdl/c_counter_binary_v12_0_13
-vlib activehdl/util_vector_logic_v2_0_1
-vlib activehdl/xlconstant_v1_1_6
+vlib activehdl/axi_lite_ipif_v3_0_4
+vlib activehdl/interrupt_control_v3_1_4
+vlib activehdl/axi_gpio_v2_0_21
 vlib activehdl/xlconcat_v2_1_3
-vlib activehdl/generic_baseblocks_v2_1_0
-vlib activehdl/axi_register_slice_v2_1_19
-vlib activehdl/fifo_generator_v13_2_4
-vlib activehdl/axi_data_fifo_v2_1_18
-vlib activehdl/axi_crossbar_v2_1_20
-vlib activehdl/proc_sys_reset_v5_0_13
+vlib activehdl/util_vector_logic_v2_0_1
+vlib activehdl/xlslice_v1_0_2
+vlib activehdl/xlconstant_v1_1_6
 vlib activehdl/axi_protocol_converter_v2_1_19
 
 vmap xilinx_vip activehdl/xilinx_vip
@@ -38,10 +39,13 @@ vmap xpm activehdl/xpm
 vmap axi_infrastructure_v1_1_0 activehdl/axi_infrastructure_v1_1_0
 vmap axi_vip_v1_1_5 activehdl/axi_vip_v1_1_5
 vmap processing_system7_vip_v1_0_7 activehdl/processing_system7_vip_v1_0_7
-vmap axi_lite_ipif_v3_0_4 activehdl/axi_lite_ipif_v3_0_4
+vmap generic_baseblocks_v2_1_0 activehdl/generic_baseblocks_v2_1_0
+vmap axi_register_slice_v2_1_19 activehdl/axi_register_slice_v2_1_19
+vmap fifo_generator_v13_2_4 activehdl/fifo_generator_v13_2_4
+vmap axi_data_fifo_v2_1_18 activehdl/axi_data_fifo_v2_1_18
+vmap axi_crossbar_v2_1_20 activehdl/axi_crossbar_v2_1_20
 vmap lib_cdc_v1_0_2 activehdl/lib_cdc_v1_0_2
-vmap interrupt_control_v3_1_4 activehdl/interrupt_control_v3_1_4
-vmap axi_gpio_v2_0_21 activehdl/axi_gpio_v2_0_21
+vmap proc_sys_reset_v5_0_13 activehdl/proc_sys_reset_v5_0_13
 vmap xbip_utils_v3_0_10 activehdl/xbip_utils_v3_0_10
 vmap c_reg_fd_v12_0_6 activehdl/c_reg_fd_v12_0_6
 vmap xbip_dsp48_wrapper_v3_0_4 activehdl/xbip_dsp48_wrapper_v3_0_4
@@ -52,15 +56,13 @@ vmap c_addsub_v12_0_13 activehdl/c_addsub_v12_0_13
 vmap c_gate_bit_v12_0_6 activehdl/c_gate_bit_v12_0_6
 vmap xbip_counter_v3_0_6 activehdl/xbip_counter_v3_0_6
 vmap c_counter_binary_v12_0_13 activehdl/c_counter_binary_v12_0_13
-vmap util_vector_logic_v2_0_1 activehdl/util_vector_logic_v2_0_1
-vmap xlconstant_v1_1_6 activehdl/xlconstant_v1_1_6
+vmap axi_lite_ipif_v3_0_4 activehdl/axi_lite_ipif_v3_0_4
+vmap interrupt_control_v3_1_4 activehdl/interrupt_control_v3_1_4
+vmap axi_gpio_v2_0_21 activehdl/axi_gpio_v2_0_21
 vmap xlconcat_v2_1_3 activehdl/xlconcat_v2_1_3
-vmap generic_baseblocks_v2_1_0 activehdl/generic_baseblocks_v2_1_0
-vmap axi_register_slice_v2_1_19 activehdl/axi_register_slice_v2_1_19
-vmap fifo_generator_v13_2_4 activehdl/fifo_generator_v13_2_4
-vmap axi_data_fifo_v2_1_18 activehdl/axi_data_fifo_v2_1_18
-vmap axi_crossbar_v2_1_20 activehdl/axi_crossbar_v2_1_20
-vmap proc_sys_reset_v5_0_13 activehdl/proc_sys_reset_v5_0_13
+vmap util_vector_logic_v2_0_1 activehdl/util_vector_logic_v2_0_1
+vmap xlslice_v1_0_2 activehdl/xlslice_v1_0_2
+vmap xlconstant_v1_1_6 activehdl/xlconstant_v1_1_6
 vmap axi_protocol_converter_v2_1_19 activehdl/axi_protocol_converter_v2_1_19
 
 vlog -work xilinx_vip  -sv2k12 "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
@@ -93,97 +95,6 @@ vlog -work processing_system7_vip_v1_0_7  -sv2k12 "+incdir+../../../../SDDR_TT_T
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/TEST/ip/TEST_processing_system7_0_0/sim/TEST_processing_system7_0_0.v" \
 
-vcom -work axi_lite_ipif_v3_0_4 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
-
-vcom -work lib_cdc_v1_0_2 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
-
-vcom -work interrupt_control_v3_1_4 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
-
-vcom -work axi_gpio_v2_0_21 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/TEST/ip/TEST_axi_gpio_0_0/sim/TEST_axi_gpio_0_0.vhd" \
-
-vcom -work xbip_utils_v3_0_10 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
-
-vcom -work c_reg_fd_v12_0_6 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
-
-vcom -work xbip_dsp48_wrapper_v3_0_4 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
-
-vcom -work xbip_pipe_v3_0_6 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
-
-vcom -work xbip_dsp48_addsub_v3_0_6 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
-
-vcom -work xbip_addsub_v3_0_6 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
-
-vcom -work c_addsub_v12_0_13 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/c_addsub_v12_0_vh_rfs.vhd" \
-
-vcom -work c_gate_bit_v12_0_6 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
-
-vcom -work xbip_counter_v3_0_6 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
-
-vcom -work c_counter_binary_v12_0_13 -93 \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/sddrtt_timer/sim/sddrtt_timer.vhd" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_0/SDDR_TT_M_selectio_wiz_0_0_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_0/SDDR_TT_M_selectio_wiz_0_0.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_1/SDDR_TT_M_selectio_wiz_0_1_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_1/SDDR_TT_M_selectio_wiz_0_1.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_2/SDDR_TT_M_selectio_wiz_0_2_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_0_2/SDDR_TT_M_selectio_wiz_0_2.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_2_0/SDDR_TT_M_selectio_wiz_2_0_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_2_0/SDDR_TT_M_selectio_wiz_2_0.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_3_0/SDDR_TT_M_selectio_wiz_3_0_selectio_wiz.v" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_selectio_wiz_3_0/SDDR_TT_M_selectio_wiz_3_0.v" \
-
-vlog -work util_vector_logic_v2_0_1  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_util_vector_logic_0_0/sim/SDDR_TT_M_util_vector_logic_0_0.v" \
-
-vlog -work xlconstant_v1_1_6  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/src/SDDR_TT_M_xlconstant_0_0/sim/SDDR_TT_M_xlconstant_0_0.v" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/TEST/ipshared/8ca5/sim/SDDR_TT_M_SDDR_TT_0_0.vhd" \
-"../../../bd/TEST/ipshared/8ca5/src/SDDR_TT.vhd" \
-"../../../bd/TEST/ipshared/8ca5/sim/SDDR_TT_M.vhd" \
-"../../../bd/TEST/ipshared/8ca5/src/SDDR_TT_M_wrapper.vhd" \
-"../../../bd/TEST/ip/TEST_SDDR_TT_M_wrapper_0_0/sim/TEST_SDDR_TT_M_wrapper_0_0.vhd" \
-
-vlog -work xlconcat_v2_1_3  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/TEST/ip/TEST_xlconcat_0_0/sim/TEST_xlconcat_0_0.v" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/TEST/ip/TEST_axi_gpio_0_1/sim/TEST_axi_gpio_0_1.vhd" \
-"../../../bd/TEST/ip/TEST_CTIME0_0/sim/TEST_CTIME0_0.vhd" \
-"../../../bd/TEST/ip/TEST_axi_gpio_0_2/sim/TEST_axi_gpio_0_2.vhd" \
-"../../../bd/TEST/ip/TEST_UTIL0_0/sim/TEST_UTIL0_0.vhd" \
-
 vlog -work generic_baseblocks_v2_1_0  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
 
@@ -208,6 +119,9 @@ vlog -work axi_crossbar_v2_1_20  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/so
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/TEST/ip/TEST_xbar_0/sim/TEST_xbar_0.v" \
 
+vcom -work lib_cdc_v1_0_2 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
+
 vcom -work proc_sys_reset_v5_0_13 -93 \
 "../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 
@@ -217,6 +131,113 @@ vcom -work xil_defaultlib -93 \
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0_clk_wiz.v" \
 "../../../bd/TEST/ip/TEST_clk_wiz_0_0/TEST_clk_wiz_0_0.v" \
+
+vcom -work xbip_utils_v3_0_10 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+
+vcom -work c_reg_fd_v12_0_6 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_wrapper_v3_0_4 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_pipe_v3_0_6 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_dsp48_addsub_v3_0_6 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+
+vcom -work xbip_addsub_v3_0_6 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+
+vcom -work c_addsub_v12_0_13 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+
+vcom -work c_gate_bit_v12_0_6 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
+
+vcom -work xbip_counter_v3_0_6 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
+
+vcom -work c_counter_binary_v12_0_13 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/src/sddrtt_timer/sim/sddrtt_timer.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/6429/src/SDDR_TT.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_SDDR_TT_0_0/sim/SDDR_TT_AXI_SDDR_TT_0_0.vhd" \
+
+vcom -work axi_lite_ipif_v3_0_4 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+
+vcom -work interrupt_control_v3_1_4 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+
+vcom -work axi_gpio_v2_0_21 -93 \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/sim/SDDR_TT_AXI_axi_gpio_0_0.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_DATA0_0/sim/SDDR_TT_AXI_DATA0_0.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_1/sim/SDDR_TT_AXI_axi_gpio_0_1.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_2/sim/SDDR_TT_AXI_axi_gpio_0_2.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_3/sim/SDDR_TT_AXI_axi_gpio_0_3.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_fifo_generator_0_0/sim/SDDR_TT_AXI_fifo_generator_0_0.v" \
+
+vlog -work xlconcat_v2_1_3  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_1_0/sim/SDDR_TT_AXI_xlconcat_1_0.v" \
+
+vlog -work util_vector_logic_v2_0_1  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_util_vector_logic_0_0/sim/SDDR_TT_AXI_util_vector_logic_0_0.v" \
+
+vlog -work xlslice_v1_0_2  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_0_0/sim/SDDR_TT_AXI_xlslice_0_0.v" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_0_1/sim/SDDR_TT_AXI_xlslice_0_1.v" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlslice_1_0/sim/SDDR_TT_AXI_xlslice_1_0.v" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_xlconcat_0_1/sim/SDDR_TT_AXI_xlconcat_0_1.v" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/TEST/ipshared/1936/sim/SDDR_TT_AXI_TT_FIFO_SPLIT_0_0.vhd" \
+"../../../bd/TEST/ipshared/1936/sim/SDDR_TT_AXI_tt_capacity_controll_0_1.vhd" \
+"../../../bd/TEST/ipshared/1936/sim/SDDR_TT_AXI_write_clocker_0_0.vhd" \
+"../../../bd/TEST/ipshared/1936/sim/SDDR_TT_AXI_TT_FIFO_R_CT_0_0.vhd" \
+"../../../bd/TEST/ipshared/1936/src/TT_FIFO_SPLIT.vhd" \
+"../../../bd/TEST/ipshared/1936/src/TT_capacity_controller.vhd" \
+"../../../bd/TEST/ipshared/1936/src/write_clocker.vhd" \
+"../../../bd/TEST/ipshared/1936/src/tt_fifo_r_ct.vhd" \
+"../../../bd/TEST/ipshared/1936/sim/SDDR_TT_AXI.vhd" \
+"../../../bd/TEST/ipshared/1936/src/SDDR_TT_AXI_wrapper.vhd" \
+"../../../bd/TEST/ip/TEST_SDDR_TT_AXI_wrapper_0_0/sim/TEST_SDDR_TT_AXI_wrapper_0_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0_selectio_wiz.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_0_0/TEST_selectio_wiz_0_0.v" \
+
+vlog -work xlconstant_v1_1_6  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../bd/TEST/ip/TEST_xlconstant_0_0/sim/TEST_xlconstant_0_0.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1_selectio_wiz.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_0_1/TEST_selectio_wiz_0_1.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_1_0/TEST_selectio_wiz_1_0_selectio_wiz.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_1_0/TEST_selectio_wiz_1_0.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_2_0/TEST_selectio_wiz_2_0_selectio_wiz.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_2_0/TEST_selectio_wiz_2_0.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_3_0/TEST_selectio_wiz_3_0_selectio_wiz.v" \
+"../../../bd/TEST/ip/TEST_selectio_wiz_3_0/TEST_selectio_wiz_3_0.v" \
+"../../../bd/TEST/ip/TEST_util_vector_logic_0_0/sim/TEST_util_vector_logic_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/ec67/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/8c62/hdl" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c923" "+incdir+../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ip/TEST_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../SDDR_TT_TEST.srcs/sources_1/bd/TEST/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

@@ -10,12 +10,20 @@
     },
     "design_tree": {
       "DATA": "",
-      "xlconcat_0": "",
       "UTIL": "",
+      "SDDR_CT_0": "",
+      "fifo_generator_0": "",
+      "CT_FIFO_R_CT_0": "",
+      "xlconcat_0": "",
+      "util_vector_logic_0": "",
+      "util_vector_logic_1": "",
+      "ct_capacity_controll_0": "",
+      "util_vector_logic_2": "",
+      "util_vector_logic_3": "",
+      "xlconcat_1": "",
       "CTA_SPLIT_0": "",
-      "CT_META_0": "",
-      "CT_META_1": "",
-      "SDDR_CT_0": ""
+      "xlslice_0": "",
+      "xlslice_1": ""
     },
     "interface_ports": {
       "CT_DATA": {
@@ -368,10 +376,6 @@
           }
         }
       },
-      "xlconcat_0": {
-        "vlnv": "xilinx.com:ip:xlconcat:2.1",
-        "xci_name": "SDDR_CT_AXI_xlconcat_0_0"
-      },
       "UTIL": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "SDDR_CT_AXI_axi_gpio_0_1",
@@ -383,13 +387,212 @@
             "value": "1"
           },
           "C_GPIO2_WIDTH": {
-            "value": "1"
+            "value": "3"
           },
           "C_GPIO_WIDTH": {
-            "value": "3"
+            "value": "5"
           },
           "C_IS_DUAL": {
             "value": "1"
+          }
+        }
+      },
+      "SDDR_CT_0": {
+        "vlnv": "cri.nz:user:SDDR_CT:1.0",
+        "xci_name": "SDDR_CT_AXI_SDDR_CT_0_0",
+        "parameters": {
+          "SIG_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "fifo_generator_0": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "xci_name": "SDDR_CT_AXI_fifo_generator_0_0",
+        "parameters": {
+          "Data_Count": {
+            "value": "true"
+          },
+          "Data_Count_Width": {
+            "value": "11"
+          },
+          "Input_Data_Width": {
+            "value": "48"
+          },
+          "Input_Depth": {
+            "value": "2048"
+          },
+          "Output_Data_Width": {
+            "value": "48"
+          },
+          "Valid_Flag": {
+            "value": "true"
+          },
+          "Write_Acknowledge_Flag": {
+            "value": "true"
+          }
+        }
+      },
+      "CT_FIFO_R_CT_0": {
+        "vlnv": "xilinx.com:module_ref:CT_FIFO_R_CT:1.0",
+        "xci_name": "SDDR_CT_AXI_CT_FIFO_R_CT_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CT_FIFO_R_CT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_CT_AXI_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "REQ": {
+            "direction": "I"
+          },
+          "valid": {
+            "direction": "O"
+          },
+          "read_en": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "SDDR_CT_AXI_xlconcat_0_1",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "32"
+          },
+          "IN1_WIDTH": {
+            "value": "8"
+          },
+          "IN2_WIDTH": {
+            "value": "8"
+          },
+          "NUM_PORTS": {
+            "value": "3"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "SDDR_CT_AXI_util_vector_logic_0_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "SDDR_CT_AXI_util_vector_logic_0_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ct_capacity_controll_0": {
+        "vlnv": "xilinx.com:module_ref:ct_capacity_controller:1.0",
+        "xci_name": "SDDR_CT_AXI_ct_capacity_controll_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ct_capacity_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "MCLK": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "SDDR_CT_AXI_MCLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "400000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "full": {
+            "direction": "I"
+          },
+          "empty": {
+            "direction": "I"
+          },
+          "run": {
+            "direction": "O"
+          }
+        }
+      },
+      "util_vector_logic_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "SDDR_CT_AXI_util_vector_logic_2_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "SDDR_CT_AXI_util_vector_logic_3_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "xlconcat_1": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "SDDR_CT_AXI_xlconcat_1_1",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "3"
           }
         }
       },
@@ -402,9 +605,9 @@
           "boundary_crc": "0x0"
         },
         "ports": {
-          "IN3_0": {
+          "IN4_0": {
             "direction": "I",
-            "left": "2",
+            "left": "4",
             "right": "0"
           },
           "OUT0_0": {
@@ -415,148 +618,71 @@
           },
           "OUT2_2": {
             "direction": "O"
+          },
+          "OUT3_3": {
+            "direction": "O"
+          },
+          "OUT4_4": {
+            "direction": "O"
           }
         }
       },
-      "CT_META_0": {
-        "vlnv": "xilinx.com:module_ref:CT_META:1.0",
-        "xci_name": "SDDR_CT_AXI_CT_META_0_0",
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "SDDR_CT_AXI_xlslice_0_0",
         "parameters": {
-          "g_width": {
+          "DIN_FROM": {
+            "value": "31"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "48"
+          },
+          "DOUT_WIDTH": {
             "value": "32"
           }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "CT_META",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "IDATA": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "ODATA": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "MCLK": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SDDR_CT_AXI_aclk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          }
         }
       },
-      "CT_META_1": {
-        "vlnv": "xilinx.com:module_ref:CT_META:1.0",
-        "xci_name": "SDDR_CT_AXI_CT_META_0_1",
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "SDDR_CT_AXI_xlslice_0_1",
         "parameters": {
-          "g_width": {
-            "value": "16"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "CT_META",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "IDATA": {
-            "direction": "I",
-            "left": "15",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "16",
-                "value_src": "ip_prop"
-              }
-            }
+          "DIN_FROM": {
+            "value": "47"
           },
-          "ODATA": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
+          "DIN_TO": {
+            "value": "32"
           },
-          "MCLK": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "SDDR_CT_AXI_aclk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          }
-        }
-      },
-      "SDDR_CT_0": {
-        "vlnv": "cri.nz:user:SDDR_CT:1.0",
-        "xci_name": "SDDR_CT_AXI_SDDR_CT_0_0",
-        "parameters": {
-          "SIG_WIDTH": {
-            "value": "8"
+          "DIN_WIDTH": {
+            "value": "48"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
           }
         }
       }
     },
     "interface_nets": {
-      "CT_DATA_1": {
-        "interface_ports": [
-          "CT_DATA",
-          "DATA/S_AXI"
-        ]
-      },
       "CT_UTIL_1": {
         "interface_ports": [
           "CT_UTIL",
           "UTIL/S_AXI"
         ]
+      },
+      "CT_DATA_1": {
+        "interface_ports": [
+          "CT_DATA",
+          "DATA/S_AXI"
+        ]
       }
     },
     "nets": {
-      "SDDR_CT_0_D0": {
-        "ports": [
-          "SDDR_CT_0/D0",
-          "xlconcat_0/In0"
-        ]
-      },
-      "SDDR_CT_0_D1": {
-        "ports": [
-          "SDDR_CT_0/D1",
-          "xlconcat_0/In1"
-        ]
-      },
       "UTIL_gpio_io_o": {
         "ports": [
           "UTIL/gpio_io_o",
-          "CTA_SPLIT_0/IN3_0"
-        ]
-      },
-      "CTA_SPLIT_0_OUT0_0": {
-        "ports": [
-          "CTA_SPLIT_0/OUT0_0",
-          "SDDR_CT_0/RESETN"
+          "CTA_SPLIT_0/IN4_0"
         ]
       },
       "CTA_SPLIT_0_OUT1_1": {
@@ -569,12 +695,6 @@
         "ports": [
           "CTA_SPLIT_0/OUT2_2",
           "SDDR_CT_0/BIDIR"
-        ]
-      },
-      "SDDR_CT_0_DRDY": {
-        "ports": [
-          "SDDR_CT_0/DRDY",
-          "UTIL/gpio2_io_i"
         ]
       },
       "SDDR_CT_0_WAITING": {
@@ -604,46 +724,155 @@
       "MCLK_1": {
         "ports": [
           "MCLK",
-          "SDDR_CT_0/MCLK"
+          "SDDR_CT_0/MCLK",
+          "fifo_generator_0/clk",
+          "ct_capacity_controll_0/MCLK",
+          "CT_FIFO_R_CT_0/MCLK"
         ]
       },
       "aclk_1": {
         "ports": [
           "aclk",
           "UTIL/s_axi_aclk",
-          "DATA/s_axi_aclk",
-          "CT_META_0/MCLK",
-          "CT_META_1/MCLK"
+          "DATA/s_axi_aclk"
         ]
       },
       "aresetn_1": {
         "ports": [
           "aresetn",
           "UTIL/s_axi_aresetn",
-          "DATA/s_axi_aresetn"
+          "DATA/s_axi_aresetn",
+          "util_vector_logic_3/Op1"
         ]
       },
-      "SDDR_CT_0_CTIME": {
+      "SDDR_CT_0_DRDY": {
         "ports": [
-          "SDDR_CT_0/CTIME",
-          "CT_META_0/IDATA"
+          "SDDR_CT_0/DRDY",
+          "fifo_generator_0/wr_en",
+          "util_vector_logic_2/Op1"
         ]
       },
-      "CT_META_0_ODATA": {
+      "util_vector_logic_1_Res": {
         "ports": [
-          "CT_META_0/ODATA",
-          "DATA/gpio_io_i"
+          "util_vector_logic_1/Res",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "SDDR_CT_0/RESETN"
+        ]
+      },
+      "CTA_SPLIT_0_OUT0_0": {
+        "ports": [
+          "CTA_SPLIT_0/OUT0_0",
+          "util_vector_logic_0/Op1",
+          "ct_capacity_controll_0/resetn"
+        ]
+      },
+      "ct_capacity_controll_0_run": {
+        "ports": [
+          "ct_capacity_controll_0/run",
+          "util_vector_logic_1/Op2"
+        ]
+      },
+      "util_vector_logic_2_Res": {
+        "ports": [
+          "util_vector_logic_2/Res",
+          "util_vector_logic_1/Op1"
         ]
       },
       "xlconcat_0_dout": {
         "ports": [
           "xlconcat_0/dout",
-          "CT_META_1/IDATA"
+          "fifo_generator_0/din"
         ]
       },
-      "CT_META_1_ODATA": {
+      "SDDR_CT_0_D1": {
         "ports": [
-          "CT_META_1/ODATA",
+          "SDDR_CT_0/D1",
+          "xlconcat_0/In2"
+        ]
+      },
+      "SDDR_CT_0_D0": {
+        "ports": [
+          "SDDR_CT_0/D0",
+          "xlconcat_0/In1"
+        ]
+      },
+      "SDDR_CT_0_CTIME": {
+        "ports": [
+          "SDDR_CT_0/CTIME",
+          "xlconcat_0/In0"
+        ]
+      },
+      "fifo_generator_0_full": {
+        "ports": [
+          "fifo_generator_0/full",
+          "ct_capacity_controll_0/full",
+          "xlconcat_1/In2"
+        ]
+      },
+      "fifo_generator_0_empty": {
+        "ports": [
+          "fifo_generator_0/empty",
+          "ct_capacity_controll_0/empty",
+          "xlconcat_1/In1"
+        ]
+      },
+      "util_vector_logic_3_Res": {
+        "ports": [
+          "util_vector_logic_3/Res",
+          "fifo_generator_0/srst"
+        ]
+      },
+      "CT_FIFO_R_CT_0_read_en": {
+        "ports": [
+          "CT_FIFO_R_CT_0/read_en",
+          "fifo_generator_0/rd_en"
+        ]
+      },
+      "CT_FIFO_R_CT_0_valid": {
+        "ports": [
+          "CT_FIFO_R_CT_0/valid",
+          "xlconcat_1/In0"
+        ]
+      },
+      "xlconcat_1_dout": {
+        "ports": [
+          "xlconcat_1/dout",
+          "UTIL/gpio2_io_i"
+        ]
+      },
+      "CTA_SPLIT_0_OUT3_3": {
+        "ports": [
+          "CTA_SPLIT_0/OUT3_3",
+          "CT_FIFO_R_CT_0/resetn"
+        ]
+      },
+      "CTA_SPLIT_0_OUT4_4": {
+        "ports": [
+          "CTA_SPLIT_0/OUT4_4",
+          "CT_FIFO_R_CT_0/REQ"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "fifo_generator_0/dout",
+          "xlslice_0/Din",
+          "xlslice_1/Din"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "DATA/gpio_io_i"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
           "DATA/gpio2_io_i"
         ]
       }

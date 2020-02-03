@@ -71,19 +71,22 @@ set rc [catch {
   set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.cache/wt} [current_project]
-  set_property parent.project_path {D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.xpr} [current_project]
-  set_property ip_repo_paths D:/SInglePhotons/HW_IP/SDDR_CT [current_project]
+  set_property webtalk.parent_dir {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.cache/wt} [current_project]
+  set_property parent.project_path {D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.xpr} [current_project]
+  set_property ip_repo_paths {
+  d:/SInglePhotons/HW_IP/_Data_transference/SDDR_CT_AXI
+  D:/SInglePhotons/HW_IP/SDDR_CT
+} [current_project]
   update_ip_catalog
-  set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.cache/ip}} [current_project]
+  set_property ip_output_repo {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet {{D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.runs/synth_1/TEST_wrapper.dcp}}
+  add_files -quiet {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.runs/synth_1/TEST_wrapper.dcp}}
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files {{D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.srcs/sources_1/bd/TEST/TEST.bd}}
+  add_files {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.srcs/sources_1/bd/TEST/TEST.bd}}
   set_param project.isImplRun false
-  read_xdc {{D:/SInglePhotons/Vivado Projects/SERDES/SDDR_CT_TEST/SDDR_CT_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc}}
+  read_xdc {{D:/SInglePhotons/Vivado Projects/Data_Transfer/SDDR_CT_TEST/SDDR_CT_TEST.srcs/constrs_1/new/PYNQ-Z1.xdc}}
   set_param project.isImplRun true
   link_design -top TEST_wrapper -part xc7z020clg400-1
   set_param project.isImplRun false

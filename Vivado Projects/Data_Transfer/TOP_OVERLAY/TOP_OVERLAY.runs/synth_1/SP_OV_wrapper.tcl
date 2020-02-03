@@ -35,12 +35,12 @@ set_property ip_repo_paths {
   d:/SInglePhotons/HW_IP/DDS_COM_TEST
   d:/SInglePhotons/HW_IP/DELAY8
   d:/SInglePhotons/HW_IP/SDDR_CT
-  d:/SInglePhotons/HW_IP/SDDR_CT_AXI
   d:/SInglePhotons/HW_IP/SDDR_ST
   d:/SInglePhotons/HW_IP/SDDR_TT
   d:/SInglePhotons/HW_IP/SDDR_TT_AXI
   d:/SInglePhotons/HW_IP/SDDR_DESERIALIZER
   d:/SInglePhotons/HW_IP/_Data_transference/SDDR_ST_AXI
+  d:/SInglePhotons/HW_IP/_Data_transference/SDDR_CT_AXI
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo {d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.cache/ip} [current_project]
@@ -134,6 +134,7 @@ set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Viv
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/SDDR_CT_AXI_axi_gpio_0_1_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/SDDR_CT_AXI_axi_gpio_0_1_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_axi_gpio_0_1/SDDR_CT_AXI_axi_gpio_0_1.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_CT_AXI_wrapper_0_0/src/SDDR_CT_AXI_fifo_generator_0_0/SDDR_CT_AXI_fifo_generator_0_0.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{d:/SInglePhotons/Vivado Projects/Data_Transfer/TOP_OVERLAY/TOP_OVERLAY.srcs/sources_1/bd/SP_OV/ip/SP_OV_SDDR_TT_AXI_wrapper_0_0/src/SDDR_TT_AXI_axi_gpio_0_0/SDDR_TT_AXI_axi_gpio_0_0_ooc.xdc}}]
