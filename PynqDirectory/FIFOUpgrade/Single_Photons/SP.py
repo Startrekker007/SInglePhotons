@@ -333,44 +333,125 @@ class SP_TOOLS:
     ####----------------------------------------------------------------------------------####
     ####------------------Single line inter-rising_edge timer-----------------------------####
     def st_read_coarse(self):
+        """
+        Reads coarse timer counter value
+        Returns
+        -------
+        :class:`int`
+            Interdetection time in counter clock cycles
+        """
         return self.ST_DATA.read(0x0)
 
     def st_read_fine(self):
+        """
+        Reads the fine time offsets from the rising edge of the coarse clock.
+        Returns
+        -------
+        :class:`int` Fine time offsets
+        """
         return self.ST_DATA.read(0x8)
 
     def st_read_drdy(self):
+        """
+        Reads whether data is valid to be read
+        Returns
+        -------
+        :class:`int`
+            Value of the valid line (0 or 1)
+        """
         return self.ST_UTIL.read(0x8) & 0b1
 
     def st_read_empty(self):
+        """
+        Reads whether the FIFO is empty
+        Returns
+        -------
+        :class:`int`
+            0 or 1 for not empty and empty respectively
+        """
         return (self.ST_UTIL.read(0x8) & 0b10) >> 1
 
     def st_read_full(self):
+        """
+        Reads whether the FIFO is full
+        Returns
+        -------
+        :class:`int`
+            0 or 1 for not full and full respectively
+        """
         return (self.ST_UTIL.read(0x8) & 0b100) >> 1
 
     def st_set_mreset(self, val):
+        """
+        Sets the master reset of the module (active low), when in reset the module is disabled
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the reset line (0 or 1)
+
+        """
         lastval = self.ST_UTIL.read(0x0) & 0b110
         self.ST_UTIL.write(0x0, lastval | (val & 0b1))
 
     def st_set_req(self, val):
+        """
+        Sets the data request line to indicate to the FIFO read controller to clock a single data point out of the FIFO (ACTIVE HIGH)
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the request line (0 or 1)
+
+        """
         lastval = self.ST_UTIL.read(0x0) & 0b101
         self.ST_UTIL.write(0x0, lastval | ((val << 1) & 0b10))
 
     def st_set_dreset(self, val):
+        """
+        SEts the FIFO read controller's reset, to reset it back to awaiting a request signal (active low)
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the reset line (0 or 1)
+
+        """
         lastval = self.ST_UTIL.read(0x0) & 0b011
         self.ST_UTIL.write(0x0, lastval | ((val << 2) & 0b100))
     def st_start(self):
+        """
+        Starts the single channel inter rising edge timer module
+
+        """
         self.st_set_mreset(1)
     def st_stop(self):
+        """
+        Stops the inter rising edge timer module
+
+        """
         self.st_set_mreset(0)
         self.st_set_dreset(0)
     def st_flush_buffer(self):
+        """
+        HELPER - NOT USED CURRENTLY - Flushes the local FIFO buffer (NOT THE HARDWARE FIFO, TO Do THAT CAL st_read2048() AND THEN FLUSH)
+
+        """
         for i in range(FIFO_DEPTH):
             self.ST_FIFO_BUFFER[i]=0
         self.ST_loaded_count=0
     def st_proc(self):
+        """
+        Reads 2048 values from the FIFO (or until empty) and places the data into a dictionary with length and module ID ready to be sent over socket.
+        Returns
+        -------
+        :class:`dict`
+            Dictionary containing module identification, length of data list, and the data list
+        """
         self.st_read2048()
         return {"MOD":"ST","LEN":self.ST_loaded_count,"DAT":self.ST_FIFO_BUFFER}
     def st_read2048(self):
+        """
+        Reads data from the FIFO until empty and stores each recovered data point in the local FIFO buffer.
+
+        """
         if(self.st_read_empty()==1):
             plog.warning("FIFO EMPTY")
             return
@@ -378,19 +459,27 @@ class SP_TOOLS:
             if(self.st_read_empty()==1):
                 self.ST_loaded_count=i
                 return
-            self.st_set_dreset(1)
+            self.st_set_dreset(1)#Pull FIFO read controller out of reset and request data
             self.st_set_req(1)
             while(self.st_read_drdy()==0):
                 pass
-            self.ST_FIFO_BUFFER[i]=self.st_read_coarse() | self.st_read_fine() << 32
+            self.ST_FIFO_BUFFER[i]=self.st_read_coarse() | self.st_read_fine() << 32#Concatenate both fine and coarse times and store the resulting value into the local buffer
             #print(self.loaded_data[i]&0xFFFFFFFF)
-            self.st_set_req(0)
+            self.st_set_req(0)#Deassert the request line and reset the read controller
             self.st_set_dreset(0)
         self.ST_loaded_count=FIFO_DEPTH
 
     ####----------------------------------------------------------------------------------####
     ####------------------Two channel photon coincidence timer----------------------------####
     def ct_start(self,mode):
+        """
+        Starts the two channel coincidence timer
+        Parameters
+        ----------
+        mode : :class:`int`
+            Line select mode, whether to treat the first channel as start or second, or whichever is detected first (0,1,2)
+
+        """
         if(mode!= 2):
             self.ct_set_fsel(mode)
             self.ct_set_bidir(0)
@@ -398,15 +487,35 @@ class SP_TOOLS:
             self.ct_set_bidir(1)
         self.ct_set_mreset(1)
     def ct_stop(self):
+        """
+        Stops the two channel coincidence timer
+
+        """
         self.ct_set_mreset(0)
     def ct_flush_buffer(self):
+        """
+        HELPER - NOT USED CURRENTLY - Flushes the local FIFO buffer (NOT THE HARDWARE FIFO, TO Do THAT CAL ct_read2048() AND THEN FLUSH)
+
+        """
         for i in range(FIFO_DEPTH):
             self.CT_FIFO_BUFFER[i]=0
         self.loaded_count=0
     def ct_proc(self):
+        """
+        Reads 2048 values from the FIFO (or until empty) and places the data into a dictionary with length and module ID ready to be sent over socket.
+        Returns
+        -------
+        :class:`dict`
+            Dictionary containing module identification, length of data list, and the data list
+
+        """
         self.ct_read2048()
         return {"MOD":"CT","LEN":self.loaded_count,"DAT":self.CT_FIFO_BUFFER}
     def ct_read2048(self):
+        """
+        Reads data from the FIFO until empty and stores each recovered data point in the local FIFO buffer.
+
+        """
         if(self.ct_read_empty()==1):
             return
         for i in range(FIFO_DEPTH):
@@ -423,28 +532,105 @@ class SP_TOOLS:
             self.ct_set_dreset(0)
         self.loaded_count=FIFO_DEPTH
     def ct_read_coarse(self):
+        """
+        Reads coarse timer counter value
+        Returns
+        -------
+        :class:`int`
+            Interdetection time in counter clock cycles
+        """
         return self.CT_DATA.read(0x0)
     def ct_read_fine(self):
+        """
+        Reads the fine time offsets from the rising edge of the coarse clock.
+        Returns
+        -------
+        :class:`int` Fine time offsets
+        """
         return self.CT_DATA.read(0x8)
     def ct_set_fsel(self,val):
+        """
+        Sets the first detection channel select line.
+        Parameters
+        ----------
+        val : :class:`int`
+            0 to treat Ch1 as start signal, 1 to treat CH2 as start signal
+
+        """
         lastval = self.CT_UTIL.read(0x0) & 0b11101
         self.CT_UTIL.write(0x0,lastval | ((val<<1)&0b10))
     def ct_set_bidir(self,val):
+        """
+        Sets whether the module chooses the start signal based on which channel is detected first (ACTIVE HIGH), if set, the setting of ct_set_fsel() is ignored.
+        Parameters
+        ----------
+        val : :class:`int`
+            0 or 1 to give precendence to fsel line or to pick based off which comes first respectively.
+
+        Returns
+        -------
+
+        """
         lastval = self.CT_UTIL.read(0x0) & 0b11011
         self.CT_UTIL.write(0x0,lastval | ((val<<2)&0b100))
     def ct_read_drdy(self):
+        """
+        Reads whether data is valid to be read
+        Returns
+        -------
+        :class:`int`
+            Value of the valid line (0 or 1)
+        """
         return self.CT_UTIL.read(0x8) & 0b1
     def ct_read_empty(self):
+        """
+        Reads whether the FIFO is empty
+        Returns
+        -------
+        :class:`int`
+            0 or 1 for not empty and empty respectively
+        """
         return (self.CT_UTIL.read(0x8) & 0b10)>>1
     def ct_read_full(self):
+        """
+        Reads whether the FIFO is full
+        Returns
+        -------
+        :class:`int`
+            0 or 1 for not full and full respectively
+        """
         return (self.CT_UTIL.read(0x8) & 0b100)>>1
     def ct_set_mreset(self,val):
+        """
+        Sets the master reset of the module (active low), when in reset the module is disabled
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the reset line (0 or 1)
+
+        """
         lastval = self.CT_UTIL.read(0x0) & 0b11110
         self.CT_UTIL.write(0x0,lastval | (val&0b1))
     def ct_set_req(self,val):
+        """
+        Sets the data request line to indicate to the FIFO read controller to clock a single data point out of the FIFO (ACTIVE HIGH)
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the request line (0 or 1)
+
+        """
         lastval = self.CT_UTIL.read(0x0) & 0b01111
         self.CT_UTIL.write(0x0, lastval | ((val<<4) & 0b10000))
     def ct_set_dreset(self,val):
+        """
+        SEts the FIFO read controller's reset, to reset it back to awaiting a request signal (active low)
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the reset line (0 or 1)
+
+        """
         lastval = self.CT_UTIL.read(0x0) & 0b10111
         self.CT_UTIL.write(0x0, lastval | ((val<<3) & 0b1000))
     ####---------------------Signal generator---------------------------------------------####
@@ -630,19 +816,47 @@ class SP_TOOLS:
         return int(delay*DDS_REF_CLK)
     #TIME TAGGER FUNCTIONS-----------------------------------------------
     def tt_start(self,timeout):
+        """
+        Starts the time tagger module
+        Parameters
+        ----------
+        timeout : :class:`int`
+            Number of counter cycles to wait for.
+
+        """
         self.tt_set_timeout(timeout)
         self.tt_set_mreset(1)
     def tt_stop(self):
+        """
+        Stops the time tagger
+
+        """
         self.tt_set_mreset(0)
     def tt_flush_buffer(self):
+        """
+        HELPER - NOT USED CURRENTLY - Flushes the local FIFO buffer (NOT THE HARDWARE FIFO, TO Do THAT CAL tt_read2048() AND THEN FLUSH)
+
+        """
         for i in range(FIFO_DEPTH):
             self.TT_FIFO_BUFFER[i]=0
         self.TT_loaded_count=0
     def tt_proc(self):
+        """
+        Reads 2048 values from the FIFO (or until empty) and places the data into a dictionary with length and module ID ready to be sent over socket.
+        Returns
+        -------
+        :class:`dict`
+            Dictionary containing module identification, length of data list, and the data list
+
+        """
         self.tt_read2048()
         data = {"MOD":"TT","LEN":self.TT_loaded_count,"DAT":self.TT_FIFO_BUFFER}
         return data
     def tt_read2048(self):
+        """
+        Reads data from the FIFO until empty and stores each recovered data point in the local FIFO buffer.
+
+        """
         if(self.tt_read_empty()==1):
             return
         for i in range(FIFO_DEPTH):
@@ -653,37 +867,112 @@ class SP_TOOLS:
             self.tt_set_req(1)
             while(self.tt_read_drdy()==0):
                 pass
+            #Concatenate each part of current run (Coarse and fine times for each channel and time outs) into a singular integer and place in local buffer
             self.TT_FIFO_BUFFER[i]=((self.tt_read_coarse() | self.tt_read_fine() << 128 | self.tt_read_timeouts() << 168))
             self.tt_set_req(0)
             self.tt_set_dreset(0)
         self.TT_loaded_count=FIFO_DEPTH
     def tt_read_coarse(self):
+        """
+        Reads coarse timer counter value
+        Returns
+        -------
+        :class:`int`
+            Concatenated coarse times for each channel
+        """
         d0 = self.TT_DATA0.read(0x0)
         d1 = self.TT_DATA0.read(0x8)<<32
         d2 = self.TT_DATA1.read(0x0)<<64
         d3 = self.TT_DATA1.read(0x8)<<96
         return d0 | d1 | d2 | d3
     def tt_read_fine(self):
+        """
+        Reads the fine time offsets from the rising edge of the coarse clock.
+        Returns
+        -------
+        :class:`int`
+        Concatenated fine time offsets for each channel.
+        """
         return self.TT_DELAY_DATA.read(0x0) | (self.TT_DELAY_DATA.read(0x8)&0xFF)<<32
 
     def tt_read_drdy(self):
+        """
+        Reads whether data is valid to be read
+        Returns
+        -------
+        :class:`int`
+            Value of the valid line (0 or 1)
+        """
         return (self.TT_UTIL.read(0x8) & 0b100)>>2
     def tt_read_empty(self):
+        """
+        Reads whether the FIFO is empty
+        Returns
+        -------
+        :class:`int`
+            0 or 1 for not empty and empty respectively
+        """
         return (self.TT_UTIL.read(0x8) & 0b1)
     def tt_read_full(self):
+        """
+        Reads whether the FIFO is full
+        Returns
+        -------
+        :class:`int`
+            0 or 1 for not full and full respectively
+        """
         return (self.TT_UTIL.read(0x8) & 0b10)>>1
     def tt_set_mreset(self,val):
+        """
+        Sets the master reset of the module (active low), when in reset the module is disabled
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the reset line (0 or 1)
+
+        """
         lastval = self.TT_CONFIG.read(0x8) & 0b110
         self.TT_CONFIG.write(0x8,lastval | (val&0b1))
     def tt_set_req(self,val):
+        """
+        Sets the data request line to indicate to the FIFO read controller to clock a single data point out of the FIFO (ACTIVE HIGH)
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the request line (0 or 1)
+
+        """
         lastval = self.TT_CONFIG.read(0x8) & 0b101
         self.TT_CONFIG.write(0x8, lastval | ((val<<1) & 0b10))
     def tt_set_dreset(self,val):
+        """
+        SEts the FIFO read controller's reset, to reset it back to awaiting a request signal (active low)
+        Parameters
+        ----------
+        val : :class:`int`
+            Value of the reset line (0 or 1)
+
+        """
         lastval = self.TT_CONFIG.read(0x8) & 0b011
         self.TT_CONFIG.write(0x8, lastval | ((val<<2) & 0b100))
     def tt_set_timeout(self,val):
+        """
+        Sets the time out data bus for the time tagger
+        Parameters
+        ----------
+        val : :class:`int`
+            32 bit integer stating the time out in TDC_REF_CLK cycles
+
+        """
         self.TT_CONFIG.write(0x0,val&0xFFFFFFFF)
     def tt_read_timeouts(self):
+        """
+        Reads the channel time out statuses
+        Returns
+        -------
+        :class:`int`
+            4 bit binary encoded integer showing the time out state for each line (0 if the channel timed out)
+        """
         return self.TT_UTIL.read(0x0)
     #TIME_TAGGER_END-----------------------------------------------------
 
@@ -725,7 +1014,7 @@ class SP_TOOLS:
         plog.debug("OBS0: "+bin(self.IDELAY_DEBUG.read(0x0)))
 
     def uencode(self,val,length):
-        """[DEPRECIATED] Calculates the number of binary ones in an integer of specified length
+        """[DEPRECIATED] - NOT USED - Calculates the number of binary ones in an integer of specified length
 
         Parameters
         ----------

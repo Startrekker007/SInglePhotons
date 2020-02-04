@@ -139,9 +139,6 @@ class TimeController:
             pretime = (finetime & 0xFF)*TDC_FTIME
             posttime = ((finetime & 0xFF00)>>8)*TDC_FTIME
             outputdata.append(ctime+pretime-posttime)
-            #log.debug("COARSE" + str(coarse))
-            #log.debug("FINE0"+str(finetime&0xFF))
-            #log.debug("FINE1" + str((finetime & 0xFF00)>>8))
         return outputdata
     def acquire_iretimer_data(self):
         """
@@ -158,16 +155,19 @@ class TimeController:
             self.logger.error("Cannot be used in high resolution mode")
             return 0
         self.logger.info("Acquiring data from single line inter rising edge timer")
+        sdata = ""
+        self.websocket.sendall("STA".encode())
+        while True:#Loop until all data from the socket has been acquired
+            dat = self.websocket.recv(8172).decode()
 
-        while(1):
-            self.websocket.sendall("STA".encode())
-            data=self.websocket.recv(32768).decode()
-            recdict = json.loads(data)
-            if(recdict["MOD"])!="ST":
-                self.logger.warning("Data not pertinent to single channel inter risign edge timer received")
+            if (dat[-3:] == "STX"):#If the termination signal has been found, stop the loop, no more data to be read
+                self.logger.debug("HALTING READ")
+                sdata = sdata + dat[:-3]
+                break
             else:
-                self.logger.debug(recdict)
-                return self.iretimer_conv_to_time(recdict)
+                sdata = sdata + dat
+        data = json.loads(sdata)
+        return self.iretimer_conv_to_time(data)
     def stop_iretimer(self):
         """
         Stop the single channel inter-rising_edge timer
@@ -184,6 +184,14 @@ class TimeController:
         self.websocket.sendall("STX".encode())
 
     def start_coincidence_timer(self,lineselect):
+        """
+        Stats the coincidence timer's data acquisiton
+        Parameters
+        ----------
+        lineselect : :class:`int`
+            Decides which line to treat as the start signal or whether just to pick the first detected line as a start signal.
+
+        """
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
@@ -193,6 +201,10 @@ class TimeController:
         self.logger.info("Starting two channel coincidence timer")
         self.websocket.sendall(("CTS"+str(lineselect)).encode())
     def stop_coincidence_timer(self):
+        """
+        Stops the coincidence timer's data acquisition
+
+        """
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
@@ -202,6 +214,13 @@ class TimeController:
         self.logger.info("Stopping two channel coincidence timer")
         self.websocket.sendall("CTX".encode())
     def acquire_coincidence_timer_data(self):
+        """
+        Request acquired data points from the FIFO of the coincidence timer module (up to 2048 points)
+        Returns
+        -------
+        :class:`list` of `float`
+            Acquired times in seconds
+        """
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
@@ -209,17 +228,28 @@ class TimeController:
             self.logger.error("Cannot be used in high resolution mode")
             return 0
         self.logger.info("Acquiring data from coincidence timer")
+        sdata = ""
+        self.websocket.sendall("CTA".encode())
+        while True:#Loop until all data from the socket has been acquired
+            dat = self.websocket.recv(8172).decode()
 
-        while(1):
-            self.websocket.sendall("CTA".encode())
-            data=self.websocket.recv(32768).decode()
-            recdict = json.loads(data)
-            if(recdict["MOD"])!="CT":
-                self.logger.warning("Data not pertinent to two channel coincidence timer received")
+            if (dat[-3:] == "CTX"):#On detecting data termination, break the loop
+                self.logger.debug("HALTING READ")
+                sdata = sdata + dat[:-3]
+                break
             else:
-                self.logger.debug(recdict)
-                return self.iretimer_conv_to_time(recdict)
+                sdata = sdata + dat
+        data = json.loads(sdata)
+        return self.iretimer_conv_to_time(data)
     def start_time_tagger(self,timeout):
+        """
+        Starts the time tagger module's passive data acquisition.
+        Parameters
+        ----------
+        timeout : :class:`float`
+            Time out for detection of channels in seconds
+
+        """
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
@@ -229,7 +259,27 @@ class TimeController:
         cycles = int(timeout*TDC_REF_CLK)
         self.logger.info("Starting time tagger")
         self.websocket.sendall(("TTS"+str(cycles)).encode())
+    def stop_time_tagger(self):
+        """
+        Stops the time tagger's passive data acquisition.
+
+        """
+        if (self.connected == 0):
+            self.logger.error("Not connected")
+            return 0
+        if (self.MODE != 0):
+            self.logger.error("Cannot be used in high resolution mode")
+            return 0
+        self.logger.info("Stopping time tagger")
+        self.websocket.sendall("TTX".encode())
     def acquire_time_tagger_data(self):
+        """
+        Request acquired data from the time tagger module, will acquire all available data upto 2048 points from the module.
+        Returns
+        -------
+        :class:`dict`
+        Dictionary containing tagged times for each channel along with time out states for each channel
+        """
         if (self.connected == 0):
             self.logger.error("Not connected")
             return 0
@@ -238,10 +288,10 @@ class TimeController:
             return 0
         self.websocket.sendall("TTA".encode())
         sdata = ""
-        while True:
+        while True:#Loop until all data from the socket has been acquired
             dat = self.websocket.recv(8172).decode()
 
-            if(dat[-3:]=="TTX"):
+            if(dat[-3:]=="TTX"):#If the termination signal has been found, break the loop
                 self.logger.debug("HALTING READ")
                 sdata = sdata+dat[:-3]
                 break
@@ -252,10 +302,23 @@ class TimeController:
         return time_data
 
     def time_tagger_conv_to_time(self, data):
+        """
+        Converts raw data from the socket to individual times in seconds.
+        Parameters
+        ----------
+        data : :class:`dict`
+            Dictionary containing module identification, data length and list of raw data.
+
+        Returns
+        -------
+        :class:`dict`
+            Dictionary containing tagged times for each channel along with time out states for each channel
+        """
         outputdata = {"T1": [], "T2": [], "T3": [], "T4": [], "TM": []}
         iterabledata = data["DAT"]
         for i in range(data["LEN"]):
-            deconcat = self.time_tagger_break_data(iterabledata[i])
+            deconcat = self.time_tagger_break_data(iterabledata[i])#Break up the data into individual channel data.
+            #Calculate the times
             outputdata["T1"].append(deconcat[0] / TDC_REF_CLK + (deconcat[4] - deconcat[5]) * TDC_FTIME)
             outputdata["T2"].append(deconcat[1] / TDC_REF_CLK + (deconcat[4] - deconcat[6]) * TDC_FTIME)
             outputdata["T3"].append(deconcat[2] / TDC_REF_CLK + (deconcat[4] - deconcat[7]) * TDC_FTIME)
@@ -268,12 +331,15 @@ class TimeController:
         Breaks up the raw binary data points sent into each numerical quantity
         Parameters
         ----------
-        data
+        data : :class:`int`
+            Raw binary integer 172 bits wide containing all data concatenated together
 
         Returns
         -------
-
+        :class:`list` of `int`
+            Time tagger raw cycle times, fine times and time out states
         """
+        #Unconcatenate all the data
         T1 = (data & 0x00000000000000000000000000000000000FFFFFFFF)
         T2 = (data & 0x000000000000000000000000000FFFFFFFF00000000) >> 32
         T3 = (data & 0x0000000000000000000FFFFFFFF0000000000000000) >> 64
@@ -326,10 +392,8 @@ class TimeController:
         channel : :class:`int`
             Channel to adjust delay of (0-5)
         time : :class:`float`
-            Time in seconds
+            Time in seconds (MAX OF 4.836e-9 seconds)
 
-        Returns
-        -------
 
         """
         if (self.connected == 0):

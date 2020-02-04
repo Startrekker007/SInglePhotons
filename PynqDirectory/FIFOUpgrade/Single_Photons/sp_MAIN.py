@@ -85,7 +85,7 @@ def ST_MOD(lock,mode):
     if(mode==0):
         SPT.st_start()
     elif(mode==1):
-        sendToHost(json.dumps(SPT.st_proc()), lock)
+        sendToHost(json.dumps(SPT.st_proc())+"STX", lock)
     elif(mode==2):
         SPT.st_stop()
 
@@ -108,7 +108,7 @@ def CT_MOD(lock,lineselect,ctl):
         logger.info("Started coincidence timer")
     elif(ctl==1):
         data=SPT.ct_proc()
-        sendToHost(json.dumps(data), lock)
+        sendToHost(json.dumps(data)+"CTX", lock)
         logger.info("Acquired coincidence timer data")
     elif(ctl==2):
         SPT.ct_stop()
@@ -269,25 +269,19 @@ def run():
                             if(data[:2] =="ST" and len(data)==3):#If the client has activated the single channel inter rising edge timer
                                 # if(isinstance(STProc,Process)):
                                 #     STProc.terminate()
-                                if(data=="STS"):
-                                    # STProc=Process(target=ST_MOD,args=(lock,0 ))
-                                    # STProc.start()
+                                if(data=="STS"):#Start it
                                     ST_MOD(lock,0)
-                                elif(data=="STA"):
-                                    # STProc = Process(target=ST_MOD, args=(lock, 1))
-                                    # STProc.start()
+                                elif(data=="STA"):#Data request
                                     ST_MOD(lock, 1)
-                                elif(data=="STX"):
-                                    # STProc = Process(target=ST_MOD, args=(lock, 2))
-                                    # STProc.start()
+                                elif(data=="STX"):#Stop it
                                     ST_MOD(lock, 2)
                             if(data[:2] == "CT"):#Coincidence timer
-                                if(data[:3]=="CTS"):
+                                if(data[:3]=="CTS"):#Start it
                                     mode=int(data[3])
                                     CT_MOD(lock,mode,0)
-                                elif(data[:3]=="CTA"):
+                                elif(data[:3]=="CTA"):#Data request
                                     CT_MOD(lock,0,1)
-                                elif(data[:3]=="CTX"):
+                                elif(data[:3]=="CTX"):#Stop it
                                     CT_MOD(lock,0,2)
                             if(data[:2]=="PG"):#Signal generator
                                 PG_MOD(json.loads(data[2:]))#Deserialize the incoming data and call the pulse generator function
